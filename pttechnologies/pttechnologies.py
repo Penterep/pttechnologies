@@ -33,9 +33,9 @@ from ptlibs.ptprinthelper import ptprint, print_banner, help_print
 from ptlibs.threads import ptthreads, printlock
 from ptlibs.http.http_client import HttpClient
 
-from helpers._thread_local_stdout import ThreadLocalStdout
-from helpers.helpers import Helpers
-from _version import __version__
+from .helpers._thread_local_stdout import ThreadLocalStdout
+from .helpers.helpers import Helpers
+from ._version import __version__
 
 import requests
 

@@ -22,7 +22,7 @@ setuptools.setup(
         "License :: OSI Approved :: GNU General Public License v3 (GPLv3)"
     ],
     python_requires='>=3.12',
-    install_requires=["ptlibs>=1.0.29,<2", ],
+    install_requires=["ptlibs>=1.0.29,<2", "beautifulsoup4>=4.13.4,<5",],
     entry_points = {'console_scripts': ['pttechnologies = pttechnologies.pttechnologies:main']},
     include_package_data= True,
     long_description=long_description,
