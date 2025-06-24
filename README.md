@@ -28,8 +28,8 @@ source ~/.zshrc
 
 ## Usage examples
 ```
-pttechnologies -u htttps://www.example.com/
-pttechnologies -u htttps://www.example.com/ -ts OSCS OSLPT1 WSHT
+pttechnologies -u https://www.example.com/
+pttechnologies -u https://www.example.com/ -ts OSCS OSLPT1 WSHT
 ```
 
 ## Options
