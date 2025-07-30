@@ -463,7 +463,7 @@ class HDRVAL:
 
                 if self.args.verbose:
                     header_value = headers_found.get(header_name, '')
-                    ptprint(f"{header_name}: {header_value}", "TEXT", not self.args.json, indent=10)
+                    ptprint(f"{header_name}: {header_value}", "TEXT", not self.args.json, indent=8)
 
                 for tech, is_classified in technologies_by_header[header_name]:
                     category_text = ""
@@ -483,7 +483,7 @@ class HDRVAL:
                     version_text = f" {tech['version']}" if tech.get('version') else ""
                     tech_name = tech.get('technology', tech['name'])
 
-                    ptprint(f"{tech_name}{version_text}{category_text}", "VULN", not self.args.json, indent=10)
+                    ptprint(f"{tech_name}{version_text}{category_text}", "VULN", not self.args.json, indent=8)
 
         if found_technologies or unclassified_technologies:
             self.ptjsonlib.add_vulnerability("PTV-WEB-INFO-OSSEN")

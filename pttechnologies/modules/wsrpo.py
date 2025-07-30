@@ -145,7 +145,7 @@ class WSRPO:
         ptprint("Server responses:", "INFO", True, indent=4)
         for n, v in raw:
             ptprint(f"{n.decode(errors='replace')}: "
-                    f"{v.decode(errors='replace')}", "TEXT", True, indent=10)
+                    f"{v.decode(errors='replace')}", "TEXT", True, indent=8)
 
     def _report(self, tech: str):
         """
