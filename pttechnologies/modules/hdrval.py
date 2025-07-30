@@ -43,7 +43,7 @@ class HDRVAL:
         self.definitions = self.helpers.load_definitions("hdrval.json")
 
         self.target_headers = self.definitions.get("headers", [
-            "Server", "X-Powered-By", "X-Generator"
+            "Server", "X-Powered-By", "X-Generator", "X-AspNet-Version", "X-AspNetMvc-Version"
         ])
 
     def run(self) -> None:
@@ -208,6 +208,10 @@ class HDRVAL:
             technologies.extend(self._parse_server_header(header_value))
         elif header_name.lower() in ["x-powered-by", "x-generator"]:
             technologies.extend(self._parse_powered_by_header(header_value))
+        elif header_name.lower() == "x-aspnet-version":
+            technologies.extend(self._parse_aspnet_version_header(header_value))
+        elif header_name.lower() == "x-aspnetmvc-version":
+            technologies.extend(self._parse_aspnetmvc_version_header(header_value))
         else:
             technologies.extend(self._parse_generic_header(header_value))
 
@@ -320,6 +324,58 @@ class HDRVAL:
 
         return technologies
 
+    def _parse_aspnet_version_header(self, header_value: str) -> List[Dict[str, Optional[str]]]:
+        """
+        Parse X-AspNet-Version header.
+
+        Examples:
+        - "4.0.30319"
+        - "2.0.50727"
+
+        Args:
+            header_value: Header value.
+
+        Returns:
+            List of technology dictionaries with ASP.NET Framework name and version.
+        """
+        technologies = []
+        
+        # Clean and validate the version
+        version = header_value.strip()
+        if re.match(r'^[0-9]+\.[0-9]+\.[0-9]+.*', version):
+            technologies.append({
+                'name': 'ASP.NET Framework',
+                'version': version
+            })
+        
+        return technologies
+
+    def _parse_aspnetmvc_version_header(self, header_value: str) -> List[Dict[str, Optional[str]]]:
+        """
+        Parse X-AspNetMvc-Version header.
+
+        Examples:
+        - "5.2"
+        - "4.0"
+        - "3.0"
+
+        Args:
+            header_value: Header value.
+
+        Returns:
+            List of technology dictionaries with ASP.NET MVC name and version.
+        """
+        technologies = []
+        
+        version = header_value.strip()
+        if re.match(r'^[0-9]+\.[0-9]+.*', version):
+            technologies.append({
+                'name': 'ASP.NET MVC',
+                'version': version
+            })
+        
+        return technologies
+
     def _parse_generic_header(self, header_value: str) -> List[Dict[str, Optional[str]]]:
         """
         Generic parser for other header types.
@@ -356,6 +412,24 @@ class HDRVAL:
             Classified technology dictionary or None if not found in definitions.
         """
         tech_name = technology['name'].lower()
+
+        # Special handling for ASP.NET technologies
+        if tech_name == 'asp.net framework':
+            return {
+                'category': 'framework',
+                'technology': 'ASP.NET Framework',
+                'name': 'ASP.NET Framework',
+                'version': technology['version'],
+                'description': f"{header_name}: {full_header}"
+            }
+        elif tech_name == 'asp.net mvc':
+            return {
+                'category': 'framework',
+                'technology': 'ASP.NET MVC',
+                'name': 'ASP.NET MVC',
+                'version': technology['version'],
+                'description': f"{header_name}: {full_header}"
+            }
 
         definitions = self.definitions.get('definitions', self.definitions)
         if isinstance(definitions, list):
@@ -403,16 +477,19 @@ class HDRVAL:
 
         if is_classified:
             description = tech.get('description')
+            # Use the proper technology name from classification
+            name = tech.get('technology', tech['name'])
         else:
             header_name = tech.get('header', 'Unknown')
             full_header = tech.get('full_header', tech['name'])
             description = f"{header_name}: {full_header}"
+            name = tech['name']
 
         properties = {}
 
         if sw_type:
             properties["type"] = sw_type
-        properties["name"] = tech['name']
+        properties["name"] = name
         if version:
             properties["version"] = version
         properties["description"] = description

@@ -4,6 +4,7 @@
       "X-Powered-By",
       "X-Generator",
       "X-AspNet-Version",
+      "X-AspNetMvc-Version",
       "X-Framework",
       "X-Runtime"
     ],
@@ -92,6 +93,16 @@
         "category": "framework",
         "technology": "Express",
         "content": "express"
+      },
+      {
+        "category": "framework",
+        "technology": "ASP.NET Framework",
+        "content" : "asp.net framework"
+      },
+      {
+        "category": "framework",
+        "technology": "ASP.NET MVC",
+        "content" : "asp.net mvc"
       },
       {
         "category": "prgLanguage",
