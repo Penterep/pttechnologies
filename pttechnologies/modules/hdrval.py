@@ -39,6 +39,8 @@ class HDRVAL:
         self.response_hp = responses.resp_hp
         self.response_404 = responses.resp_404
         self.raw_response_400 = responses.raw_resp_400
+        self.response_favicon = responses.resp_favicon
+        self.long_response = responses.long_resp
 
         self.definitions = self.helpers.load_definitions("hdrval.json")
 
@@ -57,11 +59,16 @@ class HDRVAL:
         ptprint(__TESTLABEL__, "TITLE", not self.args.json, colortext=True)
 
         headers_200 = self._get_response_headers(self.response_hp)
+        headers_400 = self._get_response_headers(self.raw_response_400) if self.raw_response_400 else {}
+        headers_favicon = self._get_response_headers(self.response_favicon)
+        headers_long= self._get_response_headers(self.long_response)
 
-        response_400 = self.raw_response_400
-        headers_400 = self._get_response_headers(response_400) if response_400 else {}
-
-        combined_headers = self._combine_headers(headers_200, headers_400)
+        combined_headers = self._combine_headers({
+            '200': headers_200,
+            '400': headers_400,
+            'favicon': headers_favicon,
+            'long': headers_long
+        })
 
         if not combined_headers:
             ptprint("No headers available for analysis", "INFO", not self.args.json, indent=4)
@@ -140,41 +147,48 @@ class HDRVAL:
 
         return headers
 
-    def _combine_headers(self, headers_200: Dict[str, str], headers_400: Dict[str, str]) -> Dict[str, Dict[str, Any]]:
+    def _combine_headers(self, source_headers: Dict[str, Dict[str, str]]) -> Dict[str, Dict[str, Any]]:
         """
-        Combine headers from 200 and 400 responses, keeping track of sources.
+        Combine headers from multiple sources with enhanced conflict resolution.
 
         Args:
-            headers_200: Headers from 200 response.
-            headers_400: Headers from 400 response.
+            source_headers: Dictionary mapping source names to their headers
 
         Returns:
-            Dictionary with header names as keys and dictionaries containing 'value' and 'sources' as values.
+            Dictionary with header names as keys and dictionaries containing:
+            - 'value': Combined header value (multiple values joined with ' | ')
+            - 'sources': List of sources where this header was found
+            - 'values_by_source': Mapping of source to specific value
+            - 'unique_values': List of unique values found across all sources
         """
         combined = {}
-        server_headers = [header.lower() for header in self.target_headers]
+        tech_detection_headers = [header.lower() for header in self.target_headers]
 
-        for header_name, header_value in headers_200.items():
-            combined[header_name] = {
-                'value': header_value,
-                'sources': ['200']
-            }
+        for source_name, headers in source_headers.items():
+            if not headers:
+                continue
+            
+            for header_name, header_value in headers.items():
+                header_lower = header_name.lower()
+                if header_lower not in combined:
+                    combined[header_lower] = {
+                        'value': header_value,
+                        'sources': [source_name],
+                        'values_by_source': {source_name: header_value},
+                        'unique_values': [header_value]
+                    }
+                else:
+                    existing_data = combined[header_lower]
+                    existing_data['values_by_source'][source_name] = header_value
 
-        for header_name, header_value in headers_400.items():
-            if header_name in combined:
-                if combined[header_name]['value'] != header_value:
-                    if header_name.lower() in server_headers:
-                        combined[header_name] = {
-                            'value': f"{combined[header_name]['value']} | {header_value}",
-                            'sources': ['200', '400']
-                        }
-                    else:
-                        combined[header_name]['sources'].append('400')
-            else:
-                combined[header_name] = {
-                    'value': header_value,
-                    'sources': ['400']
-                }
+                    if source_name not in existing_data['sources']:
+                        existing_data['sources'].append(source_name)
+                    
+                    if header_value not in existing_data['unique_values']:
+                        existing_data['unique_values'].append(header_value)
+
+                        if header_lower in tech_detection_headers:
+                            existing_data['value'] = ' | '.join(existing_data['unique_values'])
 
         return combined
 

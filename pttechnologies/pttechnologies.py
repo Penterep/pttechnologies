@@ -26,7 +26,7 @@ import sys; sys.path.append(__file__.rsplit("/", 1)[0])
 
 from io import StringIO
 from types import ModuleType
-from urllib.parse import urlparse, urlunparse
+from urllib.parse import urlparse, urlunparse, urljoin
 
 from ptlibs import ptjsonlib, ptmisclib, ptnethelper
 from ptlibs.ptprinthelper import ptprint, print_banner, help_print
@@ -119,12 +119,19 @@ class PtTechnologies:
         If the response is a redirect (3xx) or a non-200 status, the script exits early.
         2. A GET request to a deliberately non-existent URL to obtain a known 404 response.
         3. A low-level/raw request to provoke a 400-like response, useful for fingerprinting or error detection.
+        4. A GET request to the `/favicon.ico` path to detect any load-balancer or CDN server variation.
+        5. A GET request to an over-long URL (e.g., 5000 'a' characters) to trigger a 400 Bad Request.
 
-        The collected responses are stored together in self.stored_responses as a StoredResponses dataclass instance.
+        The collected responses are stored together in a `StoredResponses` dataclass instance,
+        containing:
+          - `resp_hp`:     homepage response (Response)
+          - `resp_404`:   404 baseline response (Response)
+          - `raw_resp_400`: raw 400-like response (RawHttpResponse | None)
+          - `resp_favicon`: favicon.ico response (Response | None)
+          - `long_resp`:    long-URL 400 response (Response | None)
 
         Returns:
-            StoredResponses: A dataclass instance containing the homepage response, 404 response,
-                            and the raw 400-like response.
+            StoredResponses: A dataclass instance with all baseline responses.
         Raises:
             Exits the script via self.ptjsonlib.end_error() if any of the requests fail
             or return unexpected status codes.
@@ -144,11 +151,22 @@ class PtTechnologies:
             # Send raw request to raise 400 status code
             raw_resp_400 = self.helpers._get_bad_request_response(self.args.url)
 
+            # Send request to URL with favicon.ico path
+            url_favicon = urljoin(self.args.url, '/favicon.ico')
+            resp_favicon = self.http_client.send_request(url_favicon, method="GET", headers=self.args.headers, allow_redirects=False)
+
+            # Send request with an over-long URL (5000 'a' characters)
+            long_path = '/' + ('a' * 5000)
+            long_url = urljoin(self.args.url, long_path)
+            long_resp = self.helpers._raw_request(long_url, '/')
+
             # Create and store the responses container
             self.stored_responses = StoredResponses(
                 resp_hp=resp_hp,
                 resp_404=resp_404,
-                raw_resp_400=raw_resp_400
+                raw_resp_400=raw_resp_400,
+                resp_favicon=resp_favicon,
+                long_resp=long_resp
             )
 
             return self.stored_responses

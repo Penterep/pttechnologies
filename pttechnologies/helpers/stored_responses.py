@@ -22,7 +22,14 @@ class StoredResponses:
         raw_resp_400 (Optional[RawHttpResponse]): A raw HTTP 400-like response from a low-level client,
             used for comparing malformed or blocked requests (e.g. for fingerprinting).
             May be None if the raw request failed or was not performed.
+        resp_favicon (Optional[Response]): The response from the '/favicon.ico' path,
+            used to detect web server variations behind a load balancer.
+        long_resp (Optional[Response]): The response from a deliberately long URL (e.g., 5000 'a' characters),
+            typically returning a 400 Bad Request used for additional fingerprinting.
+            May be None if the request failed or was not performed.
     """
     resp_hp: Response
     resp_404: Response
     raw_resp_400: Optional[RawHttpResponse]
+    resp_favicon: Optional[Response]
+    long_resp: Optional[Response]
