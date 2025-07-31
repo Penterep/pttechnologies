@@ -1,7 +1,7 @@
 [
     {
       "category": "webserver",
-      "technology": "nginx",
+      "technology": "Nginx",
       "order": ["server", "date", "content-type", "content-length"]
     },
     {

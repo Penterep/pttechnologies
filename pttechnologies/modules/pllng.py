@@ -141,7 +141,7 @@ class PLLNG:
             ext = result["extension"].capitalize()
             self.ptjsonlib.add_vulnerability("PTV-WEB-INFO-LNGEX")
             self.ptjsonlib.add_properties({"webProgrammingLanguage": f"webProgrammingLanguage{ext}"})
-            ptprint(f"Programming language detected: {language}", "VULN", not self.args.json, indent=4)
+            ptprint(f"Identified language: {language}", "VULN", not self.args.json, indent=4)
         else:
             ptprint(f"It was not possible to identify the programming language", "INFO", not self.args.json, indent=4)
 

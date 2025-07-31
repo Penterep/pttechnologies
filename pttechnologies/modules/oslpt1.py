@@ -48,11 +48,11 @@ class OSLPT1:
         if response1.status_code != response2.status_code:
             self.ptjsonlib.add_vulnerability("PTV-WEB-INFO-OSLNK")
             self.ptjsonlib.add_properties({"os": "osWindows"})
-            ptprint(f"OS detected: Windows", "VULN", not self.args.json, indent=4)
+            ptprint(f"Identified OS: Windows", "VULN", not self.args.json, indent=4)
         else:
             self.ptjsonlib.add_properties({"os": "osUnix"})
             self.ptjsonlib.add_vulnerability("PTV-WEB-INFO-OSLNK")
-            ptprint(f"OS detected: Unix / Linux", "VULN", not self.args.json, indent=4)
+            ptprint(f"Identified OS: Unix / Linux", "VULN", not self.args.json, indent=4)
 
 def run(args: object, ptjsonlib: object, helpers: object, http_client: object, responses: StoredResponses):
     """Entry point for running the OSLPT1 OS detection."""

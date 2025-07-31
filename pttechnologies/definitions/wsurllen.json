@@ -6,7 +6,7 @@
     },
     {
         "category": "webserver",
-        "technology": "nginx",
+        "technology": "Nginx",
         "statuses": ["404","404","404","404","404","414","414","414","414"]
     },
     {
