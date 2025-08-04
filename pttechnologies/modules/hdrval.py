@@ -554,7 +554,7 @@ class HDRVAL:
 
                 if self.args.verbose:
                     header_value = headers_found.get(header_name, '')
-                    ptprint(f"{header_name}: {header_value}", "TEXT", not self.args.json, indent=8)
+                    ptprint(f"{header_name}: {header_value}", "ADDITIONS", not self.args.json, indent=8, colortext=True)
 
                 for tech, is_classified in technologies_by_header[header_name]:
                     category_text = ""

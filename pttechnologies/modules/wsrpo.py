@@ -142,10 +142,10 @@ class WSRPO:
         Args:
             raw: List of (header_name_bytes, header_value_bytes).
         """
-        ptprint("Server responses:", "INFO", True, indent=4)
+        ptprint("Server responses:", "ADDITIONS", True, indent=4, colortext=True)
         for n, v in raw:
             ptprint(f"{n.decode(errors='replace')}: "
-                    f"{v.decode(errors='replace')}", "TEXT", True, indent=8)
+                    f"{v.decode(errors='replace')}", "ADDITIONS", True, indent=8, colortext=True)
 
     def _report(self, tech: str):
         """

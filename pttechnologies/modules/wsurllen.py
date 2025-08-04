@@ -72,9 +72,9 @@ class WSURLLEN:
                 blocked_long_url = True
 
         if self.args.verbose:
-            ptprint("Server responses:", "INFO", not self.args.json,indent=4)
+            ptprint("Server responses:", "ADDITIONS", not self.args.json,indent=4, colortext=True)
             for l, s in zip(self.lengths, statuses):
-                ptprint(f"{l}\tchars [{s}]", "TEXT", not self.args.json,indent=8)
+                ptprint(f"{l}\tchars [{s}]", "ADDITIONS", not self.args.json,indent=8, colortext=True)
 
         if blocked_long_url:
             ptprint("Long URL are blocked", "INFO", not self.args.json,indent=4)
