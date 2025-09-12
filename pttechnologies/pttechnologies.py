@@ -18,6 +18,7 @@ You should have received a copy of the GNU General Public License
 along with pttechnologies.  If not, see <https://www.gnu.org/licenses/>.
 """
 
+import socket
 import argparse
 import importlib
 import os
@@ -27,6 +28,7 @@ import sys; sys.path.append(__file__.rsplit("/", 1)[0])
 from io import StringIO
 from types import ModuleType
 from urllib.parse import urlparse, urlunparse, urljoin
+from typing import Optional
 
 from ptlibs import ptjsonlib, ptmisclib, ptnethelper
 from ptlibs.ptprinthelper import ptprint, print_banner, help_print
@@ -53,6 +55,7 @@ class PtTechnologies:
         self._lock       = threading.Lock()
         self.http_client = HttpClient(args=self.args, ptjsonlib=self.ptjsonlib)
         self.helpers     = Helpers(args=self.args, ptjsonlib=self.ptjsonlib, http_client=self.http_client)
+        self.target_ip = self._extract_ip_from_url(args.url)
         self.stored_responses = self._fetch_initial_responses()
 
         # Activate ThreadLocalStdout stdout proxy
@@ -114,6 +117,29 @@ class PtTechnologies:
         except Exception as e:
             ptprint(f"Error running module '{module_name}': {e}", "ERROR", not self.args.json)
 
+    def _extract_ip_from_url(self, url: str) -> Optional[str]:
+        """
+        Extract IP address from URL or resolve hostname to IP.
+        
+        Args:
+            url: Target URL
+            
+        Returns:
+            IP address string or None if unable to resolve
+        """
+        parsed = urlparse(url)
+        hostname = parsed.hostname or parsed.netloc.split(':')[0]
+        
+        try:
+            socket.inet_aton(hostname)
+            return hostname
+        except socket.error:
+            pass
+        
+        try:
+            return socket.gethostbyname(hostname)
+        except socket.gaierror:
+            return None
 
     def _fetch_initial_responses(self) -> StoredResponses:
         """
@@ -145,13 +171,13 @@ class PtTechnologies:
             # Send request to home page
             resp_hp = self.http_client.send_request(url=self.args.url, method="GET", headers=self.args.headers, allow_redirects=False)
             # Handle non 200 statuses
-            if 300 <= resp_hp.status_code < 400:
-                if self.args.redirects:
-                    resp_hp = self.http_client.send_request(url=self.args.url, method="GET", headers=self.args.headers, allow_redirects=True)
-                    if resp_hp.status_code != 200:
-                        self.ptjsonlib.end_error(f"Final webpage returns status code: {resp_hp.status_code}", self.args.json)
-                else:
-                    self.ptjsonlib.end_error(f"Redirect to URL: {resp_hp.headers.get('Location', 'unknown')}", self.args.json)
+            if 300 <= resp_hp.status_code < 405:
+                redirect_url = resp_hp.headers.get('Location', 'unknown')
+                ptprint(f"Redirect detected: {resp_hp.status_code} -> {redirect_url}\n", "INFO", not self.args.json, colortext=True)   
+                if redirect_url and redirect_url != 'unknown':
+                    if redirect_url.startswith('/'):
+                        redirect_url = urljoin(self.args.url, redirect_url)
+                    resp_hp = self.http_client.send_request(url=redirect_url, method="GET", headers=self.args.headers, allow_redirects=False)
             elif resp_hp.status_code != 200:
                 self.ptjsonlib.end_error(f"Webpage returns status code: {resp_hp.status_code}", self.args.json)
 
@@ -170,13 +196,22 @@ class PtTechnologies:
             long_url = urljoin(self.args.url, long_path)
             long_resp = self.helpers._raw_request(long_url, '/')
 
+            #Get IP responses from HTTP and HTTPS
+            http_url = f"http://{self.target_ip}/"
+            http_resp = self.helpers.fetch(http_url)
+
+            https_url = f"https://{self.target_ip}/"
+            https_resp = self.helpers.fetch(https_url)
+
             # Create and store the responses container
             self.stored_responses = StoredResponses(
                 resp_hp=resp_hp,
                 resp_404=resp_404,
                 raw_resp_400=raw_resp_400,
                 resp_favicon=resp_favicon,
-                long_resp=long_resp
+                long_resp=long_resp,
+                http_resp = http_resp,
+                https_resp = https_resp
             )
 
             return self.stored_responses

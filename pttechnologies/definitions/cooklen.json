@@ -1,6 +1,6 @@
 [
     {
-      "technology": "IIS",
+      "technology": "Microsoft-IIS",
       "statuses": ["200", "200", "200", "200", "200", "200", "CONN_ERROR", "CONN_ERROR", "CONN_ERROR"]
     },
     {

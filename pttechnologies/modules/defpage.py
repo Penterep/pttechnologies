@@ -37,6 +37,10 @@ class DEFPAGE:
         self.ptjsonlib = ptjsonlib
         self.helpers = helpers
         self.http_client = http_client
+
+        self.http_resp = responses.http_resp
+        self.https_resp = responses.https_resp
+
         self.definitions = self.helpers.load_definitions("defpage.json")
         self.target_ip = self._extract_ip_from_url(args.url)
         self.detected_technologies = []
@@ -74,8 +78,8 @@ class DEFPAGE:
         """
         ptprint(__TESTLABEL__, "TITLE", not self.args.json, colortext=True)
 
-        #if self.args.verbose:
-        #    ptprint(f"Testing default pages on IP: {self.target_ip}", "ADDITIONS", not self.args.json, indent=4, colortext=True)
+        if self.args.verbose:
+            ptprint(f"Testing default pages on IP: {self.target_ip}", "ADDITIONS", not self.args.json, indent=4, colortext=True)
 
         protocols = ['http', 'https']
         
@@ -91,15 +95,24 @@ class DEFPAGE:
         Args:
             protocol: 'http' or 'https'
         """
+
         url = f"{protocol}://{self.target_ip}/"
         
-        response = self.helpers.fetch(url)
+        if self.args.verbose:
+            ptprint(f"Testing {protocol.upper()} protocol", "ADDITIONS", not self.args.json, indent=4, colortext=True)
         
-        if response is None:
+        if protocol == 'http':
+            response = self.http_resp
+        else:
+            response = self.https_resp
+        
+        if response is None and self.args.verbose:
+            ptprint("No response received", "ADDITIONS", not self.args.json, indent=8, colortext=True)
             return
         
         if not hasattr(response, 'text'):
-            ptprint(f"Response object has no text attribute for {protocol.upper()}", "INFO", not self.args.json, indent=8)
+            if self.args.verbose:
+                ptprint(f"Response object has no text attribute for {protocol.upper()}", "ADDITIONS", not self.args.json, indent=8, colortext=True)
             return
             
         content = response.text
@@ -111,10 +124,29 @@ class DEFPAGE:
         technologies = self._analyze_page_content(content, protocol, response)
         
         if technologies:
+            if self.args.verbose:
+                ptprint("Technologies detected:", "ADDITIONS", not self.args.json, indent=8, colortext=True)
+
             for tech in technologies:
                 tech['protocol'] = protocol
                 tech['url'] = url
                 self.detected_technologies.append(tech)
+                
+                version_text = f" {tech['version']}" if tech.get('version') else ""
+                category_text = f" ({tech['category']})"
+                
+                if self.args.verbose:
+                    ptprint(f"{tech['technology']}{version_text}{category_text}", 
+                    "ADDITIONS", not self.args.json, indent=12, colortext=True, end="")
+
+                    source_location = tech.get('source_location', 'content')
+                    ptprint(f" <- Matched: {tech.get('matched_text', 'N/A')} (from {source_location})", 
+                        "ADDITIONS", not self.args.json, colortext=True)
+            if self.args.verbose:
+                ptprint(" ")
+        else:
+            if self.args.verbose:
+                ptprint(f"No technologies detexted\n", "ADDITIONS", not self.args.json, indent=8, colortext=True)
 
     def _debug_output(self, content: str, protocol: str, response: object, url: str) -> None:
         """
@@ -132,13 +164,11 @@ class DEFPAGE:
             ptprint(f"HTML Title: {title}", "ADDITIONS", not self.args.json, indent=8, colortext=True)
         else:
             ptprint("HTML Title: Not found or empty", "ADDITIONS", not self.args.json, indent=8, colortext=True)
-        
-        if hasattr(response, 'headers') and self.args.verbose:
-            server_header = response.headers.get('Server', 'Not found')
-            ptprint(f"Server Header: {server_header}", "ADDITIONS", not self.args.json, indent=8, colortext=True)
-        
+                
         method_info = self._determine_method(response, content, url)
         ptprint(f"Method: {method_info}", "ADDITIONS", not self.args.json, indent=8, colortext=True)
+        
+        ptprint("", "", not self.args.json)
 
     def _extract_title(self, content: str) -> Optional[str]:
         """
@@ -252,10 +282,6 @@ class DEFPAGE:
         for pattern_def in patterns:
             match_result = self._match_pattern(content, pattern_def, 'content')
             
-            if not match_result and headers_dict:
-                headers_text = '\n'.join([f"{k}: {v}" for k, v in headers_dict.items()])
-                match_result = self._match_pattern(headers_text, pattern_def, 'headers')
-            
             if match_result:
                 tech_key = match_result.get('technology', match_result.get('name', 'Unknown')).lower()
                 
@@ -309,76 +335,109 @@ class DEFPAGE:
             'source_location': source_type
         }
         
+        version = None
         version_pattern = pattern_def.get('version_pattern')
         if version_pattern:
             try:
                 version_match = re.search(version_pattern, content, re_flags)
                 if version_match:
-                    result['version'] = version_match.group(1) if version_match.groups() else version_match.group(0)
+                    version = version_match.group(1) if version_match.groups() else version_match.group(0)
             except re.error:
                 pass
         elif match.groups():
-            result['version'] = match.group(1)
+            version = match.group(1)
+        
+        if version:
+            version_transform = pattern_def.get('version_transform')
+            if version_transform == 'iis_legacy':
+                version = self._transform_iis_legacy_version(version)
+            
+            result['version'] = version
         
         return result
 
-    def _report_findings(self) -> None:
+    def _transform_iis_legacy_version(self, version: str) -> str:
         """
-        Report detected technologies and store them.
-        """
-        if not self.detected_technologies:
-            ptprint("No default page technologies identified", "INFO", not self.args.json, indent=4)
-            return
-
-        by_protocol = {}
-        for tech in self.detected_technologies:
-            protocol = tech.get('protocol', 'unknown')
-            if protocol not in by_protocol:
-                by_protocol[protocol] = []
-            by_protocol[protocol].append(tech)
-
-        for protocol, techs in by_protocol.items():
-            ptprint(f"{protocol.upper()} default page technologies", "INFO", not self.args.json, indent=4)
-            
-            for tech in techs:
-                version_text = f" {tech['version']}" if tech.get('version') else ""
-                category_text = f" ({tech['category']})"
-                
-                ptprint(f"{tech['technology']}{version_text}{category_text}", 
-                       "VULN", not self.args.json, indent=8)
-                
-                if self.args.verbose:
-                    source_location = tech.get('source_location', 'content')
-                    ptprint(f"Matched: {tech.get('matched_text', 'N/A')} (from {source_location})", 
-                           "ADDITIONS", not self.args.json, indent=12, colortext=True)
-
-        unique_technologies = {}
-        for tech in self.detected_technologies:
-            tech_key = f"{tech.get('technology', 'Unknown').lower()}_{tech.get('protocol', 'unknown')}"
-            if tech_key not in unique_technologies:
-                unique_technologies[tech_key] = tech
-        
-        for tech in unique_technologies.values():
-            self._store_technology(tech)
-
-    def _store_technology(self, tech: Dict[str, Any]) -> None:
-        """
-        Store detected technology in the storage system.
+        Transform IIS legacy version format (e.g., '85' -> '8.5', '75' -> '7.5').
         
         Args:
-            tech: Detected technology information
+            version: Original version string
+            
+        Returns:
+            Transformed version string
         """
-        tech_name = tech.get('technology', tech.get('name', 'Unknown'))
-        version = tech.get('version')
-        tech_type = tech.get('category')
-        probability = tech.get('probability', 100)
-        protocol = tech.get('protocol', 'unknown')
-        source_location = tech.get('source_location', 'content')
+        if version.isdigit() and len(version) == 2:
+            num = int(version)
+            if 19 <= num <= 99:
+                return f"{version[0]}.{version[1]}"
         
-        description = f"Default {protocol.upper()} page: {tech_name}"
+        return version
+
+    def _report_findings(self) -> None:
+        """
+        Report summary of all detected technologies and store them (avoiding duplicates).
+        """
+        if not self.detected_technologies:
+            ptprint("Overall Summary: No default page technologies identified", "INFO", not self.args.json, indent=4)
+            return
+
+        ptprint("Overall Technology Summary", "INFO", not self.args.json, indent=4, colortext=True)
+        
+        tech_summary = {}
+        for tech in self.detected_technologies:
+            tech_name = tech.get('technology', 'Unknown')
+            version = tech.get('version', '')
+            protocol = tech.get('protocol', 'unknown')
+            
+            key = f"{tech_name}_{version}" if version else tech_name
+            
+            if key not in tech_summary:
+                tech_summary[key] = {
+                    'name': tech_name,
+                    'version': version,
+                    'category': tech.get('category', 'unknown'),
+                    'protocols': [],
+                    'source_locations': set()
+                }
+            
+            tech_summary[key]['protocols'].append(protocol.upper())
+            tech_summary[key]['source_locations'].add(tech.get('source_location', 'content'))
+         
+        for tech_info in tech_summary.values():
+            version_text = f" {tech_info['version']}" if tech_info['version'] else ""
+            protocols_text = "/".join(sorted(set(tech_info['protocols'])))
+            category_text = f" ({tech_info['category']})"
+            
+            
+            ptprint(f"{tech_info['name']}{version_text}{category_text}", "VULN", not self.args.json, indent=8, end=" ")
+
+            if self.args.verbose:
+                ptprint(f"(detected via {protocols_text})", "ADDITIONS", not self.args.json, colortext=True)
+            else:
+                ptprint(" ")
+
+        for tech_info in tech_summary.values():
+            self._store_unique_technology(tech_info)
+
+    def _store_unique_technology(self, tech_info: Dict[str, Any]) -> None:
+        """
+        Store detected technology in the storage system (once per unique technology).
+        
+        Args:
+            tech_info: Aggregated technology information from all protocols
+        """
+        tech_name = tech_info['name']
+        version = tech_info['version']
+        tech_type = tech_info['category']
+        probability = 100
+        
+        protocols_text = "/".join(sorted(set(tech_info['protocols'])))
+        source_locations = sorted(tech_info['source_locations'])
+        
+        description = f"Default {protocols_text} page: {tech_name}"
         if version:
             description += f" {version}"
-        description += f" (detected from {source_location})"
+        description += f" (detected from {', '.join(source_locations)})"
         
         storage.add_to_storage(
             technology=tech_name,

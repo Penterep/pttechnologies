@@ -1,191 +1,187 @@
 {
-    "error_triggers": [
-      {
-        "name": "404 Not Found",
-        "method": "GET",
-        "path": "/nonexistent-page-12345",
-        "expected_status": [404]
-      },
-      {
-        "name": "403 Forbidden (.ht)",
-        "method": "GET",
-        "path": "/.ht",
-        "expected_status": [403, 404]
-      },
-      {
-        "name": "403 Forbidden (.htaccess)",
-        "method": "GET",
-        "path": "/.htaccess",
-        "expected_status": [403, 404]
-      },
-      {
-        "name": "400 Bad Request (percent)",
-        "method": "GET",
-        "path": "/%",
-        "expected_status": [400]
-      },
-      {
-        "name": "414 URI Too Long",
-        "method": "GET",
-        "path": "/{LONG_PATH_8000}",
-        "expected_status": [414, 400]
-      },
-      {
-        "name": "400 Invalid Header",
-        "method": "GET",
-        "path": "/",
-        "headers": {"Accept": ""},
-        "expected_status": [400]
-      },
-      {
-        "name": "400 Invalid Protocol",
-        "method": "RAW",
-        "raw_request": "GET / FOO/1.1\\r\\nHost: {host}\\r\\n\\r\\n",
-        "expected_status": [400, 505]
-      },
-      {
-        "name": "505 Invalid HTTP Version",
-        "method": "RAW",
-        "raw_request": "GET / HTTP/9.8\\r\\nHost: {host}\\r\\n\\r\\n",
-        "expected_status": [505, 400]
-      }
-    ],
-    "patterns": [
-      {
-        "name": "Apache Error Page",
-        "technology": "Apache",
-        "category": "WebServer",
-        "pattern": "<title>\\s*\\d{3}\\s+.*</title>.*Apache(?:/([\\d\\.]+))?\\s+(?:\\([^)]+\\))?\\s+Server\\s+at|Apache(?:/([\\d\\.]+))?\\s+Server\\s+Port|<address>\\s*Apache.*Server",
-        "version_pattern": "Apache/([\\d\\.]+)",
-        "flags": "is"
-      },
-      {
-        "name": "Apache Forbidden",
-        "technology": "Apache",
-        "category": "WebServer",
-        "pattern": "You don't have permission to access.*on this server\\.?</p>\\s*(?:<hr>)?\\s*<address>.*Apache",
-        "flags": "is"
-      },
-      {
-        "name": "Azure Error Page",
-        "technology": "Azure",
-        "category": "CloudPlatform",
-        "pattern": "<title>.*Azure.*Error.*</title>|Azure\\s+Web\\s+App|Microsoft\\s+Azure|The\\s+resource\\s+you\\s+are\\s+looking\\s+for\\s+has\\s+been\\s+removed",
-        "flags": "i"
-      },
-      {
-        "name": "Nginx Error Page",
-        "technology": "Nginx",
-        "category": "WebServer",
-        "pattern": "<center>\\s*<h1>\\s*\\d{3}\\s+.*</h1>\\s*</center>\\s*<hr>\\s*<center>\\s*nginx(?:/([\\d\\.]+))?\\s*</center>|<hr><center>nginx</center>",
-        "version_pattern": "nginx/([\\d\\.]+)",
-        "flags": "is"
-      },
-      {
-        "name": "Nginx Error Simple",
-        "technology": "Nginx",
-        "category": "WebServer",
-        "pattern": "<title>\\s*\\d{3}\\s+.*</title>.*<center>nginx</center>",
-        "flags": "is"
-      },
-      {
-        "name": "Tomcat Error Page",
-        "technology": "Apache Tomcat",
-        "category": "WebServer",
-        "pattern": "<h1>\\s*HTTP Status\\s+\\d{3}.*</h1>.*<h3>\\s*Apache Tomcat/([\\d\\.]+)|Apache\\s+Tomcat/([\\d\\.]+)\\s+-\\s+Error\\s+report|<title>\\s*Apache\\s+Tomcat.*-\\s+Error\\s+report\\s*</title>",
-        "version_pattern": "Apache\\s+Tomcat/([\\d\\.]+)",
-        "flags": "is"
-      },
-      {
-        "name": "Tomcat Status Report",
-        "technology": "Apache Tomcat",
-        "category": "WebServer",
-        "pattern": "<h1>\\s*HTTP\\s+Status\\s+\\d{3}.*</h1>.*<hr\\s+class=\"line\"\\s*/>.*<b>type</b>\\s+Status\\s+report",
-        "flags": "is"
-      },
-      {
-        "name": "IIS Error Page",
-        "technology": "IIS",
-        "category": "WebServer",
-        "pattern": "<h2>\\s*\\d{3}(?:\\.\\d+)?\\s+-.*</h2>.*Internet\\s+Information\\s+Services|Server Error in '/' Application|<title>\\s*IIS\\s+\\d+\\.\\d+\\s+Detailed\\s+Error.*</title>|HTTP Error \\d{3}\\.\\d+ - [^<]+<br>Internet Information Services",
-        "version_pattern": "IIS[/\\s]+([\\d\\.]+)",
-        "flags": "is"
-      },
-      {
-        "name": "IIS Default Error",
-        "technology": "IIS",
-        "category": "WebServer",
-        "pattern": "HTTP\\s+Error\\s+\\d{3}.*Most\\s+likely\\s+causes:|<h1>\\s*Server\\s+Error\\s+in\\s+'/[^']*'\\s+Application\\.?</h1>",
-        "flags": "is"
-      },
-      {
-        "name": "CloudFront Error",
-        "technology": "AWS CloudFront",
-        "category": "CDN",
-        "pattern": "<title>\\s*ERROR:\\s+The\\s+request\\s+could\\s+not\\s+be\\s+satisfied\\s*</title>|Generated\\s+by\\s+cloudfront\\s+\\(CloudFront\\)|<h1>\\s*\\d{3}\\s+ERROR\\s*</h1>.*CloudFront|Request\\s+ID:\\s*[A-Z0-9]{20,}==",
-        "flags": "is"
-      },
-      {
-        "name": "CloudFlare Error",
-        "technology": "CloudFlare",
-        "category": "WebServer",
-        "pattern": "cloudflare-nginx|<title>.*\\|\\s*\\d{3}:.*\\|\\s*Cloudflare\\s*</title>|cf-ray:\\s*[a-f0-9]{16}|cloudflare\\.com/error-\\d{3}",
-        "flags": "is"
-      },
-      {
-        "name": "Aruba Proxy Error",
-        "technology": "Aruba Proxy",
-        "category": "Proxy",
-        "pattern": "Aruba\\.it\\s+Proxy\\s+Error|<title>\\s*Aruba\\.it\\s+-\\s+Errore\\s*</title>|proxy\\.aruba\\.it",
-        "flags": "is"
-      },
-      {
-        "name": "IBM HTTP Server Error",
-        "technology": "IBM HTTP Server",
-        "category": "WebServer",
-        "pattern": "IBM_HTTP_Server(?:/([\\d\\.]+))?\\s+at|<address>.*IBM_HTTP_Server.*</address>|IBM\\s+HTTP\\s+Server\\s+Error",
-        "version_pattern": "IBM_HTTP_Server/([\\d\\.]+)",
-        "flags": "is"
-      },
-      {
-        "name": "LiteSpeed Error",
-        "technology": "LiteSpeed",
-        "category": "WebServer",
-        "pattern": "LiteSpeed\\s+Web\\s+Server|<hr.*>\\s*<address>.*LiteSpeed.*</address>|Proudly\\s+powered\\s+by\\s+LiteSpeed\\s+Web\\s+Server",
-        "version_pattern": "LiteSpeed/([\\d\\.]+)",
-        "flags": "is"
-      },
-      {
-        "name": "OpenResty Error",
-        "technology": "OpenResty",
-        "category": "WebServer",
-        "pattern": "<center>\\s*openresty(?:/([\\d\\.]+))?\\s*</center>|<hr>\\s*<center>\\s*openresty\\s*</center>",
-        "version_pattern": "openresty/([\\d\\.]+)",
-        "flags": "is"
-      },
-      {
-        "name": "Jetty Error",
-        "technology": "Eclipse Jetty",
-        "category": "WebServer",
-        "pattern": "Powered\\s+by\\s+Jetty://\\s*(?:([\\d\\.]+))?|<hr>\\s*<i>\\s*<small>\\s*Powered\\s+by\\s+Jetty",
-        "version_pattern": "Jetty(?://|\\s+v?)([\\d\\.]+)",
-        "flags": "is"
-      },
-      {
-        "name": "Generic Technology Footer",
-        "technology": "Various",
-        "category": "Footer",
-        "pattern": "<(?:address|footer|div[^>]*footer[^>]*)>([^<]*(?:Apache|nginx|IIS|Tomcat|Jetty|LiteSpeed|OpenResty)[^<]*)</",
-        "extract_tech": true,
-        "flags": "is"
-      },
-      {
-        "name": "Version Extraction Pattern",
-        "technology": "Version",
-        "category": "Version",
-        "pattern": "(?:Apache|nginx|IIS|Tomcat|Jetty|LiteSpeed|OpenResty|IBM_HTTP_Server)[/\\s]+v?([\\d\\.]+)",
-        "extract_version": true,
-        "flags": "i"
-      }
-    ]
-  }
+  "patterns": [
+    {
+      "name": "Apache Error Page",
+      "technology": "Apache",
+      "category": "WebServer",
+      "pattern": "<title>\\s*\\d{3}\\s+.*</title>.*Apache(?:/([\\d\\.]+))?\\s+(?:\\([^)]+\\))?\\s+Server\\s+at|Apache(?:/([\\d\\.]+))?\\s+Server\\s+Port|<address>\\s*Apache.*Server",
+      "version_pattern": "Apache/([\\d\\.]+)",
+      "flags": "is"
+    },
+    {
+      "name": "Ubuntu OS Detection",
+      "technology": "Ubuntu",
+      "category": "Os", 
+      "pattern": "Apache/[\\d\\.]+\\s+\\(Ubuntu\\)|Server\\s+at\\s+[^<]+\\s+Port\\s+\\d+</address>.*Ubuntu",
+      "version_pattern": "\\(Ubuntu\\s+([\\d\\.]+)\\)|Ubuntu[/\\s]+([\\d\\.]+)",
+      "flags": "is"
+    },
+    {
+      "name": "Debian OS Detection",
+      "technology": "Debian",
+      "category": "Os", 
+      "pattern": "Apache/[\\d\\.]+\\s+\\(Debian\\)|Server\\s+at\\s+[^<]+\\s+Port\\s+\\d+</address>.*Debian",
+      "version_pattern": "\\(Debian\\s+([\\d\\.]+)\\)|Debian[/\\s]+([\\d\\.]+)",
+      "flags": "is"
+    },
+    {
+      "name": "Apache Forbidden",
+      "technology": "Apache",
+      "category": "WebServer",
+      "pattern": "You don't have permission to access.*on this server\\.?</p>\\s*(?:<hr>)?\\s*<address>.*Apache",
+      "flags": "is"
+    },
+    {
+      "name": "Azure Error Page",
+      "technology": "Azure",
+      "category": "CloudPlatform",
+      "pattern": "<title>.*Azure.*Error.*</title>|Azure\\s+Web\\s+App|Microsoft\\s+Azure|The\\s+resource\\s+you\\s+are\\s+looking\\s+for\\s+has\\s+been\\s+removed",
+      "flags": "i"
+    },
+    {
+      "name": "Nginx Error Page",
+      "technology": "Nginx",
+      "category": "WebServer",
+      "pattern": "<center>\\s*<h1>\\s*\\d{3}\\s+.*</h1>\\s*</center>\\s*<hr>\\s*<center>\\s*nginx(?:/([\\d\\.]+))?\\s*</center>|<hr><center>nginx</center>",
+      "version_pattern": "nginx/([\\d\\.]+)",
+      "flags": "is"
+    },
+    {
+      "name": "Nginx Error Simple",
+      "technology": "Nginx",
+      "category": "WebServer",
+      "pattern": "<title>\\s*\\d{3}\\s+.*</title>.*<center>nginx</center>",
+      "flags": "is"
+    },
+    {
+      "name": "Tomcat Error Page",
+      "technology": "Apache Tomcat",
+      "category": "WebServer",
+      "pattern": "<h1>\\s*HTTP Status\\s+\\d{3}.*</h1>.*<h3>\\s*Apache Tomcat/([\\d\\.]+)|Apache\\s+Tomcat/([\\d\\.]+)\\s+-\\s+Error\\s+report|<title>\\s*Apache\\s+Tomcat.*-\\s+Error\\s+report\\s*</title>",
+      "version_pattern": "Apache\\s+Tomcat/([\\d\\.]+)",
+      "flags": "is"
+    },
+    {
+      "name": "Tomcat Status Report",
+      "technology": "Apache Tomcat",
+      "category": "WebServer",
+      "pattern": "<h1>\\s*HTTP\\s+Status\\s+\\d{3}.*</h1>.*<hr\\s+class=\"line\"\\s*/>.*<b>type</b>\\s+Status\\s+report",
+      "flags": "is"
+    },
+    {
+      "name": "IIS Error Page",
+      "technology": "Microsoft-IIS",
+      "category": "WebServer",
+      "pattern": "<h2>\\s*\\d{3}(?:\\.\\d+)?\\s+-.*</h2>.*Internet\\s+Information\\s+Services|Server Error in '/' Application|<title>\\s*IIS\\s+\\d+\\.\\d+\\s+Detailed\\s+Error.*</title>|HTTP Error \\d{3}\\.\\d+ - [^<]+<br>Internet Information Services",
+      "version_pattern": "IIS[/\\s]+([\\d\\.]+)",
+      "flags": "is"
+    },
+    {
+      "name": "IIS Default Error",
+      "technology": "Microsoft-IIS",
+      "category": "WebServer",
+      "pattern": "HTTP\\s+Error\\s+\\d{3}.*Most\\s+likely\\s+causes:|<h1>\\s*Server\\s+Error\\s+in\\s+'/[^']*'\\s+Application\\.?</h1>",
+      "flags": "is"
+    },
+    {
+      "name": "CloudFront Error",
+      "technology": "AWS CloudFront",
+      "category": "CDN",
+      "pattern": "<title>\\s*ERROR:\\s+The\\s+request\\s+could\\s+not\\s+be\\s+satisfied\\s*</title>|Generated\\s+by\\s+cloudfront\\s+\\(CloudFront\\)|<h1>\\s*\\d{3}\\s+ERROR\\s*</h1>.*CloudFront|Request\\s+ID:\\s*[A-Z0-9]{20,}==",
+      "flags": "is"
+    },
+    {
+      "name": "CloudFlare Error",
+      "technology": "CloudFlare",
+      "category": "WebServer",
+      "pattern": "cloudflare-nginx|<title>.*\\|\\s*\\d{3}:.*\\|\\s*Cloudflare\\s*</title>|cf-ray:\\s*[a-f0-9]{16}|cloudflare\\.com/error-\\d{3}",
+      "flags": "is"
+    },
+    {
+      "name": "Aruba Proxy Error",
+      "technology": "Aruba Proxy",
+      "category": "Proxy",
+      "pattern": "Aruba\\.it\\s+Proxy\\s+Error|<title>\\s*Aruba\\.it\\s+-\\s+Errore\\s*</title>|proxy\\.aruba\\.it",
+      "flags": "is"
+    },
+    {
+      "name": "IBM HTTP Server Error",
+      "technology": "IBM HTTP Server",
+      "category": "WebServer",
+      "pattern": "IBM_HTTP_Server(?:/([\\d\\.]+))?\\s+at|<address>.*IBM_HTTP_Server.*</address>|IBM\\s+HTTP\\s+Server\\s+Error",
+      "version_pattern": "IBM_HTTP_Server/([\\d\\.]+)",
+      "flags": "is"
+    },
+    {
+      "name": "LiteSpeed Error",
+      "technology": "LiteSpeed",
+      "category": "WebServer",
+      "pattern": "LiteSpeed\\s+Web\\s+Server|<hr.*>\\s*<address>.*LiteSpeed.*</address>|Proudly\\s+powered\\s+by\\s+LiteSpeed\\s+Web\\s+Server",
+      "version_pattern": "LiteSpeed/([\\d\\.]+)",
+      "flags": "is"
+    },
+    {
+      "name": "OpenResty Error",
+      "technology": "OpenResty",
+      "category": "WebServer",
+      "pattern": "<center>\\s*openresty(?:/([\\d\\.]+))?\\s*</center>|<hr>\\s*<center>\\s*openresty\\s*</center>",
+      "version_pattern": "openresty/([\\d\\.]+)",
+      "flags": "is"
+    },
+    {
+      "name": "Jetty Error",
+      "technology": "Eclipse Jetty",
+      "category": "WebServer",
+      "pattern": "Powered\\s+by\\s+Jetty://\\s*(?:([\\d\\.]+))?|<hr>\\s*<i>\\s*<small>\\s*Powered\\s+by\\s+Jetty",
+      "version_pattern": "Jetty(?://|\\s+v?)([\\d\\.]+)",
+      "flags": "is"
+    },
+    {
+      "name": "Generic Technology Footer",
+      "technology": "Various",
+      "category": "Footer",
+      "pattern": "<(?:address|footer|div[^>]*footer[^>]*)>([^<]*(?:Apache|nginx|IIS|Tomcat|Jetty|LiteSpeed|OpenResty)[^<]*)</",
+      "extract_tech": true,
+      "flags": "is"
+    },
+    {
+      "name": "Version Extraction Pattern",
+      "technology": "Version",
+      "category": "Version",
+      "pattern": "(?:Apache|nginx|IIS|Tomcat|Jetty|LiteSpeed|OpenResty|IBM_HTTP_Server)[/\\s]+v?([\\d\\.]+)",
+      "extract_version": true,
+      "flags": "i"
+    },
+    {
+      "name": "Apache Server",
+      "technology": "Apache",
+      "category": "WebServer",
+      "pattern": "Server:\\s*Apache",
+      "version_pattern": "Apache\\s+(\\d{4})",
+      "flags": "i"
+    },
+    {
+      "name": "Microsoft HTTP API",
+      "technology": "Microsoft-HTTPAPI",
+      "category": "WebServer",
+      "pattern": "Server:\\s*Microsoft-HTTPAPI/(\\d+\\.\\d+)",
+      "flags": "i"
+    },
+    {
+      "name": "PHP in Server Signature",
+      "technology": "PHP",
+      "category": "Interpret",
+      "pattern": "PHP/([\\d\\.\\-+a-zA-Z]+(?:deb\\d+u\\d+)?)",
+      "version_pattern": "PHP/([\\d\\.\\-+a-zA-Z]+(?:deb\\d+u\\d+)?)",
+      "flags": "i"
+    },
+    {
+      "name": "OpenSSL in Server Signature", 
+      "technology": "OpenSSL",
+      "category": "Cryptography",
+      "pattern": "OpenSSL/([\\d\\.]+[a-z]?)",
+      "version_pattern": "OpenSSL/([\\d\\.]+[a-z]?)",
+      "flags": "i"
+    }
+  ]
+}

@@ -41,6 +41,8 @@ class HDRVAL:
         self.raw_response_400 = responses.raw_resp_400
         self.response_favicon = responses.resp_favicon
         self.long_response = responses.long_resp
+        self.http_resp = responses.http_resp
+        self.https_resp = responses.https_resp
 
         self.definitions = self.helpers.load_definitions("hdrval.json")
 
@@ -62,13 +64,17 @@ class HDRVAL:
         headers_200 = self._get_response_headers(self.response_hp)
         headers_400 = self._get_response_headers(self.raw_response_400) if self.raw_response_400 else {}
         headers_favicon = self._get_response_headers(self.response_favicon)
-        headers_long= self._get_response_headers(self.long_response)
+        headers_long = self._get_response_headers(self.long_response)
+        headers_http = self._get_response_headers(self.http_resp)if self.http_resp is not None else {}
+        headers_https = self._get_response_headers(self.https_resp)if self.https_resp is not None else {}
 
         combined_headers = self._combine_headers({
             '200': headers_200,
             '400': headers_400,
             'favicon': headers_favicon,
-            'long': headers_long
+            'long': headers_long,
+            'HTTP': headers_http,
+            'HTTPS': headers_https
         })
 
         if not combined_headers:
@@ -118,9 +124,7 @@ class HDRVAL:
 
     def _get_response_headers(self, response) -> Dict[str, str]:
         """
-        Extract and normalize headers from an HTTP response object.
-
-        Supports multiple response formats (e.g., with .headers, .msg, or .getheaders).
+        Extract and normalize headers from an HTTP response object
 
         Args:
             response: HTTP response object.
@@ -128,29 +132,12 @@ class HDRVAL:
         Returns:
             Dictionary of headers with lowercase keys.
         """
-        if not response:
-            return {}
-
         headers = {}
-
-        if hasattr(response, 'headers'):
-            if hasattr(response.headers, 'items'):
-                headers = {k.lower(): v for k, v in response.headers.items()}
-            else:
-                for header_name, header_value in response.headers:
-                    headers[header_name.lower()] = header_value
-        elif hasattr(response, 'msg') and hasattr(response.msg, 'items'):
-            headers = {k.lower(): v for k, v in response.msg.items()}
-        elif hasattr(response, 'getheaders'):
-            for header_name, header_value in response.getheaders():
-                headers[header_name.lower()] = header_value
-
-        if hasattr(response, 'msg') and hasattr(response.msg, 'keys'):
-            for key in response.msg.keys():
-                if key.lower() not in headers:
-                    headers[key.lower()] = response.msg[key]
-
-        return headers
+        
+        if response is not None and hasattr(response, 'headers'):
+            headers = {k.lower(): v for k, v in dict(response.headers).items()}
+        
+            return headers
 
     def _combine_headers(self, source_headers: Dict[str, Dict[str, str]]) -> Dict[str, Dict[str, Any]]:
         """
@@ -548,7 +535,7 @@ class HDRVAL:
             if isinstance(definition, dict) and 'content' in definition:
                 if definition['content'].lower() == tech_name:
                     return {
-                        'category': definition.get('category', 'unknown'),
+                        'category': definition.get('category', 'Unknown'),
                         'technology': definition.get('technology', technology['name']),
                         'name': technology['name'],
                         'version': technology['version'],
@@ -566,7 +553,7 @@ class HDRVAL:
             is_classified: Whether the technology was matched against known definitions
         """
         
-        if is_classified and tech.get('category') != 'unknown':
+        if is_classified and tech.get('category') != 'Unknown':
             tech_type = tech['category']
         else:
             tech_type = None
@@ -597,11 +584,15 @@ class HDRVAL:
 
     def _get_source_description(self, source: str) -> str:
         """Map source names to their descriptive labels with status codes."""
+        sc_http = getattr(self.http_resp, 'status_code', 0)
+        sc_https = getattr(self.https_resp, 'status_code', 0)
         source_map = {
             '200': '200 HP',
             '400': '400 %', 
             'favicon': '200 FAVICON',
-            'long': '400 LONGURL'
+            'long': '400 LONGURL',
+            'HTTP': f"{sc_http} HTTP",
+            'HTTPS': f"{sc_https} HTTPS"
         }
         return source_map.get(source, source.upper())
 
@@ -664,7 +655,7 @@ class HDRVAL:
                     if is_classified and 'category' in tech:
                         category_text = f" ({tech['category']})"
                     elif not is_classified:
-                        category_text = " (unknown)"
+                        category_text = " (Unknown)"
 
                     version_text = f" {tech['version']}" if tech.get('version') else ""
                     tech_name = tech.get('technology', tech['name'])

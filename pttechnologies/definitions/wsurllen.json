@@ -11,7 +11,7 @@
     },
     {
       "category": "WebServer",
-      "technology": "IIS",
+      "technology": "Microsoft-IIS",
       "statuses": ["400", "400", "400", "400", "400", "400", "400", "400", "414"]
     },
     {

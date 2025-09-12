@@ -33,3 +33,5 @@ class StoredResponses:
     raw_resp_400: Optional[RawHttpResponse]
     resp_favicon: Optional[Response]
     long_resp: Optional[Response]
+    http_resp: Optional[Response]
+    https_resp: Optional[Response]

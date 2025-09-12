@@ -22,12 +22,12 @@
     },
     {
         "category": "WebServer",
-        "technology": "IIS",
+        "technology": "Microsoft-IIS",
         "order": ["content-type", "content-length", "date"]
     },
     {
         "category": "WebServer",
-        "technology": "IIS",
+        "technology": "Microsoft-IIS",
         "order": ["content-type", "server", "date", "content-length"]
     }
 ]

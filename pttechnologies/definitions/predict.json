@@ -18,13 +18,13 @@
     },
     {
         "when":[
-            {"technology": "IIS"}
+            {"technology": "Microsoft-IIS"}
         ],
         "predict":[
             {
                 "technology": "Windows",
                 "technology_type": "Os",
-                "description": "IIS (Webserver)"
+                "description": "Microsoft-IIS (Webserver)"
             }
         ]
     },
@@ -39,7 +39,7 @@
                 "description": "ASP (Interpret)"
             },
             {   
-                "technology": "IIS",
+                "technology": "Microsoft-IIS",
                 "technology_type": "Webserver",
                 "description": "ASP (Interpret)"
             }
@@ -56,7 +56,7 @@
                 "description": "ASP.NET (Framework)"
             },
             {
-                "technology": "IIS",
+                "technology": "Microsoft-IIS",
                 "technology_type": "Webserver",
                 "description": "ASP.NET (Framework)"
             }
@@ -81,105 +81,105 @@
     },
     {
         "when":[
-            {"technology": "IIS", "version": "10.0"}
+            {"technology": "Microsoft-IIS", "version": "10.0"}
         ],
         "predict":[
             {
                 "technology": "Windows",
                 "technology_type": "Os",
                 "version": "2016, 2019, 2022",
-                "description": "IIS 10.0 (Webserver)"
+                "description": "Microsoft-IIS 10.0 (Webserver)"
             }
         ]
     },
     {   
         "when":[
-            {"technology": "IIS", "version": "8.5"}
+            {"technology": "Microsoft-IIS", "version": "8.5"}
         ],
         "predict":[
             {
                 "technology": "Windows",
                 "technology_type": "Os",
                 "version": "2012 R2",
-                "description": "IIS 8.5 (Webserver)"
+                "description": "Microsoft-IIS 8.5 (Webserver)"
             }
         ]
     },
     {
         "when":[
-            {"technology": "IIS", "version": "8.0"}
+            {"technology": "Microsoft-IIS", "version": "8.0"}
         ],
         "predict":[
             {
                 "technology": "Windows",
                 "technology_type": "Os",
                 "version": "2012",
-                "description": "IIS 8.0 (Webserver)"
+                "description": "Microsoft-IIS 8.0 (Webserver)"
             }
         ]
     },
     {
         "when":[
-            {"technology": "IIS", "version": "7.5"}
+            {"technology": "Microsoft-IIS", "version": "7.5"}
         ],
         "predict":[
             {
                 "technology": "Windows",
                 "technology_type": "Os",
                 "version": "2008 R2",
-                "description": "IIS 7.5 (Webserver)"
+                "description": "Microsoft-IIS 7.5 (Webserver)"
             }
         ]
     },
     {
         "when":[
-            {"technology": "IIS", "version": "7.0"}
+            {"technology": "Microsoft-IIS", "version": "7.0"}
         ],
         "predict":[
             {
                 "technology": "Windows",
                 "technology_type": "Os",
                 "version": "2008",
-                "description": "IIS 7.0 (Webserver)"
+                "description": "Microsoft-IIS 7.0 (Webserver)"
             }
         ]
     },
     {
         "when":[
-            {"technology": "IIS", "version": "6.0"}
+            {"technology": "Microsoft-IIS", "version": "6.0"}
         ],
         "predict":[
             {
                 "technology": "Windows",
                 "technology_type": "Os",
                 "version": "2003",
-                "description": "IIS 6.0 (Webserver)"
+                "description": "Microsoft-IIS 6.0 (Webserver)"
             }
         ]
     },
     {
         "when":[
-            {"technology": "IIS", "version": "5.1"}
+            {"technology": "Microsoft-IIS", "version": "5.1"}
         ],
         "predict":[
             {   
                 "technology": "Windows",
                 "technology_type": "Os",
                 "version": "XP Professional",
-                "description": "IIS 5.1 (Webserver)"
+                "description": "Microsoft-IIS 5.1 (Webserver)"
             }
         ]
     },
     {
         "when":[
-            {"technology": "IIS", "version": "5.0"}
+            {"technology": "Microsoft-IIS", "version": "5.0"}
         ],
         "predict":[
             {
                 "technology": "Windows",
                 "technology_type": "Os",
                 "version": "200",
-                "description": "IIS 5.0 (Webserver)"
+                "description": "Microsoft-IIS 5.0 (Webserver)"
             }
         ]
     },
