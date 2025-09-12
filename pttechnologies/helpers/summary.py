@@ -33,6 +33,18 @@ class Summary:
         """
         self.args = args
         self.ptjsonlib = ptjsonlib
+        
+        self.categories = {
+            "Operating System": ["Os"],
+            "Web Server": ["WebServer"],
+            "Web App": ["WebApp"],
+            "Proxy / WAF": ["Proxy", "WAF", "CDN","ELB"],
+            "Plugins": ["Plugin"],
+            "Templates": ["Template"],
+            "Database": ["Database"],
+            "Programming Language": ["Interpret", "BackendFramework", "FrontendFramework"],
+            "Other": []
+        }
     
     def run(self):
         """
@@ -54,10 +66,9 @@ class Summary:
     
     def _generate_console_output(self):
         """
-        Generate formatted console output showing identified technologies.
+        Generate formatted console output showing identified technologies by categories.
         
-        Displays a summary table with technology names, types, and calculated
-        probability percentages based on stored scan results.
+        Displays technologies grouped by category, sorted by probability in descending order.
         
         Returns:
             None
@@ -70,6 +81,25 @@ class Summary:
             ptprint("No technologies identified", "INFO", True, indent=4)
             return
         
+        categorized_techs = self._categorize_technologies(technologies)
+        
+        for category_name in self.categories.keys():
+            techs_in_category = categorized_techs.get(category_name, [])
+            if techs_in_category or category_name != "Other":
+                self._display_category(category_name, techs_in_category)
+    
+    def _categorize_technologies(self, technologies):
+        """
+        Categorize technologies based on their type and calculate probabilities.
+        
+        Args:
+            technologies: List of technology information dictionaries.
+            
+        Returns:
+            Dictionary with categories as keys and lists of technology info as values.
+        """
+        categorized = {}
+        
         for tech_info in technologies:
             technology = tech_info["technology"]
             version = tech_info["version"]
@@ -79,11 +109,67 @@ class Summary:
             if not data:
                 continue
             
+            technology_type = data.get("technology_type")
             probability = self._calculate_probability(data)
             
-            tech_display = self._format_technology_display(technology, version, data.get("technology_type"))
+            category = self._find_category(technology_type)
             
-            ptprint(f"{tech_display} ({probability}%)", "VULN", True, indent=4)
+            if category not in categorized:
+                categorized[category] = []
+            
+            tech_entry = {
+                "name": technology,
+                "version": version,
+                "probability": probability,
+                "type": technology_type
+            }
+            
+            categorized[category].append(tech_entry)
+        
+        for category in categorized:
+            categorized[category].sort(key=lambda x: x["probability"], reverse=True)
+        
+        return categorized
+    
+    def _find_category(self, technology_type):
+        """
+        Find the appropriate category for a technology type.
+        
+        Args:
+            technology_type: The type of technology to categorize.
+            
+        Returns:
+            String representing the category name.
+        """
+        if not technology_type:
+            return "Other"
+        
+        for category, types in self.categories.items():
+            if technology_type in types:
+                return category
+        
+        return "Other"
+    
+    def _display_category(self, category_name, technologies):
+        """
+        Display a single category with its technologies.
+        
+        Args:
+            category_name: Name of the category to display.
+            technologies: List of technology dictionaries for this category.
+        """
+        ptprint(f"{category_name}", "INFO", True, colortext=True, indent=4)
+        
+        if not technologies:
+            ptprint("-", "TEXT", not self.args.json, indent=8)
+        else:
+            for tech in technologies:
+                tech_display = tech["name"]
+                if tech["version"]:
+                    tech_display += f" {tech['version']}"
+                tech_display += f" ({tech['probability']}%)"
+
+                ptprint(f"{tech_display}", "TEXT", not self.args.json, indent=8)
     
     def _generate_json_output(self):
         """
