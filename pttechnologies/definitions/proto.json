@@ -1,0 +1,27 @@
+[
+    {
+        "category": "WebServer", 
+        "technology": "Apache",
+        "statuses": ["501", "400", "200"]
+      },
+      {
+        "category": "CDN",
+        "technology": "Google Frontend ", 
+        "statuses": ["None", "400", "400"]
+      },
+      {
+        "category": "WebServer",
+        "technology": "Nginx ", 
+        "statuses": ["None", "0", "505"]
+      },
+      {
+        "category": "WebServer",
+        "technology": "Apache ", 
+        "statuses": ["None", "400", "None"]
+      },
+      {
+        "category": "WebServer",
+        "technology": "Apache", 
+        "statuses": ["501", null, null]
+      }
+]
