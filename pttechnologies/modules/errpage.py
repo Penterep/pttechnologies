@@ -5,12 +5,9 @@ This module analyzes error pages served by web servers by deliberately triggerin
 various HTTP error conditions. Different web servers and technologies have distinct
 error page formats that can reveal technology information.
 
-The module tests various error conditions:
-- 404 Not Found (non-existent pages)
-- 403 Forbidden (restricted files like .ht, .htaccess)
-- 400 Bad Request (invalid URLs with %, empty headers)
-- 414 URI Too Long (extremely long URLs)
-- 505 HTTP Version Not Supported (invalid HTTP versions)
+The module tests multiple error conditions including 404 Not Found, 400 Bad Request,
+414 URI Too Long, 403 Forbidden, and malformed HTTP requests. It uses regular
+expressions to identify technologies and versions from error page content.
 
 Includes:
 - ERRPAGE class to perform error page analysis and classification.
@@ -21,38 +18,46 @@ Usage:
 """
 
 import re
-import socket
-import ssl
-from urllib.parse import urlparse, urljoin
+from typing import List, Dict, Any, Optional
 from helpers.result_storage import storage
 from helpers.stored_responses import StoredResponses
-
-from typing import List, Dict, Any, Optional, Tuple
 from ptlibs.ptprinthelper import ptprint
 
 __TESTLABEL__ = "Test error pages for technology identification"
 
 
 class ERRPAGE:
+    TRIGGER_MAP = {
+        "404 Not Found": "resp_404",
+        "400 Bad Request (percent)": "raw_resp_400", 
+        "414 URI Too Long": "long_resp",
+        "403 Forbidden (.ht)": "/.ht",
+        "403 Forbidden (.htaccess)": "/.htaccess",
+        "400 Invalid Header": {"path": "/", "headers": {"Accept": ""}},
+        "Invalid HTTP method": {"request_line": "FOO / HTTP/9.8"},
+        "400 Invalid Protocol": {"request_line": " GET / FOO/1.1"},
+        "505 Invalid HTTP Version": {"request_line": "GET / HTTP/9.8"}
+    }
+
     def __init__(self, args: object, ptjsonlib: object, helpers: object, http_client: object, responses: StoredResponses) -> None:
         """Initialize the ERRPAGE test with provided components and load error page definitions."""
         self.args = args
-        self.ptjsonlib = ptjsonlib
         self.helpers = helpers
-        self.http_client = http_client
+        self.response_404 = responses.resp_404
+        self.raw_response_400 = responses.raw_resp_400
+        self.long_response = responses.long_resp
         
         self.errpage_definitions = self.helpers.load_definitions("errpage.json")
         self.defpage_definitions = self.helpers.load_definitions("defpage.json")
         
-        self.all_patterns = []
+        self.patterns = []
         if self.errpage_definitions:
-            self.all_patterns.extend(self.errpage_definitions.get('patterns', []))
+            self.patterns.extend(self.errpage_definitions.get('patterns', []))
         if self.defpage_definitions:
-            self.all_patterns.extend(self.defpage_definitions.get('patterns', []))
+            self.patterns.extend(self.defpage_definitions.get('patterns', []))
         
         self.base_url = args.url.rstrip('/')
         self.detected_technologies = []
-        self.tested_triggers = []
 
     def run(self) -> None:
         """
@@ -63,199 +68,84 @@ class ERRPAGE:
         """
         ptprint(__TESTLABEL__, "TITLE", not self.args.json, colortext=True)
 
-        if not self.errpage_definitions:
-            ptprint("No error page definitions loaded", "INFO", not self.args.json, indent=4)
+        if not self.patterns:
+            ptprint("No error page definitions loaded from errpage.json or defpage.json", "INFO", not self.args.json, indent=4)
             return
 
-        error_triggers = self.errpage_definitions.get('error_triggers', [])
-        
-        if not error_triggers:
-            ptprint("No error triggers defined", "INFO", not self.args.json, indent=4)
-            return
-
-        for trigger in error_triggers:
-            self._test_error_trigger(trigger)
+        for trigger_name, trigger_config in self.TRIGGER_MAP.items():
+            self._test_error_trigger(trigger_name, trigger_config)
 
         self._report_findings()
-
-    def _test_error_trigger(self, trigger: Dict[str, Any]) -> None:
+    
+    def _test_error_trigger(self, trigger_name: str, trigger_config: Any) -> None:
         """
-        Test a specific error trigger condition.
+        Test a single error trigger.
         
         Args:
-            trigger: Error trigger definition from JSON
+            trigger_name: Name of the error trigger being tested
+            trigger_config: Configuration for the specific trigger
         """
-        trigger_name = trigger.get('name', 'Unknown Trigger')
-        method = trigger.get('method', 'GET')
-        
         try:
-            if method == 'RAW' or trigger.get('headers'):
-                response = self._send_raw_request(trigger)
-            else:
-                response = self._send_standard_request(trigger)
-            
-            if response is None:
+            response = self._get_response(trigger_config)
+            if not response:
                 return
-            
-            self.tested_triggers.append({
-                'name': trigger_name,
-                'method': method,
-                'path': trigger.get('path', '/'),
-                'status_code': getattr(response, 'status_code', 0),
-                'expected_status': trigger.get('expected_status', [])
-            })
-            
-            if hasattr(response, 'text') and response.text:                    
-                technologies = self._analyze_error_content(response.text, trigger_name)
                 
-                if technologies:
-                    for tech in technologies:
-                        tech['trigger'] = trigger_name
-                        tech['status_code'] = getattr(response, 'status_code', 0)
-                        tech['url'] = getattr(response, 'url', self.base_url)
-                        self.detected_technologies.append(tech)
-                
+            content = getattr(response, 'text', getattr(response, 'body', ''))
+            headers = getattr(response, 'headers', None)
+
+            if headers:
+                headers_str = "\n".join(f"{k.title()}: {v}" for k, v in headers.items())
+                content = f"{headers_str}\n\n{content}"
+            if not content:
+                return
+                    
+            technologies = self._analyze_error_content(content, trigger_name)
+            
+            for tech in technologies:
+                tech['trigger'] = trigger_name
+                tech['status_code'] = getattr(response, 'status_code', getattr(response, 'status', 0))
+                tech['url'] = getattr(response, 'url', self.base_url)
+                self.detected_technologies.append(tech)
+                        
         except Exception as e:
             if self.args.verbose:
                 ptprint(f"Error testing trigger {trigger_name}: {str(e)}", "INFO", not self.args.json, indent=8)
-            return
 
-    def _send_standard_request(self, trigger: Dict[str, Any]) -> Optional[object]:
+    def _get_response(self, trigger_config: Any) -> Optional[object]:
         """
-        Send a standard HTTP request for the given trigger.
+        Get response based on trigger configuration.
         
         Args:
-            trigger: Trigger configuration
+            trigger_config: Configuration specifying how to trigger the error
             
         Returns:
-            Response object or None
+            Response object or None if unable to get response
         """
-        method = trigger.get('method', 'GET')
-        path = trigger.get('path', '/')
+        if isinstance(trigger_config, str):
+            if trigger_config == "resp_404":
+                return self.response_404
+            elif trigger_config == "raw_resp_400":
+                return self.raw_response_400
+            elif trigger_config == "long_resp":
+                return self.long_response
+            elif trigger_config.startswith('/'):
+                return self.helpers._raw_request(self.base_url, trigger_config)
         
-        if '{LONG_PATH_8000}' in path:
-            path = path.replace('{LONG_PATH_8000}', 'a' * 8000)
-        elif '{LONG_PATH_' in path:
-            match = re.search(r'\{LONG_PATH_(\d+)\}', path)
-            if match:
-                length = int(match.group(1))
-                path = path.replace(match.group(0), 'a' * length)
+        elif isinstance(trigger_config, dict):
+            if trigger_config.get("method") == "request_line":
+                return self.helpers._raw_request(
+                    self.base_url,
+                    '/',
+                    custom_request_line=trigger_config.get("request_line")
+                )
+            else:
+                return self.helpers._raw_request(
+                    self.base_url, 
+                    trigger_config.get("path", "/"),
+                    extra_headers=trigger_config.get("headers", {})
+                )
         
-        url = urljoin(self.base_url + '/', path.lstrip('/'))
-
-        response = self.helpers.fetch(url)
-        
-        if response:
-            return response
         return None
-        
-    def _send_raw_request(self, trigger: Dict[str, Any]) -> Optional[object]:
-        """
-        Send a raw HTTP request for the given trigger.
-        
-        Args:
-            trigger: Trigger configuration
-            
-        Returns:
-            Response-like object or None
-        """
-        method = trigger.get('method', 'GET')
-        path = trigger.get('path', '/')
-        headers = trigger.get('headers', {})
-        raw_request_template = trigger.get('raw_request', '')
-        
-        if '{LONG_PATH_8000}' in path:
-            path = path.replace('{LONG_PATH_8000}', 'a' * 8000)
-        elif '{LONG_PATH_' in path:
-            match = re.search(r'\{LONG_PATH_(\d+)\}', path)
-            if match:
-                length = int(match.group(1))
-                path = path.replace(match.group(0), 'a' * length)
-        
-        parsed_url = urlparse(self.base_url)
-        host = parsed_url.hostname or 'localhost'
-        port = parsed_url.port or (443 if parsed_url.scheme == 'https' else 80)
-        
-        if raw_request_template:
-            raw_request = raw_request_template.replace('{host}', host)
-            raw_request = raw_request.replace('\\r\\n', '\r\n')
-            raw_request = raw_request.replace('\\n', '\n')
-        else:
-            raw_request = f"{method} {path} HTTP/1.1\r\n"
-            raw_request += f"Host: {host}\r\n"
-            
-            for header_name, header_value in headers.items():
-                raw_request += f"{header_name}: {header_value}\r\n"
-            
-            raw_request += "\r\n"
-        
-        return self._send_custom_raw_request(raw_request, parsed_url, host, port)
-
-    def _send_custom_raw_request(self, raw_request: str, parsed_url: object, host: str, port: int) -> Optional[object]:
-        """
-        Send a custom raw HTTP request.
-        
-        Args:
-            raw_request: The raw HTTP request string
-            parsed_url: Parsed URL object
-            host: Target hostname
-            port: Target port
-            
-        Returns:
-            Response-like object or None
-        """
-        try:
-            sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-            sock.settimeout(10)
-            
-            if parsed_url.scheme == 'https':
-                context = ssl.create_default_context()
-                context.check_hostname = False
-                context.verify_mode = ssl.CERT_NONE
-                sock = context.wrap_socket(sock, server_hostname=host)
-            
-            sock.connect((host, port))
-            sock.send(raw_request.encode('utf-8'))
-            
-            response_data = b''
-            while True:
-                try:
-                    chunk = sock.recv(4096)
-                    if not chunk:
-                        break
-                    response_data += chunk
-                    if len(response_data) > 100000:
-                        break
-                except socket.timeout:
-                    break
-            
-            sock.close()
-            
-            response_text = response_data.decode('utf-8', errors='ignore')
-            
-            status_code = 0
-            if response_text:
-                lines = response_text.split('\n')
-                if lines and 'HTTP/' in lines[0]:
-                    parts = lines[0].split()
-                    if len(parts) >= 2:
-                        try:
-                            status_code = int(parts[1])
-                        except ValueError:
-                            pass
-            
-            class RawResponse:
-                def __init__(self, text, status_code, url):
-                    self.text = text
-                    self.status_code = status_code
-                    self.url = url
-            
-            return RawResponse(response_text, status_code, f"{parsed_url.scheme}://{host}:{port}/")
-            
-        except Exception as e:
-            if self.args.verbose:
-                ptprint(f"Custom raw request failed: {str(e)}", "INFO", not self.args.json, indent=8)
-            return None
 
     def _analyze_error_content(self, content: str, trigger_name: str) -> List[Dict[str, Any]]:
         """
@@ -285,6 +175,7 @@ class ERRPAGE:
                 
                 if tech_key not in seen_technologies:
                     match_result['trigger_name'] = trigger_name
+                    match_result['source'] = pattern_def.get('source', 'unknown')
                     detected.append(match_result)
                     seen_technologies.add(tech_key)
         
@@ -306,7 +197,7 @@ class ERRPAGE:
             return None
             
         flags = pattern_def.get('flags', 'i')
-        
+
         re_flags = 0
         if 'i' in flags.lower():
             re_flags |= re.IGNORECASE
@@ -378,10 +269,10 @@ class ERRPAGE:
                 ptprint(f"Detected via: {tech.get('trigger_name', 'unknown')} [HTTP {tech.get('status_code', '?')}]", 
                        "ADDITIONS", not self.args.json, indent=8, colortext=True)
                 if tech.get('pattern_used'):
-                    ptprint(f"Pattern used: {tech.get('pattern_used')}", 
+                    ptprint(f"Pattern: {tech.get('pattern_used')[:100]}{'...' if len(tech.get('pattern_used', '')) > 100 else ''}", 
                            "ADDITIONS", not self.args.json, indent=8, colortext=True)
                 if tech.get('matched_text'):
-                    ptprint(f"Matched text: '{tech.get('matched_text')}'", 
+                    ptprint(f"Match: '{tech.get('matched_text')}'", 
                            "ADDITIONS", not self.args.json, indent=8, colortext=True)
 
         for tech in unique_techs.values():

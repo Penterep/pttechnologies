@@ -9,6 +9,9 @@ test modules.
 import json
 import os
 import socket
+import ssl
+
+from urllib.parse import urlparse
 
 from ptlibs.http.http_client import HttpClient
 from ptlibs.http.raw_http_client import RawHttpResponse
@@ -57,12 +60,18 @@ class Helpers:
         Returns:
             Response: The HTTP response object.
         """
+
+        if self.args.redirects:
+            redirects = True
+        else:
+            redirects = allow_redirects
+
         try:
             response = self.http_client.send_request(
                 url=url,
                 method="GET",
                 headers=self.args.headers,
-                allow_redirects=allow_redirects,
+                allow_redirects=redirects,
                 timeout=self.args.timeout
             )
             return response
@@ -101,7 +110,7 @@ class Helpers:
 
         return None
 
-    def _raw_request(self, base_url: str, path: str, extra_headers: dict[str, str] | None = None) -> RawHttpResponse | None:
+    def _raw_request(self, base_url: str, path: str, extra_headers: dict[str, str] | None = None, custom_request_line: str | None = None) -> RawHttpResponse | None:
         """
         Send a raw HTTP GET request to the given URL with optional extra headers.
 
@@ -121,7 +130,8 @@ class Helpers:
                 method="GET",
                 headers=final_headers,
                 timeout=getattr(self.args, 'timeout', 10),
-                proxies=getattr(self.args, 'proxy', None)
+                proxies=getattr(self.args, 'proxy', None),
+                custom_request_line=custom_request_line
             )
             return response
         except (socket.timeout, ssl.SSLError, OSError) as e:
