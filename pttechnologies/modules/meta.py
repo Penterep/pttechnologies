@@ -264,6 +264,15 @@ class Meta:
         main_message = f"{display_content} (Unknown)"
         detail_message = f"<- Meta tag '{meta_name}': {content[:50]}{'...' if len(content) > 50 else ''}"
         
+        description = self._create_description(meta_name, content)
+        storage.add_to_storage(
+            technology=display_content,
+            version=None,
+            technology_type="Unknown",
+            probability=100,
+            description=description
+        )
+
         ptprint(main_message, "VULN", not self.args.json, end="", indent=4)
         if self.args.verbose:
             ptprint(f" {detail_message}", "ADDITIONS", not self.args.json, colortext=True)
