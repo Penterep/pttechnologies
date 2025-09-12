@@ -58,7 +58,7 @@ class OSCS:
         ptprint(__TESTLABEL__, "TITLE", not self.args.json, colortext=True)
         resource = self._find_static_resource()
         if not resource:
-            ptprint("No static source found for test", "ERROR", not self.args.json, indent=4)
+            ptprint("No static source found for test", "INFO", not self.args.json, indent=4)
             return
 
         resource_url, lower_resp, ct_lower = resource
@@ -89,7 +89,7 @@ class OSCS:
         resp, ct = self._fetch(favicon)
 
         if resp.status_code in (301, 302):
-            ptprint(f"Error: Redirect detected to {resp.headers.get('Location')}", "ERROR", not self.args.json, indent=4)
+            ptprint(f"Redirect detected to {resp.headers.get('Location')}", "INFO", not self.args.json, indent=4)
             return None
         elif resp.status_code == 200:
             return favicon, resp, ct
@@ -97,10 +97,10 @@ class OSCS:
         resp_home, _ = self._fetch(base + '/')
 
         if resp_home.status_code in (301, 302):
-            ptprint(f"Error: Redirect to {resp_home.headers.get('Location')}","ERROR", not self.args.json, indent=4)
+            ptprint(f"Redirect to {resp_home.headers.get('Location')}","INFO", not self.args.json, indent=4)
             return None
         elif resp_home.status_code != 200:
-            ptprint(f"Error: Homepage returned {resp_home.status_code}","ERROR", not self.args.json, indent=4)
+            ptprint(f"Homepage returned {resp_home.status_code}","INFO", not self.args.json, indent=4)
             return None
 
         html = resp_home.text or ''

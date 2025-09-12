@@ -43,8 +43,8 @@ class OSLPT1:
         """
         ptprint(__TESTLABEL__, "TITLE", not self.args.json, colortext=True)
 
-        response1 = self.http_client.send_request(url=self.args.url + "/LPP1", method="GET", headers=self.args.headers, allow_redirects=False, timeout=None)
-        response2 = self.http_client.send_request(url=self.args.url + "/LPT1", method="GET", headers=self.args.headers, allow_redirects=False, timeout=None)
+        response1 = self.helpers.fetch(self.args.url + "/LPP1")
+        response2 = self.helpers.fetch(self.args.url + "/LPT1")
 
         if response1.status_code != response2.status_code:
             storage.add_to_storage(technology="Windows", technology_type="Os", vulnerability="PTV-WEB-INFO-OSLNK")
