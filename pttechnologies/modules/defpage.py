@@ -44,6 +44,7 @@ class DEFPAGE:
         self.definitions = self.helpers.load_definitions("defpage.json")
         self.target_ip = self._extract_ip_from_url(args.url)
         self.detected_technologies = []
+        self.default_page_reachable = False
 
     def _extract_ip_from_url(self, url: str) -> Optional[str]:
         """
@@ -106,8 +107,9 @@ class DEFPAGE:
         else:
             response = self.https_resp
         
-        if response is None and self.args.verbose:
-            ptprint("No response received", "ADDITIONS", not self.args.json, indent=8, colortext=True)
+        if response is None:
+            if self.args.verbose:
+                ptprint("No response received", "ADDITIONS", not self.args.json, indent=8, colortext=True)
             return
         
         if not hasattr(response, 'text'):
@@ -118,35 +120,38 @@ class DEFPAGE:
         content = response.text
         status_code = getattr(response, 'status_code', 0)
 
-        if self.args.verbose:
-            self._debug_output(content, protocol, response, url)
-        
-        technologies = self._analyze_page_content(content, protocol, response)
-        
-        if technologies:
+        if status_code == 200:
             if self.args.verbose:
-                ptprint("Technologies detected:", "ADDITIONS", not self.args.json, indent=8, colortext=True)
+                self._debug_output(content, protocol, response, url)
 
-            for tech in technologies:
-                tech['protocol'] = protocol
-                tech['url'] = url
-                self.detected_technologies.append(tech)
-                
-                version_text = f" {tech['version']}" if tech.get('version') else ""
-                category_text = f" ({tech['category']})"
-                
+            self.default_page_reachable = True
+            technologies = self._analyze_page_content(content, protocol, response)
+            
+            if technologies:
                 if self.args.verbose:
-                    ptprint(f"{tech['technology']}{version_text}{category_text}", 
-                    "ADDITIONS", not self.args.json, indent=12, colortext=True, end="")
+                    ptprint("Technologies detected:", "ADDITIONS", not self.args.json, indent=8, colortext=True)
 
-                    source_location = tech.get('source_location', 'content')
-                    ptprint(f" <- Matched: {tech.get('matched_text', 'N/A')} (from {source_location})", 
-                        "ADDITIONS", not self.args.json, colortext=True)
-            if self.args.verbose:
-                ptprint(" ")
+                for tech in technologies:
+                    tech['protocol'] = protocol
+                    tech['url'] = url
+                    self.detected_technologies.append(tech)
+                    
+                    version_text = f" {tech['version']}" if tech.get('version') else ""
+                    category_text = f" ({tech['category']})"
+                    
+                    if self.args.verbose:
+                        ptprint(f"{tech['technology']}{version_text}{category_text}", 
+                        "ADDITIONS", not self.args.json, indent=12, colortext=True, end="")
+
+                        source_location = tech.get('source_location', 'content')
+                        ptprint(f" <- Matched: {tech.get('matched_text', 'N/A')} (from {source_location})", 
+                            "ADDITIONS", not self.args.json, colortext=True)
+            else:
+                if self.args.verbose:
+                    ptprint(f"No technologies detected", "ADDITIONS", not self.args.json, indent=8, colortext=True)
         else:
             if self.args.verbose:
-                ptprint(f"No technologies detexted\n", "ADDITIONS", not self.args.json, indent=8, colortext=True)
+                ptprint(f"Default page of server is not reachable (HTTP {status_code})", "ADDITIONS", not self.args.json, indent=8, colortext=True)
 
     def _debug_output(self, content: str, protocol: str, response: object, url: str) -> None:
         """
@@ -286,6 +291,10 @@ class DEFPAGE:
                 tech_key = match_result.get('technology', match_result.get('name', 'Unknown')).lower()
                 
                 if tech_key not in seen_technologies:
+                    # Call submodule if specified in pattern definition
+                    if pattern_def.get("submodule"):
+                        match_result = self._call_submodule(match_result, pattern_def["submodule"], response, content)
+                    
                     detected.append(match_result)
                     seen_technologies.add(tech_key)
         
@@ -356,6 +365,39 @@ class DEFPAGE:
         
         return result
 
+    def _call_submodule(self, tech_info: Dict[str, Any], submodule_name: str, response: object, content: str) -> Dict[str, Any]:
+        """
+        Calls specified submodule for enhanced technology detection.
+
+        Args:
+            tech_info (dict): Technology information dictionary.
+            submodule_name (str): Name of the submodule to call.
+            response (object): HTTP response object.
+            content (str): Page content.
+
+        Returns:
+            dict: Enhanced technology information.
+        """
+        try:
+            submodule = __import__(f"modules.submodules.{submodule_name}", fromlist=[submodule_name])
+            
+            if hasattr(submodule, "analyze"):
+                enhanced_tech_info = tech_info.copy()
+                enhanced_tech_info['response'] = response
+                enhanced_tech_info['content'] = content
+                
+                enhanced_info = submodule.analyze(enhanced_tech_info, self.args)
+                tech_info.update(enhanced_info)
+                                    
+        except ImportError as e:
+            if self.args.verbose:
+                ptprint(f"Submodule {submodule_name} not found: {str(e)}", "ADDITIONS", not self.args.json, indent=8, colortext=True)
+        except Exception as e:
+            if self.args.verbose:
+                ptprint(f"Error in submodule {submodule_name}: {str(e)}", "ADDITIONS", not self.args.json, indent=8, colortext=True)
+        
+        return tech_info
+
     def _transform_iis_legacy_version(self, version: str) -> str:
         """
         Transform IIS legacy version format (e.g., '85' -> '8.5', '75' -> '7.5').
@@ -378,7 +420,10 @@ class DEFPAGE:
         Report summary of all detected technologies and store them (avoiding duplicates).
         """
         if not self.detected_technologies:
-            ptprint("Overall Summary: No default page technologies identified", "INFO", not self.args.json, indent=4)
+            if self.default_page_reachable:
+                ptprint("Overall Summary: No default page technologies identified", "INFO", not self.args.json, indent=4)
+            else:
+                ptprint("Overall Summary: Default page of server is not reachable", "INFO", not self.args.json, indent=4)
             return
 
         ptprint("Overall Technology Summary", "INFO", not self.args.json, indent=4, colortext=True)
@@ -397,17 +442,24 @@ class DEFPAGE:
                     'version': version,
                     'category': tech.get('category', 'unknown'),
                     'protocols': [],
-                    'source_locations': set()
+                    'source_locations': set(),
+                    'additional_info': tech.get('additional_info', [])  # Added for submodule data
                 }
             
             tech_summary[key]['protocols'].append(protocol.upper())
             tech_summary[key]['source_locations'].add(tech.get('source_location', 'content'))
+            
+            # Merge additional_info from submodules
+            if tech.get('additional_info'):
+                existing_info = tech_summary[key]['additional_info']
+                for info in tech['additional_info']:
+                    if info not in existing_info:
+                        existing_info.append(info)
          
         for tech_info in tech_summary.values():
             version_text = f" {tech_info['version']}" if tech_info['version'] else ""
             protocols_text = "/".join(sorted(set(tech_info['protocols'])))
             category_text = f" ({tech_info['category']})"
-            
             
             ptprint(f"{tech_info['name']}{version_text}{category_text}", "VULN", not self.args.json, indent=8, end=" ")
 
@@ -415,6 +467,11 @@ class DEFPAGE:
                 ptprint(f"(detected via {protocols_text})", "ADDITIONS", not self.args.json, colortext=True)
             else:
                 ptprint(" ")
+                
+            # Report additional info from submodules
+            if tech_info.get("additional_info"):
+                for info in tech_info["additional_info"]:
+                    ptprint(f"{info}", "INFO", not self.args.json, indent=12)
 
         for tech_info in tech_summary.values():
             self._store_unique_technology(tech_info)
