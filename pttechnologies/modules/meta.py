@@ -119,7 +119,12 @@ class Meta:
                         technologies_found += matches
                         successfully_matched_tags.add(meta_name)
         
-        interesting_meta_names = {'generator', 'application-name', 'author', 'framework', 'cms', 'publisher', 'X-Powered-By', 'platform'}
+        if 'author' in meta_tags and 'author' not in successfully_matched_tags:
+            self._handle_unmatched_author(meta_tags['author'])
+            technologies_found += 1
+            successfully_matched_tags.add('author')
+        
+        interesting_meta_names = {'generator', 'application-name', 'framework', 'cms', 'publisher', 'X-Powered-By', 'platform'}
         for meta_name, content in meta_tags.items():
             if meta_name not in successfully_matched_tags and meta_name in interesting_meta_names:
                 self._display_unknown_meta(meta_name, content)
@@ -206,6 +211,36 @@ class Meta:
         )
         
         self._display_result(technology, version, technology_type, meta_name, content)
+    
+    def _handle_unmatched_author(self, content):
+        """
+        Handle author meta tag that didn't match any specific pattern.
+        
+        Args:
+            content: Content of the author meta tag.
+            
+        Returns:
+            None
+        """
+        display_content = content[:80] + "..." if len(content) > 80 else content
+        description = self._create_description('author', content)
+        
+        storage.add_to_storage(
+            technology=display_content,
+            version=None,
+            technology_type="Author",
+            probability=100,
+            description=description
+        )
+        
+        main_message = f"{display_content} (Author)"
+        detail_message = f"<- Meta tag 'author': {content[:50]}{'...' if len(content) > 50 else ''}"
+        
+        ptprint(main_message, "VULN", not self.args.json, end="", indent=4)
+        if self.args.verbose:
+            ptprint(f" {detail_message}", "ADDITIONS", not self.args.json, colortext=True)
+        else:
+            ptprint(" ")
     
     def _create_description(self, meta_name, content):
         """
@@ -295,7 +330,8 @@ class Meta:
             "BackendFramework": "Backend Framework",
             "Os": "OS",
             "WebServer": "Webserver",
-            "Interpret": "Interpreter"
+            "Interpret": "Interpreter",
+            "Author": "Author"
         }
         return display_mapping.get(technology_type, technology_type)
 
