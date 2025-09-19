@@ -6,7 +6,8 @@
     "X-AspNet-Version",
     "X-AspNetMvc-Version",
     "X-Framework",
-    "X-Runtime"
+    "X-Runtime",
+    "X-Azure-ref"
   ],
   "definitions": [
     {
@@ -23,6 +24,11 @@
       "category": "CDN",
       "technology": "AkamaiNetStorage",
       "content": "akamainetstorage"
+    },
+    {
+      "category": "CDN",
+      "technology": "Azure",
+      "content": "x-azure-ref"
     },
     {
       "category": "CDN",

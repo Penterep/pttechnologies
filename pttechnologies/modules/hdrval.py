@@ -290,6 +290,8 @@ class HDRVAL:
             technologies.extend(self._parse_aspnet_version_header(header_value))
         elif header_name.lower() == "x-aspnetmvc-version":
             technologies.extend(self._parse_aspnetmvc_version_header(header_value))
+        elif header_name.lower() == "x-azure-ref":
+            technologies.append({'name': 'x-azure-ref', 'version': None})
         else:
             technologies.extend(self._parse_generic_header(header_value))
 
