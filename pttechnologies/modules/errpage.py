@@ -87,7 +87,7 @@ class ERRPAGE:
         """
         try:
             response = self._get_response(trigger_config)
-            if not response:
+            if response is None:
                 return
                 
             content = getattr(response, 'text', getattr(response, 'body', ''))
@@ -161,10 +161,10 @@ class ERRPAGE:
         detected = []
         seen_technologies = set()
         
-        if not self.all_patterns:
+        if not self.patterns:
             return detected
 
-        for pattern_def in self.all_patterns:
+        for pattern_def in self.patterns:
             if (pattern_def.get('technology', '').lower() == 'version' and 
                 pattern_def.get('category', '').lower() == 'version'):
                 continue

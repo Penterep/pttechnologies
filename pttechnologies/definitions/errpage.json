@@ -182,6 +182,13 @@
       "pattern": "OpenSSL/([\\d\\.]+[a-z]?)",
       "version_pattern": "OpenSSL/([\\d\\.]+[a-z]?)",
       "flags": "i"
+    },
+    {
+      "name": "Symphony Error Page",
+      "technology": "Symphony",
+      "category": "BackendFramework",
+      "pattern": "<title>.*An\\s+Error\\s+Occurred.*</title>|<h1>.*Oops!\\s*An\\s+Error\\s+Occurred.*</h1>",
+      "flags": "is"
     }
   ]
 }
