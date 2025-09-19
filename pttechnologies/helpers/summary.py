@@ -110,9 +110,9 @@ class Summary:
                 continue
             
             technology_type = data.get("technology_type")
-            probability = self._calculate_probability(data)
-            
             category = self._find_category(technology_type)
+            
+            probability = self._calculate_probability(data, category)
             
             if category not in categorized:
                 categorized[category] = []
@@ -326,15 +326,19 @@ class Summary:
         vulns = storage.get_vulnerabilities()
         return [{"vulnCode": vuln} for vuln in vulns]
     
-    def _calculate_probability(self, data):
+    def _calculate_probability(self, data, category_name=None):
         """
         Calculate probability percentage for a technology.
         
-        Computes average probability based on the number of occurrences
-        and sum of probability values from storage.
+        For categories other than "Other", computes probability based on the 
+        technology's probability sum divided by the total count of all technologies 
+        in the same category.
+        
+        For "Other" category, uses the original calculation (average of individual probabilities).
         
         Args:
             data: Technology data dictionary containing count and probability_sum.
+            category_name: Name of the category this technology belongs to.
             
         Returns:
             Integer representing the probability percentage (0-100).
@@ -345,9 +349,48 @@ class Summary:
         if count == 0:
             return 0
         
-        average_probability = probability_sum / count
+        if category_name == "Other":
+            average_probability = probability_sum / count
+            return max(0, min(100, int(round(average_probability))))
         
+        if category_name:
+            category_total_count = self._get_category_total_count(category_name)
+            if category_total_count > 0:
+                category_probability = probability_sum / category_total_count
+                return max(0, min(100, int(round(category_probability))))
+        
+        average_probability = probability_sum / count
         return max(0, min(100, int(round(average_probability))))
+
+    def _get_category_total_count(self, category_name):
+        """
+        Get total count of all technologies in a specific category.
+        
+        Args:
+            category_name: Name of the category to count technologies for.
+            
+        Returns:
+            Integer representing total count of all technologies in the category.
+        """
+        total_count = 0
+        technologies = storage.get_technologies_with_version()
+        
+        for tech_info in technologies:
+            technology = tech_info["technology"]
+            version = tech_info["version"]
+            
+            data = storage.get_data_for_technology(technology, version)
+            
+            if not data:
+                continue
+            
+            technology_type = data.get("technology_type")
+            tech_category = self._find_category(technology_type)
+            
+            if tech_category == category_name:
+                total_count += data.get("count", 0)
+        
+        return total_count
     
     def _format_technology_display(self, technology, version, technology_type):
         """
