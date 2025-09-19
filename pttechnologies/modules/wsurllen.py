@@ -67,10 +67,26 @@ class WSURLLEN:
         for l in self.lengths:
             path = "/" + ("a" * l)
             full_url = base_url + path
-            status = str(self.helpers.fetch(full_url).status_code)
-            statuses.append(status if status is not None else "None")
-            if status is None:
+
+            try:
+                response = self.helpers.fetch(full_url)
+
+                if response is None:
+                    status = "None"
+                    blocked_long_url = True
+
+                else:
+                    if hasattr(response, 'status_code'):
+                        status = str(response.status_code)
+                    else:
+                        status = "Unknown"
+                        blocked_long_url = True
+
+            except Exception as e:
+                status = f"Error: {str(e)}"
                 blocked_long_url = True
+            
+            statuses.append(status)
 
         if self.args.verbose:
             ptprint("Server responses:", "ADDITIONS", not self.args.json,indent=4, colortext=True)

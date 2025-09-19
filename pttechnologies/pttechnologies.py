@@ -171,15 +171,13 @@ class PtTechnologies:
             # Send request to home page
             resp_hp = self.http_client.send_request(url=self.args.url, method="GET", headers=self.args.headers, allow_redirects=False)
             # Handle non 200 statuses
-            if 300 <= resp_hp.status_code < 405:
+            if resp_hp.status_code != 200:
                 redirect_url = resp_hp.headers.get('Location', 'unknown')
                 ptprint(f"Redirect detected: {resp_hp.status_code} -> {redirect_url}\n", "INFO", not self.args.json, colortext=True)   
                 if redirect_url and redirect_url != 'unknown':
                     if redirect_url.startswith('/'):
                         redirect_url = urljoin(self.args.url, redirect_url)
                     resp_hp = self.http_client.send_request(url=redirect_url, method="GET", headers=self.args.headers, allow_redirects=False)
-            elif resp_hp.status_code != 200:
-                self.ptjsonlib.end_error(f"Webpage returns status code: {resp_hp.status_code}", self.args.json)
 
             # Send request to nonexistent page
             resp_404 = self.http_client.send_request(url=f"{self.args.url}/this-page-does-not-exist-xyz123", method="GET", headers=self.args.headers, allow_redirects=False)
