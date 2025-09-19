@@ -107,6 +107,8 @@ class PLLNG:
                     for ext_entry in self.extensions:
                         ext = ext_entry["extension"]
                         if abs_url.lower().endswith(f".{ext}"):
+                            if self.args.verbose:
+                                ptprint(f"Match: {abs_url}", "ADDITIONS", not self.args.json, indent=4, colortext=True)
                             return ext_entry
         return None
 
@@ -127,6 +129,8 @@ class PLLNG:
                 test_url = f"{base_url}/{name}.{ext}"
                 resp = self.helpers.fetch(test_url, allow_redirects=True)
                 if resp.status_code == 200:
+                    if self.args.verbose:
+                        ptprint(f"Match: {test_url}", "ADDITIONS", not self.args.json, indent=4, colortext=True)
                     return ext_entry
         return None
 
