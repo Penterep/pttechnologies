@@ -1,0 +1,131 @@
+[
+    {
+      "technology": "Apache",
+      "category": "WebServer",
+      "files": ["server-status", "server-info"],
+      "submodule": "apache_analyzer"
+    },
+    {
+      "technology": "Apache",
+      "category": "WebServer", 
+      "file": "icons/apache_pb2.gif"
+    },
+    {
+      "technology": "PHP",
+      "category": "Interpret",
+      "file": "phpinfo.php"
+    },
+    {
+      "technology": "phpMyAdmin",
+      "category": "Database Management",
+      "files": ["phpmyadmin/", "pma/", "phpMyAdmin/", "PMA/"]
+    },
+    {
+      "technology": "Adminer", 
+      "category": "Database Management",
+      "files": ["adminer.php", "adminer/", "admin.php"]
+    },
+    {
+      "technology": "Joomla",
+      "category": "WebApp",
+      "files": ["administrator/manifests/files/joomla.xml", "language/en-GB/en-GB.xml", "htaccess.txt"],
+      "predictions": [
+        {
+          "technology": "PHP",
+          "category": "Interpret",
+          "probability": 100
+        },
+        {
+          "technology": "MySQL",
+          "category": "Database",
+          "probability": 50
+        },
+        {
+          "technology": "MariaDB", 
+          "category": "Database",
+          "probability": 50
+        },
+        {
+          "technology": "PostgreSQL",
+          "category": "Database", 
+          "probability": 50
+        }
+      ]
+    },
+    {
+      "technology": "WordPress",
+      "category": "WebApp",
+      "files": ["wp-content/", "wp-json/", "wp-include/", "readme.html"],
+      "predictions": [
+        {
+          "technology": "PHP",
+          "category": "Interpret",
+          "probability": 100
+        },
+        {
+          "technology": "MySQL",
+          "category": "Database",
+          "probability": 80
+        },
+        {
+          "technology": "MariaDB",
+          "category": "Database",
+          "probability": 80
+        }
+      ]
+    },
+    {
+      "technology": "Drupal",
+      "category": "WebApp",
+      "files": ["sites/default/", "CHANGELOG.txt"],
+      "predictions": [
+        {
+          "technology": "PHP",
+          "category": "Programming Language",
+          "probability": 100
+        },
+        {
+          "technology": "MySQL",
+          "category": "Database",
+          "probability": 33
+        },
+        {
+          "technology": "PostgreSQL",
+          "category": "Database",
+          "probability": 33
+        },
+        {
+          "technology": "SQLite",
+          "category": "Database",
+          "probability": 33
+        }
+      ]
+    },
+    {
+      "technology": "Kentico",
+      "category": "WebApp",
+      "files": ["CMSPages/", "CMSScripts/", "CMSModules/"],
+      "predictions": [
+        {
+          "technology": "C#",
+          "category": "Interpret",
+          "probability": 100
+        },
+        {
+          "technology": "ASP.NET",
+          "category": "Interpret",
+          "probability": 100
+        },
+        {
+          "technology": "Windows",
+          "category": "Os",
+          "probability": 100
+        },
+        {
+          "technology": "MySQL",
+          "category": "Database",
+          "probability": 100
+        }
+      ]
+    }
+  ]
