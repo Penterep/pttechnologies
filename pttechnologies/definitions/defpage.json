@@ -1,6 +1,23 @@
 {
   "patterns": [
     {
+      "_comment": "https://policie.gov.cz -> 403",
+      "name": "Red Hat Enterprise Linux",
+      "technology": "RHEL",
+      "category": "Os",
+      "pattern": "<title>Test Page for the HTTP Server on Red Hat Enterprise Linux</title>",
+      "flags": "i"
+    },
+    {
+      "_comment": "http://190.210.10.243  -> 200",
+      "name": "Tomcat Default",
+      "technology": "Apache Tomcat",
+      "category": "WebServer",
+      "pattern": "<title>\\s*Apache\\s+Tomcat(?:/[\\d\\.]+)?\\s*</title>|<h1>\\s*Apache\\s+Tomcat|If\\s+you'?re\\s+seeing\\s+this\\s+page\\s+via\\s+a\\s+web\\s+browser",
+      "version_pattern": "Apache\\s+Tomcat[/\\s]+(\\d+\\.\\d+(?:\\.\\d+)?)",
+      "flags": "i"
+    },
+    {
       "name": "Apache Ubuntu Default",
       "technology": "Apache",
       "category": "WebServer",
@@ -22,33 +39,12 @@
       "flags": "i"
     },
     {
-      "name": "Apache Redirect or Issues Page",
-      "technology": "Apache",
-      "category": "WebServer",
-      "pattern": "Location:\\s*.*apache\\.org|<title>.*apache.*</title>|Apache\\s+Software\\s+Foundation|asf_logo.*\\.(png|jpg|gif|svg)|issues\\.apache\\.org",
-      "flags": "i"
-    },
-    {
       "name": "Nginx Welcome Page",
       "technology": "Nginx",
       "category": "WebServer",
       "pattern": "<title>.*nginx.*</title>|<h1>.*nginx.*</h1>|Welcome\\s+to\\s+nginx[\\s!]*",
       "version_pattern": "nginx[/\\s]+(\\d+\\.\\d+(?:\\.\\d+)?)",
       "flags": "is"
-    },
-    {
-      "name": "Nginx Error Page",
-      "technology": "Nginx",
-      "category": "WebServer",
-      "pattern": "<center>\\s*nginx(?:/[\\d\\.]+)?\\s*</center>",
-      "flags": "i"
-    },
-    {
-      "name": "IIS Server Header with Version",
-      "technology": "Microsoft-IIS", 
-      "category": "WebServer",
-      "pattern": "Server:\\s*Microsoft-IIS/(\\d+\\.\\d+)",
-      "flags": "i"
     },
     {
       "name": "IIS Default Welcome",
@@ -106,13 +102,6 @@
       "flags": "i"
     },
     {
-      "name": "Azure Front Door Service Error",
-      "technology": "Azure Front Door",
-      "category": "CDN",
-      "pattern": "(?i)(?:oops!?\\s+)?we\\s+weren[''`]t\\s+able\\s+to\\s+find\\s+your\\s+azure\\s+front\\s+door\\s+service",
-      "flags": "i"      
-    },
-    {
       "name": "Azure CDN",
       "technology": "Azure CDN",
       "category": "CDN",
@@ -124,13 +113,6 @@
       "technology": "Azure Application Gateway",
       "category": "LoadBalancer",
       "pattern": "Azure\\s+Application\\s+Gateway|X-Azure-RequestId:\\s*[\\w-]+|azure-gw",
-      "flags": "i"
-    },
-    {
-      "name": "Azure Error Page",
-      "technology": "Azure",
-      "category": "CloudPlatform",
-      "pattern": "<title>.*Azure.*Error.*</title>|Azure\\s+Web\\s+App|Microsoft\\s+Azure|The\\s+resource\\s+you\\s+are\\s+looking\\s+for\\s+has\\s+been\\s+removed",
       "flags": "i"
     },
     {
@@ -188,14 +170,6 @@
       "technology": "LiteSpeed",
       "category": "WebServer",
       "pattern": "(?i)proudly\\s*powered\\s*by\\s*litespeed\\s*web\\s*server|litespeed\\s*technologies\\s*inc\\.",
-      "flags": "i"
-    },
-    {
-      "name": "Tomcat Default",
-      "technology": "Apache Tomcat",
-      "category": "WebServer",
-      "pattern": "<title>\\s*Apache\\s+Tomcat(?:/[\\d\\.]+)?\\s*</title>|<h1>\\s*Apache\\s+Tomcat|If\\s+you'?re\\s+seeing\\s+this\\s+page\\s+via\\s+a\\s+web\\s+browser",
-      "version_pattern": "Apache\\s+Tomcat[/\\s]+(\\d+\\.\\d+(?:\\.\\d+)?)",
       "flags": "i"
     },
     {
@@ -285,20 +259,6 @@
       "category": "WebFramework",
       "pattern": "Ruby\\s+on\\s+Rails\\s*(\\d+\\.\\d+)?|Rails\\s+version|Welcome\\s+aboard.*Rails",
       "version_pattern": "Rails[/\\s]+(\\d+\\.\\d+(?:\\.\\d+)?)",
-      "flags": "i"
-    },
-    {
-      "name": "Default Server Error",
-      "technology": "Generic Server",
-      "category": "WebServer",
-      "pattern": "<title>\\s*50[234]\\s+(?:Service\\s+Unavailable|Bad\\s+Gateway|Gateway\\s+Timeout)\\s*</title>",
-      "flags": "i"
-    },
-    {
-      "name": "ASP.NET Server Error",
-      "technology": "ASP.NET", 
-      "category": "Interpret",
-      "pattern": "Server\\s+Error\\s+in\\s+'[^']*'\\s+Application|HTTP\\s+404.*resource\\s+you\\s+are\\s+looking\\s+for.*dependencies.*could\\s+have\\s+been\\s+removed",
       "flags": "i"
     }
   ]
