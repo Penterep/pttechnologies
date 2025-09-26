@@ -41,6 +41,7 @@ class SOURCES:
         self.helpers = helpers
         self.http_client = http_client
         self.response_hp = responses.resp_hp
+        self.nonexist_status = responses.resp_404
         self.tech_definitions = self.helpers.load_definitions("sources.json")
 
     def run(self):
@@ -51,21 +52,19 @@ class SOURCES:
         specific file presence, then reports the results.
         """
         ptprint(__TESTLABEL__, "TITLE", not self.args.json, colortext=True)
+
+        if self.nonexist_status is not None:
+            if self.nonexist_status.status_code == 200:
+                ptprint("It is not possible to run this module because non exist pages are returned with status code 200", "INFO", not self.args.json, indent=4)
+                return
+
         base_url = self.args.url.rstrip("/")
         
         detected_technologies = self._dictionary_attack(base_url)
         
         if detected_technologies:
-            main_techs = [tech for tech in detected_technologies if not tech.get("is_prediction", False)]
-            predictions = [tech for tech in detected_technologies if tech.get("is_prediction", False)]
-            
-            for tech in main_techs:
+            for tech in detected_technologies:
                 self._report(tech)
-                
-                related_predictions = [p for p in predictions if p.get("parent_file_path") == tech["file_path"]]
-                for pred in related_predictions:
-                    self._report_prediction(pred)
-                    
         else:
             ptprint("No specific technology files were found", "INFO", not self.args.json, indent=4)
 
@@ -111,26 +110,6 @@ class SOURCES:
                         tech_info = self._call_submodule(tech_info, tech_entry["submodule"])
                     
                     detected.append(tech_info)
-
-                    if tech_entry.get("predictions"):
-                        for prediction in tech_entry["predictions"]:
-                            pred_info = {
-                                "technology": prediction["technology"],
-                                "category": prediction["category"], 
-                                "file_path": f"[predicted from {file_path}]",
-                                "parent_file_path": file_path,
-                                "url": test_url,
-                                "probability": prediction["probability"],
-                                "status_code": resp.status_code,
-                                "response": None,
-                                "is_prediction": True
-                            }
-                            detected.append(pred_info)
-                    
-                    if self.args.verbose:
-                        status_msg = f"Found: {test_url} [{resp.status_code}]"
-                        ptprint(status_msg, "ADDITIONS", not self.args.json, indent=4, colortext=True)
-                    
                     break
         
         return detected
@@ -211,7 +190,12 @@ class SOURCES:
         technology = tech_info["technology"]
         category = tech_info["category"]
         probability = tech_info["probability"]
-        file_path = tech_info["file_path"]
+        test_url = tech_info["url"]
+        status_code = tech_info["status_code"]
+        
+        if self.args.verbose:
+            status_msg = f"Found: {test_url} [{status_code}]"
+            ptprint(status_msg, "ADDITIONS", not self.args.json, indent=4, colortext=True)
         
         storage.add_to_storage(
             technology=technology, 
@@ -225,29 +209,6 @@ class SOURCES:
             for info in tech_info["additional_info"]:
                 ptprint(f"{info}", "INFO", not self.args.json, indent=6)
 
-    def _report_prediction(self, pred_info):
-        """
-        Reports predicted technologies as sub-items.
-
-        Args:
-            pred_info (dict): Predicted technology information.
-        """
-        technology = pred_info["technology"]
-        category = pred_info["category"]
-        probability = pred_info["probability"]
-        
-        storage.add_to_storage(
-            technology=technology, 
-            technology_type=category, 
-            probability=probability
-        )
-        
-        ptprint(f"{technology} ({category})", "VULN", not self.args.json, indent=6, end="")
-
-        if self.args.verbose:
-            ptprint(" [PREDICTED]", "ADDITIONS", not self.args.json, colortext=True)
-        else:
-            ptprint(" ", not self.args.json)
 
 def run(args: object, ptjsonlib: object, helpers: object, http_client: object, responses: StoredResponses):
     """Entry point for running the SOURCES detection."""
