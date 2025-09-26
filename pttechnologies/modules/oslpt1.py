@@ -15,6 +15,8 @@ Usage:
     OSLPT1(args, ptjsonlib, helpers, http_client, responses).run()
 
 """
+import re
+
 from helpers.result_storage import storage
 from helpers.stored_responses import StoredResponses
 from ptlibs import ptjsonlib, ptmisclib, ptnethelper
@@ -34,6 +36,54 @@ class OSLPT1:
         self.response_hp = responses.resp_hp
         self.response_404 = responses.resp_404
 
+    def _extract_title(self, html_content: str) -> str:
+        """
+        Extracts the <title> tag content from HTML response.
+        
+        Args:
+            html_content: HTML string to parse
+            
+        Returns:
+            Title content or empty string if not found
+        """
+        if not html_content:
+            return ""
+        
+        title_match = re.search(r'<title[^>]*>(.*?)</title>', html_content, re.IGNORECASE | re.DOTALL)
+        if title_match:
+            return title_match.group(1).strip()
+        return ""
+
+    def _responses_differ(self, response1, response2) -> bool:
+        """
+        Compares two responses to determine if they differ significantly.
+        
+        Checks:
+        - Status codes
+        - Title tags
+        
+        Args:
+            response1: First HTTP response
+            response2: Second HTTP response
+            
+        Returns:
+            True if responses differ, False otherwise
+        """
+        if response1.status_code != response2.status_code:
+            if self.args.verbose:
+                ptprint(f"Status code difference: {response1.status_code} vs {response2.status_code}", "ADDITIONS", not self.args.json, indent=4, colortext=True)
+            return True
+        
+        title1 = self._extract_title(response1.text)
+        title2 = self._extract_title(response2.text)
+        
+        if title1 != title2:
+            if self.args.verbose:
+                ptprint(f"Title difference detected: '{title1}' vs '{title2}'", "ADDITIONS", not self.args.json, indent=4, colortext=True)
+            return True
+        
+        return False
+
     def run(self):
         """
         Executes the OS detection by comparing HTTP responses to /LPP1 and /LPT1.
@@ -46,7 +96,13 @@ class OSLPT1:
         response1 = self.helpers.fetch(self.args.url + "/LPP1")
         response2 = self.helpers.fetch(self.args.url + "/LPT1")
 
-        if response1.status_code != response2.status_code:
+        if response1 is None or response2 is None:
+            ptprint("Connection error occurred", "INFO", not self.args.json, indent=4)
+            return
+
+        result = self._responses_differ(response1, response2)
+
+        if result:
             storage.add_to_storage(technology="Windows", technology_type="Os", vulnerability="PTV-WEB-INFO-OSLNK")
             ptprint(f"Identified OS: Windows", "VULN", not self.args.json, indent=4)
         else:
