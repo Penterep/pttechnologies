@@ -34,9 +34,9 @@ class ERRPAGE:
         "403 Forbidden (.ht)": "/.ht",
         "403 Forbidden (.htaccess)": "/.htaccess",
         "400 Invalid Header": {"path": "/", "headers": {"Accept": ""}},
-        "Invalid HTTP method": {"request_line": "FOO / HTTP/9.8"},
-        "400 Invalid Protocol": {"request_line": " GET / FOO/1.1"},
-        "505 Invalid HTTP Version": {"request_line": "GET / HTTP/9.8"}
+        "Invalid HTTP method": "http_invalid_method",
+        "400 Invalid Protocol": "http_invalid_protocol",
+        "505 Invalid HTTP Version": "http_invalid_version"
     }
 
     def __init__(self, args: object, ptjsonlib: object, helpers: object, http_client: object, responses: StoredResponses) -> None:
@@ -46,16 +46,11 @@ class ERRPAGE:
         self.response_404 = responses.resp_404
         self.raw_response_400 = responses.raw_resp_400
         self.long_response = responses.long_resp
-        
+        self.http_invalid_method = responses.http_invalid_method
+        self.http_invalid_protocol = responses.http_invalid_protocol
+        self.http_invalid_version = responses.http_invalid_version
         self.errpage_definitions = self.helpers.load_definitions("errpage.json")
-        self.defpage_definitions = self.helpers.load_definitions("defpage.json")
-        
-        self.patterns = []
-        if self.errpage_definitions:
-            self.patterns.extend(self.errpage_definitions.get('patterns', []))
-        if self.defpage_definitions:
-            self.patterns.extend(self.defpage_definitions.get('patterns', []))
-        
+        self.patterns = self.errpage_definitions.get('patterns', []) if self.errpage_definitions else []
         self.base_url = args.url.rstrip('/')
         self.detected_technologies = []
 
@@ -91,11 +86,6 @@ class ERRPAGE:
                 return
                 
             content = getattr(response, 'text', getattr(response, 'body', ''))
-            headers = getattr(response, 'headers', None)
-
-            if headers:
-                headers_str = "\n".join(f"{k.title()}: {v}" for k, v in headers.items())
-                content = f"{headers_str}\n\n{content}"
             if not content:
                 return
                     
@@ -109,7 +99,7 @@ class ERRPAGE:
                         
         except Exception as e:
             if self.args.verbose:
-                ptprint(f"Error testing trigger {trigger_name}: {str(e)}", "INFO", not self.args.json, indent=8)
+                ptprint(f"Error testing trigger {trigger_name}: {str(e)}", "ADDITIONS", not self.args.json, indent=8, colortext=True)
 
     def _get_response(self, trigger_config: Any) -> Optional[object]:
         """
@@ -128,17 +118,16 @@ class ERRPAGE:
                 return self.raw_response_400
             elif trigger_config == "long_resp":
                 return self.long_response
+            elif trigger_config == "http_invalid_method":
+                return self.http_invalid_method
+            elif trigger_config == "http_invalid_protocol":
+                return self.http_invalid_protocol
+            elif trigger_config == "http_invalid_version":
+                return self.http_invalid_version
             elif trigger_config.startswith('/'):
-                return self.helpers._raw_request(self.base_url, trigger_config)
+                return self.helpers.fetch(self.base_url + trigger_config)
         
         elif isinstance(trigger_config, dict):
-            if trigger_config.get("method") == "request_line":
-                return self.helpers._raw_request(
-                    self.base_url,
-                    '/',
-                    custom_request_line=trigger_config.get("request_line")
-                )
-            else:
                 return self.helpers._raw_request(
                     self.base_url, 
                     trigger_config.get("path", "/"),
@@ -210,7 +199,7 @@ class ERRPAGE:
             match = re.search(pattern, content, re_flags)
         except re.error as e:
             if self.args.verbose:
-                ptprint(f"Invalid regex pattern in definitions: {e}", "INFO", not self.args.json, indent=8)
+                ptprint(f"Invalid regex pattern in definitions: {e}", "ADDITIONS", not self.args.json, indent=8,colortext=True)
             return None
         
         if not match:
@@ -241,6 +230,11 @@ class ERRPAGE:
             tech_match = re.search(r'(Apache|nginx|IIS|Tomcat|Jetty|LiteSpeed|OpenResty|IBM_HTTP_Server)', footer_text, re.IGNORECASE)
             if tech_match:
                 result['technology'] = tech_match.group(1)
+                result['version'] = None
+            
+            version_match = re.search(r'(Apache|nginx|IIS|Tomcat|Jetty|LiteSpeed|OpenResty|IBM_HTTP_Server)[/\s]+([\d\.]+)', footer_text, re.IGNORECASE)
+            if version_match:
+                result['version'] = version_match.group(2)
         
         return result
 
