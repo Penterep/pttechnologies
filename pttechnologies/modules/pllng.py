@@ -128,10 +128,11 @@ class PLLNG:
                 ext = ext_entry["extension"]
                 test_url = f"{base_url}/{name}.{ext}"
                 resp = self.helpers.fetch(test_url, allow_redirects=True)
-                if resp.status_code == 200:
-                    if self.args.verbose:
-                        ptprint(f"Match: {test_url}", "ADDITIONS", not self.args.json, indent=4, colortext=True)
-                    return ext_entry
+                if resp is not None:
+                    if resp.status_code == 200:
+                        if self.args.verbose:
+                            ptprint(f"Match: {test_url}", "ADDITIONS", not self.args.json, indent=4, colortext=True)
+                        return ext_entry
         return None
 
     def _report(self, result):

@@ -88,20 +88,26 @@ class OSCS:
         favicon = base + '/favicon.ico'
         resp, ct = self._fetch(favicon)
 
-        if resp.status_code in (301, 302):
-            ptprint(f"Redirect detected to {resp.headers.get('Location')}", "INFO", not self.args.json, indent=4)
-            return None
-        elif resp.status_code == 200:
-            return favicon, resp, ct
+        if resp is not None:
+            if resp.status_code in (301, 302):
+                ptprint(f"Redirect detected to {resp.headers.get('Location')}", "INFO", not self.args.json, indent=4)
+                return None
+            elif resp.status_code == 200:
+                return favicon, resp, ct
 
         resp_home, _ = self._fetch(base + '/')
 
-        if resp_home.status_code in (301, 302):
-            ptprint(f"Redirect to {resp_home.headers.get('Location')}","INFO", not self.args.json, indent=4)
+        if resp_home is not None:
+            if resp_home.status_code in (301, 302):
+                ptprint(f"Redirect to ghhgj {resp_home.headers.get('Location')}","INFO", not self.args.json, indent=4)
+                return None
+            elif resp_home.status_code != 200:
+                ptprint(f"Homepage returned {resp_home.status_code}","INFO", not self.args.json, indent=4)
+                return None
+        else:
+            ptprint("Connection error occurred", "INFO", not self.args.json, indent=4)
             return None
-        elif resp_home.status_code != 200:
-            ptprint(f"Homepage returned {resp_home.status_code}","INFO", not self.args.json, indent=4)
-            return None
+
 
         html = resp_home.text or ''
         for match in re.finditer(
@@ -114,8 +120,9 @@ class OSCS:
                 continue
 
             r, ct = self._fetch(candidate_url)
-            if r.status_code == 200:
-                return candidate_url, r, ct
+            if r is not None:
+                if r.status_code == 200:
+                    return candidate_url, r, ct
         return None
 
     def _fetch(self, url: str) -> tuple:
@@ -129,7 +136,12 @@ class OSCS:
             tuple: (response object, content type string).
         """
         resp = self.helpers.fetch(url)
-        return resp, resp.headers.get('Content-Type', '')
+        
+        if resp is not None:
+            return resp, resp.headers.get('Content-Type', '')
+        else:
+            return None, ''
+
 
     def _make_alt_case_url(self, resource_url: str) -> str:
         """
@@ -167,13 +179,15 @@ class OSCS:
 
         This method also records the vulnerability code and OS property in the JSON.
         """
-
-        if r1.status_code == r2.status_code and ct1 == ct2:
-            storage.add_to_storage(technology="Windows", technology_type="Os", vulnerability="PTV-WEB-INFO-OSSEN")
-            ptprint("Identified OS: Windows", "VULN", not self.args.json, indent = 4)
+        if r1 is not None and r2 is not None:
+            if r1.status_code == r2.status_code and ct1 == ct2:
+                storage.add_to_storage(technology="Windows", technology_type="Os", vulnerability="PTV-WEB-INFO-OSSEN")
+                ptprint("Identified OS: Windows", "VULN", not self.args.json, indent = 4)
+            else:
+                storage.add_to_storage(technology="Linux", technology_type="Os", vulnerability="PTV-WEB-INFO-OSSEN")
+                ptprint("Identified OS: Unix / Linux", "VULN", not self.args.json, indent = 4)
         else:
-            storage.add_to_storage(technology="Linux", technology_type="Os", vulnerability="PTV-WEB-INFO-OSSEN")
-            ptprint("Identified OS: Unix / Linux", "VULN", not self.args.json, indent = 4)
+            ptprint("Connection error occurred", "INFO", not self.args.json, indent=4)
 
 
 def run(args: object, ptjsonlib: object, helpers: object, http_client: object, responses: StoredResponses):

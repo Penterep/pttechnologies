@@ -60,6 +60,10 @@ class WSHT:
         response1 = self.http_client.send_request(url=self.args.url + "/.hh", method="GET", headers=self.args.headers, allow_redirects=False, timeout=None)
         response2 = self.http_client.send_request(url=self.args.url + "/.ht", method="GET", headers=self.args.headers, allow_redirects=False, timeout=None)
 
+        if response1 is None or response2 is None:
+            ptprint("Connection error occurred", "INFO", not self.args.json, indent=4)
+            return
+            
         if response1.status_code != response2.status_code:
             storage.add_to_storage(technology="Apache", technology_type="WebServer", vulnerability="PTV-WEB-INFO-WSHT")
             ptprint(f"Identified WS: Apache", "VULN", not self.args.json, indent=4)
