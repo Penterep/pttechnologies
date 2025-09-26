@@ -120,7 +120,7 @@ class DEFPAGE:
         content = response.text
         status_code = getattr(response, 'status_code', 0)
 
-        if status_code == 200:
+        if status_code == 200 or status_code == 403:
             if self.args.verbose:
                 self._debug_output(content, protocol, response, url)
 
