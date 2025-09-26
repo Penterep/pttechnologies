@@ -201,6 +201,11 @@ class PtTechnologies:
             https_url = f"https://{self.target_ip}/"
             https_resp = self.helpers.fetch(https_url)
 
+            #Send request with invalid request line
+            http_invalid_method = self.helpers._raw_request( self.args.url.rstrip('/'), '/', custom_request_line="FOO / HTTP/9.8")
+            http_invalid_protocol = self.helpers._raw_request( self.args.url.rstrip('/'), '/', custom_request_line="GET / FOO/1.1")
+            http_invalid_version = self.helpers._raw_request( self.args.url.rstrip('/'), '/', custom_request_line="GET / HTTP/9.8")
+
             # Create and store the responses container
             self.stored_responses = StoredResponses(
                 resp_hp=resp_hp,
@@ -209,7 +214,10 @@ class PtTechnologies:
                 resp_favicon=resp_favicon,
                 long_resp=long_resp,
                 http_resp = http_resp,
-                https_resp = https_resp
+                https_resp = https_resp,
+                http_invalid_method = http_invalid_method,
+                http_invalid_protocol = http_invalid_protocol,
+                http_invalid_version = http_invalid_version
             )
 
             return self.stored_responses

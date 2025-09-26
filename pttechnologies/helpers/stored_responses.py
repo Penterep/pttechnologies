@@ -35,3 +35,6 @@ class StoredResponses:
     long_resp: Optional[Response]
     http_resp: Optional[Response]
     https_resp: Optional[Response]
+    http_invalid_method: Optional[Response]
+    http_invalid_protocol: Optional[Response]
+    http_invalid_version: Optional[Response]

@@ -43,6 +43,9 @@ class HDRVAL:
         self.long_response = responses.long_resp
         self.http_resp = responses.http_resp
         self.https_resp = responses.https_resp
+        self.http_invalid_method = responses.http_invalid_method
+        self.http_invalid_protocol = responses.http_invalid_protocol
+        self.http_invalid_version = responses.http_invalid_version
 
         self.definitions = self.helpers.load_definitions("hdrval.json")
 
@@ -67,6 +70,9 @@ class HDRVAL:
         headers_long = self._get_response_headers(self.long_response)
         headers_http = self._get_response_headers(self.http_resp)if self.http_resp is not None else {}
         headers_https = self._get_response_headers(self.https_resp)if self.https_resp is not None else {}
+        headers_http_IM = self._get_response_headers(self.http_invalid_method)if self.http_invalid_method is not None else {}
+        headers_http_IP = self._get_response_headers(self.http_invalid_protocol)if self.http_invalid_protocol is not None else {}
+        headers_http_IV = self._get_response_headers(self.http_invalid_version)if self.http_invalid_version is not None else {}
 
         combined_headers = self._combine_headers({
             '200': headers_200,
@@ -74,7 +80,10 @@ class HDRVAL:
             'favicon': headers_favicon,
             'long': headers_long,
             'HTTP': headers_http,
-            'HTTPS': headers_https
+            'HTTPS': headers_https,
+            'invalid_method': headers_http_IM,
+            'invalid_protocol': headers_http_IP,
+            'invalid_version': headers_http_IV,
         })
 
         if not combined_headers:
@@ -586,15 +595,24 @@ class HDRVAL:
 
     def _get_source_description(self, source: str) -> str:
         """Map source names to their descriptive labels with status codes."""
+        
         sc_http = getattr(self.http_resp, 'status_code', 0)
         sc_https = getattr(self.https_resp, 'status_code', 0)
+        sc_im = getattr(self.http_invalid_method, 'status_code', 0)
+        sc_ip = getattr(self.http_invalid_protocol, 'status_code', 0)
+        sc_iv = getattr(self.http_invalid_version, 'status_code', 0)
+
         source_map = {
             '200': '200 HP',
             '400': '400 %', 
             'favicon': '200 FAVICON',
             'long': '400 LONGURL',
             'HTTP': f"{sc_http} HTTP",
-            'HTTPS': f"{sc_https} HTTPS"
+            'HTTPS': f"{sc_https} HTTPS",
+            'invalid_method': f"{sc_http} invalid method",
+            'invalid_protocol': f"{sc_http} invalid protocol",
+            'invalid_version': f"{sc_http} invalid version"
+
         }
         return source_map.get(source, source.upper())
 
