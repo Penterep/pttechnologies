@@ -256,7 +256,7 @@
             {
                 "technology": "Ubuntu",
                 "version": "18.04",
-                "technology_type": "Os",
+                "": "Os",
                 "description": "PHP (Interpret)"
             }
         ]
@@ -270,6 +270,150 @@
                 "technology": "Alpine Linux",
                 "technology_type": "Os",
                 "description": "PHP (Interpret)"
+            }
+        ]
+    },
+    {
+        "when":[
+            {"technology": "Joomla"}
+        ],
+        "predict":[
+            {
+                "technology": "Php",
+                "technology_type": "Interpret",
+                "probability": 100,
+                "description": "Joomla (WebApp)"
+            },
+            {
+                "technology": "MySQL",
+                "technology_type": "Database",
+                "probability": 50,
+                "description": "Joomla (WebApp)"
+            },
+            {
+                "technology": "MariaDB", 
+                "technology_type": "Database",
+                "probability": 50,
+                "description": "Joomla (WebApp)"
+            },
+            {
+                "technology": "PostgreSQL",
+                "technology_type": "Database", 
+                "probability": 50,
+                "description": "Joomla (WebApp)"
+            }   
+        ]
+    },
+    {
+        "when":[
+            {"technology": "WordPress"}
+        ],
+        "predict":[
+            {
+                "technology": "Php",
+                "technology_type": "Interpret",
+                "probability": 100,
+                "description": "WordPress (WebApp)"
+            },
+            {
+                "technology": "MySQL",
+                "technology_type": "Database",
+                "probability": 80,
+                "description": "WordPress (WebApp)"
+            },
+            {
+                "technology": "MariaDB", 
+                "technology_type": "Database",
+                "probability": 80,
+                "description": "WordPress (WebApp)"
+            } 
+        ]
+    },
+    {
+        "when":[
+            {"technology": "Drupal"}
+        ],
+        "predict":[
+            {
+                "technology": "Php",
+                "technology_type": "Interpret",
+                "probability": 100,
+                "description": "Drupal (WebApp)"
+            },
+            {
+                "technology": "MySQL",
+                "technology_type": "Database",
+                "probability": 33,
+                "description": "Drupal (WebApp)"
+            },
+            {
+                "technology": "PostgreSQL", 
+                "technology_type": "Database",
+                "probability": 33,
+                "description": "Drupal (WebApp)"
+            },
+            {
+                "technology": "SQLite", 
+                "technology_type": "Database",
+                "probability": 33,
+                "description": "Drupal (WebApp)"
+            } 
+        ]
+    },
+    {
+        "when":[
+            {"technology": "Kentico"}
+        ],
+        "predict":[
+            {
+                "technology": "C#",
+                "technology_type": "Interpret",
+                "probability": 100,
+                "description": "Kentico (WebApp)"
+            },
+            {
+                "technology": "ASP.NET",
+                "technology_type": "Interpret",
+                "probability": 100,
+                "description": "Kentico (WebApp)"
+            },
+            {
+                "technology": "Windows", 
+                "technology_type": "Os",
+                "probability": 100,
+                "description": "Kentico (WebApp)"
+            },
+            {
+                "technology": "MySQL", 
+                "technology_type": "Database",
+                "probability": 100,
+                "description": "Kentico (WebApp)"
+            } 
+        ]
+    },
+    {
+        "when":[
+            {"technology": "phpMyAdmin"}
+        ],
+        "predict":[
+            {
+                "technology": "PHP",
+                "technology_type": "Interpret",
+                "probability": 100,
+                "description": "phpMyAdmin (DatabaseManagement)"
+            }
+        ]
+    },
+    {
+        "when":[
+            {"technology": "Adminer"}
+        ],
+        "predict":[
+            {
+                "technology": "PHP",
+                "technology_type": "Interpret",
+                "probability": 100,
+                "description": "Adminer (DatabaseManagement)"
             }
         ]
     }

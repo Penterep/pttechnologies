@@ -28,104 +28,16 @@
     {
       "technology": "Joomla",
       "category": "WebApp",
-      "files": ["administrator/manifests/files/joomla.xml", "language/en-GB/en-GB.xml", "htaccess.txt"],
-      "predictions": [
-        {
-          "technology": "PHP",
-          "category": "Interpret",
-          "probability": 100
-        },
-        {
-          "technology": "MySQL",
-          "category": "Database",
-          "probability": 50
-        },
-        {
-          "technology": "MariaDB", 
-          "category": "Database",
-          "probability": 50
-        },
-        {
-          "technology": "PostgreSQL",
-          "category": "Database", 
-          "probability": 50
-        }
-      ]
+      "files": ["administrator/manifests/files/joomla.xml", "language/en-GB/en-GB.xml", "htaccess.txt"]
     },
     {
       "technology": "WordPress",
       "category": "WebApp",
-      "files": ["wp-content/", "wp-json/", "wp-include/", "readme.html"],
-      "predictions": [
-        {
-          "technology": "PHP",
-          "category": "Interpret",
-          "probability": 100
-        },
-        {
-          "technology": "MySQL",
-          "category": "Database",
-          "probability": 80
-        },
-        {
-          "technology": "MariaDB",
-          "category": "Database",
-          "probability": 80
-        }
-      ]
+      "files": ["wp-content/", "wp-json/", "wp-include/", "readme.html"]
     },
     {
       "technology": "Drupal",
       "category": "WebApp",
-      "files": ["sites/default/", "CHANGELOG.txt"],
-      "predictions": [
-        {
-          "technology": "PHP",
-          "category": "Programming Language",
-          "probability": 100
-        },
-        {
-          "technology": "MySQL",
-          "category": "Database",
-          "probability": 33
-        },
-        {
-          "technology": "PostgreSQL",
-          "category": "Database",
-          "probability": 33
-        },
-        {
-          "technology": "SQLite",
-          "category": "Database",
-          "probability": 33
-        }
-      ]
-    },
-    {
-      "technology": "Kentico",
-      "category": "WebApp",
-      "files": ["CMSPages/", "CMSScripts/", "CMSModules/"],
-      "predictions": [
-        {
-          "technology": "C#",
-          "category": "Interpret",
-          "probability": 100
-        },
-        {
-          "technology": "ASP.NET",
-          "category": "Interpret",
-          "probability": 100
-        },
-        {
-          "technology": "Windows",
-          "category": "Os",
-          "probability": 100
-        },
-        {
-          "technology": "MySQL",
-          "category": "Database",
-          "probability": 100
-        }
-      ]
+      "files": ["sites/default/", "CHANGELOG.txt"]
     }
   ]
