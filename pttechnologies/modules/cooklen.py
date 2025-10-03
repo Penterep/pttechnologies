@@ -89,7 +89,8 @@ class COOKLEN:
 
         server, probability = self._identify_server_exact(statuses)
         if server:
-            ptprint(f"Identified WS: {server}", "VULN", not self.args.json, indent=4)
+            ptprint(f"Identified WS: {server}", "VULN", not self.args.json, indent=4, end=" ")
+            ptprint(f"({probability}%)", "ADDITIONS", not self.args.json, colortext=True)
             storage.add_to_storage(
                 technology=server, 
                 technology_type="WebServer", 

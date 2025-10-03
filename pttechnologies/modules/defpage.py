@@ -433,6 +433,7 @@ class DEFPAGE:
             tech_name = tech.get('technology', 'Unknown')
             version = tech.get('version', '')
             protocol = tech.get('protocol', 'unknown')
+            probability = tech.get('probability', 100)
             
             key = f"{tech_name}_{version}" if version else tech_name
             
@@ -462,6 +463,7 @@ class DEFPAGE:
             category_text = f" ({tech_info['category']})"
             
             ptprint(f"{tech_info['name']}{version_text}{category_text}", "VULN", not self.args.json, indent=8, end=" ")
+            ptprint(f"({probability}%)", "ADDITIONS", not self.args.json, colortext=True, end=" ")
 
             if self.args.verbose:
                 ptprint(f"(detected via {protocols_text})", "ADDITIONS", not self.args.json, colortext=True)

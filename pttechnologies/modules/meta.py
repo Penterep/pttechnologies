@@ -210,7 +210,7 @@ class Meta:
             description=description
         )
         
-        self._display_result(technology, version, technology_type, meta_name, content)
+        self._display_result(technology, version, technology_type, meta_name, content, probability)
     
     def _handle_unmatched_author(self, content):
         """
@@ -233,10 +233,12 @@ class Meta:
             description=description
         )
         
+        probability = 100
         main_message = f"{display_content} (Author)"
         detail_message = f"<- Meta tag 'author': {content[:50]}{'...' if len(content) > 50 else ''}"
         
-        ptprint(main_message, "VULN", not self.args.json, end="", indent=4)
+        ptprint(main_message, "VULN", not self.args.json, end=" ", indent=4)
+        ptprint(f"({probability}%)", "ADDITIONS", not self.args.json, colortext=True, end="")
         if self.args.verbose:
             ptprint(f" {detail_message}", "ADDITIONS", not self.args.json, colortext=True)
         else:
@@ -256,7 +258,7 @@ class Meta:
         display_content = content[:100] + "..." if len(content) > 100 else content
         return f"Meta tag '{meta_name}': {display_content}"
     
-    def _display_result(self, technology, version, technology_type, meta_name, content):
+    def _display_result(self, technology, version, technology_type, meta_name, content, probability):
         """
         Display the identified technology result.
         
@@ -278,7 +280,8 @@ class Meta:
         main_message = f"{tech_display} ({type_display})"
         detail_message = f"<- Meta tag '{meta_name}': {content[:50]}{'...' if len(content) > 50 else ''}"
         
-        ptprint(main_message, "VULN", not self.args.json, end="", indent=4)
+        ptprint(main_message, "VULN", not self.args.json, end=" ", indent=4)
+        ptprint(f"({probability}%)", "ADDITIONS", not self.args.json, colortext=True, end="")
         if self.args.verbose:
             ptprint(f" {detail_message}", "ADDITIONS", not self.args.json, colortext=True)
         else:
@@ -298,6 +301,7 @@ class Meta:
         display_content = content[:80] + "..." if len(content) > 80 else content
         main_message = f"{display_content} (Unknown)"
         detail_message = f"<- Meta tag '{meta_name}': {content[:50]}{'...' if len(content) > 50 else ''}"
+        probability = 100
         
         description = self._create_description(meta_name, content)
         storage.add_to_storage(
@@ -308,7 +312,8 @@ class Meta:
             description=description
         )
 
-        ptprint(main_message, "VULN", not self.args.json, end="", indent=4)
+        ptprint(main_message, "VULN", not self.args.json, end=" ", indent=4)
+        ptprint(f"({probability}%)", "ADDITIONS", not self.args.json, colortext=True, end="")
         if self.args.verbose:
             ptprint(f" {detail_message}", "ADDITIONS", not self.args.json, colortext=True)
         else:

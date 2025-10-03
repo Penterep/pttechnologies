@@ -96,10 +96,11 @@ class WSURLLEN:
         if blocked_long_url:
             ptprint("Long URL are blocked", "INFO", not self.args.json,indent=4)
 
-        server = self._identify_server(statuses)
+        server, probability = self._identify_server(statuses)
         if server:
-            ptprint(f"Identified WS: {server}", "VULN", not self.args.json, indent=4)
-            storage.add_to_storage(technology=server, technology_type="WebServer", vulnerability="PTV-WEB-INFO-WSURL", probability=20)
+            ptprint(f"Identified WS: {server} ", "VULN", not self.args.json, indent=4, end="")
+            ptprint(f"({probability}%)", "ADDITIONS", not self.args.json, colortext=True)
+            storage.add_to_storage(technology=server, technology_type="WebServer", vulnerability="PTV-WEB-INFO-WSURL", probability=probability)
         else:
             ptprint("No matching web server identified from URL length behavior", "INFO", not self.args.json, indent=4)
 
@@ -115,8 +116,8 @@ class WSURLLEN:
         """
         for entry in self.definitions:
             if entry.get("statuses") == observed_statuses:
-                return entry.get("technology")
-        return None
+                return entry.get("technology"), entry.get("probability")
+        return None, None
 
 
 def run(args: object, ptjsonlib: object, helpers: object, http_client: object, responses: StoredResponses):

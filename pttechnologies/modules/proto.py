@@ -52,10 +52,11 @@ class PROTO:
             for trigger_name, status in zip(self.TRIGGER_MAP.keys(), statuses):
                 ptprint(f"{trigger_name}\t[{status}]", "ADDITIONS", not self.args.json, indent=8, colortext=True)
 
-        server = self._identify_server(statuses)
+        server, probability = self._identify_server(statuses)
         if server:
-            ptprint(f"Identified WS: {server}", "VULN", not self.args.json, indent=4)
-            storage.add_to_storage(technology=server, technology_type="WebServer", vulnerability="PTV-WEB-INFO-PROTO", probability=20)
+            ptprint(f"Identified WS: {server}", "VULN", not self.args.json, indent=4, end=" ")
+            ptprint(f"({probability}%)", "ADDITIONS", not self.args.json, colortext=True)
+            storage.add_to_storage(technology=server, technology_type="WebServer", vulnerability="PTV-WEB-INFO-PROTO", probability=probability)
         else:
             ptprint("No matching web server identified from protocol behavior", "INFO", not self.args.json, indent=4)
 
@@ -105,8 +106,8 @@ class PROTO:
             
         for entry in self.definitions:
             if entry.get("statuses") == observed_statuses:
-                return entry.get("technology")
-        return None
+                return entry.get("technology"), entry.get("probability", 20)
+        return None, None
 
 
 def run(args: object, ptjsonlib: object, helpers: object, http_client: object, responses: StoredResponses):

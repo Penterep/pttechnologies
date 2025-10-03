@@ -64,13 +64,14 @@ class WSRPO:
 
         raw_headers = self._read_raw_headers(self.raw_response_400)
         order = self._extract_order(raw_headers)
-        technology = self._match_order(order)
+        result = self._match_order(order)
 
         if getattr(self.args, "verbose", False) and raw_headers:
             self._print_verbose(raw_headers)
 
-        if technology:
-            self._report(technology)
+        if result:
+            technology, probability = result
+            self._report(technology, probability)
         else:
             ptprint("Web-server could not be identified by header order", "INFO", not self.args.json,indent=4)
 
@@ -132,7 +133,7 @@ class WSRPO:
             expected_sequence = [h for h in ref if h in order_filtered]
 
             if order_filtered == expected_sequence:
-                return d.get("technology")
+                return d.get("technology"), d.get("probability", 20)
         return None
 
     def _print_verbose(self, raw: List[Tuple[bytes, bytes]]):
@@ -147,7 +148,7 @@ class WSRPO:
             ptprint(f"{n.decode(errors='replace')}: "
                     f"{v.decode(errors='replace')}", "ADDITIONS", True, indent=8, colortext=True)
 
-    def _report(self, tech: str):
+    def _report(self, tech: str, probability: int):
         """
         Report the identified web server technology and record it.
 
@@ -155,8 +156,9 @@ class WSRPO:
             tech: The identified technology string.
         """
         if tech:
-            storage.add_to_storage(technology=tech, technology_type="WebServer", vulnerability="PTV-WEB-INFO-WSRPO", probability=20)            
-            ptprint(f"Identified WS: {tech}", "VULN", not self.args.json, indent=4)
+            storage.add_to_storage(technology=tech, technology_type="WebServer", vulnerability="PTV-WEB-INFO-WSRPO", probability=probability)            
+            ptprint(f"Identified WS: {tech}", "VULN", not self.args.json, indent=4, end=" ")
+            ptprint(f"({probability}%)", "ADDITIONS", not self.args.json, colortext=True)
 
 def run(args: object, ptjsonlib: object, helpers: object, http_client: object, responses: StoredResponses):
     """Entry point to run the WSRPO test."""

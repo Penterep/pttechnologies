@@ -101,13 +101,16 @@ class OSLPT1:
             return
 
         result = self._responses_differ(response1, response2)
+        probability = 100
 
         if result:
             storage.add_to_storage(technology="Windows", technology_type="Os", vulnerability="PTV-WEB-INFO-OSLNK")
-            ptprint(f"Identified OS: Windows", "VULN", not self.args.json, indent=4)
+            ptprint(f"Identified OS: Windows", "VULN", not self.args.json, indent=4, end=" ")
+            ptprint(f"({probability}%)", "ADDITIONS", not self.args.json, colortext=True)
         else:
             storage.add_to_storage(technology="Linux", technology_type="Os", vulnerability="PTV-WEB-INFO-OSLNK")
-            ptprint(f"Identified OS: Unix / Linux", "VULN", not self.args.json, indent=4)
+            ptprint(f"Identified OS: Unix / Linux", "VULN", not self.args.json, indent=4, end=" ")
+            ptprint(f"({probability}%)", "ADDITIONS", not self.args.json, colortext=True)
 
 def run(args: object, ptjsonlib: object, helpers: object, http_client: object, responses: StoredResponses):
     """Entry point for running the OSLPT1 OS detection."""

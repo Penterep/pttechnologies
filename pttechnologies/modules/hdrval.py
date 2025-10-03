@@ -525,7 +525,8 @@ class HDRVAL:
                 'technology': 'ASP.NET Framework',
                 'name': 'ASP.NET Framework',
                 'version': technology['version'],
-                'description': f"{header_name}: {full_header}"
+                'description': f"{header_name}: {full_header}",
+                'probability': 100
             }
         elif tech_name == 'asp.net mvc':
             return {
@@ -533,7 +534,8 @@ class HDRVAL:
                 'technology': 'ASP.NET MVC',
                 'name': 'ASP.NET MVC',
                 'version': technology['version'],
-                'description': f"{header_name}: {full_header}"
+                'description': f"{header_name}: {full_header}",
+                'probability': 100
             }
 
         definitions = self.definitions.get('definitions', self.definitions)
@@ -550,7 +552,8 @@ class HDRVAL:
                         'technology': definition.get('technology', technology['name']),
                         'name': technology['name'],
                         'version': technology['version'],
-                        'description': f"{header_name}: {full_header}"
+                        'description': f"{header_name}: {full_header}",
+                        'probability': definition.get('probability', 100)
                     }
 
         return None
@@ -571,6 +574,7 @@ class HDRVAL:
         
         tech_name = tech.get('technology', tech['name'])
         version = tech.get('version')
+        probability = tech.get('probability', 100)
         
         header_name = tech.get('header', 'Unknown')
         tech_values = tech.get('tech_values', {})
@@ -590,7 +594,8 @@ class HDRVAL:
             version=version,
             technology_type=tech_type,
             vulnerability="PTV-WEB-INFO-SRVHDR",
-            description=description
+            description=description,
+            probability=probability
         )
 
     def _get_source_description(self, source: str) -> str:
@@ -679,8 +684,10 @@ class HDRVAL:
 
                     version_text = f" {tech['version']}" if tech.get('version') else ""
                     tech_name = tech.get('technology', tech['name'])
+                    probability = tech.get('probability', 100)
 
-                    ptprint(f"{tech_name}{version_text}{category_text}", "VULN", not self.args.json, indent=8)
+                    ptprint(f"{tech_name}{version_text}{category_text}", "VULN", not self.args.json, indent=8, end=" ")
+                    ptprint(f"({probability}%)", "ADDITIONS", not self.args.json, colortext=True)
 
         for tech, is_classified in [
             *( (t, True) for t in found_technologies ),

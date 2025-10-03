@@ -254,9 +254,11 @@ class Predict:
         for pred in self.predictions_made:
             tech_display = f"{pred['technology']} ({pred['type']})"
             source_display = f"<- {pred['source'].rsplit(' ',1)[0]}"
+            probability = pred.get('probability', 100)
             
-            ptprint(f"{tech_display}", "VULN", not self.args.json, indent=4, end="")
-            ptprint(f" {source_display}", "ADDITIONS", not self.args.json, colortext=True)
+            ptprint(f"{tech_display}", "VULN", not self.args.json, indent=4, end=" ")
+            ptprint(f"({probability}%)", "ADDITIONS", not self.args.json, colortext=True, end=" ")
+            ptprint(f"{source_display}", "ADDITIONS", not self.args.json, colortext=True)
 
     def match_condition(self, rec, cond):
         """

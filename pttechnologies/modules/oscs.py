@@ -180,12 +180,15 @@ class OSCS:
         This method also records the vulnerability code and OS property in the JSON.
         """
         if r1 is not None and r2 is not None:
+            probability = 100
             if r1.status_code == r2.status_code and ct1 == ct2:
                 storage.add_to_storage(technology="Windows", technology_type="Os", vulnerability="PTV-WEB-INFO-OSSEN")
-                ptprint("Identified OS: Windows", "VULN", not self.args.json, indent = 4)
+                ptprint("Identified OS: Windows", "VULN", not self.args.json, indent = 4, end=" ")
+                ptprint(f"({probability}%)", "ADDITIONS", not self.args.json, colortext=True)
             else:
                 storage.add_to_storage(technology="Linux", technology_type="Os", vulnerability="PTV-WEB-INFO-OSSEN")
-                ptprint("Identified OS: Unix / Linux", "VULN", not self.args.json, indent = 4)
+                ptprint("Identified OS: Unix / Linux", "VULN", not self.args.json, indent = 4, end=" ")
+                ptprint(f"({probability}%)", "ADDITIONS", not self.args.json, colortext=True)
         else:
             ptprint("Connection error occurred", "INFO", not self.args.json, indent=4)
 

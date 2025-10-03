@@ -144,9 +144,11 @@ class PLLNG:
         """
         if result:
             language = result["technology"]
+            probability = result.get("probability", 100)
             ext = result["extension"].capitalize()
-            storage.add_to_storage(technology=language, technology_type="Interpret", vulnerability="PTV-WEB-INFO-LNGEX")
-            ptprint(f"Identified language: {language}", "VULN", not self.args.json, indent=4)
+            storage.add_to_storage(technology=language, technology_type="Interpret", vulnerability="PTV-WEB-INFO-LNGEX", probability=probability )
+            ptprint(f"Identified language: {language}", "VULN", not self.args.json, indent=4, end=" ")
+            ptprint(f"({probability}%)", "ADDITIONS", not self.args.json, colortext=True)
         else:
             ptprint(f"It was not possible to identify the programming language", "INFO", not self.args.json, indent=4)
 

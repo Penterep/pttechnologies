@@ -255,9 +255,11 @@ class ERRPAGE:
         for tech in unique_techs.values():
             version_text = f" {tech['version']}" if tech.get('version') else ""
             category_text = f" ({tech['category']})" if tech.get('category') else ""
+            probability = tech.get("probability", 100)
             
             ptprint(f"{tech['technology']}{version_text}{category_text}", 
-                   "VULN", not self.args.json, indent=4)
+                   "VULN", not self.args.json, indent=4, end=" ")
+            ptprint(f"({probability}%)", "ADDITIONS", not self.args.json, colortext=True)
             
             if self.args.verbose:
                 ptprint(f"Detected via: {tech.get('trigger_name', 'unknown')} [HTTP {tech.get('status_code', '?')}]", 

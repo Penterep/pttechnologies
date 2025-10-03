@@ -247,6 +247,7 @@ class COOK:
         technology = pattern.get("technology")
         technology_type = pattern.get("technology_type")
         description = pattern.get("description", "")
+        probability = pattern.get("probability", 100)
         
         tech_key = f"{technology}:{technology_type}"
         
@@ -262,12 +263,13 @@ class COOK:
         storage.add_to_storage(
             technology=technology,
             technology_type=technology_type,
-            description=storage_description
+            description=storage_description,
+            probability=probability
         )
         
-        self._display_result(technology, technology_type, cookie_name, cookie_value, description)
+        self._display_result(technology, technology_type, cookie_name, cookie_value, description, probability)
     
-    def _display_result(self, technology, technology_type, cookie_name, cookie_value, description):
+    def _display_result(self, technology, technology_type, cookie_name, cookie_value, description, probability):
         """
         Display the identified technology result.
         
@@ -292,7 +294,8 @@ class COOK:
         
         detail_message = "".join(detail_parts)
         
-        ptprint(main_message, "VULN", not self.args.json, end="", indent=4)
+        ptprint(main_message, "VULN", not self.args.json, end=" ", indent=4)
+        ptprint(f"({probability}%)", "ADDITIONS", not self.args.json, colortext=True, end="")
         if self.args.verbose:
             ptprint(f" {detail_message}", "ADDITIONS", not self.args.json, colortext=True)
         else:
