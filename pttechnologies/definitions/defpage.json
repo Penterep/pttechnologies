@@ -3,7 +3,7 @@
     {
       "_comment": "https://policie.gov.cz -> 403",
       "name": "Red Hat Enterprise Linux",
-      "technology": "RHEL",
+      "technology": "Red Hat Enterprise Linux",
       "category": "Os",
       "pattern": "<title>Test Page for the HTTP Server on Red Hat Enterprise Linux</title>",
       "flags": "i"
@@ -25,10 +25,11 @@
       "flags": "i"
     },
     {
+      "_comment": "http://83.150.27.46",
       "name": "Apache Debian Default",
       "technology": "Apache",
       "category": "WebServer",
-      "pattern": "<title>\\s*Apache2\\s+Debian\\s+Default\\s+Page\\s*</title>|Apache2\\s+Debian\\s+Default\\s+Page",
+      "pattern": "<title>.*Apache2?\\s+Debian\\s+Default\\s+Page.*</title>",
       "flags": "i"
     },
     {
@@ -39,12 +40,21 @@
       "flags": "i"
     },
     {
+      "_comment": "140.238.152.168",
       "name": "Nginx Welcome Page",
       "technology": "Nginx",
       "category": "WebServer",
-      "pattern": "<title>.*nginx.*</title>|<h1>.*nginx.*</h1>|Welcome\\s+to\\s+nginx[\\s!]*",
+      "pattern": "<title[^>]*>\\s*Test Page for the Nginx HTTP Server on Oracle Linux\\s*</title>|Welcome\\s+to\\s+nginx[\\s!]*",
       "version_pattern": "nginx[/\\s]+(\\d+\\.\\d+(?:\\.\\d+)?)",
       "flags": "is"
+    },
+    {
+      "_comment": "140.238.152.168",
+      "name": "Nginx Welcome Page",
+      "technology": "Oracle Linux",
+      "category": "Os",
+      "pattern": "<title[^>]*>\\s*Test Page for the Nginx HTTP Server on Oracle Linux\\s*</title>",
+      "flags": "i"
     },
     {
       "name": "IIS Default Welcome",
@@ -62,15 +72,7 @@
       "flags": "i"
     },
     {
-      "name": "IIS Version in URL",
-      "technology": "Microsoft-IIS",
-      "category": "WebServer",
-      "pattern": "iis[-_]?([0-9]+(?:\\.[0-9]+)?)",
-      "version_pattern": "iis[-_]?([0-9]+(?:\\.[0-9]+)?)",
-      "version_transform": "iis_legacy",
-      "flags": "i"
-    },
-    {
+      "_comment": "http://54.225.225.158/",
       "name": "IIS Microsoft Welcome Link",
       "pattern": "go\\.microsoft\\.com/fwlink/\\?linkid=66138",
       "technology": "Microsoft-IIS",
@@ -102,59 +104,11 @@
       "flags": "i"
     },
     {
-      "name": "Azure CDN",
-      "technology": "Azure CDN",
-      "category": "CDN",
-      "pattern": "X-Cache:\\s*.*Azure|Azure\\s+CDN|azureedge\\.net|azure-cdn",
-      "flags": "i"
-    },
-    {
-      "name": "Azure Application Gateway",
-      "technology": "Azure Application Gateway",
-      "category": "LoadBalancer",
-      "pattern": "Azure\\s+Application\\s+Gateway|X-Azure-RequestId:\\s*[\\w-]+|azure-gw",
-      "flags": "i"
-    },
-    {
+      "_comment": "104.21.2.192",
       "name": "CloudFlare Protection",
       "technology": "CloudFlare",
       "category": "WebServer",
-      "pattern": "<title>.*[Cc]loudflare.*</title>|Direct\\s+IP\\s+access\\s+not\\s+allowed.*Cloudflare|Checking\\s+your\\s+browser.*cloudflare|Please\\s+enable\\s+cookies.*Cloudflare|Ray\\s+ID:\\s*[a-f0-9]{16}|data-cf-beacon|cf-wrapper|cloudflare-static|/cdn-cgi/",
-      "flags": "i"
-    },
-    {
-      "name": "AWS CloudFront",
-      "technology": "AWS CloudFront",
-      "category": "CDN",
-      "pattern": "X-Amz-Cf-Id:\\s*[\\w-]+|CloudFront|X-Cache:\\s*.*cloudfront|aws-cf",
-      "flags": "i"
-    },
-    {
-      "name": "AWS Load Balancer",
-      "technology": "AWS ELB",
-      "category": "LoadBalancer",
-      "pattern": "X-Amzn-RequestId:\\s*[\\w-]+|awselb/\\d+\\.\\d+|AWS-ALB",
-      "flags": "i"
-    },
-    {
-      "name": "Google Cloud CDN",
-      "technology": "Google Cloud CDN",
-      "category": "CDN",
-      "pattern": "X-Cloud-Trace-Context:\\s*[\\w/]+|X-Goog-[\\w-]+:\\s*\\w+|gcp-gfe|googleusercontent\\.com",
-      "flags": "i"
-    },
-    {
-      "name": "Akamai CDN",
-      "technology": "Akamai",
-      "category": "CDN",
-      "pattern": "X-Akamai[\\w-]*:\\s*\\w+|akamai|X-Check-Cacheable:\\s*\\w+|AkamaiGHost",
-      "flags": "i"
-    },
-    {
-      "name": "F5 Big-IP",
-      "technology": "F5 Big-IP",
-      "category": "LoadBalancer",
-      "pattern": "F5-?BigIP|BIG-?IP|f5-load-balancer|X-WA-Info:\\s*[\\w-]+",
+      "pattern": "<title>\\s*Direct IP access not allowed\\s*\\|\\s*Cloudflare\\s*</title>",
       "flags": "i"
     },
     {
@@ -195,10 +149,11 @@
       "flags": "i"
     },
     {
+      "_comment": "http://83.150.27.46",
       "name": "Debian Default Apache",
       "technology": "Debian",
       "category": "Os",
-      "pattern": "<title>.*Apache2?\\s+Debian\\s+Default\\s+Page.*</title>|<img\\s+src=\"[^\"]*openlogo-75\\.png\"[^>]*>.*Apache",
+      "pattern": "<title>.*Apache2?\\s+Debian\\s+Default\\s+Page.*</title>",
       "flags": "i"
     },
     {
