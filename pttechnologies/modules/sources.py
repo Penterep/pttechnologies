@@ -168,7 +168,7 @@ class SOURCES:
    
             
             if hasattr(submodule, "analyze"):
-                enhanced_info = submodule.analyze(tech_info, self.args)
+                enhanced_info = submodule.analyze(tech_info, self.args, self.helpers)
                 tech_info.update(enhanced_info)
                                     
         except ImportError as e:
@@ -189,7 +189,7 @@ class SOURCES:
         """
         technology = tech_info["technology"]
         category = tech_info["category"]
-        probability = tech_info["probability"]
+        probability = tech_info.get("probability", 50)
         test_url = tech_info["url"]
         status_code = tech_info["status_code"]
         
@@ -203,11 +203,29 @@ class SOURCES:
             probability=probability
         )
                 
-        ptprint(f"{technology} ({category})", "VULN", not self.args.json, indent=4)
+        ptprint(f"{technology} ({category})", "VULN", not self.args.json, indent=4, end=" ")
+        ptprint(f"({probability}%)", "ADDITIONS", not self.args.json, colortext=True)
 
         if tech_info.get("additional_info"):
             for info in tech_info["additional_info"]:
-                ptprint(f"{info}", "INFO", not self.args.json, indent=6)
+                lines = info.strip().split('\n')
+                if lines:
+                    first_line = lines[0]
+                    last_space_idx = first_line.rfind(' ')
+                    if last_space_idx != -1:
+                        tech_part = first_line[:last_space_idx]
+                        prob_part = first_line[last_space_idx:]
+
+                        ptprint(f"{tech_part}", "VULN", not self.args.json, indent=8, end="")
+                        ptprint(f"{prob_part}", "ADDITIONS", not self.args.json, colortext=True)
+
+                    else:
+                        ptprint(f"{first_line}", "VULN", not self.args.json, indent=8)
+
+                if self.args.verbose:
+                    for detail_line in lines[1:]:
+                        if detail_line.strip():
+                            ptprint(f"{detail_line}", "ADDITIONS", not self.args.json, indent=8, colortext=True)
 
 
 def run(args: object, ptjsonlib: object, helpers: object, http_client: object, responses: StoredResponses):

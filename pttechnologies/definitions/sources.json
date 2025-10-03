@@ -3,7 +3,12 @@
       "technology": "Apache",
       "category": "WebServer",
       "files": ["server-status", "server-info"],
-      "submodule": "apache_analyzer"
+      "submodule": "apache_server_status"
+    },
+    {
+      "technology": "Apache",
+      "category": "WebServer",
+      "files": ["server-info"]
     },
     {
       "technology": "Apache",
