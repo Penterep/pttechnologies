@@ -59,10 +59,8 @@ def analyze(tech_info: Dict[str, Any], args: object, helpers: object) -> Dict[st
             
             info_lines = [f"{component['technology']}{version_str}{category_str}{probability_str}"]
             
-            source_info = component.get('source', 'unknown')
-            info_lines.append(f"  └─ Source: {source_info}")
             if component.get('matched_text'):
-                info_lines.append(f"  └─ Match: '{component['matched_text']}'")
+                info_lines.append(f"    Match: '{component['matched_text']}'")
             
             tech_info['additional_info'].append('\n'.join(info_lines))
             
