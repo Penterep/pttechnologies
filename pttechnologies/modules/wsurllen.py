@@ -116,7 +116,7 @@ class WSURLLEN:
         """
         for entry in self.definitions:
             if entry.get("statuses") == observed_statuses:
-                return entry.get("technology"), entry.get("probability")
+                return entry.get("technology"), entry.get(("probability"),100)
         return None, None
 
 
