@@ -1,0 +1,167 @@
+[
+  {
+    "technology": "jQuery",
+    "category": "JavaScript Library",
+    "signatures": ["jQuery", "jquery"],
+    "url_pattern": "jquery[.-]?(\\d+\\.\\d+\\.\\d+)?(?:\\.min)?\\.js",
+    "version_patterns": [
+      "jQuery(?:\\s+JavaScript\\s+Library)?\\s+v?(\\d+\\.\\d+\\.\\d+)",
+      "jquery[.-]?(\\d+\\.\\d+\\.\\d+)",
+      "@version\\s+(\\d+\\.\\d+\\.\\d+)",
+      "\\*\\s+jQuery\\s+v?(\\d+\\.\\d+\\.\\d+)"
+    ],
+    "probability": 100
+  },
+  {
+    "technology": "Modernizr",
+    "category": "JavaScript Library",
+    "signatures": ["Modernizr"],
+    "url_pattern": "modernizr(?:[.-]?(\\d+\\.\\d+(?:\\.\\d+)?))?\\.(?:min\\.)?js",
+    "version_patterns": [
+      "Modernizr\\s+v?(\\d+\\.\\d+\\.\\d+)",
+      "modernizr[.-]?(\\d+\\.\\d+\\.\\d+)",
+      "@version\\s+(\\d+\\.\\d+\\.\\d+)",
+       "_version[\"']?:\\s*[\"']?(\\d+\\.\\d+\\.\\d+)"
+    ],
+    "probability": 100
+  },
+  {
+    "technology": "Underscore.js",
+    "category": "JavaScript Library", 
+    "signatures": ["Underscore.js", "underscore"],
+    "url_pattern": "underscore(?:[.-]?(\\d+\\.\\d+\\.\\d+))?(?:\\.min)?\\.js",
+    "version_patterns": [
+      "Underscore\\.js\\s+(\\d+\\.\\d+\\.\\d+)",
+      "_.VERSION\\s*=\\s*['\"]?(\\d+\\.\\d+\\.\\d+)"
+    ],
+    "probability": 100
+  },
+  {
+    "technology": "Lodash",
+    "category": "JavaScript Library",
+    "signatures": ["lodash", "Lo-Dash"],
+    "url_pattern": "lodash(?:[.-]?(\\d+\\.\\d+\\.\\d+))?(?:\\.min)?\\.js",
+    "version_patterns": [
+      "lodash\\s+(?:v|version:?\\s*)?(\\d+\\.\\d+\\.\\d+)",
+      "@license\\s+Lo?-?[Dd]ash\\s+(\\d+\\.\\d+\\.\\d+)"  
+    ],
+    "probability": 100
+  },
+  {
+    "technology": "React",
+    "category": "JavaScript Framework",
+    "signatures": ["React.createElement", "facebook.github.io/react", "__REACT_DEVTOOLS_GLOBAL_HOOK__"],
+    "url_pattern": "react(?:\\.production)?(?:\\.min)?\\.js",
+    "version_patterns": [
+      "React\\s+v?(\\d+\\.\\d+\\.\\d+)",
+      "@version\\s+(\\d+\\.\\d+\\.\\d+)"
+    ],
+    "probability": 100
+  },
+  {
+    "technology": "Vue.js",
+    "category": "JavaScript Framework",
+    "signatures": ["Vue.js", "vuejs.org", "Vue.version"],
+    "url_pattern": "vue(?:[.-]?(\\d+\\.\\d+\\.\\d+))?(?:\\.min)?\\.js",
+    "version_patterns": [
+      "Vue\\.js\\s+v?(\\d+\\.\\d+\\.\\d+)",
+      "@version\\s+(\\d+\\.\\d+\\.\\d+)"
+    ],
+    "probability": 100
+  },
+  {
+    "technology": "Angular",
+    "category": "JavaScript Framework",
+    "signatures": ["angular.module", "angular.version", "AngularJS"],
+    "url_pattern": "angular(?:[.-]?(\\d+\\.\\d+\\.\\d+))?(?:\\.min)?\\.js",
+    "version_patterns": [
+      "AngularJS\\s+v?(\\d+\\.\\d+\\.\\d+)",
+      "angular\\.version\\.full\\s*=\\s*['\"]?(\\d+\\.\\d+\\.\\d+)"
+    ],
+    "probability": 100
+  },
+  {
+    "technology": "Bootstrap",
+    "category": "CSS Framework",
+    "signatures": ["Bootstrap", "getbootstrap.com", "bootstrap.js"],
+    "url_pattern": "bootstrap(?:[.-]?(\\d+\\.\\d+\\.\\d+))?(?:\\.bundle)?(?:\\.min)?\\.js",
+    "version_patterns": [
+      "Bootstrap\\s+v?(\\d+\\.\\d+\\.\\d+)",
+      "@version\\s+(\\d+\\.\\d+\\.\\d+)"  
+    ],
+    "probability": 100
+  },
+  {
+    "technology": "D3.js",
+    "category": "JavaScript Library",
+    "signatures": ["d3.version", "d3js.org", "Mike Bostock"],
+    "url_pattern": "d3(?:[.-]?v?(\\d+))?(?:\\.min)?\\.js",
+    "version_patterns": [
+      "d3\\s+v?(\\d+\\.\\d+\\.\\d+)",
+      "version:\\s*['\"]?(\\d+\\.\\d+\\.\\d+)"
+    ],
+    "probability": 100    
+  },
+  {
+    "technology": "Three.js",
+    "category": "JavaScript Library", 
+    "signatures": ["THREE.REVISION", "three.js", "threejs.org"],
+    "url_pattern": "three(?:\\.module)?(?:\\.min)?\\.js",
+    "version_patterns": [
+      "three\\.js\\s+r?(\\d+)",
+      "REVISION:\\s*['\"]?(\\d+)"
+    ],
+    "probability": 100
+  },
+  {
+    "technology": "Axios",
+    "category": "JavaScript Library",
+    "signatures": ["axios", "axios/lib/axios"],
+    "url_pattern": "axios(?:[.-]?(\\d+\\.\\d+\\.\\d+))?(?:\\.min)?\\.js",
+    "version_patterns": [
+      "axios\\s+v?(\\d+\\.\\d+\\.\\d+)"
+    ],
+    "probability": 100
+  },
+  {
+    "technology": "Chart.js",
+    "category": "JavaScript Library",
+    "signatures": ["Chart.js", "chartjs.org"],
+    "url_pattern": "chart(?:\\.bundle)?(?:\\.min)?\\.js",
+    "version_patterns": [
+      "Chart\\.js\\s+v?(\\d+\\.\\d+\\.\\d+)"
+    ],
+    "probability": 100
+  },
+  {
+    "technology": "Moment.js",
+    "category": "JavaScript Library",
+    "signatures": ["moment.js", "momentjs.com", "moment.version"],
+    "url_pattern": "moment(?:[.-]?(\\d+\\.\\d+\\.\\d+))?(?:\\.min)?\\.js",
+    "version_patterns": [
+      "moment\\.js\\s+(\\d+\\.\\d+\\.\\d+)",
+      "version:\\s*['\"]?(\\d+\\.\\d+\\.\\d+)"
+    ],
+    "probability": 100
+  },
+  {
+    "technology": "Swiper",
+    "category": "JavaScript Library",
+    "signatures": ["Swiper", "swiperjs.com", "swiper-bundle"], 
+    "url_pattern": "swiper(?:\\.bundle)?(?:\\.min)?\\.js",
+    "version_patterns": [
+      "Swiper\\s+(\\d+\\.\\d+\\.\\d+)"
+    ],
+    "probability": 100
+  },
+  {
+    "technology": "svg4everybody",
+    "category": "JavaScript Library",
+    "signatures": ["svg4everybody"],
+    "url_pattern": "svg4everybody(?:\\.min)?\\.js",
+    "version_patterns": [
+      "svg4everybody\\s+v?(\\d+\\.\\d+\\.\\d+)"  
+    ],
+    "probability": 100
+  }
+]
