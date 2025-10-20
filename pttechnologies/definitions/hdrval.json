@@ -369,6 +369,11 @@
       "category": "Plugin",
       "technology": "mod_bwlimited",
       "content": "mod_bwlimited"
+    },
+    {
+      "category": "Cryptography",
+      "technology": "OpenSSL",
+      "content": "OpenSSL"
     }
   ]
 }
