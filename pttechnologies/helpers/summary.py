@@ -102,9 +102,11 @@ class Summary:
         
         for tech_info in technologies:
             technology = tech_info["technology"]
-            version = tech_info["version"]
+            version = tech_info.get("version")
+            version_min = tech_info.get("version_min")
+            version_max = tech_info.get("version_max")
             
-            data = storage.get_data_for_technology(technology, version)
+            data = storage.get_data_for_technology(technology)
             
             if not data:
                 continue
@@ -120,6 +122,8 @@ class Summary:
             tech_entry = {
                 "name": technology,
                 "version": version,
+                "version_min": version_min,
+                "version_max": version_max,
                 "probability": probability,
                 "type": technology_type
             }
@@ -167,8 +171,17 @@ class Summary:
                 tech_display = tech["name"]
                 if tech["version"]:
                     tech_display += f" {tech['version']}"
-                tech_display += f" ({tech['probability']}%)"
+                elif tech.get("version_min") and tech.get("version_max"):
+                    # (min - max))
+                    tech_display += f" {tech['version_min']} - {tech['version_max']}"
+                elif tech.get("version_min") and not tech.get("version_max"):
+                    # (min+)
+                    tech_display += f" {tech['version_min']}+"
+                elif tech.get("version_max") and not tech.get("version_min"):
+                    # (< max)
+                    tech_display += f" < {tech['version_max']}"
 
+                tech_display += f" ({tech['probability']}%)"
                 ptprint(f"{tech_display}", "TEXT", not self.args.json, indent=8)
     
     def _generate_json_output(self):
