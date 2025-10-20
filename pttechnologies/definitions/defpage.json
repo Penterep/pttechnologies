@@ -40,7 +40,7 @@
       "flags": "i"
     },
     {
-      "_comment": "140.238.152.168",
+      "_comment": "http://140.238.152.168",
       "name": "Nginx Welcome Page",
       "technology": "Nginx",
       "category": "WebServer",
@@ -61,6 +61,15 @@
       "technology": "Microsoft-IIS",
       "category": "WebServer",
       "pattern": "Welcome\\s+to\\s+Internet\\s+Information\\s+Services|<title>\\s*Microsoft\\s+Internet\\s+Information\\s+Services\\s*</title>",
+      "flags": "i"
+    },
+    {
+      "_comment": "http://84.54.114.92/ http://84.54.114.92/",
+      "name": "IIS 8 Default",
+      "technology": "Microsoft IIS",
+      "category": "WebServer",
+      "pattern": "Microsoft\\s+Internet\\s+Information\\s+Services\\s+8|iis-8\\.png|<title>\\s*Microsoft\\s+Internet\\s+Information\\s+Services\\s+8\\s*</title>",
+      "version_pattern": "Microsoft\\s+Internet\\s+Information\\s+Services\\s+(8(?:\\.\\d+)?)",
       "flags": "i"
     },
     {
@@ -216,5 +225,191 @@
       "version_pattern": "Rails[/\\s]+(\\d+\\.\\d+(?:\\.\\d+)?)",
       "flags": "i"
     }
-  ]
+  ],
+  
+  "version_detection": {
+    "iis": {
+      "technology_aliases": ["Microsoft-IIS", "Microsoft IIS", "IIS"],
+      "ranges": [
+        {
+          "_comment": "IIS 10.0+ (Windows Server 2016+)",
+          "min_version": "10.0",
+          "max_version": null,
+          "indicators": [
+            "<title>\\s*IIS\\s+Windows\\s+Server\\s*</title>",
+            "iisstart\\.png",
+            "background-color:\\s*#0072C6",
+            "<!DOCTYPE\\s+html\\s+PUBLIC.*XHTML.*Strict",
+            "alt=[\"']IIS[\"'](?!\\d)"
+          ],
+          "required_matches": 2,
+          "specific_indicator": "iisstart\\.png",
+          "confidence": "high"
+        },
+        {
+          "_comment": "IIS 8.5 (Windows Server 2012 R2)",
+          "min_version": "8.5",
+          "max_version": "10.0",
+          "indicators": [
+            "iis-85\\.png",
+            "<title>\\s*IIS\\s+Windows\\s+Server\\s*</title>",
+            "background-color:\\s*#0072C6",
+            "<!DOCTYPE\\s+html\\s+PUBLIC.*XHTML.*Strict",
+            "alt=[\"']IIS[\"'](?!\\d)"
+          ],
+          "required_matches": 2,
+          "specific_indicator": "iis-85\\.png",
+          "confidence": "high"
+        },
+        {
+          "_comment": "IIS 8.0 (Windows Server 2012)",
+          "min_version": "8.0",
+          "max_version": "8.5",
+          "indicators": [
+            "<title>\\s*Microsoft\\s+Internet\\s+Information\\s+Services\\s+8\\s*</title>",
+            "iis-8\\.png",
+            "alt=[\"']Microsoft\\s+Internet\\s+Information\\s+Services\\s+8\\.0[\"']",
+            "font-family:\\s*[\"']Segoe\\s+UI[\"']",
+            "bkg-gry\\.jpg",
+            "<!DOCTYPE\\s+HTML>(?!\\s+PUBLIC)",
+            "ws8-brand\\.png",
+            "msweb-brand\\.png"
+          ],
+          "required_matches": 3,
+          "confidence": "high"
+        },
+        {
+          "_comment": "IIS 7.0-7.5 (Windows Server 2008/2008 R2)",
+          "min_version": "7.0",
+          "max_version": "7.5",
+          "indicators": [
+            "<title>\\s*IIS7\\s*</title>",
+            "welcome\\.png",
+            "background-color:\\s*#B3B3B3",
+            "alt=[\"']IIS7[\"']",
+            "<!DOCTYPE\\s+html\\s+PUBLIC.*XHTML.*Strict",
+            "width=[\"']571[\"'].*height=[\"']411[\"']"
+          ],
+          "required_matches": 2,
+          "confidence": "medium"
+        },
+        {
+          "_comment": "IIS 6.0 and earlier (Windows Server 2003 and earlier)",
+          "min_version": null,
+          "max_version": "6.0",
+          "indicators": [
+            "<html>\\s*<head>\\s*<title>\\s*[^<]*\\s*</title>\\s*</head>\\s*<body>\\s*<h1>",
+            "Under\\s+Construction",
+            "<body>\\s*<h1>[^<]*</h1>\\s*</body>"
+          ],
+          "required_matches": 1,
+          "confidence": "low"
+        }
+      ]
+    },
+    
+    "nginx": {
+      "technology_aliases": ["Nginx", "nginx"],
+      "ranges": [
+        {
+          "_comment": "Nginx 1.23.0+ (2022+)",
+          "min_version": "1.23.0",
+          "max_version": null,
+          "indicators": [
+            "html\\s*\\{\\s*color-scheme:\\s*light\\s+dark;\\s*\\}",
+            "body\\s*\\{\\s*width:\\s*35em;\\s*margin:\\s*0\\s+auto;",
+            "<title>\\s*Welcome\\s+to\\s+nginx!\\s*</title>"
+          ],
+          "required_matches": 2,
+          "specific_indicator": "color-scheme:\\s*light\\s+dark",
+          "confidence": "high"
+        },
+        {
+          "_comment": "Nginx 1.10-1.22 (2016-2022) - distro-specific",
+          "min_version": "1.10",
+          "max_version": "1.23.0",
+          "indicators": [
+            "<title>.*Test\\s+Page\\s+for\\s+the\\s+Nginx\\s+HTTP\\s+Server\\s+on",
+            "<!DOCTYPE\\s+html\\s+PUBLIC.*XHTML\\s+1\\.1",
+            "Welcome\\s+to\\s+<strong>nginx</strong>",
+            "nginx-logo\\.png",
+            "/usr/share/nginx/html",
+            "<h1>\\s*Welcome\\s+to\\s+nginx\\s+on\\s+(Red\\s+Hat\\s+Enterprise\\s+Linux|CentOS|Oracle\\s+Linux)"
+          ],
+          "required_matches": 2,
+          "confidence": "medium"
+        },
+        {
+          "_comment": "Nginx 1.10-1.22 (2016-2022) - standard",
+          "min_version": "1.10",
+          "max_version": "1.23.0",
+          "indicators": [
+            "<title>\\s*Welcome\\s+to\\s+nginx!\\s*</title>",
+            "<h1>\\s*Welcome\\s+to\\s+nginx!\\s*</h1>",
+            "width:\\s*35em;",
+            "font-family:\\s*Tahoma,\\s*Verdana,\\s*Arial,\\s*sans-serif;",
+            "<em>\\s*Thank\\s+you\\s+for\\s+using\\s+nginx\\.\\s*</em>",
+            "nginx\\.org",
+            "nginx\\.com"
+          ],
+          "required_matches": 4,
+          "specific_indicator": "<em>\\s*Thank\\s+you\\s+for\\s+using\\s+nginx",
+          "confidence": "medium"
+        },
+        {
+          "_comment": "Nginx 1.0-1.9 (2011-2016)",
+          "min_version": "1.0",
+          "max_version": "1.10",
+          "indicators": [
+            "<title>\\s*Welcome\\s+to\\s+nginx!\\s*</title>",
+            "<h1>\\s*Welcome\\s+to\\s+nginx!\\s*</h1>",
+            "<center>\\s*nginx\\s*</center>",
+            "nginx\\.net"
+          ],
+          "required_matches": 2,
+          "confidence": "low"
+        },
+        {
+          "_comment": "Nginx 0.x (before 2011)",
+          "min_version": null,
+          "max_version": "1.0",
+          "indicators": [
+            "nginx/0\\.",
+            "<html>\\s*<head>\\s*<title>Welcome to nginx"
+          ],
+          "required_matches": 1,
+          "confidence": "low"
+        }
+      ]
+    },
+    
+    "apache": {
+      "technology_aliases": ["Apache", "Apache HTTP Server", "apache"],
+      "ranges": [
+        {
+          "_comment": "Apache 2.4+ (2012+)",
+          "min_version": "2.4",
+          "max_version": null,
+          "indicators": [
+            "Apache/2\\.4",
+            "<title>.*Apache2.*Ubuntu.*</title>",
+            "<title>.*Apache2.*Debian.*</title>"
+          ],
+          "required_matches": 1,
+          "confidence": "medium"
+        },
+        {
+          "_comment": "Apache 2.2 (2005-2012)",
+          "min_version": "2.2",
+          "max_version": "2.4",
+          "indicators": [
+            "Apache/2\\.2",
+            "<title>.*Test\\s+Page.*Apache.*</title>"
+          ],
+          "required_matches": 1,
+          "confidence": "medium"
+        }
+      ]
+    }
+  }
 }

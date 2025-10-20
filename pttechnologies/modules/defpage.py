@@ -144,7 +144,7 @@ class DEFPAGE:
                         "ADDITIONS", not self.args.json, indent=12, colortext=True, end="")
 
                         source_location = tech.get('source_location', 'content')
-                        ptprint(f" <- Matched: {tech.get('matched_text', 'N/A')} (from {source_location})", 
+                        ptprint(f" <- Matched: {tech.get('matched_text', 'N/A')}", 
                             "ADDITIONS", not self.args.json, colortext=True)
             else:
                 if self.args.verbose:
@@ -295,6 +295,9 @@ class DEFPAGE:
                     if pattern_def.get("submodule"):
                         match_result = self._call_submodule(match_result, pattern_def["submodule"], response, content)
                     
+                    # Determine version range based on technology
+                    match_result = self._determine_version_range(match_result, content)
+                    
                     detected.append(match_result)
                     seen_technologies.add(tech_key)
         
@@ -365,6 +368,141 @@ class DEFPAGE:
         
         return result
 
+    def _determine_version_range(self, tech_info: Dict[str, Any], content: str) -> Dict[str, Any]:
+        """
+        Determine version range for detected technology based on structural characteristics.
+        Uses rules defined in JSON configuration file.
+        
+        Args:
+            tech_info: Technology information dictionary
+            content: Page content
+            
+        Returns:
+            Enhanced technology information with version range
+        """
+        technology = tech_info.get('technology', '').lower()
+        
+        version_detection = self.definitions.get('version_detection', {})
+        
+        matched_tech_key = None
+        for tech_key, tech_data in version_detection.items():
+            aliases = tech_data.get('technology_aliases', [])
+            for alias in aliases:
+                if alias.lower() in technology:
+                    matched_tech_key = tech_key
+                    break
+            if matched_tech_key:
+                break
+        
+        if not matched_tech_key:
+            return tech_info
+        
+        return self._apply_version_rules(tech_info, content, version_detection[matched_tech_key])
+
+    def _apply_version_rules(self, tech_info: Dict[str, Any], content: str, rules: Dict[str, Any]) -> Dict[str, Any]:
+        """
+        Apply version detection rules from JSON configuration.
+        
+        Args:
+            tech_info: Technology information dictionary
+            content: Page content
+            rules: Version detection rules for specific technology
+            
+        Returns:
+            Enhanced technology information with version range
+        """
+        ranges = rules.get('ranges', [])
+        best_match = None
+        best_score = 0
+        best_confidence = 'low'
+        
+        for range_def in ranges:
+            indicators = range_def.get('indicators', [])
+            required_matches = range_def.get('required_matches', 1)
+            specific_indicator = range_def.get('specific_indicator')
+            confidence = range_def.get('confidence', 'low')
+            
+            score = 0
+            for pattern in indicators:
+                try:
+                    if re.search(pattern, content, re.I | re.S):
+                        score += 1
+                except re.error as e:
+                    if self.args.verbose:
+                        ptprint(f"Invalid regex pattern in version detection: {pattern} - {e}", 
+                            "INFO", not self.args.json, indent=8)
+                    continue
+            
+            specific_ok = True
+            if specific_indicator:
+                try:
+                    specific_ok = bool(re.search(specific_indicator, content, re.I | re.S))
+                except re.error as e:
+                    if self.args.verbose:
+                        ptprint(f"Invalid specific indicator regex: {specific_indicator} - {e}", 
+                            "INFO", not self.args.json, indent=8)
+                    specific_ok = False
+            
+            if score >= required_matches and specific_ok:
+                if score > best_score or (score == best_score and self._compare_confidence(confidence, best_confidence) > 0):
+                    best_score = score
+                    best_match = range_def
+                    best_confidence = confidence
+        
+        if best_match:
+            version_range_info = {
+                'min_version': best_match.get('min_version'),
+                'max_version': best_match.get('max_version'),
+                'confidence': best_confidence
+            }
+            
+            tech_info['version_range'] = version_range_info
+        
+        return tech_info
+
+    def _compare_confidence(self, conf1: str, conf2: str) -> int:
+        """
+        Compare two confidence levels.
+        
+        Args:
+            conf1: First confidence level ('low', 'medium', 'high')
+            conf2: Second confidence level ('low', 'medium', 'high')
+            
+        Returns:
+            1 if conf1 > conf2, -1 if conf1 < conf2, 0 if equal
+        """
+        confidence_order = {'low': 0, 'medium': 1, 'high': 2}
+        level1 = confidence_order.get(conf1.lower(), 0)
+        level2 = confidence_order.get(conf2.lower(), 0)
+        
+        if level1 > level2:
+            return 1
+        elif level1 < level2:
+            return -1
+        else:
+            return 0
+
+
+    def _format_version_range(self, min_version: Optional[str], max_version: Optional[str]) -> str:
+        """
+        Format version range for display.
+        
+        Args:
+            min_version: Minimum version
+            max_version: Maximum version
+            
+        Returns:
+            Formatted version range string
+        """
+        if min_version and max_version:
+            return f"{min_version} - {max_version}"
+        elif min_version:
+            return f"{min_version}+"
+        elif max_version:
+            return f"< {max_version}"
+        else:
+            return "unknown"
+
     def _call_submodule(self, tech_info: Dict[str, Any], submodule_name: str, response: object, content: str) -> Dict[str, Any]:
         """
         Calls specified submodule for enhanced technology detection.
@@ -421,12 +559,10 @@ class DEFPAGE:
         """
         if not self.detected_technologies:
             if self.default_page_reachable:
-                ptprint("Overall Summary: No default page technologies identified", "INFO", not self.args.json, indent=4)
+                ptprint("No default page technologies identified", "INFO", not self.args.json, indent=4)
             else:
-                ptprint("Overall Summary: Default page of server is not reachable", "INFO", not self.args.json, indent=4)
+                ptprint("Default page of server is not reachable", "INFO", not self.args.json, indent=4)
             return
-
-        ptprint("Overall Technology Summary", "INFO", not self.args.json, indent=4, colortext=True)
         
         tech_summary = {}
         for tech in self.detected_technologies:
@@ -444,7 +580,8 @@ class DEFPAGE:
                     'category': tech.get('category', 'unknown'),
                     'protocols': [],
                     'source_locations': set(),
-                    'additional_info': tech.get('additional_info', [])  # Added for submodule data
+                    'additional_info': tech.get('additional_info', []),
+                    'version_range': tech.get('version_range', {})
                 }
             
             tech_summary[key]['protocols'].append(protocol.upper())
@@ -458,19 +595,23 @@ class DEFPAGE:
                         existing_info.append(info)
          
         for tech_info in tech_summary.values():
-            version_text = f" {tech_info['version']}" if tech_info['version'] else ""
             protocols_text = "/".join(sorted(set(tech_info['protocols'])))
             category_text = f" ({tech_info['category']})"
             
-            ptprint(f"{tech_info['name']}{version_text}{category_text}", "VULN", not self.args.json, indent=8, end=" ")
-            ptprint(f"({probability}%)", "ADDITIONS", not self.args.json, colortext=True, end=" ")
+            ptprint(f"{tech_info['name']}{category_text}", "VULN", not self.args.json, indent=8, end=" ")
+            ptprint(f"({probability}%)", "ADDITIONS", not self.args.json, colortext=True)
 
-            if self.args.verbose:
-                ptprint(f"(detected via {protocols_text})", "ADDITIONS", not self.args.json, colortext=True)
-            else:
-                ptprint(" ")
+            if tech_info['version']:
+                ptprint(f"Version: {tech_info['version']}", "INFO", not self.args.json, indent=12)
+            elif tech_info.get('version_range'):
+                version_range = tech_info['version_range']
+                range_text = self._format_version_range(
+                    version_range.get('min_version'),
+                    version_range.get('max_version')
+                )
+                ptprint(f"Version range: {range_text}", "INFO", not self.args.json, indent=12)
                 
-            # Report additional info from submodules
+            # Report additional info from submodules and version ranges
             if tech_info.get("additional_info"):
                 for info in tech_info["additional_info"]:
                     ptprint(f"{info}", "INFO", not self.args.json, indent=12)
@@ -489,18 +630,37 @@ class DEFPAGE:
         version = tech_info['version']
         tech_type = tech_info['category']
         probability = 100
-        
+
+        version_range = tech_info.get('version_range', {})
+        if version_range:
+            version_min = version_range.get('min_version')
+            version_max = version_range.get('max_version')
+        else:
+            version_min = None
+            version_max = None
+            
         protocols_text = "/".join(sorted(set(tech_info['protocols'])))
         source_locations = sorted(tech_info['source_locations'])
         
         description = f"Default {protocols_text} page: {tech_name}"
         if version:
             description += f" {version}"
+        
+        version_range = tech_info.get('version_range', {})
+        if version_range.get('min_version') or version_range.get('max_version'):
+            range_text = self._format_version_range(
+                version_range.get('min_version'),
+                version_range.get('max_version')
+            )
+            description += f" (range: {range_text})"
+        
         description += f" (detected from {', '.join(source_locations)})"
         
         storage.add_to_storage(
             technology=tech_name,
-            version=version,
+            version=version if version else None,
+            version_min=version_min,
+            version_max=version_max,
             technology_type=tech_type,
             probability=probability,
             description=description

@@ -74,6 +74,8 @@ class ResultStorage:
         self,
         technology: Optional[str] = None,
         version: Optional[str] = None,
+        version_min: Optional[str] = None,
+        version_max: Optional[str] = None,
         technology_type: Optional[str] = None,
         probability: Optional[int] = 100,
         vulnerability: Optional[str] = None,
@@ -104,6 +106,8 @@ class ResultStorage:
             "module": (module or "").strip().upper(),
             "technology": (technology or "").strip(),
             "version": (version or "").strip() if version else None,
+            "version_min": (version_min or "").strip() if version_min else None,
+            "version_max": (version_max or "").strip() if version_max else None,
             "technology_type": (technology_type or "").strip() if technology_type else None,
             "probability": probability,
             "vulnerability": (vulnerability or "").strip() if vulnerability else None,
@@ -150,11 +154,16 @@ class ResultStorage:
         """
         with self._lock:
             unique_pairs = {
-                (record.get("technology"), record.get("version"))
+                (
+                    record.get("technology"), 
+                    record.get("version"),
+                    record.get("version_min"),
+                    record.get("version_max")
+                )
                 for record in self._storage
                 if record.get("technology") # skip empty technologies
             }
-        return [{"technology": tech, "version": ver} for tech, ver in unique_pairs]
+        return [{"technology": tech, "version": ver, "version_min": ver_min, "version_max": ver_max} for tech, ver, ver_min, ver_max in unique_pairs]
 
     def get_data_for_technology(self, technology: str, version: Optional[str] = None) -> dict:
         """
@@ -181,18 +190,48 @@ class ResultStorage:
         with self._lock:
             filtered = [
                 r for r in self._storage
-                if r.get("technology") == technology and (version is None or r.get("version") == version)
+                if r.get("technology") == technology
             ]
             if not filtered:
                 return {}
 
-            if version is None:
-                versions_set = {r.get("version") for r in filtered}
-                non_none_versions = [v for v in versions_set if v is not None]
-                sorted_versions = sorted(non_none_versions)
-                versions = ([None] if None in versions_set else []) + sorted_versions
+            if version is not None:
+                version_filtered = [r for r in filtered if r.get("version") == version]
+                if version_filtered:
+                    filtered = version_filtered
+
+            # Prioritize version records
+            exact_records = [r for r in filtered if r.get("version")]
+            range_records = [r for r in filtered if not r.get("version") and r.get("version_min") and r.get("version_max")]
+            minimum_records = [r for r in filtered if not r.get("version") and r.get("version_min") and not r.get("version_max")]
+            maximum_records = [r for r in filtered if not r.get("version") and not r.get("version_min") and r.get("version_max")]
+            
+            # Select primary record for version display
+            if exact_records:
+                primary = exact_records[0]
+                display_version = primary.get("version")
+                display_version_min = None
+                display_version_max = None
+            elif range_records:
+                primary = range_records[0]
+                display_version = None
+                display_version_min = primary.get("version_min")
+                display_version_max = primary.get("version_max")
+            elif minimum_records:
+                primary = minimum_records[0]
+                display_version = None
+                display_version_min = primary.get("version_min")
+                display_version_max = None
+            elif maximum_records:
+                primary = maximum_records[0]
+                display_version = None
+                display_version_min = None
+                display_version_max = primary.get("version_max")
             else:
-                versions = [version]
+                primary = filtered[0]
+                display_version = None
+                display_version_min = None
+                display_version_max = None
 
             modules = sorted({r["module"] for r in filtered if r.get("module")})
             probability_sum = sum(r.get("probability") or 0 for r in filtered)
@@ -207,7 +246,9 @@ class ResultStorage:
 
             return {
                 "technology": technology,
-                "versions": versions,
+                "version": display_version,
+                "version_min": display_version_min,
+                "version_max": display_version_max,
                 "count": len(filtered),
                 "modules": modules,
                 "probability_sum": probability_sum,
