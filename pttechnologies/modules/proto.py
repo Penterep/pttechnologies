@@ -12,6 +12,7 @@ allowing for server fingerprinting based on error responses.
 
 from helpers.result_storage import storage
 from helpers.stored_responses import StoredResponses
+from helpers.products import get_product_manager
 from ptlibs.ptprinthelper import ptprint
 
 __TESTLABEL__ = "Test protocol behavior for technology identification"
@@ -29,6 +30,7 @@ class PROTO:
         self.ptjsonlib = ptjsonlib
         self.helpers = helpers
         self.http_client = http_client
+        self.product_manager = get_product_manager()
         self.definitions = self.helpers.load_definitions("proto.json")
         self.base_url = args.url.rstrip('/')
 
@@ -52,11 +54,17 @@ class PROTO:
             for trigger_name, status in zip(self.TRIGGER_MAP.keys(), statuses):
                 ptprint(f"{trigger_name}\t[{status}]", "ADDITIONS", not self.args.json, indent=8, colortext=True)
 
-        server, probability = self._identify_server(statuses)
+        server, probability, product_id = self._identify_server(statuses)
         if server:
             ptprint(f"Identified WS: {server}", "VULN", not self.args.json, indent=4, end=" ")
             ptprint(f"({probability}%)", "ADDITIONS", not self.args.json, colortext=True)
-            storage.add_to_storage(technology=server, technology_type="WebServer", vulnerability="PTV-WEB-INFO-PROTO", probability=probability)
+            storage.add_to_storage(
+                technology=server, 
+                technology_type="Web Server", 
+                vulnerability="PTV-WEB-INFO-PROTO", 
+                probability=probability,
+                product_id=product_id
+            )
         else:
             ptprint("No matching web server identified from protocol behavior", "INFO", not self.args.json, indent=4)
 
@@ -90,7 +98,7 @@ class PROTO:
         except Exception as e:
             return "Error"
 
-    def _identify_server(self, observed_statuses: list) -> str:
+    def _identify_server(self, observed_statuses: list) -> tuple:
         """
         Match observed response pattern against known server definitions.
 
@@ -98,16 +106,28 @@ class PROTO:
             observed_statuses: List of HTTP status codes for each tested protocol behavior.
 
         Returns:
-            Detected server name if match is found, otherwise None.
+            Tuple of (technology_name, probability, product_id) if match found, otherwise (None, None, None).
         """
         if not self.definitions:
-            return None
+            return None, None, None
 
             
         for entry in self.definitions:
             if entry.get("statuses") == observed_statuses:
-                return entry.get("technology"), entry.get("probability", 20)
-        return None, None
+                # Get product info from product_id
+                product_id = entry.get("product_id")
+                if not product_id:
+                    continue
+                
+                product = self.product_manager.get_product_by_id(product_id)
+                if not product:
+                    continue
+                
+                technology_name = product.get("our_name", "Unknown")
+                probability = entry.get("probability", 20)
+                
+                return technology_name, probability, product_id
+        return None, None, None
 
 
 def run(args: object, ptjsonlib: object, helpers: object, http_client: object, responses: StoredResponses):

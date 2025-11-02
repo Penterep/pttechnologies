@@ -16,6 +16,7 @@ Usage:
 from typing import List, Tuple
 from helpers.result_storage import storage
 from helpers.stored_responses import StoredResponses
+from helpers.products import get_product_manager
 
 from ptlibs.http.raw_http_client import RawHttpResponse
 from ptlibs.ptprinthelper import ptprint
@@ -39,6 +40,7 @@ class WSRPO:
         self.ptjsonlib = ptjsonlib
         self.helpers = helpers
         self.http_client = http_client
+        self.product_manager = get_product_manager()
 
         # Unpack stored responses
         self.response_hp = responses.resp_hp
@@ -70,8 +72,8 @@ class WSRPO:
             self._print_verbose(raw_headers)
 
         if result:
-            technology, probability = result
-            self._report(technology, probability)
+            technology, probability, product_id = result
+            self._report(technology, probability, product_id)
         else:
             ptprint("Web-server could not be identified by header order", "INFO", not self.args.json,indent=4)
 
@@ -103,7 +105,7 @@ class WSRPO:
         """
         return [n.lower().decode() for n, _ in raw if n.lower() in WANTED]
 
-    def _match_order(self, order: List[str] | None) -> str | None:
+    def _match_order(self, order: List[str] | None) -> tuple | None:
         """
         Match observed header order against known definitions.
 
@@ -114,7 +116,7 @@ class WSRPO:
             order: List of observed header names (lowercase strings).
 
         Returns:
-            Name of matched web server technology, or None if no match.
+            Tuple of (technology_name, probability, product_id) if matched, or None if no match.
         """
         if not order:
             return None
@@ -133,7 +135,19 @@ class WSRPO:
             expected_sequence = [h for h in ref if h in order_filtered]
 
             if order_filtered == expected_sequence:
-                return d.get("technology"), d.get("probability", 20)
+                # Get product info from product_id
+                product_id = d.get("product_id")
+                if not product_id:
+                    continue
+                
+                product = self.product_manager.get_product_by_id(product_id)
+                if not product:
+                    continue
+                
+                technology_name = product.get("our_name", "Unknown")
+                probability = d.get("probability", 20)
+                
+                return technology_name, probability, product_id
         return None
 
     def _print_verbose(self, raw: List[Tuple[bytes, bytes]]):
@@ -148,15 +162,23 @@ class WSRPO:
             ptprint(f"{n.decode(errors='replace')}: "
                     f"{v.decode(errors='replace')}", "ADDITIONS", True, indent=8, colortext=True)
 
-    def _report(self, tech: str, probability: int):
+    def _report(self, tech: str, probability: int, product_id: int):
         """
         Report the identified web server technology and record it.
 
         Args:
             tech: The identified technology string.
+            probability: Probability percentage.
+            product_id: Product ID from products.json.
         """
         if tech:
-            storage.add_to_storage(technology=tech, technology_type="WebServer", vulnerability="PTV-WEB-INFO-WSRPO", probability=probability)            
+            storage.add_to_storage(
+                technology=tech, 
+                technology_type="Web Server", 
+                vulnerability="PTV-WEB-INFO-WSRPO", 
+                probability=probability,
+                product_id=product_id
+            )
             ptprint(f"Identified WS: {tech}", "VULN", not self.args.json, indent=4, end=" ")
             ptprint(f"({probability}%)", "ADDITIONS", not self.args.json, colortext=True)
 

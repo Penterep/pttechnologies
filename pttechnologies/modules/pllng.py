@@ -25,6 +25,7 @@ from urllib.parse import urlparse, urljoin
 
 from helpers.result_storage import storage
 from helpers.stored_responses import StoredResponses
+from helpers.products import get_product_manager
 from ptlibs import ptjsonlib, ptmisclib, ptnethelper
 from ptlibs.ptprinthelper import ptprint
 
@@ -47,6 +48,7 @@ class PLLNG:
         self.ptjsonlib = ptjsonlib
         self.helpers = helpers
         self.http_client = http_client
+        self.product_manager = get_product_manager()
 
         # Unpack stored responses
         self.response_hp = responses.resp_hp
@@ -143,10 +145,23 @@ class PLLNG:
             result (dict or None): Detected extension metadata or None if detection failed.
         """
         if result:
-            language = result["technology"]
+            # Get product info from product_id
+            product_id = result.get("product_id")
+            if not product_id:
+                ptprint(f"It was not possible to identify the programming language", "INFO", not self.args.json, indent=4)
+                return
+            
+            product = self.product_manager.get_product_by_id(product_id)
+            if not product:
+                ptprint(f"It was not possible to identify the programming language", "INFO", not self.args.json, indent=4)
+                return
+            
+            language = product.get("our_name", "Unknown")
+            category_name = self.product_manager.get_category_name(product.get("category_id"))
+            
             probability = result.get("probability", 100)
             ext = result["extension"].capitalize()
-            storage.add_to_storage(technology=language, technology_type="Interpret", vulnerability="PTV-WEB-INFO-LNGEX", probability=probability )
+            storage.add_to_storage(technology=language, technology_type=category_name, vulnerability="PTV-WEB-INFO-LNGEX", probability=probability )
             ptprint(f"Identified language: {language}", "VULN", not self.args.json, indent=4, end=" ")
             ptprint(f"({probability}%)", "ADDITIONS", not self.args.json, colortext=True)
         else:

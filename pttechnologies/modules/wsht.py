@@ -18,6 +18,7 @@ import requests
 
 from helpers.result_storage import storage
 from helpers.stored_responses import StoredResponses
+from helpers.products import get_product_manager
 
 from ptlibs import ptjsonlib, ptmisclib, ptnethelper
 from ptlibs.ptprinthelper import ptprint
@@ -69,9 +70,15 @@ class WSHT:
                 
             if response1.status_code != response2.status_code:
                 probability = 100
-                storage.add_to_storage(technology="Apache", technology_type="WebServer", vulnerability="PTV-WEB-INFO-WSHT", probability=probability)
-                ptprint(f"Identified WS: Apache", "VULN", not self.args.json, indent=4, end=" ")
-                ptprint(f"({probability}%)", "ADDITIONS", not self.args.json, colortext=True)
+                product_manager = get_product_manager()
+                # Apache (product_id: 10)
+                product = product_manager.get_product_by_id(10)
+                if product:
+                    technology_name = product.get('our_name', 'Apache')
+                    category_name = product_manager.get_category_name(product.get('category_id'))
+                    storage.add_to_storage(technology=technology_name, technology_type=category_name, vulnerability="PTV-WEB-INFO-WSHT", probability=probability)
+                    ptprint(f"Identified WS: {technology_name}", "VULN", not self.args.json, indent=4, end=" ")
+                    ptprint(f"({probability}%)", "ADDITIONS", not self.args.json, colortext=True)
             else:
                 ptprint(f"It is not possible to identify the web server, but it does not seem to be Apache", "INFO", not self.args.json, indent=4)
         

@@ -9,6 +9,7 @@ import re
 from ptlibs.ptprinthelper import ptprint
 from helpers.result_storage import storage
 from helpers.stored_responses import StoredResponses
+from helpers.products import get_product_manager
 
 __TESTLABEL__ = "Test for cookie-based technology identification"
 
@@ -36,6 +37,7 @@ class COOK:
         self.ptjsonlib = ptjsonlib
         self.helpers = helpers
         self.http_client = http_client
+        self.product_manager = get_product_manager()
         
         self.response_hp = responses.resp_hp
         self.response_404 = responses.resp_404
@@ -244,12 +246,22 @@ class COOK:
             pattern: Pattern definition that matched.
             cookie_info: Full cookie information.
         """
-        technology = pattern.get("technology")
-        technology_type = pattern.get("technology_type")
+        # Get product info from product_id
+        product_id = pattern.get("product_id")
+        if not product_id:
+            return  # Skip if no product_id defined
+        
+        product = self.product_manager.get_product_by_id(product_id)
+        if not product:
+            return
+        
+        technology = product.get("our_name", "Unknown")
+        technology_type = self.product_manager.get_category_name(product.get("category_id"))
+        
         description = pattern.get("description", "")
         probability = pattern.get("probability", 100)
         
-        tech_key = f"{technology}:{technology_type}"
+        tech_key = f"{product_id}:{technology_type}"
         
         if tech_key in self.detected_technologies:
             return
@@ -264,7 +276,8 @@ class COOK:
             technology=technology,
             technology_type=technology_type,
             description=storage_description,
-            probability=probability
+            probability=probability,
+            product_id=product_id
         )
         
         self._display_result(technology, technology_type, cookie_name, cookie_value, description, probability)

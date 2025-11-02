@@ -21,6 +21,7 @@ import re
 from typing import List, Dict, Any, Optional
 from helpers.result_storage import storage
 from helpers.stored_responses import StoredResponses
+from helpers.products import get_product_manager
 from ptlibs.ptprinthelper import ptprint
 
 __TESTLABEL__ = "Test error pages for technology identification"
@@ -43,6 +44,7 @@ class ERRPAGE:
         """Initialize the ERRPAGE test with provided components and load error page definitions."""
         self.args = args
         self.helpers = helpers
+        self.product_manager = get_product_manager()
         self.response_404 = responses.resp_404
         self.raw_response_400 = responses.raw_resp_400
         self.long_response = responses.long_resp
@@ -154,10 +156,6 @@ class ERRPAGE:
             return detected
 
         for pattern_def in self.patterns:
-            if (pattern_def.get('technology', '').lower() == 'version' and 
-                pattern_def.get('category', '').lower() == 'version'):
-                continue
-                
             match_result = self._match_pattern(content, pattern_def)
             if match_result:
                 tech_key = match_result.get('technology', match_result.get('name', 'Unknown')).lower()
@@ -204,11 +202,24 @@ class ERRPAGE:
         
         if not match:
             return None
+        
+        # Get product info from product_id
+        product_id = pattern_def.get('product_id')
+        if not product_id:
+            return None  # Skip if no product_id defined
+        
+        product = self.product_manager.get_product_by_id(product_id)
+        if not product:
+            return None
+        
+        technology_name = product.get('our_name', 'Unknown')
+        category_name = self.product_manager.get_category_name(product.get('category_id'))
                     
         result = {
             'name': pattern_def.get('name', 'Unknown'),
-            'category': pattern_def.get('category', 'unknown'),
-            'technology': pattern_def.get('technology', pattern_def.get('name', 'Unknown')),
+            'category': category_name,
+            'technology': technology_name,
+            'product_id': product_id,
             'version': None,
             'matched_text': match.group(0)[:100] + ('...' if len(match.group(0)) > 100 else ''),
             'pattern_used': pattern 
@@ -229,8 +240,32 @@ class ERRPAGE:
             footer_text = match.group(1)
             tech_match = re.search(r'(Apache|nginx|IIS|Tomcat|Jetty|LiteSpeed|OpenResty|IBM_HTTP_Server)', footer_text, re.IGNORECASE)
             if tech_match:
-                result['technology'] = tech_match.group(1)
+                extracted_tech = tech_match.group(1)
+                result['technology'] = extracted_tech
                 result['version'] = None
+                
+                # Map extracted technology name to correct product_id
+                tech_to_product_id = {
+                    'apache': 10,
+                    'nginx': 11,
+                    'iis': 12,
+                    'tomcat': 20,
+                    'jetty': 21,
+                    'litespeed': 13,
+                    'openresty': 170,
+                    'ibm_http_server': 16
+                }
+                
+                tech_lower = extracted_tech.lower().replace(' ', '_')
+                if tech_lower in tech_to_product_id:
+                    new_product_id = tech_to_product_id[tech_lower]
+                    result['product_id'] = new_product_id
+                    
+                    # Update technology name and category from the new product_id
+                    new_product = self.product_manager.get_product_by_id(new_product_id)
+                    if new_product:
+                        result['technology'] = new_product.get('our_name', extracted_tech)
+                        result['category'] = self.product_manager.get_category_name(new_product.get('category_id'))
             
             version_match = re.search(r'(Apache|nginx|IIS|Tomcat|Jetty|LiteSpeed|OpenResty|IBM_HTTP_Server)[/\s]+([\d\.]+)', footer_text, re.IGNORECASE)
             if version_match:
@@ -284,6 +319,7 @@ class ERRPAGE:
         tech_name = tech.get('technology', tech.get('name', 'Unknown'))
         version = tech.get('version')
         tech_type = tech.get('category')
+        product_id = tech.get('product_id')
         probability = tech.get('probability', 100)
         trigger_name = tech.get('trigger_name', 'unknown')
         status_code = tech.get('status_code')
@@ -299,7 +335,8 @@ class ERRPAGE:
             version=version,
             technology_type=tech_type,
             probability=probability,
-            description=description
+            description=description,
+            product_id=product_id
         )
 
 

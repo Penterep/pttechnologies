@@ -20,6 +20,7 @@ import uuid
 import ssl
 from helpers.result_storage import storage
 from helpers.stored_responses import StoredResponses
+from helpers.products import get_product_manager
 
 from typing import List, Dict, Any, Optional
 from ptlibs.ptprinthelper import ptprint
@@ -34,6 +35,7 @@ class HDRVAL:
         self.ptjsonlib = ptjsonlib
         self.helpers = helpers
         self.http_client = http_client
+        self.product_manager = get_product_manager()
 
         # Unpack stored responses
         self.response_hp = responses.resp_hp
@@ -547,13 +549,26 @@ class HDRVAL:
         for definition in definition_list:
             if isinstance(definition, dict) and 'content' in definition:
                 if definition['content'].lower() == tech_name:
+                    # Get product info from product_id
+                    product_id = definition.get('product_id')
+                    if not product_id:
+                        continue  # Skip if no product_id defined
+                    
+                    product = self.product_manager.get_product_by_id(product_id)
+                    if not product:
+                        continue
+                    
+                    technology_name = product.get('our_name', technology['name'])
+                    category_name = self.product_manager.get_category_name(product.get('category_id'))
+                    
                     return {
-                        'category': definition.get('category', 'Unknown'),
-                        'technology': definition.get('technology', technology['name']),
+                        'category': category_name,
+                        'technology': technology_name,
                         'name': technology['name'],
                         'version': technology['version'],
                         'description': f"{header_name}: {full_header}",
-                        'probability': definition.get('probability', 100)
+                        'probability': definition.get('probability', 100),
+                        'product_id': product_id
                     }
 
         return None
@@ -574,6 +589,7 @@ class HDRVAL:
         
         tech_name = tech.get('technology', tech['name'])
         version = tech.get('version')
+        product_id = tech.get('product_id')
         probability = tech.get('probability', 100)
         
         header_name = tech.get('header', 'Unknown')
@@ -595,7 +611,8 @@ class HDRVAL:
             technology_type=tech_type,
             vulnerability="PTV-WEB-INFO-SRVHDR",
             description=description,
-            probability=probability
+            probability=probability,
+            product_id=product_id
         )
 
     def _get_source_description(self, source: str) -> str:
@@ -686,7 +703,7 @@ class HDRVAL:
                     tech_name = tech.get('technology', tech['name'])
                     probability = tech.get('probability', 100)
 
-                    ptprint(f"{tech_name}{version_text}{category_text}", "VULN", not self.args.json, indent=8, end=" ")
+                    ptprint(f"{tech_name}{version_text}{category_text}", "VULN", not self.args.json, indent=7, end=" ")
                     ptprint(f"({probability}%)", "ADDITIONS", not self.args.json, colortext=True)
 
         for tech, is_classified in [

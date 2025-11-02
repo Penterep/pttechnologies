@@ -11,6 +11,7 @@ from bs4 import BeautifulSoup
 from ptlibs.ptprinthelper import ptprint
 from helpers.result_storage import storage
 from helpers.stored_responses import StoredResponses
+from helpers.products import get_product_manager
 
 __TESTLABEL__ = "Test for meta tag technology identification"
 
@@ -46,6 +47,7 @@ class Meta:
         self.ptjsonlib = ptjsonlib
         self.helpers = helpers
         self.http_client = http_client
+        self.product_manager = get_product_manager()
         self.response_hp = responses.resp_hp
         self.definitions = self.helpers.load_definitions("meta.json")
     
@@ -145,18 +147,18 @@ class Meta:
             int: Number of matches found (max 1 per technology).
         """
         matches_found = 0
-        detected_technologies = set()
+        detected_products = set()
         
         for pattern in patterns:
-            technology = pattern.get("technology")
+            product_id = pattern.get("product_id")
             
-            if technology in detected_technologies:
+            if product_id in detected_products:
                 continue
                 
             match = self._match_pattern(content, pattern)
             if match:
                 self._process_match(meta_name, content, pattern, match)
-                detected_technologies.add(technology)
+                detected_products.add(product_id)
                 matches_found += 1
         
         return matches_found
@@ -191,8 +193,18 @@ class Meta:
         Returns:
             None
         """
-        technology = pattern.get("technology")
-        technology_type = pattern.get("technology_type")
+        # Get product info from product_id
+        product_id = pattern.get("product_id")
+        if not product_id:
+            return  # Skip if no product_id defined
+        
+        product = self.product_manager.get_product_by_id(product_id)
+        if not product:
+            return
+        
+        technology = product.get("our_name", "Unknown")
+        technology_type = self.product_manager.get_category_name(product.get("category_id"))
+        
         probability = pattern.get("probability", 100)
         version_group = pattern.get("version_group")
         
@@ -207,7 +219,8 @@ class Meta:
             version=version,
             technology_type=technology_type,
             probability=probability,
-            description=description
+            description=description,
+            product_id=product_id
         )
         
         self._display_result(technology, version, technology_type, meta_name, content, probability)

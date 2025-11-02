@@ -15,6 +15,7 @@ Functions:
 import re
 from typing import Dict, Any, List, Optional
 from helpers.result_storage import storage
+from helpers.products import get_product_manager
 from ptlibs.ptprinthelper import ptprint
 
 
@@ -156,10 +157,24 @@ def _match_pattern(content: str, pattern_def: Dict[str, Any], args: object) -> O
     if not match:
         return None
     
+    # Get product info from product_id
+    product_id = pattern_def.get('product_id')
+    if not product_id:
+        return None  # Skip if no product_id defined
+    
+    product_manager = get_product_manager()
+    product = product_manager.get_product_by_id(product_id)
+    if not product:
+        return None
+    
+    technology_name = product.get('our_name', 'Unknown')
+    category_name = product_manager.get_category_name(product.get('category_id'))
+    
     result = {
         'name': pattern_def.get('name', 'Unknown'),
-        'technology': pattern_def.get('technology', 'Unknown'),
-        'category': pattern_def.get('category', 'unknown'),
+        'product_id': product_id,
+        'technology': technology_name,
+        'category': category_name,
         'version': None,
         'probability': pattern_def.get('probability', 100),
         'source': pattern_def.get('source', 'unknown'),
