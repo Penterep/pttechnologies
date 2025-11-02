@@ -23,6 +23,7 @@ import ssl
 from urllib.parse import urlparse
 from helpers.result_storage import storage
 from helpers.stored_responses import StoredResponses
+from helpers.products import get_product_manager
 
 from typing import List, Dict, Any, Optional, Tuple
 from ptlibs.ptprinthelper import ptprint
@@ -37,6 +38,7 @@ class DEFPAGE:
         self.ptjsonlib = ptjsonlib
         self.helpers = helpers
         self.http_client = http_client
+        self.product_manager = get_product_manager()
 
         self.http_resp = responses.http_resp
         self.https_resp = responses.https_resp
@@ -69,6 +71,69 @@ class DEFPAGE:
             return socket.gethostbyname(hostname)
         except socket.gaierror:
             return None
+
+    def _test_invalid_host_header(self, protocol: str) -> Optional[object]:
+        """
+        Test server response with invalid Host header.
+        
+        Tests if server returns the same page when accessing with invalid Host header.
+        
+        Args:
+            protocol: 'http' or 'https'
+            
+        Returns:
+            Response object or None if request failed
+        """
+        base_url = f"{protocol}://{self.target_ip}"
+        
+        try:            
+            response = self.helpers._raw_request(base_url, "/", extra_headers={"Host": "%"})
+            
+            if response:                
+                return response
+            
+        except Exception as e:
+            return None
+        return None
+
+    def _compare_responses(self, resp1: object, resp2: object, protocol: str) -> Dict[str, Any]:
+        """
+        Compare two responses to check if they are the same.
+        
+        Args:
+            resp1: First response object (IP access)
+            resp2: Second response object (invalid Host header)
+            protocol: Protocol used
+            
+        Returns:
+            Dictionary with comparison results
+        """
+        result = {
+            'same_status': False,
+            'same_content': False,
+            'responses_match': False,
+            'status1': None,
+            'status2': None
+            }
+        
+        if not resp1 or not resp2:
+            return result
+        
+        status1 = getattr(resp1, 'status', None) or getattr(resp1, 'status_code', None)
+        status2 = getattr(resp2, 'status', None) or getattr(resp2, 'status_code', None)
+        
+        result['status1'] = status1
+        result['status2'] = status2
+        result['same_status'] = (status1 == status2)
+        
+        content1 = getattr(resp1, 'text', '') or ''
+        content2 = getattr(resp2, 'text', '') or ''
+        
+        if content1 and content2:
+            result['same_content'] = (content1 == content2)
+        
+        result['responses_match'] = result['same_status'] and result['same_content']
+        return result
 
     def run(self) -> None:
         """
@@ -125,33 +190,82 @@ class DEFPAGE:
                 self._debug_output(content, protocol, response, url)
 
             self.default_page_reachable = True
-            technologies = self._analyze_page_content(content, protocol, response)
             
-            if technologies:
-                if self.args.verbose:
-                    ptprint("Technologies detected:", "ADDITIONS", not self.args.json, indent=8, colortext=True)
-
-                for tech in technologies:
-                    tech['protocol'] = protocol
-                    tech['url'] = url
-                    self.detected_technologies.append(tech)
-                    
-                    version_text = f" {tech['version']}" if tech.get('version') else ""
-                    category_text = f" ({tech['category']})"
-                    
+            invalid_host_response = self._test_invalid_host_header(protocol)
+            
+            if invalid_host_response:
+                invalid_status_code = getattr(invalid_host_response, 'status', 0) or getattr(invalid_host_response, 'status_code', 0)
+                
+                if invalid_status_code == 200 or invalid_status_code == 403:
+                    comparison = self._compare_responses(response, invalid_host_response, protocol)
+                                        
+                    # If responses are different, analyze both
+                    if not comparison['responses_match']:
+                        if self.args.verbose:
+                            ptprint("Responses differ - analyzing both pages", "ADDITIONS", not self.args.json, indent=8, colortext=True)
+                        
+                        technologies = self._analyze_page_content(content, protocol, response)
+                        self._process_detected_technologies(technologies, protocol, url, "IP access")
+                        
+                        invalid_content = getattr(invalid_host_response, 'text', '')
+                        if invalid_content:
+                            invalid_technologies = self._analyze_page_content(invalid_content, protocol, invalid_host_response)
+                            self._process_detected_technologies(invalid_technologies, protocol, url, "invalid Host header")
+                    else:
+                        if self.args.verbose:
+                            ptprint("Responses match - analyzing once", "ADDITIONS", not self.args.json, indent=8, colortext=True)
+                        
+                        #If responses are the same, analyze once
+                        technologies = self._analyze_page_content(content, protocol, response)
+                        self._process_detected_technologies(technologies, protocol, url, "both methods")
+                else:
+                    #If Invalid Host response has different status code, analyze only original
                     if self.args.verbose:
-                        ptprint(f"{tech['technology']}{version_text}{category_text}", 
-                        "ADDITIONS", not self.args.json, indent=12, colortext=True, end="")
-
-                        source_location = tech.get('source_location', 'content')
-                        ptprint(f" <- Matched: {tech.get('matched_text', 'N/A')}", 
-                            "ADDITIONS", not self.args.json, colortext=True)
+                        ptprint(f"Invalid Host header returned HTTP {invalid_status_code} - skipping analysis", "ADDITIONS", not self.args.json, indent=8, colortext=True)
+                    
+                    technologies = self._analyze_page_content(content, protocol, response)
+                    self._process_detected_technologies(technologies, protocol, url, "IP access")
             else:
-                if self.args.verbose:
-                    ptprint(f"No technologies detected", "ADDITIONS", not self.args.json, indent=8, colortext=True)
+                technologies = self._analyze_page_content(content, protocol, response)
+                self._process_detected_technologies(technologies, protocol, url, "IP access")
+                
         else:
             if self.args.verbose:
                 ptprint(f"Default page of server is not reachable (HTTP {status_code})", "ADDITIONS", not self.args.json, indent=8, colortext=True)
+
+    def _process_detected_technologies(self, technologies: List[Dict[str, Any]], protocol: str, url: str, access_method: str) -> None:
+        """
+        Process and report detected technologies.
+        
+        Args:
+            technologies: List of detected technologies
+            protocol: Protocol used
+            url: URL tested
+            access_method: How the page was accessed (e.g., "IP access", "invalid Host header")
+        """
+        if technologies:
+            if self.args.verbose:
+                ptprint(f"Technologies detected ({access_method}):", "ADDITIONS", not self.args.json, indent=8, colortext=True)
+
+            for tech in technologies:
+                tech['protocol'] = protocol
+                tech['url'] = url
+                tech['access_method'] = access_method
+                self.detected_technologies.append(tech)
+                
+                version_text = f" {tech['version']}" if tech.get('version') else ""
+                category_text = f" ({tech['category']})"
+                
+                if self.args.verbose:
+                    ptprint(f"{tech['technology']}{version_text}{category_text}", 
+                    "ADDITIONS", not self.args.json, indent=12, colortext=True, end="")
+
+                    source_location = tech.get('source_location', 'content')
+                    ptprint(f" <- Matched: {tech.get('matched_text', 'N/A')}", 
+                        "ADDITIONS", not self.args.json, colortext=True)
+        else:
+            if self.args.verbose:
+                ptprint(f"No technologies detected ({access_method})", "ADDITIONS", not self.args.json, indent=8, colortext=True)
 
     def _debug_output(self, content: str, protocol: str, response: object, url: str) -> None:
         """
@@ -332,16 +446,34 @@ class DEFPAGE:
         try:
             match = re.search(pattern, content, re_flags)
         except re.error as e:
-            ptprint(f"Invalid regex pattern in definitions: {e}", "INFO", not self.args.json, indent=8)
             return None
         
         if not match:
             return None
+        
+        # Get product information from product_id
+        product_id = pattern_def.get('product_id')
+        if product_id:
+            product = self.product_manager.get_product_by_id(product_id)
+            if product:
+                technology_name = product.get('our_name', 'Unknown')
+                category_id = product.get('category_id')
+                category = self.product_manager.get_category_by_id(category_id)
+                category_name = category.get('name', 'Other') if category else 'Other'
+            else:
+                # Fallback if product not found
+                technology_name = pattern_def.get('name', 'Unknown')
+                category_name = 'Other'
+        else:
+            # Backward compatibility with old format
+            technology_name = pattern_def.get('technology', pattern_def.get('name', 'Unknown'))
+            category_name = pattern_def.get('category', 'Other')
             
         result = {
             'name': pattern_def.get('name', 'Unknown'),
-            'category': pattern_def.get('category', 'unknown'),
-            'technology': pattern_def.get('technology', pattern_def.get('name', 'Unknown')),
+            'category': category_name,
+            'technology': technology_name,
+            'product_id': product_id,
             'version': None,
             'matched_text': match.group(0)[:100] + ('...' if len(match.group(0)) > 100 else ''),
             'source_location': source_type
@@ -411,6 +543,10 @@ class DEFPAGE:
         Returns:
             Enhanced technology information with version range
         """
+        # Use product_id from version_detection rules if available
+        if 'product_id' in rules and 'product_id' not in tech_info:
+            tech_info['product_id'] = rules['product_id']
+        
         ranges = rules.get('ranges', [])
         best_match = None
         best_score = 0
@@ -581,7 +717,8 @@ class DEFPAGE:
                     'protocols': [],
                     'source_locations': set(),
                     'additional_info': tech.get('additional_info', []),
-                    'version_range': tech.get('version_range', {})
+                    'version_range': tech.get('version_range', {}),
+                    'product_id': tech.get('product_id')
                 }
             
             tech_summary[key]['protocols'].append(protocol.upper())
@@ -598,7 +735,7 @@ class DEFPAGE:
             protocols_text = "/".join(sorted(set(tech_info['protocols'])))
             category_text = f" ({tech_info['category']})"
             
-            ptprint(f"{tech_info['name']}{category_text}", "VULN", not self.args.json, indent=8, end=" ")
+            ptprint(f"{tech_info['name']}{category_text}", "VULN", not self.args.json, indent=4, end=" ")
             ptprint(f"({probability}%)", "ADDITIONS", not self.args.json, colortext=True)
 
             if tech_info['version']:
@@ -609,7 +746,8 @@ class DEFPAGE:
                     version_range.get('min_version'),
                     version_range.get('max_version')
                 )
-                ptprint(f"Version range: {range_text}", "INFO", not self.args.json, indent=12)
+                ptprint(f"Version range: {range_text}", "INFO", not self.args.json, indent=8)
+            
                 
             # Report additional info from submodules and version ranges
             if tech_info.get("additional_info"):
@@ -630,6 +768,7 @@ class DEFPAGE:
         version = tech_info['version']
         tech_type = tech_info['category']
         probability = 100
+        product_id = tech_info.get('product_id')
 
         version_range = tech_info.get('version_range', {})
         if version_range:
@@ -638,6 +777,15 @@ class DEFPAGE:
         else:
             version_min = None
             version_max = None
+        
+        # Get product info for vendor and CVE details URL
+        vendor = None
+        cve_details_url = None
+        if product_id:
+            product = self.product_manager.get_product_by_id(product_id)
+            if product:
+                vendor = product.get('vendor')
+                cve_details_url = product.get('cve_details_url')
             
         protocols_text = "/".join(sorted(set(tech_info['protocols'])))
         source_locations = sorted(tech_info['source_locations'])
@@ -663,7 +811,10 @@ class DEFPAGE:
             version_max=version_max,
             technology_type=tech_type,
             probability=probability,
-            description=description
+            description=description,
+            product_id=product_id,
+            vendor=vendor,
+            cve_details_url=cve_details_url
         )
 
 
