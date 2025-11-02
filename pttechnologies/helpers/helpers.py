@@ -10,6 +10,7 @@ import json
 import os
 import socket
 import ssl
+import http
 
 from urllib.parse import urlparse
 
@@ -95,19 +96,21 @@ class Helpers:
             RawHttpResponse object with status 400 if successful, else None.
         """
         base_url = base_url.rstrip("/")
+        try:
+            r = self._raw_request(base_url, "/%")
+            if r and r.status == 400:
+                return r
 
-        r = self._raw_request(base_url, "/%")
-        if r and r.status == 400:
-            return r
+            r = self._raw_request(base_url, "/", extra_headers={"Host": "%"})
+            if r and r.status == 400:
+                return r
 
-        r = self._raw_request(base_url, "/", extra_headers={"Host": "%"})
-        if r and r.status == 400:
-            return r
-
-        r = self._raw_request(base_url, "/", extra_headers={"BadHeaderWithoutColon": ""})
-        if r and r.status == 400:
-            return r
-
+            r = self._raw_request(base_url, "/", extra_headers={"BadHeaderWithoutColon": ""})
+            if r and r.status == 400:
+                return r
+        except (http.client.BadStatusLine, Exception) as e:
+            return None
+            
         return None
 
     def _raw_request(self, base_url: str, path: str, extra_headers: dict[str, str] | None = None, custom_request_line: str | None = None) -> RawHttpResponse | None:

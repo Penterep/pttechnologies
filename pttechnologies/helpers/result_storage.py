@@ -80,7 +80,10 @@ class ResultStorage:
         probability: Optional[int] = 100,
         vulnerability: Optional[str] = None,
         description: Optional[str] = None,
-        module: Optional[str] = None
+        module: Optional[str] = None,
+        product_id: Optional[int] = None,
+        vendor: Optional[str] = None,
+        cve_details_url: Optional[str] = None
     ) -> None:
         """
         Add a record to the storage. Automatically detects the calling module if `module` is not provided.
@@ -88,11 +91,16 @@ class ResultStorage:
         Args:
             technology: Technology name (e.g., OS, WebServer).
             version: Version of the technology.
+            version_min: Minimum version in range.
+            version_max: Maximum version in range.
             technology_type: Type of the technology (e.g., 'webserver', 'os').
             probability: Probability value (0-100).
             vulnerability: Vulnerability identifier.
             description: Description or additional information.
             module: Name of the calling module (optional; autodetected if not provided).
+            product_id: Product ID from products.json.
+            vendor: Vendor name.
+            cve_details_url: URL to CVE details page.
 
         Returns:
             None
@@ -111,7 +119,10 @@ class ResultStorage:
             "technology_type": (technology_type or "").strip() if technology_type else None,
             "probability": probability,
             "vulnerability": (vulnerability or "").strip() if vulnerability else None,
-            "description": (description or "").strip() if description else None
+            "description": (description or "").strip() if description else None,
+            "product_id": product_id,
+            "vendor": (vendor or "").strip() if vendor else None,
+            "cve_details_url": (cve_details_url or "").strip() if cve_details_url else None
         }
 
         with self._lock:
@@ -244,6 +255,11 @@ class ResultStorage:
             sw_prefix = mapping.get("swPrefix")
             sw_value = f"{sw_prefix}{technology}" if sw_prefix else None
 
+            # Get product_id, vendor, and cve_details_url from first record that has them
+            product_id = next((r.get("product_id") for r in filtered if r.get("product_id")), None)
+            vendor = next((r.get("vendor") for r in filtered if r.get("vendor")), None)
+            cve_details_url = next((r.get("cve_details_url") for r in filtered if r.get("cve_details_url")), None)
+
             return {
                 "technology": technology,
                 "version": display_version,
@@ -256,7 +272,10 @@ class ResultStorage:
                 "descriptions": descriptions,
                 "node_target_type": node_target_type,
                 "sw_type": sw_type,
-                "sw_value": sw_value
+                "sw_value": sw_value,
+                "product_id": product_id,
+                "vendor": vendor,
+                "cve_details_url": cve_details_url
             }
 
     def get_properties(self) -> dict[str, dict[str, str]]:

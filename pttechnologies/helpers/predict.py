@@ -8,6 +8,7 @@ using predefined rules from predict.json configuration file.
 import re
 from ptlibs.ptprinthelper import ptprint
 from helpers.result_storage import storage
+from helpers.products import get_product_manager
 
 class Predict:
     """
@@ -40,6 +41,7 @@ class Predict:
         self.args = args
         self.ptjsonlib = ptjsonlib
         self.helpers = helpers
+        self.product_manager = get_product_manager()
         self.definitions = self.helpers.load_definitions("predict.json")
         self.predictions_made = []
 
@@ -123,9 +125,21 @@ class Predict:
         predictions = []
         
         for item in predict_items:
+            # Get product info from product_id
+            product_id = item.get("product_id")
+            if not product_id:
+                continue  # Skip if no product_id defined
+            
+            product = self.product_manager.get_product_by_id(product_id)
+            if not product:
+                continue  # Skip if product not found
+            
+            technology_name = product.get("our_name", "Unknown")
+            category_name = self.product_manager.get_category_name(product.get("category_id"))
+            
             prediction = {
-                'technology': item.get("technology"),
-                'technology_type': item.get("technology_type"),
+                'technology': technology_name,
+                'technology_type': category_name,
                 'version': item.get("version"),
                 'probability': item.get("probability", 100),
                 'description': item.get('description')
@@ -308,6 +322,7 @@ class Predict:
         
         Compares record fields against condition values for exact equality,
         excluding special pattern-based condition keys.
+        Supports matching by product_id or technology name for backward compatibility.
         
         Args:
             rec: Record dictionary to check field values.
@@ -317,8 +332,17 @@ class Predict:
             bool: True if all exact field matches succeed, False otherwise.
         """
         for key, val in cond.items():
-            if key in ("description_regex", "description_contains"):
+            if key in ("description_regex", "description_contains", "_comment"):
                 continue
-            if rec.get(key) != val:
+            
+            # Handle product_id matching
+            if key == "product_id":
+                if rec.get("product_id") != val:
+                    # Also check if technology name matches (for backward compatibility)
+                    product = self.product_manager.get_product_by_id(val)
+                    if not product or rec.get("technology") != product.get("our_name"):
+                        return False
+            elif rec.get(key) != val:
                 return False
+                
         return True
