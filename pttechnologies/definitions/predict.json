@@ -1,63 +1,56 @@
 [
     {
         "when":[
-            {"technology": "Kestrel"}
+            {"product_id": 15}
         ],
         "predict":[
             {
-                "technology": "Windows",
-                "technology_type": "Os",
+                "product_id": 6,
                 "description": "Kestrel (Webserver)"
             },
             {
-                "technology": "ASP.NET",
-                "technology_type": "Interpret",
+                "product_id": 56,
                 "description": "Kestrel (Webserver)"
             }
         ]
     },
     {
         "when":[
-            {"technology": "Microsoft-IIS"}
+            {"product_id": 12}
         ],
         "predict":[
             {
-                "technology": "Windows",
-                "technology_type": "Os",
+                "product_id": 6,
                 "description": "Microsoft-IIS (Webserver)"
             }
         ]
     },
     {
         "when":[
-            {"technology": "ASP"}
+            {"product_id": 58}
         ],
         "predict":[
             {
-                "technology": "Windows", 
-                "technology_type": "Os",
+                "product_id": 6,
                 "description": "ASP (Interpret)"
             },
-            {   
-                "technology": "Microsoft-IIS",
-                "technology_type": "Webserver",
+            {
+                "product_id": 12,
                 "description": "ASP (Interpret)"
             }
         ]
     },
     {
         "when":[
-            {"technology": "ASP.NET"}
+            {"product_id": 56}
         ],
         "predict":[
             {
-                "technology": "Windows", 
-                "technology_type": "Os",
+                "product_id": 6,
                 "description": "ASP.NET (Framework)"
             },
             {
-                "technology": "Microsoft-IIS",
-                "technology_type": "Webserver",
+                "product_id": 12,
                 "description": "ASP.NET (Framework)"
             }
         ]
@@ -67,39 +60,35 @@
             {"description_contains": "X-AspNet-Version"}
         ],
         "predict":[
-            {   
-                "technology": "Windows",
-                "technology_type": "Os",
+            {
+                "product_id": 6,
                 "description": "ASP.NET (Framework)"
             },
             {
-                "technology": "ASP.NET",
-                "technology_type": "Interpret",
+                "product_id": 56,
                 "description": "ASP.NET (Framework)"
             }
         ]
     },
     {
         "when":[
-            {"technology": "Microsoft-IIS", "version": "10.0"}
+            {"product_id": 12, "version": "10.0"}
         ],
         "predict":[
             {
-                "technology": "Windows",
-                "technology_type": "Os",
+                "product_id": 7,
                 "version": "2016, 2019, 2022",
                 "description": "Microsoft-IIS 10.0 (Webserver)"
             }
         ]
     },
-    {   
+    {
         "when":[
-            {"technology": "Microsoft-IIS", "version": "8.5"}
+            {"product_id": 12, "version": "8.5"}
         ],
         "predict":[
             {
-                "technology": "Windows",
-                "technology_type": "Os",
+                "product_id": 7,
                 "version": "2012 R2",
                 "description": "Microsoft-IIS 8.5 (Webserver)"
             }
@@ -107,12 +96,11 @@
     },
     {
         "when":[
-            {"technology": "Microsoft-IIS", "version": "8.0"}
+            {"product_id": 12, "version": "8.0"}
         ],
         "predict":[
             {
-                "technology": "Windows",
-                "technology_type": "Os",
+                "product_id": 7,
                 "version": "2012",
                 "description": "Microsoft-IIS 8.0 (Webserver)"
             }
@@ -120,12 +108,11 @@
     },
     {
         "when":[
-            {"technology": "Microsoft-IIS", "version": "7.5"}
+            {"product_id": 12, "version": "7.5"}
         ],
         "predict":[
             {
-                "technology": "Windows",
-                "technology_type": "Os",
+                "product_id": 7,
                 "version": "2008 R2",
                 "description": "Microsoft-IIS 7.5 (Webserver)"
             }
@@ -133,12 +120,11 @@
     },
     {
         "when":[
-            {"technology": "Microsoft-IIS", "version": "7.0"}
+            {"product_id": 12, "version": "7.0"}
         ],
         "predict":[
             {
-                "technology": "Windows",
-                "technology_type": "Os",
+                "product_id": 7,
                 "version": "2008",
                 "description": "Microsoft-IIS 7.0 (Webserver)"
             }
@@ -146,12 +132,11 @@
     },
     {
         "when":[
-            {"technology": "Microsoft-IIS", "version": "6.0"}
+            {"product_id": 12, "version": "6.0"}
         ],
         "predict":[
             {
-                "technology": "Windows",
-                "technology_type": "Os",
+                "product_id": 7,
                 "version": "2003",
                 "description": "Microsoft-IIS 6.0 (Webserver)"
             }
@@ -159,12 +144,11 @@
     },
     {
         "when":[
-            {"technology": "Microsoft-IIS", "version": "5.1"}
+            {"product_id": 12, "version": "5.1"}
         ],
         "predict":[
-            {   
-                "technology": "Windows",
-                "technology_type": "Os",
+            {
+                "product_id": 6,
                 "version": "XP Professional",
                 "description": "Microsoft-IIS 5.1 (Webserver)"
             }
@@ -172,12 +156,11 @@
     },
     {
         "when":[
-            {"technology": "Microsoft-IIS", "version": "5.0"}
+            {"product_id": 12, "version": "5.0"}
         ],
         "predict":[
             {
-                "technology": "Windows",
-                "technology_type": "Os",
+                "product_id": 6,
                 "version": "200",
                 "description": "Microsoft-IIS 5.0 (Webserver)"
             }
@@ -189,9 +172,8 @@
         ],
         "predict": [
             {
-                "technology": "Debian",
+                "product_id": 3,
                 "version": "8",
-                "technology_type": "Os",
                 "description": "PHP (Interpret)"
             }
         ]
@@ -202,9 +184,8 @@
         ],
         "predict": [
             {
-                "technology": "Debian",
+                "product_id": 3,
                 "version": "9",
-                "technology_type": "Os",
                 "description": "PHP (Interpret)"
             }
         ]
@@ -215,9 +196,8 @@
         ],
         "predict": [
             {
-                "technology": "Debian",
+                "product_id": 3,
                 "version": "10",
-                "technology_type": "Os",
                 "description": "PHP (Interpret)"
             }
         ]
@@ -228,9 +208,8 @@
         ],
         "predict": [
             {
-                "technology": "Ubuntu",
+                "product_id": 2,
                 "version": "20.04",
-                "technology_type": "Os",
                 "description": "PHP (Interpret)"
             }
         ]
@@ -241,9 +220,8 @@
         ],
         "predict": [
             {
-                "technology": "Ubuntu",
+                "product_id": 2,
                 "version": "22.04",
-                "technology_type": "Os",
                 "description": "PHP (Interpret)"
             }
         ]
@@ -254,9 +232,8 @@
         ],
         "predict": [
             {
-                "technology": "Ubuntu",
+                "product_id": 2,
                 "version": "18.04",
-                "": "Os",
                 "description": "PHP (Interpret)"
             }
         ]
@@ -267,138 +244,121 @@
         ],
         "predict": [
             {
-                "technology": "Alpine Linux",
-                "technology_type": "Os",
+                "product_id": 9,
                 "description": "PHP (Interpret)"
             }
         ]
     },
     {
         "when":[
-            {"technology": "Joomla"}
+            {"product_id": 72}
         ],
         "predict":[
             {
-                "technology": "PHP",
-                "technology_type": "Interpret",
+                "product_id": 30,
                 "probability": 100,
                 "description": "Joomla (WebApp)"
             },
             {
-                "technology": "MySQL",
-                "technology_type": "Database",
+                "product_id": 200,
                 "probability": 50,
                 "description": "Joomla (WebApp)"
             },
             {
-                "technology": "MariaDB", 
-                "technology_type": "Database",
+                "product_id": 201,
                 "probability": 50,
                 "description": "Joomla (WebApp)"
             },
             {
-                "technology": "PostgreSQL",
-                "technology_type": "Database", 
+                "product_id": 202,
                 "probability": 50,
                 "description": "Joomla (WebApp)"
-            }   
+            }
         ]
     },
     {
         "when":[
-            {"technology": "WordPress"}
+            {"product_id": 70}
         ],
         "predict":[
             {
-                "technology": "PHP",
-                "technology_type": "Interpret",
+                "product_id": 30,
                 "probability": 100,
                 "description": "WordPress (WebApp)"
             },
             {
-                "technology": "MySQL",
-                "technology_type": "Database",
+                "product_id": 200,
                 "probability": 80,
                 "description": "WordPress (WebApp)"
             },
             {
-                "technology": "MariaDB", 
-                "technology_type": "Database",
+                "product_id": 201,
                 "probability": 80,
                 "description": "WordPress (WebApp)"
-            } 
+            }
         ]
     },
     {
         "when":[
-            {"technology": "Drupal"}
+            {"product_id": 71}
         ],
         "predict":[
             {
-                "technology": "PHP",
-                "technology_type": "Interpret",
+                "product_id": 30,
                 "probability": 100,
                 "description": "Drupal (WebApp)"
             },
             {
-                "technology": "MySQL",
-                "technology_type": "Database",
+                "product_id": 200,
                 "probability": 33,
                 "description": "Drupal (WebApp)"
             },
             {
-                "technology": "PostgreSQL", 
-                "technology_type": "Database",
+                "product_id": 202,
                 "probability": 33,
                 "description": "Drupal (WebApp)"
             },
             {
-                "technology": "SQLite", 
-                "technology_type": "Database",
+                "product_id": 203,
                 "probability": 33,
                 "description": "Drupal (WebApp)"
-            } 
+            }
         ]
     },
     {
         "when":[
-            {"technology": "Kentico"}
+            {"product_id": 79}
         ],
         "predict":[
             {
-                "technology": "C#",
-                "technology_type": "Interpret",
+                "product_id": 35,
                 "probability": 100,
                 "description": "Kentico (WebApp)"
             },
             {
-                "technology": "ASP.NET",
-                "technology_type": "Interpret",
+                "product_id": 56,
                 "probability": 100,
                 "description": "Kentico (WebApp)"
             },
             {
-                "technology": "Windows", 
-                "technology_type": "Os",
+                "product_id": 6,
                 "probability": 100,
                 "description": "Kentico (WebApp)"
             },
             {
-                "technology": "MySQL", 
-                "technology_type": "Database",
+                "product_id": 200,
                 "probability": 100,
                 "description": "Kentico (WebApp)"
-            } 
+            }
         ]
     },
     {
         "when":[
-            {"technology": "phpMyAdmin"}
+            {"product_id": 140}
         ],
         "predict":[
             {
-                "technology": "PHP",
-                "technology_type": "Interpret",
+                "product_id": 30,
                 "probability": 100,
                 "description": "phpMyAdmin (DatabaseManagement)"
             }
@@ -406,12 +366,11 @@
     },
     {
         "when":[
-            {"technology": "Adminer"}
+            {"product_id": 141}
         ],
         "predict":[
             {
-                "technology": "PHP",
-                "technology_type": "Interpret",
+                "product_id": 30,
                 "probability": 100,
                 "description": "Adminer (DatabaseManagement)"
             }
@@ -419,12 +378,11 @@
     },
     {
         "when":[
-            {"technology": "Apache Tomcat"}
+            {"product_id": 20}
         ],
         "predict":[
             {
-                "technology": "Java",
-                "technology_type": "Interpret",
+                "product_id": 31,
                 "probability": 100,
                 "description": "Tomcat (WebServer)"
             }

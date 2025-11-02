@@ -1,48 +1,41 @@
 [
     {
-      "technology": "Apache",
-      "category": "WebServer",
+      "product_id": 10,
       "files": ["server-status", "server-info"],
       "submodule": "apache_server_status"
     },
     {
-      "technology": "Apache",
-      "category": "WebServer",
+      "product_id": 10,
       "files": ["server-info"]
     },
     {
-      "technology": "Apache",
-      "category": "WebServer", 
+      "product_id": 10,
       "file": "icons/apache_pb2.gif"
     },
     {
-      "technology": "PHP",
-      "category": "Interpret",
+      "product_id": 30,
       "file": "phpinfo.php"
     },
     {
-      "technology": "phpMyAdmin",
-      "category": "Database Management",
-      "files": ["phpmyadmin/", "pma/", "phpMyAdmin/", "PMA/"]
+      "product_id": 140,
+      "files": ["phpmyadmin/", "pma/", "phpMyAdmin/", "PMA/"],
+      "submodule": "phpmyadmin"
     },
     {
-      "technology": "Adminer", 
-      "category": "Database Management",
-      "files": ["adminer.php", "adminer/", "admin.php"]
+      "product_id": 141,
+      "files": ["adminer.php", "adminer/", "admin.php"],
+      "submodule": "adminer"
     },
     {
-      "technology": "Joomla",
-      "category": "WebApp",
+      "product_id": 72,
       "files": ["administrator/manifests/files/joomla.xml", "language/en-GB/en-GB.xml", "htaccess.txt"]
     },
     {
-      "technology": "WordPress",
-      "category": "WebApp",
+      "product_id": 70,
       "files": ["wp-content/", "wp-json/", "wp-include/", "readme.html"]
     },
     {
-      "technology": "Drupal",
-      "category": "WebApp",
+      "product_id": 71,
       "files": ["sites/default/", "CHANGELOG.txt"]
     }
   ]

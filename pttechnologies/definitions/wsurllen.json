@@ -1,33 +1,26 @@
 [
     {
-      "category": "WebServer",
-      "technology": "Apache",
+      "product_id": 10,
       "statuses": ["403", "403", "403", "403", "403", "414", "414", "414", "414"]
     },
     {
-        "category": "WebServer",
-        "technology": "Nginx",
-        "statuses": ["404","404","404","404","404","414","414","414","414"]
+      "product_id": 11,
+      "statuses": ["404","404","404","404","404","414","414","414","414"]
     },
     {
-      "category": "WebServer",
-      "technology": "Microsoft-IIS",
+      "product_id": 12,
       "statuses": ["400", "400", "400", "400", "400", "400", "400", "400", "414"]
     },
     {
-      "category": "WebServer",
-      "technology": "GWS",
+      "product_id": 17,
       "statuses": ["404", "404", "404", "404", "404", "404", "404", "404", "404"]
     },
     {
-      "category": "WebServer",
-      "technology": "Caddy",
+      "product_id": 14,
       "statuses": ["500", "500", "500", "500", "500", "500", "500", "500", "500"]
     },
     {
-      "category": "WebServer",
-      "technology": "Tomcat",
+      "product_id": 20,
       "statuses": ["404", "404", "404", "404", "404", "400", "400", "400", "400"]
     }
 ]
-  

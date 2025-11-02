@@ -2,8 +2,7 @@
   "patterns": [
     {
       "name": "Nginx Error Page",
-      "technology": "Nginx",
-      "category": "WebServer",
+      "product_id": 11,
       "pattern": "<center>\\s*<h1>\\s*\\d{3}\\s+.*</h1>\\s*</center>\\s*<hr>\\s*<center>\\s*nginx(?:/([\\d\\.]+))?\\s*</center>|<hr><center>nginx</center>",
       "version_pattern": "nginx/([\\d\\.]+)",
       "flags": "is"
@@ -11,8 +10,7 @@
     {
       "_comment": "http://188.166.108.185",
       "name": "Nginx error page footer with version",
-      "technology": "Nginx",
-      "category": "WebServer",
+      "product_id": 11,
       "pattern": "<hr>\\s*<center>\\s*nginx/([\\d\\.]+)(?:\\s*\\([^)]+\\))?\\s*</center>",
       "version_pattern": "nginx/([\\d\\.]+)",
       "flags": "is"
@@ -20,71 +18,58 @@
     {
       "_comment": "http://188.166.108.185",
       "name": "Ubuntu OS detection from Nginx error page",
-      "technology": "Ubuntu",
-      "category": "Os",
+      "product_id": 2,
       "pattern": "nginx/[\\d\\.]+\\s*\\(Ubuntu\\)",
       "flags": "i"
     },
     {
       "_comment": "https://www.veeble.com",
-
       "name": "LiteSpeed error page link to litespeedtech.com",
-      "technology": "LiteSpeed",
-      "category": "WebServer",
+      "product_id": 13,
       "pattern": "href=\"http://www\\.litespeedtech\\.com/error-page\">LiteSpeed\\s+Web\\s+Server</a>",
       "flags": "i"
     },
     {
       "name": "OpenResty Error",
-      "technology": "OpenResty",
-      "category": "WebServer",
+      "product_id": 170,
       "pattern": "<center>\\s*openresty(?:/([\\d\\.]+))?\\s*</center>|<hr>\\s*<center>\\s*openresty\\s*</center>",
       "version_pattern": "openresty/([\\d\\.]+)",
       "flags": "is"
     },
     {
       "_comment": "https://www.litespeedtech.com  https://www.hostarmada.com",
-      
       "name": "Complete LiteSpeed footer with 'Proudly powered by' and disclaimer text",
-      "technology": "LiteSpeed",
-      "category": "WebServer",
+      "product_id": 13,
       "pattern": "<br\\s*/?>\\s*Proudly\\s+powered\\s+by\\s+(?:<a[^>]*>)?\\s*LiteSpeed",
       "version_pattern": "LiteSpeed[/\\s]+([\\d\\.]+)",
       "flags": "is"
     },
     {
       "name": "CloudFlare Error Page",
-      "technology": "CloudFlare",
-      "category": "WebServer",
+      "product_id": 110,
       "pattern": "<center>\\s*<h1>\\s*\\d{3}\\s+.*</h1>\\s*</center>\\s*<hr>\\s*<center>\\s*cloudflare(?:/([\\d\\.]+))?\\s*</center>",
       "version_pattern": "nginx/([\\d\\.]+)",
       "flags": "is"
     },
     {
       "_comment": "https://www.usgs.gov",
-
       "name": "CloudFront specific troubleshooting text - unique identifier",
-      "technology": "CloudFront",
-      "category": "CDN",
+      "product_id": 111,
       "pattern": "If\\s+you\\s+provide\\s+content\\s+to\\s+customers\\s+through\\s+CloudFront,\\s+you\\s+can\\s+find\\s+steps\\s+to\\s+troubleshoot\\s+and\\s+help\\s+prevent\\s+this\\s+error\\s+by\\s+reviewing\\s+the\\s+CloudFront\\s+documentation",
       "flags": "is"
     },
     {
       "_comment": "https://proc.linux.cz",
-
       "name": "OpenSSL version extracted from address/footer tag only - more reliable than body text",
-      "technology": "OpenSSL",
-      "category": "Cryptography",
+      "product_id": 210,
       "pattern": "<(?:address|footer)[^>]*>.*?OpenSSL/([\\d\\.]+[a-z]?).*?</(?:address|footer)>",
       "version_pattern": "OpenSSL/([\\d\\.]+[a-z]?)",
       "flags": "is"
     },
     {
       "_comment": "https://proc.linux.cz",
-
       "name": "PHP version from server signature in address/footer tag - includes Debian package versions",
-      "technology": "PHP",
-      "category": "Interpret",
+      "product_id": 30,
       "pattern": "<(?:address|footer)[^>]*>.*?PHP/([\\d\\.\\-+a-zA-Z]+(?:deb\\d+u\\d+)?).*?</(?:address|footer)>",
       "version_pattern": "PHP/([\\d\\.\\-+a-zA-Z]+(?:deb\\d+u\\d+)?)",
       "flags": "is"
@@ -92,8 +77,7 @@
     {
       "_comment": "http://216.251.87.50:8080",
       "name": "IIS 404 error page with HTTP Error message",
-      "technology": "Microsoft-IIS",
-      "category": "WebServer",
+      "product_id": 12,
       "pattern": "<h2>HTTP\\s+Error\\s+404\\s+-\\s+File\\s+or\\s+directory\\s+not\\s+found\\.<br>Internet\\s+Information\\s+Services\\s+\\(IIS\\)</h2>",
       "version_pattern": "Internet\\s+Information\\s+Services\\s+\\(IIS\\)\\s*([\\d\\.]+)?",
       "flags": "is"
@@ -101,35 +85,30 @@
     {
       "_comment": "http://201.130.208.98:88 http://185.255.208.179:23424 ",
       "name": "IIS typical structure",
-      "technology": "Microsoft-IIS",
-      "category": "WebServer",
+      "product_id": 12,
       "pattern": "<!DOCTYPE\\s+HTML\\s+PUBLIC.*?<HTML><HEAD><TITLE>.*?</TITLE>.*?<h2>.*?HTTP\\s+Error\\s+\\d+",
       "flags": "is"
     },
     {
-      "_comment": "https://publicita14-20.dotaceeu.cz/foo ############################################################",
-      
+      "_comment": "https://publicita14-20.dotaceeu.cz/foo",
       "name": "Symphony Error Page",
-      "technology": "Symphony",
-      "category": "BackendFramework",
+      "product_id": 53,
       "pattern": "<title>.*An\\s+Error\\s+Occurred.*</title>|<h1>.*Oops!\\s*An\\s+Error\\s+Occurred.*</h1>",
       "flags": "is"
     },
     {
-      "_comment": "???  http://test.webdav.org http://mail.python.org",
+      "_comment": "http://test.webdav.org http://mail.python.org",
       "name": "Generic Technology Footer",
-      "technology": "Various",
-      "category": "WebServer",
+      "product_id": 99,
+      "_comment2": "Various - needs special handling",
       "pattern": "<(?:address|footer|div[^>]*footer[^>]*)>([^<]*(?:Apache|nginx|IIS|Tomcat|Jetty|LiteSpeed|OpenResty)[^<]*)</",
       "extract_tech": true,
       "flags": "is"
     },
     {
-      "_comment": "http://190.210.10.243 http://103.216.252.171:9100 ",
-
+      "_comment": "http://190.210.10.243 http://103.216.252.171:9100",
       "name": "Apache Tomcat",
-      "technology": "Apache Tomcat",
-      "category": "WebServer",
+      "product_id": 20,
       "pattern": "<title>Estado HTTP \\d+ –[^<]+</title>.*Apache Tomcat/([\\d\\.]+)|Apache Tomcat/([\\d\\.]+)\\s*\\([^)]+\\)|<h3>Apache Tomcat/([\\d\\.]+)",
       "version": "$1$2$3",
       "flags": "is"
@@ -137,62 +116,51 @@
     {
       "_comment": "http://190.210.10.24",
       "name": "Debian OS detection from Tomcat error page",
-      "technology": "Debian",
-      "category": "Operating System",
+      "product_id": 3,
       "pattern": "Apache Tomcat/[\\d\\.]+\\s*\\(Debian\\)",
       "flags": "i"
     },
     {
       "_comment":"https://www.hopipopi.cz/.ht",
       "name": "Apache 403 with IE 512-byte workaround comment - distinctive signature",
-      "technology": "Apache",
-      "category": "WebServer", 
+      "product_id": 10,
       "pattern": "<HTML>\\s*<HEAD>\\s*<TITLE>403 Forbidden</TITLE>\\s*</HEAD>\\s*<BODY>\\s*<H1>Forbidden</H1>\\s*You do not have permission to access this document\\.\\s*<P>\\s*<HR>\\s*<ADDRESS>\\s*Web Server at [\\w\\.-]+\\s*</ADDRESS>\\s*</BODY>\\s*</HTML>\\s*<!--.*Unfortunately, Microsoft has added a clever new.*512 bytes.*-->",
       "version_pattern": "Apache/([\\d\\.]+)",
       "flags": "is"
     },
     {
       "_comment": "https://www.hokej.cz",
-
       "name": "Apache 400 Bad Request",
-      "technology": "Apache",
-      "category": "WebServer",
+      "product_id": 10,
       "pattern": "<!DOCTYPE\\s+HTML\\s+PUBLIC\\s+\"-//IETF//DTD\\s+HTML\\s+2\\.0//EN\">\\s*<html><head>\\s*<title>400\\s+Bad\\s+Request</title>.*?<h1>Bad\\s+Request</h1>.*?Your\\s+browser\\s+sent\\s+a\\s+request\\s+that\\s+this\\s+server\\s+could\\s+not\\s+understand\\.",
       "version_pattern": "Apache/([\\d\\.]+)",
       "flags": "is"
-      
     },
     {
       "_comment": "https://ib.fio.cz",
-
       "name": "Apache Tomcat Error Page",
-      "technology": "Apache Tomcat",
-      "category": "WebServer",
+      "product_id": 20,
       "pattern": "<!doctype\\s+html><html\\s+lang=\"en\"><head><title>HTTP\\s+Status\\s+\\d{3}\\s+–\\s+[^<]+</title><style\\s+type=\"text/css\">body\\s*\\{font-family:Tahoma,Arial,sans-serif;\\}\\s*h1,\\s*h2,\\s*h3,\\s*b\\s*\\{color:white;background-color:#525D76;\\}",
       "version_pattern": "Apache Tomcat/([\\d\\.]+)",
       "flags": "is"
     },
     {
       "_comment": "https://www.hokej.cz https://www.apache.org http://people.apache.org https://www.fi.muni.cz",
-
       "name": "Apache HTML 2.0 DOCTYPE",
-      "technology": "Apache",
-      "category": "WebServer",
+      "product_id": 10,
       "pattern": "<!DOCTYPE HTML PUBLIC \"-//IETF//DTD HTML 2\\.0//EN\">",
       "flags": "i"
     },
     {
       "name": "Ubuntu OS Detection",
-      "technology": "Ubuntu",
-      "category": "Os", 
+      "product_id": 2,
       "pattern": "Apache/[\\d\\.]+\\s+\\(Ubuntu\\)|Server\\s+at\\s+[^<]+\\s+Port\\s+\\d+</address>.*Ubuntu",
       "version_pattern": "\\(Ubuntu\\s+([\\d\\.]+)\\)|Ubuntu[/\\s]+([\\d\\.]+)",
       "flags": "is"
     },
     {
       "name": "Debian OS Detection",
-      "technology": "Debian",
-      "category": "Os", 
+      "product_id": 3,
       "pattern": "Apache/[\\d\\.]+\\s+\\(Debian\\)|Server\\s+at\\s+[^<]+\\s+Port\\s+\\d+</address>.*Debian",
       "version_pattern": "\\(Debian\\s+([\\d\\.]+)\\)|Debian[/\\s]+([\\d\\.]+)",
       "flags": "is"
@@ -200,8 +168,7 @@
     {
       "_comment": "https://demo.backpackforlaravel.com https://laravel.com/",
       "name": "Laravel Tailwind error page full pattern",
-      "technology": "Laravel",
-      "category": "Framework",
+      "product_id": 52,
       "pattern": "<style>\\s*/\\*!\\s*normalize\\.css\\s+v8\\.0\\.1.*?@media\\s+\\(prefers-color-scheme:dark\\)\\{.*?\\.dark\\\\:bg-gray-(?:800|900).*?</style>",
       "flags": "is"
     }

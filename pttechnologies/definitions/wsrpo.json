@@ -1,34 +1,26 @@
 [
     {
-      "category": "WebServer",
-      "technology": "Nginx",
+      "product_id": 11,
       "order": ["server", "date", "content-type", "content-length"]
     },
     {
-        "category":"WebServer",
-        "technology": "Tomcat",
-        "order": ["content-length","server","content-type","date"]
+      "product_id": 20,
+      "order": ["content-length","server","content-type","date"]
     },
     {
-        "category": "WebServer",
-        "technology": "Apache",
-        "order": ["date","server","content-length","content-type"]
+      "product_id": 10,
+      "order": ["date","server","content-length","content-type"]
     },
     {
-        "category": "WebServer",
-        "technology": "CloudFlare",
-        "order": ["date", "content-type", "content-length", "server"]
-
+      "product_id": 110,
+      "order": ["date", "content-type", "content-length", "server"]
     },
     {
-        "category": "WebServer",
-        "technology": "Microsoft-IIS",
-        "order": ["content-type", "content-length", "date"]
+      "product_id": 12,
+      "order": ["content-type", "content-length", "date"]
     },
     {
-        "category": "WebServer",
-        "technology": "Microsoft-IIS",
-        "order": ["content-type", "server", "date", "content-length"]
+      "product_id": 12,
+      "order": ["content-type", "server", "date", "content-length"]
     }
 ]
-  

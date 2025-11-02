@@ -11,368 +11,295 @@
   ],
   "definitions": [
     {
-      "category": "Interpret",
-      "technology": "PHP",
+      "product_id": 30,
       "content": "php"
     },
     {
-      "category": "WebServer",
-      "technology": "Google Frontend", 
+      "product_id": 16,
       "content": "google frontend"
     },
     {
-      "category": "CDN",
-      "technology": "AkamaiNetStorage",
+      "product_id": 115,
       "content": "akamainetstorage"
     },
     {
-      "category": "CDN",
-      "technology": "Azure",
+      "product_id": 117,
       "content": "x-azure-ref"
     },
     {
-      "category": "CDN",
-      "technology": "AkamaiGHost",
+      "product_id": 116,
       "content": "AkamaiGHost"
     },
     {
-      "category": "CDN",
-      "technology": "Varnish",
+      "product_id": 112,
       "content": "Varnish"
     },
     {
-      "category": "CDN",
-      "technology": "Envoy",
+      "product_id": 114,
       "content": "envoy"
     },
     {
-      "category": "Proxy",
-      "technology": "proxygen-bolt",
+      "product_id": 118,
       "content": "proxygen-bolt"
     },
     {
-      "category": "ELB",
-      "technology": "awselb",
+      "product_id": 119,
       "content": "awselb"
     },
     {
-      "category": "WebServer",
-      "technology": "GWS",
+      "product_id": 17,
       "content": "gws"
     },
     {
-      "category": "WebServer",
-      "technology": "Google SFFE",
+      "product_id": 18,
       "content": "sffe"
     },
     {
-      "category": "WebServer",
-      "technology": "Apache",
+      "product_id": 10,
       "content": "apache"
     },
     {
-      "category": "WebServer",
-      "technology": "Kestrel",
+      "product_id": 15,
       "content": "kestrel"
     },
     {
-      "category": "WebServer",
-      "technology": "Nginx",
+      "product_id": 11,
       "content": "nginx"
     },
     {
-      "category": "WebServer",
-      "technology": "Microsoft-IIS",
+      "product_id": 12,
       "content": "microsoft-iis"
     },
     {
-      "category": "WebServer",
-      "technology": "Microsoft-HTTPAPI",
+      "product_id": 19,
       "content": "microsoft-httpapi"
     },
     {
-      "category": "WebServer",
-      "technology": "LiteSpeed",
+      "product_id": 13,
       "content": "litespeed"
     },
     {
-      "category": "WebServer",
-      "technology": "Caddy",
+      "product_id": 14,
       "content": "caddy"
     },
     {
-      "category": "WebServer",
-      "technology": "CloudFlare",
+      "product_id": 110,
       "content": "cloudflare"
     },
     {
-      "category": "CDN",
-      "technology": "CloudFront",
+      "product_id": 111,
       "content": "CloudFront"
     },
     {
-      "category": "BackendFramework",
-      "technology": "Nette Framework",
+      "product_id": 59,
       "content": "nette framework"
     },
     {
-      "category": "WebApp",
-      "technology": "Drupal",
+      "product_id": 71,
       "content": "drupal"
     },
     {
-      "category": "WebApp",
-      "technology": "WordPress",
+      "product_id": 70,
       "content": "wordpress"
     },
     {
-      "category": "BackendFramework",
-      "technology": "Laravel",
+      "product_id": 52,
       "content": "laravel"
     },
     {
-      "category": "BackendFramework",
-      "technology": "Symfony",
+      "product_id": 53,
       "content": "symfony"
     },
     {
-      "category": "BackendFramework",
-      "technology": "Django",
+      "product_id": 50,
       "content": "django"
     },
     {
-      "category": "BackendFramework",
-      "technology": "Flask",
+      "product_id": 54,
       "content": "flask"
     },
     {
-      "category": "BackendFramework",
-      "technology": "Express",
+      "product_id": 55,
       "content": "express"
     },
     {
-      "category": "BackendFramework",
-      "technology": "ASP.NET Framework",
+      "product_id": 56,
       "content" : "asp.net framework"
     },
     {
-      "category": "BackendFramework",
-      "technology": "ASP.NET MVC",
+      "product_id": 56,
       "content" : "asp.net mvc"
     },
     {
-      "category": "Interpret",
-      "technology": "Python",
+      "product_id": 32,
       "content": "python"
     },
     {
-      "category": "Interpret",
-      "technology": "Node.js",
+      "product_id": 34,
       "content": "node.js"
     },
     {
-      "category": "Interpret",
-      "technology": "ASP.NET",
+      "product_id": 56,
       "content": "asp.net"
     },
     {
-      "category": "Interpret",
-      "technology": "Ruby",
+      "product_id": 33,
       "content": "ruby"
     },
     {
-      "category": "Interpret",
-      "technology": "Java",
+      "product_id": 31,
       "content": "java"
     },
     {
-      "category": "WebServer",
-      "technology": "Tomcat",
+      "product_id": 20,
       "content": "tomcat"
     },
     {
-      "category": "WebServer",
-      "technology": "Jetty",
+      "product_id": 21,
       "content": "jetty"
     },
     {
-      "category": "WebServer",
-      "technology": "Undertow",
+      "product_id": 22,
       "content": "undertow"
     },
     {
-      "category": "BackendFramework",
-      "technology": "Spring Boot",
+      "product_id": 60,
       "content": "spring boot"
     },
     {
-      "category": "BackendFramework",
-      "technology": "Rails",
+      "product_id": 51,
       "content": "rails"
     },
     {
-      "category": "WebApp",
-      "technology": "Joomla",
+      "product_id": 72,
       "content": "joomla"
     },
     {
-      "category": "WebApp",
-      "technology": "Magento",
+      "product_id": 81,
       "content": "magento"
     },
     {
-      "category": "BackendFramework",
-      "technology": "CodeIgniter",
+      "product_id": 62,
       "content": "codeigniter"
     },
     {
-      "category": "BackendFramework",
-      "technology": "Zend Framework",
+      "product_id": 63,
       "content": "zend"
     },
     {
-      "category": "BackendFramework",
-      "technology": "CakePHP",
+      "product_id": 61,
       "content": "cakephp"
     },
     {
-      "category": "BackendFramework",
-      "technology": "Yii",
+      "product_id": 64,
       "content": "yii"
     },
     {
-      "category": "Os",
-      "technology": "Ubuntu Linux",
+      "product_id": 2,
       "content": "ubuntu"
     },
     {
-      "category": "Os",
-      "technology": "Debian Linux",
+      "product_id": 3,
       "content": "debian"
     },
     {
-      "category": "Os",
-      "technology": "Windows",
+      "product_id": 6,
       "content": "win64"
     },
     {
-      "category": "Os",
-      "technology": "Windows",
+      "product_id": 6,
       "content": "win32"
     },
     {
-      "category": "Os",
-      "technology": "CentOS Linux",
+      "product_id": 4,
       "content": "centos"
     },
     {
-      "category": "Os",
-      "technology": "Red Hat Linux",
+      "product_id": 1,
       "content": "red hat"
     },
     {
-      "category": "Os",
-      "technology": "Raspbian Linux",
+      "product_id": 8,
       "content": "raspbian"
     },
     {
-      "category": "Os",
-      "technology": "Alpine Linux",
+      "product_id": 9,
       "content": "alpine"
     },
     {
-      "category": "Os",
-      "technology": "Fedora Linux",
+      "product_id": 160,
       "content": "fedora"
     },
     {
-      "category": "Os",
-      "technology": "Arch Linux",
+      "product_id": 161,
       "content": "arch linux"
     },
     {
-      "category": "Os",
-      "technology": "FreeBSD",
+      "product_id": 162,
       "content": "freebsd"
     },
     {
-      "category": "Os",
-      "technology": "SUSE Linux",
+      "product_id": 163,
       "content": "suse"
     },
     {
-      "category": "Os",
-      "technology": "Gentoo Linux",
+      "product_id": 164,
       "content": "gentoo"
     },
     {
-      "category": "Os",
-      "technology": "Unix",
+      "product_id": 165,
       "content": "unix"
     },
     {
-      "category": "Plugin",
-      "technology": "mod_ssl",
+      "product_id": 220,
       "content": "mod_ssl"
     },
     {
-      "category": "Plugin",
-      "technology": "mod_fcgid",
+      "product_id": 221,
       "content": "mod_fcgid"
     },
     {
-      "category": "Plugin",
-      "technology": "mod_php",
+      "product_id": 222,
       "content": "mod_php"
     },
     {
-      "category": "Plugin",
-      "technology": "mod_perl",
+      "product_id": 223,
       "content": "mod_perl"
     },
     {
-      "category": "Plugin",
-      "technology": "mod_wsgi",
+      "product_id": 224,
       "content": "mod_wsgi"
     },
     {
-      "category": "Plugin",
-      "technology": "mod_python",
+      "product_id": 225,
       "content": "mod_python"
     },
     {
-      "category": "Plugin",
-      "technology": "mod_jk",
+      "product_id": 226,
       "content": "mod_jk"
     },
     {
-      "category": "Plugin",
-      "technology": "mod_proxy",
+      "product_id": 227,
       "content": "mod_proxy"
     },
     {
-      "category": "Plugin",
-      "technology": "mod_wsgi-express",
+      "product_id": 228,
       "content": "mod_wsgi-express"
     },
     {
-      "category": "Plugin",
-      "technology": "mod_lua",
+      "product_id": 229,
       "content": "mod_lua"
     },
     {
-      "category": "Plugin",
-      "technology": "mod_auth_passthrough",
+      "product_id": 230,
       "content": "mod_auth_passthrough"
     },
     {
-      "category": "Plugin",
-      "technology": "mod_bwlimited",
+      "product_id": 231,
       "content": "mod_bwlimited"
     },
     {
-      "category": "Cryptography",
-      "technology": "OpenSSL",
+      "product_id": 210,
       "content": "OpenSSL"
     }
   ]

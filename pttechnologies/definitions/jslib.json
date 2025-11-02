@@ -1,7 +1,6 @@
 [
   {
-    "technology": "jQuery",
-    "category": "JavaScript Library",
+    "product_id": 90,
     "signatures": ["jQuery", "jquery"],
     "url_pattern": "jquery[.-]?(\\d+\\.\\d+\\.\\d+)?(?:\\.min)?\\.js",
     "version_patterns": [
@@ -13,8 +12,7 @@
     "probability": 100
   },
   {
-    "technology": "Modernizr",
-    "category": "JavaScript Library",
+    "product_id": 91,
     "signatures": ["Modernizr"],
     "url_pattern": "modernizr(?:[.-]?(\\d+\\.\\d+(?:\\.\\d+)?))?\\.(?:min\\.)?js",
     "version_patterns": [
@@ -26,8 +24,7 @@
     "probability": 100
   },
   {
-    "technology": "Underscore.js",
-    "category": "JavaScript Library", 
+    "product_id": 92,
     "signatures": ["Underscore.js", "underscore"],
     "url_pattern": "underscore(?:[.-]?(\\d+\\.\\d+\\.\\d+))?(?:\\.min)?\\.js",
     "version_patterns": [
@@ -37,8 +34,7 @@
     "probability": 100
   },
   {
-    "technology": "Lodash",
-    "category": "JavaScript Library",
+    "product_id": 93,
     "signatures": ["lodash", "Lo-Dash"],
     "url_pattern": "lodash(?:[.-]?(\\d+\\.\\d+\\.\\d+))?(?:\\.min)?\\.js",
     "version_patterns": [
@@ -48,8 +44,7 @@
     "probability": 100
   },
   {
-    "technology": "React",
-    "category": "JavaScript Framework",
+    "product_id": 40,
     "signatures": ["React.createElement", "facebook.github.io/react", "__REACT_DEVTOOLS_GLOBAL_HOOK__"],
     "url_pattern": "react(?:\\.production)?(?:\\.min)?\\.js",
     "version_patterns": [
@@ -59,8 +54,7 @@
     "probability": 100
   },
   {
-    "technology": "Vue.js",
-    "category": "JavaScript Framework",
+    "product_id": 41,
     "signatures": ["Vue.js", "vuejs.org", "Vue.version"],
     "url_pattern": "vue(?:[.-]?(\\d+\\.\\d+\\.\\d+))?(?:\\.min)?\\.js",
     "version_patterns": [
@@ -70,8 +64,7 @@
     "probability": 100
   },
   {
-    "technology": "Angular",
-    "category": "JavaScript Framework",
+    "product_id": 42,
     "signatures": ["angular.module", "angular.version", "AngularJS"],
     "url_pattern": "angular(?:[.-]?(\\d+\\.\\d+\\.\\d+))?(?:\\.min)?\\.js",
     "version_patterns": [
@@ -81,8 +74,7 @@
     "probability": 100
   },
   {
-    "technology": "Bootstrap",
-    "category": "CSS Framework",
+    "product_id": 101,
     "signatures": ["Bootstrap", "getbootstrap.com", "bootstrap.js"],
     "url_pattern": "bootstrap(?:[.-]?(\\d+\\.\\d+\\.\\d+))?(?:\\.bundle)?(?:\\.min)?\\.js",
     "version_patterns": [
@@ -92,8 +84,7 @@
     "probability": 100
   },
   {
-    "technology": "D3.js",
-    "category": "JavaScript Library",
+    "product_id": 94,
     "signatures": ["d3.version", "d3js.org", "Mike Bostock"],
     "url_pattern": "d3(?:[.-]?v?(\\d+))?(?:\\.min)?\\.js",
     "version_patterns": [
@@ -103,8 +94,7 @@
     "probability": 100    
   },
   {
-    "technology": "Three.js",
-    "category": "JavaScript Library", 
+    "product_id": 95,
     "signatures": ["THREE.REVISION", "three.js", "threejs.org"],
     "url_pattern": "three(?:\\.module)?(?:\\.min)?\\.js",
     "version_patterns": [
@@ -114,8 +104,7 @@
     "probability": 100
   },
   {
-    "technology": "Axios",
-    "category": "JavaScript Library",
+    "product_id": 96,
     "signatures": ["axios", "axios/lib/axios"],
     "url_pattern": "axios(?:[.-]?(\\d+\\.\\d+\\.\\d+))?(?:\\.min)?\\.js",
     "version_patterns": [
@@ -124,8 +113,7 @@
     "probability": 100
   },
   {
-    "technology": "Chart.js",
-    "category": "JavaScript Library",
+    "product_id": 97,
     "signatures": ["Chart.js", "chartjs.org"],
     "url_pattern": "chart(?:\\.bundle)?(?:\\.min)?\\.js",
     "version_patterns": [
@@ -134,8 +122,7 @@
     "probability": 100
   },
   {
-    "technology": "Moment.js",
-    "category": "JavaScript Library",
+    "product_id": 98,
     "signatures": ["moment.js", "momentjs.com", "moment.version"],
     "url_pattern": "moment(?:[.-]?(\\d+\\.\\d+\\.\\d+))?(?:\\.min)?\\.js",
     "version_patterns": [
@@ -145,8 +132,7 @@
     "probability": 100
   },
   {
-    "technology": "Swiper",
-    "category": "JavaScript Library",
+    "product_id": 99,
     "signatures": ["Swiper", "swiperjs.com", "swiper-bundle"], 
     "url_pattern": "swiper(?:\\.bundle)?(?:\\.min)?\\.js",
     "version_patterns": [
@@ -155,8 +141,7 @@
     "probability": 100
   },
   {
-    "technology": "svg4everybody",
-    "category": "JavaScript Library",
+    "product_id": 100,
     "signatures": ["svg4everybody"],
     "url_pattern": "svg4everybody(?:\\.min)?\\.js",
     "version_patterns": [
