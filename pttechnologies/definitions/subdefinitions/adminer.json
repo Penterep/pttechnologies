@@ -1,0 +1,55 @@
+{
+    "patterns": [
+      {
+        "name": "Adminer Version Detection (Span)",
+        "product_id": 141,
+        "pattern": "<span class=[\"']version[\"']>([\\d\\.]+)</span>",
+        "version_pattern": "<span class=[\"']version[\"']>([\\d\\.]+)</span>",
+        "flags": "i",
+        "source": "span_version",
+        "probability": 100
+      },
+      {
+        "name": "Adminer Version Detection (URL)",
+        "product_id": 141,
+        "pattern": "adminer\\.php\\?file=[^&]+&version=([\\d\\.]+)",
+        "version_pattern": "version=([\\d\\.]+)",
+        "flags": "i",
+        "source": "url_version",
+        "probability": 95
+      },
+      {
+        "name": "Adminer Detection (Title)",
+        "product_id": 141,
+        "pattern": "<title>[^<]*Adminer[^<]*</title>",
+        "flags": "i",
+        "source": "title",
+        "probability": 90
+      },
+      {
+        "name": "Adminer Detection (H1 Link)",
+        "product_id": 141,
+        "pattern": "<a href=[\"']https://www\\.adminer\\.org/[\"'][^>]*id=[\"']h1[\"']>Adminer</a>",
+        "flags": "i",
+        "source": "h1_link",
+        "probability": 100
+      },
+      {
+        "name": "Adminer Detection (Meta Robots)",
+        "product_id": 141,
+        "pattern": "<meta name=[\"']robots[\"'] content=[\"']noindex[\"']>.*?<title>[^<]*Adminer",
+        "flags": "is",
+        "source": "meta_pattern",
+        "probability": 85
+      },
+      {
+        "name": "Adminer Version Detection (verifyVersion script)",
+        "product_id": 141,
+        "pattern": "verifyVersion\\([\"']([\\d\\.]+)[\"']",
+        "version_pattern": "verifyVersion\\([\"']([\\d\\.]+)[\"']",
+        "flags": "i",
+        "source": "script_verify",
+        "probability": 98
+      }
+    ]
+  }
