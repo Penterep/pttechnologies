@@ -1,0 +1,24 @@
+{
+    "patterns": [
+      {
+        "name": "phpMyAdmin Version Detection (Title)",
+        "product_id": 140,
+        "pattern": "<title>[^<]*phpMyAdmin ([\\d\\.]+) documentation[^<]*</title>",
+        "version_pattern": "phpMyAdmin ([\\d\\.]+) documentation",
+        "flags": "i",
+        "source": "title",
+        "probability": 100,
+        "_comment": "Most reliable - version in page title"
+      },
+      {
+        "name": "phpMyAdmin Version Detection (Nav Item)",
+        "product_id": 140,
+        "pattern": "<a href=\"#\">phpMyAdmin ([\\d\\.]+) documentation</a>",
+        "version_pattern": "phpMyAdmin ([\\d\\.]+) documentation",
+        "flags": "i",
+        "source": "nav_item",
+        "probability": 100,
+        "_comment": "Version in navigation breadcrumb"
+      }
+    ]
+  }
