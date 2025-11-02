@@ -1,0 +1,29 @@
+{
+  "products": [
+    {
+      "id": 20,
+      "our_name": "Apache Tomcat",
+      "vendor": "apache",
+      "products": ["tomcat"],
+      "cve_details_url": "https://www.cvedetails.com/product/887/Apache-Tomcat.html",
+      "category_id": 3
+    },
+    {
+      "id": 21,
+      "our_name": "Eclipse Jetty",
+      "vendor": "eclipse",
+      "products": ["jetty"],
+      "cve_details_url": "https://www.cvedetails.com/product/34824/Eclipse-Jetty.html",
+      "category_id": 3
+    },
+    {
+      "id": 22,
+      "our_name": "Undertow",
+      "vendor": "redhat",
+      "products": ["undertow"],
+      "cve_details_url": "https://www.cvedetails.com/product/31202/Redhat-Undertow.html",
+      "category_id": 3
+    }
+  ]
+}
+

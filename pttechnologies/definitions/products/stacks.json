@@ -1,0 +1,29 @@
+{
+  "products": [
+    {
+      "id": 130,
+      "our_name": "XAMPP",
+      "vendor": "apache_friends",
+      "products": ["xampp"],
+      "cve_details_url": "https://www.cvedetails.com/product/8820/Apache-Friends-Xampp.html",
+      "category_id": 13
+    },
+    {
+      "id": 131,
+      "our_name": "WAMP",
+      "vendor": "wampserver",
+      "products": ["wampserver"],
+      "cve_details_url": "https://www.cvedetails.com/product/18862/Wampserver-Wampserver.html",
+      "category_id": 13
+    },
+    {
+      "id": 132,
+      "our_name": "LAMP",
+      "vendor": "x",
+      "products": ["x"],
+      "cve_details_url": "x",
+      "category_id": 13
+    }
+  ]
+}
+
