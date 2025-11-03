@@ -1,37 +1,28 @@
 [
     {
       "extension": "php",
-      "category": "Interpret",
-      "technology": "PHP"
+      "product_id": 30
     },
     {
       "extension": "asp",
-      "category": "Interpret",
-      "technology": "ASP"
+      "product_id": 58
     },
     {
       "extension": "aspx",
-      "category": "Interpret",
-      "technology": "ASP.NET"
+      "product_id": 56
     },
     {
       "extension": "jsp",
-      "category": "Interpret",
-      "technology": "JSP"
+      "product_id": 31,
+      "_comment": "JSP - Java Server Pages"
     },
     {
       "extension": "jspx",
-      "category": "Interpret",
-      "technology": "JSPX"
+      "product_id": 31,
+      "_comment": "JSPX - JSP in XML syntax"
     },
     {
       "extension": "py",
-      "category": "Interpret",
-      "technology": "Python"
-    },
-    {
-      "extension": "html",
-      "category": "Interpret",
-      "technology": "HTML"
+      "product_id": 32
     }
 ]

@@ -1,66 +1,66 @@
 [
     {
-      "technology": "Microsoft-IIS",
+      "product_id": 12,
       "statuses": ["200", "200", "200", "200", "200", "200", "CONN_ERROR", "CONN_ERROR", "CONN_ERROR"]
     },
     {
-      "technology": "Microsoft-HTTPAPI",
+      "product_id": 19,
       "statuses": ["200", "200", "200", "200", "200", "400", "400", "400", "400"]
     },
     {
-      "technology": "Apache",
+      "product_id": 10,
       "statuses": ["200", "200", "200", "400", "400", "400", "400", "400", "400"]
     },
     {
-      "technology": "LiteSpeed",
+      "product_id": 13,
       "statuses": ["200", "200", "200", "200", "400", "400", "400", "400", "400"]
     },
     {
-      "technology": "Nginx",
+      "product_id": 11,
       "statuses": ["200", "431", "400", "400", "400", "400", "400", "400", "400"]
     },
     {
-      "technology": "Nginx",
+      "product_id": 11,
       "statuses": ["200", "200", "400", "400", "400", "400", "400", "400", "400"]
     },
     {
-      "technology": "CloudFlare",
+      "product_id": 110,
       "statuses": ["200", "200", "200", "200", "200", "200", "400", "400", "400"]
     },
     {
-      "technology": "CloudFlare",
+      "product_id": 110,
       "statuses": ["200", "200", "200", "431", "431", "431", "400", "400", "400"]
     },
     {
-      "technology": "CloudFlare",
+      "product_id": 110,
       "statuses": ["200", "200", "500", "520", "520", "520", "400", "400", "400"]
     },
     {
-      "technology": "Apache",
+      "product_id": 10,
       "statuses": ["200", "200", "200", "200", "200", "200", "200", "200", "502"]
     },
     {
-      "technology": "Caddy",
+      "product_id": 14,
       "statuses": ["200", "200", "200", "200", "200", "200", "200", "200", "200"]
     },
     {
-      "technology": "GWS",
+      "product_id": 17,
       "statuses": ["200", "200", "200", "200", "200", "200", "200", "400", "413"]
     },
     {
-      "technology": "Google Frontend", 
+      "product_id": 16,
       "statuses": ["200", "431", "431", "431", "431", "431", "431", "431", "413"]
     },
     {
-      "technology": "LiteSpeed", 
+      "product_id": 13,
       "statuses": ["400", "400", "400", "400", "400", "400", "400", "400", "400"]
     },
     {
-      "technology": "Nginx", 
+      "product_id": 11,
       "statuses": ["200", "400", "400", "400", "400", "400", "400", "400", "400"]
     },
     {
-      "technology": "Nginx",
+      "product_id": 11,
       "statuses": ["200", "200", "400", "400", "400", "400", "400", "400", "413"]
     }
-  ]
+]

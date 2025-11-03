@@ -2,8 +2,7 @@
     "patterns": [
       {
         "name": "Apache Version Detection (Header)",
-        "technology": "Apache",
-        "category": "WebServer",
+        "product_id": 10,
         "pattern": "<dt>Server\\s+Version:\\s*Apache/([\\d\\.]+)",
         "version_pattern": "Apache/([\\d\\.]+)",
         "flags": "i",
@@ -12,8 +11,7 @@
       },
       {
         "name": "IBM HTTP Server Detection (Header)",
-        "technology": "IBM HTTP Server",
-        "category": "WebServer",
+        "product_id": 171,
         "pattern": "<dt>Server\\s+Version:\\s*IBM_HTTP_Server/([\\d\\.\\-A-Z]+).*?</dt>",
         "version_pattern": "IBM_HTTP_Server/([\\d\\.\\-A-Z]+)",
         "flags": "is",
@@ -23,8 +21,7 @@
       {
         "_comment": "https://www.mahindradealerworld.com/",
         "name": "Oracle Application Server Detection (Header)",
-        "technology": "Oracle Application Server",
-        "category": "WebServer",
+        "product_id": 173,
         "pattern": "<dt>Server\\s+Version:\\s*Oracle-Application-Server-([\\w]+)/([\\d\\.]+).*?</dt>",
         "version_pattern": "Oracle-Application-Server-[\\w]+/([\\d\\.]+)",
         "flags": "is",
@@ -34,8 +31,7 @@
       {
         "_comment": "https://www.mahindradealerworld.com/",
         "name": "Oracle HTTP Server Detection (Header)",
-        "technology": "Oracle HTTP Server",
-        "category": "WebServer",
+        "product_id": 172,
         "pattern": "<dt>Server\\s+Version:.*?Oracle-HTTP-Server.*?</dt>",
         "flags": "is",
         "source": "header",
@@ -43,8 +39,7 @@
       },
       {
         "name": "Ubuntu OS Detection (Header)",
-        "technology": "Ubuntu",
-        "category": "Os",
+        "product_id": 2,
         "pattern": "<dt>Server\\s+Version:.*?\\(Ubuntu\\).*?</dt>",
         "version_pattern": "\\(Ubuntu\\s+([\\d\\.]+)\\)",
         "flags": "is",
@@ -53,8 +48,7 @@
       },
       {
         "name": "Debian OS Detection (Header)",
-        "technology": "Debian",
-        "category": "Os",
+        "product_id": 3,
         "pattern": "<dt>Server\\s+Version:.*?\\(Debian\\).*?</dt>",
         "version_pattern": "\\(Debian\\s+([\\d\\.]+)\\)",
         "flags": "is",
@@ -65,8 +59,7 @@
         "_comment": "https://en.uesp.net",
 
         "name": "AlmaLinux OS Detection (Header)",
-        "technology": "AlmaLinux",
-        "category": "Os",
+        "product_id": 166,
         "pattern": "<dt>Server\\s+Version:.*?\\(AlmaLinux\\).*?</dt>",
         "version_pattern": "\\(AlmaLinux\\s+([\\d\\.]+)\\)",
         "flags": "is",
@@ -77,8 +70,7 @@
         "_comment": " https://epublic.sfcollege.edu",
 
         "name": "Unix OS Detection (Header)",
-        "technology": "Unix",
-        "category": "Os",
+        "product_id": 165,
         "pattern": "<dt>Server\\s+Version:.*?\\(Unix\\).*?</dt>",
         "version_pattern": "\\(Unix\\s+([\\d\\.]+)\\)",
         "flags": "is",
@@ -87,8 +79,7 @@
       },
       {
         "name": "mod_jk Module Detection",
-        "technology": "mod_jk",
-        "category": "Plugin",
+        "product_id": 226,
         "pattern": "<dt>Server\\s+Version:.*?mod_jk/([\\d\\.]+).*?</dt>",
         "version_pattern": "mod_jk/([\\d\\.]+)",
         "flags": "is",
@@ -97,8 +88,7 @@
       },
       {
         "name": "OpenSSL Detection",
-        "technology": "OpenSSL",
-        "category": "Cryptography",
+        "product_id": 210,
         "pattern": "<dt>Server\\s+Version:.*?OpenSSL/([\\d\\.]+[a-z]*).*?</dt>",
         "version_pattern": "OpenSSL/([\\d\\.]+[a-z]*)",
         "flags": "is",
@@ -108,8 +98,7 @@
       {
         "_comment": "https://www.mahindradealerworld.com/",
         "name": "OtherSSL Detection (Header)",
-        "technology": "OtherSSL",
-        "category": "Cryptography",
+        "product_id": 211,
         "pattern": "<dt>Server\\s+Version:.*?OtherSSL/([\\d\\.]+).*?</dt>",
         "version_pattern": "OtherSSL/([\\d\\.]+)",
         "flags": "is",
@@ -118,8 +107,7 @@
       },
       {
         "name": "Apache Version Detection (Footer)",
-        "technology": "Apache",
-        "category": "WebServer",
+        "product_id": 10,
         "pattern": "<address>Apache/([\\d\\.]+).*?</address>",
         "version_pattern": "Apache/([\\d\\.]+)",
         "flags": "is",
@@ -128,8 +116,7 @@
       },
       {
         "name": "Ubuntu OS Detection (Footer)",
-        "technology": "Ubuntu",
-        "category": "OS",
+        "product_id": 2,
         "pattern": "<address>.*?\\(Ubuntu\\).*?</address>",
         "version_pattern": "\\(Ubuntu\\s+([\\d\\.]+)\\)",
         "flags": "is",
@@ -138,8 +125,7 @@
       },
       {
         "name": "Debian OS Detection (Footer)",
-        "technology": "Debian",
-        "category": "OS",
+        "product_id": 3,
         "pattern": "<address>.*?\\(Debian\\).*?</address>",
         "version_pattern": "\\(Debian\\s+([\\d\\.]+)\\)",
         "flags": "is",
@@ -149,8 +135,7 @@
       {
         "_comment": "https://epublic.sfcollege.edu",
         "name": "IBM HTTP Server Detection (Footer)",
-        "technology": "IBM HTTP Server",
-        "category": "WebServer",
+        "product_id": 171,
         "pattern": "<address>IBM_HTTP_Server/([\\d\\.\\-A-Z]+).*?</address>",
         "version_pattern": "IBM_HTTP_Server/([\\d\\.\\-A-Z]+)",
         "flags": "is",
@@ -160,8 +145,7 @@
       {
         "_comment": "https://wjdtfm.com/server-status",
         "name": "PHP Detection (Header)",
-        "technology": "PHP",
-        "category": "Interpret",
+        "product_id": 30,
         "pattern": "<dt>Server\\s+Version:.*?PHP/([\\d\\.\\+a-z\\-]+).*?</dt>",
         "version_pattern": "PHP/([\\d\\.\\+a-z\\-]+)",
         "flags": "is",
@@ -171,8 +155,7 @@
       {
         "_comment": "https://wjdtfm.com/server-status",
         "name": "Python Detection (Header)",
-        "technology": "Python",
-        "category": "Interpret",
+        "product_id": 32,
         "pattern": "<dt>Server\\s+Version:.*?Python/([\\d\\.]+).*?</dt>",
         "version_pattern": "Python/([\\d\\.]+)",
         "flags": "is",
@@ -182,8 +165,7 @@
       {
         "_comment": "https://wjdtfm.com/server-status",
         "name": "Perl Detection",
-        "technology": "Perl",
-        "category": "Language",
+        "product_id": 36,
         "pattern": "<dt>Server\\s+Version:.*?Perl/(v?[\\d\\.]+).*?</dt>",
         "version_pattern": "Perl/(v?[\\d\\.]+)",
         "flags": "is",
@@ -193,8 +175,7 @@
       {
         "_comment": "https://wjdtfm.com/server-status",
         "name": "mod_python Detection",
-        "technology": "mod_python",
-        "category": "Plugin",
+        "product_id": 225,
         "pattern": "<dt>Server\\s+Version:.*?mod_python/([\\d\\.]+).*?</dt>",
         "version_pattern": "mod_python/([\\d\\.]+)",
         "flags": "is",
@@ -204,8 +185,7 @@
       {
         "_comment": "https://wjdtfm.com/server-status",
         "name": "mod_ssl Detection",
-        "technology": "mod_ssl",
-        "category": "Plugin",
+        "product_id": 220,
         "pattern": "<dt>Server\\s+Version:.*?mod_ssl/([\\d\\.]+).*?</dt>",
         "version_pattern": "mod_ssl/([\\d\\.]+)",
         "flags": "is",
@@ -215,8 +195,7 @@
       {
         "_comment": "https://wjdtfm.com/server-status",
         "name": "mod_perl Detection (Header)",
-        "technology": "mod_perl",
-        "category": "Plugin",
+        "product_id": 223,
         "pattern": "<dt>Server\\s+Version:.*?mod_perl/([\\d\\.]+).*?</dt>",
         "version_pattern": "mod_perl/([\\d\\.]+)",
         "flags": "is",
@@ -226,8 +205,7 @@
       {
         "_comment": "https://www.mahindradealerworld.com/",
         "name": "mod_plsql Detection (Header)",
-        "technology": "mod_plsql",
-        "category": "Plugin",
+        "product_id": 232,
         "pattern": "<dt>Server\\s+Version:.*?mod_plsql/([\\d\\.]+).*?</dt>",
         "version_pattern": "mod_plsql/([\\d\\.]+)",
         "flags": "is",
@@ -237,8 +215,7 @@
       {
         "_comment": "https://www.mahindradealerworld.com/",
         "name": "mod_onsint Detection (Header)",
-        "technology": "mod_onsint",
-        "category": "Plugin",
+        "product_id": 233,
         "pattern": "<dt>Server\\s+Version:.*?mod_onsint/([\\d\\.]+).*?</dt>",
         "version_pattern": "mod_onsint/([\\d\\.]+)",
         "flags": "is",
@@ -248,8 +225,7 @@
       {
         "_comment": "https://www.mahindradealerworld.com/",
         "name": "Linux OS Detection (Server Label)",
-        "technology": "Linux",
-        "category": "Os",
+        "product_id": 167,
         "pattern": "<dt>Server\\s+Label:.*?LINUX.*?</dt>",
         "flags": "is",
         "source": "server_label",
@@ -258,8 +234,7 @@
       {
         "_comment": "https://www.mahindradealerworld.com/",
         "name": "x64 Architecture Detection (Server Label)",
-        "technology": "x64",
-        "category": "Architecture",
+        "product_id": 151,
         "pattern": "<dt>Server\\s+Label:.*?X64.*?</dt>",
         "flags": "is",
         "source": "server_label",
@@ -268,8 +243,7 @@
       {
         "_comment": "https://www.mahindradealerworld.com/",
         "name": "Apache Version Detection (Server Label)",
-        "technology": "Apache",
-        "category": "WebServer",
+        "product_id": 10,
         "pattern": "<dt>Server\\s+Label:\\s*APACHE_([\\d\\.]+).*?</dt>",
         "version_pattern": "APACHE_([\\d\\.]+)",
         "flags": "is",

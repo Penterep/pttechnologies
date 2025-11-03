@@ -1,206 +1,152 @@
 [
     {
       "name_regex": "^PHPSESSID$",
-      "technology": "PHP",
-      "technology_type": "Interpret",
+      "product_id": 30,
       "description": "Default PHP session cookie"
     },
     {
         "name_regex": "^(__Secure-)?phpMyAdmin.*$",
-        "technology": "phpMyAdmin",
-        "technology_type": "WebApp",
+        "product_id": 140,
         "description": "phpMyAdmin cookie (session or secure variant)"
     },    
     {
       "name_regex": "^ASP\\.NET_SessionId$",
-      "technology": "ASP.NET",
-      "technology_type": "BackendFramework",
+      "product_id": 56,
       "description": "ASP.NET session identifier"
     },
     {
       "name_regex": "^\\.AspNetCore\\.",
-      "technology": "ASP.NET Core",
-      "technology_type": "BackendFramework",
+      "product_id": 57,
       "description": "ASP.NET Core framework cookie"
     },
     {
       "name_regex": "^ASPSESSIONID[A-Z0-9]+$",
-      "technology": "ASP",
-      "technology_type": "BackendFramework",
+      "product_id": 58,
       "description": "Classic ASP session cookie"
     },
     {
       "name_regex": "^JSESSIONID$",
-      "technology": "Java",
-      "technology_type": "Interpret",
+      "product_id": 31,
       "description": "Java servlet session identifier"
     },
     {
       "name_regex": "^laravel_session$",
-      "technology": "Laravel",
-      "technology_type": "BackendFramework",
+      "product_id": 52,
       "description": "Laravel PHP framework session"
     },
     {
       "name_regex": "^XSRF-TOKEN$",
-      "technology": "Laravel",
-      "technology_type": "BackendFramework",
+      "product_id": 52,
       "description": "Laravel CSRF protection token"
     },
     {
       "name_regex": "^KEYCLOAK_SESSION$",
-      "technology": "Keycloak",
-      "technology_type": "OAuth2Server",
+      "product_id": 150,
       "description": "Keycloak server session"
     },
     {
       "name_regex": "^KEYCLOAK_IDENTITY$",
-      "technology": "Keycloak",
-      "technology_type": "OAuth2Server",
+      "product_id": 150,
       "description": "Keycloak user identity"
     },
     {
       "name_regex": "^KEYCLOAK_REMEMBER_ME$",
-      "technology": "Keycloak",
-      "technology_type": "OAuth2Server",
+      "product_id": 150,
       "description": "Keycloak remember me cookie"
     },
     {
       "name_regex": "^wordpress_logged_in_",
-      "technology": "WordPress",
-      "technology_type": "WebApp",
+      "product_id": 70,
       "description": "WordPress authentication"
     },
     {
       "name_regex": "^wp-settings-",
-      "technology": "WordPress",
-      "technology_type": "WebApp",
+      "product_id": 70,
       "description": "WordPress user settings"
     },
     {
       "name_regex": "^symfony$",
-      "technology": "Symfony",
-      "technology_type": "BackendFramework",
+      "product_id": 53,
       "description": "Symfony PHP framework session"
     },
     {
       "name_regex": "^connect\\.sid$",
-      "technology": "Express.js",
-      "technology_type": "BackendFramework",
+      "product_id": 55,
       "description": "Express.js session (Node.js)"
     },
     {
       "name_regex": "^_[a-z_]+_session$",
-      "technology": "Ruby on Rails",
-      "technology_type": "BackendFramework",
+      "product_id": 51,
       "description": "Rails application session"
     },
     {
       "name_regex": "^sessionid$",
-      "technology": "Django",
-      "technology_type": "BackendFramework",
-      "description": "Django session"
+      "product_id": 50,
+      "description": "Django default session"
     },
     {
-      "name_regex": "^csrftoken$",
-      "technology": "Django",
-      "technology_type": "BackendFramework",
-      "description": "Django CSRF token"
+      "name_regex": "^flask\\.session$",
+      "product_id": 54,
+      "description": "Flask session cookie"
     },
     {
-      "name_regex": "^ci_session$",
-      "technology": "CodeIgniter",
-      "technology_type": "BackendFramework",
-      "description": "CodeIgniter PHP framework"
+      "name_regex": "^rack\\.session$",
+      "product_id": 51,
+      "description": "Rack middleware session"
+    },
+    {
+      "name_regex": "^_session_id$",
+      "product_id": 51,
+      "description": "Generic Ruby session"
+    },
+    {
+      "name_regex": "^connect\\.sess$",
+      "product_id": 55,
+      "description": "Connect session"
+    },
+    {
+      "name_regex": "^session$",
+      "product_id": 51,
+      "description": "Generic session cookie"
+    },
+    {
+      "name_regex": "^PLAY_SESSION$",
+      "product_id": 60,
+      "description": "Play Framework session"
     },
     {
       "name_regex": "^CAKEPHP$",
-      "technology": "CakePHP",
-      "technology_type": "BackendFramework",
-      "description": "CakePHP framework session"
+      "product_id": 61,
+      "description": "CakePHP session"
     },
     {
-      "name_regex": "^SESS[a-f0-9]+$",
-      "technology": "Drupal",
-      "technology_type": "WebApp",
-      "description": "Drupal CMS session"
+      "name_regex": "^ci_session$",
+      "product_id": 62,
+      "description": "CodeIgniter session"
     },
     {
-      "name_regex": "^Joomla_",
-      "technology": "Joomla",
-      "technology_type": "WebApp",
-      "description": "Joomla CMS session"
+      "name_regex": "^ZEND_SESSION_ID$",
+      "product_id": 63,
+      "description": "Zend Framework session"
     },
     {
-      "name_regex": "^frontend$",
-      "technology": "Magento",
-      "technology_type": "WebApp",
-      "description": "Magento e-commerce"
+      "name_regex": "^nette-browser$",
+      "product_id": 59,
+      "description": "Nette Framework browser fingerprint"
     },
     {
-      "name_regex": "^PrestaShop-",
-      "technology": "PrestaShop",
-      "technology_type": "WebApp",
-      "description": "PrestaShop e-commerce"
+      "name_regex": "^drupal_sess_",
+      "product_id": 71,
+      "description": "Drupal session cookie"
     },
     {
-      "name_regex": "^MoodleSession",
-      "technology": "Moodle",
-      "technology_type": "WebApp",
-      "description": "Moodle LMS"
+      "name_regex": "^Drupal\\.visitor\\.",
+      "product_id": 71,
+      "description": "Drupal visitor cookie"
     },
     {
-      "name_regex": "^BIGipServer",
-      "technology": "F5 Big-IP",
-      "technology_type": "LoadBalancer",
-      "description": "F5 load balancer"
-    },
-    {
-      "name_regex": "^AWSALB",
-      "technology": "AWS ALB",
-      "technology_type": "LoadBalancer",
-      "description": "AWS Application Load Balancer"
-    },
-    {
-      "name_regex": "^ARRAffinity",
-      "technology": "Azure App Service",
-      "technology_type": "CloudPlatform",
-      "description": "Azure App Service"
-    },
-    {
-      "name_regex": "^__cf_bm$",
-      "technology": "CloudFlare",
-      "technology_type": "WebServer",
-      "description": "CloudFlare bot management"
-    },
-    {
-      "name_regex": "^_ga$",
-      "technology": "Google Analytics",
-      "technology_type": "Analytics",
-      "description": "Google Analytics tracking"
-    },
-    {
-      "name_regex": "^_shopify_",
-      "technology": "Shopify",
-      "technology_type": "WebApp",
-      "description": "Shopify e-commerce"
-    },
-    {
-      "name_regex": "^_gitlab_session$",
-      "technology": "GitLab",
-      "technology_type": "WebApp",
-      "description": "GitLab session"
-    },
-    {
-      "name_regex": "^CFID$",
-      "technology": "ColdFusion",
-      "technology_type": "BackendFramework",
-      "description": "ColdFusion identifier"
-    },
-    {
-      "name_regex": "^CFTOKEN$",
-      "technology": "ColdFusion",
-      "technology_type": "BackendFramework",
-      "description": "ColdFusion token"
+      "name_regex": "^joomla_",
+      "product_id": 72,
+      "description": "Joomla session"
     }
   ]

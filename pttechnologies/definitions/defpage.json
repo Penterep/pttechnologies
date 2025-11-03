@@ -3,47 +3,41 @@
     {
       "_comment": "https://policie.gov.cz -> 403",
       "name": "Red Hat Enterprise Linux",
-      "technology": "Red Hat Enterprise Linux",
-      "category": "Os",
+      "product_id": 1,
       "pattern": "<title>Test Page for the HTTP Server on Red Hat Enterprise Linux</title>",
       "flags": "i"
     },
     {
       "_comment": "http://190.210.10.243  -> 200",
       "name": "Tomcat Default",
-      "technology": "Apache Tomcat",
-      "category": "WebServer",
+      "product_id": 20,
       "pattern": "<title>\\s*Apache\\s+Tomcat(?:/[\\d\\.]+)?\\s*</title>|<h1>\\s*Apache\\s+Tomcat|If\\s+you'?re\\s+seeing\\s+this\\s+page\\s+via\\s+a\\s+web\\s+browser",
       "version_pattern": "Apache\\s+Tomcat[/\\s]+(\\d+\\.\\d+(?:\\.\\d+)?)",
       "flags": "i"
     },
     {
       "name": "Apache Ubuntu Default",
-      "technology": "Apache",
-      "category": "WebServer",
+      "product_id": 2,
       "pattern": "<title>\\s*Apache2\\s+Ubuntu\\s+Default\\s+Page\\s*</title>|Apache2\\s+Ubuntu\\s+Default\\s+Page",
       "flags": "i"
     },
     {
       "_comment": "http://83.150.27.46",
       "name": "Apache Debian Default",
-      "technology": "Apache",
-      "category": "WebServer",
+      "product_id": 3,
       "pattern": "<title>.*Apache2?\\s+Debian\\s+Default\\s+Page.*</title>",
       "flags": "i"
     },
     {
       "name": "Apache Red Hat Default",
-      "technology": "Apache",
-      "category": "WebServer",
+      "product_id": 1,
       "pattern": "<title>\\s*Test\\s+Page\\s+for\\s+Apache\\s+HTTP\\s+Server\\s*</title>|Red\\s+Hat\\s+Enterprise\\s+Linux\\s+Test\\s+Page",
       "flags": "i"
     },
     {
       "_comment": "http://140.238.152.168",
       "name": "Nginx Welcome Page",
-      "technology": "Nginx",
-      "category": "WebServer",
+      "product_id": 11,
       "pattern": "<title[^>]*>\\s*Test Page for the Nginx HTTP Server on Oracle Linux\\s*</title>|Welcome\\s+to\\s+nginx[\\s!]*",
       "version_pattern": "nginx[/\\s]+(\\d+\\.\\d+(?:\\.\\d+)?)",
       "flags": "is"
@@ -51,23 +45,20 @@
     {
       "_comment": "140.238.152.168",
       "name": "Nginx Welcome Page",
-      "technology": "Oracle Linux",
-      "category": "Os",
+      "product_id": 11,
       "pattern": "<title[^>]*>\\s*Test Page for the Nginx HTTP Server on Oracle Linux\\s*</title>",
       "flags": "i"
     },
     {
       "name": "IIS Default Welcome",
-      "technology": "Microsoft-IIS",
-      "category": "WebServer",
+      "product_id": 12,
       "pattern": "Welcome\\s+to\\s+Internet\\s+Information\\s+Services|<title>\\s*Microsoft\\s+Internet\\s+Information\\s+Services\\s*</title>",
       "flags": "i"
     },
     {
       "_comment": "http://84.54.114.92/ http://84.54.114.92/",
       "name": "IIS 8 Default",
-      "technology": "Microsoft IIS",
-      "category": "WebServer",
+      "product_id": 12,
       "pattern": "Microsoft\\s+Internet\\s+Information\\s+Services\\s+8|iis-8\\.png|<title>\\s*Microsoft\\s+Internet\\s+Information\\s+Services\\s+8\\s*</title>",
       "version_pattern": "Microsoft\\s+Internet\\s+Information\\s+Services\\s+(8(?:\\.\\d+)?)",
       "flags": "i"
@@ -76,22 +67,19 @@
       "name": "IIS Version from Title",
       "pattern": "<title>\\s*IIS(\\d+(?:\\.\\d+)?)\\s*</title>",
       "version_pattern": "<title>\\s*IIS(\\d+(?:\\.\\d+)?)\\s*</title>",
-      "technology": "Microsoft-IIS",
-      "category": "WebServer",
+      "product_id": 12,
       "flags": "i"
     },
     {
       "_comment": "http://54.225.225.158/",
       "name": "IIS Microsoft Welcome Link",
       "pattern": "go\\.microsoft\\.com/fwlink/\\?linkid=66138",
-      "technology": "Microsoft-IIS",
-      "category": "WebServer",
+      "product_id": 12,
       "flags": "i"
     },
     {
       "name": "Windows",
-      "technology": "Windows",
-      "category": "Os",
+      "product_id": 6,
       "pattern": "<title>IIS\\s+Windows</title>",
       "exclude_pattern": "Windows\\s+Server|IIS\\s+Windows\\s+Server",
       "version_pattern": "Windows\\s+(10|11|\\d+)",
@@ -99,8 +87,7 @@
     },
     {
       "name": "Windows Server",
-      "technology": "Windows server", 
-      "category": "Os",
+      "product_id": 7,
       "pattern": "<title>IIS\\s+Windows\\s+Server</title>|<title>.Internet\\s+Information\\s+Services.</title>.*Server|Server:\\s*Microsoft-IIS.*Server",
       "version_pattern": "Windows\\s+Server\\s+(\\d{4})",
       "flags": "i"
@@ -108,119 +95,103 @@
     {
       "name": "IIS Welcome PNG Pattern",
       "pattern": "<img\\s+src=[\"']welcome\\.png[\"']\\s+alt=[\"']IIS\\d+[\"']",
-      "technology": "Microsoft-IIS",
-      "category": "WebServer", 
+      "product_id": 12,
       "flags": "i"
     },
     {
       "_comment": "104.21.2.192",
       "name": "CloudFlare Protection",
-      "technology": "CloudFlare",
-      "category": "WebServer",
+      "product_id": 110,
       "pattern": "<title>\\s*Direct IP access not allowed\\s*\\|\\s*Cloudflare\\s*</title>",
       "flags": "i"
     },
     {
       "name": "HAProxy",
-      "technology": "HAProxy",
-      "category": "LoadBalancer",
+      "product_id": 113,
       "pattern": "<title>\\s*503\\s+Service\\s+Unavailable\\s*</title>.*HAProxy|HAProxy[\\s/]*(\\d+\\.\\d+\\.\\d+)?|Statistics\\s+Report\\s+for\\s+HAProxy",
       "version_pattern": "HAProxy[/\\s]+(\\d+\\.\\d+\\.\\d+)",
       "flags": "is"
     },
     {
       "name": "LiteSpeed Default Page",
-      "technology": "LiteSpeed",
-      "category": "WebServer",
+      "product_id": 13,
       "pattern": "(?i)proudly\\s*powered\\s*by\\s*litespeed\\s*web\\s*server|litespeed\\s*technologies\\s*inc\\.",
       "flags": "i"
     },
     {
       "name": "Jetty Default",
-      "technology": "Eclipse Jetty",
-      "category": "WebServer",
+      "product_id": 21,
       "pattern": "<title>.*[Jj]etty.*</title>|Powered\\s+by\\s+Jetty(?://[\\d\\.]+)?|Eclipse\\s+Jetty",
       "version_pattern": "Jetty(?:[/\\s]|\\()?(\\d+\\.\\d+(?:\\.\\d+)?)",
       "flags": "i"
     },
     {
       "name": "CentOS Apache",
-      "technology": "Apache",
-      "category": "WebServer",
+      "product_id": 4,
       "pattern": "<title>.*CentOS\\s+Apache\\s+HTTP\\s+Server\\s+Test\\s+Page.*</title>|<h1>.*Testing\\s+123.*</h1>.*CentOS",
       "flags": "i"
     },
     {
       "name": "Ubuntu Default Apache",
-      "technology": "Ubuntu",
-      "category": "Os",
+      "product_id": 2,
       "pattern": "<title>.*Apache2?\\s+Ubuntu\\s+Default\\s+Page.*</title>|<img\\s+src=\"[^\"]*ubuntu-logo\\.png\"[^>]*>.*Apache",
       "flags": "i"
     },
     {
       "_comment": "http://83.150.27.46",
       "name": "Debian Default Apache",
-      "technology": "Debian",
-      "category": "Os",
+      "product_id": 10,
       "pattern": "<title>.*Apache2?\\s+Debian\\s+Default\\s+Page.*</title>",
       "flags": "i"
     },
     {
       "name": "Red Hat Linux",
-      "technology": "Red Hat Enterprise Linux",
-      "category": "Os",
+      "product_id": 1,
       "pattern": "<title>.*Red\\s+Hat\\s+Enterprise\\s+Linux.*Test\\s+Page.*</title>|<title>.*Fedora\\s+Test\\s+Page.*</title>",
       "flags": "i"
     },
     {
       "name": "Oracle Linux",
-      "technology": "Oracle Linux",
-      "category": "Os",
+      "product_id": 5,
       "pattern": "<title>.*Oracle\\s+Linux.*Test\\s+Page.*</title>|<h1>\\s*Oracle\\s+Linux.*Apache.*</h1>",
       "flags": "i"
     },
     {
       "name": "CentOS Default",
-      "technology": "CentOS",
-      "category": "Os",
+      "product_id": 4,
       "pattern": "<title>.*Welcome\\s+to\\s+CentOS.*</title>|<h1>\\s*Welcome\\s+to\\s+CentOS\\s*</h1>",
       "version_pattern": "CentOS\\s+(\\d+)",
       "flags": "i"
     },
     {
       "name": "Generic XAMPP",
-      "technology": "XAMPP",
-      "category": "Stack",
+      "product_id": 130,
       "pattern": "<title>\\s*XAMPP(?:\\s+[\\d\\.]+)?\\s*</title>|Welcome\\s+to\\s+XAMPP|XAMPP\\s+for\\s+(?:Windows|Linux|OS\\s*X)",
       "version_pattern": "XAMPP\\s+(\\d+\\.\\d+\\.\\d+)",
       "flags": "i"
     },
     {
       "name": "Generic WAMP",
-      "technology": "WAMP",
-      "category": "Stack",
+      "product_id": 131,
       "pattern": "<title>\\s*WAMP\\s*Server\\s*</title>|Wamp\\s*Server\\s*(\\d+\\.\\d+)?",
       "flags": "i"
     },
     {
       "name": "LAMP Stack",
-      "technology": "LAMP",
-      "category": "Stack",
+      "product_id": 132,
       "pattern": "<title>.*LAMP\\s+Test\\s+Page.*</title>|<h1>.*LAMP\\s+Installation.*Success.*</h1>",
       "flags": "i"
     },
     {
       "name": "Python Django",
-      "technology": "Django",
-      "category": "WebFramework",
+      "product_id": 50,
       "pattern": "Django\\s*(\\d+\\.\\d+)?|The\\s+install\\s+worked\\s+successfully|Congratulations\\s+on\\s+your\\s+first\\s+Django-powered\\s+page",
       "version_pattern": "Django[/\\s]+(\\d+\\.\\d+(?:\\.\\d+)?)",
       "flags": "i"
     },
     {
       "name": "Ruby on Rails",
-      "technology": "Ruby on Rails",
-      "category": "WebFramework",
+      "product_id": 51,
       "pattern": "Ruby\\s+on\\s+Rails\\s*(\\d+\\.\\d+)?|Rails\\s+version|Welcome\\s+aboard.*Rails",
       "version_pattern": "Rails[/\\s]+(\\d+\\.\\d+(?:\\.\\d+)?)",
       "flags": "i"
@@ -229,6 +200,7 @@
   
   "version_detection": {
     "iis": {
+      "product_id": 12,
       "technology_aliases": ["Microsoft-IIS", "Microsoft IIS", "IIS"],
       "ranges": [
         {
@@ -309,6 +281,7 @@
     },
     
     "nginx": {
+      "product_id": 11,
       "technology_aliases": ["Nginx", "nginx"],
       "ranges": [
         {
@@ -384,6 +357,7 @@
     },
     
     "apache": {
+      "product_id": 10,
       "technology_aliases": ["Apache", "Apache HTTP Server", "apache"],
       "ranges": [
         {
