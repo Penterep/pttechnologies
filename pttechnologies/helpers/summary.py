@@ -8,6 +8,7 @@ with structured nodes and properties for vulnerability scanning results.
 import json
 import uuid
 from helpers.result_storage import storage
+from helpers.products import get_product_manager
 from ptlibs.ptprinthelper import ptprint
 
 class Summary:
@@ -21,6 +22,7 @@ class Summary:
     Attributes:
         args: Command line arguments and configuration.
         ptjsonlib: JSON processing library instance.
+        product_manager: ProductManager instance for product and category definitions.
     """
     
     def __init__(self, args, ptjsonlib):
@@ -33,8 +35,10 @@ class Summary:
         """
         self.args = args
         self.ptjsonlib = ptjsonlib
+        self.product_manager = get_product_manager()
         
-        self.categories = {
+        # Legacy category mapping for backward compatibility
+        self.legacy_categories = {
             "Operating System": ["Os"],
             "Web Server": ["WebServer"],
             "Web App": ["WebApp"],
@@ -45,6 +49,28 @@ class Summary:
             "Programming Language": ["Interpret", "BackendFramework", "FrontendFramework"],
             "Other": []
         }
+        
+        # Load categories from definitions
+        self.categories = self._load_categories()
+    
+    def _load_categories(self):
+        """
+        Load categories from product_categories.json or use legacy mapping.
+        
+        Returns:
+            dict: Category mapping (category name -> list of technology types)
+        """
+        try:
+            categories_data = self.product_manager.get_categories()
+            # Build a dict: category_name -> category_id
+            category_map = {}
+            for cat in categories_data:
+                cat_name = cat.get('name', 'Other')
+                # Store category for later mapping
+                category_map[cat_name] = []
+            return category_map if category_map else self.legacy_categories
+        except Exception:
+            return self.legacy_categories
     
     def run(self):
         """
@@ -140,7 +166,7 @@ class Summary:
         Find the appropriate category for a technology type.
         
         Args:
-            technology_type: The type of technology to categorize.
+            technology_type: The type of technology to categorize (can be category name from new system).
             
         Returns:
             String representing the category name.
@@ -148,7 +174,12 @@ class Summary:
         if not technology_type:
             return "Other"
         
-        for category, types in self.categories.items():
+        # If technology_type is already a category name, return it
+        if technology_type in self.categories:
+            return technology_type
+        
+        # Otherwise, check legacy mapping
+        for category, types in self.legacy_categories.items():
             if technology_type in types:
                 return category
         
@@ -256,15 +287,26 @@ class Summary:
         
         description = self._create_node_description(data)
         
+        # Get product_id from data if available
+        product_id = data.get("product_id")
+        
+        # Get vendor if product_id is available
+        vendor = ""
+        if product_id:
+            product = self.product_manager.get_product_by_id(product_id)
+            if product:
+                vendor = product.get("vendor", "")
+        
         node = {
             "type": "software",
             "key": node_key,
             "parent": None,
             "parentType": parent_type,
             "properties": {
-                "software_type": self._map_software_type(data.get("technology_type")),
+                "software_type": self._map_software_type(data.get("technology_type"), product_id),
                 "name": technology,
                 "version": version or "",
+                "vendor": vendor,
                 "description": description
             },
             "vulnerabilities": []
@@ -289,23 +331,50 @@ class Summary:
         }
         return mapping.get(node_target_type, "group_software_device")
     
-    def _map_software_type(self, technology_type):
+    def _map_software_type(self, technology_type, product_id=None):
         """
         Map technology type to software type for JSON output.
         
+        If product_id is provided, uses the product manager to get the
+        json_code from the category definition. Otherwise falls back to
+        legacy mapping for backward compatibility.
+        
         Args:
-            technology_type: Technology type from storage.
+            technology_type: Technology type from storage (legacy).
+            product_id: Optional product ID to lookup category json_code.
             
         Returns:
             String representing the mapped software type.
         """
+        # If product_id is provided, use product_manager
+        if product_id:
+            product = self.product_manager.get_product_by_id(product_id)
+            if product:
+                category_id = product.get('category_id')
+                if category_id:
+                    return self.product_manager.get_category_json_code(category_id)
+        
+        # Legacy mapping for backward compatibility
         mapping = {
             "Os": "softwareTypeOs",
+            "Operating System": "softwareTypeOs",
             "WebServer": "softwareTypeWebServer",
+            "Web Server": "softwareTypeWebServer",
             "WebApp": "softwareTypeWebApp",
+            "Web Application": "softwareTypeWebApp",
             "Interpret": "softwareTypeInterpreter",
+            "Programming Language": "softwareTypeInterpreter",
             "BackendFramework": "softwareTypeFramework",
-            "FrontendFramework": "softwareTypeFramework"
+            "Backend Framework": "softwareTypeFramework",
+            "FrontendFramework": "softwareTypeFramework",
+            "Frontend Framework": "softwareTypeFramework",
+            "Database": "softwareTypeDatabase",
+            "Plugin": "softwareTypePlugin",
+            "Application Server": "softwareTypeAppServer",
+            "Load Balancer": "softwareTypeLoadBalancer",
+            "CDN / WAF": "softwareTypeCDN",
+            "Development Stack": "softwareTypeStack",
+            "Security / Cryptography": "softwareTypeSecurity"
         }
         return mapping.get(technology_type, "softwareTypeOther")
     
