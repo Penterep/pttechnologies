@@ -1,0 +1,37 @@
+{
+  "products": [
+    {
+      "id": 200,
+      "our_name": "MySQL",
+      "vendor": "oracle",
+      "products": ["mysql"],
+      "cve_details_url": "https://www.cvedetails.com/product/21801/Oracle-Mysql.html",
+      "category_id": 4
+    },
+    {
+      "id": 201,
+      "our_name": "MariaDB",
+      "vendor": "mariadb",
+      "products": ["mariadb"],
+      "cve_details_url": "https://www.cvedetails.com/product/22503/Mariadb-Mariadb.html",
+      "category_id": 4
+    },
+    {
+      "id": 202,
+      "our_name": "PostgreSQL",
+      "vendor": "postgresql",
+      "products": ["postgresql"],
+      "cve_details_url": "https://www.cvedetails.com/product/575/Postgresql-Postgresql.html",
+      "category_id": 4
+    },
+    {
+      "id": 203,
+      "our_name": "SQLite",
+      "vendor": "sqlite",
+      "products": ["sqlite"],
+      "cve_details_url": "https://www.cvedetails.com/product/16355/Sqlite-Sqlite.html",
+      "category_id": 4
+    }
+  ]
+}
+

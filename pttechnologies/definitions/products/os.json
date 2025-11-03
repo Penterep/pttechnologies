@@ -1,0 +1,141 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "our_name": "Red Hat Enterprise Linux",
+      "vendor": "redhat",
+      "products": ["enterprise_linux", "enterprise_linux_server"],
+      "cve_details_url": "https://www.cvedetails.com/product/78/Redhat-Enterprise-Linux.html",
+      "category_id": 1
+    },
+    {
+      "id": 2,
+      "our_name": "Ubuntu",
+      "vendor": "ubuntu",
+      "products": ["ubuntu_linux"],
+      "cve_details_url": "https://www.cvedetails.com/product/80/Ubuntu-Ubuntu-Linux.html",
+      "category_id": 1
+    },
+    {
+      "id": 3,
+      "our_name": "Debian",
+      "vendor": "debian",
+      "products": ["debian_linux"],
+      "cve_details_url": "https://www.cvedetails.com/product/36/Debian-Debian-Linux.html",
+      "category_id": 1
+    },
+    {
+      "id": 4,
+      "our_name": "CentOS",
+      "vendor": "centos",
+      "products": ["centos"],
+      "cve_details_url": "https://www.cvedetails.com/product/18131/Centos-Centos.html?",
+      "category_id": 1
+    },
+    {
+      "id": 5,
+      "our_name": "Oracle Linux",
+      "vendor": "oracle",
+      "products": ["linux"],
+      "cve_details_url": "https://www.cvedetails.com/product/21375/Oracle-Linux.html",
+      "category_id": 1
+    },
+    {
+      "id": 6,
+      "our_name": "Windows",
+      "vendor": "microsoft",
+      "products": ["windows"],
+      "cve_details_url": "https://www.cvedetails.com/product/3435/Microsoft-Windows.html?vendor_id=26",
+      "category_id": 1
+    },
+    {
+      "id": 7,
+      "our_name": "Windows Server",
+      "vendor": "microsoft",
+      "products": ["windows_server", "windows_server_2003", "windows_server_2008", "windows_server_2012", "windows_server_2016", "windows_server_2019", "windows_server_2022"],
+      "cve_details_url": "https://www.cvedetails.com/product/14895/Microsoft-Server.html",
+      "category_id": 1
+    },
+    {
+      "id": 8,
+      "our_name": "Raspbian",
+      "vendor": "raspberrypi",
+      "products": ["raspberry_pi_os_lite"],
+      "cve_details_url": "https://www.cvedetails.com/product/106450/Raspberrypi-Raspberry-Pi-Os-Lite.html",
+      "category_id": 1
+    },
+    {
+      "id": 9,
+      "our_name": "Alpine Linux",
+      "vendor": "alpinelinux",
+      "products": ["alpine_linux"],
+      "cve_details_url": "https://www.cvedetails.com/product/38838/Alpinelinux-Alpine-Linux.html",
+      "category_id": 1
+    },
+    {
+      "id": 160,
+      "our_name": "Fedora",
+      "vendor": "fedoraproject",
+      "products": ["fedora"],
+      "cve_details_url": "https://www.cvedetails.com/product/16334/Fedoraproject-Fedora.html",
+      "category_id": 1
+    },
+    {
+      "id": 161,
+      "our_name": "Arch Linux",
+      "vendor": "archlinux",
+      "products": ["arch_linux"],
+      "cve_details_url": "https://www.cvedetails.com/product/92051/Archlinux-Arch-Linux.html",
+      "category_id": 1
+    },
+    {
+      "id": 162,
+      "our_name": "FreeBSD",
+      "vendor": "freebsd",
+      "products": ["freebsd"],
+      "cve_details_url": "https://www.cvedetails.com/product/7/Freebsd-Freebsd.html?",
+      "category_id": 1
+    },
+    {
+      "id": 163,
+      "our_name": "SUSE Linux",
+      "vendor": "suse",
+      "products": ["suse_linux", "linux_enterprise_server"],
+      "cve_details_url": "https://www.cvedetails.com/product/92/Suse-Suse-Linux.html",
+      "category_id": 1
+    },
+    {
+      "id": 164,
+      "our_name": "Gentoo Linux",
+      "vendor": "gentoo",
+      "products": ["gentoo_linux"],
+      "cve_details_url": "https://www.cvedetails.com/product/17223/Gentoo-Gentoo-Linux.html",
+      "category_id": 1
+    },
+    {
+      "id": 165,
+      "our_name": "Unix",
+      "vendor": "unix",
+      "products": ["unix"],
+      "cve_details_url": "https://www.cvedetails.com/product/367/Unix-Unix.html?vendor_id=214",
+      "category_id": 1
+    },
+    {
+      "id": 166,
+      "our_name": "AlmaLinux",
+      "vendor": "almalinux",
+      "products": ["almalinux"],
+      "cve_details_url": "https://www.cvedetails.com/product/147332/Almalinux-Almalinux.html?vendor_id=31319",
+      "category_id": 1
+    },
+    {
+      "id": 167,
+      "our_name": "Linux",
+      "vendor": "linux",
+      "products": ["linux"],
+      "cve_details_url": "https://www.cvedetails.com/product/15003/Linux-Linux.html",
+      "category_id": 1
+    }
+  ]
+}
+

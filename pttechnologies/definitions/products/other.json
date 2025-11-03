@@ -1,0 +1,13 @@
+{
+  "products": [
+    {
+      "id": 150,
+      "our_name": "Keycloak",
+      "vendor": "redhat",
+      "products": ["keycloak"],
+      "cve_details_url": "https://www.cvedetails.com/product/37999/Keycloak-Keycloak.html",
+      "category_id": 99
+    }
+  ]
+}
+

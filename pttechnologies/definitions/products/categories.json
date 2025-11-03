@@ -1,0 +1,95 @@
+{
+  "categories": [
+    {
+      "id": 1,
+      "name": "Operating System",
+      "description": "Operating systems and distributions",
+      "json_code": "softwareTypeOs"
+    },
+    {
+      "id": 2,
+      "name": "Web Server",
+      "description": "HTTP servers and web server software",
+      "json_code": "softwareTypeWebServer"
+    },
+    {
+      "id": 3,
+      "name": "Application Server",
+      "description": "Application and servlet containers",
+      "json_code": "softwareTypeAppServer"
+    },
+    {
+      "id": 4,
+      "name": "Database",
+      "description": "Database management systems",
+      "json_code": "softwareTypeDatabase"
+    },
+    {
+      "id": 5,
+      "name": "Programming Language",
+      "description": "Programming languages and interpreters",
+      "json_code": "softwareTypeInterpreter"
+    },
+    {
+      "id": 6,
+      "name": "Frontend Framework",
+      "description": "Frontend JavaScript frameworks and libraries",
+      "json_code": "softwareTypeFramework"
+    },
+    {
+      "id": 7,
+      "name": "Backend Framework",
+      "description": "Backend web application frameworks",
+      "json_code": "softwareTypeFramework"
+    },
+    {
+      "id": 8,
+      "name": "Web Application",
+      "description": "Web-based applications and tools",
+      "json_code": "softwareTypeWebApp"
+    },
+    {
+      "id": 9,
+      "name": "Load Balancer",
+      "description": "Load balancers and reverse proxies",
+      "json_code": "softwareTypeLoadBalancer"
+    },
+    {
+      "id": 10,
+      "name": "CDN / WAF",
+      "description": "Content delivery networks and web application firewalls",
+      "json_code": "softwareTypeCDN"
+    },
+    {
+      "id": 11,
+      "name": "Plugin",
+      "description": "Plugins and extensions",
+      "json_code": "softwareTypePlugin"
+    },
+    {
+      "id": 12,
+      "name": "Template",
+      "description": "Template engines and themes",
+      "json_code": "softwareTypeTemplate"
+    },
+    {
+      "id": 13,
+      "name": "Development Stack",
+      "description": "Development environments and stacks (LAMP, WAMP, XAMPP, etc.)",
+      "json_code": "softwareTypeStack"
+    },
+    {
+      "id": 14,
+      "name": "Security / Cryptography",
+      "description": "Security tools and cryptography libraries",
+      "json_code": "softwareTypeSecurity"
+    },
+    {
+      "id": 99,
+      "name": "Other",
+      "description": "Miscellaneous products and tools that don't fit other categories",
+      "json_code": "softwareTypeOther"
+    }
+  ]
+}
+

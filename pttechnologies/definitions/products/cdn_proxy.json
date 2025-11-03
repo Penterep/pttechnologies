@@ -1,0 +1,85 @@
+{
+  "products": [
+    {
+      "id": 110,
+      "our_name": "CloudFlare",
+      "vendor": "cloudflare",
+      "products": ["cloudflare"],
+      "cve_details_url": "https://www.cvedetails.com/product/168423/Cloudflare-Cloudflare.html",
+      "category_id": 10
+    },
+    {
+      "id": 111,
+      "our_name": "CloudFront",
+      "vendor": "amazon",
+      "products": ["cloudfront"],
+      "cve_details_url": null,
+      "category_id": 10
+    },
+    {
+      "id": 112,
+      "our_name": "Varnish",
+      "vendor": "varnish-cache",
+      "products": ["varnish"],
+      "cve_details_url": "https://www.cvedetails.com/product/26407/Varnish-cache-Varnish.html",
+      "category_id": 10
+    },
+    {
+      "id": 113,
+      "our_name": "HAProxy",
+      "vendor": "haproxy",
+      "products": ["haproxy"],
+      "cve_details_url": "https://www.cvedetails.com/product/22372/Haproxy-Haproxy.html",
+      "category_id": 9
+    },
+    {
+      "id": 114,
+      "our_name": "Envoy",
+      "vendor": "envoyproxy",
+      "products": ["envoy"],
+      "cve_details_url": "https://www.cvedetails.com/product/53798/Envoyproxy-Envoy.html",
+      "category_id": 10
+    },
+    {
+      "id": 115,
+      "our_name": "Akamai NetStorage",
+      "vendor": "akamai",
+      "products": ["netstorage"],
+      "cve_details_url": null,
+      "category_id": 10
+    },
+    {
+      "id": 116,
+      "our_name": "Akamai GHost",
+      "vendor": "akamai",
+      "products": ["akamaighost"],
+      "cve_details_url": "https://www.cvedetails.com/product/147310/Akamai-Akamaighost.html",
+      "category_id": 10
+    },
+    {
+      "id": 117,
+      "our_name": "Azure CDN",
+      "vendor": "microsoft",
+      "products": ["azure"],
+      "cve_details_url": "https://www.cvedetails.com/product/53054/Microsoft-Azure.html",
+      "category_id": 10
+    },
+    {
+      "id": 118,
+      "our_name": "proxygen-bolt",
+      "vendor": "facebook",
+      "products": ["proxygen"],
+      "cve_details_url": "https://www.cvedetails.com/product/57338/Facebook-Proxygen.html",
+      "category_id": 10
+    },
+    {
+      "id": 119,
+      "our_name": "AWS ELB",
+      "vendor": "amazon",
+      "products": ["elastic_load_balancing"],
+      "cve_details_url": "https://www.cvedetails.com/product/95169/Amazon-Elastic-Load-Balancing.html",
+      "category_id": 10
+    }
+  ]
+}
+

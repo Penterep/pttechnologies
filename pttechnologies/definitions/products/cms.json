@@ -1,0 +1,85 @@
+{
+  "products": [
+    {
+      "id": 70,
+      "our_name": "WordPress",
+      "vendor": "wordpress",
+      "products": ["wordpress"],
+      "cve_details_url": "https://www.cvedetails.com/product/4096/Wordpress-Wordpress.html",
+      "category_id": 8
+    },
+    {
+      "id": 71,
+      "our_name": "Drupal",
+      "vendor": "drupal",
+      "products": ["drupal"],
+      "cve_details_url": "https://www.cvedetails.com/product/2387/Drupal-Drupal.html",
+      "category_id": 8
+    },
+    {
+      "id": 72,
+      "our_name": "Joomla",
+      "vendor": "joomla",
+      "products": ["joomla"],
+      "cve_details_url": "https://www.cvedetails.com/product/6129/Joomla-Joomla.html",
+      "category_id": 8
+    },
+    {
+      "id": 73,
+      "our_name": "TYPO3",
+      "vendor": "typo3",
+      "products": ["typo3"],
+      "cve_details_url": "https://www.cvedetails.com/product/6858/Typo3-Typo3.html",
+      "category_id": 8
+    },
+    {
+      "id": 74,
+      "our_name": "Ghost",
+      "vendor": "ghost",
+      "products": ["ghost"],
+      "cve_details_url": "https://www.cvedetails.com/product/59619/Ghost-Ghost.html",
+      "category_id": 8
+    },
+    {
+      "id": 75,
+      "our_name": "Jekyll",
+      "vendor": "jekyllrb",
+      "products": ["jekyll"],
+      "cve_details_url": "https://www.cvedetails.com/product/51408/Jekyllrb-Jekyll.html",
+      "category_id": 8
+    },
+    {
+      "id": 76,
+      "our_name": "Hugo",
+      "vendor": "gohugo",
+      "products": ["hugo"],
+      "cve_details_url": "https://www.cvedetails.com/product/89436/Gohugo-Hugo.html",
+      "category_id": 8
+    },
+    {
+      "id": 77,
+      "our_name": "Blogger",
+      "vendor": "wordpress",
+      "products": ["blogger_importer"],
+      "cve_details_url": "https://www.cvedetails.com/product/142745/Wordpress-Blogger-Importer.html",
+      "category_id": 8
+    },
+    {
+      "id": 78,
+      "our_name": "WordPress.com",
+      "vendor": "automattic",
+      "products": ["wordpress.com_editing_toolkit"],
+      "cve_details_url": "https://www.cvedetails.com/product/167256/Automattic-Wordpress.com-Editing-Toolkit.html",
+      "category_id": 8
+    },
+    {
+      "id": 79,
+      "our_name": "Kentico",
+      "vendor": "kentico",
+      "products": ["kentico_cms"],
+      "cve_details_url": "https://www.cvedetails.com/product/32548/Kentico-Kentico-Cms.html",
+      "category_id": 8
+    }
+  ]
+}
+
