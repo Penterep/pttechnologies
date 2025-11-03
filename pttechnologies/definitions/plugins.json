@@ -1,0 +1,170 @@
+[
+    {
+      "product_id": 300,
+      "name": "contact-form-7",
+      "url_patterns": ["contact-form-7", "wpcf7"],
+      "readme_paths": ["/wp-content/plugins/contact-form-7/readme.txt"]
+    },
+    {
+      "product_id": 301,
+      "name": "yoast-seo",
+      "url_patterns": ["wordpress-seo", "yoast-seo", "seo"],
+      "readme_paths": [
+        "/wp-content/plugins/wordpress-seo/readme.txt",
+        "/wp-content/plugins/yoast-seo/readme.txt"
+      ],
+      "version_patterns": [
+        {
+          "type": "html_comment",
+          "regex": "Yoast SEO(?:\\s+Premium)?(?:\\s+plugin)?\\s+v([0-9]+\\.[0-9]+(?:\\.[0-9]+)?)"
+        }
+      ]
+    },
+    {
+      "product_id": 302,
+      "name": "akismet",
+      "url_patterns": ["akismet"],
+      "readme_paths": ["/wp-content/plugins/akismet/readme.txt"]
+    },
+    {
+      "product_id": 303,
+      "name": "jetpack",
+      "url_patterns": ["jetpack"],
+      "readme_paths": ["/wp-content/plugins/jetpack/readme.txt"]
+    },
+    {
+      "product_id": 304,
+      "name": "woocommerce",
+      "url_patterns": ["woocommerce"],
+      "readme_paths": ["/wp-content/plugins/woocommerce/readme.txt"]
+    },
+    {
+      "product_id": 305,
+      "name": "elementor",
+      "url_patterns": ["elementor"],
+      "readme_paths": ["/wp-content/plugins/elementor/readme.txt"]
+    },
+    {
+      "product_id": 306,
+      "name": "wpforms-lite",
+      "url_patterns": ["wpforms", "wpforms-lite"],
+      "readme_paths": [
+        "/wp-content/plugins/wpforms-lite/readme.txt",
+        "/wp-content/plugins/wpforms/readme.txt"
+      ]
+    },
+    {
+      "product_id": 307,
+      "name": "wordfence",
+      "url_patterns": ["wordfence"],
+      "readme_paths": ["/wp-content/plugins/wordfence/readme.txt"]
+    },
+    {
+      "product_id": 308,
+      "name": "all-in-one-seo-pack",
+      "url_patterns": ["all-in-one-seo-pack", "aioseo"],
+      "readme_paths": ["/wp-content/plugins/all-in-one-seo-pack/readme.txt"]
+    },
+    {
+      "product_id": 309,
+      "name": "classic-editor",
+      "url_patterns": ["classic-editor"],
+      "readme_paths": ["/wp-content/plugins/classic-editor/readme.txt"]
+    },
+    {
+      "product_id": 310,
+      "name": "duplicate-post",
+      "url_patterns": ["duplicate-post"],
+      "readme_paths": ["/wp-content/plugins/duplicate-post/readme.txt"]
+    },
+    {
+      "product_id": 311,
+      "name": "really-simple-ssl",
+      "url_patterns": ["really-simple-ssl"],
+      "readme_paths": ["/wp-content/plugins/really-simple-ssl/readme.txt"]
+    },
+    {
+      "product_id": 312,
+      "name": "wp-super-cache",
+      "url_patterns": ["wp-super-cache"],
+      "readme_paths": ["/wp-content/plugins/wp-super-cache/readme.txt"]
+    },
+    {
+      "product_id": 313,
+      "name": "wp-optimize",
+      "url_patterns": ["wp-optimize"],
+      "readme_paths": ["/wp-content/plugins/wp-optimize/readme.txt"]
+    },
+    {
+      "product_id": 314,
+      "name": "updraftplus",
+      "url_patterns": ["updraftplus"],
+      "readme_paths": ["/wp-content/plugins/updraftplus/readme.txt"]
+    },
+    {
+      "product_id": 315,
+      "name": "regenerate-thumbnails",
+      "url_patterns": ["regenerate-thumbnails"],
+      "readme_paths": ["/wp-content/plugins/regenerate-thumbnails/readme.txt"]
+    },
+    {
+      "product_id": 316,
+      "name": "redirection",
+      "url_patterns": ["redirection"],
+      "readme_paths": ["/wp-content/plugins/redirection/readme.txt"]
+    },
+    {
+      "product_id": 317,
+      "name": "google-analytics-for-wordpress",
+      "url_patterns": ["google-analytics-for-wordpress", "monsterinsights"],
+      "readme_paths": ["/wp-content/plugins/google-analytics-for-wordpress/readme.txt"]
+    },
+    {
+      "product_id": 318,
+      "name": "w3-total-cache",
+      "url_patterns": ["w3-total-cache"],
+      "readme_paths": ["/wp-content/plugins/w3-total-cache/readme.txt"]
+    },
+    {
+      "product_id": 319,
+      "name": "wordpress-importer",
+      "url_patterns": ["wordpress-importer"],
+      "readme_paths": ["/wp-content/plugins/wordpress-importer/readme.txt"]
+    },
+    {
+      "product_id": 320,
+      "name": "mailchimp-for-wp",
+      "url_patterns": ["mailchimp-for-wp", "mc4wp"],
+      "readme_paths": ["/wp-content/plugins/mailchimp-for-wp/readme.txt"]
+    },
+    {
+      "product_id": 321,
+      "name": "add-to-any",
+      "url_patterns": ["add-to-any"],
+      "readme_paths": ["/wp-content/plugins/add-to-any/readme.txt"]
+    },
+    {
+      "product_id": 322,
+      "name": "flamingo",
+      "url_patterns": ["flamingo"],
+      "readme_paths": ["/wp-content/plugins/flamingo/readme.txt"]
+    },
+    {
+      "product_id": 323,
+      "name": "loco-translate",
+      "url_patterns": ["loco-translate"],
+      "readme_paths": ["/wp-content/plugins/loco-translate/readme.txt"]
+    },
+    {
+      "product_id": 324,
+      "name": "advanced-custom-fields",
+      "url_patterns": ["advanced-custom-fields", "acf"],
+      "readme_paths": ["/wp-content/plugins/advanced-custom-fields/readme.txt"]
+    },
+    {
+      "product_id": 325,
+      "name": "limit-login-attempts-reloaded",
+      "url_patterns": ["limit-login-attempts-reloaded"],
+      "readme_paths": ["/wp-content/plugins/limit-login-attempts-reloaded/readme.txt"]
+    }
+  ]
