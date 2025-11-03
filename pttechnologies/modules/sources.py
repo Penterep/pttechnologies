@@ -21,6 +21,7 @@ from urllib.parse import urlparse, urljoin
 
 from helpers.result_storage import storage
 from helpers.stored_responses import StoredResponses
+from helpers.products import get_product_manager
 from ptlibs import ptjsonlib, ptmisclib, ptnethelper
 from ptlibs.ptprinthelper import ptprint
 
@@ -40,6 +41,7 @@ class SOURCES:
         self.ptjsonlib = ptjsonlib
         self.helpers = helpers
         self.http_client = http_client
+        self.product_manager = get_product_manager()
         self.response_hp = responses.resp_hp
         self.nonexist_status = responses.resp_404
         self.tech_definitions = self.helpers.load_definitions("sources.json")
@@ -95,9 +97,22 @@ class SOURCES:
                 if resp:
                     probability = self._determine_probability(resp.status_code)
                     
+                    # Get product info from product_id
+                    product_id = tech_entry.get("product_id")
+                    if not product_id:
+                        continue  # Skip if no product_id defined
+                    
+                    product = self.product_manager.get_product_by_id(product_id)
+                    if not product:
+                        continue
+                    
+                    technology_name = product.get("our_name", "Unknown")
+                    category_name = self.product_manager.get_category_name(product.get("category_id"))
+                    
                     tech_info = {
-                        "technology": tech_entry.get("technology", "Unknown"),
-                        "category": tech_entry.get("category", "Unknown"),
+                        "product_id": product_id,
+                        "technology": technology_name,
+                        "category": category_name,
                         "file_path": file_path,
                         "url": test_url,
                         "probability": probability,
@@ -189,6 +204,7 @@ class SOURCES:
         """
         technology = tech_info["technology"]
         category = tech_info["category"]
+        product_id = tech_info.get("product_id")
         probability = tech_info.get("probability", 50)
         test_url = tech_info["url"]
         status_code = tech_info["status_code"]
@@ -200,7 +216,8 @@ class SOURCES:
         storage.add_to_storage(
             technology=technology, 
             technology_type=category, 
-            probability=probability
+            probability=probability,
+            product_id=product_id
         )
                 
         ptprint(f"{technology} ({category})", "VULN", not self.args.json, indent=4, end=" ")

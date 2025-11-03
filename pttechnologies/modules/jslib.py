@@ -12,6 +12,7 @@ from collections import defaultdict
 
 from helpers.result_storage import storage
 from helpers.stored_responses import StoredResponses
+from helpers.products import get_product_manager
 from ptlibs import ptjsonlib, ptmisclib, ptnethelper
 from ptlibs.ptprinthelper import ptprint
 
@@ -30,6 +31,7 @@ class JSLIB:
         self.ptjsonlib = ptjsonlib
         self.helpers = helpers
         self.http_client = http_client
+        self.product_manager = get_product_manager()
 
         self.response_hp = responses.resp_hp
         self.js_definitions = self.helpers.load_definitions("jslib.json")
@@ -143,9 +145,22 @@ class JSLIB:
 
         version = self._detect_version(js_content, lib_def)
         
+        # Get product info from product_id
+        product_id = lib_def.get("product_id")
+        if not product_id:
+            return None  # Skip if no product_id defined
+            
+        product = self.product_manager.get_product_by_id(product_id)
+        if not product:
+            return None
+        
+        technology_name = product.get("our_name", "Unknown")
+        category = self.product_manager.get_category_name(product.get("category_id"))
+        
         result = {
-            "technology": lib_def["technology"],
-            "category": lib_def.get("category", "JavaScript Library"),
+            "product_id": product_id,
+            "technology": technology_name,
+            "category": category,
             "url": js_url,
             "probability": probability
         }
@@ -217,6 +232,7 @@ class JSLIB:
             for lib in self.detected_libraries:
                 technology = lib["technology"]
                 version = lib.get("version")
+                product_id = lib.get("product_id")
                 probability = lib.get("probability", 100)
                 url = lib.get("url", "")
                 category = lib.get("category", "JavaScript Library")
@@ -226,7 +242,8 @@ class JSLIB:
                     technology=technology,
                     technology_type=category,
                     probability=probability,
-                    version=version if version else None
+                    version=version if version else None,
+                    product_id=product_id
                 )
 
 
@@ -240,7 +257,7 @@ class JSLIB:
                     ptprint(f"{technology} ({category})", "VULN", 
                            not self.args.json, indent=4, end=" ")
                 
-                ptprint(f"({probability}%)", "ADDITIONS", not self.args.json)
+                ptprint(f"({probability}%)", "ADDITIONS", not self.args.json, colortext=True)
                     
         else:
             ptprint("It was not possible to identify any JavaScript library", "INFO", not self.args.json, indent=4)

@@ -21,6 +21,7 @@ from urllib.parse import urlparse, urlunparse, urljoin
 
 from helpers.result_storage import storage
 from helpers.stored_responses import StoredResponses
+from helpers.products import get_product_manager
 
 from ptlibs import ptjsonlib
 from ptlibs.ptprinthelper import ptprint
@@ -181,14 +182,26 @@ class OSCS:
         """
         if r1 is not None and r2 is not None:
             probability = 100
+            product_manager = get_product_manager()
+            
             if r1.status_code == r2.status_code and ct1 == ct2:
-                storage.add_to_storage(technology="Windows", technology_type="Os", vulnerability="PTV-WEB-INFO-OSSEN")
-                ptprint("Identified OS: Windows", "VULN", not self.args.json, indent = 4, end=" ")
-                ptprint(f"({probability}%)", "ADDITIONS", not self.args.json, colortext=True)
+                # Windows (product_id: 6)
+                product = product_manager.get_product_by_id(6)
+                if product:
+                    technology_name = product.get('our_name', 'Windows')
+                    category_name = product_manager.get_category_name(product.get('category_id'))
+                    storage.add_to_storage(technology=technology_name, technology_type=category_name, vulnerability="PTV-WEB-INFO-OSSEN")
+                    ptprint(f"Identified OS: {technology_name}", "VULN", not self.args.json, indent = 4, end=" ")
+                    ptprint(f"({probability}%)", "ADDITIONS", not self.args.json, colortext=True)
             else:
-                storage.add_to_storage(technology="Linux", technology_type="Os", vulnerability="PTV-WEB-INFO-OSSEN")
-                ptprint("Identified OS: Unix / Linux", "VULN", not self.args.json, indent = 4, end=" ")
-                ptprint(f"({probability}%)", "ADDITIONS", not self.args.json, colortext=True)
+                # Linux (product_id: 167)
+                product = product_manager.get_product_by_id(167)
+                if product:
+                    technology_name = product.get('our_name', 'Linux')
+                    category_name = product_manager.get_category_name(product.get('category_id'))
+                    storage.add_to_storage(technology=technology_name, technology_type=category_name, vulnerability="PTV-WEB-INFO-OSSEN")
+                    ptprint("Identified OS: Unix / Linux", "VULN", not self.args.json, indent = 4, end=" ")
+                    ptprint(f"({probability}%)", "ADDITIONS", not self.args.json, colortext=True)
         else:
             ptprint("Connection error occurred", "INFO", not self.args.json, indent=4)
 

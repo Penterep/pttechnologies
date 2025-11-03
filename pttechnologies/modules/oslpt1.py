@@ -19,6 +19,7 @@ import re
 
 from helpers.result_storage import storage
 from helpers.stored_responses import StoredResponses
+from helpers.products import get_product_manager
 from ptlibs import ptjsonlib, ptmisclib, ptnethelper
 from ptlibs.ptprinthelper import ptprint
 
@@ -102,15 +103,26 @@ class OSLPT1:
 
         result = self._responses_differ(response1, response2)
         probability = 100
+        product_manager = get_product_manager()
 
         if result:
-            storage.add_to_storage(technology="Windows", technology_type="Os", vulnerability="PTV-WEB-INFO-OSLNK")
-            ptprint(f"Identified OS: Windows", "VULN", not self.args.json, indent=4, end=" ")
-            ptprint(f"({probability}%)", "ADDITIONS", not self.args.json, colortext=True)
+            # Windows (product_id: 6)
+            product = product_manager.get_product_by_id(6)
+            if product:
+                technology_name = product.get('our_name', 'Windows')
+                category_name = product_manager.get_category_name(product.get('category_id'))
+                storage.add_to_storage(technology=technology_name, technology_type=category_name, vulnerability="PTV-WEB-INFO-OSLNK")
+                ptprint(f"Identified OS: {technology_name}", "VULN", not self.args.json, indent=4, end=" ")
+                ptprint(f"({probability}%)", "ADDITIONS", not self.args.json, colortext=True)
         else:
-            storage.add_to_storage(technology="Linux", technology_type="Os", vulnerability="PTV-WEB-INFO-OSLNK")
-            ptprint(f"Identified OS: Unix / Linux", "VULN", not self.args.json, indent=4, end=" ")
-            ptprint(f"({probability}%)", "ADDITIONS", not self.args.json, colortext=True)
+            # Linux (product_id: 167)
+            product = product_manager.get_product_by_id(167)
+            if product:
+                technology_name = product.get('our_name', 'Linux')
+                category_name = product_manager.get_category_name(product.get('category_id'))
+                storage.add_to_storage(technology=technology_name, technology_type=category_name, vulnerability="PTV-WEB-INFO-OSLNK")
+                ptprint(f"Identified OS: Unix / Linux", "VULN", not self.args.json, indent=4, end=" ")
+                ptprint(f"({probability}%)", "ADDITIONS", not self.args.json, colortext=True)
 
 def run(args: object, ptjsonlib: object, helpers: object, http_client: object, responses: StoredResponses):
     """Entry point for running the OSLPT1 OS detection."""
