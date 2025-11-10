@@ -96,6 +96,42 @@
         "probability": 100
       },
       {
+        "name": "OpenSSL Detection",
+        "product_id": 210,
+        "pattern": "<dt><strong>Server\\s+Version:</strong>.*?OpenSSL/([\\d\\.]+[a-z]*).*?</dt>",
+        "version_pattern": "OpenSSL/([\\d\\.]+[a-z]*)",
+        "flags": "is",
+        "source": "header",
+        "probability": 100
+      },
+      {
+        "name": "SVN/Subversion Detection",
+        "product_id": 235,
+        "pattern": "<dt><strong>Server\\s+Version:</strong>.*?SVN/([\\d\\.]+).*?</dt>",
+        "version_pattern": "SVN/([\\d\\.]+)",
+        "flags": "is",
+        "source": "header",
+        "probability": 100
+      },
+      {
+        "name": "mod_fcgid Detection",
+        "product_id": 221,
+        "pattern": "<dt><strong>Server\\s+Version:</strong>.*?mod_fcgid/([\\d\\.]+).*?</dt>",
+        "version_pattern": "mod_fcgid/([\\d\\.]+)",
+        "flags": "is",
+        "source": "header",
+        "probability": 100
+      },
+      {
+        "name": "mod_scgi Detection",
+        "product_id": 234,
+        "pattern": "<dt><strong>Server\\s+Version:</strong>.*?mod_scgi/([\\d\\.]+).*?</dt>",
+        "version_pattern": "mod_scgi/([\\d\\.]+)",
+        "flags": "is",
+        "source": "header",
+        "probability": 100
+      },
+      {
         "_comment": "https://www.mahindradealerworld.com/",
         "name": "OtherSSL Detection (Header)",
         "product_id": 211,
@@ -249,6 +285,573 @@
         "flags": "is",
         "source": "server_label",
         "probability": 95
+      },
+      {
+        "name": "Windows Detection (Server Version - server-status)",
+        "product_id": 6,
+        "pattern": "<dt>Server\\s+Version:\\s*Apache.*?\\(Win(?:32|64)\\)",
+        "version_pattern": null,
+        "flags": "is",
+        "source": "header",
+        "probability": 100
+      },
+      {
+        "name": "mod_access_compat Detection (Loaded Modules)",
+        "product_id": 236,
+        "pattern": "(?:<a name=\"modules\">.*?|<a href=\"#)mod_access_compat\\.c",
+        "version_pattern": null,
+        "flags": "is",
+        "source": "loaded_modules",
+        "probability": 100
+      },
+      {
+        "name": "mod_actions Detection (Loaded Modules)",
+        "product_id": 237,
+        "pattern": "(?:<a name=\"modules\">.*?|<a href=\"#)mod_actions\\.c",
+        "version_pattern": null,
+        "flags": "is",
+        "source": "loaded_modules",
+        "probability": 100
+      },
+      {
+        "name": "mod_alias Detection (Loaded Modules)",
+        "product_id": 238,
+        "pattern": "(?:<a name=\"modules\">.*?|<a href=\"#)mod_alias\\.c",
+        "version_pattern": null,
+        "flags": "is",
+        "source": "loaded_modules",
+        "probability": 100
+      },
+      {
+        "name": "mod_allowmethods Detection (Loaded Modules)",
+        "product_id": 239,
+        "pattern": "(?:<a name=\"modules\">.*?|<a href=\"#)mod_allowmethods\\.c",
+        "version_pattern": null,
+        "flags": "is",
+        "source": "loaded_modules",
+        "probability": 100
+      },
+      {
+        "name": "mod_auth_basic Detection (Loaded Modules)",
+        "product_id": 240,
+        "pattern": "(?:<a name=\"modules\">.*?|<a href=\"#)mod_auth_basic\\.c",
+        "version_pattern": null,
+        "flags": "is",
+        "source": "loaded_modules",
+        "probability": 100
+      },
+      {
+        "name": "mod_authn_core Detection (Loaded Modules)",
+        "product_id": 241,
+        "pattern": "(?:<a name=\"modules\">.*?|<a href=\"#)mod_authn_core\\.c",
+        "version_pattern": null,
+        "flags": "is",
+        "source": "loaded_modules",
+        "probability": 100
+      },
+      {
+        "name": "mod_authn_file Detection (Loaded Modules)",
+        "product_id": 242,
+        "pattern": "(?:<a name=\"modules\">.*?|<a href=\"#)mod_authn_file\\.c",
+        "version_pattern": null,
+        "flags": "is",
+        "source": "loaded_modules",
+        "probability": 100
+      },
+      {
+        "name": "mod_authz_core Detection (Loaded Modules)",
+        "product_id": 243,
+        "pattern": "(?:<a name=\"modules\">.*?|<a href=\"#)mod_authz_core\\.c",
+        "version_pattern": null,
+        "flags": "is",
+        "source": "loaded_modules",
+        "probability": 100
+      },
+      {
+        "name": "mod_authz_groupfile Detection (Loaded Modules)",
+        "product_id": 244,
+        "pattern": "(?:<a name=\"modules\">.*?|<a href=\"#)mod_authz_groupfile\\.c",
+        "version_pattern": null,
+        "flags": "is",
+        "source": "loaded_modules",
+        "probability": 100
+      },
+      {
+        "name": "mod_authz_host Detection (Loaded Modules)",
+        "product_id": 245,
+        "pattern": "(?:<a name=\"modules\">.*?|<a href=\"#)mod_authz_host\\.c",
+        "version_pattern": null,
+        "flags": "is",
+        "source": "loaded_modules",
+        "probability": 100
+      },
+      {
+        "name": "mod_authz_svn Detection (Loaded Modules)",
+        "product_id": 246,
+        "pattern": "(?:<a name=\"modules\">.*?|<a href=\"#)mod_authz_svn\\.c",
+        "version_pattern": null,
+        "flags": "is",
+        "source": "loaded_modules",
+        "probability": 100
+      },
+      {
+        "name": "mod_authz_user Detection (Loaded Modules)",
+        "product_id": 247,
+        "pattern": "(?:<a name=\"modules\">.*?|<a href=\"#)mod_authz_user\\.c",
+        "version_pattern": null,
+        "flags": "is",
+        "source": "loaded_modules",
+        "probability": 100
+      },
+      {
+        "name": "mod_autoindex Detection (Loaded Modules)",
+        "product_id": 248,
+        "pattern": "(?:<a name=\"modules\">.*?|<a href=\"#)mod_autoindex\\.c",
+        "version_pattern": null,
+        "flags": "is",
+        "source": "loaded_modules",
+        "probability": 100
+      },
+      {
+        "name": "mod_cgid Detection (Loaded Modules)",
+        "product_id": 249,
+        "pattern": "(?:<a name=\"modules\">.*?|<a href=\"#)mod_cgid\\.c",
+        "version_pattern": null,
+        "flags": "is",
+        "source": "loaded_modules",
+        "probability": 100
+      },
+      {
+        "name": "mod_dav Detection (Loaded Modules)",
+        "product_id": 250,
+        "pattern": "(?:<a name=\"modules\">.*?|<a href=\"#)mod_dav\\.c",
+        "version_pattern": null,
+        "flags": "is",
+        "source": "loaded_modules",
+        "probability": 100
+      },
+      {
+        "name": "mod_dav_fs Detection (Loaded Modules)",
+        "product_id": 251,
+        "pattern": "(?:<a name=\"modules\">.*?|<a href=\"#)mod_dav_fs\\.c",
+        "version_pattern": null,
+        "flags": "is",
+        "source": "loaded_modules",
+        "probability": 100
+      },
+      {
+        "name": "mod_dav_lock Detection (Loaded Modules)",
+        "product_id": 252,
+        "pattern": "(?:<a name=\"modules\">.*?|<a href=\"#)mod_dav_lock\\.c",
+        "version_pattern": null,
+        "flags": "is",
+        "source": "loaded_modules",
+        "probability": 100
+      },
+      {
+        "name": "mod_dav_svn Detection (Loaded Modules)",
+        "product_id": 253,
+        "pattern": "(?:<a name=\"modules\">.*?|<a href=\"#)mod_dav_svn\\.c",
+        "version_pattern": null,
+        "flags": "is",
+        "source": "loaded_modules",
+        "probability": 100
+      },
+      {
+        "name": "mod_deflate Detection (Loaded Modules)",
+        "product_id": 254,
+        "pattern": "(?:<a name=\"modules\">.*?|<a href=\"#)mod_deflate\\.c",
+        "version_pattern": null,
+        "flags": "is",
+        "source": "loaded_modules",
+        "probability": 100
+      },
+      {
+        "name": "mod_dir Detection (Loaded Modules)",
+        "product_id": 255,
+        "pattern": "(?:<a name=\"modules\">.*?|<a href=\"#)mod_dir\\.c",
+        "version_pattern": null,
+        "flags": "is",
+        "source": "loaded_modules",
+        "probability": 100
+      },
+      {
+        "name": "mod_env Detection (Loaded Modules)",
+        "product_id": 256,
+        "pattern": "(?:<a name=\"modules\">.*?|<a href=\"#)mod_env\\.c",
+        "version_pattern": null,
+        "flags": "is",
+        "source": "loaded_modules",
+        "probability": 100
+      },
+      {
+        "name": "mod_ext_filter Detection (Loaded Modules)",
+        "product_id": 257,
+        "pattern": "(?:<a name=\"modules\">.*?|<a href=\"#)mod_ext_filter\\.c",
+        "version_pattern": null,
+        "flags": "is",
+        "source": "loaded_modules",
+        "probability": 100
+      },
+      {
+        "name": "mod_fcgid Detection (Loaded Modules)",
+        "product_id": 221,
+        "pattern": "(?:<a name=\"modules\">.*?|<a href=\"#)mod_fcgid\\.c",
+        "version_pattern": null,
+        "flags": "is",
+        "source": "loaded_modules",
+        "probability": 100
+      },
+      {
+        "name": "mod_filter Detection (Loaded Modules)",
+        "product_id": 258,
+        "pattern": "(?:<a name=\"modules\">.*?|<a href=\"#)mod_filter\\.c",
+        "version_pattern": null,
+        "flags": "is",
+        "source": "loaded_modules",
+        "probability": 100
+      },
+      {
+        "name": "mod_headers Detection (Loaded Modules)",
+        "product_id": 259,
+        "pattern": "(?:<a name=\"modules\">.*?|<a href=\"#)mod_headers\\.c",
+        "version_pattern": null,
+        "flags": "is",
+        "source": "loaded_modules",
+        "probability": 100
+      },
+      {
+        "name": "mod_info Detection (Loaded Modules)",
+        "product_id": 260,
+        "pattern": "(?:<a name=\"modules\">.*?|<a href=\"#)mod_info\\.c",
+        "version_pattern": null,
+        "flags": "is",
+        "source": "loaded_modules",
+        "probability": 100
+      },
+      {
+        "name": "mod_log_config Detection (Loaded Modules)",
+        "product_id": 261,
+        "pattern": "(?:<a name=\"modules\">.*?|<a href=\"#)mod_log_config\\.c",
+        "version_pattern": null,
+        "flags": "is",
+        "source": "loaded_modules",
+        "probability": 100
+      },
+      {
+        "name": "mod_logio Detection (Loaded Modules)",
+        "product_id": 262,
+        "pattern": "(?:<a name=\"modules\">.*?|<a href=\"#)mod_logio\\.c",
+        "version_pattern": null,
+        "flags": "is",
+        "source": "loaded_modules",
+        "probability": 100
+      },
+      {
+        "name": "mod_md Detection (Loaded Modules)",
+        "product_id": 263,
+        "pattern": "(?:<a name=\"modules\">.*?|<a href=\"#)mod_md\\.c",
+        "version_pattern": null,
+        "flags": "is",
+        "source": "loaded_modules",
+        "probability": 100
+      },
+      {
+        "name": "mod_mime Detection (Loaded Modules)",
+        "product_id": 264,
+        "pattern": "(?:<a name=\"modules\">.*?|<a href=\"#)mod_mime\\.c",
+        "version_pattern": null,
+        "flags": "is",
+        "source": "loaded_modules",
+        "probability": 100
+      },
+      {
+        "name": "mod_negotiation Detection (Loaded Modules)",
+        "product_id": 265,
+        "pattern": "(?:<a name=\"modules\">.*?|<a href=\"#)mod_negotiation\\.c",
+        "version_pattern": null,
+        "flags": "is",
+        "source": "loaded_modules",
+        "probability": 100
+      },
+      {
+        "name": "mod_proxy Detection (Loaded Modules)",
+        "product_id": 227,
+        "pattern": "(?:<a name=\"modules\">.*?|<a href=\"#)mod_proxy\\.c",
+        "version_pattern": null,
+        "flags": "is",
+        "source": "loaded_modules",
+        "probability": 100
+      },
+      {
+        "name": "mod_proxy_connect Detection (Loaded Modules)",
+        "product_id": 266,
+        "pattern": "(?:<a name=\"modules\">.*?|<a href=\"#)mod_proxy_connect\\.c",
+        "version_pattern": null,
+        "flags": "is",
+        "source": "loaded_modules",
+        "probability": 100
+      },
+      {
+        "name": "mod_proxy_http Detection (Loaded Modules)",
+        "product_id": 267,
+        "pattern": "(?:<a name=\"modules\">.*?|<a href=\"#)mod_proxy_http\\.c",
+        "version_pattern": null,
+        "flags": "is",
+        "source": "loaded_modules",
+        "probability": 100
+      },
+      {
+        "name": "mod_proxy_scgi Detection (Loaded Modules)",
+        "product_id": 268,
+        "pattern": "(?:<a name=\"modules\">.*?|<a href=\"#)mod_proxy_scgi\\.c",
+        "version_pattern": null,
+        "flags": "is",
+        "source": "loaded_modules",
+        "probability": 100
+      },
+      {
+        "name": "mod_proxy_wstunnel Detection (Loaded Modules)",
+        "product_id": 269,
+        "pattern": "(?:<a name=\"modules\">.*?|<a href=\"#)mod_proxy_wstunnel\\.c",
+        "version_pattern": null,
+        "flags": "is",
+        "source": "loaded_modules",
+        "probability": 100
+      },
+      {
+        "name": "mod_reqtimeout Detection (Loaded Modules)",
+        "product_id": 270,
+        "pattern": "(?:<a name=\"modules\">.*?|<a href=\"#)mod_reqtimeout\\.c",
+        "version_pattern": null,
+        "flags": "is",
+        "source": "loaded_modules",
+        "probability": 100
+      },
+      {
+        "name": "mod_rewrite Detection (Loaded Modules)",
+        "product_id": 271,
+        "pattern": "(?:<a name=\"modules\">.*?|<a href=\"#)mod_rewrite\\.c",
+        "version_pattern": null,
+        "flags": "is",
+        "source": "loaded_modules",
+        "probability": 100
+      },
+      {
+        "name": "mod_scgi Detection (Loaded Modules)",
+        "product_id": 234,
+        "pattern": "(?:<a name=\"modules\">.*?|<a href=\"#)mod_scgi\\.c",
+        "version_pattern": null,
+        "flags": "is",
+        "source": "loaded_modules",
+        "probability": 100
+      },
+      {
+        "name": "mod_setenvif Detection (Loaded Modules)",
+        "product_id": 272,
+        "pattern": "(?:<a name=\"modules\">.*?|<a href=\"#)mod_setenvif\\.c",
+        "version_pattern": null,
+        "flags": "is",
+        "source": "loaded_modules",
+        "probability": 100
+      },
+      {
+        "name": "mod_slotmem_shm Detection (Loaded Modules)",
+        "product_id": 273,
+        "pattern": "(?:<a name=\"modules\">.*?|<a href=\"#)mod_slotmem_shm\\.c",
+        "version_pattern": null,
+        "flags": "is",
+        "source": "loaded_modules",
+        "probability": 100
+      },
+      {
+        "name": "mod_so Detection (Loaded Modules)",
+        "product_id": 274,
+        "pattern": "(?:<a name=\"modules\">.*?|<a href=\"#)mod_so\\.c",
+        "version_pattern": null,
+        "flags": "is",
+        "source": "loaded_modules",
+        "probability": 100
+      },
+      {
+        "name": "mod_socache_shmcb Detection (Loaded Modules)",
+        "product_id": 275,
+        "pattern": "(?:<a name=\"modules\">.*?|<a href=\"#)mod_socache_shmcb\\.c",
+        "version_pattern": null,
+        "flags": "is",
+        "source": "loaded_modules",
+        "probability": 100
+      },
+      {
+        "name": "mod_spdy Detection (Loaded Modules)",
+        "product_id": 276,
+        "pattern": "(?:<a name=\"modules\">.*?|<a href=\"#)mod_spdy\\.c",
+        "version_pattern": null,
+        "flags": "is",
+        "source": "loaded_modules",
+        "probability": 100
+      },
+      {
+        "name": "mod_ssl Detection (Loaded Modules)",
+        "product_id": 220,
+        "pattern": "(?:<a name=\"modules\">.*?|<a href=\"#)mod_ssl\\.c",
+        "version_pattern": null,
+        "flags": "is",
+        "source": "loaded_modules",
+        "probability": 100
+      },
+      {
+        "name": "mod_status Detection (Loaded Modules)",
+        "product_id": 277,
+        "pattern": "(?:<a name=\"modules\">.*?|<a href=\"#)mod_status\\.c",
+        "version_pattern": null,
+        "flags": "is",
+        "source": "loaded_modules",
+        "probability": 100
+      },
+      {
+        "name": "mod_suexec Detection (Loaded Modules)",
+        "product_id": 278,
+        "pattern": "(?:<a name=\"modules\">.*?|<a href=\"#)mod_suexec\\.c",
+        "version_pattern": null,
+        "flags": "is",
+        "source": "loaded_modules",
+        "probability": 100
+      },
+      {
+        "name": "mod_unixd Detection (Loaded Modules)",
+        "product_id": 279,
+        "pattern": "(?:<a name=\"modules\">.*?|<a href=\"#)mod_unixd\\.c",
+        "version_pattern": null,
+        "flags": "is",
+        "source": "loaded_modules",
+        "probability": 100
+      },
+      {
+        "name": "mod_userdir Detection (Loaded Modules)",
+        "product_id": 280,
+        "pattern": "(?:<a name=\"modules\">.*?|<a href=\"#)mod_userdir\\.c",
+        "version_pattern": null,
+        "flags": "is",
+        "source": "loaded_modules",
+        "probability": 100
+      },
+      {
+        "name": "mod_usertrack Detection (Loaded Modules)",
+        "product_id": 281,
+        "pattern": "(?:<a name=\"modules\">.*?|<a href=\"#)mod_usertrack\\.c",
+        "version_pattern": null,
+        "flags": "is",
+        "source": "loaded_modules",
+        "probability": 100
+      },
+      {
+        "name": "mod_version Detection (Loaded Modules)",
+        "product_id": 282,
+        "pattern": "(?:<a name=\"modules\">.*?|<a href=\"#)mod_version\\.c",
+        "version_pattern": null,
+        "flags": "is",
+        "source": "loaded_modules",
+        "probability": 100
+      },
+      {
+        "name": "mod_vhost_alias Detection (Loaded Modules)",
+        "product_id": 283,
+        "pattern": "(?:<a name=\"modules\">.*?|<a href=\"#)mod_vhost_alias\\.c",
+        "version_pattern": null,
+        "flags": "is",
+        "source": "loaded_modules",
+        "probability": 100
+      },
+      {
+        "name": "mod_watchdog Detection (Loaded Modules)",
+        "product_id": 284,
+        "pattern": "(?:<a name=\"modules\">.*?|<a href=\"#)mod_watchdog\\.c",
+        "version_pattern": null,
+        "flags": "is",
+        "source": "loaded_modules",
+        "probability": 100
+      },
+      {
+        "name": "mod_access Detection (Loaded Modules)",
+        "product_id": 285,
+        "pattern": "(?:<a name=\"modules\">.*?|<a href=\"#)mod_access\\.c",
+        "version_pattern": null,
+        "flags": "is",
+        "source": "loaded_modules",
+        "probability": 100
+      },
+      {
+        "name": "mod_auth Detection (Loaded Modules)",
+        "product_id": 286,
+        "pattern": "(?:<a name=\"modules\">.*?|<a href=\"#)mod_auth\\.c",
+        "version_pattern": null,
+        "flags": "is",
+        "source": "loaded_modules",
+        "probability": 100
+      },
+      {
+        "name": "mod_imap Detection (Loaded Modules)",
+        "product_id": 287,
+        "pattern": "(?:<a name=\"modules\">.*?|<a href=\"#)mod_imap\\.c",
+        "version_pattern": null,
+        "flags": "is",
+        "source": "loaded_modules",
+        "probability": 100
+      },
+      {
+        "name": "mod_include Detection (Loaded Modules)",
+        "product_id": 288,
+        "pattern": "(?:<a name=\"modules\">.*?|<a href=\"#)mod_include\\.c",
+        "version_pattern": null,
+        "flags": "is",
+        "source": "loaded_modules",
+        "probability": 100
+      },
+      {
+        "name": "mod_isapi Detection (Loaded Modules)",
+        "product_id": 289,
+        "pattern": "(?:<a name=\"modules\">.*?|<a href=\"#)mod_isapi\\.c",
+        "version_pattern": null,
+        "flags": "is",
+        "source": "loaded_modules",
+        "probability": 100
+      },
+      {
+        "name": "mod_asis Detection (Loaded Modules)",
+        "product_id": 290,
+        "pattern": "(?:<a name=\"modules\">.*?|<a href=\"#)mod_asis\\.c",
+        "version_pattern": null,
+        "flags": "is",
+        "source": "loaded_modules",
+        "probability": 100
+      },
+      {
+        "name": "mod_cgi Detection (Loaded Modules)",
+        "product_id": 291,
+        "pattern": "(?:<a name=\"modules\">.*?|<a href=\"#)mod_cgi\\.c",
+        "version_pattern": null,
+        "flags": "is",
+        "source": "loaded_modules",
+        "probability": 100
+      },
+      {
+        "name": "mod_win32 Detection (Loaded Modules)",
+        "product_id": 292,
+        "pattern": "(?:<a name=\"modules\">.*?|<a href=\"#)mod_win32\\.c",
+        "version_pattern": null,
+        "flags": "is",
+        "source": "loaded_modules",
+        "probability": 100
+      },
+      {
+        "name": "mpm_winnt Detection (Loaded Modules)",
+        "product_id": 293,
+        "pattern": "(?:<a name=\"modules\">.*?|<a href=\"#)mpm_winnt\\.c",
+        "version_pattern": null,
+        "flags": "is",
+        "source": "loaded_modules",
+        "probability": 100
       }
     ]
   }
