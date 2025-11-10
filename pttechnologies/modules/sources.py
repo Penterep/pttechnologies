@@ -227,6 +227,11 @@ class SOURCES:
             for info in tech_info["additional_info"]:
                 lines = info.strip().split('\n')
                 if lines:
+                    if self.args.verbose and len(lines) > 1:
+                        for detail_line in lines[1:]:
+                            if detail_line.strip():
+                                ptprint(f"{detail_line}", "ADDITIONS", not self.args.json, indent=4, colortext=True)
+                    
                     first_line = lines[0]
                     last_space_idx = first_line.rfind(' ')
                     if last_space_idx != -1:
@@ -238,11 +243,6 @@ class SOURCES:
 
                     else:
                         ptprint(f"{first_line}", "VULN", not self.args.json, indent=8)
-
-                if self.args.verbose:
-                    for detail_line in lines[1:]:
-                        if detail_line.strip():
-                            ptprint(f"{detail_line}", "ADDITIONS", not self.args.json, indent=8, colortext=True)
 
 
 def run(args: object, ptjsonlib: object, helpers: object, http_client: object, responses: StoredResponses):

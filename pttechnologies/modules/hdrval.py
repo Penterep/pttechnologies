@@ -703,7 +703,7 @@ class HDRVAL:
                     tech_name = tech.get('technology', tech['name'])
                     probability = tech.get('probability', 100)
 
-                    ptprint(f"{tech_name}{version_text}{category_text}", "VULN", not self.args.json, indent=7, end=" ")
+                    ptprint(f"{tech_name}{version_text}{category_text}", "VULN", not self.args.json, indent=8, end=" ")
                     ptprint(f"({probability}%)", "ADDITIONS", not self.args.json, colortext=True)
 
         for tech, is_classified in [
