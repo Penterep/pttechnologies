@@ -100,7 +100,7 @@ class OSCS:
 
         if resp_home is not None:
             if resp_home.status_code in (301, 302):
-                ptprint(f"Redirect to ghhgj {resp_home.headers.get('Location')}","INFO", not self.args.json, indent=4)
+                ptprint(f"Redirect to {resp_home.headers.get('Location')}","INFO", not self.args.json, indent=4)
                 return None
             elif resp_home.status_code != 200:
                 ptprint(f"Homepage returned {resp_home.status_code}","INFO", not self.args.json, indent=4)
