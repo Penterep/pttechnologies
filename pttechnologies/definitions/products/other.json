@@ -7,7 +7,14 @@
       "products": ["keycloak"],
       "cve_details_url": "https://www.cvedetails.com/product/37999/Keycloak-Keycloak.html",
       "category_id": 99
+    },
+    {
+      "id": 235,
+      "our_name": "Subversion",
+      "vendor": "apache",
+      "products": ["subversion"],
+      "cve_details_url": "https://www.cvedetails.com/product/3430/Apache-Subversion.html",
+      "category_id": 99
     }
   ]
 }
-
