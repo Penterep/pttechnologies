@@ -79,6 +79,22 @@
       "products": ["elastic_load_balancing"],
       "cve_details_url": "https://www.cvedetails.com/product/95169/Amazon-Elastic-Load-Balancing.html",
       "category_id": 10
+    },
+    {
+      "id": 120,
+      "our_name": "Aruba Proxy",
+      "vendor": "aruba",
+      "products": ["aruba-proxy"],
+      "cve_details_url": null,
+      "category_id": 10
+    },
+    {
+      "id": 121,
+      "our_name": "F5 BIG-IP",
+      "vendor": "f5",
+      "products": ["big-ip"],
+      "cve_details_url": "https://www.cvedetails.com/vulnerability-list/vendor_id-315/product_id-540/F5-Big-ip.html",
+      "category_id": 10
     }
   ]
 }

@@ -31,7 +31,14 @@
       "products": ["sqlite"],
       "cve_details_url": "https://www.cvedetails.com/product/16355/Sqlite-Sqlite.html",
       "category_id": 4
+    },
+    {
+      "id": 204,
+      "our_name": "MySQLi",
+      "vendor": "oracle",
+      "products": ["mysqli"],
+      "cve_details_url": "https://www.cvedetails.com/product/21801/Oracle-Mysql.html",
+      "category_id": 4
     }
   ]
 }
-
