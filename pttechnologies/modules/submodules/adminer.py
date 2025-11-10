@@ -143,7 +143,6 @@ def _match_pattern(content: str, pattern_def: Dict[str, Any], args: object) -> O
     try:
         match = re.search(pattern, content, re_flags)
     except re.error as e:
-        if args.verbose:
         return None
     
     if not match:
