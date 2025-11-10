@@ -1,0 +1,383 @@
+[
+  {
+    "files": [
+      "readme",
+      "Readme",
+      "README",
+      "read.me",
+      "Read.me",
+      "READ.me",
+      "READ.ME"
+    ]
+  },
+  {
+    "files": [
+      "readme.txt",
+      "Readme.txt",
+      "README.txt",
+      "README.TXT"
+    ]
+  },
+  {
+    "files": [
+      "readme.md",
+      "Readme.md",
+      "README.md",
+      "README.MD"
+    ]
+  },
+  {
+    "files": [
+      "readme.htm",
+      "Readme.htm",
+      "README.htm",
+      "README.HTM"
+    ]
+  },
+  {
+    "files": [
+      "readme.html",
+      "Readme.html",
+      "README.html",
+      "README.HTML"
+    ]
+  },
+  {
+    "files": [
+      "readme.doc",
+      "Readme.doc",
+      "README.doc",
+      "README.DOC"
+    ]
+  },
+  {
+    "files": [
+      "version",
+      "Version",
+      "VERSION"
+    ]
+  },
+  {
+    "files": [
+      "version.txt",
+      "Version.txt",
+      "VERSION.txt",
+      "VERSION.TXT"
+    ]
+  },
+  {
+    "files": [
+      "version.md",
+      "Version.md",
+      "VERSION.md",
+      "VERSION.MD"
+    ]
+  },
+  {
+    "files": [
+      "version.htm",
+      "Version.htm",
+      "VERSION.htm",
+      "VERSION.HTM"
+    ]
+  },
+  {
+    "files": [
+      "version.html",
+      "Version.html",
+      "VERSION.html",
+      "VERSION.HTML"
+    ]
+  },
+  {
+    "files": [
+      "version.doc",
+      "Version.doc",
+      "VERSION.doc",
+      "VERSION.DOC"
+    ]
+  },
+  {
+    "files": [
+      "changelog",
+      "Changelog",
+      "CHANGELOG"
+    ]
+  },
+  {
+    "files": [
+      "changelog.txt",
+      "Changelog.txt",
+      "CHANGELOG.txt",
+      "CHANGELOG.TXT"
+    ]
+  },
+  {
+    "files": [
+      "changelog.md",
+      "Changelog.md",
+      "CHANGELOG.md",
+      "CHANGELOG.MD"
+    ]
+  },
+  {
+    "files": [
+      "changelog.htm",
+      "Changelog.htm",
+      "CHANGELOG.htm",
+      "CHANGELOG.HTM"
+    ]
+  },
+  {
+    "files": [
+      "changelog.html",
+      "Changelog.html",
+      "CHANGELOG.html",
+      "CHANGELOG.HTML"
+    ]
+  },
+  {
+    "files": [
+      "changelog.doc",
+      "Changelog.doc",
+      "CHANGELOG.doc",
+      "CHANGELOG.DOC"
+    ]
+  },
+  {
+    "files": [
+      "update",
+      "Update",
+      "UPDATE"
+    ]
+  },
+  {
+    "files": [
+      "update.txt",
+      "Update.txt",
+      "UPDATE.txt",
+      "UPDATE.TXT"
+    ]
+  },
+  {
+    "files": [
+      "update.md",
+      "Update.md",
+      "UPDATE.md",
+      "UPDATE.MD"
+    ]
+  },
+  {
+    "files": [
+      "update.htm",
+      "Update.htm",
+      "UPDATE.htm",
+      "UPDATE.HTM"
+    ]
+  },
+  {
+    "files": [
+      "update.html",
+      "Update.html",
+      "UPDATE.html",
+      "UPDATE.HTML"
+    ]
+  },
+  {
+    "files": [
+      "update.doc",
+      "Update.doc",
+      "UPDATE.doc",
+      "UPDATE.DOC"
+    ]
+  },
+  {
+    "files": [
+      "upgrade",
+      "Upgrade",
+      "UPGRADE"
+    ]
+  },
+  {
+    "files": [
+      "upgrade.txt",
+      "Upgrade.txt",
+      "UPGRADE.txt",
+      "UPGRADE.TXT"
+    ]
+  },
+  {
+    "files": [
+      "upgrade.md",
+      "Upgrade.md",
+      "UPGRADE.md",
+      "UPGRADE.MD"
+    ]
+  },
+  {
+    "files": [
+      "upgrade.htm",
+      "Upgrade.htm",
+      "UPGRADE.htm",
+      "UPGRADE.HTM"
+    ]
+  },
+  {
+    "files": [
+      "upgrade.html",
+      "Upgrade.html",
+      "UPGRADE.html",
+      "UPGRADE.HTML"
+    ]
+  },
+  {
+    "files": [
+      "upgrade.doc",
+      "Upgrade.doc",
+      "UPGRADE.doc",
+      "UPGRADE.DOC"
+    ]
+  },
+  {
+    "files": [
+      "license",
+      "License",
+      "LICENSE"
+    ]
+  },
+  {
+    "files": [
+      "license.txt",
+      "License.txt",
+      "LICENSE.txt",
+      "LICENSE.TXT"
+    ]
+  },
+  {
+    "files": [
+      "license.md",
+      "License.md",
+      "LICENSE.md",
+      "LICENSE.MD"
+    ]
+  },
+  {
+    "files": [
+      "license.htm",
+      "License.htm",
+      "LICENSE.htm",
+      "LICENSE.HTM"
+    ]
+  },
+  {
+    "files": [
+      "license.html",
+      "License.html",
+      "LICENSE.html",
+      "LICENSE.HTML"
+    ]
+  },
+  {
+    "files": [
+      "license.doc",
+      "License.doc",
+      "LICENSE.doc",
+      "LICENSE.DOC"
+    ]
+  },
+  {
+    "files": [
+      "lisense",
+      "Lisense",
+      "LISENSE"
+    ]
+  },
+  {
+    "files": [
+      "lisense.txt",
+      "Lisense.txt",
+      "LISENSE.txt",
+      "LISENSE.TXT"
+    ]
+  },
+  {
+    "files": [
+      "lisense.md",
+      "Lisense.md",
+      "LISENSE.md",
+      "LISENSE.MD"
+    ]
+  },
+  {
+    "files": [
+      "lisense.htm",
+      "Lisense.htm",
+      "LISENSE.htm",
+      "LISENSE.HTM"
+    ]
+  },
+  {
+    "files": [
+      "lisense.html",
+      "Lisense.html",
+      "LISENSE.html",
+      "LISENSE.HTML"
+    ]
+  },
+  {
+    "files": [
+      "lisense.doc",
+      "Lisense.doc",
+      "LISENSE.doc",
+      "LISENSE.DOC"
+    ]
+  },
+  {
+    "files": [
+      "install",
+      "Install",
+      "INSTALL"
+    ]
+  },
+  {
+    "files": [
+      "install.txt",
+      "Install.txt",
+      "INSTALL.txt",
+      "INSTALL.TXT"
+    ]
+  },
+  {
+    "files": [
+      "install.md",
+      "Install.md",
+      "INSTALL.md",
+      "INSTALL.MD"
+    ]
+  },
+  {
+    "files": [
+      "install.htm",
+      "Install.htm",
+      "INSTALL.htm",
+      "INSTALL.HTM"
+    ]
+  },
+  {
+    "files": [
+      "install.html",
+      "Install.html",
+      "INSTALL.html",
+      "INSTALL.HTML"
+    ]
+  },
+  {
+    "files": [
+      "install.doc",
+      "Install.doc",
+      "INSTALL.doc",
+      "INSTALL.DOC"
+    ]
+  }
+]
+
