@@ -174,7 +174,8 @@
       "name": "Generic WAMP",
       "product_id": 131,
       "pattern": "<title>\\s*WAMP\\s*Server\\s*</title>|Wamp\\s*Server\\s*(\\d+\\.\\d+)?",
-      "flags": "i"
+      "flags": "i",
+      "submodule": "wampserver"
     },
     {
       "name": "LAMP Stack",

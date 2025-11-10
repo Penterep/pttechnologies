@@ -660,7 +660,7 @@ class DEFPAGE:
                 enhanced_tech_info['response'] = response
                 enhanced_tech_info['content'] = content
                 
-                enhanced_info = submodule.analyze(enhanced_tech_info, self.args)
+                enhanced_info = submodule.analyze(enhanced_tech_info, self.args, self.helpers)
                 tech_info.update(enhanced_info)
                                     
         except ImportError as e:
@@ -752,7 +752,7 @@ class DEFPAGE:
             # Report additional info from submodules and version ranges
             if tech_info.get("additional_info"):
                 for info in tech_info["additional_info"]:
-                    ptprint(f"{info}", "INFO", not self.args.json, indent=12)
+                    ptprint(f"{info}", "VULN", not self.args.json, indent=8)
 
         for tech_info in tech_summary.values():
             self._store_unique_technology(tech_info)
