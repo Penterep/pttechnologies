@@ -253,7 +253,7 @@ class ERRPAGE:
                     'jetty': 21,
                     'litespeed': 13,
                     'openresty': 170,
-                    'ibm_http_server': 16
+                    'ibm_http_server': 171
                 }
                 
                 tech_lower = extracted_tech.lower().replace(' ', '_')
@@ -292,19 +292,21 @@ class ERRPAGE:
             category_text = f" ({tech['category']})" if tech.get('category') else ""
             probability = tech.get("probability", 100)
             
+            # First print verbose details
+            if self.args.verbose:
+                ptprint(f"Detected via: {tech.get('trigger_name', 'unknown')} [HTTP {tech.get('status_code', '?')}]", 
+                       "ADDITIONS", not self.args.json, indent=4, colortext=True)
+                if tech.get('pattern_used'):
+                    ptprint(f"Pattern: {tech.get('pattern_used')[:100]}{'...' if len(tech.get('pattern_used', '')) > 100 else ''}", 
+                           "ADDITIONS", not self.args.json, indent=4, colortext=True)
+                if tech.get('matched_text'):
+                    ptprint(f"Match: '{tech.get('matched_text')}'", 
+                           "ADDITIONS", not self.args.json, indent=4, colortext=True)
+            
+            # Then print the technology
             ptprint(f"{tech['technology']}{version_text}{category_text}", 
                    "VULN", not self.args.json, indent=4, end=" ")
             ptprint(f"({probability}%)", "ADDITIONS", not self.args.json, colortext=True)
-            
-            if self.args.verbose:
-                ptprint(f"Detected via: {tech.get('trigger_name', 'unknown')} [HTTP {tech.get('status_code', '?')}]", 
-                       "ADDITIONS", not self.args.json, indent=8, colortext=True)
-                if tech.get('pattern_used'):
-                    ptprint(f"Pattern: {tech.get('pattern_used')[:100]}{'...' if len(tech.get('pattern_used', '')) > 100 else ''}", 
-                           "ADDITIONS", not self.args.json, indent=8, colortext=True)
-                if tech.get('matched_text'):
-                    ptprint(f"Match: '{tech.get('matched_text')}'", 
-                           "ADDITIONS", not self.args.json, indent=8, colortext=True)
 
         for tech in unique_techs.values():
             self._store_technology(tech)

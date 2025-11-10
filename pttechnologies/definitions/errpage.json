@@ -16,6 +16,21 @@
       "flags": "is"
     },
     {
+      "_comment": "https://www.distrettoappenninomeridionale.it/%",
+      "name": "aruba-proxy error page footer with version",
+      "product_id": 120,
+      "pattern": "<hr>\\s*<center>\\s*aruba-proxy/([\\d\\.]+)(?:\\s*\\([^)]+\\))?\\s*</center>",
+      "version_pattern": "aruba-proxy/([\\d\\.]+)",
+      "flags": "is"
+    },
+    {
+      "_comment": "https://www.distrettoappenninomeridionale.it/%",
+      "name": "aruba-proxy error page footer",
+      "product_id": 120,
+      "pattern": "<hr>\\s*<center>\\s*aruba-proxy\\s*</center>",
+      "flags": "is"
+    },
+    {
       "_comment": "http://188.166.108.185",
       "name": "Ubuntu OS detection from Nginx error page",
       "product_id": 2,
@@ -101,7 +116,7 @@
       "name": "Generic Technology Footer",
       "product_id": 99,
       "_comment2": "Various - needs special handling",
-      "pattern": "<(?:address|footer|div[^>]*footer[^>]*)>([^<]*(?:Apache|nginx|IIS|Tomcat|Jetty|LiteSpeed|OpenResty)[^<]*)</",
+      "pattern": "<(?:address|footer|div[^>]*footer[^>]*)>([^<]*(?:Apache|IBM_HTTP_Server|nginx|IIS|Tomcat|Jetty|LiteSpeed|OpenResty)[^<]*)</",
       "extract_tech": true,
       "flags": "is"
     },
@@ -170,6 +185,14 @@
       "name": "Laravel Tailwind error page full pattern",
       "product_id": 52,
       "pattern": "<style>\\s*/\\*!\\s*normalize\\.css\\s+v8\\.0\\.1.*?@media\\s+\\(prefers-color-scheme:dark\\)\\{.*?\\.dark\\\\:bg-gray-(?:800|900).*?</style>",
+      "flags": "is"
+    },
+    {
+      "_comment": "https://www.nexi.it/%",
+      "name": "F5 BIG-IP WAF rejection page",
+      "product_id": 121,
+      "pattern": "<title>\\s*Request Rejected\\s*</title>.*?The requested URL was rejected\\.\\s*Please consult with your administrator\\..*?Your support ID is:\\s*[\\d]+",
+      "version_pattern": null,
       "flags": "is"
     }
   ]
