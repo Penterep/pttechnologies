@@ -1,0 +1,105 @@
+{
+  "patterns": [
+    {
+      "name": "Apache Version Detection (from table)",
+      "product_id": 10,
+      "pattern": "<dt>Apache\\s+Version\\s*:\\s*</dt>\\s*<dd>([\\d\\.]+)",
+      "version_pattern": "<dt>Apache\\s+Version\\s*:\\s*</dt>\\s*<dd>([\\d\\.]+)",
+      "flags": "i",
+      "source": "config_table",
+      "probability": 100,
+      "_comment": "Extracts Apache version from Server Configuration table (handles both 'Version:' and 'Version :')"
+    },
+    {
+      "name": "Apache Version Detection (from Server Software)",
+      "product_id": 10,
+      "pattern": "<dd>Apache/([\\d\\.]+)",
+      "version_pattern": "Apache/([\\d\\.]+)",
+      "flags": "i",
+      "source": "server_software",
+      "probability": 100,
+      "_comment": "Extracts Apache version from inline Server Software string (older format)"
+    },
+    {
+      "name": "PHP Version Detection (from table)",
+      "product_id": 30,
+      "pattern": "<dt>PHP\\s+Version\\s*:\\s*</dt>\\s*<dd>([\\d\\.]+)",
+      "version_pattern": "<dt>PHP\\s+Version\\s*:\\s*</dt>\\s*<dd>([\\d\\.]+)",
+      "flags": "i",
+      "source": "config_table",
+      "probability": 100,
+      "_comment": "Extracts PHP version from Server Configuration table (handles both 'Version:' and 'Version :')"
+    },
+    {
+      "name": "PHP Version Detection (from Server Software)",
+      "product_id": 30,
+      "pattern": "<dd>.*PHP/([\\d\\.]+)",
+      "version_pattern": "PHP/([\\d\\.]+)",
+      "flags": "i",
+      "source": "server_software",
+      "probability": 100,
+      "_comment": "Extracts PHP version from inline Server Software string (older format)"
+    },
+    {
+      "name": "Windows Detection (from Server Software)",
+      "product_id": 6,
+      "pattern": "<dt>Server\\s+Software:</dt>\\s*<dd>[^<]*\\(Win(?:32|64)\\)",
+      "version_pattern": null,
+      "flags": "i",
+      "source": "server_software",
+      "probability": 100,
+      "_comment": "Detects Windows from Server Software string (Win32 or Win64)"
+    },
+    {
+      "name": "Windows Detection (from inline string)",
+      "product_id": 6,
+      "pattern": "<dd>Apache/[\\d\\.]+\\s+\\(Win(?:32|64)\\)",
+      "version_pattern": null,
+      "flags": "i",
+      "source": "server_software",
+      "probability": 100,
+      "_comment": "Detects Windows from inline Apache version string (Win32 or Win64)"
+    },
+    {
+      "name": "OpenSSL Version Detection (from Server Software)",
+      "product_id": 210,
+      "pattern": "<dt>Server\\s+Software:</dt>\\s*<dd>[^<]*OpenSSL/([\\d\\.]+[a-z]?)",
+      "version_pattern": "OpenSSL/([\\d\\.]+[a-z]?)",
+      "flags": "i",
+      "source": "server_software",
+      "probability": 100,
+      "_comment": "Extracts OpenSSL version from Server Software string (e.g., OpenSSL/1.1.1g)"
+    },
+    {
+      "name": "OpenSSL Version Detection (from inline string)",
+      "product_id": 210,
+      "pattern": "<dd>.*OpenSSL/([\\d\\.]+[a-z]?)",
+      "version_pattern": "OpenSSL/([\\d\\.]+[a-z]?)",
+      "flags": "i",
+      "source": "server_software",
+      "probability": 100,
+      "_comment": "Extracts OpenSSL version from inline Apache version string (e.g., Apache/2.4.46 (Win64) OpenSSL/1.1.1g PHP/7.3.21)"
+    },
+    {
+      "name": "MySQL Version Detection",
+      "product_id": 200,
+      "pattern": "<dt>MySQL\\s+Version\\s*:\\s*</dt>\\s*<dd>([\\d\\.]+)",
+      "version_pattern": "<dt>MySQL\\s+Version\\s*:\\s*</dt>\\s*<dd>([\\d\\.]+)",
+      "flags": "i",
+      "source": "config_table",
+      "probability": 100,
+      "_comment": "Extracts MySQL version from Server Configuration table (handles both 'Version:' and 'Version :')"
+    },
+    {
+      "name": "MariaDB Version Detection",
+      "product_id": 201,
+      "pattern": "<dt>MariaDB\\s+Version\\s*:\\s*</dt>\\s*<dd>([\\d\\.]+)",
+      "version_pattern": "<dt>MariaDB\\s+Version\\s*:\\s*</dt>\\s*<dd>([\\d\\.]+)",
+      "flags": "i",
+      "source": "config_table",
+      "probability": 100,
+      "_comment": "Extracts MariaDB version from Server Configuration table (handles both 'Version:' and 'Version :')"
+    }
+  ]
+}
+
