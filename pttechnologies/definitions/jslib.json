@@ -4,10 +4,19 @@
     "signatures": ["jQuery", "jquery"],
     "url_pattern": "jquery[.-]?(\\d+\\.\\d+\\.\\d+)?(?:\\.min)?\\.js",
     "version_patterns": [
+      "/\\*!\\s*jQuery\\s+v(\\d+\\.\\d+\\.\\d+)",
       "jQuery(?:\\s+JavaScript\\s+Library)?\\s+v?(\\d+\\.\\d+\\.\\d+)",
+      "jQuery\\s*v(\\d+\\.\\d+\\.\\d+)",
+      "jQueryv(\\d+\\.\\d+\\.\\d+)",
       "jquery[.-]?(\\d+\\.\\d+\\.\\d+)",
       "@version\\s+(\\d+\\.\\d+\\.\\d+)",
-      "\\*\\s+jQuery\\s+v?(\\d+\\.\\d+\\.\\d+)"
+      "/\\*! jQuery v(\\d+\\.\\d+\\.\\d+) \\|",
+      "jQuery\\.fn\\.jquery\\s*=\\s*['\"]?(\\d+\\.\\d+\\.\\d+)",
+      "jquery\\.fn\\.jquery\\s*=\\s*['\"]?(\\d+\\.\\d+\\.\\d+)",
+      "jQuery\\.version\\s*=\\s*['\"]?(\\d+\\.\\d+\\.\\d+)",
+      "jquery\\.version\\s*=\\s*['\"]?(\\d+\\.\\d+\\.\\d+)",
+      "['\"]jQuery\\s+v(\\d+\\.\\d+\\.\\d+)['\"]",
+      "jQuery\\s+v(\\d+\\.\\d+\\.\\d+)\\s*\\|"
     ],
     "probability": 100
   },

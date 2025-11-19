@@ -175,13 +175,32 @@ class JSLIB:
         Attempts to detect the version of a library from its content.
         """
         version_patterns = lib_def.get("version_patterns", [])
+        product_id = lib_def.get("product_id")
         
-        for pattern in version_patterns:
+        # For jQuery, search more thoroughly in bundled files
+        is_jquery = product_id == 90
+                
+        for idx, pattern in enumerate(version_patterns):
             try:
-                search_content = js_content[:5000] if len(js_content) > 5000 else js_content
-                match = re.search(pattern, search_content, re.IGNORECASE)
+                if is_jquery:
+                    search_content = js_content
+                elif len(js_content) > 100000 and len(pattern) < 100:
+                    search_sections = [
+                        js_content[:50000],
+                        js_content[len(js_content)//3:len(js_content)//3 + 50000],
+                        js_content[2*len(js_content)//3:2*len(js_content)//3 + 50000],
+                        js_content[-50000:]
+                    ]
+                    search_content = ''.join(search_sections)
+                elif len(js_content) > 50000:
+                    search_content = js_content[:30000] + js_content[-30000:]
+                else:
+                    search_content = js_content
+                
+                match = re.search(pattern, search_content, re.IGNORECASE | re.MULTILINE)
                 if match:
                     version = match.group(1) if match.groups() else match.group(0)
+                    
                     if re.match(r'^\d+(\.\d+)*$', version):
                         return version
             except re.error:
@@ -195,31 +214,37 @@ class JSLIB:
         """
         technology = result["technology"]
         version = result.get("version")
+        url = result.get("url", "")
         
         # Check for existing detection of same technology
         for i, existing in enumerate(self.detected_libraries):
             if existing["technology"] == technology:
-                # If versions match, keep the one with higher probability
-                if existing.get("version") == version:
+                # If new result has version and existing doesn't, ALWAYS prefer the one with version
+                if version and not existing.get("version"):
+                    self.detected_libraries[i] = result
+                    return
+                # If existing has version and new doesn't, keep existing
+                elif not version and existing.get("version"):
+                    return
+                # If both have versions
+                elif version and existing.get("version"):
+                    if existing.get("version") == version:
+                        # Same version, keep higher probability
+                        if result["probability"] > existing["probability"]:
+                            self.detected_libraries[i] = result
+                        return
+                    else:
+                        # Different versions, keep both
+                        result["note"] = "Multiple versions detected"
+                        self.detected_libraries.append(result)
+                        return
+                # Neither has version, keep higher probability
+                else:
                     if result["probability"] > existing["probability"]:
                         self.detected_libraries[i] = result
                     return
-                # If different versions, keep both + make note
-                elif version and existing.get("version"):
-                    result["note"] = "Multiple versions detected"
-                    self.detected_libraries.append(result)
-                    return
-                # If one has version and other doesn't, prefer the one with version
-                elif version and not existing.get("version"):
-                    self.detected_libraries[i] = result
-                    return
-                elif not version and existing.get("version"):
-                    return
-                # Both without version, keep higher probability
-                elif result["probability"] > existing["probability"]:
-                    self.detected_libraries[i] = result
-                return
         
+        # No existing detection found, add as new
         self.detected_libraries.append(result)
 
     def _report(self):
