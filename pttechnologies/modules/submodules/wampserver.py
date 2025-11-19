@@ -127,6 +127,7 @@ def _match_pattern(content: str, pattern_def: Dict[str, Any], args: object) -> O
         return None
     
     # Get product info from product_id
+    product_id = pattern_def.get('product_id')
     product_manager = get_product_manager()
     product = product_manager.get_product_by_id(product_id)
     if not product:
@@ -185,7 +186,7 @@ def _add_detected_to_info(tech_info: Dict[str, Any], detected: List[Dict[str, An
         
         version_str = f" {component['version']}" if component.get('version') else ""
         category_str = f" ({component['category']})" if component.get('category') else ""
-        probability_str = f" ({component.get('probability', 100)}%)" if component.get('probability', 100) < 100 else ""
+        probability_str = f" ({component.get('probability', 100)}%)"
         
         info_line = f"{component['technology']}{version_str}{category_str}{probability_str}"
         
