@@ -1,10 +1,10 @@
 """
-PLUGINS - Plugin Detection Module
+PLUGINS - Plugin Detection Module (Enhanced Version Priority)
 
 This module implements detection of plugins (primarily WordPress plugins)
 by analyzing HTML content from the homepage. It extracts all URLs containing
 '/plugins/' pattern, identifies plugin names, and attempts to detect versions
-from URLs, readme.txt files, or HTML comments.
+with proper priority: readme.txt > HTML comments > URL parameters.
 
 Classes:
     PLUGINS: Main detector class.
@@ -37,7 +37,10 @@ class PLUGINS:
     PLUGINS performs plugin detection and version identification.
 
     This class analyzes HTML content to find plugin references, extract
-    plugin names, and detect versions from URLs, readme files, or HTML patterns.
+    plugin names, and detect versions with proper priority:
+    1. readme.txt (most reliable)
+    2. HTML comments
+    3. URL parameters (least reliable)
     """
 
     def __init__(self, args: object, ptjsonlib: object, helpers: object, http_client: object, responses: StoredResponses) -> None:
@@ -125,14 +128,17 @@ class PLUGINS:
     def _analyze_plugin(self, plugin_url, base_url, html):
         """
         Analyzes a plugin URL to extract plugin name and detect version.
+        
+        Version detection priority:
+        1. readme.txt (most reliable)
+        2. HTML comments
+        3. URL parameters (least reliable)
 
         Args:
             plugin_url (str): URL containing plugin reference.
             base_url (str): Base URL of the website.
             html (str): Full HTML content for pattern matching.
         """
-        # Pattern: /wp-content/plugins/plugin-name/...
-        # or: /plugins/plugin-name/...
         plugin_match = re.search(r'/plugins/([^/]+)', plugin_url)
         
         if not plugin_match:
@@ -149,28 +155,26 @@ class PLUGINS:
         match_text = None
         version_source = None
         
-        # Method 1: Check if version is in HTML comments
-        if plugin_def and "version_patterns" in plugin_def:
+        # PRIORITY 1: Check readme.txt first (most reliable)
+        readme_result = self._get_version_from_readme(plugin_name, base_url, plugin_def)
+        if readme_result:
+            version, match_text = readme_result
+            version_source = "readme.txt"
+
+        # PRIORITY 2: Check HTML comments (reliable)
+        if not version and plugin_def and "version_patterns" in plugin_def:
             result = self._extract_version_from_html(html, plugin_def)
             if result:
                 version, match_text = result
                 version_source = "HTML"
 
-        # Method 2: Check if version is in the URL
+        # PRIORITY 3: Check URL (least reliable)
         if not version:
             version_in_url = self._extract_version_from_url(plugin_url)
             if version_in_url:
                 version = version_in_url
                 match_text = plugin_url
                 version_source = "URL"
-        
-        # Method 3: Check if version is in readme.txt
-        if not version:
-            result = self._get_version_from_readme(plugin_name, base_url, plugin_def)
-            if result:
-                version, readme_url = result
-                match_text = readme_url
-                version_source = "readme.txt"
         
         # Get product_id from plugin definition
         product_id = None
@@ -272,7 +276,6 @@ class PLUGINS:
         Returns:
             str or None: Version string if found, otherwise None.
         """
-
         # Common version patterns in URLs:
         # - /plugin-name/1.2.3/
         # - /plugin-name.1.2.3.js
@@ -299,7 +302,7 @@ class PLUGINS:
 
     def _get_version_from_readme(self, plugin_name, base_url, plugin_def=None):
         """
-        Attempts to fetch and parse readme.txt file for version information.
+        Attempts to fetch and parse readme.txt file for version.
 
         Args:
             plugin_name (str): Name of the plugin.
@@ -334,7 +337,6 @@ class PLUGINS:
             resp = self.helpers.fetch(readme_url, allow_redirects=True)
             
             if resp and resp.status_code == 200:
-                # Parse readme.txt content
                 version = self._parse_readme_version(resp.text)
                 if version:
                     return (version, readme_url)
@@ -408,8 +410,8 @@ class PLUGINS:
                     ptprint(f"Match: {match_to_print}", "ADDITIONS", not self.args.json, indent=4, colortext=True)
                     
                     if version and version_source:
-                        ptprint(f"Version found in {version_source}: {version}", "ADDITIONS", 
-                               not self.args.json, indent=4, colortext=True)
+                        ptprint(f"Version found in {version_source}: {version}", 
+                               "ADDITIONS", not self.args.json, indent=4, colortext=True)
 
                 if version:
                     ptprint(f"Identified plugin: {display_name} {version}", "VULN", 
