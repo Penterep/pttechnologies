@@ -201,10 +201,13 @@ class PtTechnologies:
             https_url = f"https://{self.target_ip}/"
             https_resp = self.helpers.fetch(https_url)
 
-            #Send request with invalid request line
-            http_invalid_method = self.helpers._raw_request( self.args.url.rstrip('/'), '/', custom_request_line="FOO / HTTP/9.8")
-            http_invalid_protocol = self.helpers._raw_request( self.args.url.rstrip('/'), '/', custom_request_line="GET / FOO/1.1")
-            http_invalid_version = self.helpers._raw_request( self.args.url.rstrip('/'), '/', custom_request_line="GET / HTTP/9.8")
+            # TEMPORARILY DISABLED: Send request with invalid request line (slows down the script)
+            # http_invalid_method = self.helpers._raw_request( self.args.url.rstrip('/'), '/', custom_request_line="FOO / HTTP/9.8")
+            # http_invalid_protocol = self.helpers._raw_request( self.args.url.rstrip('/'), '/', custom_request_line="GET / FOO/1.1")
+            # http_invalid_version = self.helpers._raw_request( self.args.url.rstrip('/'), '/', custom_request_line="GET / HTTP/9.8")
+            http_invalid_method = None
+            http_invalid_protocol = None
+            http_invalid_version = None
 
             # Create and store the responses container
             self.stored_responses = StoredResponses(
@@ -258,12 +261,14 @@ def _get_all_available_modules() -> list:
     Modules must:
     - Not start with an underscore
     - Have a '.py' extension
+    - TEMPORARILY DISABLED: proto module (uses invalid requests that slow down the script)
     """
     modules_folder = os.path.join(os.path.dirname(__file__), "modules")
+    disabled_modules = ['proto']  # Temporarily disabled modules
     available_modules = [
         f.rsplit(".py", 1)[0]
         for f in sorted(os.listdir(modules_folder))
-        if f.endswith(".py") and not f.startswith("_")
+        if f.endswith(".py") and not f.startswith("_") and f.rsplit(".py", 1)[0] not in disabled_modules
     ]
     return available_modules
 
