@@ -752,7 +752,15 @@ class DEFPAGE:
             # Report additional info from submodules and version ranges
             if tech_info.get("additional_info"):
                 for info in tech_info["additional_info"]:
-                    ptprint(f"{info}", "VULN", not self.args.json, indent=8)
+                    # Check if info contains probability at the end (e.g., "Technology (Category) (100%)")
+                    probability_match = re.search(r'^(.+?)\s+\((\d+)%\)$', info)
+                    if probability_match:
+                        main_text = probability_match.group(1)
+                        probability = probability_match.group(2)
+                        ptprint(f"{main_text}", "VULN", not self.args.json, indent=8, end=" ")
+                        ptprint(f"({probability}%)", "ADDITIONS", not self.args.json, colortext=True)
+                    else:
+                        ptprint(f"{info}", "VULN", not self.args.json, indent=8)
 
         for tech_info in tech_summary.values():
             self._store_unique_technology(tech_info)
