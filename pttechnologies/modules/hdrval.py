@@ -523,7 +523,7 @@ class HDRVAL:
         # Special handling for ASP.NET technologies
         if tech_name == 'asp.net framework':
             return {
-                'category': 'framework',
+                'category': 'Backend Framework',
                 'technology': 'ASP.NET Framework',
                 'name': 'ASP.NET Framework',
                 'version': technology['version'],
@@ -532,7 +532,7 @@ class HDRVAL:
             }
         elif tech_name == 'asp.net mvc':
             return {
-                'category': 'framework',
+                'category': 'Backend Framework',
                 'technology': 'ASP.NET MVC',
                 'name': 'ASP.NET MVC',
                 'version': technology['version'],
