@@ -1,15 +1,15 @@
 """
-WSRPO - Web-Server Response Position-Order Detection Module
+WSRHO - Web-Server Response Position-Order Detection Module
 
 This module implements a test that identifies the web server technology
 by analyzing the order of HTTP response headers in a 400 Bad Request response.
 
 Includes:
-- WSRPO class to perform the response-header order detection.
+- WSRHO class to perform the response-header order detection.
 - run() function as an entry point to execute the test.
 
 Usage:
-    WSRPO(args, ptjsonlib, helpers, http_client, responses).run()
+    WSRHO(args, ptjsonlib, helpers, http_client, responses).run()
 
 """
 
@@ -25,7 +25,7 @@ __TESTLABEL__ = "Test response-header order"
 WANTED = {b"server", b"date", b"content-type", b"content-length"}
 
 
-class WSRPO:
+class WSRHO:
     """
     Class to detect web server technology by analyzing the order
     of response headers returned in a 400 Bad Request HTTP response.
@@ -35,7 +35,7 @@ class WSRPO:
     """
 
     def __init__(self, args: object, ptjsonlib: object, helpers: object, http_client: object, responses: StoredResponses) -> None:
-        """Initialize the WSRPO test with necessary components."""
+        """Initialize the WSRHO test with necessary components."""
         self.args = args
         self.ptjsonlib = ptjsonlib
         self.helpers = helpers
@@ -47,7 +47,7 @@ class WSRPO:
         self.response_404 = responses.resp_404
         self.raw_response_400 = responses.raw_resp_400
 
-        self.definitions = self.helpers.load_definitions("wsrpo.json")
+        self.definitions = self.helpers.load_definitions("wsrho.json")
 
     def run(self) -> None:
         """
@@ -172,16 +172,25 @@ class WSRPO:
             product_id: Product ID from products.json.
         """
         if tech:
+            # Get vendor from product if product_id is available
+            vendor = None
+            if product_id:
+                product_manager = get_product_manager()
+                product = product_manager.get_product_by_id(product_id)
+                if product:
+                    vendor = product.get('vendor')
+            
             storage.add_to_storage(
                 technology=tech, 
                 technology_type="Web Server", 
-                vulnerability="PTV-WEB-INFO-WSRPO", 
+                vulnerability="PTV-WEB-INFO-WSRHO", 
                 probability=probability,
-                product_id=product_id
+                product_id=product_id,
+                vendor=vendor
             )
             ptprint(f"Identified WS: {tech}", "VULN", not self.args.json, indent=4, end=" ")
             ptprint(f"({probability}%)", "ADDITIONS", not self.args.json, colortext=True)
 
 def run(args: object, ptjsonlib: object, helpers: object, http_client: object, responses: StoredResponses):
-    """Entry point to run the WSRPO test."""
-    WSRPO(args, ptjsonlib, helpers, http_client, responses).run()
+    """Entry point to run the WSRHO test."""
+    WSRHO(args, ptjsonlib, helpers, http_client, responses).run()
