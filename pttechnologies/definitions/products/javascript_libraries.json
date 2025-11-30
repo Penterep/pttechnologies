@@ -95,6 +95,14 @@
       "products": ["bootstrap"],
       "cve_details_url": "https://www.cvedetails.com/product/51406/Getbootstrap-Bootstrap.html",
       "category_id": 6
+    },
+    {
+      "id": 102,
+      "our_name": "Popper.js",
+      "vendor": "popperjs",
+      "products": ["popper.js"],
+      "cve_details_url": "https://www.cvedetails.com/product/51407/Popperjs-Popper.html",
+      "category_id": 6
     }
   ]
 }

@@ -5,8 +5,8 @@
     "url_pattern": "jquery[.-]?(\\d+\\.\\d+\\.\\d+)?(?:\\.min)?\\.js",
     "version_patterns": [
       "/\\*!\\s*jQuery\\s+v(\\d+\\.\\d+\\.\\d+)",
-      "jQuery(?:\\s+JavaScript\\s+Library)?\\s+v?(\\d+\\.\\d+\\.\\d+)",
-      "jQuery\\s*v(\\d+\\.\\d+\\.\\d+)",
+      "(?<!requires at least )jQuery(?:\\s+JavaScript\\s+Library)?\\s+v?(\\d+\\.\\d+\\.\\d+)(?!\\s+but\\s+less\\s+than)",
+      "(?<!requires at least )jQuery\\s*v(\\d+\\.\\d+\\.\\d+)(?!\\s+but\\s+less\\s+than)",
       "jQueryv(\\d+\\.\\d+\\.\\d+)",
       "jquery[.-]?(\\d+\\.\\d+\\.\\d+)",
       "@version\\s+(\\d+\\.\\d+\\.\\d+)",
@@ -16,7 +16,7 @@
       "jQuery\\.version\\s*=\\s*['\"]?(\\d+\\.\\d+\\.\\d+)",
       "jquery\\.version\\s*=\\s*['\"]?(\\d+\\.\\d+\\.\\d+)",
       "['\"]jQuery\\s+v(\\d+\\.\\d+\\.\\d+)['\"]",
-      "jQuery\\s+v(\\d+\\.\\d+\\.\\d+)\\s*\\|"
+      "jQuery\\s+v(\\d+\\.\\d+\\.\\d+)\\s*\\|\\s*\\(c\\)\\s*jQuery"
     ],
     "probability": 100
   },
@@ -155,6 +155,16 @@
     "url_pattern": "svg4everybody(?:\\.min)?\\.js",
     "version_patterns": [
       "svg4everybody\\s+v?(\\d+\\.\\d+\\.\\d+)"  
+    ],
+    "probability": 100
+  },
+  {
+    "product_id": 102,
+    "signatures": ["popper.js"],
+    "url_pattern": "popper(?:\\.js)?[/-](\\d+\\.\\d+\\.\\d+)|popper(?:[.-](\\d+\\.\\d+\\.\\d+))?(?:\\.min)?\\.js",
+    "version_patterns": [
+      "popper\\.js\\s+v?(\\d+\\.\\d+\\.\\d+)",
+      "@version\\s+(\\d+\\.\\d+\\.\\d+)"
     ],
     "probability": 100
   }

@@ -143,7 +143,7 @@ class JSLIB:
         if is_bundle:
             probability = int(probability * 0.9)
 
-        version = self._detect_version(js_content, lib_def)
+        version = self._detect_version(js_content, lib_def, js_url)
         
         # Get product info from product_id
         product_id = lib_def.get("product_id")
@@ -170,12 +170,24 @@ class JSLIB:
 
         return result
 
-    def _detect_version(self, js_content, lib_def):
+    def _detect_version(self, js_content, lib_def, js_url=None):
         """
-        Attempts to detect the version of a library from its content.
+        Attempts to detect the version of a library from its content and URL.
         """
         version_patterns = lib_def.get("version_patterns", [])
+        url_pattern = lib_def.get("url_pattern")
         product_id = lib_def.get("product_id")
+        
+        # Try to extract version from URL if url_pattern contains capture groups
+        if js_url and url_pattern:
+            try:
+                url_match = re.search(url_pattern, js_url, re.IGNORECASE)
+                if url_match and url_match.groups():
+                    for group in url_match.groups():
+                        if group and re.match(r'^\d+(\.\d+)*$', group):
+                            return group
+            except re.error:
+                pass
         
         # For jQuery, search more thoroughly in bundled files
         is_jquery = product_id == 90
@@ -263,12 +275,20 @@ class JSLIB:
                 category = lib.get("category", "JavaScript Library")
                 note = lib.get("note", "")
                 
+                # Get vendor from product if product_id is available
+                vendor = None
+                if product_id:
+                    product = self.product_manager.get_product_by_id(product_id)
+                    if product:
+                        vendor = product.get('vendor')
+                
                 storage.add_to_storage(
                     technology=technology,
                     technology_type=category,
                     probability=probability,
                     version=version if version else None,
-                    product_id=product_id
+                    product_id=product_id,
+                    vendor=vendor
                 )
 
 
