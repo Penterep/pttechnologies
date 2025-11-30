@@ -14,7 +14,8 @@
     },
     {
       "product_id": 30,
-      "file": "phpinfo.php"
+      "files": ["phpinfo.php", "phpinfo/php-8.1.html", "secured/phpinfo.php"],
+      "submodule": "phpinfo"
     },
     {
       "product_id": 140,

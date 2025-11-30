@@ -213,36 +213,75 @@ class SOURCES:
             status_msg = f"Found: {test_url} [{status_code}]"
             ptprint(status_msg, "ADDITIONS", not self.args.json, indent=4, colortext=True)
         
+        # Get vendor from product if product_id is available
+        vendor = None
+        if product_id:
+            product = self.product_manager.get_product_by_id(product_id)
+            if product:
+                vendor = product.get('vendor')
+        
         storage.add_to_storage(
             technology=technology, 
             technology_type=category, 
             probability=probability,
-            product_id=product_id
+            product_id=product_id,
+            vendor=vendor
         )
                 
         ptprint(f"{technology} ({category})", "VULN", not self.args.json, indent=4, end=" ")
         ptprint(f"({probability}%)", "ADDITIONS", not self.args.json, colortext=True)
 
         if tech_info.get("additional_info"):
+            apache_version_items = []
+            apache_modules = []
+            php_version_items = []
+            php_extensions = []
+            other_items = []
+            
             for info in tech_info["additional_info"]:
-                lines = info.strip().split('\n')
+                lines = info.split('\n')
                 if lines:
+                    first_line = lines[0]
+                    first_line_stripped = first_line.strip()
+                    if first_line.startswith("    "):
+                        if product_id == 10:
+                            apache_modules.append(info)
+                        elif product_id == 30:
+                            php_extensions.append(info)
+                        else:
+                            other_items.append(info)
+                    elif "Apache" in first_line_stripped and product_id == 10:
+                        apache_version_items.append(info)
+                    elif "PHP" in first_line_stripped and product_id == 30:
+                        php_version_items.append(info)
+                    else:
+                        other_items.append(info)
+            
+            sorted_additional_info = apache_version_items + apache_modules + php_version_items + php_extensions + other_items
+            
+            for info in sorted_additional_info:
+                lines = info.split('\n')
+                if lines:
+                    first_line = lines[0]
+                    is_indented = first_line.startswith("    ")
+                    display_line = first_line[4:].strip() if is_indented else first_line.strip()
+                    indent_level = 12 if is_indented else 8
+                    
                     if self.args.verbose and len(lines) > 1:
                         for detail_line in lines[1:]:
                             if detail_line.strip():
-                                ptprint(f"{detail_line}", "ADDITIONS", not self.args.json, indent=4, colortext=True)
+                                ptprint(f"{detail_line.strip()}", "ADDITIONS", not self.args.json, indent=4, colortext=True)
                     
-                    first_line = lines[0]
-                    last_space_idx = first_line.rfind(' ')
+                    last_space_idx = display_line.rfind(' ')
                     if last_space_idx != -1:
-                        tech_part = first_line[:last_space_idx]
-                        prob_part = first_line[last_space_idx:]
+                        tech_part = display_line[:last_space_idx]
+                        prob_part = display_line[last_space_idx:]
 
-                        ptprint(f"{tech_part}", "VULN", not self.args.json, indent=8, end="")
+                        ptprint(f"{tech_part}", "VULN", not self.args.json, indent=indent_level, end="")
                         ptprint(f"{prob_part}", "ADDITIONS", not self.args.json, colortext=True)
 
                     else:
-                        ptprint(f"{first_line}", "VULN", not self.args.json, indent=8)
+                        ptprint(f"{display_line}", "VULN", not self.args.json, indent=indent_level)
 
 
 def run(args: object, ptjsonlib: object, helpers: object, http_client: object, responses: StoredResponses):

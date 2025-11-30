@@ -71,6 +71,7 @@ class ProductManager:
                 "products/web_servers.json",
                 "products/app_servers.json",
                 "products/languages.json",
+                "products/php_extensions.json",
                 "products/frameworks_frontend.json",
                 "products/frameworks_backend.json",
                 "products/cms.json",
