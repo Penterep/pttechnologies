@@ -386,11 +386,13 @@ class PLUGINS:
                 
                 probability = 100
                 
-                # Get category from ProductManager if product_id exists
+                # Get category and vendor from ProductManager if product_id exists
+                vendor = None
                 if product_id:
                     product = self.product_manager.get_product_by_id(product_id)
                     if product:
                         category_name = self.product_manager.get_category_name(product.get("category_id"))
+                        vendor = product.get('vendor')
                     else:
                         category_name = "Plugin"
                 else:
@@ -402,7 +404,8 @@ class PLUGINS:
                     vulnerability="PTV-WEB-INFO-PLUGIN",
                     probability=probability,
                     version=version if version else None,
-                    product_id=product_id
+                    product_id=product_id,
+                    vendor=vendor
                 )
                 
                 if self.args.verbose:

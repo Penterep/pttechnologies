@@ -190,7 +190,8 @@ class OSCS:
                 if product:
                     technology_name = product.get('our_name', 'Windows')
                     category_name = product_manager.get_category_name(product.get('category_id'))
-                    storage.add_to_storage(technology=technology_name, technology_type=category_name, vulnerability="PTV-WEB-INFO-OSSEN")
+                    vendor = product.get('vendor')
+                    storage.add_to_storage(technology=technology_name, technology_type=category_name, vulnerability="PTV-WEB-INFO-OSSEN", vendor=vendor)
                     ptprint(f"Identified OS: {technology_name}", "VULN", not self.args.json, indent = 4, end=" ")
                     ptprint(f"({probability}%)", "ADDITIONS", not self.args.json, colortext=True)
             else:
@@ -199,7 +200,8 @@ class OSCS:
                 if product:
                     technology_name = product.get('our_name', 'Linux')
                     category_name = product_manager.get_category_name(product.get('category_id'))
-                    storage.add_to_storage(technology=technology_name, technology_type=category_name, vulnerability="PTV-WEB-INFO-OSSEN")
+                    vendor = product.get('vendor')
+                    storage.add_to_storage(technology=technology_name, technology_type=category_name, vulnerability="PTV-WEB-INFO-OSSEN", vendor=vendor)
                     ptprint("Identified OS: Unix / Linux", "VULN", not self.args.json, indent = 4, end=" ")
                     ptprint(f"({probability}%)", "ADDITIONS", not self.args.json, colortext=True)
         else:
