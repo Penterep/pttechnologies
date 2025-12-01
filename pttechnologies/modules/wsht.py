@@ -76,7 +76,8 @@ class WSHT:
                 if product:
                     technology_name = product.get('our_name', 'Apache')
                     category_name = product_manager.get_category_name(product.get('category_id'))
-                    storage.add_to_storage(technology=technology_name, technology_type=category_name, vulnerability="PTV-WEB-INFO-WSHT", probability=probability)
+                    vendor = product.get('vendor')
+                    storage.add_to_storage(technology=technology_name, technology_type=category_name, vulnerability="PTV-WEB-INFO-WSHT", probability=probability, vendor=vendor)
                     ptprint(f"Identified WS: {technology_name}", "VULN", not self.args.json, indent=4, end=" ")
                     ptprint(f"({probability}%)", "ADDITIONS", not self.args.json, colortext=True)
             else:

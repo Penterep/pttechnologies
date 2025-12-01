@@ -61,12 +61,18 @@ def analyze(tech_info: Dict[str, Any], args: object, helpers: object) -> Dict[st
             
             tech_info['additional_info'].append('\n'.join(info_lines))
             
+            # Get vendor from component (already included in result dictionary)
+            vendor = component.get('vendor')
+            product_id = component.get('product_id')
+            
             storage.add_to_storage(
                 technology=component['technology'],
                 version=component.get('version'),
                 technology_type=component['category'],
                 probability=component.get('probability', 100),
-                description=f"Adminer Detection: {component['technology']}"
+                description=f"Adminer Detection: {component['technology']}",
+                product_id=product_id,
+                vendor=vendor
             )
 
     return tech_info
@@ -160,12 +166,14 @@ def _match_pattern(content: str, pattern_def: Dict[str, Any], args: object) -> O
     
     technology_name = product.get('our_name', 'Unknown')
     category_name = product_manager.get_category_name(product.get('category_id'))
+    vendor = product.get('vendor', '')
     
     result = {
         'name': pattern_def.get('name', 'Unknown'),
         'product_id': product_id,
         'technology': technology_name,
         'category': category_name,
+        'vendor': vendor,
         'version': None,
         'probability': pattern_def.get('probability', 100),
         'source': pattern_def.get('source', 'unknown'),

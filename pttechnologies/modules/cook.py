@@ -272,12 +272,20 @@ class COOK:
         if description:
             storage_description += f": {description}"
         
+        # Get vendor from product if product_id is available
+        vendor = None
+        if product_id:
+            product = self.product_manager.get_product_by_id(product_id)
+            if product:
+                vendor = product.get('vendor')
+        
         storage.add_to_storage(
             technology=technology,
             technology_type=technology_type,
             description=storage_description,
             probability=probability,
-            product_id=product_id
+            product_id=product_id,
+            vendor=vendor
         )
         
         self._display_result(technology, technology_type, cookie_name, cookie_value, description, probability)

@@ -58,19 +58,30 @@ def analyze(tech_info: Dict[str, Any], args: object, helpers: object) -> Dict[st
             category_str = f" ({component['category']})" if component.get('category') else ""
             probability_str = f" ({component.get('probability', 100)}%)"
             
-            info_lines = [f"{component['technology']}{version_str}{category_str}{probability_str}"]
+            # If this is an Apache module (vendor="apache" and category_id=11), add indentation
+            is_apache_module = (component.get('vendor', '').lower() == 'apache' and 
+                               component.get('category_id') == 11)
+            indent_prefix = "    " if is_apache_module else ""
+            
+            info_lines = [f"{indent_prefix}{component['technology']}{version_str}{category_str}{probability_str}"]
             
             if component.get('matched_text'):
                 info_lines.append(f"    Match: '{component['matched_text']}'")
             
             tech_info['additional_info'].append('\n'.join(info_lines))
             
+            # Get vendor from product if product_id is available
+            vendor = component.get('vendor')
+            product_id = component.get('product_id')
+            
             storage.add_to_storage(
                 technology=component['technology'],
                 version=component.get('version'),
                 technology_type=component['category'],
                 probability=component.get('probability', 100),
-                description=f"Apache Status Page: {component['technology']}"
+                description=f"Apache Status Page: {component['technology']}",
+                product_id=product_id,
+                vendor=vendor
             )
 
     return tech_info
@@ -168,13 +179,17 @@ def _match_pattern(content: str, pattern_def: Dict[str, Any], args: object) -> O
         return None
     
     technology_name = product.get('our_name', 'Unknown')
-    category_name = product_manager.get_category_name(product.get('category_id'))
+    category_id = product.get('category_id')
+    category_name = product_manager.get_category_name(category_id)
+    vendor = product.get('vendor', '')
     
     result = {
         'name': pattern_def.get('name', 'Unknown'),
         'product_id': product_id,
         'technology': technology_name,
         'category': category_name,
+        'category_id': category_id,
+        'vendor': vendor,
         'version': None,
         'probability': pattern_def.get('probability', 100),
         'source': pattern_def.get('source', 'unknown'),

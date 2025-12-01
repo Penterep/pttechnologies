@@ -204,6 +204,7 @@ class Meta:
         
         technology = product.get("our_name", "Unknown")
         technology_type = self.product_manager.get_category_name(product.get("category_id"))
+        vendor = product.get('vendor')
         
         probability = pattern.get("probability", 100)
         version_group = pattern.get("version_group")
@@ -220,7 +221,8 @@ class Meta:
             technology_type=technology_type,
             probability=probability,
             description=description,
-            product_id=product_id
+            product_id=product_id,
+            vendor=vendor
         )
         
         self._display_result(technology, version, technology_type, meta_name, content, probability)
