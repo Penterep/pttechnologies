@@ -361,6 +361,11 @@
                 "product_id": 30,
                 "probability": 100,
                 "description": "phpMyAdmin (DatabaseManagement)"
+            },
+            {
+                "product_id": 200,
+                "probability": 100,
+                "description": "phpMyAdmin (DatabaseManagement)"
             }
         ]
     },
@@ -371,6 +376,11 @@
         "predict":[
             {
                 "product_id": 30,
+                "probability": 100,
+                "description": "Adminer (DatabaseManagement)"
+            },
+            {
+                "product_id": 200,
                 "probability": 100,
                 "description": "Adminer (DatabaseManagement)"
             }
