@@ -1,0 +1,1864 @@
+{
+  "patterns": [
+    {
+      "name": "AMQP Detection and Version",
+      "product_id": 517,
+      "pattern": "<h2>\\s*<a\\s+name=\"module_amqp\">amqp</a>\\s*</h2>.*?<th>Version</th>\\s*<th>([\\d\\.]+)",
+      "version_pattern": "<h2>\\s*<a\\s+name=\"module_amqp\">amqp</a>\\s*</h2>.*?<th>Version</th>\\s*<th>([\\d\\.]+)",
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects AMQP and version"
+    },
+    {
+      "name": "AMQP Detection and Version (Configuration format)",
+      "product_id": 517,
+      "pattern": "Configuration[\\s\\S]*?amqp[\\s\\S]*?<table[^>]*>",
+      "version_pattern": "<h2>\\s*<a\\s+name=\"module_amqp\">amqp</a>\\s*</h2>.*?<th>Version</th>\\s*<th>([\\d\\.]+)",
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects AMQP and version"
+    },
+    {
+      "name": "Apache Detection (Server API row)",
+      "product_id": 10,
+      "pattern": "<td\\s+class=\"e\">\\s*Server\\s+API\\s*</td>\\s*<td\\s+class=\"v\">[^<]*Apache",
+      "version_pattern": null,
+      "flags": "i",
+      "source": "server_api",
+      "probability": 90,
+      "_comment": "Detects Apache from Server API row"
+    },
+    {
+      "name": "Apache Detection (SERVER_SOFTWARE)",
+      "product_id": 10,
+      "pattern": "<td\\s+class=\"e\">\\s*SERVER_SOFTWARE\\s*</td>\\s*<td\\s+class=\"v\">\\s*Apache(?:/([\\d\\.]+))?",
+      "version_pattern": "Apache/([\\d\\.]+)",
+      "flags": "i",
+      "source": "environment",
+      "probability": 100,
+      "_comment": "Detects Apache and version from SERVER_SOFTWARE environment variable"
+    },
+    {
+      "name": "APCu Detection and Version",
+      "product_id": 533,
+      "pattern": "<h2>\\s*<a\\s+name=\"module_apcu\">apcu</a>\\s*</h2>.*?<tr><td\\s+class=\"e\">\\s*Version\\s*</td><td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "version_pattern": "<a\\s+name=\"module_apcu\">apcu</a>\\s*</h2>.*?<tr><td\\s+class=\"e\">\\s*Version\\s*</td><td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects APCu (Alternative PHP Cache - User Cache) and extracts version from phpinfo output"
+    },
+    {
+      "name": "APCu Detection and Version (Configuration format)",
+      "product_id": 533,
+      "pattern": "Configuration[\\s\\S]*?apcu[\\s\\S]*?<table[^>]*>",
+      "version_pattern": "<a\\s+name=\"module_apcu\">apcu</a>\\s*</h2>.*?<tr><td\\s+class=\"e\">\\s*Version\\s*</td><td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects APCu (Alternative PHP Cache - User Cache) and extracts version from phpinfo output"
+    },
+    {
+      "name": "APFD Detection and Version",
+      "product_id": 518,
+      "pattern": "<h2>\\s*<a\\s+name=\"module_apfd\">apfd</a>\\s*</h2>.*?<td\\s+class=\"e\">\\s*Extension\\s+Version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "version_pattern": "<h2>\\s*<a\\s+name=\"module_apfd\">apfd</a>\\s*</h2>.*?<td\\s+class=\"e\">\\s*Extension\\s+Version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects APFD and version"
+    },
+    {
+      "name": "APFD Detection and Version (Configuration format)",
+      "product_id": 518,
+      "pattern": "Configuration[\\s\\S]*?apfd[\\s\\S]*?<table[^>]*>",
+      "version_pattern": "<h2>\\s*<a\\s+name=\"module_apfd\">apfd</a>\\s*</h2>.*?<td\\s+class=\"e\">\\s*Extension\\s+Version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects APFD and version"
+    },
+    {
+      "name": "AST Detection and Version",
+      "product_id": 519,
+      "pattern": "<h2>\\s*<a\\s+name=\"module_ast\">ast</a>\\s*</h2>.*?<td\\s+class=\"e\">\\s*extension\\s+version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "version_pattern": "<h2>\\s*<a\\s+name=\"module_ast\">ast</a>\\s*</h2>.*?<td\\s+class=\"e\">\\s*extension\\s+version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects AST and version"
+    },
+    {
+      "name": "AST Detection and Version (Configuration format)",
+      "product_id": 519,
+      "pattern": "Configuration[\\s\\S]*?ast[\\s\\S]*?<table[^>]*>",
+      "version_pattern": "<h2>\\s*<a\\s+name=\"module_ast\">ast</a>\\s*</h2>.*?<td\\s+class=\"e\">\\s*extension\\s+version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects AST and version"
+    },
+    {
+      "name": "AWS CRT Detection and Version",
+      "product_id": 520,
+      "pattern": "<h2>\\s*<a\\s+name=\"module_awscrt\">awscrt</a>\\s*</h2>.*?<td\\s+class=\"e\">\\s*Version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "version_pattern": "<h2>\\s*<a\\s+name=\"module_awscrt\">awscrt</a>\\s*</h2>.*?<td\\s+class=\"e\">\\s*Version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects AWS CRT and version"
+    },
+    {
+      "name": "AWS CRT Detection and Version (Configuration format)",
+      "product_id": 520,
+      "pattern": "Configuration[\\s\\S]*?awscrt[\\s\\S]*?<table[^>]*>",
+      "version_pattern": "<h2>\\s*<a\\s+name=\"module_awscrt\">awscrt</a>\\s*</h2>.*?<td\\s+class=\"e\">\\s*Version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects AWS CRT and version"
+    },
+    {
+      "name": "Base58 Detection and Version",
+      "product_id": 521,
+      "pattern": "<h2>\\s*<a\\s+name=\"module_base58\">base58</a>\\s*</h2>.*?<td\\s+class=\"e\">\\s*Version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "version_pattern": "<h2>\\s*<a\\s+name=\"module_base58\">base58</a>\\s*</h2>.*?<td\\s+class=\"e\">\\s*Version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects Base58 and version"
+    },
+    {
+      "name": "Base58 Detection and Version (Configuration format)",
+      "product_id": 521,
+      "pattern": "Configuration[\\s\\S]*?base58[\\s\\S]*?<table[^>]*>",
+      "version_pattern": "<h2>\\s*<a\\s+name=\"module_base58\">base58</a>\\s*</h2>.*?<td\\s+class=\"e\">\\s*Version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects Base58 and version"
+    },
+    {
+      "name": "BcMath Detection",
+      "product_id": 329,
+      "pattern": "<h2>\\s*<a\\s+name=\"module_bcmath\">bcmath</a>\\s*</h2|bcmath</h2>",
+      "version_pattern": null,
+      "flags": "i",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects BcMath extension"
+    },
+    {
+      "name": "BcMath Detection (Configuration format)",
+      "product_id": 329,
+      "pattern": "Configuration[\\s\\S]*?bcmath[\\s\\S]*?<table[^>]*>.*?<td\\s+class=\"e\">\\s*BCMath\\s+support",
+      "version_pattern": null,
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects BcMath extension in Configuration format"
+    },
+    {
+      "name": "BitSet Detection and Version",
+      "product_id": 522,
+      "pattern": "<h2>\\s*<a\\s+name=\"module_bitset\">bitset</a>\\s*</h2>.*?<td\\s+class=\"e\">\\s*BitSet\\s+Version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "version_pattern": "<h2>\\s*<a\\s+name=\"module_bitset\">bitset</a>\\s*</h2>.*?<td\\s+class=\"e\">\\s*BitSet\\s+Version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects BitSet and version"
+    },
+    {
+      "name": "BitSet Detection and Version (Configuration format)",
+      "product_id": 522,
+      "pattern": "Configuration[\\s\\S]*?bitset[\\s\\S]*?<table[^>]*>",
+      "version_pattern": "<h2>\\s*<a\\s+name=\"module_bitset\">bitset</a>\\s*</h2>.*?<td\\s+class=\"e\">\\s*BitSet\\s+Version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects BitSet and version"
+    },
+    {
+      "name": "Blackfire Detection and Version",
+      "product_id": 523,
+      "pattern": "<h2>\\s*<a\\s+name=\"module_blackfire\">blackfire</a>\\s*</h2>.*?<td\\s+class=\"e\">\\s*Blackfire\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+[^<]*)",
+      "version_pattern": "<h2>\\s*<a\\s+name=\"module_blackfire\">blackfire</a>\\s*</h2>.*?<td\\s+class=\"e\">\\s*Blackfire\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects Blackfire and version"
+    },
+    {
+      "name": "Blackfire Detection and Version (Configuration format)",
+      "product_id": 523,
+      "pattern": "Configuration[\\s\\S]*?blackfire[\\s\\S]*?<table[^>]*>",
+      "version_pattern": "<h2>\\s*<a\\s+name=\"module_blackfire\">blackfire</a>\\s*</h2>.*?<td\\s+class=\"e\">\\s*Blackfire\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects Blackfire and version"
+    },
+    {
+      "name": "Brotli Detection and Version",
+      "product_id": 524,
+      "pattern": "<h2>\\s*<a\\s+name=\"module_brotli\">brotli</a>\\s*</h2>.*?<td\\s+class=\"e\">\\s*Extension\\s+Version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "version_pattern": "<h2>\\s*<a\\s+name=\"module_brotli\">brotli</a>\\s*</h2>.*?<td\\s+class=\"e\">\\s*Extension\\s+Version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects Brotli and version"
+    },
+    {
+      "name": "Brotli Detection and Version (Configuration format)",
+      "product_id": 524,
+      "pattern": "Configuration[\\s\\S]*?brotli[\\s\\S]*?<table[^>]*>",
+      "version_pattern": "<h2>\\s*<a\\s+name=\"module_brotli\">brotli</a>\\s*</h2>.*?<td\\s+class=\"e\">\\s*Extension\\s+Version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects Brotli and version"
+    },
+    {
+      "name": "Bzip2 Detection and Version",
+      "product_id": 330,
+      "pattern": "<h2>\\s*<a\\s+name=\"module_bz2\">bz2</a>\\s*</h2>.*?<td\\s+class=\"e\">\\s*BZip2\\s+Version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "version_pattern": "BZip2\\s+Version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects Bzip2 and version"
+    },
+    {
+      "name": "Bzip2 Detection and Version (Configuration format)",
+      "product_id": 330,
+      "pattern": "Configuration[\\s\\S]*?bz2[\\s\\S]*?<table[^>]*>.*?<td\\s+class=\"e\">\\s*BZip2\\s+Version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "version_pattern": "BZip2\\s+Version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects Bzip2 and version in Configuration format"
+    },
+    {
+      "name": "Calendar Detection",
+      "product_id": 331,
+      "pattern": "<h2>\\s*<a\\s+name=\"module_calendar\">calendar</a>\\s*</h2>",
+      "version_pattern": null,
+      "flags": "i",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects Calendar extension"
+    },
+    {
+      "name": "Calendar Detection (Configuration format)",
+      "product_id": 331,
+      "pattern": "Configuration[\\s\\S]*?calendar[\\s\\S]*?<table[^>]*>.*?<td\\s+class=\"e\">\\s*Calendar\\s+support",
+      "version_pattern": null,
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects Calendar extension in Configuration format"
+    },
+    {
+      "name": "CentOS Detection and Version (System row)",
+      "product_id": 4,
+      "pattern": "<td\\s+class=\"e\">\\s*System\\s*</td>\\s*<td\\s+class=\"v\">[^<]*CentOS",
+      "version_pattern": "CentOS[\\s/]+([\\d\\.]+)",
+      "flags": "i",
+      "source": "system_distro",
+      "probability": 100,
+      "_comment": "Detects CentOS and version from System row"
+    },
+    {
+      "name": "CGI-FastCGI Detection",
+      "product_id": 525,
+      "pattern": "<h2>\\s*<a\\s+name=\"module_cgi-fcgi\">cgi-fcgi</a>\\s*</h2>",
+      "version_pattern": null,
+      "flags": "i",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects CGI-FastCGI extension"
+    },
+    {
+      "name": "CGI-FastCGI Detection (Configuration format)",
+      "product_id": 525,
+      "pattern": "Configuration[\\s\\S]*?cgi[\\s\\S]*?<table[^>]*>",
+      "version_pattern": null,
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects CGI-FastCGI extension"
+    },
+    {
+      "name": "Com_dotnet Detection",
+      "product_id": 534,
+      "pattern": "<h2>\\s*<a\\s+name=\"module_com_dotnet\">com_dotnet</a>\\s*</h2>",
+      "version_pattern": null,
+      "flags": "i",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects com_dotnet extension"
+    },
+    {
+      "name": "Com_dotnet Detection (Configuration format)",
+      "product_id": 534,
+      "pattern": "Configuration[\\s\\S]*?com_dotnet[\\s\\S]*?<table[^>]*>",
+      "version_pattern": null,
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects com_dotnet extension"
+    },
+    {
+      "name": "COM Detection",
+      "product_id": 334,
+      "pattern": "<h2>\\s*<a\\s+name=\"module_com_dotnet\">com_dotnet</a>\\s*</h2>",
+      "version_pattern": null,
+      "flags": "i",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects COM extension"
+    },
+    {
+      "name": "Couchbase Detection and Version",
+      "product_id": 526,
+      "pattern": "<h2>\\s*<a\\s+name=\"module_couchbase\">couchbase</a>\\s*</h2>.*?<td\\s+class=\"e\">\\s*couchbase_extension_version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "version_pattern": "<h2>\\s*<a\\s+name=\"module_couchbase\">couchbase</a>\\s*</h2>.*?<td\\s+class=\"e\">\\s*couchbase_extension_version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects Couchbase and version"
+    },
+    {
+      "name": "Couchbase Detection and Version (Configuration format)",
+      "product_id": 526,
+      "pattern": "Configuration[\\s\\S]*?couchbase[\\s\\S]*?<table[^>]*>",
+      "version_pattern": "<h2>\\s*<a\\s+name=\"module_couchbase\">couchbase</a>\\s*</h2>.*?<td\\s+class=\"e\">\\s*couchbase_extension_version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects Couchbase and version"
+    },
+    {
+      "product_id": 535,
+      "pattern": "<h2>\\s*<a\\s+name=\"module_crypto\">crypto</a>\\s*</h2>",
+      "version_pattern": "<tr>\\s*<td\\s+class=\"e\">\\s*Crypto\\s+Version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "flags": "is",
+      "source": "module",
+      "probability": 100
+    },
+    {
+      "product_id": 535,
+      "pattern": "Configuration[\\s\\S]*?crypto[\\s\\S]*?<table[^>]*>",
+      "version_pattern": "<tr>\\s*<td\\s+class=\"e\">\\s*Crypto\\s+Version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "name": " (Configuration format)"
+    },
+    {
+      "name": "cpdf Detection and Version",
+      "product_id": 508,
+      "pattern": "<h2>\\s*<a\\s+name=\"module_cpdf\">cpdf</a>\\s*</h2>.*?<tr><td\\s+class=\"e\">\\s*Version\\s*</td><td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "version_pattern": "<h2>\\s*<a\\s+name=\"module_cpdf\">cpdf</a>\\s*</h2>.*?<tr><td\\s+class=\"e\">\\s*Version\\s*</td><td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects cpdf and version (e.g. 2.02, extracts only numeric version without suffix)"
+    },
+    {
+      "name": "cpdf Detection and Version (Configuration format)",
+      "product_id": 508,
+      "pattern": "Configuration[\\s\\S]*?cpdf[\\s\\S]*?<table[^>]*>",
+      "version_pattern": "<h2>\\s*<a\\s+name=\"module_cpdf\">cpdf</a>\\s*</h2>.*?<tr><td\\s+class=\"e\">\\s*Version\\s*</td><td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects cpdf and version (e.g. 2.02, extracts only numeric version without suffix)"
+    },
+    {
+      "name": "CSV Detection and Version",
+      "product_id": 527,
+      "pattern": "<h2>\\s*<a\\s+name=\"module_csv\">csv</a>\\s*</h2>.*?<th>Version</th>\\s*<th>([\\d\\.]+)",
+      "version_pattern": "<h2>\\s*<a\\s+name=\"module_csv\">csv</a>\\s*</h2>.*?<th>Version</th>\\s*<th>([\\d\\.]+)",
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects CSV and version"
+    },
+    {
+      "name": "CSV Detection and Version (Configuration format)",
+      "product_id": 527,
+      "pattern": "Configuration[\\s\\S]*?csv[\\s\\S]*?<table[^>]*>",
+      "version_pattern": "<h2>\\s*<a\\s+name=\"module_csv\">csv</a>\\s*</h2>.*?<th>Version</th>\\s*<th>([\\d\\.]+)",
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects CSV and version"
+    },
+    {
+      "name": "Ctype Detection",
+      "product_id": 336,
+      "pattern": "<h2>\\s*<a\\s+name=\"module_ctype\">ctype</a>\\s*</h2>",
+      "version_pattern": null,
+      "flags": "i",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects Ctype extension"
+    },
+    {
+      "name": "Ctype Detection (Configuration format)",
+      "product_id": 336,
+      "pattern": "Configuration[\\s\\S]*?ctype[\\s\\S]*?<table[^>]*>",
+      "version_pattern": null,
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects Ctype extension"
+    },
+    {
+      "name": "cURL Detection and Version",
+      "product_id": 338,
+      "pattern": "<h2>\\s*<a\\s+name=\"module_curl\">curl</a>\\s*</h2>.*?<td\\s+class=\"e\">\\s*CURL\\s+Information\\s*</td>\\s*<td\\s+class=\"v\">\\s*libcurl/([\\d\\.]+)",
+      "version_pattern": "libcurl/([\\d\\.]+)",
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects cURL and libcurl version"
+    },
+    {
+      "name": "cURL Detection and Version (Configuration format)",
+      "product_id": 338,
+      "pattern": "Configuration[\\s\\S]*?curl[\\s\\S]*?<table[^>]*>",
+      "version_pattern": "<td\\s+class=\"e\">\\s*cURL\\s+Information\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects cURL and libcurl version"
+    },
+    {
+      "name": "Date/Time Detection",
+      "product_id": 339,
+      "pattern": "<h2>\\s*<a\\s+name=\"module_date\">date</a>\\s*</h2>",
+      "version_pattern": null,
+      "flags": "i",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects Date/Time extension"
+    },
+    {
+      "name": "Date/Time Detection (Configuration format)",
+      "product_id": 339,
+      "pattern": "Configuration[\\s\\S]*?date[\\s\\S]*?<table[^>]*>",
+      "version_pattern": "<td\\s+class=\"e\">\\s*\"Olson\"\\s+Timezone\\s+Database\\s+Version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects Date/Time extension"
+    },
+    {
+      "name": "DBA Detection",
+      "product_id": 340,
+      "pattern": "<h2>\\s*<a\\s+name=\"module_dba\">dba</a>\\s*</h2>",
+      "version_pattern": null,
+      "flags": "i",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects DBA extension"
+    },
+    {
+      "name": "DBA Detection (Configuration format)",
+      "product_id": 340,
+      "pattern": "Configuration[\\s\\S]*?dba[\\s\\S]*?<table[^>]*>",
+      "version_pattern": null,
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects DBA extension"
+    },
+    {
+      "name": "dBase Detection",
+      "product_id": 341,
+      "pattern": "<h2>\\s*<a\\s+name=\"module_dbase\">dbase</a>\\s*</h2>|<tr><td>dbase</td></tr>",
+      "version_pattern": null,
+      "flags": "i",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects dBase extension"
+    },
+    {
+      "name": "dBase Detection (Configuration format)",
+      "product_id": 341,
+      "pattern": "Configuration[\\s\\S]*?dbase[\\s\\S]*?<table[^>]*>",
+      "version_pattern": null,
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects dBase extension"
+    },
+    {
+      "name": "dBase Detection and Version",
+      "product_id": 341,
+      "pattern": "<h2>\\s*<a\\s+name=\"module_dbase\">dbase</a>\\s*</h2>.*?<td\\s+class=\"e\">\\s*Version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "version_pattern": "<h2>\\s*<a\\s+name=\"module_dbase\">dbase</a>\\s*</h2>.*?<td\\s+class=\"e\">\\s*Version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects dBase and version"
+    },
+    {
+      "name": "DBX Detection and Version",
+      "product_id": 507,
+      "pattern": "<h2>\\s*<a\\s+name=\"module_dbx\">dbx</a>\\s*</h2>.*?<td\\s+class=\"e\">\\s*dbx\\s+version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "version_pattern": "dbx\\s+version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects DBX and version"
+    },
+    {
+      "name": "DBX Detection and Version (Configuration format)",
+      "product_id": 507,
+      "pattern": "Configuration[\\s\\S]*?dbx[\\s\\S]*?<table[^>]*>",
+      "version_pattern": "dbx\\s+version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects DBX and version"
+    },
+    {
+      "name": "ddtrace Detection and Version",
+      "product_id": 528,
+      "pattern": "<h2>\\s*<a\\s+name=\"module_ddtrace\">ddtrace</a>\\s*</h2>.*?<td\\s+class=\"e\">\\s*Version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "version_pattern": "<h2>\\s*<a\\s+name=\"module_ddtrace\">ddtrace</a>\\s*</h2>.*?<td\\s+class=\"e\">\\s*Version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects ddtrace and version"
+    },
+    {
+      "name": "ddtrace Detection and Version (Configuration format)",
+      "product_id": 528,
+      "pattern": "Configuration[\\s\\S]*?ddtrace[\\s\\S]*?<table[^>]*>",
+      "version_pattern": "<h2>\\s*<a\\s+name=\"module_ddtrace\">ddtrace</a>\\s*</h2>.*?<td\\s+class=\"e\">\\s*Version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects ddtrace and version"
+    },
+    {
+      "name": "Debian Detection and Version (System row)",
+      "product_id": 3,
+      "pattern": "<td\\s+class=\"e\">\\s*System\\s*</td>\\s*<td\\s+class=\"v\">[^<]*Debian",
+      "version_pattern": "Debian\\s+[\\d\\.]+[^\\s]*\\+deb(\\d+)",
+      "flags": "i",
+      "source": "system_distro",
+      "probability": 100
+    },
+    {
+      "name": "Decimal Detection and Version",
+      "product_id": 529,
+      "pattern": "<h2>\\s*<a\\s+name=\"module_decimal\">decimal</a>\\s*</h2>.*?<td\\s+class=\"e\">\\s*decimal\\s+version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "version_pattern": "<h2>\\s*<a\\s+name=\"module_decimal\">decimal</a>\\s*</h2>.*?<td\\s+class=\"e\">\\s*decimal\\s+version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects Decimal and version"
+    },
+    {
+      "name": "Decimal Detection and Version (Configuration format)",
+      "product_id": 529,
+      "pattern": "Configuration[\\s\\S]*?decimal[\\s\\S]*?<table[^>]*>",
+      "version_pattern": "<h2>\\s*<a\\s+name=\"module_decimal\">decimal</a>\\s*</h2>.*?<td\\s+class=\"e\">\\s*decimal\\s+version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects Decimal and version"
+    },
+    {
+      "name": "Direct IO Detection",
+      "product_id": 342,
+      "pattern": "<h2>\\s*<a\\s+name=\"module_dio\">dio</a>\\s*</h2>",
+      "version_pattern": "<h2>\\s*<a\\s+name=\"module_dio\">dio</a>\\s*</h2>[\\s\\S]*?<td\\s+class=\"e\">\\s*version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "_comment": "Detects Direct IO extension"
+    },
+    {
+      "name": "Direct IO Detection (Configuration format)",
+      "product_id": 342,
+      "pattern": "Configuration[\\s\\S]*?dio[\\s\\S]*?<table[^>]*>",
+      "version_pattern": "<h2>\\s*<a\\s+name=\"module_dio\">dio</a>\\s*</h2>[\\s\\S]*?<td\\s+class=\"e\">\\s*version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "_comment": "Detects Direct IO extension"
+    },
+    {
+      "name": "dl_test Detection",
+      "product_id": 530,
+      "pattern": "<h2>\\s*<a\\s+name=\"module_dl_test\">dl_test</a>\\s*</h2>",
+      "version_pattern": null,
+      "flags": "i",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects dl_test extension"
+    },
+    {
+      "name": "dl_test Detection (Configuration format)",
+      "product_id": 530,
+      "pattern": "Configuration[\\s\\S]*?dl_test[\\s\\S]*?<table[^>]*>",
+      "version_pattern": null,
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects dl_test extension"
+    },
+    {
+      "name": "DOM Detection and Version",
+      "product_id": 344,
+      "pattern": "<h2>\\s*<a\\s+name=\"module_dom\">dom</a>\\s*</h2>.*?<td\\s+class=\"e\">\\s*libxml\\s+Version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "version_pattern": "libxml\\s+Version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects DOM and libxml version"
+    },
+    {
+      "name": "DOM Detection and Version (Configuration format)",
+      "product_id": 344,
+      "pattern": "Configuration[\\s\\S]*?dom[\\s\\S]*?<table[^>]*>",
+      "version_pattern": "libxml\\s+Version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects DOM and libxml version"
+    },
+    {
+      "name": "Data Structures Detection and Version",
+      "product_id": 345,
+      "pattern": "<h2>\\s*<a\\s+name=\"module_ds\">ds</a>\\s*</h2>.*?<td\\s+class=\"e\">\\s*ds\\s+version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "version_pattern": "<h2>\\s*<a\\s+name=\"module_ds\">ds</a>\\s*</h2>.*?<td\\s+class=\"e\">\\s*ds\\s+version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects Data Structures and version"
+    },
+    {
+      "name": "Data Structures Detection and Version (Configuration format)",
+      "product_id": 345,
+      "pattern": "Configuration[\\s\\S]*?ds[\\s\\S]*?<table[^>]*>",
+      "version_pattern": "<h2>\\s*<a\\s+name=\"module_ds\">ds</a>\\s*</h2>.*?<td\\s+class=\"e\">\\s*ds\\s+version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects Data Structures and version"
+    },
+    {
+      "name": "Enchant Detection and Version",
+      "product_id": 536,
+      "pattern": "<h2>\\s*<a\\s+name=\"module_enchant\">enchant</a>\\s*</h2>[\\s\\S]*?<td\\s+class=\"e\">\\s*Libenchant\\s+Version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "version_pattern": "<h2>\\s*<a\\s+name=\"module_enchant\">enchant</a>\\s*</h2>[\\s\\S]*?<td\\s+class=\"e\">\\s*Libenchant\\s+Version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects Enchant module and Libenchant version"
+    },
+    {
+      "name": "Enchant Detection and Version (Configuration format)",
+      "product_id": 536,
+      "pattern": "Configuration[\\s\\S]*?enchant[\\s\\S]*?<table[^>]*>",
+      "version_pattern": "<h2>\\s*<a\\s+name=\"module_enchant\">enchant</a>\\s*</h2>[\\s\\S]*?<td\\s+class=\"e\">\\s*Libenchant\\s+Version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects Enchant module and Libenchant version"
+    },
+    {
+      "name": "Ev Detection and Version",
+      "product_id": 349,
+      "pattern": "<h2>\\s*<a\\s+name=\"module_ev\">ev</a>\\s*</h2>.*?<td\\s+class=\"e\">\\s*Version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "version_pattern": "<h2>\\s*<a\\s+name=\"module_ev\">ev</a>\\s*</h2>.*?<td\\s+class=\"e\">\\s*Version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects Ev and version"
+    },
+    {
+      "name": "Ev Detection and Version (Configuration format)",
+      "product_id": 349,
+      "pattern": "Configuration[\\s\\S]*?ev[\\s\\S]*?<table[^>]*>",
+      "version_pattern": "<h2>\\s*<a\\s+name=\"module_ev\">ev</a>\\s*</h2>.*?<td\\s+class=\"e\">\\s*Version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects Ev and version"
+    },
+    {
+      "name": "Event Detection and Version",
+      "product_id": 350,
+      "pattern": "<h2>\\s*<a\\s+name=\"module_event\">event</a>\\s*</h2>.*?<td\\s+class=\"e\">\\s*Extension\\s+version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "version_pattern": "<h2>\\s*<a\\s+name=\"module_event\">event</a>\\s*</h2>.*?<td\\s+class=\"e\">\\s*Extension\\s+version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects Event and version"
+    },
+    {
+      "name": "Event Detection and Version (Configuration format)",
+      "product_id": 350,
+      "pattern": "Configuration[\\s\\S]*?event[\\s\\S]*?<table[^>]*>",
+      "version_pattern": "<h2>\\s*<a\\s+name=\"module_event\">event</a>\\s*</h2>.*?<td\\s+class=\"e\">\\s*Extension\\s+version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects Event and version"
+    },
+    {
+      "name": "Exif Detection and Version",
+      "product_id": 352,
+      "pattern": "<h2>\\s*<a\\s+name=\"module_exif\">exif</a>\\s*</h2>",
+      "version_pattern": "EXIF\\s+Version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects Exif and version"
+    },
+    {
+      "name": "Exif Detection and Version (Configuration format)",
+      "product_id": 352,
+      "pattern": "Configuration[\\s\\S]*?exif[\\s\\S]*?<table[^>]*>",
+      "version_pattern": "EXIF\\s+Version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects Exif and version"
+    },
+    {
+      "name": "fam Detection",
+      "product_id": 516,
+      "pattern": "<h2>\\s*<a\\s+name=\"module_fam\">fam</a>\\s*</h2>",
+      "version_pattern": null,
+      "flags": "i",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects fam extension"
+    },
+    {
+      "name": "fam Detection (Configuration format)",
+      "product_id": 516,
+      "pattern": "Configuration[\\s\\S]*?fam[\\s\\S]*?<table[^>]*>",
+      "version_pattern": null,
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects fam extension"
+    },
+    {
+      "name": "FFI Detection",
+      "product_id": 356,
+      "pattern": "<h2>\\s*<a\\s+name=\"module_ffi\">FFI</a>\\s*</h2>",
+      "version_pattern": null,
+      "flags": "i",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects FFI extension"
+    },
+    {
+      "name": "FFI Detection (Configuration format)",
+      "product_id": 356,
+      "pattern": "Configuration[\\s\\S]*?ffi[\\s\\S]*?<table[^>]*>",
+      "version_pattern": null,
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects FFI extension"
+    },
+    {
+      "name": "Fileinfo Detection",
+      "product_id": 357,
+      "pattern": "<h2>\\s*<a\\s+name=\"module_fileinfo\">fileinfo</a>\\s*</h2>",
+      "version_pattern": null,
+      "flags": "i",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects Fileinfo extension"
+    },
+    {
+      "name": "Fileinfo Detection (Configuration format)",
+      "product_id": 357,
+      "pattern": "Configuration[\\s\\S]*?fileinfo[\\s\\S]*?<table[^>]*>",
+      "version_pattern": null,
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects Fileinfo extension"
+    },
+    {
+      "name": "filepro Detection",
+      "product_id": 513,
+      "pattern": "<h2>\\s*<a\\s+name=\"module_filepro\">filepro</a>\\s*</h2>|<tr><td>filepro</td></tr>",
+      "version_pattern": null,
+      "flags": "i",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects filepro extension"
+    },
+    {
+      "name": "filepro Detection (Configuration format)",
+      "product_id": 513,
+      "pattern": "Configuration[\\s\\S]*?filepro[\\s\\S]*?<table[^>]*>",
+      "version_pattern": null,
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects filepro extension"
+    },
+    {
+      "name": "Filter Detection",
+      "product_id": 359,
+      "pattern": "<h2>\\s*<a\\s+name=\"module_filter\">filter</a>\\s*</h2>",
+      "version_pattern": null,
+      "flags": "i",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects Filter extension"
+    },
+    {
+      "name": "Filter Detection (Configuration format)",
+      "product_id": 359,
+      "pattern": "Configuration[\\s\\S]*?filter[\\s\\S]*?<table[^>]*>",
+      "version_pattern": null,
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects Filter extension"
+    },
+    {
+      "name": "FreeBSD Detection and Version (System row)",
+      "product_id": 162,
+      "pattern": "<td\\s+class=\"e\">\\s*System\\s*</td>\\s*<td\\s+class=\"v\">\\s*FreeBSD",
+      "version_pattern": "FreeBSD[\\s/]+([\\d\\.]+)",
+      "flags": "i",
+      "source": "system_distro",
+      "probability": 100,
+      "_comment": "Detects FreeBSD and version from System row"
+    },
+    {
+      "name": "FTP Detection",
+      "product_id": 361,
+      "pattern": "<h2>\\s*<a\\s+name=\"module_ftp\">ftp</a>\\s*</h2>",
+      "version_pattern": null,
+      "flags": "i",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects FTP extension"
+    },
+    {
+      "name": "FTP Detection (Configuration format)",
+      "product_id": 361,
+      "pattern": "Configuration[\\s\\S]*?ftp[\\s\\S]*?<table[^>]*>",
+      "version_pattern": null,
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects FTP extension"
+    },
+    {
+      "name": "GD Detection and Version",
+      "product_id": 376,
+      "pattern": "<h2>\\s*<a\\s+name=\"module_gd\">gd</a>\\s*</h2>.*?<td\\s+class=\"e\">\\s*FreeType\\s+Version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "version_pattern": "FreeType\\s+Version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects GD and FreeType version"
+    },
+    {
+      "name": "GD Detection and Version (Configuration format)",
+      "product_id": 376,
+      "pattern": "Configuration[\\s\\S]*?gd[\\s\\S]*?<table[^>]*>",
+      "version_pattern": "<td\\s+class=\"e\">\\s*GD\\s+Version\\s*</td>\\s*<td\\s+class=\"v\">\\s*bundled\\s+\\(([\\d\\.]+)",
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects GD and FreeType version"
+    },
+    {
+      "name": "GeoIP Detection and Version",
+      "product_id": 365,
+      "pattern": "<h2>\\s*<a\\s+name=\"module_geoip\">geoip</a>\\s*</h2>.*?<td\\s+class=\"e\">\\s*geoip\\s+extension\\s+version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "version_pattern": "<h2>\\s*<a\\s+name=\"module_geoip\">geoip</a>\\s*</h2>.*?<td\\s+class=\"e\">\\s*geoip\\s+extension\\s+version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects GeoIP and version"
+    },
+    {
+      "name": "GeoIP Detection and Version (Configuration format)",
+      "product_id": 365,
+      "pattern": "Configuration[\\s\\S]*?geoip[\\s\\S]*?<table[^>]*>",
+      "version_pattern": "<h2>\\s*<a\\s+name=\"module_geoip\">geoip</a>\\s*</h2>.*?<td\\s+class=\"e\">\\s*geoip\\s+extension\\s+version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects GeoIP and version"
+    },
+    {
+      "name": "Geospatial Detection and Version",
+      "product_id": 531,
+      "pattern": "<h2>\\s*<a\\s+name=\"module_geospatial\">geospatial</a>\\s*</h2>.*?<td\\s+class=\"e\">\\s*Version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "version_pattern": "<h2>\\s*<a\\s+name=\"module_geospatial\">geospatial</a>\\s*</h2>.*?<td\\s+class=\"e\">\\s*Version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects Geospatial and version"
+    },
+    {
+      "name": "Geospatial Detection and Version (Configuration format)",
+      "product_id": 531,
+      "pattern": "Configuration[\\s\\S]*?geospatial[\\s\\S]*?<table[^>]*>",
+      "version_pattern": "<h2>\\s*<a\\s+name=\"module_geospatial\">geospatial</a>\\s*</h2>.*?<td\\s+class=\"e\">\\s*Version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects Geospatial and version"
+    },
+    {
+      "name": "Gettext Detection",
+      "product_id": 366,
+      "pattern": "<h2>\\s*<a\\s+name=\"module_gettext\">gettext</a>\\s*</h2>",
+      "version_pattern": null,
+      "flags": "i",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects Gettext extension"
+    },
+    {
+      "name": "Gettext Detection (Configuration format)",
+      "product_id": 366,
+      "pattern": "Configuration[\\s\\S]*?gettext[\\s\\S]*?<table[^>]*>",
+      "version_pattern": null,
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects Gettext extension"
+    },
+    {
+      "name": "GMP Detection",
+      "product_id": 368,
+      "pattern": "<h2>\\s*<a\\s+name=\"module_gmp\">gmp</a>\\s*</h2>",
+      "version_pattern": null,
+      "flags": "i",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects GMP extension"
+    },
+    {
+      "name": "GMP Detection (Configuration format)",
+      "product_id": 368,
+      "pattern": "Configuration[\\s\\S]*?gmp[\\s\\S]*?<table[^>]*>",
+      "version_pattern": "<td\\s+class=\"e\">\\s*GMP\\s+version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects GMP extension"
+    },
+    {
+      "name": "gRPC Detection and Version",
+      "product_id": 532,
+      "pattern": "<h2>\\s*<a\\s+name=\"module_grpc\">grpc</a>\\s*</h2>.*?<td\\s+class=\"e\">\\s*grpc\\s+module\\s+version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "version_pattern": "<h2>\\s*<a\\s+name=\"module_grpc\">grpc</a>\\s*</h2>.*?<td\\s+class=\"e\">\\s*grpc\\s+module\\s+version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects gRPC and version"
+    },
+    {
+      "name": "gRPC Detection and Version (Configuration format)",
+      "product_id": 532,
+      "pattern": "Configuration[\\s\\S]*?grpc[\\s\\S]*?<table[^>]*>",
+      "version_pattern": "<h2>\\s*<a\\s+name=\"module_grpc\">grpc</a>\\s*</h2>.*?<td\\s+class=\"e\">\\s*grpc\\s+module\\s+version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects gRPC and version"
+    },
+    {
+      "name": "Hash Detection",
+      "product_id": 370,
+      "pattern": "<h2>\\s*<a\\s+name=\"module_hash\">hash</a>\\s*</h2>",
+      "version_pattern": null,
+      "flags": "i",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects Hash extension"
+    },
+    {
+      "name": "Hash Detection (Configuration format)",
+      "product_id": 370,
+      "pattern": "Configuration[\\s\\S]*?hash[\\s\\S]*?<table[^>]*>",
+      "version_pattern": null,
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects Hash extension"
+    },
+    {
+      "name": "IBM DB2 Detection and Version",
+      "product_id": 373,
+      "pattern": "<h2>\\s*<a\\s+name=\"module_ibm_db2\">ibm_db2</a>\\s*</h2>.*?<td\\s+class=\"e\">\\s*Module\\s+release\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "version_pattern": "Module\\s+release\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects IBM DB2 and version from Module release"
+    },
+    {
+      "name": "IBM DB2 Detection and Version (Configuration format)",
+      "product_id": 373,
+      "pattern": "Configuration[\\s\\S]*?ibm_db2[\\s\\S]*?<table[^>]*>",
+      "version_pattern": "Module\\s+release\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects IBM DB2 and version from Module release"
+    },
+    {
+      "name": "iconv Detection and Version",
+      "product_id": 374,
+      "pattern": "<h2>\\s*<a\\s+name=\"module_iconv\">iconv</a>\\s*</h2>.*?<td\\s+class=\"e\">\\s*iconv\\s+library\\s+version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "version_pattern": "iconv\\s+library\\s+version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects iconv and library version"
+    },
+    {
+      "name": "iconv Detection and Version (Configuration format)",
+      "product_id": 374,
+      "pattern": "Configuration[\\s\\S]*?iconv[\\s\\S]*?<table[^>]*>",
+      "version_pattern": "iconv\\s+library\\s+version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects iconv and library version"
+    },
+    {
+      "name": "Igbinary Detection and Version",
+      "product_id": 375,
+      "pattern": "<h2>\\s*<a\\s+name=\"module_igbinary\">igbinary</a>\\s*</h2>[\\s\\S]*?<td\\s+class=\"e\">\\s*igbinary\\s+version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "version_pattern": "<h2>\\s*<a\\s+name=\"module_igbinary\">igbinary</a>\\s*</h2>[\\s\\S]*?<td\\s+class=\"e\">\\s*igbinary\\s+version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects Igbinary module and version"
+    },
+    {
+      "name": "Igbinary Detection and Version (Configuration format)",
+      "product_id": 375,
+      "pattern": "Configuration[\\s\\S]*?igbinary[\\s\\S]*?<table[^>]*>",
+      "version_pattern": "<h2>\\s*<a\\s+name=\"module_igbinary\">igbinary</a>\\s*</h2>[\\s\\S]*?<td\\s+class=\"e\">\\s*igbinary\\s+version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects Igbinary module and version"
+    },
+    {
+      "name": "Imagick Detection and Version",
+      "product_id": 377,
+      "pattern": "<tr\\s+class=\"h\">\\s*<th>\\s*imagick\\s+module\\s*</th>\\s*<th>\\s*enabled\\s*</th>\\s*</tr>[\\s\\S]*?<td\\s+class=\"e\">\\s*imagick\\s+module\\s+version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "version_pattern": "<tr\\s+class=\"h\">\\s*<th>\\s*imagick\\s+module\\s*</th>\\s*<th>\\s*enabled\\s*</th>\\s*</tr>[\\s\\S]*?<td\\s+class=\"e\">\\s*imagick\\s+module\\s+version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects Imagick module version"
+    },
+    {
+      "name": "IMAP Detection and Version",
+      "product_id": 378,
+      "pattern": "<h2>\\s*<a\\s+name=\"module_imap\">imap</a>\\s*</h2>.*?<td\\s+class=\"e\">\\s*IMAP\\s+c-Client\\s+Version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d]+)",
+      "version_pattern": "IMAP\\s+c-Client\\s+Version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d]+)",
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects IMAP and c-Client version"
+    },
+    {
+      "name": "IMAP Detection and Version (Configuration format)",
+      "product_id": 378,
+      "pattern": "Configuration[\\s\\S]*?imap[\\s\\S]*?<table[^>]*>",
+      "version_pattern": "IMAP\\s+c-Client\\s+Version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d]+)",
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects IMAP and c-Client version"
+    },
+    {
+      "name": "Libxml Detection and Version",
+      "product_id": 384,
+      "pattern": "<h2>\\s*<a\\s+name=\"module_libxml\">libxml</a>\\s*</h2>.*?<td\\s+class=\"e\">\\s*libXML\\s+Version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "version_pattern": "libXML\\s+Version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects Libxml and version"
+    },
+    {
+      "name": "Libxml Detection and Version (Configuration format)",
+      "product_id": 384,
+      "pattern": "Configuration[\\s\\S]*?libxml[\\s\\S]*?<table[^>]*>",
+      "version_pattern": "libXML\\s+Version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects Libxml and version"
+    },
+    {
+      "name": "Linux Detection (System row - fallback)",
+      "product_id": 167,
+      "pattern": "<td\\s+class=\"e\">\\s*System\\s*</td>\\s*<td\\s+class=\"v\">\\s*Linux(?!.*(?:Debian|Ubuntu|Red\\s*Hat|RHEL|CentOS|FreeBSD|Fedora|Arch|SUSE|Gentoo|Alpine|Raspbian|AlmaLinux))",
+      "version_pattern": null,
+      "flags": "i",
+      "source": "system_generic",
+      "probability": 80,
+      "_comment": "Detects generic Linux from System row only if NO specific distro name found (negative lookahead)"
+    },
+    {
+      "name": "Multibyte String Detection and Version",
+      "product_id": 391,
+      "pattern": "<h2>\\s*<a\\s+name=\"module_mbstring\">mbstring</a>\\s*</h2>.*?<td\\s+class=\"e\">\\s*Multibyte\\s+regex\\s*\\(oniguruma\\)\\s+version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "version_pattern": "Multibyte\\s+regex\\s*\\(oniguruma\\)\\s+version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects Multibyte String and oniguruma version"
+    },
+    {
+      "name": "Multibyte String Detection and Version (Configuration format)",
+      "product_id": 391,
+      "pattern": "Configuration[\\s\\S]*?mbstring[\\s\\S]*?<table[^>]*>",
+      "version_pattern": "Multibyte\\s+regex\\s*\\(oniguruma\\)\\s+version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects Multibyte String and oniguruma version"
+    },
+    {
+      "name": "Mcrypt Detection and Version",
+      "product_id": 392,
+      "pattern": "<h2>\\s*<a\\s+name=\"module_mcrypt\">mcrypt</a>\\s*</h2>.*?<tr><td\\s+class=\"e\">\\s*Version\\s*</td><td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "version_pattern": "<tr><td\\s+class=\"e\">\\s*Version\\s*</td><td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects Mcrypt and version (more specific pattern to avoid matching wrong version)"
+    },
+    {
+      "name": "Mcrypt Detection and Version (Configuration format)",
+      "product_id": 392,
+      "pattern": "Configuration[\\s\\S]*?mcrypt[\\s\\S]*?<table[^>]*>",
+      "version_pattern": "<tr><td\\s+class=\"e\">\\s*Version\\s*</td><td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects Mcrypt and version (more specific pattern to avoid matching wrong version)"
+    },
+    {
+      "name": "Mhash Detection and Version",
+      "product_id": 395,
+      "pattern": "<h2>\\s*<a\\s+name=\"module_mhash\">mhash</a>\\s*</h2>.*?<td\\s+class=\"e\">\\s*MHASH\\s+API\\s+Version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d]+)",
+      "version_pattern": "MHASH\\s+API\\s+Version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d]+)",
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects Mhash and API version"
+    },
+    {
+      "name": "Mhash Detection and Version (Configuration format)",
+      "product_id": 395,
+      "pattern": "Configuration[\\s\\S]*?mhash[\\s\\S]*?<table[^>]*>",
+      "version_pattern": "MHASH\\s+API\\s+Version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d]+)",
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects Mhash and API version"
+    },
+    {
+      "name": "mime_magic Detection",
+      "product_id": 509,
+      "pattern": "<h2>\\s*<a\\s+name=\"module_mime_magic\">mime_magic</a>\\s*</h2>",
+      "version_pattern": null,
+      "flags": "i",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects mime_magic extension"
+    },
+    {
+      "name": "mime_magic Detection (Configuration format)",
+      "product_id": 509,
+      "pattern": "Configuration[\\s\\S]*?mime_magic[\\s\\S]*?<table[^>]*>",
+      "version_pattern": null,
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects mime_magic extension"
+    },
+    {
+      "name": "MySQL Detection and Version (mysql module)",
+      "product_id": 399,
+      "pattern": "<h2>\\s*<a\\s+name=\"module_mysql\">mysql</a>\\s*</h2>.*?<td\\s+class=\"e\">\\s*Client\\s+API\\s+version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "version_pattern": "Client\\s+API\\s+version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects MySQL and extracts version from mysql module Client API version"
+    },
+    {
+      "name": "MySQL Detection and Version (mysql module) (Configuration format)",
+      "product_id": 399,
+      "pattern": "Configuration[\\s\\S]*?mysql[\\s\\S]*?<table[^>]*>",
+      "version_pattern": "Client\\s+API\\s+version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects MySQL and extracts version from mysql module Client API version"
+    },
+    {
+      "name": "MySQLi Detection and Version (mysqli module)",
+      "product_id": 401,
+      "pattern": "<h2>\\s*<a\\s+name=\"module_mysqli\">mysqli</a>\\s*</h2>.*?<td\\s+class=\"e\">\\s*Client\\s+API\\s+version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "version_pattern": "<td\\s+class=\"e\">\\s*Client\\s+API\\s+version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects MySQLi and extracts version from mysqli module Client API version"
+    },
+    {
+      "name": "MySQLi Detection and Version (mysqli module) (Configuration format)",
+      "product_id": 401,
+      "pattern": "Configuration[\\s\\S]*?mysqli[\\s\\S]*?<table[^>]*>",
+      "version_pattern": "Client\\s+API\\s+version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects MySQLi and extracts version from mysqli module Client API version"
+    },
+    {
+      "name": "ncurses Detection and Version",
+      "product_id": 510,
+      "pattern": "<h2>\\s*<a\\s+name=\"module_ncurses\">ncurses</a>\\s*</h2>.*?<td\\s+class=\"e\">\\s*ncurses\\s+library\\s+version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "version_pattern": "ncurses\\s+library\\s+version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects ncurses and library version"
+    },
+    {
+      "name": "ncurses Detection and Version (Configuration format)",
+      "product_id": 510,
+      "pattern": "Configuration[\\s\\S]*?ncurses[\\s\\S]*?<table[^>]*>",
+      "version_pattern": "ncurses\\s+library\\s+version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects ncurses and library version"
+    },
+    {
+      "name": "Nginx Detection (Server API row)",
+      "product_id": 11,
+      "pattern": "<td\\s+class=\"e\">\\s*Server\\s+API\\s*</td>\\s*<td\\s+class=\"v\">[^<]*nginx(?:/([\\d\\.]+))?",
+      "version_pattern": "nginx/([\\d\\.]+)",
+      "flags": "i",
+      "source": "server_api",
+      "probability": 100,
+      "_comment": "Detects nginx from Server API row with optional version"
+    },
+    {
+      "name": "Nginx Detection (SERVER_SOFTWARE)",
+      "product_id": 11,
+      "pattern": "<td\\s+class=\"e\">\\s*SERVER_SOFTWARE\\s*</td>\\s*<td\\s+class=\"v\">[^<]*nginx(?:/([\\d\\.]+))?",
+      "version_pattern": "nginx/([\\d\\.]+)",
+      "flags": "i",
+      "source": "environment",
+      "probability": 100,
+      "_comment": "Detects nginx and version from SERVER_SOFTWARE environment variable"
+    },
+    {
+      "name": "OpenSSL Detection and Version",
+      "product_id": 210,
+      "pattern": "<td\\s+class=\"e\">\\s*OpenSSL\\s+Library\\s+Version\\s*</td>\\s*<td\\s+class=\"v\">\\s*OpenSSL\\s+([\\d\\.]+)",
+      "version_pattern": "<td\\s+class=\"e\">\\s*OpenSSL\\s+Library\\s+Version\\s*</td>\\s*<td\\s+class=\"v\">\\s*OpenSSL\\s+([\\d\\.]+)",
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects OpenSSL Library Version"
+    },
+    {
+      "name": "OpenSSL Detection and Version",
+      "product_id": 210,
+      "pattern": "<h2>\\s*<a\\s+name=\"module_openssl\">openssl</a>\\s*</h2>.*?<td\\s+class=\"e\">\\s*OpenSSL\\s+Version\\s*</td>\\s*<td\\s+class=\"v\">\\s*OpenSSL\\s+([\\d\\.]+[a-z]?)",
+      "version_pattern": "OpenSSL\\s+([\\d\\.]+[a-z]?)",
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects OpenSSL version from openssl module section"
+    },
+    {
+      "name": "OpenSSL Detection and Version (Configuration format)",
+      "product_id": 210,
+      "pattern": "Configuration[\\s\\S]*?openssl[\\s\\S]*?<table[^>]*>",
+      "version_pattern": "<td\\s+class=\"e\">\\s*OpenSSL\\s+Header\\s+Version\\s*</td>\\s*<td\\s+class=\"v\">\\s*OpenSSL\\s+([\\d\\.]+[a-z]?)",
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects OpenSSL version from openssl module section"
+    },
+    {
+      "name": "OpenSSL Detection (module)",
+      "product_id": 408,
+      "pattern": "<h2>\\s*<a\\s+name=\"module_openssl\">openssl</a>\\s*</h2>",
+      "version_pattern": null,
+      "flags": "i",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects OpenSSL extension (version already detected by existing pattern)"
+    },
+    {
+      "name": "PCNTL Detection",
+      "product_id": 413,
+      "pattern": "<h2>\\s*<a\\s+name=\"module_pcntl\">pcntl</a>\\s*</h2>",
+      "version_pattern": null,
+      "flags": "i",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects PCNTL extension"
+    },
+    {
+      "name": "PCNTL Detection (Configuration format)",
+      "product_id": 413,
+      "pattern": "Configuration[\\s\\S]*?pcntl[\\s\\S]*?<table[^>]*>",
+      "version_pattern": null,
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects PCNTL extension"
+    },
+    {
+      "name": "PCRE Detection and Version",
+      "product_id": 414,
+      "pattern": "<h2>\\s*<a\\s+name=\"module_pcre\">pcre</a>\\s*</h2>.*?<td\\s+class=\"e\">\\s*PCRE\\s+Library\\s+Version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "version_pattern": "PCRE\\s+Library\\s+Version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects PCRE and library version"
+    },
+    {
+      "name": "PCRE Detection and Version (Configuration format)",
+      "product_id": 414,
+      "pattern": "Configuration[\\s\\S]*?pcre[\\s\\S]*?<table[^>]*>",
+      "version_pattern": "PCRE\\s+Library\\s+Version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects PCRE and library version"
+    },
+    {
+      "name": "PostgreSQL Detection and Version",
+      "product_id": 416,
+      "pattern": "<h2>\\s*<a\\s+name=\"module_pgsql\">pgsql</a>\\s*</h2>.*?<tr><td\\s+class=\"e\">\\s*PostgreSQL\\(libpq\\)\\s+Version\\s*</td><td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "version_pattern": "PostgreSQL\\(libpq\\)\\s+Version\\s*</td><td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects PostgreSQL and version from pgsql module"
+    },
+    {
+      "name": "PostgreSQL Detection and Version (Configuration format)",
+      "product_id": 416,
+      "pattern": "Configuration[\\s\\S]*?pgsql[\\s\\S]*?<table[^>]*>",
+      "version_pattern": "PostgreSQL\\(libpq\\)\\s+Version\\s*</td><td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects PostgreSQL and version from pgsql module"
+    },
+    {
+      "name": "PostgreSQL Detection and Version (flexible)",
+      "product_id": 416,
+      "pattern": "<h2>\\s*<a\\s+name=\"module_pgsql\">pgsql</a>\\s*</h2>.*?<td\\s+class=\"e\">\\s*PostgreSQL\\(libpq\\)\\s+Version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "version_pattern": "PostgreSQL\\(libpq\\)\\s+Version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Alternative flexible pattern for PostgreSQL version detection"
+    },
+    {
+      "name": "PHP Version Detection (h1 header)",
+      "product_id": 30,
+      "pattern": "<h1[^>]*>\\s*PHP\\s+Version\\s+([\\d\\.]+)",
+      "version_pattern": "PHP\\s+Version\\s+([\\d\\.]+)",
+      "flags": "i",
+      "source": "header",
+      "probability": 100,
+      "_comment": "Extracts PHP version from main h1 header"
+    },
+    {
+      "name": "PHP Version Detection (title - modern format)",
+      "product_id": 30,
+      "pattern": "<title>\\s*PHP\\s+([\\d\\.]+)\\s*-\\s*phpinfo",
+      "version_pattern": "PHP\\s+([\\d\\.]+)",
+      "flags": "i",
+      "source": "title",
+      "probability": 100,
+      "_comment": "Extracts PHP version from page title (modern phpinfo format)"
+    },
+    {
+      "name": "PHP Version Detection (h1-style header in table)",
+      "product_id": 30,
+      "pattern": "<tr\\s+class=\"h\">\\s*<td>\\s*PHP\\s+Version\\s+([\\d\\.]+)",
+      "version_pattern": "PHP\\s+Version\\s+([\\d\\.]+)",
+      "flags": "is",
+      "source": "header",
+      "probability": 100,
+      "_comment": "Detects PHP version from <tr class=\"h\"><td>PHP Version X.X.X format"
+    },
+    {
+      "name": "POSIX Detection",
+      "product_id": 419,
+      "pattern": "<h2>\\s*<a\\s+name=\"module_posix\">posix</a>\\s*</h2>",
+      "version_pattern": null,
+      "flags": "i",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects POSIX extension"
+    },
+    {
+      "name": "POSIX Detection (Configuration format)",
+      "product_id": 419,
+      "pattern": "Configuration[\\s\\S]*?posix[\\s\\S]*?<table[^>]*>",
+      "version_pattern": null,
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects POSIX extension"
+    },
+    {
+      "name": "Pspell Detection",
+      "product_id": 421,
+      "pattern": "<h2>\\s*<a\\s+name=\"module_pspell\">pspell</a>\\s*</h2>",
+      "version_pattern": null,
+      "flags": "i",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects Pspell extension"
+    },
+    {
+      "name": "Pspell Detection (Configuration format)",
+      "product_id": 421,
+      "pattern": "Configuration[\\s\\S]*?pspell[\\s\\S]*?<table[^>]*>",
+      "version_pattern": null,
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects Pspell extension"
+    },
+    {
+      "name": "Readline Detection",
+      "product_id": 427,
+      "pattern": "<h2>\\s*<a\\s+name=\"module_readline\">readline</a>\\s*</h2>|<tr><td>readline</td></tr>",
+      "version_pattern": null,
+      "flags": "i",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects Readline extension"
+    },
+    {
+      "name": "Readline Detection (Configuration format)",
+      "product_id": 427,
+      "pattern": "Configuration[\\s\\S]*?readline[\\s\\S]*?<table[^>]*>",
+      "version_pattern": "<td\\s+class=\"e\">\\s*Readline\\s+library\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects Readline extension"
+    },
+    {
+      "name": "Red Hat Detection and Version (System row)",
+      "product_id": 1,
+      "pattern": "<td\\s+class=\"e\">\\s*System\\s*</td>\\s*<td\\s+class=\"v\">[^<]*(?:Red\\s*Hat|RHEL)",
+      "version_pattern": "(?:Red\\s*Hat|RHEL)[\\s/]+([\\d\\.]+)",
+      "flags": "i",
+      "source": "system_distro",
+      "probability": 100,
+      "_comment": "Detects Red Hat and version from System row"
+    },
+    {
+      "name": "Sessions Detection",
+      "product_id": 437,
+      "pattern": "<h2>\\s*<a\\s+name=\"module_session\">session</a>\\s*</h2>",
+      "version_pattern": null,
+      "flags": "i",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects Sessions extension"
+    },
+    {
+      "name": "Sessions Detection (Configuration format)",
+      "product_id": 437,
+      "pattern": "Configuration[\\s\\S]*?session[\\s\\S]*?<table[^>]*>",
+      "version_pattern": null,
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects Sessions extension"
+    },
+    {
+      "name": "Shared Memory Detection",
+      "product_id": 438,
+      "pattern": "<h2>\\s*<a\\s+name=\"module_shmop\">shmop</a>\\s*</h2>",
+      "version_pattern": null,
+      "flags": "i",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects Shared Memory extension"
+    },
+    {
+      "name": "Shared Memory Detection (Configuration format)",
+      "product_id": 438,
+      "pattern": "Configuration[\\s\\S]*?shmop[\\s\\S]*?<table[^>]*>",
+      "version_pattern": null,
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects Shared Memory extension"
+    },
+    {
+      "name": "SimpleXML Detection",
+      "product_id": 440,
+      "pattern": "<h2>\\s*<a\\s+name=\"module_SimpleXML\">SimpleXML</a>\\s*</h2>",
+      "version_pattern": null,
+      "flags": "i",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects SimpleXML extension"
+    },
+    {
+      "name": "SimpleXML Detection (Configuration format)",
+      "product_id": 440,
+      "pattern": "Configuration[\\s\\S]*?SimpleXML[\\s\\S]*?<table[^>]*>",
+      "version_pattern": null,
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects SimpleXML extension"
+    },
+    {
+      "name": "SOAP Detection",
+      "product_id": 442,
+      "pattern": "<h2>\\s*<a\\s+name=\"module_soap\">soap</a>\\s*</h2>",
+      "version_pattern": null,
+      "flags": "i",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects SOAP extension"
+    },
+    {
+      "name": "SOAP Detection (Configuration format)",
+      "product_id": 442,
+      "pattern": "Configuration[\\s\\S]*?soap[\\s\\S]*?<table[^>]*>",
+      "version_pattern": null,
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects SOAP extension"
+    },
+    {
+      "name": "Sockets Detection",
+      "product_id": 443,
+      "pattern": "<h2>\\s*<a\\s+name=\"module_sockets\">sockets</a>\\s*</h2>",
+      "version_pattern": null,
+      "flags": "i",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects Sockets extension"
+    },
+    {
+      "name": "Sockets Detection (Configuration format)",
+      "product_id": 443,
+      "pattern": "Configuration[\\s\\S]*?sockets[\\s\\S]*?<table[^>]*>",
+      "version_pattern": null,
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects Sockets extension"
+    },
+    {
+      "name": "SPL Detection",
+      "product_id": 446,
+      "pattern": "<h2>\\s*<a\\s+name=\"module_SPL\">SPL</a>\\s*</h2>",
+      "version_pattern": null,
+      "flags": "i",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects SPL extension"
+    },
+    {
+      "name": "SPL Detection (Configuration format)",
+      "product_id": 446,
+      "pattern": "Configuration[\\s\\S]*?SPL[\\s\\S]*?<table[^>]*>",
+      "version_pattern": null,
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects SPL extension"
+    },
+    {
+      "name": "SQLite Detection and Version",
+      "product_id": 447,
+      "pattern": "<h2>\\s*<a\\s+name=\"module_SQLite\">SQLite</a>\\s*</h2>.*?<td\\s+class=\"e\">\\s*SQLite\\s+Library\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "version_pattern": "SQLite\\s+Library\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects SQLite and version from SQLite module"
+    },
+    {
+      "name": "SQLite Detection and Version (Configuration format)",
+      "product_id": 447,
+      "pattern": "Configuration[\\s\\S]*?SQLite[\\s\\S]*?<table[^>]*>",
+      "version_pattern": "<td\\s+class=\"e\">\\s*SQLite3\\s+module\\s+version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+[\\w\\-]*)",
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects SQLite and version from SQLite module"
+    },
+    {
+      "name": "sysvmsg Detection",
+      "product_id": 511,
+      "pattern": "<h2>\\s*<a\\s+name=\"module_sysvmsg\">sysvmsg</a>\\s*</h2>",
+      "version_pattern": null,
+      "flags": "i",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects sysvmsg extension"
+    },
+    {
+      "name": "sysvmsg Detection (Configuration format)",
+      "product_id": 511,
+      "pattern": "Configuration[\\s\\S]*?sysvmsg[\\s\\S]*?<table[^>]*>",
+      "version_pattern": null,
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects sysvmsg extension"
+    },
+    {
+      "name": "Semaphore Detection",
+      "product_id": 436,
+      "pattern": "<h2>\\s*<a\\s+name=\"module_sysvmsg\">sysvmsg</a>\\s*</h2>|<h2>\\s*<a\\s+name=\"module_sysvsem\">sysvsem</a>\\s*</h2>|<h2>\\s*<a\\s+name=\"module_sysvshm\">sysvshm</a>\\s*</h2>|<tr><td>sysvsem</td></tr>|<tr><td>sysvshm</td></tr>",
+      "version_pattern": null,
+      "flags": "i",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects Semaphore extension (sysvmsg, sysvsem, sysvshm)"
+    },
+    {
+      "name": "sysvsem Detection",
+      "product_id": 514,
+      "pattern": "<h2>\\s*<a\\s+name=\"module_sysvsem\">sysvsem</a>\\s*</h2>|<tr><td>sysvsem</td></tr>",
+      "version_pattern": null,
+      "flags": "i",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects sysvsem extension"
+    },
+    {
+      "name": "sysvsem Detection (Configuration format)",
+      "product_id": 514,
+      "pattern": "Configuration[\\s\\S]*?sysvsem[\\s\\S]*?<table[^>]*>",
+      "version_pattern": null,
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects sysvsem extension"
+    },
+    {
+      "name": "sysvshm Detection",
+      "product_id": 515,
+      "pattern": "<h2>\\s*<a\\s+name=\"module_sysvshm\">sysvshm</a>\\s*</h2>|<tr><td>sysvshm</td></tr>",
+      "version_pattern": null,
+      "flags": "i",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects sysvshm extension"
+    },
+    {
+      "name": "sysvshm Detection (Configuration format)",
+      "product_id": 515,
+      "pattern": "Configuration[\\s\\S]*?sysvshm[\\s\\S]*?<table[^>]*>",
+      "version_pattern": null,
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects sysvshm extension"
+    },
+    {
+      "name": "Tokenizer Detection",
+      "product_id": 462,
+      "pattern": "<h2>\\s*<a\\s+name=\"module_tokenizer\">tokenizer</a>\\s*</h2>",
+      "version_pattern": null,
+      "flags": "i",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects Tokenizer extension"
+    },
+    {
+      "name": "Tokenizer Detection (Configuration format)",
+      "product_id": 462,
+      "pattern": "Configuration[\\s\\S]*?tokenizer[\\s\\S]*?<table[^>]*>",
+      "version_pattern": null,
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects Tokenizer extension"
+    },
+    {
+      "name": "Ubuntu Detection and Version (System row)",
+      "product_id": 2,
+      "pattern": "<td\\s+class=\"e\">\\s*System\\s*</td>\\s*<td\\s+class=\"v\">[^<]*Ubuntu",
+      "version_pattern": "Ubuntu[\\s/]+([\\d\\.]+)",
+      "flags": "i",
+      "source": "system_distro",
+      "probability": 100,
+      "_comment": "Detects Ubuntu and version from System row"
+    },
+    {
+      "name": "WDDX Detection",
+      "product_id": 472,
+      "pattern": "<h2>\\s*<a\\s+name=\"module_wddx\">wddx</a>\\s*</h2>",
+      "version_pattern": null,
+      "flags": "i",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects WDDX extension"
+    },
+    {
+      "name": "WDDX Detection (Configuration format)",
+      "product_id": 472,
+      "pattern": "Configuration[\\s\\S]*?wddx[\\s\\S]*?<table[^>]*>",
+      "version_pattern": null,
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects WDDX extension"
+    },
+    {
+      "name": "Windows Detection and Version (System row)",
+      "product_id": 6,
+      "pattern": "<td\\s+class=\"e\">\\s*System\\s*</td>\\s*<td\\s+class=\"v\">\\s*Windows",
+      "version_pattern": "Windows[\\s]+(?:NT[\\s]+)?([\\d\\.]+)",
+      "flags": "i",
+      "source": "system_distro",
+      "probability": 100,
+      "_comment": "Detects Windows and version from System row"
+    },
+    {
+      "name": "XML Detection and Version",
+      "product_id": 480,
+      "pattern": "<h2>\\s*<a\\s+name=\"module_xml\">xml</a>\\s*</h2>.*?<td\\s+class=\"e\">\\s*libxml2\\s+Version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "version_pattern": "libxml2\\s+Version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects XML and libxml2 version"
+    },
+    {
+      "name": "XML Detection and Version (Configuration format)",
+      "product_id": 480,
+      "pattern": "Configuration[\\s\\S]*?xml[\\s\\S]*?<table[^>]*>",
+      "version_pattern": "libxml2\\s+Version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects XML and libxml2 version"
+    },
+    {
+      "name": "XML-RPC Detection and Version",
+      "product_id": 483,
+      "pattern": "<h2>\\s*<a\\s+name=\"module_xmlrpc\">xmlrpc</a>\\s*</h2>.*?<td\\s+class=\"e\">\\s*core\\s+library\\s+version\\s*</td>\\s*<td\\s+class=\"v\">\\s*xmlrpc-epi\\s+v\\.\\s*([\\d\\.]+)",
+      "version_pattern": "xmlrpc-epi\\s+v\\.\\s*([\\d\\.]+)",
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects XML-RPC and xmlrpc-epi version"
+    },
+    {
+      "name": "XML-RPC Detection and Version (Configuration format)",
+      "product_id": 483,
+      "pattern": "Configuration[\\s\\S]*?xmlrpc[\\s\\S]*?<table[^>]*>",
+      "version_pattern": "xmlrpc-epi\\s+v\\.\\s*([\\d\\.]+)",
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects XML-RPC and xmlrpc-epi version"
+    },
+    {
+      "name": "XSL Detection and Version",
+      "product_id": 486,
+      "pattern": "<h2>\\s*<a\\s+name=\"module_xsl\">xsl</a>\\s*</h2>.*?<td\\s+class=\"e\">\\s*libxslt\\s+Version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "version_pattern": "libxslt\\s+Version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects XSL and libxslt version"
+    },
+    {
+      "name": "XSL Detection and Version (Configuration format)",
+      "product_id": 486,
+      "pattern": "Configuration[\\s\\S]*?xsl[\\s\\S]*?<table[^>]*>",
+      "version_pattern": "libxslt\\s+Version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects XSL and libxslt version"
+    },
+    {
+      "name": "yp Detection",
+      "product_id": 512,
+      "pattern": "<h2>\\s*<a\\s+name=\"module_yp\">yp</a>\\s*</h2>",
+      "version_pattern": null,
+      "flags": "i",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects yp extension"
+    },
+    {
+      "name": "yp Detection (Configuration format)",
+      "product_id": 512,
+      "pattern": "Configuration[\\s\\S]*?yp[\\s\\S]*?<table[^>]*>",
+      "version_pattern": null,
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects yp extension"
+    },
+    {
+      "name": "Zlib Detection and Version",
+      "product_id": 494,
+      "pattern": "<h2>\\s*<a\\s+name=\"module_zlib\">zlib</a>\\s*</h2>.*?<td\\s+class=\"e\">\\s*Compiled\\s+Version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "version_pattern": "Compiled\\s+Version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects Zlib and compiled version"
+    },
+    {
+      "name": "Zlib Detection and Version (Configuration format)",
+      "product_id": 494,
+      "pattern": "Configuration[\\s\\S]*?zlib[\\s\\S]*?<table[^>]*>",
+      "version_pattern": "<td\\s+class=\"e\">\\s*Linked\\s+Version\\s*</td>\\s*<td\\s+class=\"v\">\\s*([\\d\\.]+)",
+      "flags": "is",
+      "source": "module",
+      "probability": 100,
+      "_comment": "Detects Zlib and compiled version"
+    }
+  ]
+}
