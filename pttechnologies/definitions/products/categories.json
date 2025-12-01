@@ -85,6 +85,12 @@
       "json_code": "softwareTypeSecurity"
     },
     {
+      "id": 15,
+      "name": "PHP Extension",
+      "description": "PHP extensions and modules",
+      "json_code": "softwareTypePlugin"
+    },
+    {
       "id": 99,
       "name": "Other",
       "description": "Miscellaneous products and tools that don't fit other categories",
