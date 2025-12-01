@@ -54,6 +54,11 @@ class HDRVAL:
         self.target_headers = self.definitions.get("headers", [
             "Server", "X-Powered-By", "X-Generator", "X-AspNet-Version", "X-AspNetMvc-Version"
         ])
+        
+        # Blacklist of common words that should not be treated as technologies
+        self.blacklist = {
+            'with'
+        }
 
     def run(self) -> None:
         """
@@ -348,6 +353,9 @@ class HDRVAL:
             if not part:
                 continue
 
+            if part.lower() in self.blacklist:
+                continue
+
             os_match = re.search(r'\(([^)]+)\)', part)
             if os_match:
                 os_content = os_match.group(1).strip()
@@ -605,6 +613,13 @@ class HDRVAL:
         else:
             description = f"{header_name}: {tech_name}"
         
+        # Get vendor from product if product_id is available
+        vendor = None
+        if product_id:
+            product = self.product_manager.get_product_by_id(product_id)
+            if product:
+                vendor = product.get('vendor')
+        
         storage.add_to_storage(
             technology=tech_name,
             version=version,
@@ -612,7 +627,8 @@ class HDRVAL:
             vulnerability="PTV-WEB-INFO-SRVHDR",
             description=description,
             probability=probability,
-            product_id=product_id
+            product_id=product_id,
+            vendor=vendor
         )
 
     def _get_source_description(self, source: str) -> str:
