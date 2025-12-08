@@ -566,12 +566,15 @@ class HDRVAL:
                     if not product:
                         continue
                     
-                    technology_name = product.get('our_name', technology['name'])
+                    products = product.get('products', [])
+                    technology_name = products[0] if products else product.get('our_name', technology['name'])
+                    display_name = product.get('our_name', technology['name'])
                     category_name = self.product_manager.get_category_name(product.get('category_id'))
                     
                     return {
                         'category': category_name,
-                        'technology': technology_name,
+                        'technology': technology_name,  # For storage (CVE compatible)
+                        'display_name': display_name,   # For printing
                         'name': technology['name'],
                         'version': technology['version'],
                         'description': f"{header_name}: {full_header}",
@@ -595,7 +598,7 @@ class HDRVAL:
         else:
             tech_type = None
         
-        tech_name = tech.get('technology', tech['name'])
+        tech_name = tech.get('technology', tech.get('name', 'Unknown'))
         version = tech.get('version')
         product_id = tech.get('product_id')
         probability = tech.get('probability', 100)
@@ -716,10 +719,11 @@ class HDRVAL:
                         category_text = " (Unknown)"
 
                     version_text = f" {tech['version']}" if tech.get('version') else ""
-                    tech_name = tech.get('technology', tech['name'])
+                    # Use display_name for output, fallback to technology or name
+                    display_name = tech.get('display_name', tech.get('technology', tech.get('name', 'Unknown')))
                     probability = tech.get('probability', 100)
 
-                    ptprint(f"{tech_name}{version_text}{category_text}", "VULN", not self.args.json, indent=8, end=" ")
+                    ptprint(f"{display_name}{version_text}{category_text}", "VULN", not self.args.json, indent=8, end=" ")
                     ptprint(f"({probability}%)", "ADDITIONS", not self.args.json, colortext=True)
 
         for tech, is_classified in [

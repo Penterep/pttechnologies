@@ -154,12 +154,15 @@ class JSLIB:
         if not product:
             return None
         
-        technology_name = product.get("our_name", "Unknown")
+        products = product.get('products', [])
+        technology_name = products[0] if products else product.get("our_name", "Unknown")
+        display_name = product.get("our_name", "Unknown")
         category = self.product_manager.get_category_name(product.get("category_id"))
         
         result = {
             "product_id": product_id,
-            "technology": technology_name,
+            "technology": technology_name,  # For storage (CVE compatible)
+            "display_name": display_name,   # For printing
             "category": category,
             "url": js_url,
             "probability": probability
@@ -267,7 +270,8 @@ class JSLIB:
             self.detected_libraries.sort(key=lambda x: x["probability"], reverse=True)
             
             for lib in self.detected_libraries:
-                technology = lib["technology"]
+                technology = lib["technology"]  # For storage (CVE compatible)
+                display_name = lib.get("display_name", technology)  # For printing
                 version = lib.get("version")
                 product_id = lib.get("product_id")
                 probability = lib.get("probability", 100)
@@ -296,10 +300,10 @@ class JSLIB:
                     ptprint(f"Match: {url}", "ADDITIONS", not self.args.json, indent=4, colortext=True)
                 
                 if version:
-                    ptprint(f"{technology} {version} ({category}) ", "VULN", 
+                    ptprint(f"{display_name} {version} ({category}) ", "VULN", 
                            not self.args.json, indent=4, end=" ")
                 else:
-                    ptprint(f"{technology} ({category})", "VULN", 
+                    ptprint(f"{display_name} ({category})", "VULN", 
                            not self.args.json, indent=4, end=" ")
                 
                 ptprint(f"({probability}%)", "ADDITIONS", not self.args.json, colortext=True)

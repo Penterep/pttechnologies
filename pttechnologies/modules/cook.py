@@ -255,7 +255,8 @@ class COOK:
         if not product:
             return
         
-        technology = product.get("our_name", "Unknown")
+        products = product.get('products', [])
+        technology = products[0] if products else product.get("our_name", "Unknown")
         technology_type = self.product_manager.get_category_name(product.get("category_id"))
         
         description = pattern.get("description", "")

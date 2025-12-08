@@ -98,9 +98,9 @@ class WSURLLEN:
         if blocked_long_url:
             ptprint("Long URL are blocked", "INFO", not self.args.json,indent=4)
 
-        server, probability, product_id = self._identify_server(statuses)
+        server, display_name, probability, product_id = self._identify_server(statuses)
         if server:
-            ptprint(f"Identified WS: {server} ", "VULN", not self.args.json, indent=4, end="")
+            ptprint(f"Identified WS: {display_name} ", "VULN", not self.args.json, indent=4, end="")
             ptprint(f"({probability}%)", "ADDITIONS", not self.args.json, colortext=True)
             
             # Get vendor from product if product_id is available
@@ -129,7 +129,7 @@ class WSURLLEN:
             observed_statuses: List of HTTP status codes for each tested URL length.
 
         Returns:
-            Tuple of (technology_name, probability, product_id) if match found, otherwise (None, None, None).
+            Tuple of (technology_name, display_name, probability, product_id) if match found, otherwise (None, None, None, None).
         """
         for entry in self.definitions:
             if entry.get("statuses") == observed_statuses:
@@ -142,11 +142,13 @@ class WSURLLEN:
                 if not product:
                     continue
                 
-                technology_name = product.get("our_name", "Unknown")
+                products = product.get('products', [])
+                technology_name = products[0] if products else product.get("our_name", "Unknown")
+                display_name = product.get("our_name", "Unknown")
                 probability = entry.get("probability", 100)
                 
-                return technology_name, probability, product_id
-        return None, None, None
+                return technology_name, display_name, probability, product_id
+        return None, None, None, None
 
 
 def run(args: object, ptjsonlib: object, helpers: object, http_client: object, responses: StoredResponses):

@@ -109,21 +109,25 @@ class OSLPT1:
             # Windows (product_id: 6)
             product = product_manager.get_product_by_id(6)
             if product:
-                technology_name = product.get('our_name', 'Windows')
+                products = product.get('products', [])
+                technology_name = products[0] if products else product.get('our_name', 'Windows')
+                display_name = product.get('our_name', 'Windows')
                 category_name = product_manager.get_category_name(product.get('category_id'))
                 vendor = product.get('vendor')
                 storage.add_to_storage(technology=technology_name, technology_type=category_name, vulnerability="PTV-WEB-INFO-OSLNK", vendor=vendor)
-                ptprint(f"Identified OS: {technology_name}", "VULN", not self.args.json, indent=4, end=" ")
+                ptprint(f"Identified OS: {display_name}", "VULN", not self.args.json, indent=4, end=" ")
                 ptprint(f"({probability}%)", "ADDITIONS", not self.args.json, colortext=True)
         else:
             # Linux (product_id: 167)
             product = product_manager.get_product_by_id(167)
             if product:
-                technology_name = product.get('our_name', 'Linux')
+                products = product.get('products', [])
+                technology_name = products[0] if products else product.get('our_name', 'Linux')
+                display_name = product.get('our_name', 'Linux')
                 category_name = product_manager.get_category_name(product.get('category_id'))
                 vendor = product.get('vendor')
                 storage.add_to_storage(technology=technology_name, technology_type=category_name, vulnerability="PTV-WEB-INFO-OSLNK", vendor=vendor)
-                ptprint(f"Identified OS: Unix / Linux", "VULN", not self.args.json, indent=4, end=" ")
+                ptprint(f"Identified OS: {display_name}", "VULN", not self.args.json, indent=4, end=" ")
                 ptprint(f"({probability}%)", "ADDITIONS", not self.args.json, colortext=True)
 
 def run(args: object, ptjsonlib: object, helpers: object, http_client: object, responses: StoredResponses):
