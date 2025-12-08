@@ -189,6 +189,10 @@ class PtTechnologies:
             url_favicon = urljoin(self.args.url, '/favicon.ico')
             resp_favicon = self.http_client.send_request(url_favicon, method="GET", headers=self.args.headers, allow_redirects=False)
 
+            # Send request to /admin path
+            url_admin = urljoin(self.args.url, '/admin')
+            resp_admin = self.http_client.send_request(url_admin, method="GET", headers=self.args.headers, allow_redirects=True)
+
             # Send request with an over-long URL (5000 'a' characters)
             long_path = '/' + ('a' * 5000)
             long_url = urljoin(self.args.url, long_path)
@@ -220,7 +224,8 @@ class PtTechnologies:
                 https_resp = https_resp,
                 http_invalid_method = http_invalid_method,
                 http_invalid_protocol = http_invalid_protocol,
-                http_invalid_version = http_invalid_version
+                http_invalid_version = http_invalid_version,
+                resp_admin = resp_admin
             )
 
             return self.stored_responses

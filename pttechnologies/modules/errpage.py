@@ -37,7 +37,8 @@ class ERRPAGE:
         "400 Invalid Header": {"path": "/", "headers": {"Accept": ""}},
         "Invalid HTTP method": "http_invalid_method",
         "400 Invalid Protocol": "http_invalid_protocol",
-        "505 Invalid HTTP Version": "http_invalid_version"
+        "505 Invalid HTTP Version": "http_invalid_version",
+        "Admin Error Page": "resp_admin"
     }
 
     def __init__(self, args: object, ptjsonlib: object, helpers: object, http_client: object, responses: StoredResponses) -> None:
@@ -51,6 +52,7 @@ class ERRPAGE:
         self.http_invalid_method = responses.http_invalid_method
         self.http_invalid_protocol = responses.http_invalid_protocol
         self.http_invalid_version = responses.http_invalid_version
+        self.response_admin = responses.resp_admin
         self.errpage_definitions = self.helpers.load_definitions("errpage.json")
         self.patterns = self.errpage_definitions.get('patterns', []) if self.errpage_definitions else []
         self.base_url = args.url.rstrip('/')
@@ -126,6 +128,8 @@ class ERRPAGE:
                 return self.http_invalid_protocol
             elif trigger_config == "http_invalid_version":
                 return self.http_invalid_version
+            elif trigger_config == "resp_admin":
+                return self.response_admin
             elif trigger_config.startswith('/'):
                 return self.helpers.fetch(self.base_url + trigger_config)
         
