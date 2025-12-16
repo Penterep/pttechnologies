@@ -114,7 +114,7 @@ class OSLPT1:
                 display_name = product.get('our_name', 'Windows')
                 category_name = product_manager.get_category_name(product.get('category_id'))
                 vendor = product.get('vendor')
-                storage.add_to_storage(technology=technology_name, technology_type=category_name, vulnerability="PTV-WEB-INFO-OSLNK", vendor=vendor)
+                storage.add_to_storage(technology=technology_name, technology_type=category_name, vulnerability="PTV-WEB-INFO-OSLNK", vendor=vendor, product_id=6)
                 ptprint(f"Identified OS: {display_name}", "VULN", not self.args.json, indent=4, end=" ")
                 ptprint(f"({probability}%)", "ADDITIONS", not self.args.json, colortext=True)
         else:
@@ -126,7 +126,7 @@ class OSLPT1:
                 display_name = product.get('our_name', 'Linux')
                 category_name = product_manager.get_category_name(product.get('category_id'))
                 vendor = product.get('vendor')
-                storage.add_to_storage(technology=technology_name, technology_type=category_name, vulnerability="PTV-WEB-INFO-OSLNK", vendor=vendor)
+                storage.add_to_storage(technology=technology_name, technology_type=category_name, vulnerability="PTV-WEB-INFO-OSLNK", vendor=vendor, product_id=167)
                 ptprint(f"Identified OS: {display_name}", "VULN", not self.args.json, indent=4, end=" ")
                 ptprint(f"({probability}%)", "ADDITIONS", not self.args.json, colortext=True)
 
