@@ -95,6 +95,14 @@
       "products": ["big-ip"],
       "cve_details_url": "https://www.cvedetails.com/vulnerability-list/vendor_id-315/product_id-540/F5-Big-ip.html",
       "category_id": 10
+    },
+    {
+      "id": 122,
+      "our_name": "Imperva Incapsula",
+      "vendor": "imperva",
+      "products": ["incapsula"],
+      "cve_details_url": "https://www.cvedetails.com/product/34019/Imperva-Incapsula.html",
+      "category_id": 10
     }
   ]
 }

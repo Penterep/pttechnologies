@@ -142,11 +142,18 @@ class Summary:
             
             probability = self._calculate_probability(data, category)
             
+            display_name = technology
+            product_id = data.get("product_id")
+            if product_id:
+                product = self.product_manager.get_product_by_id(product_id)
+                if product:
+                    display_name = product.get("our_name", technology)
+            
             if category not in categorized:
                 categorized[category] = []
             
             tech_entry = {
-                "name": technology,
+                "name": display_name,
                 "version": version,
                 "version_min": version_min,
                 "version_max": version_max,

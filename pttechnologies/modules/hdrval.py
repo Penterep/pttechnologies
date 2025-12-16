@@ -57,7 +57,7 @@ class HDRVAL:
         
         # Blacklist of common words that should not be treated as technologies
         self.blacklist = {
-            'with'
+            'with', 'from'
         }
 
     def run(self) -> None:
@@ -308,6 +308,8 @@ class HDRVAL:
             technologies.extend(self._parse_aspnetmvc_version_header(header_value))
         elif header_name.lower() == "x-azure-ref":
             technologies.append({'name': 'x-azure-ref', 'version': None})
+        elif header_name.lower() in ["x-runtime", "x-view-time", "x-request-duration"]:
+            technologies.extend(self._parse_time_header(header_name.lower()))
         else:
             technologies.extend(self._parse_generic_header(header_value))
 
@@ -488,6 +490,33 @@ class HDRVAL:
                 'name': 'ASP.NET MVC',
                 'version': version
             })
+        
+        return technologies
+
+    def _parse_time_header(self, header_name: str) -> List[Dict[str, Optional[str]]]:
+        """
+        Parse time-related headers that indicate frameworks.
+        These headers contain time values (e.g., "0.123456") but the presence
+        of the header itself indicates the framework, not the time value.
+
+        Args:
+            header_name: Name of the time header (x-runtime, x-view-time, x-request-duration).
+
+        Returns:
+            List of technology dictionaries with the framework name.
+        """
+        technologies = []
+        
+        # Map time headers to their corresponding frameworks
+        time_header_to_framework = {
+            'x-runtime': 'rails',
+            'x-view-time': 'django',
+            'x-request-duration': 'asp.net'
+        }
+        
+        framework_name = time_header_to_framework.get(header_name.lower())
+        if framework_name:
+            technologies.append({'name': framework_name, 'version': None})
         
         return technologies
 
