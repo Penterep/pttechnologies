@@ -150,45 +150,67 @@ class Predict:
 
     def _remove_duplicates(self, all_predictions):
         """
-        Remove duplicate predictions based on technology, type, and version.
+        Group predictions by technology, type, and version, collecting all sources.
         
-        Uses a combination of technology name, technology_type, and version
-        as the unique identifier to eliminate redundant predictions.
+        Groups predictions with the same technology, type, and version together,
+        keeping track of all sources that predicted them. Different versions
+        are kept as separate predictions.
         
         Args:
             all_predictions: List of all collected prediction dictionaries.
             
         Returns:
-            List of unique prediction dictionaries.
+            List of grouped prediction dictionaries with multiple sources.
         """
-        unique_predictions = []
-        seen = set()
+        grouped = {}
         
         for pred in all_predictions:
             key = (pred['technology'], pred['technology_type'], pred['version'])
-            if key not in seen:
-                seen.add(key)
-                unique_predictions.append(pred)
+            
+            if key not in grouped:
+                grouped[key] = {
+                    'technology': pred['technology'],
+                    'technology_type': pred['technology_type'],
+                    'version': pred['version'],
+                    'sources': []
+                }
+            
+            source_name = pred['description'].rsplit(' ', 1)[0] if pred['description'] else None
+            probability = pred['probability']
+            
+            source_tuple = (source_name, probability)
+            if source_tuple not in grouped[key]['sources']:
+                grouped[key]['sources'].append(source_tuple)
                 
-        return unique_predictions
+        return list(grouped.values())
 
     def _save_and_prepare_predictions(self, unique_predictions):
         """
         Save predictions to storage and prepare them for display.
         
-        Processes each unique prediction by creating descriptions,
+        Processes each grouped prediction by creating descriptions from all sources,
         saving to result storage, and preparing display data.
         
         Args:
-            unique_predictions: List of unique prediction dictionaries.
+            unique_predictions: List of grouped prediction dictionaries with sources.
             
         Returns:
             None
         """
         for pred in unique_predictions:
-            description = self._create_description(pred)
+            sources = pred['sources']
+            if not sources:
+                continue
+                
+            sorted_sources = sorted(sources, key=lambda x: (-x[1], x[0] or ''))
+            primary_source, primary_probability = sorted_sources[0]
             
-            self._save_to_storage(pred, description)
+            description = None
+            if primary_source:
+                description = f"Prediction based on {primary_source}"
+            
+            self._save_to_storage(pred, description, primary_probability)
+            
             self._prepare_for_display(pred)
 
     def _create_description(self, prediction):
@@ -209,13 +231,14 @@ class Predict:
             return f"Prediction based on {base}"
         return None
 
-    def _save_to_storage(self, prediction, description):
+    def _save_to_storage(self, prediction, description, probability):
         """
         Save a single prediction to result storage.
         
         Args:
             prediction: Prediction dictionary with technology details.
             description: Generated description text for the prediction.
+            probability: Probability value to use for storage.
             
         Returns:
             None
@@ -224,7 +247,7 @@ class Predict:
             technology=prediction['technology'],
             technology_type=prediction['technology_type'],
             version=prediction['version'],
-            probability=prediction['probability'],
+            probability=probability,
             description=description
         )
 
@@ -233,10 +256,10 @@ class Predict:
         Prepare a prediction for display output.
         
         Formats technology name with version and creates display-ready
-        data structure for the output formatter.
+        data structure with all sources.
         
         Args:
-            prediction: Prediction dictionary to format for display.
+            prediction: Grouped prediction dictionary with sources list.
             
         Returns:
             None
@@ -244,12 +267,18 @@ class Predict:
         tech_display = prediction['technology']
         if prediction['version']:
             tech_display += f" {prediction['version']}"
+        
+        sources = [(name, prob) for name, prob in prediction['sources'] if name is not None]
+        if not sources:
+            return
             
+        max_probability = max(prob for _, prob in sources)
+        
         self.predictions_made.append({
             'technology': tech_display,
             'type': prediction['technology_type'],
-            'source': prediction['description'],
-            'probability': prediction['probability']
+            'sources': sources,
+            'probability': max_probability
         })
 
     def _display_predictions(self):
@@ -257,7 +286,7 @@ class Predict:
         Display all predictions in formatted output.
         
         Prints predictions using the ptprint library with appropriate
-        colors and formatting, showing technology and source information.
+        colors and formatting, showing technology and all source information.
         
         Returns:
             None
@@ -267,12 +296,16 @@ class Predict:
             
         for pred in self.predictions_made:
             tech_display = f"{pred['technology']} ({pred['type']})"
-            source_display = f"<- {pred['source'].rsplit(' ',1)[0]}"
             probability = pred.get('probability', 100)
+            sources = pred.get('sources', [])
             
             ptprint(f"{tech_display}", "VULN", not self.args.json, indent=4, end=" ")
-            ptprint(f"({probability}%)", "ADDITIONS", not self.args.json, colortext=True, end=" ")
-            ptprint(f"{source_display}", "ADDITIONS", not self.args.json, colortext=True)
+            ptprint(f"({probability}%)", "ADDITIONS", not self.args.json, colortext=True)
+            
+            if sources and len(sources) > 0:
+                sorted_sources = sorted(sources, key=lambda x: (-x[1], x[0] or ''))
+                for source_name, source_prob in sorted_sources:
+                    ptprint(f"        ({source_prob}%) {source_name}", "ADDITIONS", not self.args.json, colortext=True)
 
     def match_condition(self, rec, cond):
         """
