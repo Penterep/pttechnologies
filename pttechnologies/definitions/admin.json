@@ -1,0 +1,82 @@
+{
+  "technologies": [
+    {
+      "name": "WordPress",
+      "product_id": 70,
+      "patterns": [
+        "wp-login\\.php",
+        "/wp-admin/",
+        "wordpress[^<]*login",
+        "<link[^>]*wp-content",
+        "<form[^>]*action=[\"']([^\"']*wp-login\\.php[^\"']*)[\"']",
+        "<input[^>]*name=[\"']log[\"']",
+        "<input[^>]*name=[\"']pwd[\"']",
+        "Powered by WordPress",
+        "wp-includes"
+      ],
+      "version_patterns": [
+        "<meta[^>]*name=[\"']generator[\"'][^>]*content=[\"']WordPress\\s+([\\d\\.]+)[\"']",
+        "generator[\"'][^>]*WordPress\\s+([\\d\\.]+)",
+        "wp-includes/js/wp-emoji-release\\.min\\.js\\?ver=([\\d\\.]+)",
+        "ver=([\\d\\.]+)[^>]*wp-includes"
+      ]
+    },
+    {
+      "name": "Drupal",
+      "product_id": 71,
+      "patterns": [
+        "/user/login",
+        "<form[^>]*id=[\"']user-login-form[\"']",
+        "<input[^>]*name=[\"']name[\"'][^>]*id=[\"']edit-name[\"']",
+        "<input[^>]*name=[\"']pass[\"'][^>]*id=[\"']edit-pass[\"']",
+        "drupal\\.js",
+        "/sites/default/files",
+        "Drupal\\.settings",
+        "<meta[^>]*name=[\"']generator[\"'][^>]*content=[\"']Drupal"
+      ],
+      "version_patterns": [
+        "<meta[^>]*name=[\"']generator[\"'][^>]*content=[\"']Drupal\\s+([\\d\\.]+)[\"']",
+        "Drupal\\s+([\\d\\.]+)",
+        "drupal\\.js\\?v=([\\d\\.]+)"
+      ]
+    },
+    {
+      "name": "Joomla",
+      "product_id": 72,
+      "patterns": [
+        "/administrator/",
+        "<form[^>]*action=[\"']([^\"']*administrator[^\"']*)[\"']",
+        "<input[^>]*name=[\"']passwd[\"']",
+        "<input[^>]*name=[\"']username[\"']",
+        "joomla",
+        "/media/system/js/",
+        "<meta[^>]*name=[\"']generator[\"'][^>]*content=[\"']Joomla"
+      ],
+      "version_patterns": [
+        "<meta[^>]*name=[\"']generator[\"'][^>]*content=[\"']Joomla!\\s+([\\d\\.]+)[\"']",
+        "Joomla!\\s+([\\d\\.]+)",
+        "joomla\\.js\\?v=([\\d\\.]+)"
+      ]
+    },
+    {
+      "name": "Kentico",
+      "product_id": 79,
+      "flags": "s",
+      "patterns": [
+        "Kentico",
+        "<form[^>]*action=[\"']([^\"']*CMSModules[^\"']*)[\"']",
+        "/CMSModules/",
+        "<input[^>]*name=[\"']UserName[\"']",
+        "<input[^>]*name=[\"']Password[\"']",
+        "Kentico CMS",
+        "CMSDesk"
+      ],
+      "version_patterns": [
+        "Kentico\\s+([\\d\\.]+)",
+        "Kentico\\s+([\\d]+)",
+        "CMSVersion[\"']?\\s*[:=]\\s*[\"']?([\\d\\.]+)"
+      ]
+    }
+  ]
+}
+
