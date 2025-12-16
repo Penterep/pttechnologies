@@ -158,93 +158,17 @@ class ERRPAGE:
         for pattern_def in self.patterns:
             match_result = self._match_pattern(content, pattern_def)
             if match_result:
-                # Handle both single result and list of results (from extract_tech)
-                results_list = match_result if isinstance(match_result, list) else [match_result]
+                tech_key = match_result.get('technology', match_result.get('name', 'Unknown')).lower()
                 
-                for result in results_list:
-                    tech_key = result.get('technology', result.get('name', 'Unknown')).lower()
-                    
-                    if tech_key not in seen_technologies:
-                        result['trigger_name'] = trigger_name
-                        result['source'] = pattern_def.get('source', 'unknown')
-                        detected.append(result)
-                        seen_technologies.add(tech_key)
+                if tech_key not in seen_technologies:
+                    match_result['trigger_name'] = trigger_name
+                    match_result['source'] = pattern_def.get('source', 'unknown')
+                    detected.append(match_result)
+                    seen_technologies.add(tech_key)
         
         return detected
 
-    def _parse_footer_content(self, footer_text: str) -> List[Dict[str, Optional[str]]]:
-        """
-        Parse footer/error page content to extract all technologies.
-        Uses the same comprehensive parsing logic as HDRVAL's Server header parsing.
-        
-        Examples:
-        - "Apache/2.2.14 (Unix) mod_ssl/2.2.14 OpenSSL/0.9.8g PHP/5.2.11 with Suhosin-Patch"
-        - "nginx/1.18.0"
-        - "Microsoft-IIS/10.0"
-        
-        Args:
-            footer_text: Footer/error page text content to parse.
-            
-        Returns:
-            List of technology dictionaries with 'name' and 'version' keys.
-        """
-        technologies = []
-        
-        blacklist = {'with', 'Server', 'at', 'port'}
-        
-        compound_servers = ["Google Frontend", "Microsoft-HTTPAPI", "Apache Tomcat"]
-        for compound in compound_servers:
-            if compound.lower() in footer_text.lower():
-                pattern = f"{re.escape(compound)}(?:/([\\w\\.-]+))?"
-                match = re.search(pattern, footer_text, re.IGNORECASE)
-                if match:
-                    version = match.group(1) if match.group(1) else None
-                    technologies.append({'name': compound, 'version': version})
-                    footer_text = re.sub(pattern, '', footer_text, flags=re.IGNORECASE).strip()
-        
-        footer_text = re.sub(r'Server\s+at\s+[^\s]+', '', footer_text, flags=re.IGNORECASE)
-        footer_text = re.sub(r'port\s+\d+', '', footer_text, flags=re.IGNORECASE)
-        
-        parts = footer_text.split()
-
-        for part in parts:
-            part = part.strip()
-            if not part:
-                continue
-
-            if part.lower() in blacklist:
-                continue
-
-            os_match = re.search(r'\(([^)]+)\)', part)
-            if os_match:
-                os_content = os_match.group(1).strip()
-                if os_content not in ['codeit', '@RELEASE@']:
-                    main_part = re.sub(r'\([^)]*\)', '', part).strip()
-                    if main_part:
-                        version_match = re.match(r'^([^/]+)/([^/\s]+)', main_part)
-                        if version_match:
-                            name = version_match.group(1)
-                            version = version_match.group(2)
-                            technologies.append({'name': name, 'version': version})
-                        else:
-                            if re.match(r'^[A-Za-z][A-Za-z0-9\-_]*', main_part):
-                                technologies.append({'name': main_part, 'version': None})
-
-                    technologies.append({'name': os_content, 'version': None})
-            else:
-                version_match = re.match(r'^([^/]+)/([^/\s]+)', part)
-                if version_match:
-                    name = version_match.group(1)
-                    version = version_match.group(2)
-                    technologies.append({'name': name, 'version': version})
-                else:
-                    if re.match(r'^[A-Za-z][A-Za-z0-9\-_]*$', part) and part.lower() not in blacklist:
-                        if len(part) > 2:
-                            technologies.append({'name': part, 'version': None})
-        
-        return technologies
-
-    def _match_pattern(self, content: str, pattern_def: Dict[str, Any]) -> Optional[Any]:
+    def _match_pattern(self, content: str, pattern_def: Dict[str, Any]) -> Optional[Dict[str, Any]]:
         """
         Match content against a specific pattern definition.
         
@@ -253,8 +177,7 @@ class ERRPAGE:
             pattern_def: Pattern definition from JSON
             
         Returns:
-            Technology information if matched (single dict or list of dicts), None otherwise.
-            Returns a list when extract_tech is used to parse multiple technologies from footer.
+            Technology information if matched, None otherwise
         """
         pattern = pattern_def.get('pattern', '')
         if not pattern:
@@ -289,13 +212,16 @@ class ERRPAGE:
         if not product:
             return None
         
-        technology_name = product.get('our_name', 'Unknown')
+        products = product.get('products', [])
+        technology_name = products[0] if products else product.get('our_name', 'Unknown')
+        display_name = product.get('our_name', 'Unknown')
         category_name = self.product_manager.get_category_name(product.get('category_id'))
                     
         result = {
             'name': pattern_def.get('name', 'Unknown'),
             'category': category_name,
-            'technology': technology_name,
+            'technology': technology_name,  # For storage (CVE compatible)
+            'display_name': display_name,   # For printing
             'product_id': product_id,
             'version': None,
             'matched_text': match.group(0)[:100] + ('...' if len(match.group(0)) > 100 else ''),
@@ -315,75 +241,40 @@ class ERRPAGE:
 
         if pattern_def.get('extract_tech') and match.groups():
             footer_text = match.group(1)
-            parsed_techs = self._parse_footer_content(footer_text)
+            tech_match = re.search(r'(Apache|nginx|IIS|Tomcat|Jetty|LiteSpeed|OpenResty|IBM_HTTP_Server)', footer_text, re.IGNORECASE)
+            if tech_match:
+                extracted_tech = tech_match.group(1)
+                result['technology'] = extracted_tech
+                result['version'] = None
+                
+                # Map extracted technology name to correct product_id
+                tech_to_product_id = {
+                    'apache': 10,
+                    'nginx': 11,
+                    'iis': 12,
+                    'tomcat': 20,
+                    'jetty': 21,
+                    'litespeed': 13,
+                    'openresty': 170,
+                    'ibm_http_server': 171
+                }
+                
+                tech_lower = extracted_tech.lower().replace(' ', '_')
+                if tech_lower in tech_to_product_id:
+                    new_product_id = tech_to_product_id[tech_lower]
+                    result['product_id'] = new_product_id
+                    
+                    # Update technology name and category from the new product_id
+                    new_product = self.product_manager.get_product_by_id(new_product_id)
+                    if new_product:
+                        new_products = new_product.get('products', [])
+                        result['technology'] = new_products[0] if new_products else new_product.get('our_name', extracted_tech)
+                        result['display_name'] = new_product.get('our_name', extracted_tech)
+                        result['category'] = self.product_manager.get_category_name(new_product.get('category_id'))
             
-            if parsed_techs:
-                hdrval_definitions = self.helpers.load_definitions("hdrval.json")
-                definitions = hdrval_definitions.get('definitions', hdrval_definitions)
-                if isinstance(definitions, list):
-                    definition_list = definitions
-                else:
-                    definition_list = [v for k, v in definitions.items() if k != 'headers']
-                
-                results = []
-                for tech in parsed_techs:
-                    tech_result = {
-                        'name': tech['name'],
-                        'category': None,
-                        'technology': tech['name'],
-                        'product_id': None,
-                        'version': tech.get('version'),
-                        'matched_text': match.group(0)[:100] + ('...' if len(match.group(0)) > 100 else ''),
-                        'pattern_used': pattern
-                    }
-                    
-                    tech_name_lower = tech['name'].lower()
-                    
-                    classified = False
-                    for definition in definition_list:
-                        if isinstance(definition, dict) and 'content' in definition:
-                            if definition['content'].lower() == tech_name_lower:
-                                product_id = definition.get('product_id')
-                                if product_id:
-                                    product = self.product_manager.get_product_by_id(product_id)
-                                    if product:
-                                        tech_result['technology'] = product.get('our_name', tech['name'])
-                                        tech_result['category'] = self.product_manager.get_category_name(product.get('category_id'))
-                                        tech_result['product_id'] = product_id
-                                        tech_result['probability'] = definition.get('probability', 100)
-                                        classified = True
-                                        break
-                    
-                    if not classified:
-                        tech_to_product_id = {
-                            'apache': 10,
-                            'nginx': 11,
-                            'iis': 12,
-                            'microsoft-iis': 12,
-                            'tomcat': 20,
-                            'apache tomcat': 20,
-                            'jetty': 21,
-                            'litespeed': 13,
-                            'openresty': 170,
-                            'ibm_http_server': 171,
-                            'ibm http server': 171
-                        }
-                        
-                        tech_lower = tech_name_lower.replace(' ', '_')
-                        if tech_lower in tech_to_product_id:
-                            product_id = tech_to_product_id[tech_lower]
-                            product = self.product_manager.get_product_by_id(product_id)
-                            if product:
-                                tech_result['technology'] = product.get('our_name', tech['name'])
-                                tech_result['category'] = self.product_manager.get_category_name(product.get('category_id'))
-                                tech_result['product_id'] = product_id
-                    
-                    if not tech_result.get('probability'):
-                        tech_result['probability'] = 100
-                    
-                    results.append(tech_result)
-                
-                return results if results else None
+            version_match = re.search(r'(Apache|nginx|IIS|Tomcat|Jetty|LiteSpeed|OpenResty|IBM_HTTP_Server)[/\s]+([\d\.]+)', footer_text, re.IGNORECASE)
+            if version_match:
+                result['version'] = version_match.group(2)
         
         return result
 
@@ -403,7 +294,7 @@ class ERRPAGE:
 
         for tech in unique_techs.values():
             version_text = f" {tech['version']}" if tech.get('version') else ""
-            category_text = f" ({tech['category']})" if tech.get('category') else " (Unknown)"
+            category_text = f" ({tech['category']})" if tech.get('category') else ""
             probability = tech.get("probability", 100)
             
             # First print verbose details
@@ -417,8 +308,9 @@ class ERRPAGE:
                     ptprint(f"Match: '{tech.get('matched_text')}'", 
                            "ADDITIONS", not self.args.json, indent=4, colortext=True)
             
-            # Then print the technology
-            ptprint(f"{tech['technology']}{version_text}{category_text}", 
+            # Then print the technology (use display_name for output)
+            display_name = tech.get('display_name', tech.get('technology', 'Unknown'))
+            ptprint(f"{display_name}{version_text}{category_text}", 
                    "VULN", not self.args.json, indent=4, end=" ")
             ptprint(f"({probability}%)", "ADDITIONS", not self.args.json, colortext=True)
 
@@ -446,21 +338,13 @@ class ERRPAGE:
         if status_code:
             description += f" [HTTP {status_code}]"
         
-        # Get vendor from product if product_id is available
-        vendor = None
-        if product_id:
-            product = self.product_manager.get_product_by_id(product_id)
-            if product:
-                vendor = product.get('vendor')
-        
         storage.add_to_storage(
             technology=tech_name,
             version=version,
             technology_type=tech_type,
             probability=probability,
             description=description,
-            product_id=product_id,
-            vendor=vendor
+            product_id=product_id
         )
 
 

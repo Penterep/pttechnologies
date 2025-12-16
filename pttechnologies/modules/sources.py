@@ -106,12 +106,15 @@ class SOURCES:
                     if not product:
                         continue
                     
-                    technology_name = product.get("our_name", "Unknown")
+                    products = product.get('products', [])
+                    technology_name = products[0] if products else product.get("our_name", "Unknown")
+                    display_name = product.get("our_name", "Unknown")
                     category_name = self.product_manager.get_category_name(product.get("category_id"))
                     
                     tech_info = {
                         "product_id": product_id,
-                        "technology": technology_name,
+                        "technology": technology_name,  # For storage (CVE compatible)
+                        "display_name": display_name,   # For printing
                         "category": category_name,
                         "file_path": file_path,
                         "url": test_url,
@@ -202,7 +205,8 @@ class SOURCES:
         Args:
             tech_info (dict): Detected technology information.
         """
-        technology = tech_info["technology"]
+        technology = tech_info["technology"]  # For storage (CVE compatible)
+        display_name = tech_info.get("display_name", technology)  # For printing
         category = tech_info["category"]
         product_id = tech_info.get("product_id")
         probability = tech_info.get("probability", 50)
@@ -228,7 +232,7 @@ class SOURCES:
             vendor=vendor
         )
                 
-        ptprint(f"{technology} ({category})", "VULN", not self.args.json, indent=4, end=" ")
+        ptprint(f"{display_name} ({category})", "VULN", not self.args.json, indent=4, end=" ")
         ptprint(f"({probability}%)", "ADDITIONS", not self.args.json, colortext=True)
 
         if tech_info.get("additional_info"):

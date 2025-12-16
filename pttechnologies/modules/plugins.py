@@ -386,20 +386,24 @@ class PLUGINS:
                 
                 probability = 100
                 
-                # Get category and vendor from ProductManager if product_id exists
+                # Get category and technology names from ProductManager if product_id exists
                 vendor = None
+                technology_for_storage = display_name  # Default to plugin_name
                 if product_id:
                     product = self.product_manager.get_product_by_id(product_id)
                     if product:
                         category_name = self.product_manager.get_category_name(product.get("category_id"))
                         vendor = product.get('vendor')
+                        products = product.get('products', [])
+                        technology_for_storage = products[0] if products else product.get("our_name", display_name)
+                        display_name = product.get("our_name", display_name)  # Use our_name for display
                     else:
                         category_name = "Plugin"
                 else:
                     category_name = "Plugin"
                 
                 storage.add_to_storage(
-                    technology=display_name,
+                    technology=technology_for_storage,
                     technology_type=category_name,
                     vulnerability="PTV-WEB-INFO-PLUGIN",
                     probability=probability,

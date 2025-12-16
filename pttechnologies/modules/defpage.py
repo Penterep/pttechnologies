@@ -257,7 +257,8 @@ class DEFPAGE:
                 category_text = f" ({tech['category']})"
                 
                 if self.args.verbose:
-                    ptprint(f"{tech['technology']}{version_text}{category_text}", 
+                    display_name = tech.get('display_name', tech.get('technology', 'Unknown'))
+                    ptprint(f"{display_name}{version_text}{category_text}", 
                     "ADDITIONS", not self.args.json, indent=12, colortext=True, end="")
 
                     source_location = tech.get('source_location', 'content')
@@ -456,7 +457,9 @@ class DEFPAGE:
         if product_id:
             product = self.product_manager.get_product_by_id(product_id)
             if product:
-                technology_name = product.get('our_name', 'Unknown')
+                products = product.get('products', [])
+                technology_name = products[0] if products else product.get('our_name', 'Unknown')  # For storage (CVE compatible)
+                display_name = product.get('our_name', 'Unknown')  # For printing
                 category_id = product.get('category_id')
                 category = self.product_manager.get_category_by_id(category_id)
                 category_name = category.get('name', 'Other') if category else 'Other'
@@ -472,7 +475,8 @@ class DEFPAGE:
         result = {
             'name': pattern_def.get('name', 'Unknown'),
             'category': category_name,
-            'technology': technology_name,
+            'technology': technology_name,  # For storage (CVE compatible)
+            'display_name': display_name if 'display_name' in locals() else technology_name,  # For printing
             'product_id': product_id,
             'version': None,
             'matched_text': match.group(0)[:100] + ('...' if len(match.group(0)) > 100 else ''),
@@ -711,7 +715,8 @@ class DEFPAGE:
             
             if key not in tech_summary:
                 tech_summary[key] = {
-                    'name': tech_name,
+                    'name': tech_name,  # For storage (CVE compatible)
+                    'display_name': tech.get('display_name', tech_name),  # For printing
                     'version': version,
                     'category': tech.get('category', 'unknown'),
                     'protocols': [],
@@ -735,7 +740,8 @@ class DEFPAGE:
             protocols_text = "/".join(sorted(set(tech_info['protocols'])))
             category_text = f" ({tech_info['category']})"
             
-            ptprint(f"{tech_info['name']}{category_text}", "VULN", not self.args.json, indent=4, end=" ")
+            display_name = tech_info.get('display_name', tech_info['name'])
+            ptprint(f"{display_name}{category_text}", "VULN", not self.args.json, indent=4, end=" ")
             ptprint(f"({probability}%)", "ADDITIONS", not self.args.json, colortext=True)
 
             if tech_info['version']:

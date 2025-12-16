@@ -122,10 +122,10 @@ class COOKLEN:
             observed_statuses: List of HTTP status codes for each tested cookie length.
 
         Returns:
-            Tuple of (technology_name, probability, product_id) if exact match found, otherwise (None, None, None).
+            Tuple of (technology_name, display_name, probability, product_id) if exact match found, otherwise (None, None, None, None).
         """
         if not self.definitions:
-            return None, None, None
+            return None, None, None, None
             
         for entry in self.definitions:
             if entry.get("statuses") == observed_statuses:
@@ -138,10 +138,12 @@ class COOKLEN:
                 if not product:
                     continue
                 
-                technology_name = product.get("our_name", "Unknown")
+                products = product.get('products', [])
+                technology_name = products[0] if products else product.get("our_name", "Unknown")
+                display_name = product.get("our_name", "Unknown")
                 probability = entry.get("probability", 100)
                 
-                return technology_name, probability, product_id
+                return technology_name, display_name, probability, product_id
         
         return None, None, None
 

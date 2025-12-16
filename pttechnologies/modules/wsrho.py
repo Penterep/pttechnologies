@@ -144,7 +144,8 @@ class WSRHO:
                 if not product:
                     continue
                 
-                technology_name = product.get("our_name", "Unknown")
+                products = product.get('products', [])
+                technology_name = products[0] if products else product.get("our_name", "Unknown")
                 probability = d.get("probability", 20)
                 
                 return technology_name, probability, product_id
@@ -167,18 +168,20 @@ class WSRHO:
         Report the identified web server technology and record it.
 
         Args:
-            tech: The identified technology string.
+            tech: The identified technology string (for storage, CVE compatible).
             probability: Probability percentage.
             product_id: Product ID from products.json.
         """
         if tech:
-            # Get vendor from product if product_id is available
+            # Get vendor and display_name from product if product_id is available
             vendor = None
+            display_name = tech
             if product_id:
                 product_manager = get_product_manager()
                 product = product_manager.get_product_by_id(product_id)
                 if product:
                     vendor = product.get('vendor')
+                    display_name = product.get('our_name', tech)
             
             storage.add_to_storage(
                 technology=tech, 
@@ -188,7 +191,7 @@ class WSRHO:
                 product_id=product_id,
                 vendor=vendor
             )
-            ptprint(f"Identified WS: {tech}", "VULN", not self.args.json, indent=4, end=" ")
+            ptprint(f"Identified WS: {display_name}", "VULN", not self.args.json, indent=4, end=" ")
             ptprint(f"({probability}%)", "ADDITIONS", not self.args.json, colortext=True)
 
 def run(args: object, ptjsonlib: object, helpers: object, http_client: object, responses: StoredResponses):

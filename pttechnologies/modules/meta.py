@@ -202,7 +202,9 @@ class Meta:
         if not product:
             return
         
-        technology = product.get("our_name", "Unknown")
+        products = product.get('products', [])
+        technology = products[0] if products else product.get("our_name", "Unknown")  # For storage (CVE compatible)
+        display_name = product.get("our_name", "Unknown")  # For printing
         technology_type = self.product_manager.get_category_name(product.get("category_id"))
         vendor = product.get('vendor')
         
@@ -225,7 +227,7 @@ class Meta:
             vendor=vendor
         )
         
-        self._display_result(technology, version, technology_type, meta_name, content, probability)
+        self._display_result(display_name, version, technology_type, meta_name, content, probability)
     
     def _handle_unmatched_author(self, content):
         """
