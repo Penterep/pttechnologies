@@ -17,6 +17,7 @@ Usage:
 
 import json
 import os
+import re
 from urllib.parse import urlparse, urljoin
 
 from helpers.result_storage import storage
@@ -95,12 +96,17 @@ class SOURCES:
                 resp = self._check_file_presence(test_url)
                 
                 if resp:
-                    probability = self._determine_probability(resp.status_code)
-                    
                     # Get product info from product_id
                     product_id = tech_entry.get("product_id")
                     if not product_id:
                         continue  # Skip if no product_id defined
+                    
+                    # For Drupal (product_id 71), verify CHANGELOG.txt content
+                    if product_id == 71 and file_path == "CHANGELOG.txt":
+                        if not self._verify_drupal_changelog(resp):
+                            continue  # Skip if content verification fails
+                    
+                    probability = self._determine_probability(resp.status_code)
                     
                     product = self.product_manager.get_product_by_id(product_id)
                     if not product:
@@ -152,6 +158,40 @@ class SOURCES:
                 ptprint(f"Error checking {test_url}: {str(e)}", "ADDITIONS", not self.args.json, indent=6, colortext=True)
         
         return None
+
+    def _verify_drupal_changelog(self, resp):
+        """
+        Verifies that CHANGELOG.txt content is actually from Drupal.
+
+        Drupal CHANGELOG.txt has a specific format:
+        - Version entries start with "Drupal X.Y.Z" or "Drupal X.Y" followed by date
+        - Format: "Drupal 3.0.1, 2001-10-15" or similar
+        - Contains separator lines with dashes
+
+        Args:
+            resp: HTTP response object containing the file content.
+
+        Returns:
+            bool: True if content appears to be from Drupal, False otherwise.
+        """
+        try:
+            content = resp.text
+            if not content:
+                return False
+            
+            # Check for Drupal version format: "Drupal X.Y.Z" or "Drupal X.Y" followed by date
+            # Pattern matches: "Drupal" followed by version number (X.Y.Z or X.Y) and optional date
+            # Examples: "Drupal 3.0.1, 2001-10-15", "Drupal 7.0", "Drupal 8.2.0"
+            drupal_version_pattern = r'Drupal\s+\d+\.\d+(?:\.\d+)?(?:\s*,\s*\d{4}-\d{2}-\d{2})?'
+            
+            if re.search(drupal_version_pattern, content, re.IGNORECASE):
+                return True
+            
+            return False
+        except Exception as e:
+            if self.args.verbose:
+                ptprint(f"Error verifying Drupal CHANGELOG.txt content: {str(e)}", "ADDITIONS", not self.args.json, indent=6, colortext=True)
+            return False
 
     def _determine_probability(self, status_code):
         """
