@@ -194,6 +194,56 @@
       "pattern": "<title>\\s*Request Rejected\\s*</title>.*?The requested URL was rejected\\.\\s*Please consult with your administrator\\..*?Your support ID is:\\s*[\\d]+",
       "version_pattern": null,
       "flags": "is"
+    },
+    {
+      "_comment": "https://jekyllrb.com/404.html",
+      "name": "Jekyll SEO tag comment",
+      "product_id": 75,
+      "pattern": "<!--\\s*Begin\\s+Jekyll\\s+SEO\\s+tag",
+      "flags": "is"
+    },
+    {
+      "_comment": "Incapsula WAF blocking page",
+      "name": "Imperva Incapsula blocking page with incident ID",
+      "product_id": 122,
+      "pattern": "/_Incapsula_Resource.*?Incapsula\\s+incident\\s+ID",
+      "flags": "is"
+    },
+    {
+      "_comment": "Incapsula WAF blocking page",
+      "name": "Imperva Incapsula resource URL pattern",
+      "product_id": 122,
+      "pattern": "/_Incapsula_Resource\\?SWJIYLWA=",
+      "flags": "is"
+    },
+    {
+      "_comment": "Varnish cache server error page",
+      "name": "Varnish cache server 403 error with cache details",
+      "product_id": 112,
+      "pattern": "<h3>Error\\s+\\d+</h3>.*?<p>Details:.*?</p>.*?<hr>.*?<p>Varnish\\s+cache\\s+server</p>",
+      "flags": "is"
+    },
+    {
+      "_comment": "Varnish cache server error page",
+      "name": "Varnish cache server footer",
+      "product_id": 112,
+      "pattern": "<p>Varnish\\s+cache\\s+server</p>",
+      "flags": "is"
+    },
+    {
+      "_comment": "Akamai EdgeSuite error page",
+      "name": "Akamai EdgeSuite errors.edgesuite.net URL",
+      "product_id": 116,
+      "pattern": "errors(?:&#46;|\\.)edgesuite(?:&#46;|\\.)net",
+      "flags": "is"
+    },
+    {
+      "_comment": "Joomla detection from console.log message",
+      "name": "Joomla in console.log with version",
+      "product_id": 72,
+      "pattern": "console\\.log.*?Joomla\\s+(\\d+)",
+      "version_pattern": "Joomla\\s+(\\d+)",
+      "flags": "is"
     }
   ]
 }

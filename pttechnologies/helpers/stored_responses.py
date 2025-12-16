@@ -27,6 +27,9 @@ class StoredResponses:
         long_resp (Optional[Response]): The response from a deliberately long URL (e.g., 5000 'a' characters),
             typically returning a 400 Bad Request used for additional fingerprinting.
             May be None if the request failed or was not performed.
+        resp_admin (Optional[Response]): The response from the '/admin' path,
+            used to detect admin interfaces and login pages that may reveal technologies.
+            May be None if the request failed or was not performed.
     """
     resp_hp: Response
     resp_404: Response
@@ -38,3 +41,4 @@ class StoredResponses:
     http_invalid_method: Optional[Response]
     http_invalid_protocol: Optional[Response]
     http_invalid_version: Optional[Response]
+    resp_admin: Optional[Response]
