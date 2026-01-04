@@ -168,33 +168,64 @@ class PtTechnologies:
             or return unexpected status codes.
         """
         try:
+            base_path = getattr(self.args, 'base_path', '') or ''
+            
+            # Construct initial URL with base_path
+            initial_url = urljoin(self.args.url, base_path) if base_path else self.args.url
+            
             # Send request to home page
-            resp_hp = self.http_client.send_request(url=self.args.url, method="GET", headers=self.args.headers, allow_redirects=False)
+            resp_hp = self.http_client.send_request(url=initial_url, method="GET", headers=self.args.headers, allow_redirects=False)
             # Handle non 200 statuses
             if resp_hp.status_code != 200:
                 redirect_url = resp_hp.headers.get('Location', 'unknown')
-                ptprint(f"Redirect detected: {resp_hp.status_code} -> {redirect_url}\n", "INFO", not self.args.json, colortext=True)   
+                # Only report redirect if it's not just a trailing slash normalization of the user-specified path
+                should_report_redirect = True
+                if base_path and redirect_url and redirect_url != 'unknown':
+                    normalized_base = base_path.rstrip('/')
+                    redirect_path = urlparse(redirect_url).path if redirect_url.startswith(('http://', 'https://')) else redirect_url
+                    normalized_redirect = redirect_path.rstrip('/')
+                    if normalized_base == normalized_redirect:
+                        should_report_redirect = False
+                
+                if should_report_redirect:
+                    ptprint(f"Redirect detected: {resp_hp.status_code} -> {redirect_url}\n", "INFO", not self.args.json, colortext=True)   
                 if redirect_url and redirect_url != 'unknown':
                     if redirect_url.startswith('/'):
-                        redirect_url = urljoin(self.args.url, redirect_url)
+                        redirect_url = urljoin(initial_url, redirect_url)
                     resp_hp = self.http_client.send_request(url=redirect_url, method="GET", headers=self.args.headers, allow_redirects=False)
 
             # Send request to nonexistent page
-            resp_404 = self.http_client.send_request(url=f"{self.args.url}/this-page-does-not-exist-xyz123", method="GET", headers=self.args.headers, allow_redirects=False)
+            if base_path:
+                notfound_path = f"{base_path}/this-page-does-not-exist-xyz123"
+            else:
+                notfound_path = "/this-page-does-not-exist-xyz123"
+            resp_404 = self.http_client.send_request(url=urljoin(self.args.url, notfound_path), method="GET", headers=self.args.headers, allow_redirects=False)
 
             # Send raw request to raise 400 status code
-            raw_resp_400 = self.helpers._get_bad_request_response(self.args.url)
+            raw_resp_400 = self.helpers._get_bad_request_response(initial_url)
 
             # Send request to URL with favicon.ico path
-            url_favicon = urljoin(self.args.url, '/favicon.ico')
+            if base_path:
+                favicon_path = f"{base_path}/favicon.ico"
+            else:
+                favicon_path = "/favicon.ico"
+            url_favicon = urljoin(self.args.url, favicon_path)
             resp_favicon = self.http_client.send_request(url_favicon, method="GET", headers=self.args.headers, allow_redirects=False)
 
             # Send request to /admin path
-            url_admin = urljoin(self.args.url, '/admin')
+            if base_path:
+                admin_path = f"{base_path}/admin"
+            else:
+                admin_path = "/admin"
+            url_admin = urljoin(self.args.url, admin_path)
             resp_admin = self.http_client.send_request(url_admin, method="GET", headers=self.args.headers, allow_redirects=True)
 
             # Send request with an over-long URL (5000 'a' characters)
-            long_path = '/' + ('a' * 5000)
+            long_string = 'a' * 5000
+            if base_path:
+                long_path = f"{base_path}/{long_string}"
+            else:
+                long_path = f"/{long_string}"
             long_url = urljoin(self.args.url, long_path)
             long_resp = self.helpers._raw_request(long_url, '/')
 
@@ -355,7 +386,11 @@ def parse_args() -> argparse.Namespace:
         sys.exit(0)
 
     args = parser.parse_args()
-    args.url = urlunparse(urlparse(args.url)._replace(path='', params='', query='', fragment=''))
+    # Extract and preserve the path from the original URL
+    parsed_url = urlparse(args.url)
+    args.base_path = parsed_url.path.rstrip('/') if parsed_url.path and parsed_url.path != '/' else ''
+    # Remove path from URL for compatibility with existing code
+    args.url = urlunparse(parsed_url._replace(path='', params='', query='', fragment=''))
     args.headers = ptnethelper.get_request_headers(args)
     args.proxy = {"http": args.proxy, "https": args.proxy} if args.proxy else {}
 

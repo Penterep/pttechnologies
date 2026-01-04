@@ -56,6 +56,7 @@ class ERRPAGE:
         self.errpage_definitions = self.helpers.load_definitions("errpage.json")
         self.patterns = self.errpage_definitions.get('patterns', []) if self.errpage_definitions else []
         self.base_url = args.url.rstrip('/')
+        self.base_path = getattr(args, 'base_path', '') or ''
         self.detected_technologies = []
 
     def run(self) -> None:
@@ -131,12 +132,25 @@ class ERRPAGE:
             elif trigger_config == "resp_admin":
                 return self.response_admin
             elif trigger_config.startswith('/'):
-                return self.helpers.fetch(self.base_url + trigger_config)
+                # Construct path: base_path + trigger_config
+                from urllib.parse import urljoin
+                if self.base_path:
+                    full_path = f"{self.base_path}{trigger_config}"
+                else:
+                    full_path = trigger_config
+                return self.helpers.fetch(urljoin(self.base_url, full_path))
         
         elif isinstance(trigger_config, dict):
+                from urllib.parse import urljoin
+                # Construct path: base_path + path from config
+                config_path = trigger_config.get("path", "/")
+                if self.base_path:
+                    full_path = f"{self.base_path}{config_path}" if config_path.startswith('/') else f"{self.base_path}/{config_path}"
+                else:
+                    full_path = config_path
                 return self.helpers._raw_request(
                     self.base_url, 
-                    trigger_config.get("path", "/"),
+                    full_path,
                     extra_headers=trigger_config.get("headers", {})
                 )
         

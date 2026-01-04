@@ -84,9 +84,15 @@ class OSCS:
             if a resource is found, else None.
         """
         base = self.args.url.rstrip('/')
+        base_path = getattr(self.args, 'base_path', '') or ''
         parsed_base = urlparse(base)
 
-        favicon = base + '/favicon.ico'
+        # Construct favicon URL with base_path
+        if base_path:
+            favicon_path = f"{base_path}/favicon.ico"
+        else:
+            favicon_path = "/favicon.ico"
+        favicon = urljoin(base, favicon_path)
         resp, ct = self._fetch(favicon)
 
         if resp is not None:
@@ -96,7 +102,12 @@ class OSCS:
             elif resp.status_code == 200:
                 return favicon, resp, ct
 
-        resp_home, _ = self._fetch(base + '/')
+        # Construct homepage URL with base_path
+        if base_path:
+            home_path = f"{base_path}/"
+        else:
+            home_path = "/"
+        resp_home, _ = self._fetch(urljoin(base, home_path))
 
         if resp_home is not None:
             if resp_home.status_code in (301, 302):
@@ -111,12 +122,14 @@ class OSCS:
 
 
         html = resp_home.text or ''
+        # Use base_path for resolving relative URLs from HTML
+        base_for_join = urljoin(base, base_path) if base_path else base
         for match in re.finditer(
             r'(?:href|src)=["\']([^"\']+\.(?:js|css|png|jpg|jpeg|gif|ico))["\']',
             html,
             re.IGNORECASE,
         ):
-            candidate_url = urljoin(base + '/', match.group(1))
+            candidate_url = urljoin(base_for_join + '/', match.group(1))
             if urlparse(candidate_url).netloc != parsed_base.netloc:
                 continue
 

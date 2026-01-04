@@ -19,6 +19,7 @@ import requests
 from helpers.result_storage import storage
 from helpers.stored_responses import StoredResponses
 from helpers.products import get_product_manager
+from urllib.parse import urljoin
 
 from ptlibs import ptjsonlib, ptmisclib, ptnethelper
 from ptlibs.ptprinthelper import ptprint
@@ -61,8 +62,19 @@ class WSHT:
         ptprint(__TESTLABEL__, "TITLE", not self.args.json, colortext=True)
 
         try:
-            response1 = self.http_client.send_request(url=self.args.url + "/.hh", method="GET", headers=self.args.headers, allow_redirects=False, timeout=None)
-            response2 = self.http_client.send_request(url=self.args.url + "/.ht", method="GET", headers=self.args.headers, allow_redirects=False, timeout=None)
+            base_path = getattr(self.args, 'base_path', '') or ''
+            # Construct paths: base_path/.hh and base_path/.ht
+            if base_path:
+                path1 = f"{base_path}/.hh"
+                path2 = f"{base_path}/.ht"
+            else:
+                path1 = "/.hh"
+                path2 = "/.ht"
+            url1 = urljoin(self.args.url, path1)
+            url2 = urljoin(self.args.url, path2)
+            
+            response1 = self.http_client.send_request(url=url1, method="GET", headers=self.args.headers, allow_redirects=False, timeout=None)
+            response2 = self.http_client.send_request(url=url2, method="GET", headers=self.args.headers, allow_redirects=False, timeout=None)
 
             if response1 is None or response2 is None:
                 ptprint("Connection error occurred", "INFO", not self.args.json, indent=4)

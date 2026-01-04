@@ -64,6 +64,7 @@ class COOKLEN:
         ptprint(__TESTLABEL__, "TITLE", not self.args.json, colortext=True)
 
         base_url = self.args.url.rstrip("/")
+        base_path = getattr(self.args, 'base_path', '') or ''
         statuses = []
 
         for length in self.lengths:
@@ -72,9 +73,17 @@ class COOKLEN:
             headers = dict(getattr(self.args, "headers", {}) or {})
             headers['Cookie'] = f'testcookie={cookie_value}'
             
+            # Construct URL: base_url + base_path + "/"
+            from urllib.parse import urljoin
+            if base_path:
+                test_path = f"{base_path}/"
+            else:
+                test_path = "/"
+            test_url = urljoin(base_url, test_path)
+            
             try:
                 response = self.http_client.send_request(
-                    url=base_url + "/",
+                    url=test_url,
                     method="GET",
                     headers=headers,
                     allow_redirects=False,
@@ -122,10 +131,10 @@ class COOKLEN:
             observed_statuses: List of HTTP status codes for each tested cookie length.
 
         Returns:
-            Tuple of (technology_name, display_name, probability, product_id) if exact match found, otherwise (None, None, None, None).
+            Tuple of (technology_name, probability, product_id) if exact match found, otherwise (None, None, None).
         """
         if not self.definitions:
-            return None, None, None, None
+            return None, None, None
             
         for entry in self.definitions:
             if entry.get("statuses") == observed_statuses:
@@ -138,12 +147,10 @@ class COOKLEN:
                 if not product:
                     continue
                 
-                products = product.get('products', [])
-                technology_name = products[0] if products else product.get("our_name", "Unknown")
-                display_name = product.get("our_name", "Unknown")
+                technology_name = product.get("our_name", "Unknown")
                 probability = entry.get("probability", 100)
                 
-                return technology_name, display_name, probability, product_id
+                return technology_name, probability, product_id
         
         return None, None, None
 
