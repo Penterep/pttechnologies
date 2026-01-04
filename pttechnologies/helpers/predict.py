@@ -51,9 +51,10 @@ class Predict:
         
         Orchestrates the complete prediction workflow:
         1. Collects all possible predictions from rules
-        2. Removes duplicate predictions 
-        3. Saves unique predictions to storage
-        4. Displays formatted results
+        2. Collects plugin dependencies
+        3. Removes duplicate predictions 
+        4. Saves unique predictions to storage
+        5. Displays formatted results
         
         Returns:
             None
@@ -62,6 +63,10 @@ class Predict:
         
         records = storage.get_all_records()
         all_predictions = self._collect_all_predictions(records)
+        
+        # Collect plugin dependencies
+        plugin_dependencies = self._collect_plugin_dependencies(records)
+        all_predictions.extend(plugin_dependencies)
         
         if not all_predictions:
             ptprint("It is not possible to predict any new technologies", "INFO", not self.args.json, indent=4)
@@ -92,6 +97,76 @@ class Predict:
                 all_predictions.extend(predictions)
                 
         return all_predictions
+
+    def _collect_plugin_dependencies(self, records):
+        """
+        Collect plugin dependencies from records with "Plugin dependency from:" description.
+        
+        Groups dependencies by technology and version, merging sources from multiple plugins.
+        
+        Args:
+            records: List of existing scan result records from storage.
+            
+        Returns:
+            List of prediction dictionaries with merged plugin sources.
+        """
+        plugin_deps = []
+        
+        dep_records = [
+            rec for rec in records 
+            if rec.get("description") and "Plugin dependency from:" in rec.get("description", "")
+        ]
+        
+        if not dep_records:
+            return plugin_deps
+        
+        # Group by technology, version, and technology_type
+        grouped = {}
+        for rec in dep_records:
+            tech = rec.get("technology")
+            version = rec.get("version")
+            tech_type = rec.get("technology_type")
+            product_id = rec.get("product_id")
+            
+            if not tech:
+                continue
+            
+            key = (tech, version, tech_type)
+            
+            if key not in grouped:
+                grouped[key] = {
+                    'technology': tech,
+                    'technology_type': tech_type,
+                    'version': version,
+                    'sources': [],
+                    'product_id': product_id
+                }
+            
+            desc = rec.get("description", "")
+            if "Plugin dependency from:" in desc:
+                source = desc.replace("Plugin dependency from:", "").strip()
+                grouped[key]['sources'].append(source)
+        
+        # Convert grouped data to prediction format
+        for key, data in grouped.items():
+            if not data['sources']:
+                continue
+            
+            sources_str = ", ".join(data['sources'])
+            description = f"Plugin dependency from: {sources_str}"
+            
+            prediction = {
+                'technology': data['technology'],
+                'technology_type': data['technology_type'],
+                'version': data['version'],
+                'probability': 80,
+                'description': description,
+                'product_id': data['product_id'],
+                'sources': data['sources']
+            }
+            plugin_deps.append(prediction)
+        
+        return plugin_deps
 
     def _rule_conditions_met(self, rule, records):
         """
@@ -172,15 +247,27 @@ class Predict:
                     'technology': pred['technology'],
                     'technology_type': pred['technology_type'],
                     'version': pred['version'],
-                    'sources': []
+                    'sources': [],
+                    'product_id': pred.get('product_id')
                 }
             
-            source_name = pred['description'].rsplit(' ', 1)[0] if pred['description'] else None
-            probability = pred['probability']
-            
-            source_tuple = (source_name, probability)
-            if source_tuple not in grouped[key]['sources']:
-                grouped[key]['sources'].append(source_tuple)
+            if 'sources' in pred and pred['sources'] and isinstance(pred['sources'], list):
+                for source in pred['sources']:
+                    if isinstance(source, str):
+                        source_tuple = (source, pred['probability'])
+                        if source_tuple not in grouped[key]['sources']:
+                            grouped[key]['sources'].append(source_tuple)
+                    elif isinstance(source, tuple):
+                        # Already a tuple, use as is
+                        if source not in grouped[key]['sources']:
+                            grouped[key]['sources'].append(source)
+            else:
+                source_name = pred['description'].rsplit(' ', 1)[0] if pred['description'] else None
+                probability = pred['probability']
+                
+                source_tuple = (source_name, probability)
+                if source_tuple not in grouped[key]['sources']:
+                    grouped[key]['sources'].append(source_tuple)
                 
         return list(grouped.values())
 
@@ -190,6 +277,7 @@ class Predict:
         
         Processes each grouped prediction by creating descriptions from all sources,
         saving to result storage, and preparing display data.
+        Plugin dependencies are not saved again (already in storage), only prepared for display.
         
         Args:
             unique_predictions: List of grouped prediction dictionaries with sources.
@@ -205,11 +293,20 @@ class Predict:
             sorted_sources = sorted(sources, key=lambda x: (-x[1], x[0] or ''))
             primary_source, primary_probability = sorted_sources[0]
             
-            description = None
-            if primary_source:
-                description = f"Prediction based on {primary_source}"
+            is_plugin_dep = any(
+                source[0] and 'Plugin dependency from:' in str(source[0]) 
+                for source in sources 
+                if source[0]
+            )
             
-            self._save_to_storage(pred, description, primary_probability)
+            if is_plugin_dep:
+                pass
+            else:
+                description = None
+                if primary_source:
+                    description = f"Prediction based on {primary_source}"
+                
+                self._save_to_storage(pred, description, primary_probability)
             
             self._prepare_for_display(pred)
 
@@ -265,8 +362,7 @@ class Predict:
             None
         """
         tech_display = prediction['technology']
-        if prediction['version']:
-            tech_display += f" {prediction['version']}"
+        version = prediction.get('version')
         
         sources = [(name, prob) for name, prob in prediction['sources'] if name is not None]
         if not sources:
@@ -277,6 +373,7 @@ class Predict:
         self.predictions_made.append({
             'technology': tech_display,
             'type': prediction['technology_type'],
+            'version': version,
             'sources': sources,
             'probability': max_probability
         })
@@ -296,6 +393,8 @@ class Predict:
             
         for pred in self.predictions_made:
             tech_display = f"{pred['technology']} ({pred['type']})"
+            if pred.get('version'):
+                tech_display += f" {pred['version']}"
             probability = pred.get('probability', 100)
             sources = pred.get('sources', [])
             

@@ -65,16 +65,19 @@ class PLUGINS:
         ptprint(__TESTLABEL__, "TITLE", not self.args.json, colortext=True)
 
         base_url = self.args.url.rstrip("/")
+        base_path = getattr(self.args, 'base_path', '') or ''
+        # Construct full base URL with path for resolving relative URLs from HTML
+        full_base_url = urljoin(base_url, base_path) if base_path else base_url
         resp = self.response_hp
         html = resp.text
 
-        plugin_urls = self._extract_plugin_urls(html, base_url)
+        plugin_urls = self._extract_plugin_urls(html, full_base_url)
         
         if self.args.verbose:
             ptprint(f"Found {len(plugin_urls)} plugin references", "ADDITIONS", not self.args.json, indent=4, colortext=True)
 
         for plugin_url in plugin_urls:
-            self._analyze_plugin(plugin_url, base_url, html)
+            self._analyze_plugin(plugin_url, full_base_url, html)
 
         self._report()
 
@@ -157,8 +160,9 @@ class PLUGINS:
         
         # PRIORITY 1: Check readme.txt first (most reliable)
         readme_result = self._get_version_from_readme(plugin_name, base_url, plugin_def)
+        readme_content = None
         if readme_result:
-            version, match_text = readme_result
+            version, match_text, readme_content = readme_result
             version_source = "readme.txt"
 
         # PRIORITY 2: Check HTML comments (reliable)
@@ -197,6 +201,9 @@ class PLUGINS:
             "match_text": match_text,
             "version_source": version_source
         }
+        
+        if readme_content:
+            self._parse_and_store_dependencies(readme_content, display_name, version)
 
     def _get_plugin_definition(self, plugin_name):
         """
@@ -310,7 +317,7 @@ class PLUGINS:
             plugin_def (dict): Plugin definition with custom readme paths.
 
         Returns:
-            tuple or None: (version, readme_url) if found, otherwise None.
+            tuple or None: (version, readme_url, readme_content) if found, otherwise None.
         """
         readme_paths = []
         
@@ -339,7 +346,7 @@ class PLUGINS:
             if resp and resp.status_code == 200:
                 version = self._parse_readme_version(resp.text)
                 if version:
-                    return (version, readme_url)
+                    return (version, readme_url, resp.text)
         
         return None
 
@@ -370,6 +377,116 @@ class PLUGINS:
                 return match.group(1)
         
         return None
+
+    def _parse_readme_dependencies(self, readme_content):
+        """
+        Parses readme.txt content to extract technology dependencies.
+
+        Args:
+            readme_content (str): Content of readme.txt file.
+
+        Returns:
+            dict: Dictionary with dependencies:
+                - wordpress_version: Minimum WordPress version (e.g., "5.0.0")
+                - php_version: Minimum PHP version (e.g., "7.4")
+                - required_plugins: List of required plugin names
+        """
+        dependencies = {
+            "wordpress_version": None,
+            "php_version": None,
+            "required_plugins": []
+        }
+        
+        # Parse WordPress version requirement
+        wp_patterns = [
+            r'Requires at least:\s*([0-9]+\.[0-9]+(?:\.[0-9]+)*)',
+            r'Requires:\s*([0-9]+\.[0-9]+(?:\.[0-9]+)*)'
+        ]
+        for pattern in wp_patterns:
+            match = re.search(pattern, readme_content, re.IGNORECASE)
+            if match:
+                dependencies["wordpress_version"] = match.group(1)
+                break
+        
+        # Parse PHP version requirement
+        php_patterns = [
+            r'Requires PHP:\s*([0-9]+\.[0-9]+(?:\.[0-9]+)*)',
+            r'PHP requires:\s*([0-9]+\.[0-9]+(?:\.[0-9]+)*)',
+            r'Requires PHP at least:\s*([0-9]+\.[0-9]+(?:\.[0-9]+)*)'
+        ]
+        for pattern in php_patterns:
+            match = re.search(pattern, readme_content, re.IGNORECASE)
+            if match:
+                dependencies["php_version"] = match.group(1)
+                break
+        
+        # Parse required plugins
+        requires_plugins_pattern = r'Requires Plugins:\s*([^\n]+)'
+        match = re.search(requires_plugins_pattern, readme_content, re.IGNORECASE)
+        if match:
+            plugins_str = match.group(1).strip()
+            # Split by comma or whitespace
+            plugins = re.split(r'[,\s]+', plugins_str)
+            dependencies["required_plugins"] = [p.strip() for p in plugins if p.strip()]
+        
+        return dependencies
+
+    def _parse_and_store_dependencies(self, readme_content, plugin_display_name, plugin_version):
+        """
+        Parses readme.txt dependencies and stores them in result storage.
+
+        Args:
+            readme_content (str): Content of readme.txt file.
+            plugin_display_name (str): Display name of the plugin.
+            plugin_version (str): Version of the plugin.
+        """
+        dependencies = self._parse_readme_dependencies(readme_content)
+        
+        source_desc = f"{plugin_display_name}"
+        if plugin_version:
+            source_desc += f" {plugin_version}"
+        
+        if dependencies["wordpress_version"]:
+            storage.add_to_storage(
+                technology="WordPress",
+                technology_type="WebApp",
+                version=dependencies["wordpress_version"],
+                probability=80,
+                description=f"Plugin dependency from: {source_desc}",
+                product_id=70,
+                vendor="wordpress"
+            )
+        
+        if dependencies["php_version"]:
+            storage.add_to_storage(
+                technology="PHP",
+                technology_type="Interpret",
+                version=dependencies["php_version"],
+                probability=80,
+                description=f"Plugin dependency from: {source_desc}",
+                product_id=30,
+                vendor="php"
+            )
+        
+        for plugin_name in dependencies["required_plugins"]:
+            plugin_def = self._get_plugin_definition(plugin_name)
+            product_id = None
+            display_name = plugin_name
+            if plugin_def:
+                product_id = plugin_def.get("product_id")
+                if product_id:
+                    product = self.product_manager.get_product_by_id(product_id)
+                    if product:
+                        display_name = product.get("our_name", plugin_name)
+            
+            storage.add_to_storage(
+                technology=display_name,
+                technology_type="Plugin",
+                probability=80,
+                description=f"Plugin dependency from: {source_desc}",
+                product_id=product_id,
+                vendor=None
+            )
 
     def _report(self):
         """
