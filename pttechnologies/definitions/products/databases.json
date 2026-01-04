@@ -39,6 +39,38 @@
       "products": ["mysqli"],
       "cve_details_url": "https://www.cvedetails.com/product/21801/Oracle-Mysql.html",
       "category_id": 4
+    },
+    {
+      "id": 205,
+      "our_name": "MongoDB",
+      "vendor": "mongodb",
+      "products": ["mongodb"],
+      "cve_details_url": "https://www.cvedetails.com/product/10923/Mongodb-Mongodb.html",
+      "category_id": 4
+    },
+    {
+      "id": 206,
+      "our_name": "Redis",
+      "vendor": "redis",
+      "products": ["redis"],
+      "cve_details_url": "https://www.cvedetails.com/product/25530/Redis-Redis.html",
+      "category_id": 4
+    },
+    {
+      "id": 207,
+      "our_name": "Elasticsearch",
+      "vendor": "elastic",
+      "products": ["elasticsearch"],
+      "cve_details_url": "https://www.cvedetails.com/product/18878/Elasticsearch-Elasticsearch.html",
+      "category_id": 4
+    },
+    {
+      "id": 208,
+      "our_name": "SQL Server Compact",
+      "vendor": "microsoft",
+      "products": ["sql_server"],
+      "cve_details_url": "https://www.cvedetails.com/vulnerability-list/vendor_id-26/product_id-251/Microsoft-Sql-Server.html",
+      "category_id": 4
     }
   ]
 }
