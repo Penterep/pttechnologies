@@ -21,6 +21,7 @@ from ptlibs.ptprinthelper import ptprint
 from helpers.stored_responses import StoredResponses
 from helpers.products import get_product_manager
 from helpers.result_storage import storage
+from urllib.parse import urljoin
 
 import json
 import os
@@ -63,12 +64,18 @@ class WSURLLEN:
         ptprint(__TESTLABEL__, "TITLE", not self.args.json, colortext=True)
 
         base_url = self.args.url.rstrip("/")
+        base_path = getattr(self.args, 'base_path', '') or ''
         statuses = []
 
         blocked_long_url = False
         for l in self.lengths:
-            path = "/" + ("a" * l)
-            full_url = base_url + path
+            # Construct path: base_path/long_string
+            long_string = "a" * l
+            if base_path:
+                path = f"{base_path}/{long_string}"
+            else:
+                path = f"/{long_string}"
+            full_url = urljoin(base_url, path)
 
             try:
                 response = self.helpers.fetch(full_url)

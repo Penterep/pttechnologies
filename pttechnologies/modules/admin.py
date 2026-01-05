@@ -18,6 +18,7 @@ Usage:
 
 import re
 from typing import List, Dict, Any, Optional
+from urllib.parse import urljoin
 from helpers.result_storage import storage
 from helpers.stored_responses import StoredResponses
 from helpers.products import get_product_manager
@@ -173,7 +174,7 @@ class ADMIN:
             'product_id': product_id,
             'vendor': product.get('vendor'),
             'version': version,
-            'url': getattr(self.response_admin, 'url', self.args.url + '/admin'),
+            'url': getattr(self.response_admin, 'url', urljoin(self.args.url, (getattr(self.args, 'base_path', '') + '/admin') if getattr(self.args, 'base_path', '') else '/admin')),
             'status_code': getattr(self.response_admin, 'status_code', 0),
             'matched_text': matched_text
         }

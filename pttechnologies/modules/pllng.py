@@ -66,12 +66,15 @@ class PLLNG:
         """
         ptprint(__TESTLABEL__, "TITLE", not self.args.json, colortext=True)
         base_url = self.args.url.rstrip("/")
+        base_path = getattr(self.args, 'base_path', '') or ''
         resp = self.response_hp
         html = resp.text
-        result = self._find_language_by_link(html, base_url)
+        # Construct full base URL with path for link detection
+        full_base_url = urljoin(base_url, base_path) if base_path else base_url
+        result = self._find_language_by_link(html, full_base_url)
 
         if not result:
-            result = self._dictionary_attack(base_url)
+            result = self._dictionary_attack(base_url, base_path)
 
         self._report(result)
 
@@ -114,12 +117,13 @@ class PLLNG:
                             return ext_entry
         return None
 
-    def _dictionary_attack(self, base_url):
+    def _dictionary_attack(self, base_url, base_path):
         """
         Attempts to detect programming language by checking common filenames with known extensions.
 
         Args:
             base_url (str): Base URL to test.
+            base_path (str): Base path to append test strings after.
 
         Returns:
             dict or None: Extension metadata if a matching file is found, otherwise None.
@@ -128,7 +132,12 @@ class PLLNG:
         for name in candidates:
             for ext_entry in self.extensions:
                 ext = ext_entry["extension"]
-                test_url = f"{base_url}/{name}.{ext}"
+                # Construct path: base_path/name.ext
+                if base_path:
+                    test_path = f"{base_path}/{name}.{ext}"
+                else:
+                    test_path = f"/{name}.{ext}"
+                test_url = urljoin(base_url, test_path)
                 resp = self.helpers.fetch(test_url, allow_redirects=True)
                 if resp is not None:
                     if resp.status_code == 200:

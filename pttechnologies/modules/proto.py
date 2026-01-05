@@ -33,6 +33,7 @@ class PROTO:
         self.product_manager = get_product_manager()
         self.definitions = self.helpers.load_definitions("proto.json")
         self.base_url = args.url.rstrip('/')
+        self.base_path = getattr(args, 'base_path', '') or ''
 
     def run(self) -> None:
         """
@@ -88,9 +89,11 @@ class PROTO:
             HTTP status code as string, or "None" if request failed
         """
         try:
+            # Use base_path for the request path
+            request_path = f"{self.base_path}/" if self.base_path else "/"
             response = self.helpers._raw_request(
                 self.base_url,
-                '/',
+                request_path,
                 custom_request_line=trigger_config.get("request_line")
             )
             

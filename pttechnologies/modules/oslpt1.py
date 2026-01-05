@@ -94,8 +94,19 @@ class OSLPT1:
         """
         ptprint(__TESTLABEL__, "TITLE", not self.args.json, colortext=True)
 
-        response1 = self.helpers.fetch(self.args.url + "/LPP1")
-        response2 = self.helpers.fetch(self.args.url + "/LPT1")
+        base_path = getattr(self.args, 'base_path', '') or ''
+        from urllib.parse import urljoin
+        
+        # Construct paths: base_path/LPP1 and base_path/LPT1
+        if base_path:
+            path1 = f"{base_path}/LPP1"
+            path2 = f"{base_path}/LPT1"
+        else:
+            path1 = "/LPP1"
+            path2 = "/LPT1"
+        
+        response1 = self.helpers.fetch(urljoin(self.args.url, path1))
+        response2 = self.helpers.fetch(urljoin(self.args.url, path2))
 
         if response1 is None or response2 is None:
             ptprint("Connection error occurred", "INFO", not self.args.json, indent=4)

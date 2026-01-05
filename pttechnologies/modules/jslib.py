@@ -46,10 +46,13 @@ class JSLIB:
         ptprint(__TESTLABEL__, "TITLE", not self.args.json, colortext=True)
 
         base_url = self.args.url.rstrip("/")
+        base_path = getattr(self.args, 'base_path', '') or ''
+        # Construct full base URL with path for resolving relative URLs from HTML
+        full_base_url = urljoin(base_url, base_path) if base_path else base_url
         resp = self.response_hp
         html = resp.text
 
-        js_urls = self._extract_js_urls(html, base_url)
+        js_urls = self._extract_js_urls(html, full_base_url)
         
         if self.args.verbose:
             ptprint(f"Found {len(js_urls)} JavaScript files", "ADDITIONS", not self.args.json, indent=4, colortext=True)
