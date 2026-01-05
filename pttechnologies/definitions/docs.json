@@ -1,383 +1,674 @@
-[
-  {
-    "files": [
+{
+  "files": [
+    [
       "readme",
       "Readme",
-      "README",
+      "README"
+    ],
+    [
       "read.me",
       "Read.me",
       "READ.me",
       "READ.ME"
-    ]
-  },
-  {
-    "files": [
+    ],
+    [
       "readme.txt",
       "Readme.txt",
       "README.txt",
       "README.TXT"
-    ]
-  },
-  {
-    "files": [
+    ],
+    [
       "readme.md",
       "Readme.md",
       "README.md",
       "README.MD"
-    ]
-  },
-  {
-    "files": [
+    ],
+    [
       "readme.htm",
       "Readme.htm",
       "README.htm",
       "README.HTM"
-    ]
-  },
-  {
-    "files": [
-      "readme.html",
-      "Readme.html",
-      "README.html",
-      "README.HTML"
-    ]
-  },
-  {
-    "files": [
+    ],
+    [
       "readme.doc",
       "Readme.doc",
       "README.doc",
       "README.DOC"
-    ]
-  },
-  {
-    "files": [
+    ],
+    [
       "version",
       "Version",
       "VERSION"
-    ]
-  },
-  {
-    "files": [
+    ],
+    [
       "version.txt",
       "Version.txt",
       "VERSION.txt",
       "VERSION.TXT"
-    ]
-  },
-  {
-    "files": [
-      "version.md",
-      "Version.md",
-      "VERSION.md",
-      "VERSION.MD"
-    ]
-  },
-  {
-    "files": [
+    ],
+    [
       "version.htm",
       "Version.htm",
       "VERSION.htm",
       "VERSION.HTM"
-    ]
-  },
-  {
-    "files": [
-      "version.html",
-      "Version.html",
-      "VERSION.html",
-      "VERSION.HTML"
-    ]
-  },
-  {
-    "files": [
+    ],
+    [
       "version.doc",
       "Version.doc",
       "VERSION.doc",
       "VERSION.DOC"
-    ]
-  },
-  {
-    "files": [
+    ],
+    [
       "changelog",
       "Changelog",
       "CHANGELOG"
-    ]
-  },
-  {
-    "files": [
+    ],
+    [
       "changelog.txt",
       "Changelog.txt",
       "CHANGELOG.txt",
       "CHANGELOG.TXT"
-    ]
-  },
-  {
-    "files": [
-      "changelog.md",
-      "Changelog.md",
-      "CHANGELOG.md",
-      "CHANGELOG.MD"
-    ]
-  },
-  {
-    "files": [
+    ],
+    [
       "changelog.htm",
       "Changelog.htm",
       "CHANGELOG.htm",
       "CHANGELOG.HTM"
-    ]
-  },
-  {
-    "files": [
-      "changelog.html",
-      "Changelog.html",
-      "CHANGELOG.html",
-      "CHANGELOG.HTML"
-    ]
-  },
-  {
-    "files": [
+    ],
+    [
       "changelog.doc",
       "Changelog.doc",
       "CHANGELOG.doc",
       "CHANGELOG.DOC"
-    ]
-  },
-  {
-    "files": [
+    ],
+    [
       "update",
       "Update",
       "UPDATE"
-    ]
-  },
-  {
-    "files": [
+    ],
+    [
       "update.txt",
       "Update.txt",
       "UPDATE.txt",
       "UPDATE.TXT"
-    ]
-  },
-  {
-    "files": [
-      "update.md",
-      "Update.md",
-      "UPDATE.md",
-      "UPDATE.MD"
-    ]
-  },
-  {
-    "files": [
+    ],
+    [
       "update.htm",
       "Update.htm",
       "UPDATE.htm",
       "UPDATE.HTM"
-    ]
-  },
-  {
-    "files": [
-      "update.html",
-      "Update.html",
-      "UPDATE.html",
-      "UPDATE.HTML"
-    ]
-  },
-  {
-    "files": [
+    ],
+    [
       "update.doc",
       "Update.doc",
       "UPDATE.doc",
       "UPDATE.DOC"
-    ]
-  },
-  {
-    "files": [
-      "upgrade",
-      "Upgrade",
-      "UPGRADE"
-    ]
-  },
-  {
-    "files": [
+    ],
+    [
       "upgrade.txt",
       "Upgrade.txt",
       "UPGRADE.txt",
       "UPGRADE.TXT"
-    ]
-  },
-  {
-    "files": [
-      "upgrade.md",
-      "Upgrade.md",
-      "UPGRADE.md",
-      "UPGRADE.MD"
-    ]
-  },
-  {
-    "files": [
+    ],
+    [
       "upgrade.htm",
       "Upgrade.htm",
       "UPGRADE.htm",
       "UPGRADE.HTM"
-    ]
-  },
-  {
-    "files": [
-      "upgrade.html",
-      "Upgrade.html",
-      "UPGRADE.html",
-      "UPGRADE.HTML"
-    ]
-  },
-  {
-    "files": [
+    ],
+    [
       "upgrade.doc",
       "Upgrade.doc",
       "UPGRADE.doc",
       "UPGRADE.DOC"
-    ]
-  },
-  {
-    "files": [
+    ],
+    [
       "license",
       "License",
       "LICENSE"
-    ]
-  },
-  {
-    "files": [
+    ],
+    [
       "license.txt",
       "License.txt",
       "LICENSE.txt",
       "LICENSE.TXT"
-    ]
-  },
-  {
-    "files": [
-      "license.md",
-      "License.md",
-      "LICENSE.md",
-      "LICENSE.MD"
-    ]
-  },
-  {
-    "files": [
+    ],
+    [
       "license.htm",
       "License.htm",
       "LICENSE.htm",
       "LICENSE.HTM"
-    ]
-  },
-  {
-    "files": [
+    ],
+    [
       "license.html",
       "License.html",
       "LICENSE.html",
       "LICENSE.HTML"
-    ]
-  },
-  {
-    "files": [
+    ],
+    [
       "license.doc",
       "License.doc",
       "LICENSE.doc",
       "LICENSE.DOC"
-    ]
-  },
-  {
-    "files": [
+    ],
+    [
       "lisense",
       "Lisense",
       "LISENSE"
-    ]
-  },
-  {
-    "files": [
+    ],
+    [
       "lisense.txt",
       "Lisense.txt",
       "LISENSE.txt",
       "LISENSE.TXT"
-    ]
-  },
-  {
-    "files": [
+    ],
+    [
       "lisense.md",
       "Lisense.md",
       "LISENSE.md",
       "LISENSE.MD"
-    ]
-  },
-  {
-    "files": [
+    ],
+    [
       "lisense.htm",
       "Lisense.htm",
       "LISENSE.htm",
       "LISENSE.HTM"
-    ]
-  },
-  {
-    "files": [
+    ],
+    [
       "lisense.html",
       "Lisense.html",
       "LISENSE.html",
       "LISENSE.HTML"
-    ]
-  },
-  {
-    "files": [
+    ],
+    [
       "lisense.doc",
       "Lisense.doc",
       "LISENSE.doc",
       "LISENSE.DOC"
-    ]
-  },
-  {
-    "files": [
+    ],
+    [
       "install",
       "Install",
       "INSTALL"
-    ]
-  },
-  {
-    "files": [
+    ],
+    [
       "install.txt",
       "Install.txt",
       "INSTALL.txt",
       "INSTALL.TXT"
-    ]
-  },
-  {
-    "files": [
+    ],
+    [
       "install.md",
       "Install.md",
       "INSTALL.md",
       "INSTALL.MD"
-    ]
-  },
-  {
-    "files": [
+    ],
+    [
       "install.htm",
       "Install.htm",
       "INSTALL.htm",
       "INSTALL.HTM"
-    ]
-  },
-  {
-    "files": [
+    ],
+    [
       "install.html",
       "Install.html",
       "INSTALL.html",
       "INSTALL.HTML"
-    ]
-  },
-  {
-    "files": [
+    ],
+    [
       "install.doc",
       "Install.doc",
       "INSTALL.doc",
       "INSTALL.DOC"
     ]
-  }
-]
-
+  ],
+  "patterns": [
+    {
+      "product_id": 11,
+      "pattern": "\\bNginx\\b|\\bnginx\\b|host\\s+it\\s+with\\s+our\\s+running\\s+Nginx|running\\s+Nginx|nginx[/\\s]+(\\d+\\.\\d+(?:\\.\\d+)?)",
+      "version_pattern": "nginx[/\\s]+(\\d+\\.\\d+(?:\\.\\d+)?)",
+      "flags": "i",
+      "probability": 85
+    },
+    {
+      "product_id": 30,
+      "pattern": "\\bPHP\\b|\\bphp\\b|index\\.php|\\.php\\b|php\\s+(?:version\\s*)?(\\d+\\.\\d+(?:\\.\\d+)?)",
+      "version_pattern": "php\\s+(?:version\\s*)?(\\d+\\.\\d+(?:\\.\\d+)?)",
+      "flags": "i",
+      "probability": 80
+    },
+    {
+      "product_id": 236,
+      "pattern": "\\bHLS\\b|\\bhls\\b|HLS\\s+livestream|hls\\.html|HTTP\\s+Live\\s+Streaming",
+      "flags": "i",
+      "probability": 75
+    },
+    {
+      "product_id": 12,
+      "pattern": "\\bIIS\\b|\\biis\\b|IIS-Konfiguration|Internet\\s+Information\\s+Services|Internet\\s+Information\\s+Server|Anwendungspool|WebSite\\s+hinzuf|Port\\s+8081",
+      "flags": "i",
+      "probability": 85
+    },
+    {
+      "product_id": 56,
+      "pattern": "\\.NET\\s*4\\.(?:0|5)|\\b\\.NET\\s+CLR-Version\\s*=\\s*v4\\.0|NET4\\.5|NET\\s+4\\.0|NET\\s+4\\.5",
+      "version_pattern": "\\.NET\\s*(4\\.(?:0|5))|NET(4\\.(?:0|5))|CLR-Version\\s*=\\s*v(4\\.(?:0|5))",
+      "flags": "i",
+      "probability": 80
+    },
+    {
+      "product_id": 56,
+      "pattern": "\\bASP\\.NET\\b|\\basp\\.net\\b|ASP\\s+muss\\s+installiert\\s+sein|ASP\\s+\\+\\.NET",
+      "flags": "i",
+      "probability": 80
+    },
+    {
+      "product_id": 58,
+      "pattern": "\\bASP\\s+muss\\s+installiert\\s+sein|\\bASP\\s+\\+\\.NET|IIS.*ASP",
+      "flags": "i",
+      "probability": 75
+    },
+    {
+      "product_id": 237,
+      "pattern": "\\bQuickBooks\\b|\\bQBWebConnector\\b|QB\\s+Web\\s+Connector|CustomerQuery|InvoiceQuery|BillQuery|\\.qwc\\s+file|QuickBooks\\s+Web\\s+Connector",
+      "flags": "i",
+      "probability": 75
+    },
+    {
+      "product_id": 238,
+      "pattern": "\\bQBSDK\\b|QuickBooks\\s+SDK|install\\s+latest\\s+QBSDK",
+      "flags": "i",
+      "probability": 70
+    },
+    {
+      "product_id": 90,
+      "pattern": "\\bjQuery\\b|\\bjquery\\b|jquery\\.com",
+      "flags": "i",
+      "probability": 80
+    },
+    {
+      "product_id": 101,
+      "pattern": "\\bBootstrap(?!\\.php|/php|\\s+php)(?:[/\\s]+(\\d+\\.\\d+(?:\\.\\d+)?)|\\s+Version\\s+(\\d+\\.\\d+(?:\\.\\d+)?)|\\s+v(\\d+\\.\\d+(?:\\.\\d+)?)|\\s+(?:framework|CSS|UI|frontend))|getbootstrap\\.com|update\\s+Bootstrap\\s+to\\s+v?(\\d+\\.\\d+(?:\\.\\d+)?)",
+      "version_pattern": "(?:update\\s+)?Bootstrap\\s+to\\s+v?(\\d+\\.\\d+(?:\\.\\d+)?)|Bootstrap(?:[/\\s]+v?|\\s+Version\\s+|\\s+v)(\\d+\\.\\d+(?:\\.\\d+)?)",
+      "flags": "i",
+      "probability": 85
+    },
+    {
+      "product_id": 102,
+      "pattern": "\\bPopper\\.js\\b|\\bpopper\\.js\\b|\\bPopper\\b|Popper[/\\s]+(\\d+\\.\\d+(?:\\.\\d+)?)|Popper\\.js[/\\s]+(\\d+\\.\\d+(?:\\.\\d+)?)|popper\\.js[/\\s]+(\\d+\\.\\d+(?:\\.\\d+)?)|update\\s+Popper\\s+to\\s+v?(\\d+\\.\\d+(?:\\.\\d+)?)",
+      "version_pattern": "(?:update\\s+)?Popper(?:\\.js)?\\s+to\\s+v?(\\d+\\.\\d+(?:\\.\\d+)?)|Popper(?:\\.js)?[/\\s]+v?(\\d+\\.\\d+(?:\\.\\d+)?)",
+      "flags": "i",
+      "probability": 80
+    },
+    {
+      "product_id": 35,
+      "pattern": "\\bC#\\b|C\\s+sharp|C#\\s+ASP\\.NET",
+      "flags": "i",
+      "probability": 80
+    },
+    {
+      "product_id": 161,
+      "pattern": "\\bArch\\s+Linux\\b|archlinux\\.zuepfe\\.net|PKGBUILDs|pacman\\.conf|pacman-key|zuepfe-(?:original|aur|repkg|updates|meta)",
+      "flags": "i",
+      "probability": 75
+    },
+    {
+      "product_id": 201,
+      "pattern": "\\bMariaDB\\b|\\bmariadb\\b|MariaDB[/\\s]+(\\d+\\.\\d+(?:\\.\\d+)?)|MariaDB\\s+Version\\s+(\\d+\\.\\d+(?:\\.\\d+)?)",
+      "version_pattern": "MariaDB[/\\s]+(\\d+\\.\\d+(?:\\.\\d+)?)|MariaDB\\s+Version\\s+(\\d+\\.\\d+(?:\\.\\d+)?)",
+      "flags": "i",
+      "probability": 85
+    },
+    {
+      "product_id": 200,
+      "pattern": "\\bMySQL\\b|\\bMySQL\\s+Database\\b|\\bMySQL\\s+Server\\b|MySQL[/\\s]+(\\d+\\.\\d+(?:\\.\\d+)?)|MySQL\\s+Version\\s+(\\d+\\.\\d+(?:\\.\\d+)?)|MySQL\\s+(\\d+\\.\\d+(?:\\.\\d+)?)|MySQL/MariaDB",
+      "version_pattern": "MySQL[/\\s]+(\\d+\\.\\d+(?:\\.\\d+)?)|MySQL\\s+Version\\s+(\\d+\\.\\d+(?:\\.\\d+)?)|MySQL\\s+(\\d+\\.\\d+(?:\\.\\d+)?)",
+      "flags": "i",
+      "probability": 85
+    },
+    {
+      "product_id": 415,
+      "pattern": "\\bPDO\\b|\\bpdo\\b|Extension\\s+PDO|PHP\\s+PDO|PDO\\s+Extension|PDO\\s+Driver",
+      "flags": "i",
+      "probability": 80
+    },
+    {
+      "product_id": 408,
+      "pattern": "\\bOpenSSL\\b|\\bopenssl\\b|Extension\\s+OpenSSL|PHP\\s+OpenSSL|OpenSSL\\s+Extension|OpenSSL[/\\s]+(\\d+\\.\\d+(?:\\.\\d+)?[a-z]?)",
+      "version_pattern": "OpenSSL[/\\s]+(\\d+\\.\\d+(?:\\.\\d+)?[a-z]?)",
+      "flags": "i",
+      "probability": 80
+    },
+    {
+      "product_id": 52,
+      "pattern": "Laravel[/\\s]+(\\d+\\.\\d+(?:\\.\\d+)?)|Laravel\\s+Framework\\s+(\\d+\\.\\d+(?:\\.\\d+)?)|\\bLaravel\\s+Application\\b|\\bLaravel\\s+Project\\b|built\\s+with\\s+Laravel|powered\\s+by\\s+Laravel",
+      "version_pattern": "Laravel[/\\s]+(\\d+\\.\\d+(?:\\.\\d+)?)|Laravel\\s+Framework\\s+(\\d+\\.\\d+(?:\\.\\d+)?)",
+      "flags": "i",
+      "probability": 80
+    },
+    {
+      "product_id": 10,
+      "pattern": "\\bApache\\s+Web\\s+Server\\b|\\bApache\\s+HTTP\\s+Server\\b|\\bApache\\s+httpd\\b|Apache[/\\s]+(\\d+\\.\\d+(?:\\.\\d+)?)|Apache\\s+Version\\s+(\\d+\\.\\d+(?:\\.\\d+)?)",
+      "version_pattern": "Apache[/\\s]+(\\d+\\.\\d+(?:\\.\\d+)?)|Apache\\s+Version\\s+(\\d+\\.\\d+(?:\\.\\d+)?)",
+      "flags": "i",
+      "probability": 85
+    },
+    {
+      "product_id": 140,
+      "pattern": "\\bphpMyAdmin\\b|\\bphpmyadmin\\b|phpMyAdmin\\s+Database\\s+Manager|phpMyAdmin[/\\s]+(\\d+\\.\\d+(?:\\.\\d+)?)|phpMyAdmin\\s+Version\\s+(\\d+\\.\\d+(?:\\.\\d+)?)",
+      "version_pattern": "phpMyAdmin[/\\s]+(\\d+\\.\\d+(?:\\.\\d+)?)|phpMyAdmin\\s+Version\\s+(\\d+\\.\\d+(?:\\.\\d+)?)",
+      "flags": "i",
+      "probability": 85
+    },
+    {
+      "product_id": 133,
+      "pattern": "\\bAppServ\\b|\\bappserv\\b|AppServ\\s+for\\s+Windows|AppServ\\s+for\\s+Linux|appservernetwork\\.com",
+      "flags": "i",
+      "probability": 80
+    },
+    {
+      "product_id": 202,
+      "pattern": "\\bPostgreSQL\\b|\\bpostgresql\\b|PostgreSQL[/\\s]+(\\d+\\.\\d+(?:\\.\\d+)?)|PostgreSQL\\s+Version\\s+(\\d+\\.\\d+(?:\\.\\d+)?)",
+      "version_pattern": "PostgreSQL[/\\s]+(\\d+\\.\\d+(?:\\.\\d+)?)|PostgreSQL\\s+Version\\s+(\\d+\\.\\d+(?:\\.\\d+)?)",
+      "flags": "i",
+      "probability": 85
+    },
+    {
+      "product_id": 20,
+      "pattern": "\\bApache\\s+Tomcat\\b|\\bTomcat\\b|Tomcat[/\\s]+(\\d+\\.\\d+(?:\\.\\d+)?)|Tomcat\\s+Version\\s+(\\d+\\.\\d+(?:\\.\\d+)?)",
+      "version_pattern": "Tomcat[/\\s]+(\\d+\\.\\d+(?:\\.\\d+)?)|Tomcat\\s+Version\\s+(\\d+\\.\\d+(?:\\.\\d+)?)",
+      "flags": "i",
+      "probability": 85
+    },
+    {
+      "product_id": 34,
+      "pattern": "\\bNode\\.js\\b|\\bnodejs\\b|Node[/\\s]+(\\d+\\.\\d+(?:\\.\\d+)?)|Node\\.js\\s+Version\\s+(\\d+\\.\\d+(?:\\.\\d+)?)",
+      "version_pattern": "Node[/\\s]+(\\d+\\.\\d+(?:\\.\\d+)?)|Node\\.js\\s+Version\\s+(\\d+\\.\\d+(?:\\.\\d+)?)",
+      "flags": "i",
+      "probability": 80
+    },
+    {
+      "product_id": 32,
+      "pattern": "\\bPython\\s+(\\d+\\.\\d+(?:\\.\\d+)?)\\b|Python\\s+Version\\s+(\\d+\\.\\d+(?:\\.\\d+)?)|Python[/\\s]+(\\d+\\.\\d+(?:\\.\\d+)?)",
+      "version_pattern": "Python\\s+(\\d+\\.\\d+(?:\\.\\d+)?)|Python\\s+Version\\s+(\\d+\\.\\d+(?:\\.\\d+)?)|Python[/\\s]+(\\d+\\.\\d+(?:\\.\\d+)?)",
+      "flags": "i",
+      "probability": 80
+    },
+    {
+      "product_id": 50,
+      "pattern": "\\bDjango\\b|\\bdjango\\b|Django[/\\s]+(\\d+\\.\\d+(?:\\.\\d+)?)|Django\\s+Version\\s+(\\d+\\.\\d+(?:\\.\\d+)?)",
+      "version_pattern": "Django[/\\s]+(\\d+\\.\\d+(?:\\.\\d+)?)|Django\\s+Version\\s+(\\d+\\.\\d+(?:\\.\\d+)?)",
+      "flags": "i",
+      "probability": 80
+    },
+    {
+      "product_id": 51,
+      "pattern": "\\bRuby\\s+on\\s+Rails\\b|\\bRails\\b|Rails[/\\s]+(\\d+\\.\\d+(?:\\.\\d+)?)|Ruby\\s+on\\s+Rails\\s+(\\d+\\.\\d+(?:\\.\\d+)?)",
+      "version_pattern": "Rails[/\\s]+(\\d+\\.\\d+(?:\\.\\d+)?)|Ruby\\s+on\\s+Rails\\s+(\\d+\\.\\d+(?:\\.\\d+)?)",
+      "flags": "i",
+      "probability": 80
+    },
+    {
+      "product_id": 70,
+      "pattern": "WordPress[/\\s]+(\\d+\\.\\d+(?:\\.\\d+)?)|WordPress\\s+Version\\s+(\\d+\\.\\d+(?:\\.\\d+)?)|\\bWordPress\\s+Installation\\b|\\bWordPress\\s+Site\\b|built\\s+with\\s+WordPress|powered\\s+by\\s+WordPress|WordPress\\s+Theme|WordPress\\s+Plugin",
+      "version_pattern": "WordPress[/\\s]+(\\d+\\.\\d+(?:\\.\\d+)?)|WordPress\\s+Version\\s+(\\d+\\.\\d+(?:\\.\\d+)?)",
+      "flags": "i",
+      "probability": 80
+    },
+    {
+      "product_id": 71,
+      "pattern": "\\bDrupal\\b|\\bdrupal\\b|Drupal[/\\s]+(\\d+\\.\\d+(?:\\.\\d+)?)|Drupal\\s+Version\\s+(\\d+\\.\\d+(?:\\.\\d+)?)",
+      "version_pattern": "Drupal[/\\s]+(\\d+\\.\\d+(?:\\.\\d+)?)|Drupal\\s+Version\\s+(\\d+\\.\\d+(?:\\.\\d+)?)",
+      "flags": "i",
+      "probability": 80
+    },
+    {
+      "product_id": 72,
+      "pattern": "\\bJoomla\\b|\\bjoomla\\b|Joomla[/\\s]+(\\d+\\.\\d+(?:\\.\\d+)?)|Joomla\\s+Version\\s+(\\d+\\.\\d+(?:\\.\\d+)?)",
+      "version_pattern": "Joomla[/\\s]+(\\d+\\.\\d+(?:\\.\\d+)?)|Joomla\\s+Version\\s+(\\d+\\.\\d+(?:\\.\\d+)?)",
+      "flags": "i",
+      "probability": 80
+    },
+    {
+      "product_id": 130,
+      "pattern": "\\bXAMPP\\b|\\bxampp\\b|XAMPP\\s+for\\s+Windows|XAMPP\\s+for\\s+Linux|apachefriends\\.org",
+      "flags": "i",
+      "probability": 80
+    },
+    {
+      "product_id": 131,
+      "pattern": "\\bWAMP\\b|\\bwamp\\b|WAMP\\s+Server|WampServer",
+      "flags": "i",
+      "probability": 80
+    },
+    {
+      "product_id": 132,
+      "pattern": "\\bLAMP\\s+Stack\\b|\\bLAMP\\s+Server\\b|Linux.*Apache.*MySQL.*PHP",
+      "flags": "i",
+      "probability": 75
+    },
+    {
+      "product_id": 134,
+      "pattern": "\\bLEMP\\s+Stack\\b|\\bLEMP\\s+Server\\b|Linux.*Nginx.*MySQL.*PHP",
+      "flags": "i",
+      "probability": 75
+    },
+    {
+      "product_id": 205,
+      "pattern": "\\bMongoDB\\b|\\bmongodb\\b|MongoDB[/\\s]+(\\d+\\.\\d+(?:\\.\\d+)?)|MongoDB\\s+Version\\s+(\\d+\\.\\d+(?:\\.\\d+)?)",
+      "version_pattern": "MongoDB[/\\s]+(\\d+\\.\\d+(?:\\.\\d+)?)|MongoDB\\s+Version\\s+(\\d+\\.\\d+(?:\\.\\d+)?)",
+      "flags": "i",
+      "probability": 80
+    },
+    {
+      "product_id": 206,
+      "pattern": "\\bRedis\\b|\\bredis\\b|Redis[/\\s]+(\\d+\\.\\d+(?:\\.\\d+)?)|Redis\\s+Version\\s+(\\d+\\.\\d+(?:\\.\\d+)?)",
+      "version_pattern": "Redis[/\\s]+(\\d+\\.\\d+(?:\\.\\d+)?)|Redis\\s+Version\\s+(\\d+\\.\\d+(?:\\.\\d+)?)",
+      "flags": "i",
+      "probability": 80
+    },
+    {
+      "product_id": 207,
+      "pattern": "\\bElasticsearch\\b|\\belasticsearch\\b|Elasticsearch[/\\s]+(\\d+\\.\\d+(?:\\.\\d+)?)|Elasticsearch\\s+Version\\s+(\\d+\\.\\d+(?:\\.\\d+)?)",
+      "version_pattern": "Elasticsearch[/\\s]+(\\d+\\.\\d+(?:\\.\\d+)?)|Elasticsearch\\s+Version\\s+(\\d+\\.\\d+(?:\\.\\d+)?)",
+      "flags": "i",
+      "probability": 80
+    },
+    {
+      "product_id": 239,
+      "pattern": "\\bDocker\\b|\\bdocker\\b|Docker[/\\s]+(\\d+\\.\\d+(?:\\.\\d+)?)|Docker\\s+Version\\s+(\\d+\\.\\d+(?:\\.\\d+)?)",
+      "version_pattern": "Docker[/\\s]+(\\d+\\.\\d+(?:\\.\\d+)?)|Docker\\s+Version\\s+(\\d+\\.\\d+(?:\\.\\d+)?)",
+      "flags": "i",
+      "probability": 80
+    },
+    {
+      "product_id": 240,
+      "pattern": "\\bKubernetes\\b|\\bkubernetes\\b|\\bk8s\\b|Kubernetes[/\\s]+(\\d+\\.\\d+(?:\\.\\d+)?)",
+      "version_pattern": "Kubernetes[/\\s]+(\\d+\\.\\d+(?:\\.\\d+)?)",
+      "flags": "i",
+      "probability": 75
+    },
+    {
+      "product_id": 30,
+      "pattern": "PHP\\s+(\\d+\\.\\d+)\\s*\\+|PHP\\s+(\\d+\\.\\d+(?:\\.\\d+)?)\\s*required|PHP\\s+Version\\s+(\\d+\\.\\d+(?:\\.\\d+)?)\\s*\\+|Requires\\s+PHP\\s+(\\d+\\.\\d+(?:\\.\\d+)?)",
+      "version_pattern": "PHP\\s+(\\d+\\.\\d+(?:\\.\\d+)?)\\s*\\+|PHP\\s+(\\d+\\.\\d+(?:\\.\\d+)?)\\s*required|PHP\\s+Version\\s+(\\d+\\.\\d+(?:\\.\\d+)?)\\s*\\+|Requires\\s+PHP\\s+(\\d+\\.\\d+(?:\\.\\d+)?)",
+      "flags": "i",
+      "probability": 75
+    },
+    {
+      "product_id": 338,
+      "pattern": "\\bcURL\\b|\\bcurl\\b|Extension\\s+cURL|PHP\\s+cURL|curl\\s+extension",
+      "flags": "i",
+      "probability": 75
+    },
+    {
+      "product_id": 376,
+      "pattern": "\\bGD\\s+Library\\b|\\bGD\\b|Extension\\s+GD|PHP\\s+GD|GD\\s+extension",
+      "flags": "i",
+      "probability": 75
+    },
+    {
+      "product_id": 391,
+      "pattern": "\\bmbstring\\b|Extension\\s+mbstring|PHP\\s+mbstring|Multibyte\\s+String",
+      "flags": "i",
+      "probability": 75
+    },
+    {
+      "product_id": 382,
+      "pattern": "\\bJSON\\s+Extension\\b|Extension\\s+JSON|PHP\\s+JSON|json\\s+extension",
+      "flags": "i",
+      "probability": 75
+    },
+    {
+      "product_id": 480,
+      "pattern": "\\bXML\\s+Parser\\b|Extension\\s+XML|PHP\\s+XML|xml\\s+extension",
+      "flags": "i",
+      "probability": 75
+    },
+    {
+      "product_id": 493,
+      "pattern": "\\bZIP\\s+Extension\\b|Extension\\s+ZIP|PHP\\s+ZIP|zip\\s+extension",
+      "flags": "i",
+      "probability": 75
+    },
+    {
+      "product_id": 401,
+      "pattern": "\\bMySQLi\\b|\\bmysqli\\b|Extension\\s+MySQLi|PHP\\s+MySQLi|mysqli\\s+extension",
+      "flags": "i",
+      "probability": 75
+    },
+    {
+      "product_id": 203,
+      "pattern": "\\bSQLite\\b|\\bsqlite\\b|SQLite[/\\s]+(\\d+\\.\\d+(?:\\.\\d+)?)|SQLite\\s+Version\\s+(\\d+\\.\\d+(?:\\.\\d+)?)",
+      "version_pattern": "SQLite[/\\s]+(\\d+\\.\\d+(?:\\.\\d+)?)|SQLite\\s+Version\\s+(\\d+\\.\\d+(?:\\.\\d+)?)",
+      "flags": "i",
+      "probability": 80
+    },
+    {
+      "product_id": 241,
+      "pattern": "\\bComposer\\b|\\bcomposer\\b|composer\\.json|Composer\\s+Package\\s+Manager",
+      "flags": "i",
+      "probability": 80
+    },
+    {
+      "product_id": 81,
+      "pattern": "\\bMagento\\b|\\bmagento\\b|Magento[/\\s]+(\\d+\\.\\d+(?:\\.\\d+)?)|Magento\\s+Version\\s+(\\d+\\.\\d+(?:\\.\\d+)?)|Magento\\s+Commerce|Magento\\s+Open\\s+Source|built\\s+with\\s+Magento|powered\\s+by\\s+Magento",
+      "version_pattern": "Magento[/\\s]+(\\d+\\.\\d+(?:\\.\\d+)?)|Magento\\s+Version\\s+(\\d+\\.\\d+(?:\\.\\d+)?)",
+      "flags": "i",
+      "probability": 85
+    },
+    {
+      "product_id": 242,
+      "pattern": "\\bGraphQL\\b|\\bgraphql\\b|GraphQL\\s+API|graphql\\s+endpoint|graphql\\.php|/graphql|GraphQL\\s+query|GraphQL\\s+mutation",
+      "flags": "i",
+      "probability": 80
+    },
+    {
+      "product_id": 243,
+      "pattern": "REST\\s+API|RESTful\\s+API|REST\\s+endpoint|/rest/|/api/rest/|REST\\s+web\\s+services",
+      "flags": "i",
+      "probability": 75
+    },
+    {
+      "product_id": 112,
+      "pattern": "\\bVarnish\\b|\\bvarnish\\b|Varnish[/\\s]+(\\d+\\.\\d+(?:\\.\\d+)?)|X-Varnish|varnish\\s+cache",
+      "version_pattern": "Varnish[/\\s]+(\\d+\\.\\d+(?:\\.\\d+)?)",
+      "flags": "i",
+      "probability": 75
+    },
+    {
+      "product_id": 244,
+      "pattern": "\\bNew\\s+Relic\\b|\\bnewrelic\\b|NewRelic|newrelic\\.com|New\\s+Relic\\s+APM",
+      "flags": "i",
+      "probability": 70
+    },
+    {
+      "product_id": 245,
+      "pattern": "\\bMikroTik\\b|\\bMikroTikls\\b|\\bRouterOS\\b|MikroTik\\s+RouterOS|MikroTikls\\s+SIA|RouterOS\\s+SOFTWARE|MikroTik\\s+Router",
+      "flags": "i",
+      "probability": 90
+    },
+    {
+      "product_id": 246,
+      "pattern": "\\bZeroTier\\b|\\bzerotier\\b|ZeroTier\\s+Network|ZeroTier\\s+One|zerotier\\.com|ZeroTier\\s+BSL",
+      "flags": "i",
+      "probability": 80
+    },
+    {
+      "product_id": 211,
+      "pattern": "\\bOpenSSH\\b|\\bopenssh\\b|OpenSSH\\s+License|openssh\\.org|OpenSSH[/\\s]+(\\d+\\.\\d+(?:p\\d+)?)",
+      "version_pattern": "OpenSSH[/\\s]+(\\d+\\.\\d+(?:p\\d+)?)",
+      "flags": "i",
+      "probability": 85
+    },
+    {
+      "product_id": 213,
+      "pattern": "\\bnet-snmp\\b|\\bNet-SNMP\\b|net-snmp\\.sourceforge\\.net|SNMP\\s+implementation",
+      "flags": "i",
+      "probability": 75
+    },
+    {
+      "product_id": 214,
+      "pattern": "\\bracoon\\b|\\bRacoon\\b|racoon\\s+License|kame\\.net.*racoon|IPsec\\s+IKE\\s+daemon",
+      "flags": "i",
+      "probability": 75
+    },
+    {
+      "product_id": 160,
+      "pattern": "\\blinux\\s+kernel\\b|\\bLinux\\s+Kernel\\b|kernel\\.org|linux-kernel|Linux\\s+kernel\\s+(\\d+\\.\\d+(?:\\.\\d+)?)",
+      "version_pattern": "Linux\\s+kernel\\s+(\\d+\\.\\d+(?:\\.\\d+)?)|kernel\\s+(\\d+\\.\\d+(?:\\.\\d+)?)",
+      "flags": "i",
+      "probability": 80
+    },
+    {
+      "product_id": 208,
+      "pattern": "\\bSQL\\s+Server\\s+Compact\\b|\\bSQL\\s+CE\\b|\\bSQLCE\\b|\\bSSCERuntime\\b|SSCERuntime-ENU|Microsoft\\s+SQL\\s+Server\\s+Compact|SQL\\s+Server\\s+Compact\\s+(\\d+\\.\\d+(?:\\.\\d+)?)|\\bSqlCeConnection\\b|\\bSystem\\.Data\\.SqlServerCe\\b",
+      "version_pattern": "SQL\\s+Server\\s+Compact\\s+(\\d+\\.\\d+(?:\\.\\d+)?)|SSCERuntime.*?(\\d+\\.\\d+)",
+      "flags": "i",
+      "probability": 85
+    },
+    {
+      "product_id": 162,
+      "pattern": "\\bWindows\\s+Installer\\b|\\bWindows\\s+MSI\\b|\\.msi\\s+file|32-bit.*64-bit.*Computer|x86.*x64.*AMD64|Microsoft\\s+Windows|Windows\\s+Server",
+      "flags": "i",
+      "probability": 75
+    },
+    {
+      "product_id": 204,
+      "pattern": "\\bMicrosoft\\s+SQL\\s+Server\\b|\\bMS\\s+SQL\\s+Server\\b|\\bMSSQL\\b|SQL\\s+Server\\s+(\\d{4})|SQL\\s+Server\\s+(\\d+\\.\\d+)|\\bSqlConnection\\b|\\bSystem\\.Data\\.SqlClient\\b",
+      "version_pattern": "SQL\\s+Server\\s+(\\d{4})|SQL\\s+Server\\s+(\\d+\\.\\d+(?:\\.\\d+)?)",
+      "flags": "i",
+      "probability": 85
+    },
+    {
+      "product_id": 212,
+      "pattern": "\\bLet'?s\\s*Encrypt\\b|\\bLetsencrypt\\b|\\bletsencrypt\\b|certbot|acme\\.sh|TLS\\s+certificate\\s+renewal|Letsencrypt\\s+TLS",
+      "flags": "i",
+      "probability": 50
+    },
+    {
+      "product_id": 247,
+      "pattern": "\\bDigitalOcean\\b|\\bdigitalocean\\b|m\\.do\\.co|DO\\s+Droplet|DigitalOcean\\s+Droplet",
+      "flags": "i",
+      "probability": 40
+    },
+    {
+      "product_id": 248,
+      "pattern": "\\bcPanel\\b|\\bcpanel\\b|cPanel\\s+with\\s+SSH|WHM/cPanel|cPanel\\s+hosting|cpanel\\.net",
+      "flags": "i",
+      "probability": 50
+    },
+    {
+      "product_id": 249,
+      "pattern": "\\bOSPOS\\b|\\bopensourcepos\\b|Open\\s+Source\\s+Point\\s+of\\s+Sale|opensourcepos/opensourcepos|WS-OSPOS-Installer",
+      "flags": "i",
+      "probability": 85
+    },
+    {
+      "product_id": 62,
+      "pattern": "\\bCodeIgniter\\b|\\bcodeigniter\\b|application/config/database\\.php|application/config/config\\.php|system\\s+folder\\s+missing",
+      "flags": "i",
+      "probability": 75
+    }
+  ]
+}
