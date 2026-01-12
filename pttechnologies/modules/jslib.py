@@ -282,20 +282,12 @@ class JSLIB:
                 category = lib.get("category", "JavaScript Library")
                 note = lib.get("note", "")
                 
-                # Get vendor from product if product_id is available
-                vendor = None
-                if product_id:
-                    product = self.product_manager.get_product_by_id(product_id)
-                    if product:
-                        vendor = product.get('vendor')
-                
                 storage.add_to_storage(
                     technology=technology,
                     technology_type=category,
                     probability=probability,
                     version=version if version else None,
-                    product_id=product_id,
-                    vendor=vendor
+                    product_id=product_id
                 )
 
 

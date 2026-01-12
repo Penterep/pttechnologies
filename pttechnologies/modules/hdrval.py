@@ -596,7 +596,11 @@ class HDRVAL:
                         continue
                     
                     products = product.get('products', [])
-                    technology_name = products[0] if products else product.get('our_name', technology['name'])
+                    # If products[0] is null, use our_name for storage
+                    if products and products[0] is not None:
+                        technology_name = products[0]
+                    else:
+                        technology_name = product.get('our_name', technology['name'])
                     display_name = product.get('our_name', technology['name'])
                     category_name = self.product_manager.get_category_name(product.get('category_id'))
                     
@@ -622,14 +626,27 @@ class HDRVAL:
             is_classified: Whether the technology was matched against known definitions
         """
         
+        # Only store classified technologies with proper product_id
+        # Unclassified technologies don't have normalized names and would create duplicates
+        if not is_classified or not tech.get('product_id'):
+            return
+        
         if is_classified and tech.get('category') != 'Unknown':
             tech_type = tech['category']
         else:
             tech_type = None
         
-        tech_name = tech.get('technology', tech.get('name', 'Unknown'))
+        
         version = tech.get('version')
         product_id = tech.get('product_id')
+        product = self.product_manager.get_product_by_id(product_id)
+        products = product.get('products', [])
+        # If products[0] is null, use our_name for storage
+        if products and products[0] is not None:
+            tech_name = products[0]
+        else:
+            tech_name = product.get('our_name') if product else None
+        display_name = product.get('our_name', tech_name) if product else tech_name
         probability = tech.get('probability', 100)
         
         header_name = tech.get('header', 'Unknown')
@@ -645,13 +662,6 @@ class HDRVAL:
         else:
             description = f"{header_name}: {tech_name}"
         
-        # Get vendor from product if product_id is available
-        vendor = None
-        if product_id:
-            product = self.product_manager.get_product_by_id(product_id)
-            if product:
-                vendor = product.get('vendor')
-        
         storage.add_to_storage(
             technology=tech_name,
             version=version,
@@ -659,8 +669,7 @@ class HDRVAL:
             vulnerability="PTV-WEB-INFO-SRVHDR",
             description=description,
             probability=probability,
-            product_id=product_id,
-            vendor=vendor
+            product_id=product_id
         )
 
     def _get_source_description(self, source: str) -> str:

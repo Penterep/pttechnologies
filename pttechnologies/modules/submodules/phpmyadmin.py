@@ -237,13 +237,7 @@ def _add_detected_to_info(tech_info: Dict[str, Any], detected: List[Dict[str, An
         tech_info['additional_info'].append('\n'.join(info_lines))
         
         # Get vendor from product if product_id is available
-        vendor = None
         product_id = component.get('product_id')
-        if product_id:
-            product_manager = get_product_manager()
-            product = product_manager.get_product_by_id(product_id)
-            if product:
-                vendor = product.get('vendor')
         
         storage.add_to_storage(
             technology=component['technology'],
@@ -251,8 +245,7 @@ def _add_detected_to_info(tech_info: Dict[str, Any], detected: List[Dict[str, An
             technology_type=component['category'],
             probability=component.get('probability', 100),
             description=f"phpMyAdmin Documentation: {component['technology']}",
-            product_id=product_id,
-            vendor=vendor
+            product_id=product_id
         )
 
 

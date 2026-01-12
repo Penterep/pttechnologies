@@ -155,13 +155,21 @@ class Predict:
             sources_str = ", ".join(data['sources'])
             description = f"Plugin dependency from: {sources_str}"
             
+            display_name = data['technology']
+            product_id = data['product_id']
+            if product_id:
+                product = self.product_manager.get_product_by_id(product_id)
+                if product:
+                    display_name = product.get("our_name", data['technology'])
+            
             prediction = {
-                'technology': data['technology'],
+                'technology': display_name,
+                'storage_name': data['technology'],
                 'technology_type': data['technology_type'],
                 'version': data['version'],
                 'probability': 80,
                 'description': description,
-                'product_id': data['product_id'],
+                'product_id': product_id,
                 'sources': data['sources']
             }
             plugin_deps.append(prediction)
@@ -210,14 +218,18 @@ class Predict:
                 continue  # Skip if product not found
             
             technology_name = product.get("our_name", "Unknown")
+            products = product.get('products', [])
+            storage_name = products[0] if (products and products[0] is not None) else technology_name
             category_name = self.product_manager.get_category_name(product.get("category_id"))
             
             prediction = {
                 'technology': technology_name,
+                'storage_name': storage_name,
                 'technology_type': category_name,
                 'version': item.get("version"),
                 'probability': item.get("probability", 100),
-                'description': item.get('description')
+                'description': item.get('description'),
+                'product_id': product_id
             }
             predictions.append(prediction)
             
@@ -229,7 +241,7 @@ class Predict:
         
         Groups predictions with the same technology, type, and version together,
         keeping track of all sources that predicted them. Different versions
-        are kept as separate predictions.
+        are kept as separate predictions. Groups by storage_name to properly deduplicate.
         
         Args:
             all_predictions: List of all collected prediction dictionaries.
@@ -240,11 +252,13 @@ class Predict:
         grouped = {}
         
         for pred in all_predictions:
-            key = (pred['technology'], pred['technology_type'], pred['version'])
+            storage_name = pred.get('storage_name', pred['technology'])
+            key = (storage_name, pred['technology_type'], pred['version'])
             
             if key not in grouped:
                 grouped[key] = {
                     'technology': pred['technology'],
+                    'storage_name': storage_name,
                     'technology_type': pred['technology_type'],
                     'version': pred['version'],
                     'sources': [],
@@ -341,11 +355,12 @@ class Predict:
             None
         """
         storage.add_to_storage(
-            technology=prediction['technology'],
+            technology=prediction.get('storage_name', prediction['technology']),
             technology_type=prediction['technology_type'],
             version=prediction['version'],
             probability=probability,
-            description=description
+            description=description,
+            product_id=prediction.get('product_id')
         )
 
     def _prepare_for_display(self, prediction):

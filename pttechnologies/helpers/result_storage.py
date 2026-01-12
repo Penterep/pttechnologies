@@ -255,10 +255,18 @@ class ResultStorage:
             sw_prefix = mapping.get("swPrefix")
             sw_value = f"{sw_prefix}{technology}" if sw_prefix else None
 
-            # Get product_id, vendor, and cve_details_url from first record that has them
+            # Get product_id from first record that has it
             product_id = next((r.get("product_id") for r in filtered if r.get("product_id")), None)
-            vendor = next((r.get("vendor") for r in filtered if r.get("vendor")), None)
-            cve_details_url = next((r.get("cve_details_url") for r in filtered if r.get("cve_details_url")), None)
+            
+            vendor = None
+            cve_details_url = None
+            if product_id:
+                from helpers.products import get_product_manager
+                product_manager = get_product_manager()
+                product = product_manager.get_product_by_id(product_id)
+                if product:
+                    vendor = product.get("vendor")
+                    cve_details_url = product.get("cve_details_url")
 
             return {
                 "technology": technology,

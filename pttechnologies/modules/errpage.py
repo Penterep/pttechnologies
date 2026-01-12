@@ -342,10 +342,14 @@ class ERRPAGE:
         Args:
             tech: Detected technology information
         """
+        # Only store technologies with proper product_id to avoid duplicates
+        product_id = tech.get('product_id')
+        if not product_id:
+            return
+        
         tech_name = tech.get('technology', tech.get('name', 'Unknown'))
         version = tech.get('version')
         tech_type = tech.get('category')
-        product_id = tech.get('product_id')
         probability = tech.get('probability', 100)
         trigger_name = tech.get('trigger_name', 'unknown')
         status_code = tech.get('status_code')

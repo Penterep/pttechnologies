@@ -61,8 +61,6 @@ def analyze(tech_info: Dict[str, Any], args: object, helpers: object) -> Dict[st
             
             tech_info['additional_info'].append('\n'.join(info_lines))
             
-            # Get vendor from component (already included in result dictionary)
-            vendor = component.get('vendor')
             product_id = component.get('product_id')
             
             storage.add_to_storage(
@@ -71,8 +69,7 @@ def analyze(tech_info: Dict[str, Any], args: object, helpers: object) -> Dict[st
                 technology_type=component['category'],
                 probability=component.get('probability', 100),
                 description=f"Adminer Detection: {component['technology']}",
-                product_id=product_id,
-                vendor=vendor
+                product_id=product_id
             )
 
     return tech_info

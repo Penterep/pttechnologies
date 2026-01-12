@@ -110,20 +110,12 @@ class WSURLLEN:
             ptprint(f"Identified WS: {display_name} ", "VULN", not self.args.json, indent=4, end="")
             ptprint(f"({probability}%)", "ADDITIONS", not self.args.json, colortext=True)
             
-            # Get vendor from product if product_id is available
-            vendor = None
-            if product_id:
-                product = self.product_manager.get_product_by_id(product_id)
-                if product:
-                    vendor = product.get('vendor')
-            
             storage.add_to_storage(
                 technology=server, 
                 technology_type="Web Server", 
                 vulnerability="PTV-WEB-INFO-WSURL", 
                 probability=probability,
-                product_id=product_id,
-                vendor=vendor
+                product_id=product_id
             )
         else:
             ptprint("No matching web server identified from URL length behavior", "INFO", not self.args.json, indent=4)

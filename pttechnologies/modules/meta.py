@@ -203,10 +203,13 @@ class Meta:
             return
         
         products = product.get('products', [])
-        technology = products[0] if products else product.get("our_name", "Unknown")  # For storage (CVE compatible)
+        # If products[0] is null, use our_name for storage
+        if products and products[0] is not None:
+            technology = products[0]
+        else:
+            technology = product.get("our_name", "Unknown")  # For storage (CVE compatible)
         display_name = product.get("our_name", "Unknown")  # For printing
         technology_type = self.product_manager.get_category_name(product.get("category_id"))
-        vendor = product.get('vendor')
         
         probability = pattern.get("probability", 100)
         version_group = pattern.get("version_group")
@@ -223,8 +226,7 @@ class Meta:
             technology_type=technology_type,
             probability=probability,
             description=description,
-            product_id=product_id,
-            vendor=vendor
+            product_id=product_id
         )
         
         self._display_result(display_name, version, technology_type, meta_name, content, probability)
