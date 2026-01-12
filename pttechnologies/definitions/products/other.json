@@ -75,8 +75,8 @@
     {
       "id": 243,
       "our_name": "REST API",
-      "vendor": "x",
-      "products": ["x"],
+      "vendor": null,
+      "products": [null],
       "cve_details_url": null,
       "category_id": 99
     },

@@ -156,8 +156,8 @@
       "id": 319,
       "our_name": "WordPress Importer",
       "vendor": "wordpress",
-      "products": ["x"],
-      "cve_details_url": "x",
+      "products": [null],
+      "cve_details_url": null,
       "category_id": 11
     },
     {

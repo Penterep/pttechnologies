@@ -23,6 +23,22 @@
       "products": ["undertow"],
       "cve_details_url": "https://www.cvedetails.com/product/31202/Redhat-Undertow.html",
       "category_id": 3
+    },
+    {
+      "id": 23,
+      "our_name": "Caucho Resin",
+      "vendor": "caucho",
+      "products": ["resin"],
+      "cve_details_url": "https://www.cvedetails.com/product/14391/Caucho-Resin.html",
+      "category_id": 3
+    },
+    {
+      "id": 24,
+      "our_name": "Oracle GlassFish",
+      "vendor": "oracle",
+      "products": ["glassfish"],
+      "cve_details_url": "https://www.cvedetails.com/product/20700/Oracle-Glassfish-Server.html",
+      "category_id": 3
     }
   ]
 }
