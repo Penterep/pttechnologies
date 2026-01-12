@@ -458,7 +458,11 @@ class DEFPAGE:
             product = self.product_manager.get_product_by_id(product_id)
             if product:
                 products = product.get('products', [])
-                technology_name = products[0] if products else product.get('our_name', 'Unknown')  # For storage (CVE compatible)
+                # If products[0] is null, use our_name for storage
+                if products and products[0] is not None:
+                    technology_name = products[0]
+                else:
+                    technology_name = product.get('our_name', 'Unknown')  # For storage (CVE compatible)
                 display_name = product.get('our_name', 'Unknown')  # For printing
                 category_id = product.get('category_id')
                 category = self.product_manager.get_category_by_id(category_id)
@@ -792,15 +796,6 @@ class DEFPAGE:
             version_min = None
             version_max = None
         
-        # Get product info for vendor and CVE details URL
-        vendor = None
-        cve_details_url = None
-        if product_id:
-            product = self.product_manager.get_product_by_id(product_id)
-            if product:
-                vendor = product.get('vendor')
-                cve_details_url = product.get('cve_details_url')
-            
         protocols_text = "/".join(sorted(set(tech_info['protocols'])))
         source_locations = sorted(tech_info['source_locations'])
         
@@ -826,9 +821,7 @@ class DEFPAGE:
             technology_type=tech_type,
             probability=probability,
             description=description,
-            product_id=product_id,
-            vendor=vendor,
-            cve_details_url=cve_details_url
+            product_id=product_id
         )
 
 

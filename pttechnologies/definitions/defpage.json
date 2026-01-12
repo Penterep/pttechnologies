@@ -196,6 +196,20 @@
       "pattern": "Ruby\\s+on\\s+Rails\\s*(\\d+\\.\\d+)?|Rails\\s+version|Welcome\\s+aboard.*Rails",
       "version_pattern": "Rails[/\\s]+(\\d+\\.\\d+(?:\\.\\d+)?)",
       "flags": "i"
+    },
+    {
+      "_comment": "Simple Apache default page - minimal version",
+      "name": "Apache Simple Default - It works",
+      "product_id": 10,
+      "pattern": "^\\s*<html>\\s*<body>\\s*<h1>\\s*It works!\\s*</h1>\\s*</body>\\s*</html>\\s*$",
+      "flags": "i"
+    },
+    {
+      "_comment": "Apache default page with additional text",
+      "name": "Apache Default - It works with description",
+      "product_id": 10,
+      "pattern": "<html>\\s*<body>\\s*<h1>\\s*It works!\\s*</h1>\\s*<p>\\s*This is the default web page for this server\\.\\s*</p>\\s*<p>\\s*The web server software is running but no content has been added,\\s*yet\\.\\s*</p>",
+      "flags": "i"
     }
   ],
   
