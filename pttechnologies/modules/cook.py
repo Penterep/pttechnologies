@@ -192,6 +192,8 @@ class COOK:
     def _analyze_cookies(self, cookies):
         """
         Analyze cookies against defined patterns.
+        Priority: More specific patterns (with value_regex) before generic ones.
+        Allows multiple matches per cookie for layered detection (e.g., Tomcat + Java).
         
         Args:
             cookies: Dictionary of cookie names to their information.
@@ -201,14 +203,28 @@ class COOK:
         """
         technologies_found = 0
         
+        sorted_patterns = sorted(
+            self.definitions,
+            key=lambda p: (
+                0 if p.get('value_regex') else 1,
+                -p.get('probability', 100)
+            )
+        )
+        
         for cookie_name, cookie_info in cookies.items():
             cookie_value = cookie_info.get('value', '')
+            matched_products = set()
             
-            for pattern in self.definitions:
+            for pattern in sorted_patterns:
+                product_id = pattern.get('product_id')
+                
+                if product_id in matched_products:
+                    continue
+                
                 if self._match_cookie_pattern(cookie_name, cookie_value, pattern):
                     self._process_match(cookie_name, cookie_value, pattern, cookie_info)
+                    matched_products.add(product_id)
                     technologies_found += 1
-                    break
         
         return technologies_found
     
@@ -256,7 +272,12 @@ class COOK:
             return
         
         products = product.get('products', [])
-        technology = products[0] if products else product.get("our_name", "Unknown")
+        # If products[0] is null, use our_name for storage
+        if products and products[0] is not None:
+            technology = products[0]
+        else:
+            technology = product.get("our_name", "Unknown")  # For storage (CVE compatible)
+        display_name = product.get("our_name", "Unknown")  # For printing
         technology_type = self.product_manager.get_category_name(product.get("category_id"))
         
         description = pattern.get("description", "")
@@ -273,37 +294,28 @@ class COOK:
         if description:
             storage_description += f": {description}"
         
-        # Get vendor from product if product_id is available
-        vendor = None
-        if product_id:
-            product = self.product_manager.get_product_by_id(product_id)
-            if product:
-                vendor = product.get('vendor')
-        
         storage.add_to_storage(
             technology=technology,
             technology_type=technology_type,
             description=storage_description,
             probability=probability,
-            product_id=product_id,
-            vendor=vendor
+            product_id=product_id
         )
         
-        self._display_result(technology, technology_type, cookie_name, cookie_value, description, probability)
+        self._display_result(display_name, technology_type, cookie_name, cookie_value, probability)
     
-    def _display_result(self, technology, technology_type, cookie_name, cookie_value, description, probability):
+    def _display_result(self, display_name, technology_type, cookie_name, cookie_value, probability):
         """
         Display the identified technology result.
         
         Args:
-            technology: Technology name.
+            display_name: Display name for the technology (our_name).
             technology_type: Type of technology.
             cookie_name: Cookie name that provided the detection.
             cookie_value: Cookie value.
-            description: Description of the cookie's purpose.
         """
         type_display = self._format_type_display(technology_type)
-        main_message = f"{technology} ({type_display})"
+        main_message = f"{display_name} ({type_display})"
         
         detail_parts = [f"<- Cookie '{cookie_name}'"]
         
@@ -311,8 +323,6 @@ class COOK:
             display_value = cookie_value[:30] + "..." if len(cookie_value) > 30 else cookie_value
             detail_parts.append(f" = '{display_value}'")
         
-        if self.args.verbose and description:
-            detail_parts.append(f" : {description}")
         
         detail_message = "".join(detail_parts)
         

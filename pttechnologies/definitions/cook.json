@@ -26,8 +26,72 @@
     },
     {
       "name_regex": "^JSESSIONID$",
+      "value_regex": "^[0-9A-F]{32}\\.[a-zA-Z0-9_-]+$",
+      "product_id": 20,
+      "description": "Apache Tomcat session with route/clustering",
+      "probability": 90
+    },
+    {
+      "name_regex": "^JSESSIONID$",
+      "value_regex": "^[0-9A-F]{32}$",
+      "product_id": 20,
+      "description": "Apache Tomcat session (hex format)",
+      "probability": 85
+    },
+    {
+      "name_regex": "^JSESSIONID$",
+      "value_regex": "^[0-9]{1,3}[a-f0-9]{24,27}$",
+      "product_id": 24,
+      "description": "Oracle GlassFish session (starts with 1-3 digits, lowercase hex, ~28 chars)",
+      "probability": 90
+    },
+    {
+      "name_regex": "^JSESSIONID$",
+      "value_regex": "^[a-z0-9]{32}$",
+      "product_id": 23,
+      "description": "Caucho Resin session (lowercase alphanumeric)",
+      "probability": 85
+    },
+    {
+      "name_regex": "^JSESSIONID$",
+      "value_regex": "^node[0-9a-z]{18,30}$",
+      "product_id": 21,
+      "description": "Eclipse Jetty session with node ID",
+      "probability": 90
+    },
+    {
+      "name_regex": "^JSESSIONID$",
+      "value_regex": "^(?![0-9]{1,3}[a-f0-9]{24,27}$)[a-z0-9]{23,30}$",
+      "product_id": 21,
+      "description": "Eclipse Jetty session (23-30 chars, alphanumeric, not GlassFish pattern)",
+      "probability": 80
+    },
+    {
+      "name_regex": "^JSESSIONID$",
+      "value_regex": "^[A-Za-z0-9_-]{43,52}$",
+      "product_id": 60,
+      "description": "Spring Session (Base64URL encoded)",
+      "probability": 85
+    },
+    {
+      "name_regex": "^JSESSIONID$",
+      "value_regex": "^[A-Za-z0-9+/]{36,}={0,2}\\.[a-zA-Z0-9_-]+$",
+      "product_id": 22,
+      "description": "Undertow/WildFly session with route",
+      "probability": 85
+    },
+    {
+      "name_regex": "^JSESSIONID$",
+      "value_regex": "^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$",
       "product_id": 31,
-      "description": "Java servlet session identifier"
+      "description": "Java servlet session (UUID format)",
+      "probability": 75
+    },
+    {
+      "name_regex": "^JSESSIONID$",
+      "product_id": 31,
+      "description": "Java servlet session identifier (generic)",
+      "probability": 60
     },
     {
       "name_regex": "^laravel_session$",
