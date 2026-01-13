@@ -7,6 +7,7 @@ with structured nodes and properties for vulnerability scanning results.
 
 import json
 import uuid
+import sys
 from helpers.result_storage import storage
 from helpers.products import get_product_manager
 from ptlibs.ptprinthelper import ptprint
@@ -158,7 +159,8 @@ class Summary:
                 "version_min": version_min,
                 "version_max": version_max,
                 "probability": probability,
-                "type": technology_type
+                "type": technology_type,
+                "product_id": product_id
             }
             
             categorized[category].append(tech_entry)
@@ -192,6 +194,36 @@ class Summary:
         
         return "Other"
     
+    def _format_cpe_as_link(self, cpe_string, cve_url):
+        """
+        Format CPE string as a clickable hyperlink using ANSI escape codes.
+        
+        Uses OSC 8 escape sequence for terminal hyperlinks, which is supported
+        by modern terminals (Windows Terminal, WSL, iTerm2, etc.).
+        The text is colored gray to indicate it's a clickable link.
+        
+        Args:
+            cpe_string: The CPE string to display
+            cve_url: The CVE details URL to link to (or None)
+            
+        Returns:
+            Formatted string with hyperlink escape codes and gray color if URL is available,
+            otherwise returns the plain CPE string.
+        """
+        if not cve_url:
+            return cpe_string
+        
+        # ANSI escape sequence for hyperlinks (OSC 8)
+        # Format: ESC]8;;URLESC\TEXTESC]8;;ESC\
+        # ESC is \x1b, and we need ESC followed by literal backslash
+        # Gray color: \033[90m (same as ADDITIONS color)
+        esc = '\x1b'
+        backslash = '\\'
+        gray = '\033[90m'  # Gray color
+        reset = '\033[0m'   # Reset color
+        # Wrap the CPE string in gray color within the hyperlink
+        return f"{esc}]8;;{cve_url}{esc}{backslash}{gray}{cpe_string}{reset}{esc}]8;;{esc}{backslash}"
+    
     def _display_category(self, category_name, technologies):
         """
         Display a single category with its technologies.
@@ -220,7 +252,34 @@ class Summary:
                     tech_display += f" < {tech['version_max']}"
 
                 tech_display += f" ({tech['probability']}%)"
-                ptprint(f"{tech_display}", "TEXT", not self.args.json, indent=8)
+                
+                ptprint(f"{tech_display}", "TEXT", not self.args.json, indent=8, end=" ")
+                
+                product_id = tech.get("product_id")
+                if product_id:
+                    version_for_cpe = tech.get("version")
+                    cpe_string = self.product_manager.generate_cpe_string(product_id, version_for_cpe)
+                    if cpe_string:
+                        # Get CVE details URL from product
+                        product = self.product_manager.get_product_by_id(product_id)
+                        cve_url = product.get("cve_details_url") if product else None
+                        
+                        # Print CPE as clickable link if CVE URL is available and not null
+                        # If URL is null, print CPE as plain text
+                        # Use direct stdout write to preserve ANSI escape codes
+                        if cve_url is not None and cve_url and not self.args.json:
+                            formatted_cpe = self._format_cpe_as_link(cpe_string, cve_url)
+                            # Debug: Uncomment the next line to see the raw escape sequence
+                            # print(f"DEBUG: Link repr = {repr(formatted_cpe)}", file=sys.stderr)
+                            sys.stdout.write(formatted_cpe + "\n")
+                            sys.stdout.flush()
+                        else:
+                            # Print CPE as plain text when URL is null or not available
+                            ptprint(f"{cpe_string}", "ADDITIONS", not self.args.json, colortext=True)
+                    else:
+                        ptprint(" ", "TEXT", not self.args.json)
+                else:
+                    ptprint(" ", "TEXT", not self.args.json)
     
     def _generate_json_output(self):
         """

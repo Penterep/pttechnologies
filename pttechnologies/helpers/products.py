@@ -186,7 +186,7 @@ class ProductManager:
         Generate CPE (Common Platform Enumeration) 2.3 string for a product.
         
         CPE strings are used for vulnerability scanning and CVE database queries.
-        Format: cpe:2.3:a:vendor:product:version:*:*:*:*:*:*:*
+        Format: cpe:2.3:part:vendor:product:version:*:*:*:*:*:*:*
         
         Args:
             product_id: Product ID from products.json
@@ -199,16 +199,34 @@ class ProductManager:
         if not product:
             return None
         
-        vendor = product.get('vendor', '*').lower().replace(' ', '_')
+        # o = Operating System, a = Application
+        category_id = product.get('category_id')
+        if category_id == 1:
+            part = 'o'
+        else:
+            part = 'a'
+        
+        vendor = product.get('vendor')
+        if vendor is None or vendor == 'x':
+            vendor = '*'
+        else:
+            vendor = vendor.lower().replace(' ', '_')
         
         products = product.get('products', [])
-        product_name = products[0] if products else product.get('our_name', '*').lower().replace(' ', '_')
+        product_name = None
+        if products and products[0] is not None and products[0] != 'x':
+            product_name = products[0].lower().replace(' ', '_')
+        else:
+            our_name = product.get('our_name')
+            if our_name:
+                product_name = our_name.lower().replace(' ', '_')
+            else:
+                product_name = '*'
         
         version_str = version if version else '*'
         
         # CPE 2.3 format: cpe:2.3:part:vendor:product:version:update:edition:language:sw_edition:target_sw:target_hw:other
-        # For applications: part=a
-        cpe = f"cpe:2.3:a:{vendor}:{product_name}:{version_str}:*:*:*:*:*:*:*"
+        cpe = f"cpe:2.3:{part}:{vendor}:{product_name}:{version_str}:*:*:*:*:*:*:*"
         return cpe
     
     def get_product_info(self, product_id: int) -> Optional[Dict]:
