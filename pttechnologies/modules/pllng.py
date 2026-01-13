@@ -169,11 +169,10 @@ class PLLNG:
             language = products[0] if products else product.get("our_name", "Unknown")  # For storage
             display_name = product.get("our_name", "Unknown")  # For printing
             category_name = self.product_manager.get_category_name(product.get("category_id"))
-            vendor = product.get('vendor')
             
             probability = result.get("probability", 100)
             ext = result["extension"].capitalize()
-            storage.add_to_storage(technology=language, technology_type=category_name, vulnerability="PTV-WEB-INFO-LNGEX", probability=probability, vendor=vendor)
+            storage.add_to_storage(technology=language, technology_type=category_name, vulnerability="PTV-WEB-INFO-LNGEX", probability=probability, product_id=product_id)
             ptprint(f"Identified language: {display_name}", "VULN", not self.args.json, indent=4, end=" ")
             ptprint(f"({probability}%)", "ADDITIONS", not self.args.json, colortext=True)
         else:

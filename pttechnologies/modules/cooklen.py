@@ -102,23 +102,18 @@ class COOKLEN:
 
         server, probability, product_id = self._identify_server_exact(statuses)
         if server:
-            ptprint(f"Identified WS: {server}", "VULN", not self.args.json, indent=4, end=" ")
-            ptprint(f"({probability}%)", "ADDITIONS", not self.args.json, colortext=True)
-            
-            # Get vendor from product if product_id is available
-            vendor = None
-            if product_id:
-                product = self.product_manager.get_product_by_id(product_id)
-                if product:
-                    vendor = product.get('vendor')
-            
-            storage.add_to_storage(
-                technology=server, 
-                technology_type="Web Server", 
-                probability=probability,
-                product_id=product_id,
-                vendor=vendor
-            )
+            product = self.product_manager.get_product_by_id(product_id)
+            if product:
+                display_name = product.get("our_name", "Unknown")
+                ptprint(f"Identified WS: {display_name}", "VULN", not self.args.json, indent=4, end=" ")
+                ptprint(f"({probability}%)", "ADDITIONS", not self.args.json, colortext=True)
+                
+                storage.add_to_storage(
+                    technology=server, 
+                    technology_type="Web Server", 
+                    probability=probability,
+                    product_id=product_id
+                )
         else:
             ptprint("No matching web server identified from cookie length behavior", "INFO", not self.args.json, indent=4)
 
@@ -146,8 +141,12 @@ class COOKLEN:
                 product = self.product_manager.get_product_by_id(product_id)
                 if not product:
                     continue
-                
-                technology_name = product.get("our_name", "Unknown")
+                products = product.get("products", [])
+                # If products[0] is null, use our_name for storage
+                if products and products[0] is not None:
+                    technology_name = products[0]
+                else:
+                    technology_name = product.get("our_name")
                 probability = entry.get("probability", 100)
                 
                 return technology_name, probability, product_id

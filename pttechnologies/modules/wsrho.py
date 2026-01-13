@@ -173,14 +173,12 @@ class WSRHO:
             product_id: Product ID from products.json.
         """
         if tech:
-            # Get vendor and display_name from product if product_id is available
-            vendor = None
+            # Get display_name from product if product_id is available
             display_name = tech
             if product_id:
                 product_manager = get_product_manager()
                 product = product_manager.get_product_by_id(product_id)
                 if product:
-                    vendor = product.get('vendor')
                     display_name = product.get('our_name', tech)
             
             storage.add_to_storage(
@@ -188,8 +186,7 @@ class WSRHO:
                 technology_type="Web Server", 
                 vulnerability="PTV-WEB-INFO-WSRHO", 
                 probability=probability,
-                product_id=product_id,
-                vendor=vendor
+                product_id=product_id
             )
             ptprint(f"Identified WS: {display_name}", "VULN", not self.args.json, indent=4, end=" ")
             ptprint(f"({probability}%)", "ADDITIONS", not self.args.json, colortext=True)

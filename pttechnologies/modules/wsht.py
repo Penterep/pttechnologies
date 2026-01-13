@@ -87,11 +87,10 @@ class WSHT:
                 product = product_manager.get_product_by_id(10)
                 if product:
                     products = product.get('products', [])
-                    technology_name = products[0] if products else product.get('our_name', 'Apache')
+                    technology_name = products[0]
                     display_name = product.get('our_name', 'Apache')
                     category_name = product_manager.get_category_name(product.get('category_id'))
-                    vendor = product.get('vendor')
-                    storage.add_to_storage(technology=technology_name, technology_type=category_name, vulnerability="PTV-WEB-INFO-WSHT", probability=probability, vendor=vendor)
+                    storage.add_to_storage(technology=technology_name, technology_type=category_name, vulnerability="PTV-WEB-INFO-WSHT", probability=probability, product_id=10)
                     ptprint(f"Identified WS: {display_name}", "VULN", not self.args.json, indent=4, end=" ")
                     ptprint(f"({probability}%)", "ADDITIONS", not self.args.json, colortext=True)
             else:

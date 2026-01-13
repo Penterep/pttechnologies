@@ -453,8 +453,7 @@ class PLUGINS:
                 version=dependencies["wordpress_version"],
                 probability=80,
                 description=f"Plugin dependency from: {source_desc}",
-                product_id=70,
-                vendor="wordpress"
+                product_id=70
             )
         
         if dependencies["php_version"]:
@@ -464,28 +463,33 @@ class PLUGINS:
                 version=dependencies["php_version"],
                 probability=80,
                 description=f"Plugin dependency from: {source_desc}",
-                product_id=30,
-                vendor="php"
+                product_id=30
             )
         
         for plugin_name in dependencies["required_plugins"]:
             plugin_def = self._get_plugin_definition(plugin_name)
             product_id = None
+            technology = plugin_name
             display_name = plugin_name
             if plugin_def:
                 product_id = plugin_def.get("product_id")
                 if product_id:
                     product = self.product_manager.get_product_by_id(product_id)
                     if product:
+                        products = product.get('products', [])
+                        # If products[0] is null, use our_name for storage
+                        if products and products[0] is not None:
+                            technology = products[0]
+                        else:
+                            technology = product.get("our_name", plugin_name)
                         display_name = product.get("our_name", plugin_name)
             
             storage.add_to_storage(
-                technology=display_name,
+                technology=technology,
                 technology_type="Plugin",
                 probability=80,
                 description=f"Plugin dependency from: {source_desc}",
-                product_id=product_id,
-                vendor=None
+                product_id=product_id
             )
 
     def _report(self):
@@ -510,7 +514,6 @@ class PLUGINS:
                     product = self.product_manager.get_product_by_id(product_id)
                     if product:
                         category_name = self.product_manager.get_category_name(product.get("category_id"))
-                        vendor = product.get('vendor')
                         products = product.get('products', [])
                         technology_for_storage = products[0] if products else product.get("our_name", display_name)
                         display_name = product.get("our_name", display_name)  # Use our_name for display
@@ -525,8 +528,7 @@ class PLUGINS:
                     vulnerability="PTV-WEB-INFO-PLUGIN",
                     probability=probability,
                     version=version if version else None,
-                    product_id=product_id,
-                    vendor=vendor
+                    product_id=product_id
                 )
                 
                 if self.args.verbose:

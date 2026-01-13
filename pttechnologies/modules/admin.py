@@ -217,13 +217,6 @@ class ADMIN:
         product_id = tech.get('product_id')
         url = tech.get('url', 'unknown')
         status_code = tech.get('status_code')
-        vendor = tech.get('vendor')
-        
-        if (not vendor) and product_id:
-            product = self.product_manager.get_product_by_id(product_id)
-            if product:
-                if not vendor:
-                    vendor = product.get('vendor')
         
         description = f"Admin interface ({url}): {tech_name}"
         if version:
@@ -237,8 +230,7 @@ class ADMIN:
             technology_type=tech_type,
             probability=100,
             description=description,
-            product_id=product_id,
-            vendor=vendor
+            product_id=product_id
         )
 
 

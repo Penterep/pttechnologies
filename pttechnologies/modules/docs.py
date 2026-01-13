@@ -297,19 +297,12 @@ class DOCS:
                 
                 # Only store technologies with product_id (skip generic ones like HLS, DASH)
                 if product_id:
-                    # Get vendor from product if product_id is available
-                    vendor = None
-                    product = self.product_manager.get_product_by_id(product_id)
-                    if product:
-                        vendor = product.get('vendor')
-                    
                     storage.add_to_storage(
                         technology=technology,
                         technology_type=technology_type,
                         product_id=product_id,
                         version=version,
-                        probability=probability,
-                        vendor=vendor
+                        probability=probability
                     )
                 
                 version_str = f" {version}" if version else ""
