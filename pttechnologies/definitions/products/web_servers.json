@@ -44,40 +44,40 @@
       "id": 15,
       "our_name": "Kestrel",
       "vendor": "microsoft",
-      "products": ["x"],
-      "cve_details_url": "x",
+      "products": [null],
+      "cve_details_url": null,
       "category_id": 2
     },
     {
       "id": 16,
       "our_name": "Google Frontend",
       "vendor": "google",
-      "products": ["x"],
-      "cve_details_url": "x",
+      "products": [null],
+      "cve_details_url": null,
       "category_id": 2
     },
     {
       "id": 17,
       "our_name": "GWS",
       "vendor": "google",
-      "products": ["x"],
-      "cve_details_url": "x",
+      "products": [null],
+      "cve_details_url": null,
       "category_id": 2
     },
     {
       "id": 18,
       "our_name": "Google SFFE",
       "vendor": "google",
-      "products": ["x"],
-      "cve_details_url": "x",
+      "products": [null],
+      "cve_details_url": null,
       "category_id": 2
     },
     {
       "id": 19,
       "our_name": "Microsoft-HTTPAPI",
       "vendor": "microsoft",
-      "products": ["x"],
-      "cve_details_url": "x",
+      "products": [null],
+      "cve_details_url": null,
       "category_id": 2
     },
     {
