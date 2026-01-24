@@ -2,7 +2,8 @@
 Module for predicting technologies based on identified components.
 
 Analyzes existing scan results and infers additional technologies
-using predefined rules from predict.json configuration file.
+using predefined rules from predict.json and predict_from_wappalyzer.json
+configuration files.
 """
 
 import re
@@ -15,14 +16,15 @@ class Predict:
     Technology prediction engine for vulnerability scanning.
 
     Processes existing scan results to predict additional technologies
-    based on logical dependencies and patterns defined in predict.json.
+    based on logical dependencies and patterns defined in predict.json
+    and predict_from_wappalyzer.json (991 additional rules from Wappalyzer).
     Eliminates duplicates and provides formatted output.
 
     Attributes:
         args: Command line arguments and configuration.
         ptjsonlib: JSON processing library.
         helpers: Helper utilities for loading definitions.
-        definitions: Loaded prediction rules from predict.json.
+        definitions: Loaded prediction rules from both predict files.
         predictions_made: List of predictions prepared for display output.
 
     Methods:
@@ -42,7 +44,16 @@ class Predict:
         self.ptjsonlib = ptjsonlib
         self.helpers = helpers
         self.product_manager = get_product_manager()
+        
         self.definitions = self.helpers.load_definitions("predict.json")
+        
+        try:
+            wappalyzer_predictions = self.helpers.load_definitions("predict_from_wappalyzer.json")
+            if wappalyzer_predictions:
+                self.definitions.extend(wappalyzer_predictions)
+        except:
+            pass
+        
         self.predictions_made = []
 
     def run(self):
@@ -51,10 +62,12 @@ class Predict:
         
         Orchestrates the complete prediction workflow:
         1. Collects all possible predictions from rules
-        2. Collects plugin dependencies
-        3. Removes duplicate predictions 
-        4. Saves unique predictions to storage
-        5. Displays formatted results
+        2. Removes duplicate predictions 
+        3. Saves unique predictions to storage
+        4. Displays formatted results
+        
+        Note: Plugin dependencies are now displayed directly in the PLUGINS module,
+        not in the Prediction section.
         
         Returns:
             None
@@ -63,10 +76,6 @@ class Predict:
         
         records = storage.get_all_records()
         all_predictions = self._collect_all_predictions(records)
-        
-        # Collect plugin dependencies
-        plugin_dependencies = self._collect_plugin_dependencies(records)
-        all_predictions.extend(plugin_dependencies)
         
         if not all_predictions:
             ptprint("It is not possible to predict any new technologies", "INFO", not self.args.json, indent=4)
@@ -241,7 +250,7 @@ class Predict:
         
         Groups predictions with the same technology, type, and version together,
         keeping track of all sources that predicted them. Different versions
-        are kept as separate predictions. Groups by storage_name to properly deduplicate.
+        and different types are kept as separate predictions.
         
         Args:
             all_predictions: List of all collected prediction dictionaries.
@@ -276,7 +285,7 @@ class Predict:
                         if source not in grouped[key]['sources']:
                             grouped[key]['sources'].append(source)
             else:
-                source_name = pred['description'].rsplit(' ', 1)[0] if pred['description'] else None
+                source_name = pred['description'] if pred['description'] else None
                 probability = pred['probability']
                 
                 source_tuple = (source_name, probability)
@@ -407,9 +416,14 @@ class Predict:
             return
             
         for pred in self.predictions_made:
-            tech_display = f"{pred['technology']} ({pred['type']})"
+            tech_display = pred['technology']
             if pred.get('version'):
                 tech_display += f" {pred['version']}"
+            
+            tech_type = pred.get('type')
+            if tech_type:
+                tech_display += f" ({tech_type})"
+            
             probability = pred.get('probability', 100)
             sources = pred.get('sources', [])
             
@@ -419,6 +433,7 @@ class Predict:
             if sources and len(sources) > 0:
                 sorted_sources = sorted(sources, key=lambda x: (-x[1], x[0] or ''))
                 for source_name, source_prob in sorted_sources:
+                    source_name = source_name.split('(')[0].strip() if '(' in source_name else source_name
                     ptprint(f"        ({source_prob}%) {source_name}", "ADDITIONS", not self.args.json, colortext=True)
 
     def match_condition(self, rec, cond):

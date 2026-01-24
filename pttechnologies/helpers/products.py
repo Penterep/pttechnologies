@@ -65,27 +65,8 @@ class ProductManager:
         if self._products_cache is None:
             all_products = []
             
-            # List of product category files
-            product_files = [
-                "products/os.json",
-                "products/web_servers.json",
-                "products/app_servers.json",
-                "products/languages.json",
-                "products/php_extensions.json",
-                "products/frameworks_frontend.json",
-                "products/frameworks_backend.json",
-                "products/cms.json",
-                "products/ecommerce.json",
-                "products/javascript_libraries.json",
-                "products/cdn_proxy.json",
-                "products/stacks.json",
-                "products/database_tools.json",
-                "products/databases.json",
-                "products/security.json",
-                "products/modules.json",
-                "products/wordpress_plugins.json",
-                "products/other.json"
-            ]
+            # Load alphabetical product files: a.json, b.json, ..., z.json, _.json
+            product_files = [f"products/{letter}.json" for letter in "abcdefghijklmnopqrstuvwxyz_"]
             
             # Load and merge all product files
             for filename in product_files:
@@ -223,7 +204,10 @@ class ProductManager:
             else:
                 product_name = '*'
         
-        version_str = version if version else '*'
+        if version and (',' in version or '-' in version):
+            version_str = '*'
+        else:
+            version_str = version if version else '*'
         
         # CPE 2.3 format: cpe:2.3:part:vendor:product:version:update:edition:language:sw_edition:target_sw:target_hw:other
         cpe = f"cpe:2.3:{part}:{vendor}:{product_name}:{version_str}:*:*:*:*:*:*:*"
@@ -266,8 +250,9 @@ class ProductManager:
         
         results = []
         for product in products:
-            if (search_lower in product.get("our_name", "").lower() or
-                search_lower in product.get("vendor", "").lower()):
+            our_name = (product.get("our_name") or "").lower()
+            vendor = (product.get("vendor") or "").lower()
+            if search_lower in our_name or search_lower in vendor:
                 results.append(product)
         
         return results

@@ -1,0 +1,1548 @@
+{
+  "products": [
+    {
+      "id": 2645,
+      "our_name": "RackCache",
+      "vendor": "rackcache",
+      "products": [
+        "rackcache"
+      ],
+      "cve_details_url": null,
+      "category_id": 45,
+      "_letter": "r"
+    },
+    {
+      "id": 214,
+      "our_name": "Racoon IPsec",
+      "vendor": "kame",
+      "products": [
+        "racoon"
+      ],
+      "cve_details_url": null,
+      "category_id": 14,
+      "_letter": "r"
+    },
+    {
+      "id": 424,
+      "our_name": "Radius",
+      "vendor": "php",
+      "products": [
+        "radius"
+      ],
+      "cve_details_url": null,
+      "category_id": 15,
+      "_letter": "r"
+    },
+    {
+      "id": 2646,
+      "our_name": "RainLoop",
+      "vendor": "rainloop",
+      "products": [
+        "rainloop"
+      ],
+      "cve_details_url": null,
+      "category_id": 43,
+      "_letter": "r"
+    },
+    {
+      "id": 2647,
+      "our_name": "Rakuten",
+      "vendor": "rakuten",
+      "products": [
+        "rakuten"
+      ],
+      "cve_details_url": null,
+      "category_id": 55,
+      "_letter": "r"
+    },
+    {
+      "id": 2648,
+      "our_name": "Rakuten Advertising",
+      "vendor": "rakuten_advertising",
+      "products": [
+        "rakuten_advertising"
+      ],
+      "cve_details_url": null,
+      "category_id": 22,
+      "_letter": "r"
+    },
+    {
+      "id": 2649,
+      "our_name": "Rakuten Digital Commerce",
+      "vendor": "rakuten_digital_comm",
+      "products": [
+        "rakuten_digital_comm"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "r"
+    },
+    {
+      "id": 2650,
+      "our_name": "Ramda",
+      "vendor": "ramda",
+      "products": [
+        "ramda"
+      ],
+      "cve_details_url": null,
+      "category_id": 6,
+      "_letter": "r"
+    },
+    {
+      "id": 425,
+      "our_name": "Random",
+      "vendor": "php",
+      "products": [
+        "random"
+      ],
+      "cve_details_url": null,
+      "category_id": 15,
+      "_letter": "r"
+    },
+    {
+      "id": 2651,
+      "our_name": "RankMath SEO",
+      "vendor": "rankmath_seo",
+      "products": [
+        "rankmath_seo"
+      ],
+      "cve_details_url": null,
+      "category_id": 62,
+      "_letter": "r"
+    },
+    {
+      "id": 2652,
+      "our_name": "Raphael",
+      "vendor": "raphael",
+      "products": [
+        "raphael"
+      ],
+      "cve_details_url": null,
+      "category_id": 6,
+      "_letter": "r"
+    },
+    {
+      "id": 2653,
+      "our_name": "RapidSec",
+      "vendor": "rapidsec",
+      "products": [
+        "rapidsec"
+      ],
+      "cve_details_url": null,
+      "category_id": 14,
+      "_letter": "r"
+    },
+    {
+      "id": 2654,
+      "our_name": "RapidSpike",
+      "vendor": "rapidspike",
+      "products": [
+        "rapidspike"
+      ],
+      "cve_details_url": null,
+      "category_id": 40,
+      "_letter": "r"
+    },
+    {
+      "id": 2655,
+      "our_name": "Raptor",
+      "vendor": "raptor",
+      "products": [
+        "raptor"
+      ],
+      "cve_details_url": null,
+      "category_id": 25,
+      "_letter": "r"
+    },
+    {
+      "id": 426,
+      "our_name": "Rar",
+      "vendor": "php",
+      "products": [
+        "rar"
+      ],
+      "cve_details_url": null,
+      "category_id": 15,
+      "_letter": "r"
+    },
+    {
+      "id": 8,
+      "our_name": "Raspbian",
+      "vendor": "raspberrypi",
+      "products": [
+        "raspberry_pi_os_lite"
+      ],
+      "cve_details_url": "https://www.cvedetails.com/product/106450/Raspberrypi-Raspberry-Pi-Os-Lite.html",
+      "category_id": 1,
+      "_letter": "r"
+    },
+    {
+      "id": 2656,
+      "our_name": "Raychat",
+      "vendor": "raychat",
+      "products": [
+        "raychat"
+      ],
+      "cve_details_url": null,
+      "category_id": 20,
+      "_letter": "r"
+    },
+    {
+      "id": 2657,
+      "our_name": "Raygun",
+      "vendor": "raygun",
+      "products": [
+        "raygun"
+      ],
+      "cve_details_url": null,
+      "category_id": 33,
+      "_letter": "r"
+    },
+    {
+      "id": 2658,
+      "our_name": "Rayo",
+      "vendor": "rayo",
+      "products": [
+        "rayo"
+      ],
+      "cve_details_url": null,
+      "category_id": 16,
+      "_letter": "r"
+    },
+    {
+      "id": 2659,
+      "our_name": "Razorpay",
+      "vendor": "razorpay",
+      "products": [
+        "razorpay"
+      ],
+      "cve_details_url": null,
+      "category_id": 21,
+      "_letter": "r"
+    },
+    {
+      "id": 2637,
+      "our_name": "RBS Change",
+      "vendor": "rbs_change",
+      "products": [
+        "rbs_change"
+      ],
+      "cve_details_url": null,
+      "category_id": 16,
+      "_letter": "r"
+    },
+    {
+      "id": 2638,
+      "our_name": "RCMS",
+      "vendor": "rcms",
+      "products": [
+        "rcms"
+      ],
+      "cve_details_url": null,
+      "category_id": 16,
+      "_letter": "r"
+    },
+    {
+      "id": 2639,
+      "our_name": "RD Station",
+      "vendor": "rd_station",
+      "products": [
+        "rd_station"
+      ],
+      "cve_details_url": null,
+      "category_id": 19,
+      "_letter": "r"
+    },
+    {
+      "id": 2640,
+      "our_name": "RDoc",
+      "vendor": "dave_thomas",
+      "products": [
+        "rdoc"
+      ],
+      "cve_details_url": null,
+      "category_id": 36,
+      "_letter": "r"
+    },
+    {
+      "id": 2660,
+      "our_name": "Re:amaze",
+      "vendor": "re:amaze",
+      "products": [
+        "re:amaze"
+      ],
+      "cve_details_url": null,
+      "category_id": 20,
+      "_letter": "r"
+    },
+    {
+      "id": 40,
+      "our_name": "React",
+      "vendor": "facebook",
+      "products": [
+        "react"
+      ],
+      "cve_details_url": "https://www.cvedetails.com/product/61450/Facebook-React.html",
+      "category_id": 6,
+      "_letter": "r"
+    },
+    {
+      "id": 2664,
+      "our_name": "React Bricks",
+      "vendor": "react_bricks",
+      "products": [
+        "react_bricks"
+      ],
+      "cve_details_url": null,
+      "category_id": 16,
+      "_letter": "r"
+    },
+    {
+      "id": 2665,
+      "our_name": "React Redux",
+      "vendor": "react_redux",
+      "products": [
+        "react_redux"
+      ],
+      "cve_details_url": null,
+      "category_id": 6,
+      "_letter": "r"
+    },
+    {
+      "id": 2666,
+      "our_name": "React Router",
+      "vendor": "react_router",
+      "products": [
+        "react_router"
+      ],
+      "cve_details_url": null,
+      "category_id": 6,
+      "_letter": "r"
+    },
+    {
+      "id": 2667,
+      "our_name": "Reactive",
+      "vendor": "reactive",
+      "products": [
+        "reactive"
+      ],
+      "cve_details_url": null,
+      "category_id": 16,
+      "_letter": "r"
+    },
+    {
+      "id": 427,
+      "our_name": "Readline",
+      "vendor": "php",
+      "products": [
+        "readline"
+      ],
+      "cve_details_url": null,
+      "category_id": 15,
+      "_letter": "r"
+    },
+    {
+      "id": 2668,
+      "our_name": "Really Simple CAPTCHA",
+      "vendor": "really_simple_captch",
+      "products": [
+        "really_simple_captch"
+      ],
+      "cve_details_url": null,
+      "category_id": 62,
+      "_letter": "r"
+    },
+    {
+      "id": 311,
+      "our_name": "Really Simple SSL",
+      "vendor": "really-simple-plugins",
+      "products": [
+        "really_simple-_sl"
+      ],
+      "cve_details_url": "https://www.cvedetails.com/product/169441/Really-simple-plugins-Really-Simple-Ssl.html",
+      "category_id": 11,
+      "_letter": "r"
+    },
+    {
+      "id": 2669,
+      "our_name": "RebelMouse",
+      "vendor": "rebelmouse",
+      "products": [
+        "rebelmouse"
+      ],
+      "cve_details_url": null,
+      "category_id": 16,
+      "_letter": "r"
+    },
+    {
+      "id": 2670,
+      "our_name": "Rebuy",
+      "vendor": "rebuy",
+      "products": [
+        "rebuy"
+      ],
+      "cve_details_url": null,
+      "category_id": 25,
+      "_letter": "r"
+    },
+    {
+      "id": 2755,
+      "our_name": "reCAPTCHA",
+      "vendor": "recaptcha",
+      "products": [
+        "recaptcha"
+      ],
+      "cve_details_url": null,
+      "category_id": 14,
+      "_letter": "r"
+    },
+    {
+      "id": 2661,
+      "our_name": "ReCaptcha v2 for Contact Form 7",
+      "vendor": "recaptcha_v2_for_con",
+      "products": [
+        "recaptcha_v2_for_con"
+      ],
+      "cve_details_url": null,
+      "category_id": 62,
+      "_letter": "r"
+    },
+    {
+      "id": 2671,
+      "our_name": "Recapture",
+      "vendor": "recapture",
+      "products": [
+        "recapture"
+      ],
+      "cve_details_url": null,
+      "category_id": 97,
+      "_letter": "r"
+    },
+    {
+      "id": 2672,
+      "our_name": "Recart",
+      "vendor": "recart",
+      "products": [
+        "recart"
+      ],
+      "cve_details_url": null,
+      "category_id": 97,
+      "_letter": "r"
+    },
+    {
+      "id": 2673,
+      "our_name": "Recent Posts Widget With Thumbnails",
+      "vendor": "recent_posts_widget_",
+      "products": [
+        "recent_posts_widget_"
+      ],
+      "cve_details_url": null,
+      "category_id": 62,
+      "_letter": "r"
+    },
+    {
+      "id": 2674,
+      "our_name": "Recharge",
+      "vendor": "recharge",
+      "products": [
+        "recharge"
+      ],
+      "cve_details_url": null,
+      "category_id": 21,
+      "_letter": "r"
+    },
+    {
+      "id": 2675,
+      "our_name": "Recite Me",
+      "vendor": "recite_me",
+      "products": [
+        "recite_me"
+      ],
+      "cve_details_url": null,
+      "category_id": 31,
+      "_letter": "r"
+    },
+    {
+      "id": 428,
+      "our_name": "Recode",
+      "vendor": "php",
+      "products": [
+        "recode"
+      ],
+      "cve_details_url": null,
+      "category_id": 15,
+      "_letter": "r"
+    },
+    {
+      "id": 2676,
+      "our_name": "Recomify",
+      "vendor": "recomify",
+      "products": [
+        "recomify"
+      ],
+      "cve_details_url": null,
+      "category_id": 64,
+      "_letter": "r"
+    },
+    {
+      "id": 2662,
+      "our_name": "ReConvert",
+      "vendor": "reconvert",
+      "products": [
+        "reconvert"
+      ],
+      "cve_details_url": null,
+      "category_id": 64,
+      "_letter": "r"
+    },
+    {
+      "id": 2677,
+      "our_name": "RecoverMyCart",
+      "vendor": "recovermycart",
+      "products": [
+        "recovermycart"
+      ],
+      "cve_details_url": null,
+      "category_id": 25,
+      "_letter": "r"
+    },
+    {
+      "id": 2678,
+      "our_name": "Recruitee",
+      "vendor": "recruitee",
+      "products": [
+        "recruitee"
+      ],
+      "cve_details_url": null,
+      "category_id": 100,
+      "_letter": "r"
+    },
+    {
+      "id": 2679,
+      "our_name": "Recurly",
+      "vendor": "recurly",
+      "products": [
+        "recurly"
+      ],
+      "cve_details_url": null,
+      "category_id": 21,
+      "_letter": "r"
+    },
+    {
+      "id": 2680,
+      "our_name": "Red Hat",
+      "vendor": "redhat",
+      "products": [
+        "linux",
+        "red_hat"
+      ],
+      "cve_details_url": null,
+      "category_id": 1,
+      "_letter": "r"
+    },
+    {
+      "id": 1,
+      "our_name": "Red Hat Enterprise Linux",
+      "vendor": "redhat",
+      "products": [
+        "enterprise_linux",
+        "enterprise_linux_server"
+      ],
+      "cve_details_url": "https://www.cvedetails.com/product/78/Redhat-Enterprise-Linux.html",
+      "category_id": 1,
+      "_letter": "r"
+    },
+    {
+      "id": 2681,
+      "our_name": "Red Hat Gluster",
+      "vendor": "red_hat_gluster",
+      "products": [
+        "red_hat_gluster"
+      ],
+      "cve_details_url": null,
+      "category_id": 71,
+      "_letter": "r"
+    },
+    {
+      "id": 2682,
+      "our_name": "Red je Pakketje",
+      "vendor": "red_je_pakketje",
+      "products": [
+        "red_je_pakketje"
+      ],
+      "cve_details_url": null,
+      "category_id": 78,
+      "_letter": "r"
+    },
+    {
+      "id": 2641,
+      "our_name": "REDAXO",
+      "vendor": "redaxo",
+      "products": [
+        "redaxo"
+      ],
+      "cve_details_url": null,
+      "category_id": 16,
+      "_letter": "r"
+    },
+    {
+      "id": 2683,
+      "our_name": "RedCart",
+      "vendor": "redcart",
+      "products": [
+        "redcart"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "r"
+    },
+    {
+      "id": 2684,
+      "our_name": "Reddit",
+      "vendor": "reddit",
+      "products": [
+        "reddit"
+      ],
+      "cve_details_url": null,
+      "category_id": 39,
+      "_letter": "r"
+    },
+    {
+      "id": 2685,
+      "our_name": "Reddit Ads",
+      "vendor": "reddit_ads",
+      "products": [
+        "reddit_ads"
+      ],
+      "cve_details_url": null,
+      "category_id": 22,
+      "_letter": "r"
+    },
+    {
+      "id": 316,
+      "our_name": "Redirection",
+      "vendor": "redirection",
+      "products": [
+        "redirection"
+      ],
+      "cve_details_url": "https://www.cvedetails.com/product/48169/Redirection-Redirection.html",
+      "category_id": 11,
+      "_letter": "r"
+    },
+    {
+      "id": 206,
+      "our_name": "Redis",
+      "vendor": "redislabs",
+      "products": [
+        "redis"
+      ],
+      "cve_details_url": "https://www.cvedetails.com/product/25530/Redis-Redis.html",
+      "category_id": 4,
+      "_letter": "r"
+    },
+    {
+      "id": 2686,
+      "our_name": "Redis Object Cache",
+      "vendor": "redis_object_cache",
+      "products": [
+        "redis_object_cache"
+      ],
+      "cve_details_url": null,
+      "category_id": 45,
+      "_letter": "r"
+    },
+    {
+      "id": 2687,
+      "our_name": "Redmine",
+      "vendor": "redmine",
+      "products": [
+        "redmine"
+      ],
+      "cve_details_url": null,
+      "category_id": 40,
+      "_letter": "r"
+    },
+    {
+      "id": 2663,
+      "our_name": "ReDoc",
+      "vendor": "redoc",
+      "products": [
+        "redoc"
+      ],
+      "cve_details_url": null,
+      "category_id": 36,
+      "_letter": "r"
+    },
+    {
+      "id": 2688,
+      "our_name": "Redonner",
+      "vendor": "redonner",
+      "products": [
+        "redonner"
+      ],
+      "cve_details_url": null,
+      "category_id": 75,
+      "_letter": "r"
+    },
+    {
+      "id": 2689,
+      "our_name": "Redux",
+      "vendor": "redux",
+      "products": [
+        "redux"
+      ],
+      "cve_details_url": null,
+      "category_id": 6,
+      "_letter": "r"
+    },
+    {
+      "id": 2690,
+      "our_name": "RedwoodJS",
+      "vendor": "redwoodjs",
+      "products": [
+        "redwoodjs"
+      ],
+      "cve_details_url": null,
+      "category_id": 6,
+      "_letter": "r"
+    },
+    {
+      "id": 2691,
+      "our_name": "Reelevant",
+      "vendor": "reelevant",
+      "products": [
+        "reelevant"
+      ],
+      "cve_details_url": null,
+      "category_id": 25,
+      "_letter": "r"
+    },
+    {
+      "id": 2692,
+      "our_name": "Reevoo",
+      "vendor": "reevoo",
+      "products": [
+        "reevoo"
+      ],
+      "cve_details_url": null,
+      "category_id": 59,
+      "_letter": "r"
+    },
+    {
+      "id": 2693,
+      "our_name": "ReferralCandy",
+      "vendor": "referralcandy",
+      "products": [
+        "referralcandy"
+      ],
+      "cve_details_url": null,
+      "category_id": 55,
+      "_letter": "r"
+    },
+    {
+      "id": 2694,
+      "our_name": "Refersion",
+      "vendor": "refersion",
+      "products": [
+        "refersion"
+      ],
+      "cve_details_url": null,
+      "category_id": 55,
+      "_letter": "r"
+    },
+    {
+      "id": 429,
+      "our_name": "Reflection",
+      "vendor": "php",
+      "products": [
+        "reflection"
+      ],
+      "cve_details_url": null,
+      "category_id": 15,
+      "_letter": "r"
+    },
+    {
+      "id": 2695,
+      "our_name": "Reflektion",
+      "vendor": "reflektion",
+      "products": [
+        "reflektion"
+      ],
+      "cve_details_url": null,
+      "category_id": 25,
+      "_letter": "r"
+    },
+    {
+      "id": 2696,
+      "our_name": "Refundid",
+      "vendor": "refundid",
+      "products": [
+        "refundid"
+      ],
+      "cve_details_url": null,
+      "category_id": 98,
+      "_letter": "r"
+    },
+    {
+      "id": 2642,
+      "our_name": "REG.RU",
+      "vendor": "reg_ru",
+      "products": [
+        "reg_ru"
+      ],
+      "cve_details_url": null,
+      "category_id": 92,
+      "_letter": "r"
+    },
+    {
+      "id": 315,
+      "our_name": "Regenerate Thumbnails",
+      "vendor": "regenerate_thumbnails_project",
+      "products": [
+        "regenerate_thumbnails"
+      ],
+      "cve_details_url": "https://www.cvedetails.com/product/152499/Regenerate-Thumbnails-Project-Regenerate-Thumbnails.html",
+      "category_id": 11,
+      "_letter": "r"
+    },
+    {
+      "id": 2697,
+      "our_name": "Regiondo",
+      "vendor": "regiondo",
+      "products": [
+        "regiondo"
+      ],
+      "cve_details_url": null,
+      "category_id": 99,
+      "_letter": "r"
+    },
+    {
+      "id": 2698,
+      "our_name": "Reinvigorate",
+      "vendor": "reinvigorate",
+      "products": [
+        "reinvigorate"
+      ],
+      "cve_details_url": null,
+      "category_id": 18,
+      "_letter": "r"
+    },
+    {
+      "id": 2699,
+      "our_name": "Relais Colis",
+      "vendor": "relais_colis",
+      "products": [
+        "relais_colis"
+      ],
+      "cve_details_url": null,
+      "category_id": 78,
+      "_letter": "r"
+    },
+    {
+      "id": 2700,
+      "our_name": "Remarkable Commerce",
+      "vendor": "remarkable_commerce",
+      "products": [
+        "remarkable_commerce"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "r"
+    },
+    {
+      "id": 2701,
+      "our_name": "Remix",
+      "vendor": "remix",
+      "products": [
+        "remix"
+      ],
+      "cve_details_url": null,
+      "category_id": 7,
+      "_letter": "r"
+    },
+    {
+      "id": 2702,
+      "our_name": "Reputon",
+      "vendor": "reputon",
+      "products": [
+        "reputon"
+      ],
+      "cve_details_url": null,
+      "category_id": 59,
+      "_letter": "r"
+    },
+    {
+      "id": 2703,
+      "our_name": "RequireJS",
+      "vendor": "requirejs",
+      "products": [
+        "requirejs"
+      ],
+      "cve_details_url": null,
+      "category_id": 6,
+      "_letter": "r"
+    },
+    {
+      "id": 2704,
+      "our_name": "ResDiary",
+      "vendor": "resdiary",
+      "products": [
+        "resdiary"
+      ],
+      "cve_details_url": null,
+      "category_id": 95,
+      "_letter": "r"
+    },
+    {
+      "id": 2705,
+      "our_name": "Resengo",
+      "vendor": "resengo",
+      "products": [
+        "resengo"
+      ],
+      "cve_details_url": null,
+      "category_id": 95,
+      "_letter": "r"
+    },
+    {
+      "id": 2706,
+      "our_name": "Reservio",
+      "vendor": "reservio",
+      "products": [
+        "reservio"
+      ],
+      "cve_details_url": null,
+      "category_id": 95,
+      "_letter": "r"
+    },
+    {
+      "id": 2707,
+      "our_name": "Resin",
+      "vendor": "caucho",
+      "products": [
+        "resin"
+      ],
+      "cve_details_url": null,
+      "category_id": 2,
+      "_letter": "r"
+    },
+    {
+      "id": 2708,
+      "our_name": "Resmio",
+      "vendor": "resmio",
+      "products": [
+        "resmio"
+      ],
+      "cve_details_url": null,
+      "category_id": 95,
+      "_letter": "r"
+    },
+    {
+      "id": 2709,
+      "our_name": "Responsive Lightbox & Gallery",
+      "vendor": "responsive_lightbox_",
+      "products": [
+        "responsive_lightbox_"
+      ],
+      "cve_details_url": null,
+      "category_id": 62,
+      "_letter": "r"
+    },
+    {
+      "id": 2710,
+      "our_name": "ResponsiveVoice",
+      "vendor": "responsivevoice",
+      "products": [
+        "responsivevoice"
+      ],
+      "cve_details_url": null,
+      "category_id": 99,
+      "_letter": "r"
+    },
+    {
+      "id": 3670,
+      "our_name": "REST API",
+      "vendor": "x",
+      "products": [
+        "x"
+      ],
+      "cve_details_url": null,
+      "category_id": 99,
+      "_letter": "r"
+    },
+    {
+      "id": 2711,
+      "our_name": "Resy",
+      "vendor": "resy",
+      "products": [
+        "resy"
+      ],
+      "cve_details_url": null,
+      "category_id": 95,
+      "_letter": "r"
+    },
+    {
+      "id": 2712,
+      "our_name": "Retail Rocket",
+      "vendor": "retail_rocket",
+      "products": [
+        "retail_rocket"
+      ],
+      "cve_details_url": null,
+      "category_id": 25,
+      "_letter": "r"
+    },
+    {
+      "id": 2713,
+      "our_name": "ReturnGO",
+      "vendor": "returngo",
+      "products": [
+        "returngo"
+      ],
+      "cve_details_url": null,
+      "category_id": 98,
+      "_letter": "r"
+    },
+    {
+      "id": 2714,
+      "our_name": "Returnly",
+      "vendor": "returnly",
+      "products": [
+        "returnly"
+      ],
+      "cve_details_url": null,
+      "category_id": 98,
+      "_letter": "r"
+    },
+    {
+      "id": 2717,
+      "our_name": "Reveal.js",
+      "vendor": "reveal_js",
+      "products": [
+        "reveal_js"
+      ],
+      "cve_details_url": null,
+      "category_id": 6,
+      "_letter": "r"
+    },
+    {
+      "id": 2718,
+      "our_name": "Revel",
+      "vendor": "revel",
+      "products": [
+        "revel"
+      ],
+      "cve_details_url": null,
+      "category_id": 7,
+      "_letter": "r"
+    },
+    {
+      "id": 2719,
+      "our_name": "RevenueHunt",
+      "vendor": "revenuehunt",
+      "products": [
+        "revenuehunt"
+      ],
+      "cve_details_url": null,
+      "category_id": 55,
+      "_letter": "r"
+    },
+    {
+      "id": 2720,
+      "our_name": "Revieve",
+      "vendor": "revieve",
+      "products": [
+        "revieve"
+      ],
+      "cve_details_url": null,
+      "category_id": 25,
+      "_letter": "r"
+    },
+    {
+      "id": 2722,
+      "our_name": "Reviews.io",
+      "vendor": "reviews_io",
+      "products": [
+        "reviews_io"
+      ],
+      "cve_details_url": null,
+      "category_id": 59,
+      "_letter": "r"
+    },
+    {
+      "id": 2721,
+      "our_name": "ReviewSolicitors",
+      "vendor": "reviewsolicitors",
+      "products": [
+        "reviewsolicitors"
+      ],
+      "cve_details_url": null,
+      "category_id": 59,
+      "_letter": "r"
+    },
+    {
+      "id": 2715,
+      "our_name": "RevJet",
+      "vendor": "revjet",
+      "products": [
+        "revjet"
+      ],
+      "cve_details_url": null,
+      "category_id": 22,
+      "_letter": "r"
+    },
+    {
+      "id": 2716,
+      "our_name": "RevLifter",
+      "vendor": "revlifter",
+      "products": [
+        "revlifter"
+      ],
+      "cve_details_url": null,
+      "category_id": 25,
+      "_letter": "r"
+    },
+    {
+      "id": 2723,
+      "our_name": "RevolverMaps",
+      "vendor": "revolvermaps",
+      "products": [
+        "revolvermaps"
+      ],
+      "cve_details_url": null,
+      "category_id": 28,
+      "_letter": "r"
+    },
+    {
+      "id": 2724,
+      "our_name": "Revy",
+      "vendor": "revy",
+      "products": [
+        "revy"
+      ],
+      "cve_details_url": null,
+      "category_id": 64,
+      "_letter": "r"
+    },
+    {
+      "id": 2725,
+      "our_name": "Rewardful",
+      "vendor": "rewardful",
+      "products": [
+        "rewardful"
+      ],
+      "cve_details_url": null,
+      "category_id": 55,
+      "_letter": "r"
+    },
+    {
+      "id": 2726,
+      "our_name": "Rezdy",
+      "vendor": "rezdy",
+      "products": [
+        "rezdy"
+      ],
+      "cve_details_url": null,
+      "category_id": 99,
+      "_letter": "r"
+    },
+    {
+      "id": 2727,
+      "our_name": "Rezgo",
+      "vendor": "rezgo",
+      "products": [
+        "rezgo"
+      ],
+      "cve_details_url": null,
+      "category_id": 99,
+      "_letter": "r"
+    },
+    {
+      "id": 2729,
+      "our_name": "Richpanel",
+      "vendor": "richpanel",
+      "products": [
+        "richpanel"
+      ],
+      "cve_details_url": null,
+      "category_id": 26,
+      "_letter": "r"
+    },
+    {
+      "id": 2728,
+      "our_name": "RichRelevance",
+      "vendor": "richrelevance",
+      "products": [
+        "richrelevance"
+      ],
+      "cve_details_url": null,
+      "category_id": 25,
+      "_letter": "r"
+    },
+    {
+      "id": 2730,
+      "our_name": "Rickshaw",
+      "vendor": "rickshaw",
+      "products": [
+        "rickshaw"
+      ],
+      "cve_details_url": null,
+      "category_id": 6,
+      "_letter": "r"
+    },
+    {
+      "id": 2731,
+      "our_name": "RightJS",
+      "vendor": "rightjs",
+      "products": [
+        "rightjs"
+      ],
+      "cve_details_url": null,
+      "category_id": 6,
+      "_letter": "r"
+    },
+    {
+      "id": 2732,
+      "our_name": "Riot",
+      "vendor": "riot",
+      "products": [
+        "riot"
+      ],
+      "cve_details_url": null,
+      "category_id": 6,
+      "_letter": "r"
+    },
+    {
+      "id": 2733,
+      "our_name": "Rise.ai",
+      "vendor": "rise_ai",
+      "products": [
+        "rise_ai"
+      ],
+      "cve_details_url": null,
+      "category_id": 75,
+      "_letter": "r"
+    },
+    {
+      "id": 2734,
+      "our_name": "Riskified",
+      "vendor": "riskified",
+      "products": [
+        "riskified"
+      ],
+      "cve_details_url": null,
+      "category_id": 18,
+      "_letter": "r"
+    },
+    {
+      "id": 2735,
+      "our_name": "RiteCMS",
+      "vendor": "ritecms",
+      "products": [
+        "ritecms"
+      ],
+      "cve_details_url": null,
+      "category_id": 16,
+      "_letter": "r"
+    },
+    {
+      "id": 2736,
+      "our_name": "Rive",
+      "vendor": "rive",
+      "products": [
+        "rive"
+      ],
+      "cve_details_url": null,
+      "category_id": 6,
+      "_letter": "r"
+    },
+    {
+      "id": 430,
+      "our_name": "Rnp",
+      "vendor": "php",
+      "products": [
+        "rnp"
+      ],
+      "cve_details_url": null,
+      "category_id": 15,
+      "_letter": "r"
+    },
+    {
+      "id": 2737,
+      "our_name": "Roadiz CMS",
+      "vendor": "roadiz_cms",
+      "products": [
+        "roadiz_cms"
+      ],
+      "cve_details_url": null,
+      "category_id": 16,
+      "_letter": "r"
+    },
+    {
+      "id": 2738,
+      "our_name": "Robin",
+      "vendor": "robin",
+      "products": [
+        "robin"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "r"
+    },
+    {
+      "id": 2740,
+      "our_name": "Rockerbox",
+      "vendor": "rockerbox",
+      "products": [
+        "rockerbox"
+      ],
+      "cve_details_url": null,
+      "category_id": 19,
+      "_letter": "r"
+    },
+    {
+      "id": 2741,
+      "our_name": "Rocket.Chat",
+      "vendor": "rocket_chat",
+      "products": [
+        "rocket_chat"
+      ],
+      "cve_details_url": null,
+      "category_id": 20,
+      "_letter": "r"
+    },
+    {
+      "id": 2739,
+      "our_name": "RockRMS",
+      "vendor": "rockrms",
+      "products": [
+        "rockrms"
+      ],
+      "cve_details_url": null,
+      "category_id": 16,
+      "_letter": "r"
+    },
+    {
+      "id": 2742,
+      "our_name": "Rokt",
+      "vendor": "rokt",
+      "products": [
+        "rokt"
+      ],
+      "cve_details_url": null,
+      "category_id": 25,
+      "_letter": "r"
+    },
+    {
+      "id": 2743,
+      "our_name": "Rollbar",
+      "vendor": "rollbar",
+      "products": [
+        "rollbar"
+      ],
+      "cve_details_url": null,
+      "category_id": 40,
+      "_letter": "r"
+    },
+    {
+      "id": 2744,
+      "our_name": "Rotic",
+      "vendor": "rotic",
+      "products": [
+        "rotic"
+      ],
+      "cve_details_url": null,
+      "category_id": 20,
+      "_letter": "r"
+    },
+    {
+      "id": 2745,
+      "our_name": "RoundCube",
+      "vendor": "roundcube",
+      "products": [
+        "webmail",
+        "roundcube"
+      ],
+      "cve_details_url": null,
+      "category_id": 43,
+      "_letter": "r"
+    },
+    {
+      "id": 2746,
+      "our_name": "Route",
+      "vendor": "route",
+      "products": [
+        "route"
+      ],
+      "cve_details_url": null,
+      "category_id": 79,
+      "_letter": "r"
+    },
+    {
+      "id": 2747,
+      "our_name": "Royal Mail",
+      "vendor": "royal_mail",
+      "products": [
+        "royal_mail"
+      ],
+      "cve_details_url": null,
+      "category_id": 78,
+      "_letter": "r"
+    },
+    {
+      "id": 431,
+      "our_name": "Rpminfo",
+      "vendor": "php",
+      "products": [
+        "rpminfo"
+      ],
+      "cve_details_url": null,
+      "category_id": 15,
+      "_letter": "r"
+    },
+    {
+      "id": 432,
+      "our_name": "RRD",
+      "vendor": "php",
+      "products": [
+        "rrd"
+      ],
+      "cve_details_url": null,
+      "category_id": 15,
+      "_letter": "r"
+    },
+    {
+      "id": 2643,
+      "our_name": "RTB House",
+      "vendor": "rtb_house",
+      "products": [
+        "rtb_house"
+      ],
+      "cve_details_url": null,
+      "category_id": 54,
+      "_letter": "r"
+    },
+    {
+      "id": 2748,
+      "our_name": "Rubicon Project",
+      "vendor": "rubicon_project",
+      "products": [
+        "rubicon_project"
+      ],
+      "cve_details_url": null,
+      "category_id": 22,
+      "_letter": "r"
+    },
+    {
+      "id": 33,
+      "our_name": "Ruby",
+      "vendor": "ruby-lang",
+      "products": [
+        "ruby"
+      ],
+      "cve_details_url": "https://www.cvedetails.com/product/12215/Ruby-lang-Ruby.html",
+      "category_id": 5,
+      "_letter": "r"
+    },
+    {
+      "id": 51,
+      "our_name": "Ruby on Rails",
+      "vendor": "rubyonrails",
+      "products": [
+        "rails",
+        "ruby_on_rails"
+      ],
+      "cve_details_url": "https://www.cvedetails.com/product/22569/Rubyonrails-Rails.html",
+      "category_id": 7,
+      "_letter": "r"
+    },
+    {
+      "id": 2749,
+      "our_name": "Ruby Receptionists",
+      "vendor": "ruby_receptionists",
+      "products": [
+        "ruby_receptionists"
+      ],
+      "cve_details_url": null,
+      "category_id": 99,
+      "_letter": "r"
+    },
+    {
+      "id": 2750,
+      "our_name": "Rudderstack",
+      "vendor": "rudderstack",
+      "products": [
+        "rudderstack"
+      ],
+      "cve_details_url": null,
+      "category_id": 56,
+      "_letter": "r"
+    },
+    {
+      "id": 2751,
+      "our_name": "Rumble",
+      "vendor": "rumble",
+      "products": [
+        "rumble"
+      ],
+      "cve_details_url": null,
+      "category_id": 27,
+      "_letter": "r"
+    },
+    {
+      "id": 433,
+      "our_name": "runkit7",
+      "vendor": "php",
+      "products": [
+        "runkit7"
+      ],
+      "cve_details_url": null,
+      "category_id": 15,
+      "_letter": "r"
+    },
+    {
+      "id": 2752,
+      "our_name": "Rust",
+      "vendor": "rust",
+      "products": [
+        "rust"
+      ],
+      "cve_details_url": null,
+      "category_id": 5,
+      "_letter": "r"
+    },
+    {
+      "id": 2644,
+      "our_name": "RX Web Server",
+      "vendor": "rx_web_server",
+      "products": [
+        "rx_web_server"
+      ],
+      "cve_details_url": null,
+      "category_id": 2,
+      "_letter": "r"
+    },
+    {
+      "id": 2753,
+      "our_name": "RxJS",
+      "vendor": "rxjs",
+      "products": [
+        "rxjs"
+      ],
+      "cve_details_url": null,
+      "category_id": 6,
+      "_letter": "r"
+    },
+    {
+      "id": 2754,
+      "our_name": "Ryviu",
+      "vendor": "ryviu",
+      "products": [
+        "ryviu"
+      ],
+      "cve_details_url": null,
+      "category_id": 59,
+      "_letter": "r"
+    }
+  ]
+}

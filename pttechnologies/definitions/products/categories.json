@@ -91,6 +91,534 @@
       "json_code": "softwareTypePlugin"
     },
     {
+      "id": 16,
+      "name": "CMS",
+      "description": "Content Management Systems",
+      "json_code": "softwareTypeCMS"
+    },
+    {
+      "id": 17,
+      "name": "E-commerce",
+      "description": "E-commerce platforms and shopping cart systems",
+      "json_code": "softwareTypeEcommerce"
+    },
+    {
+      "id": 18,
+      "name": "Analytics",
+      "description": "Web analytics and tracking tools",
+      "json_code": "softwareTypeAnalytics"
+    },
+    {
+      "id": 19,
+      "name": "Marketing Automation",
+      "description": "Marketing automation and campaign management tools",
+      "json_code": "softwareTypeMarketing"
+    },
+    {
+      "id": 20,
+      "name": "Live Chat",
+      "description": "Live chat and customer support widgets",
+      "json_code": "softwareTypeLiveChat"
+    },
+    {
+      "id": 21,
+      "name": "Payment Processors",
+      "description": "Payment gateways and processing services",
+      "json_code": "softwareTypePayment"
+    },
+    {
+      "id": 22,
+      "name": "Advertising",
+      "description": "Advertising networks and ad serving platforms",
+      "json_code": "softwareTypeAdvertising"
+    },
+    {
+      "id": 23,
+      "name": "Tag Managers",
+      "description": "Tag management systems",
+      "json_code": "softwareTypeTagManager"
+    },
+    {
+      "id": 24,
+      "name": "A/B Testing",
+      "description": "A/B testing and experimentation platforms",
+      "json_code": "softwareTypeABTesting"
+    },
+    {
+      "id": 25,
+      "name": "Personalization",
+      "description": "Personalization and targeting platforms",
+      "json_code": "softwareTypePersonalization"
+    },
+    {
+      "id": 26,
+      "name": "CRM",
+      "description": "Customer Relationship Management systems",
+      "json_code": "softwareTypeCRM"
+    },
+    {
+      "id": 27,
+      "name": "Video Players",
+      "description": "Video player libraries and platforms",
+      "json_code": "softwareTypeVideoPlayer"
+    },
+    {
+      "id": 28,
+      "name": "Maps",
+      "description": "Mapping and geolocation services",
+      "json_code": "softwareTypeMaps"
+    },
+    {
+      "id": 29,
+      "name": "Social Media",
+      "description": "Social media integration and sharing tools",
+      "json_code": "softwareTypeSocialMedia"
+    },
+    {
+      "id": 30,
+      "name": "SEO",
+      "description": "Search Engine Optimization tools",
+      "json_code": "softwareTypeSEO"
+    },
+    {
+      "id": 31,
+      "name": "Accessibility",
+      "description": "Web accessibility tools and widgets",
+      "json_code": "softwareTypeAccessibility"
+    },
+    {
+      "id": 32,
+      "name": "Cookie Compliance",
+      "description": "Cookie consent and privacy compliance tools",
+      "json_code": "softwareTypeCookieCompliance"
+    },
+    {
+      "id": 33,
+      "name": "Performance Monitoring",
+      "description": "Real User Monitoring (RUM) and performance tracking",
+      "json_code": "softwareTypePerformance"
+    },
+    {
+      "id": 34,
+      "name": "Error Tracking",
+      "description": "Error tracking and debugging tools",
+      "json_code": "softwareTypeErrorTracking"
+    },
+    {
+      "id": 35,
+      "name": "Static Site Generators",
+      "description": "Static site generation frameworks",
+      "json_code": "softwareTypeSSG"
+    },
+    {
+      "id": 36,
+      "name": "Documentation",
+      "description": "Documentation and knowledge base platforms",
+      "json_code": "softwareTypeDocumentation"
+    },
+    {
+      "id": 37,
+      "name": "Blogs",
+      "description": "Blogging platforms and engines",
+      "json_code": "softwareTypeBlog"
+    },
+    {
+      "id": 38,
+      "name": "Wikis",
+      "description": "Wiki platforms and collaborative documentation",
+      "json_code": "softwareTypeWiki"
+    },
+    {
+      "id": 39,
+      "name": "Message Boards / Forums",
+      "description": "Forum software and message board platforms",
+      "json_code": "softwareTypeForum"
+    },
+    {
+      "id": 40,
+      "name": "Issue Trackers",
+      "description": "Issue tracking and project management tools",
+      "json_code": "softwareTypeIssueTracker"
+    },
+    {
+      "id": 41,
+      "name": "CI/CD",
+      "description": "Continuous Integration and Continuous Deployment tools",
+      "json_code": "softwareTypeCICD"
+    },
+    {
+      "id": 42,
+      "name": "LMS",
+      "description": "Learning Management Systems",
+      "json_code": "softwareTypeLMS"
+    },
+    {
+      "id": 43,
+      "name": "Webmail",
+      "description": "Web-based email clients",
+      "json_code": "softwareTypeWebmail"
+    },
+    {
+      "id": 44,
+      "name": "Hosting Panels",
+      "description": "Web hosting control panels",
+      "json_code": "softwareTypeHostingPanel"
+    },
+    {
+      "id": 45,
+      "name": "Caching",
+      "description": "Caching systems and optimization tools",
+      "json_code": "softwareTypeCaching"
+    },
+    {
+      "id": 46,
+      "name": "Rich Text Editors",
+      "description": "WYSIWYG and rich text editing libraries",
+      "json_code": "softwareTypeRichTextEditor"
+    },
+    {
+      "id": 47,
+      "name": "Comment Systems",
+      "description": "Comment and discussion platforms",
+      "json_code": "softwareTypeComments"
+    },
+    {
+      "id": 48,
+      "name": "Surveys",
+      "description": "Survey and form builder platforms",
+      "json_code": "softwareTypeSurveys"
+    },
+    {
+      "id": 49,
+      "name": "Booking / Scheduling",
+      "description": "Appointment booking and scheduling systems",
+      "json_code": "softwareTypeBooking"
+    },
+    {
+      "id": 50,
+      "name": "PaaS",
+      "description": "Platform as a Service providers",
+      "json_code": "softwareTypePaaS"
+    },
+    {
+      "id": 51,
+      "name": "IaaS",
+      "description": "Infrastructure as a Service providers",
+      "json_code": "softwareTypeIaaS"
+    },
+    {
+      "id": 52,
+      "name": "SaaS",
+      "description": "Software as a Service platforms",
+      "json_code": "softwareTypeSaaS"
+    },
+    {
+      "id": 53,
+      "name": "Containers",
+      "description": "Container platforms and orchestration",
+      "json_code": "softwareTypeContainers"
+    },
+    {
+      "id": 54,
+      "name": "Retargeting",
+      "description": "Retargeting and remarketing platforms",
+      "json_code": "softwareTypeRetargeting"
+    },
+    {
+      "id": 55,
+      "name": "Affiliate Programs",
+      "description": "Affiliate marketing and referral platforms",
+      "json_code": "softwareTypeAffiliate"
+    },
+    {
+      "id": 56,
+      "name": "Customer Data Platform",
+      "description": "Customer data platforms and DMP",
+      "json_code": "softwareTypeCDP"
+    },
+    {
+      "id": 57,
+      "name": "Social Login",
+      "description": "Social authentication and login services",
+      "json_code": "softwareTypeSocialLogin"
+    },
+    {
+      "id": 58,
+      "name": "Browser Fingerprinting",
+      "description": "Browser fingerprinting and fraud detection",
+      "json_code": "softwareTypeFingerprinting"
+    },
+    {
+      "id": 59,
+      "name": "Review Platforms",
+      "description": "Review and rating platforms",
+      "json_code": "softwareTypeReviews"
+    },
+    {
+      "id": 60,
+      "name": "Geolocation",
+      "description": "Geolocation and IP detection services",
+      "json_code": "softwareTypeGeolocation"
+    },
+    {
+      "id": 61,
+      "name": "Page Builders",
+      "description": "Visual page builder and design tools",
+      "json_code": "softwareTypePageBuilder"
+    },
+    {
+      "id": 62,
+      "name": "WordPress Plugins",
+      "description": "WordPress plugins and extensions",
+      "json_code": "softwareTypeWordPressPlugin"
+    },
+    {
+      "id": 63,
+      "name": "WordPress Themes",
+      "description": "WordPress themes and templates",
+      "json_code": "softwareTypeWordPressTheme"
+    },
+    {
+      "id": 64,
+      "name": "Shopify Apps",
+      "description": "Shopify applications and extensions",
+      "json_code": "softwareTypeShopifyApp"
+    },
+    {
+      "id": 65,
+      "name": "User Onboarding",
+      "description": "User onboarding and tutorial tools",
+      "json_code": "softwareTypeOnboarding"
+    },
+    {
+      "id": 66,
+      "name": "Cryptocurrency Miners",
+      "description": "Cryptocurrency mining scripts",
+      "json_code": "softwareTypeCryptoMiner"
+    },
+    {
+      "id": 67,
+      "name": "Font Scripts",
+      "description": "Web font services and libraries",
+      "json_code": "softwareTypeFonts"
+    },
+    {
+      "id": 68,
+      "name": "Photo Galleries",
+      "description": "Image gallery and portfolio platforms",
+      "json_code": "softwareTypeGallery"
+    },
+    {
+      "id": 69,
+      "name": "Search Engines",
+      "description": "Site search and search engine tools",
+      "json_code": "softwareTypeSearch"
+    },
+    {
+      "id": 70,
+      "name": "Feed Readers",
+      "description": "RSS feed readers and aggregators",
+      "json_code": "softwareTypeFeedReader"
+    },
+    {
+      "id": 71,
+      "name": "Network Storage",
+      "description": "Network-attached storage and file sharing",
+      "json_code": "softwareTypeNAS"
+    },
+    {
+      "id": 72,
+      "name": "Remote Access",
+      "description": "Remote access and remote desktop tools",
+      "json_code": "softwareTypeRemoteAccess"
+    },
+    {
+      "id": 73,
+      "name": "Development Tools",
+      "description": "Developer tools and environments",
+      "json_code": "softwareTypeDevelopment"
+    },
+    {
+      "id": 74,
+      "name": "Mobile Frameworks",
+      "description": "Mobile application frameworks",
+      "json_code": "softwareTypeMobile"
+    },
+    {
+      "id": 75,
+      "name": "Loyalty & Rewards",
+      "description": "Loyalty and rewards programs",
+      "json_code": "softwareTypeLoyalty"
+    },
+    {
+      "id": 76,
+      "name": "Invoicing",
+      "description": "Invoicing and billing systems",
+      "json_code": "softwareTypeInvoicing"
+    },
+    {
+      "id": 77,
+      "name": "Accounting",
+      "description": "Accounting and financial software",
+      "json_code": "softwareTypeAccounting"
+    },
+    {
+      "id": 78,
+      "name": "Shipping Carriers",
+      "description": "Shipping and logistics integrations",
+      "json_code": "softwareTypeShipping"
+    },
+    {
+      "id": 79,
+      "name": "Fulfillment",
+      "description": "Order fulfillment and warehouse management",
+      "json_code": "softwareTypeFulfillment"
+    },
+    {
+      "id": 80,
+      "name": "Content Curation",
+      "description": "Content curation and aggregation platforms",
+      "json_code": "softwareTypeContentCuration"
+    },
+    {
+      "id": 81,
+      "name": "Fundraising",
+      "description": "Fundraising and donation platforms",
+      "json_code": "softwareTypeFundraising"
+    },
+    {
+      "id": 82,
+      "name": "Editors / IDEs",
+      "description": "Code editors and integrated development environments",
+      "json_code": "softwareTypeEditors"
+    },
+    {
+      "id": 83,
+      "name": "DMS",
+      "description": "Document Management Systems",
+      "json_code": "softwareTypeDMS"
+    },
+    {
+      "id": 84,
+      "name": "UI Frameworks",
+      "description": "User interface component frameworks and libraries",
+      "json_code": "softwareTypeUIFramework"
+    },
+    {
+      "id": 85,
+      "name": "Authentication",
+      "description": "Authentication and identity management services",
+      "json_code": "softwareTypeAuthentication"
+    },
+    {
+      "id": 86,
+      "name": "SSL/TLS CA",
+      "description": "SSL/TLS certificate authorities and services",
+      "json_code": "softwareTypeSSLCA"
+    },
+    {
+      "id": 87,
+      "name": "Email Services",
+      "description": "Email marketing and delivery services",
+      "json_code": "softwareTypeEmailServices"
+    },
+    {
+      "id": 88,
+      "name": "Shopify Themes",
+      "description": "Shopify theme templates",
+      "json_code": "softwareTypeShopifyTheme"
+    },
+    {
+      "id": 89,
+      "name": "Drupal Themes",
+      "description": "Drupal theme templates",
+      "json_code": "softwareTypeDrupalTheme"
+    },
+    {
+      "id": 90,
+      "name": "Feature Management",
+      "description": "Feature flags and experimentation platforms",
+      "json_code": "softwareTypeFeatureManagement"
+    },
+    {
+      "id": 91,
+      "name": "Segmentation",
+      "description": "Customer segmentation and targeting tools",
+      "json_code": "softwareTypeSegmentation"
+    },
+    {
+      "id": 92,
+      "name": "Hosting Providers",
+      "description": "Web hosting service providers",
+      "json_code": "softwareTypeHostingProvider"
+    },
+    {
+      "id": 93,
+      "name": "Translation",
+      "description": "Translation and localization services",
+      "json_code": "softwareTypeTranslation"
+    },
+    {
+      "id": 94,
+      "name": "Buy Now Pay Later",
+      "description": "BNPL payment services",
+      "json_code": "softwareTypeBNPL"
+    },
+    {
+      "id": 95,
+      "name": "Reservations & Delivery",
+      "description": "Restaurant reservations and food delivery platforms",
+      "json_code": "softwareTypeReservations"
+    },
+    {
+      "id": 96,
+      "name": "Digital Asset Management",
+      "description": "DAM and media library systems",
+      "json_code": "softwareTypeDAM"
+    },
+    {
+      "id": 97,
+      "name": "Cart Abandonment",
+      "description": "Cart abandonment recovery tools",
+      "json_code": "softwareTypeCartAbandonment"
+    },
+    {
+      "id": 98,
+      "name": "Returns Management",
+      "description": "Returns and RMA management systems",
+      "json_code": "softwareTypeReturns"
+    },
+    {
+      "id": 100,
+      "name": "Recruitment & Staffing",
+      "description": "HR recruitment and staffing platforms",
+      "json_code": "softwareTypeRecruitment"
+    },
+    {
+      "id": 101,
+      "name": "Livestreaming",
+      "description": "Live streaming platforms and services",
+      "json_code": "softwareTypeLivestreaming"
+    },
+    {
+      "id": 102,
+      "name": "Ticket Booking",
+      "description": "Event and ticket booking systems",
+      "json_code": "softwareTypeTicketBooking"
+    },
+    {
+      "id": 103,
+      "name": "Augmented Reality",
+      "description": "AR and VR platforms",
+      "json_code": "softwareTypeAR"
+    },
+    {
+      "id": 104,
+      "name": "Cross-border Ecommerce",
+      "description": "International ecommerce enablement",
+      "json_code": "softwareTypeCrossBorderEcommerce"
+    },
+    {
       "id": 99,
       "name": "Other",
       "description": "Miscellaneous products and tools that don't fit other categories",

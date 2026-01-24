@@ -1,0 +1,1352 @@
+[
+  {
+    "name_regex": "^BITRIX_SM_GUEST_ID$",
+    "product_id": 3653,
+    "description": "1C-Bitrix cookie"
+  },
+  {
+    "name_regex": "^BITRIX_SM_LAST_IP$",
+    "product_id": 3653,
+    "description": "1C-Bitrix cookie"
+  },
+  {
+    "name_regex": "^BITRIX_SM_SALE_UID$",
+    "product_id": 3653,
+    "description": "1C-Bitrix cookie"
+  },
+  {
+    "name_regex": "^3dvisit$",
+    "product_id": 3658,
+    "description": "3dCart cookie"
+  },
+  {
+    "name_regex": "^4Tell$",
+    "product_id": 3659,
+    "description": "4-Tell cookie"
+  },
+  {
+    "name_regex": "^4TellCart$",
+    "product_id": 3659,
+    "description": "4-Tell cookie"
+  },
+  {
+    "name_regex": "^4TellSession$",
+    "product_id": 3659,
+    "description": "4-Tell cookie"
+  },
+  {
+    "name_regex": "^BAGawin$",
+    "product_id": 554,
+    "description": "AWIN cookie"
+  },
+  {
+    "name_regex": "^_aw_xid$",
+    "product_id": 554,
+    "description": "AWIN cookie"
+  },
+  {
+    "name_regex": "^_absorb_ui_session$",
+    "product_id": 559,
+    "description": "Absorb cookie"
+  },
+  {
+    "name_regex": "^SmartFocus$",
+    "product_id": 585,
+    "description": "Actito cookie"
+  },
+  {
+    "name_regex": "^Demdex$",
+    "product_id": 618,
+    "description": "Adobe Audience Manager cookie"
+  },
+  {
+    "name_regex": "^aam_uuid$",
+    "product_id": 618,
+    "description": "Adobe Audience Manager cookie"
+  },
+  {
+    "name_regex": "^adonis\\-session$",
+    "product_id": 630,
+    "description": "AdonisJS cookie"
+  },
+  {
+    "name_regex": "^adonis\\-session\\-values$",
+    "product_id": 630,
+    "description": "AdonisJS cookie"
+  },
+  {
+    "name_regex": "^ahoy_track$",
+    "product_id": 648,
+    "description": "Ahoy cookie"
+  },
+  {
+    "name_regex": "^ahoy_visit$",
+    "product_id": 648,
+    "description": "Ahoy cookie"
+  },
+  {
+    "name_regex": "^ahoy_visitor$",
+    "product_id": 648,
+    "description": "Ahoy cookie"
+  },
+  {
+    "name_regex": "^ak_bmsc$",
+    "product_id": 658,
+    "description": "Akamai Bot Manager cookie"
+  },
+  {
+    "name_regex": "^bm_sv$",
+    "product_id": 658,
+    "description": "Akamai Bot Manager cookie"
+  },
+  {
+    "name_regex": "^bm_sz$",
+    "product_id": 658,
+    "description": "Akamai Bot Manager cookie"
+  },
+  {
+    "name_regex": "^akaas_AB\\-Testing$",
+    "product_id": 660,
+    "description": "Akamai mPulse cookie"
+  },
+  {
+    "name_regex": "^_ALGOLIA$",
+    "product_id": 669,
+    "description": "Algolia cookie"
+  },
+  {
+    "name_regex": "^AWSALB$",
+    "product_id": 677,
+    "description": "Amazon ALB cookie"
+  },
+  {
+    "name_regex": "^AWSALBCORS$",
+    "product_id": 677,
+    "description": "Amazon ALB cookie"
+  },
+  {
+    "name_regex": "^AWSELB$",
+    "product_id": 687,
+    "description": "Amazon ELB cookie"
+  },
+  {
+    "name_regex": "^ARK_ID$",
+    "product_id": 702,
+    "description": "Analysys Ark cookie"
+  },
+  {
+    "name_regex": "^apptus\\.customerKey$",
+    "product_id": 739,
+    "description": "Apptus cookie"
+  },
+  {
+    "name_regex": "^apptus\\.sessionKey$",
+    "product_id": 739,
+    "description": "Apptus cookie"
+  },
+  {
+    "name_regex": "^FESESSIONID$",
+    "product_id": 764,
+    "description": "Atlassian FishEye cookie"
+  },
+  {
+    "name_regex": "^ARRAffinity$",
+    "product_id": 794,
+    "description": "Azure cookie"
+  },
+  {
+    "name_regex": "^TiPMix$",
+    "product_id": 794,
+    "description": "Azure cookie"
+  },
+  {
+    "name_regex": "^ASLBSA$",
+    "product_id": 796,
+    "description": "Azure Front Door cookie"
+  },
+  {
+    "name_regex": "^ASLBSACORS$",
+    "product_id": 796,
+    "description": "Azure Front Door cookie"
+  },
+  {
+    "name_regex": "^bsmartstate$",
+    "product_id": 817,
+    "description": "BSmart cookie"
+  },
+  {
+    "name_regex": "^beyable\\-cart$",
+    "product_id": 845,
+    "description": "Beyable cookie"
+  },
+  {
+    "name_regex": "^beyable\\-cartd$",
+    "product_id": 845,
+    "description": "Beyable cookie"
+  },
+  {
+    "name_regex": "^bigWAdminID$",
+    "product_id": 849,
+    "description": "Bigware cookie"
+  },
+  {
+    "name_regex": "^bigwareCsid$",
+    "product_id": 849,
+    "description": "Bigware cookie"
+  },
+  {
+    "name_regex": "^blesta_sid$",
+    "product_id": 862,
+    "description": "Blesta cookie"
+  },
+  {
+    "name_regex": "^bf_session$",
+    "product_id": 892,
+    "description": "Bonfire cookie"
+  },
+  {
+    "name_regex": "^bfx\\.apiKey:$",
+    "product_id": 907,
+    "description": "Borderfree cookie"
+  },
+  {
+    "name_regex": "^bfx\\.country:$",
+    "product_id": 907,
+    "description": "Borderfree cookie"
+  },
+  {
+    "name_regex": "^bfx\\.language$",
+    "product_id": 907,
+    "description": "Borderfree cookie"
+  },
+  {
+    "name_regex": "^bfx\\.logLevel$",
+    "product_id": 907,
+    "description": "Borderfree cookie"
+  },
+  {
+    "name_regex": "^botble_session$",
+    "product_id": 909,
+    "description": "Botble CMS cookie"
+  },
+  {
+    "name_regex": "^bownow_act$",
+    "product_id": 911,
+    "description": "BowNow cookie"
+  },
+  {
+    "name_regex": "^bownow_aid$",
+    "product_id": 911,
+    "description": "BowNow cookie"
+  },
+  {
+    "name_regex": "^bownow_cid$",
+    "product_id": 911,
+    "description": "BowNow cookie"
+  },
+  {
+    "name_regex": "^bownow_mbid$",
+    "product_id": 911,
+    "description": "BowNow cookie"
+  },
+  {
+    "name_regex": "^_bsalemarket_session$",
+    "product_id": 932,
+    "description": "Bsale cookie"
+  },
+  {
+    "name_regex": "^Bugzilla_login_request_cookie$",
+    "product_id": 939,
+    "description": "Bugzilla cookie"
+  },
+  {
+    "name_regex": "^bynder$",
+    "product_id": 950,
+    "description": "Bynder cookie"
+  },
+  {
+    "name_regex": "^CMSSESSID$",
+    "product_id": 960,
+    "description": "CMS Made Simple cookie"
+  },
+  {
+    "name_regex": "^_chorus_geoip_continent$",
+    "product_id": 1026,
+    "description": "Chorus cookie"
+  },
+  {
+    "name_regex": "^chorus_preferences$",
+    "product_id": 1026,
+    "description": "Chorus cookie"
+  },
+  {
+    "name_regex": "^cs_secure_session$",
+    "product_id": 1054,
+    "description": "CloudSuite cookie"
+  },
+  {
+    "name_regex": "^__cfduid$",
+    "product_id": 110,
+    "description": "Cloudflare cookie"
+  },
+  {
+    "name_regex": "^__cf_bm$",
+    "product_id": 1056,
+    "description": "Cloudflare Bot Management cookie"
+  },
+  {
+    "name_regex": "^coconut_calendar$",
+    "product_id": 1069,
+    "description": "CoconutSoftware cookie"
+  },
+  {
+    "name_regex": "^ci_csrf_token$",
+    "product_id": 62,
+    "description": "CodeIgniter cookie"
+  },
+  {
+    "name_regex": "^exp_last_activity$",
+    "product_id": 62,
+    "description": "CodeIgniter cookie"
+  },
+  {
+    "name_regex": "^exp_tracker$",
+    "product_id": 62,
+    "description": "CodeIgniter cookie"
+  },
+  {
+    "name_regex": "^CONCRETE5$",
+    "product_id": 1097,
+    "description": "Concrete CMS cookie"
+  },
+  {
+    "name_regex": "^CraftSessionId$",
+    "product_id": 1146,
+    "description": "Craft CMS cookie"
+  },
+  {
+    "name_regex": "^cratejoy_muffin42$",
+    "product_id": 1148,
+    "description": "Cratejoy cookie"
+  },
+  {
+    "name_regex": "^statjoy_metrics$",
+    "product_id": 1148,
+    "description": "Cratejoy cookie"
+  },
+  {
+    "name_regex": "^cprelogin$",
+    "product_id": 248,
+    "description": "cPanel cookie"
+  },
+  {
+    "name_regex": "^cpsession$",
+    "product_id": 248,
+    "description": "cPanel cookie"
+  },
+  {
+    "name_regex": "^__derak_auth$",
+    "product_id": 1185,
+    "description": "DERAK.CLOUD cookie"
+  },
+  {
+    "name_regex": "^__derak_user$",
+    "product_id": 1185,
+    "description": "DERAK.CLOUD cookie"
+  },
+  {
+    "name_regex": "^DotNetNukeAnonymous$",
+    "product_id": 1189,
+    "description": "DNN cookie"
+  },
+  {
+    "name_regex": "^datadome$",
+    "product_id": 1207,
+    "description": "Datadome cookie"
+  },
+  {
+    "name_regex": "^datadome\\-_zldp$",
+    "product_id": 1207,
+    "description": "Datadome cookie"
+  },
+  {
+    "name_regex": "^datadome\\-_zldt$",
+    "product_id": 1207,
+    "description": "Datadome cookie"
+  },
+  {
+    "name_regex": "^X\\-DR\\-SHOPPER\\-ets$",
+    "product_id": 1227,
+    "description": "DigitalRiver cookie"
+  },
+  {
+    "name_regex": "^X\\-DR\\-THEME$",
+    "product_id": 1227,
+    "description": "DigitalRiver cookie"
+  },
+  {
+    "name_regex": "^django_language$",
+    "product_id": 50,
+    "description": "Django cookie"
+  },
+  {
+    "name_regex": "^DokuWiki$",
+    "product_id": 1246,
+    "description": "DokuWiki cookie"
+  },
+  {
+    "name_regex": "^droxit_a11y_state$",
+    "product_id": 1272,
+    "description": "Droxit cookie"
+  },
+  {
+    "name_regex": "^_duelcsrf$",
+    "product_id": 1277,
+    "description": "Duel cookie"
+  },
+  {
+    "name_regex": "^_dy_geo$",
+    "product_id": 1280,
+    "description": "Dynamic Yield cookie"
+  },
+  {
+    "name_regex": "^_dy_ses_load_seq$",
+    "product_id": 1280,
+    "description": "Dynamic Yield cookie"
+  },
+  {
+    "name_regex": "^Dynamicweb$",
+    "product_id": 1281,
+    "description": "Dynamicweb cookie"
+  },
+  {
+    "name_regex": "^dtCookie1$",
+    "product_id": 1282,
+    "description": "Dynatrace cookie"
+  },
+  {
+    "name_regex": "^ekmpowershop$",
+    "product_id": 1291,
+    "description": "EKM cookie"
+  },
+  {
+    "name_regex": "^EPiServer$",
+    "product_id": 1294,
+    "description": "EPiServer cookie"
+  },
+  {
+    "name_regex": "^EPiTrace$",
+    "product_id": 1294,
+    "description": "EPiServer cookie"
+  },
+  {
+    "name_regex": "^layer0_bucket$",
+    "product_id": 1309,
+    "description": "Edgio App Platform cookie"
+  },
+  {
+    "name_regex": "^layer0_destination$",
+    "product_id": 1309,
+    "description": "Edgio App Platform cookie"
+  },
+  {
+    "name_regex": "^layer0_eid$",
+    "product_id": 1309,
+    "description": "Edgio App Platform cookie"
+  },
+  {
+    "name_regex": "^STUID$",
+    "product_id": 1314,
+    "description": "ElasticSuite cookie"
+  },
+  {
+    "name_regex": "^STVID$",
+    "product_id": 1314,
+    "description": "ElasticSuite cookie"
+  },
+  {
+    "name_regex": "^ELOQUA$",
+    "product_id": 1324,
+    "description": "Eloqua cookie"
+  },
+  {
+    "name_regex": "^exp_csrf_token$",
+    "product_id": 1378,
+    "description": "ExpressionEngine cookie"
+  },
+  {
+    "name_regex": "^exp_last_activity$",
+    "product_id": 1378,
+    "description": "ExpressionEngine cookie"
+  },
+  {
+    "name_regex": "^exp_tracker$",
+    "product_id": 1378,
+    "description": "ExpressionEngine cookie"
+  },
+  {
+    "name_regex": "^e107_tz$",
+    "product_id": 1390,
+    "description": "e107 cookie"
+  },
+  {
+    "name_regex": "^eZSESSID$",
+    "product_id": 1402,
+    "description": "eZ Publish cookie"
+  },
+  {
+    "name_regex": "^_fly$",
+    "product_id": 1472,
+    "description": "Fly.io cookie"
+  },
+  {
+    "name_regex": "^flyspray_project$",
+    "product_id": 1473,
+    "description": "Flyspray cookie"
+  },
+  {
+    "name_regex": "^Aws\\.customer$",
+    "product_id": 1485,
+    "description": "ForoshGostar cookie"
+  },
+  {
+    "name_regex": "^forterToken$",
+    "product_id": 1487,
+    "description": "Forter cookie"
+  },
+  {
+    "name_regex": "^FOSWIKISTRIKEONE$",
+    "product_id": 1489,
+    "description": "Foswiki cookie"
+  },
+  {
+    "name_regex": "^SFOSWIKISID$",
+    "product_id": 1489,
+    "description": "Foswiki cookie"
+  },
+  {
+    "name_regex": "^_gauges_$",
+    "product_id": 1539,
+    "description": "Gauges cookie"
+  },
+  {
+    "name_regex": "^_gitlab_session$",
+    "product_id": 1563,
+    "description": "GitLab cookie"
+  },
+  {
+    "name_regex": "^i_like_gitea$",
+    "product_id": 1565,
+    "description": "Gitea cookie"
+  },
+  {
+    "name_regex": "^GlobalE_CT_Data$",
+    "product_id": 1573,
+    "description": "Global-e cookie"
+  },
+  {
+    "name_regex": "^GlobalE_Data$",
+    "product_id": 1573,
+    "description": "Global-e cookie"
+  },
+  {
+    "name_regex": "^GlobalE_SupportThirdPartCookies$",
+    "product_id": 1573,
+    "description": "Global-e cookie"
+  },
+  {
+    "name_regex": "^_gocertify_session$",
+    "product_id": 1589,
+    "description": "GoCertify cookie"
+  },
+  {
+    "name_regex": "^dps_site_id$",
+    "product_id": 1598,
+    "description": "GoDaddy Website Builder cookie"
+  },
+  {
+    "name_regex": "^i_like_gogits$",
+    "product_id": 1604,
+    "description": "Gogs cookie"
+  },
+  {
+    "name_regex": "^__utma$",
+    "product_id": 1608,
+    "description": "Google Analytics cookie"
+  },
+  {
+    "name_regex": "^_ga$",
+    "product_id": 1608,
+    "description": "Google Analytics cookie"
+  },
+  {
+    "name_regex": "^_gat$",
+    "product_id": 1608,
+    "description": "Google Analytics cookie"
+  },
+  {
+    "name_regex": "^graffitibot$",
+    "product_id": 1640,
+    "description": "Graffiti CMS cookie"
+  },
+  {
+    "name_regex": "^Grand\\.customer$",
+    "product_id": 1641,
+    "description": "GrandNode cookie"
+  },
+  {
+    "name_regex": "^gr_user_id$",
+    "product_id": 1656,
+    "description": "GrowingIO cookie"
+  },
+  {
+    "name_regex": "^grwng_uid$",
+    "product_id": 1656,
+    "description": "GrowingIO cookie"
+  },
+  {
+    "name_regex": "^hotaru_mobile$",
+    "product_id": 1734,
+    "description": "Hotaru CMS cookie"
+  },
+  {
+    "name_regex": "^huberway_session$",
+    "product_id": 1744,
+    "description": "Huberway cookie"
+  },
+  {
+    "name_regex": "^ipbWWLmodpids$",
+    "product_id": 1769,
+    "description": "IPB cookie"
+  },
+  {
+    "name_regex": "^ipbWWLsession_id$",
+    "product_id": 1769,
+    "description": "IPB cookie"
+  },
+  {
+    "name_regex": "^ICMSSession$",
+    "product_id": 1785,
+    "description": "ImpressCMS cookie"
+  },
+  {
+    "name_regex": "^ImpressCMS$",
+    "product_id": 1785,
+    "description": "ImpressCMS cookie"
+  },
+  {
+    "name_regex": "^MAKACSESSION$",
+    "product_id": 1796,
+    "description": "Indico cookie"
+  },
+  {
+    "name_regex": "^InstantCMS\\[logdate\\]$",
+    "product_id": 1809,
+    "description": "InstantCMS cookie"
+  },
+  {
+    "name_regex": "^INVENIOSESSION$",
+    "product_id": 1822,
+    "description": "Invenio cookie"
+  },
+  {
+    "name_regex": "^INV\\.Customer$",
+    "product_id": 1824,
+    "description": "Inveon cookie"
+  },
+  {
+    "name_regex": "^inveonSessionId$",
+    "product_id": 1824,
+    "description": "Inveon cookie"
+  },
+  {
+    "name_regex": "^iexexchanger_session$",
+    "product_id": 1838,
+    "description": "iEXExchanger cookie"
+  },
+  {
+    "name_regex": "^JTLSHOP$",
+    "product_id": 1867,
+    "description": "JTL Shop cookie"
+  },
+  {
+    "name_regex": "^jibres$",
+    "product_id": 1879,
+    "description": "Jibres cookie"
+  },
+  {
+    "name_regex": "^_kjb_session$",
+    "product_id": 1923,
+    "description": "Kajabi cookie"
+  },
+  {
+    "name_regex": "^kameleoonVisitorCode$",
+    "product_id": 1926,
+    "description": "Kameleoon cookie"
+  },
+  {
+    "name_regex": "^CMSPreferredCulture$",
+    "product_id": 1935,
+    "description": "Kentico CMS cookie"
+  },
+  {
+    "name_regex": "^ku1\\-sid$",
+    "product_id": 1948,
+    "description": "Klarna Checkout cookie"
+  },
+  {
+    "name_regex": "^ku1\\-vid$",
+    "product_id": 1948,
+    "description": "Klarna Checkout cookie"
+  },
+  {
+    "name_regex": "^kohanasession$",
+    "product_id": 1960,
+    "description": "Kohana cookie"
+  },
+  {
+    "name_regex": "^koken_referrer$",
+    "product_id": 1961,
+    "description": "Koken cookie"
+  },
+  {
+    "name_regex": "^X\\-Magento\\-Vary$",
+    "product_id": 81,
+    "description": "Magento cookie"
+  },
+  {
+    "name_regex": "^frontend$",
+    "product_id": 81,
+    "description": "Magento cookie"
+  },
+  {
+    "name_regex": "^_mastodon_session$",
+    "product_id": 2128,
+    "description": "Mastodon cookie"
+  },
+  {
+    "name_regex": "^PIWIK_SESSID$",
+    "product_id": 2132,
+    "description": "Matomo Analytics cookie"
+  },
+  {
+    "name_regex": "^k_visit$",
+    "product_id": 2142,
+    "description": "Medallia cookie"
+  },
+  {
+    "name_regex": "^mediavine_session$",
+    "product_id": 2146,
+    "description": "Mediavine cookie"
+  },
+  {
+    "name_regex": "^memberstack$",
+    "product_id": 2152,
+    "description": "MemberStack cookie"
+  },
+  {
+    "name_regex": "^_mshops_ga_gid$",
+    "product_id": 2156,
+    "description": "Mercado Shops cookie"
+  },
+  {
+    "name_regex": "^ASP\\.NET_SessionId$",
+    "product_id": 2165,
+    "description": "Microsoft ASP.NET cookie"
+  },
+  {
+    "name_regex": "^ASPSESSION$",
+    "product_id": 2165,
+    "description": "Microsoft ASP.NET cookie"
+  },
+  {
+    "name_regex": "^_uetsid$",
+    "product_id": 2166,
+    "description": "Microsoft Advertising cookie"
+  },
+  {
+    "name_regex": "^_uetvid$",
+    "product_id": 2166,
+    "description": "Microsoft Advertising cookie"
+  },
+  {
+    "name_regex": "^MOIN_SESSION$",
+    "product_id": 2204,
+    "description": "MoinMoin cookie"
+  },
+  {
+    "name_regex": "^MOODLEID_$",
+    "product_id": 2220,
+    "description": "Moodle cookie"
+  },
+  {
+    "name_regex": "^MoodleSession$",
+    "product_id": 2220,
+    "description": "Moodle cookie"
+  },
+  {
+    "name_regex": "^mybb\\[lastactive\\]$",
+    "product_id": 2236,
+    "description": "MyBB cookie"
+  },
+  {
+    "name_regex": "^mybb\\[lastvisit\\]$",
+    "product_id": 2236,
+    "description": "MyBB cookie"
+  },
+  {
+    "name_regex": "^NS_VER$",
+    "product_id": 2285,
+    "description": "NetSuite cookie"
+  },
+  {
+    "name_regex": "^nette\\-browser$",
+    "product_id": 59,
+    "description": "Nette Framework cookie"
+  },
+  {
+    "name_regex": "^Nop\\.customer$",
+    "product_id": 84,
+    "description": "nopCommerce cookie"
+  },
+  {
+    "name_regex": "^sid_key$",
+    "product_id": 2319,
+    "description": "OXID eShop cookie"
+  },
+  {
+    "name_regex": "^october_session$",
+    "product_id": 2329,
+    "description": "October CMS cookie"
+  },
+  {
+    "name_regex": "^ometria$",
+    "product_id": 2338,
+    "description": "Ometria cookie"
+  },
+  {
+    "name_regex": "^omnisendSessionID$",
+    "product_id": 2342,
+    "description": "Omnisend cookie"
+  },
+  {
+    "name_regex": "^OptanonConsent$",
+    "product_id": 2354,
+    "description": "OneTrust cookie"
+  },
+  {
+    "name_regex": "^OJSSID$",
+    "product_id": 2360,
+    "description": "Open Journal Systems cookie"
+  },
+  {
+    "name_regex": "^OCSESSID$",
+    "product_id": 2364,
+    "description": "OpenCart cookie"
+  },
+  {
+    "name_regex": "^OpenGrok$",
+    "product_id": 2369,
+    "description": "OpenGrok cookie"
+  },
+  {
+    "name_regex": "^optimizelyEndUserId$",
+    "product_id": 2382,
+    "description": "Optimizely cookie"
+  },
+  {
+    "name_regex": "^osCsid$",
+    "product_id": 2412,
+    "description": "osCommerce cookie"
+  },
+  {
+    "name_regex": "^OSTSESSID$",
+    "product_id": 2413,
+    "description": "osTicket cookie"
+  },
+  {
+    "name_regex": "^_px3$",
+    "product_id": 2476,
+    "description": "PerimeterX cookie"
+  },
+  {
+    "name_regex": "^_pxff_cc$",
+    "product_id": 2476,
+    "description": "PerimeterX cookie"
+  },
+  {
+    "name_regex": "^_pxhd$",
+    "product_id": 2476,
+    "description": "PerimeterX cookie"
+  },
+  {
+    "name_regex": "^_pxvid$",
+    "product_id": 2476,
+    "description": "PerimeterX cookie"
+  },
+  {
+    "name_regex": "^phsid$",
+    "product_id": 2483,
+    "description": "Phabricator cookie"
+  },
+  {
+    "name_regex": "^phoenix_p_session$",
+    "product_id": 2488,
+    "description": "Phoenix Site cookie"
+  },
+  {
+    "name_regex": "^PLAY_SESSION$",
+    "product_id": 2521,
+    "description": "Play cookie"
+  },
+  {
+    "name_regex": "^_podia_storefront_visitor_id$",
+    "product_id": 2530,
+    "description": "Podia cookie"
+  },
+  {
+    "name_regex": "^Popmenu\\-Token$",
+    "product_id": 2539,
+    "description": "Popmenu cookie"
+  },
+  {
+    "name_regex": "^PrestaShop$",
+    "product_id": 83,
+    "description": "PrestaShop cookie"
+  },
+  {
+    "name_regex": "^ppwp_wp_session$",
+    "product_id": 2571,
+    "description": "ProfilePress cookie"
+  },
+  {
+    "name_regex": "^promobuilding_session$",
+    "product_id": 2575,
+    "description": "PromoBuilding cookie"
+  },
+  {
+    "name_regex": "^pterodactyl_session$",
+    "product_id": 2582,
+    "description": "Pterodactyl Panel cookie"
+  },
+  {
+    "name_regex": "^PUBLICCMS_USER$",
+    "product_id": 2586,
+    "description": "Public CMS cookie"
+  },
+  {
+    "name_regex": "^DSSIGNIN$",
+    "product_id": 2587,
+    "description": "Pulse Secure cookie"
+  },
+  {
+    "name_regex": "^pyrocms$",
+    "product_id": 2598,
+    "description": "PyroCMS cookie"
+  },
+  {
+    "name_regex": "^phpbb$",
+    "product_id": 2603,
+    "description": "phpBB cookie"
+  },
+  {
+    "name_regex": "^pinoox_session$",
+    "product_id": 2609,
+    "description": "pinoox cookie"
+  },
+  {
+    "name_regex": "^_qta_rum$",
+    "product_id": 2621,
+    "description": "Quanta cookie"
+  },
+  {
+    "name_regex": "^rakuten\\-source$",
+    "product_id": 2647,
+    "description": "Rakuten cookie"
+  },
+  {
+    "name_regex": "^rc2c\\-erotica$",
+    "product_id": 2683,
+    "description": "RedCart cookie"
+  },
+  {
+    "name_regex": "^_redmine_session$",
+    "product_id": 2687,
+    "description": "Redmine cookie"
+  },
+  {
+    "name_regex": "^rr\\-testCookie$",
+    "product_id": 2712,
+    "description": "Retail Rocket cookie"
+  },
+  {
+    "name_regex": "^rrpvid$",
+    "product_id": 2712,
+    "description": "Retail Rocket cookie"
+  },
+  {
+    "name_regex": "^REVLIFTER$",
+    "product_id": 2716,
+    "description": "RevLifter cookie"
+  },
+  {
+    "name_regex": "^REVEL_FLASH$",
+    "product_id": 2718,
+    "description": "Revel cookie"
+  },
+  {
+    "name_regex": "^REVEL_SESSION$",
+    "product_id": 2718,
+    "description": "Revel cookie"
+  },
+  {
+    "name_regex": "^_hybris$",
+    "product_id": 2758,
+    "description": "SAP Commerce Cloud cookie"
+  },
+  {
+    "name_regex": "^sails\\.sid$",
+    "product_id": 2782,
+    "description": "Sails.js cookie"
+  },
+  {
+    "name_regex": "^sailthru_pageviews$",
+    "product_id": 2783,
+    "description": "Sailthru cookie"
+  },
+  {
+    "name_regex": "^com\\.salesforce$",
+    "product_id": 2790,
+    "description": "Salesforce cookie"
+  },
+  {
+    "name_regex": "^dw_dnt$",
+    "product_id": 2792,
+    "description": "Salesforce Commerce Cloud cookie"
+  },
+  {
+    "name_regex": "^dwsid$",
+    "product_id": 2792,
+    "description": "Salesforce Commerce Cloud cookie"
+  },
+  {
+    "name_regex": "^sensorsdata2015jssdkcross$",
+    "product_id": 2846,
+    "description": "Sensors Data cookie"
+  },
+  {
+    "name_regex": "^sensorsdata2015session$",
+    "product_id": 2846,
+    "description": "Sensors Data cookie"
+  },
+  {
+    "name_regex": "^spp_csrf$",
+    "product_id": 2851,
+    "description": "Service Provider Pro cookie"
+  },
+  {
+    "name_regex": "^spp_orderform$",
+    "product_id": 2851,
+    "description": "Service Provider Pro cookie"
+  },
+  {
+    "name_regex": "^spp_session$",
+    "product_id": 2851,
+    "description": "Service Provider Pro cookie"
+  },
+  {
+    "name_regex": "^eGold$",
+    "product_id": 2874,
+    "description": "ShopGold cookie"
+  },
+  {
+    "name_regex": "^popup_shopGold$",
+    "product_id": 2874,
+    "description": "ShopGold cookie"
+  },
+  {
+    "name_regex": "^popup_shopGold_time$",
+    "product_id": 2874,
+    "description": "ShopGold cookie"
+  },
+  {
+    "name_regex": "^shopaholic_cart_id$",
+    "product_id": 2877,
+    "description": "Shopaholic cookie"
+  },
+  {
+    "name_regex": "^_shopify_s$",
+    "product_id": 82,
+    "description": "Shopify cookie"
+  },
+  {
+    "name_regex": "^_shopify_y$",
+    "product_id": 82,
+    "description": "Shopify cookie"
+  },
+  {
+    "name_regex": "^_simplero_session_id$",
+    "product_id": 2916,
+    "description": "Simplero Websites cookie"
+  },
+  {
+    "name_regex": "^SC_ANALYTICS_GLOBAL_COOKIE$",
+    "product_id": 2941,
+    "description": "Sitecore cookie"
+  },
+  {
+    "name_regex": "^SC_OS_SessionId$",
+    "product_id": 2941,
+    "description": "Sitecore cookie"
+  },
+  {
+    "name_regex": "^sc_expview$",
+    "product_id": 2941,
+    "description": "Sitecore cookie"
+  },
+  {
+    "name_regex": "^SiteVisionLTM$",
+    "product_id": 2944,
+    "description": "Sitevision CMS cookie"
+  },
+  {
+    "name_regex": "^SMARTSTORE\\.CUSTOMER$",
+    "product_id": 2967,
+    "description": "Smartstore cookie"
+  },
+  {
+    "name_regex": "^SMARTSTORE\\.VISITOR$",
+    "product_id": 2967,
+    "description": "Smartstore cookie"
+  },
+  {
+    "name_regex": "^snipcart\\-cart$",
+    "product_id": 2979,
+    "description": "Snipcart cookie"
+  },
+  {
+    "name_regex": "^_sp_id$",
+    "product_id": 2983,
+    "description": "Snowplow Analytics cookie"
+  },
+  {
+    "name_regex": "^sp$",
+    "product_id": 2983,
+    "description": "Snowplow Analytics cookie"
+  },
+  {
+    "name_regex": "^_solusquare$",
+    "product_id": 2992,
+    "description": "Solusquare OmniCommerce Cloud cookie"
+  },
+  {
+    "name_regex": "^soteshop$",
+    "product_id": 3000,
+    "description": "SoteShop cookie"
+  },
+  {
+    "name_regex": "^__stripe_mid$",
+    "product_id": 3074,
+    "description": "Stripe cookie"
+  },
+  {
+    "name_regex": "^__stripe_sid$",
+    "product_id": 3074,
+    "description": "Stripe cookie"
+  },
+  {
+    "name_regex": "^swell\\-session$",
+    "product_id": 3102,
+    "description": "Swell cookie"
+  },
+  {
+    "name_regex": "^sf_redirect$",
+    "product_id": 53,
+    "description": "Symfony cookie"
+  },
+  {
+    "name_regex": "^TNEW$",
+    "product_id": 3129,
+    "description": "TN Express Web cookie"
+  },
+  {
+    "name_regex": "^TWIKISID$",
+    "product_id": 3134,
+    "description": "TWiki cookie"
+  },
+  {
+    "name_regex": "^tallentor_widget$",
+    "product_id": 3153,
+    "description": "Tallentor Widget cookie"
+  },
+  {
+    "name_regex": "^TawkConnectionTime$",
+    "product_id": 3161,
+    "description": "Tawk.to cookie"
+  },
+  {
+    "name_regex": "^_gat_teachableTracker$",
+    "product_id": 3163,
+    "description": "Teachable cookie"
+  },
+  {
+    "name_regex": "^_thinkific_session$",
+    "product_id": 3222,
+    "description": "Thinkific cookie"
+  },
+  {
+    "name_regex": "^trbo_session$",
+    "product_id": 3261,
+    "description": "Trbo cookie"
+  },
+  {
+    "name_regex": "^trbo_usr$",
+    "product_id": 3261,
+    "description": "Trbo cookie"
+  },
+  {
+    "name_regex": "^typof_session$",
+    "product_id": 3314,
+    "description": "Typof cookie"
+  },
+  {
+    "name_regex": "^ushahidi$",
+    "product_id": 3362,
+    "description": "Ushahidi cookie"
+  },
+  {
+    "name_regex": "^VivvoSessionId$",
+    "product_id": 3373,
+    "description": "VIVVO cookie"
+  },
+  {
+    "name_regex": "^VtexFingerPrint$",
+    "product_id": 3376,
+    "description": "VTEX cookie"
+  },
+  {
+    "name_regex": "^VtexStoreVersion$",
+    "product_id": 3376,
+    "description": "VTEX cookie"
+  },
+  {
+    "name_regex": "^VtexWorkspace$",
+    "product_id": 3376,
+    "description": "VTEX cookie"
+  },
+  {
+    "name_regex": "^vtex_session$",
+    "product_id": 3376,
+    "description": "VTEX cookie"
+  },
+  {
+    "name_regex": "^_gphw_mode$",
+    "product_id": 3395,
+    "description": "Vigbo cookie"
+  },
+  {
+    "name_regex": "^vscommerce$",
+    "product_id": 3411,
+    "description": "Visualsoft cookie"
+  },
+  {
+    "name_regex": "^voracio_csrf_token$",
+    "product_id": 3420,
+    "description": "Voracio cookie"
+  },
+  {
+    "name_regex": "^voracio_sessionid$",
+    "product_id": 3420,
+    "description": "Voracio cookie"
+  },
+  {
+    "name_regex": "^bblastactivity$",
+    "product_id": 3427,
+    "description": "vBulletin cookie"
+  },
+  {
+    "name_regex": "^bblastvisit$",
+    "product_id": 3427,
+    "description": "vBulletin cookie"
+  },
+  {
+    "name_regex": "^bbsessionhash$",
+    "product_id": 3427,
+    "description": "vBulletin cookie"
+  },
+  {
+    "name_regex": "^wgSession$",
+    "product_id": 3465,
+    "description": "WebGUI cookie"
+  },
+  {
+    "name_regex": "^_wmuid$",
+    "product_id": 3467,
+    "description": "WebMetric cookie"
+  },
+  {
+    "name_regex": "^_gat_wnd_header$",
+    "product_id": 3468,
+    "description": "WebNode cookie"
+  },
+  {
+    "name_regex": "^websale_ac$",
+    "product_id": 3481,
+    "description": "Websale cookie"
+  },
+  {
+    "name_regex": "^usces_cookie$",
+    "product_id": 3489,
+    "description": "Welcart cookie"
+  },
+  {
+    "name_regex": "^Domain$",
+    "product_id": 3511,
+    "description": "Wix cookie"
+  },
+  {
+    "name_regex": "^xf_csrf$",
+    "product_id": 3558,
+    "description": "XenForo cookie"
+  },
+  {
+    "name_regex": "^xf_session$",
+    "product_id": 3558,
+    "description": "XenForo cookie"
+  },
+  {
+    "name_regex": "^YII_CSRF_TOKEN$",
+    "product_id": 64,
+    "description": "Yii cookie"
+  },
+  {
+    "name_regex": "^ZENDSERVERSESSID$",
+    "product_id": 3621,
+    "description": "Zend cookie"
+  },
+  {
+    "name_regex": "^_help_center_session$",
+    "product_id": 3622,
+    "description": "Zendesk cookie"
+  },
+  {
+    "name_regex": "^_zendesk_cookie$",
+    "product_id": 3622,
+    "description": "Zendesk cookie"
+  },
+  {
+    "name_regex": "^_zendesk_shared_session$",
+    "product_id": 3622,
+    "description": "Zendesk cookie"
+  },
+  {
+    "name_regex": "^zid_catalog_session$",
+    "product_id": 3629,
+    "description": "Zid cookie"
+  },
+  {
+    "name_regex": "^ZM_TEST$",
+    "product_id": 3630,
+    "description": "Zimbra cookie"
+  }
+]

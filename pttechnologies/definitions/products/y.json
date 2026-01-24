@@ -1,0 +1,566 @@
+{
+  "products": [
+    {
+      "id": 3572,
+      "our_name": "YaBB",
+      "vendor": "yabb",
+      "products": [
+        "yabb"
+      ],
+      "cve_details_url": null,
+      "category_id": 39,
+      "_letter": "y"
+    },
+    {
+      "id": 487,
+      "our_name": "Yac",
+      "vendor": "php",
+      "products": [
+        "yac"
+      ],
+      "cve_details_url": null,
+      "category_id": 15,
+      "_letter": "y"
+    },
+    {
+      "id": 488,
+      "our_name": "Yaconf",
+      "vendor": "php",
+      "products": [
+        "yaconf"
+      ],
+      "cve_details_url": null,
+      "category_id": 15,
+      "_letter": "y"
+    },
+    {
+      "id": 489,
+      "our_name": "Yaf",
+      "vendor": "php",
+      "products": [
+        "yaf"
+      ],
+      "cve_details_url": null,
+      "category_id": 15,
+      "_letter": "y"
+    },
+    {
+      "id": 3573,
+      "our_name": "Yahoo Advertising",
+      "vendor": "yahoo_advertising",
+      "products": [
+        "yahoo_advertising"
+      ],
+      "cve_details_url": null,
+      "category_id": 22,
+      "_letter": "y"
+    },
+    {
+      "id": 3574,
+      "our_name": "Yahoo! Ecommerce",
+      "vendor": "yahoo!_ecommerce",
+      "products": [
+        "yahoo!_ecommerce"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "y"
+    },
+    {
+      "id": 3575,
+      "our_name": "Yahoo! Tag Manager",
+      "vendor": "yahoo!_tag_manager",
+      "products": [
+        "yahoo!_tag_manager"
+      ],
+      "cve_details_url": null,
+      "category_id": 23,
+      "_letter": "y"
+    },
+    {
+      "id": 3576,
+      "our_name": "Yahoo! Web Analytics",
+      "vendor": "yahoo!_web_analytics",
+      "products": [
+        "yahoo!_web_analytics"
+      ],
+      "cve_details_url": null,
+      "category_id": 18,
+      "_letter": "y"
+    },
+    {
+      "id": 3577,
+      "our_name": "YalinHost",
+      "vendor": "yalinhost",
+      "products": [
+        "yalinhost"
+      ],
+      "cve_details_url": null,
+      "category_id": 92,
+      "_letter": "y"
+    },
+    {
+      "id": 490,
+      "our_name": "Yaml",
+      "vendor": "php",
+      "products": [
+        "yaml"
+      ],
+      "cve_details_url": null,
+      "category_id": 15,
+      "_letter": "y"
+    },
+    {
+      "id": 3578,
+      "our_name": "Yampi Checkout",
+      "vendor": "yampi_checkout",
+      "products": [
+        "yampi_checkout"
+      ],
+      "cve_details_url": null,
+      "category_id": 21,
+      "_letter": "y"
+    },
+    {
+      "id": 3579,
+      "our_name": "Yampi Virtual store",
+      "vendor": "yampi_virtual_store",
+      "products": [
+        "yampi_virtual_store"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "y"
+    },
+    {
+      "id": 3580,
+      "our_name": "Yandex.Cloud",
+      "vendor": "yandex_cloud",
+      "products": [
+        "yandex_cloud"
+      ],
+      "cve_details_url": null,
+      "category_id": 50,
+      "_letter": "y"
+    },
+    {
+      "id": 3581,
+      "our_name": "Yandex.Cloud CDN",
+      "vendor": "yandex_cloud_cdn",
+      "products": [
+        "yandex_cloud_cdn"
+      ],
+      "cve_details_url": null,
+      "category_id": 10,
+      "_letter": "y"
+    },
+    {
+      "id": 3582,
+      "our_name": "Yandex.Direct",
+      "vendor": "yandex_direct",
+      "products": [
+        "yandex_direct"
+      ],
+      "cve_details_url": null,
+      "category_id": 22,
+      "_letter": "y"
+    },
+    {
+      "id": 3583,
+      "our_name": "Yandex.Messenger",
+      "vendor": "yandex_messenger",
+      "products": [
+        "yandex_messenger"
+      ],
+      "cve_details_url": null,
+      "category_id": 99,
+      "_letter": "y"
+    },
+    {
+      "id": 3584,
+      "our_name": "Yandex.Metrika",
+      "vendor": "yandex_metrika",
+      "products": [
+        "yandex_metrika"
+      ],
+      "cve_details_url": null,
+      "category_id": 18,
+      "_letter": "y"
+    },
+    {
+      "id": 491,
+      "our_name": "Yar",
+      "vendor": "php",
+      "products": [
+        "yar"
+      ],
+      "cve_details_url": null,
+      "category_id": 15,
+      "_letter": "y"
+    },
+    {
+      "id": 3585,
+      "our_name": "Yaws",
+      "vendor": "yaws",
+      "products": [
+        "yaws"
+      ],
+      "cve_details_url": null,
+      "category_id": 2,
+      "_letter": "y"
+    },
+    {
+      "id": 492,
+      "our_name": "YAZ",
+      "vendor": "php",
+      "products": [
+        "yaz"
+      ],
+      "cve_details_url": null,
+      "category_id": 15,
+      "_letter": "y"
+    },
+    {
+      "id": 3586,
+      "our_name": "Yektanet",
+      "vendor": "yektanet",
+      "products": [
+        "yektanet"
+      ],
+      "cve_details_url": null,
+      "category_id": 22,
+      "_letter": "y"
+    },
+    {
+      "id": 3609,
+      "our_name": "yellow.ai",
+      "vendor": "yellow_ai",
+      "products": [
+        "yellow_ai"
+      ],
+      "cve_details_url": null,
+      "category_id": 20,
+      "_letter": "y"
+    },
+    {
+      "id": 3587,
+      "our_name": "Yelp Reservations",
+      "vendor": "yelp_reservations",
+      "products": [
+        "yelp_reservations"
+      ],
+      "cve_details_url": null,
+      "category_id": 95,
+      "_letter": "y"
+    },
+    {
+      "id": 3588,
+      "our_name": "Yelp Review Badge",
+      "vendor": "yelp_review_badge",
+      "products": [
+        "yelp_review_badge"
+      ],
+      "cve_details_url": null,
+      "category_id": 99,
+      "_letter": "y"
+    },
+    {
+      "id": 3589,
+      "our_name": "Yepcomm",
+      "vendor": "yepcomm",
+      "products": [
+        "yepcomm"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "y"
+    },
+    {
+      "id": 3590,
+      "our_name": "Yett",
+      "vendor": "yett",
+      "products": [
+        "yett"
+      ],
+      "cve_details_url": null,
+      "category_id": 32,
+      "_letter": "y"
+    },
+    {
+      "id": 3591,
+      "our_name": "Yext",
+      "vendor": "yext",
+      "products": [
+        "yext"
+      ],
+      "cve_details_url": null,
+      "category_id": 69,
+      "_letter": "y"
+    },
+    {
+      "id": 3592,
+      "our_name": "Yieldify",
+      "vendor": "yieldify",
+      "products": [
+        "yieldify"
+      ],
+      "cve_details_url": null,
+      "category_id": 25,
+      "_letter": "y"
+    },
+    {
+      "id": 3593,
+      "our_name": "Yieldlab",
+      "vendor": "yieldlab",
+      "products": [
+        "yieldlab"
+      ],
+      "cve_details_url": null,
+      "category_id": 22,
+      "_letter": "y"
+    },
+    {
+      "id": 64,
+      "our_name": "Yii",
+      "vendor": "yii_software",
+      "products": [
+        "yii"
+      ],
+      "cve_details_url": "https://www.cvedetails.com/product/36517/Yii-Software-YII.html?vendor_id=16260",
+      "category_id": 7,
+      "_letter": "y"
+    },
+    {
+      "id": 3568,
+      "our_name": "YMQ Product Options Variant Option",
+      "vendor": "ymq_product_options_",
+      "products": [
+        "ymq_product_options_"
+      ],
+      "cve_details_url": null,
+      "category_id": 64,
+      "_letter": "y"
+    },
+    {
+      "id": 3569,
+      "our_name": "YNAP Ecommerce",
+      "vendor": "ynap_ecommerce",
+      "products": [
+        "ynap_ecommerce"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "y"
+    },
+    {
+      "id": 3594,
+      "our_name": "Yoast Duplicate Post",
+      "vendor": "yoast_duplicate_post",
+      "products": [
+        "yoast_duplicate_post"
+      ],
+      "cve_details_url": null,
+      "category_id": 62,
+      "_letter": "y"
+    },
+    {
+      "id": 301,
+      "our_name": "Yoast SEO",
+      "vendor": "yoast",
+      "products": [
+        "wordpress-seo",
+        "yoast_seo"
+      ],
+      "cve_details_url": "https://www.cvedetails.com/product/56916/Yoast-Yoast-Seo.html",
+      "category_id": 11,
+      "_letter": "y"
+    },
+    {
+      "id": 3596,
+      "our_name": "Yoast SEO for Shopify",
+      "vendor": "yoast_seo_for_shopif",
+      "products": [
+        "yoast_seo_for_shopif"
+      ],
+      "cve_details_url": null,
+      "category_id": 30,
+      "_letter": "y"
+    },
+    {
+      "id": 3595,
+      "our_name": "Yoast SEO Premium",
+      "vendor": "yoast_seo_premium",
+      "products": [
+        "yoast_seo_premium"
+      ],
+      "cve_details_url": null,
+      "category_id": 30,
+      "_letter": "y"
+    },
+    {
+      "id": 3597,
+      "our_name": "Yodel",
+      "vendor": "yodel",
+      "products": [
+        "yodel"
+      ],
+      "cve_details_url": null,
+      "category_id": 78,
+      "_letter": "y"
+    },
+    {
+      "id": 3598,
+      "our_name": "Yola",
+      "vendor": "yola",
+      "products": [
+        "yola"
+      ],
+      "cve_details_url": null,
+      "category_id": 61,
+      "_letter": "y"
+    },
+    {
+      "id": 3599,
+      "our_name": "YooMoney",
+      "vendor": "yoomoney",
+      "products": [
+        "yoomoney"
+      ],
+      "cve_details_url": null,
+      "category_id": 21,
+      "_letter": "y"
+    },
+    {
+      "id": 3600,
+      "our_name": "Yotpo Loyalty & Referrals",
+      "vendor": "yotpo_loyalty_&_refe",
+      "products": [
+        "yotpo_loyalty_&_refe"
+      ],
+      "cve_details_url": null,
+      "category_id": 75,
+      "_letter": "y"
+    },
+    {
+      "id": 3601,
+      "our_name": "Yotpo Reviews",
+      "vendor": "yotpo_reviews",
+      "products": [
+        "yotpo_reviews"
+      ],
+      "cve_details_url": null,
+      "category_id": 59,
+      "_letter": "y"
+    },
+    {
+      "id": 3602,
+      "our_name": "Yotpo SMSBump",
+      "vendor": "yotpo_smsbump",
+      "products": [
+        "yotpo_smsbump"
+      ],
+      "cve_details_url": null,
+      "category_id": 19,
+      "_letter": "y"
+    },
+    {
+      "id": 3603,
+      "our_name": "Yottaa",
+      "vendor": "yottaa",
+      "products": [
+        "yottaa"
+      ],
+      "cve_details_url": null,
+      "category_id": 23,
+      "_letter": "y"
+    },
+    {
+      "id": 3604,
+      "our_name": "YouCam Makeup",
+      "vendor": "youcam_makeup",
+      "products": [
+        "youcam_makeup"
+      ],
+      "cve_details_url": null,
+      "category_id": 103,
+      "_letter": "y"
+    },
+    {
+      "id": 3605,
+      "our_name": "YouCan",
+      "vendor": "youcan",
+      "products": [
+        "youcan"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "y"
+    },
+    {
+      "id": 3606,
+      "our_name": "YouPay",
+      "vendor": "youpay",
+      "products": [
+        "youpay"
+      ],
+      "cve_details_url": null,
+      "category_id": 64,
+      "_letter": "y"
+    },
+    {
+      "id": 3607,
+      "our_name": "YouTrack",
+      "vendor": "youtrack",
+      "products": [
+        "youtrack"
+      ],
+      "cve_details_url": null,
+      "category_id": 40,
+      "_letter": "y"
+    },
+    {
+      "id": 3608,
+      "our_name": "YouTube",
+      "vendor": "youtube",
+      "products": [
+        "youtube"
+      ],
+      "cve_details_url": null,
+      "category_id": 27,
+      "_letter": "y"
+    },
+    {
+      "id": 512,
+      "our_name": "yp",
+      "vendor": "php",
+      "products": [
+        "yp"
+      ],
+      "cve_details_url": null,
+      "category_id": 15,
+      "_letter": "y"
+    },
+    {
+      "id": 3570,
+      "our_name": "YUI",
+      "vendor": "yahoo",
+      "products": [
+        "yui"
+      ],
+      "cve_details_url": null,
+      "category_id": 6,
+      "_letter": "y"
+    },
+    {
+      "id": 3571,
+      "our_name": "YUI Doc",
+      "vendor": "yui_doc",
+      "products": [
+        "yui_doc"
+      ],
+      "cve_details_url": null,
+      "category_id": 36,
+      "_letter": "y"
+    }
+  ]
+}

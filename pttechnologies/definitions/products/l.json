@@ -1,0 +1,1293 @@
+{
+  "products": [
+    {
+      "id": 1978,
+      "our_name": "Lagoon",
+      "vendor": "lagoon",
+      "products": [
+        "lagoon"
+      ],
+      "cve_details_url": null,
+      "category_id": 50,
+      "_letter": "l"
+    },
+    {
+      "id": 132,
+      "our_name": "LAMP",
+      "vendor": null,
+      "products": [
+        null
+      ],
+      "cve_details_url": null,
+      "category_id": 13,
+      "_letter": "l"
+    },
+    {
+      "id": 2070,
+      "our_name": "langify",
+      "vendor": "langify",
+      "products": [
+        "langify"
+      ],
+      "cve_details_url": null,
+      "category_id": 93,
+      "_letter": "l"
+    },
+    {
+      "id": 1979,
+      "our_name": "LangShop",
+      "vendor": "langshop",
+      "products": [
+        "langshop"
+      ],
+      "cve_details_url": null,
+      "category_id": 64,
+      "_letter": "l"
+    },
+    {
+      "id": 52,
+      "our_name": "Laravel",
+      "vendor": "laravel",
+      "products": [
+        "laravel"
+      ],
+      "cve_details_url": "https://www.cvedetails.com/version-list/16542/38139/1/Laravel-Laravel.html",
+      "category_id": 7,
+      "_letter": "l"
+    },
+    {
+      "id": 1980,
+      "our_name": "Laterpay",
+      "vendor": "laterpay",
+      "products": [
+        "laterpay"
+      ],
+      "cve_details_url": null,
+      "category_id": 21,
+      "_letter": "l"
+    },
+    {
+      "id": 1981,
+      "our_name": "LatitudePay",
+      "vendor": "latitudepay",
+      "products": [
+        "latitudepay"
+      ],
+      "cve_details_url": null,
+      "category_id": 94,
+      "_letter": "l"
+    },
+    {
+      "id": 1982,
+      "our_name": "LaunchDarkly",
+      "vendor": "launchdarkly",
+      "products": [
+        "launchdarkly"
+      ],
+      "cve_details_url": null,
+      "category_id": 90,
+      "_letter": "l"
+    },
+    {
+      "id": 1983,
+      "our_name": "Launchrock",
+      "vendor": "launchrock",
+      "products": [
+        "launchrock"
+      ],
+      "cve_details_url": null,
+      "category_id": 61,
+      "_letter": "l"
+    },
+    {
+      "id": 1984,
+      "our_name": "LayBuy",
+      "vendor": "laybuy",
+      "products": [
+        "laybuy"
+      ],
+      "cve_details_url": null,
+      "category_id": 94,
+      "_letter": "l"
+    },
+    {
+      "id": 1985,
+      "our_name": "LayoutHub",
+      "vendor": "layouthub",
+      "products": [
+        "layouthub"
+      ],
+      "cve_details_url": null,
+      "category_id": 64,
+      "_letter": "l"
+    },
+    {
+      "id": 1986,
+      "our_name": "Lazada",
+      "vendor": "lazada",
+      "products": [
+        "lazada"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "l"
+    },
+    {
+      "id": 1987,
+      "our_name": "LazySizes",
+      "vendor": "lazysizes",
+      "products": [
+        "lazysizes"
+      ],
+      "cve_details_url": null,
+      "category_id": 6,
+      "_letter": "l"
+    },
+    {
+      "id": 1988,
+      "our_name": "LazySizes unveilhooks plugin",
+      "vendor": "lazysizes_unveilhook",
+      "products": [
+        "lazysizes_unveilhook"
+      ],
+      "cve_details_url": null,
+      "category_id": 6,
+      "_letter": "l"
+    },
+    {
+      "id": 383,
+      "our_name": "Ldap",
+      "vendor": "php",
+      "products": [
+        "ldap"
+      ],
+      "cve_details_url": null,
+      "category_id": 15,
+      "_letter": "l"
+    },
+    {
+      "id": 1989,
+      "our_name": "Leadinfo",
+      "vendor": "leadinfo",
+      "products": [
+        "leadinfo"
+      ],
+      "cve_details_url": null,
+      "category_id": 18,
+      "_letter": "l"
+    },
+    {
+      "id": 1990,
+      "our_name": "Leaflet",
+      "vendor": "leaflet",
+      "products": [
+        "leaflet"
+      ],
+      "cve_details_url": null,
+      "category_id": 28,
+      "_letter": "l"
+    },
+    {
+      "id": 1991,
+      "our_name": "Leaflet platform",
+      "vendor": "leaflet_platform",
+      "products": [
+        "leaflet_platform"
+      ],
+      "cve_details_url": null,
+      "category_id": 64,
+      "_letter": "l"
+    },
+    {
+      "id": 1992,
+      "our_name": "Leanplum",
+      "vendor": "leanplum",
+      "products": [
+        "leanplum"
+      ],
+      "cve_details_url": null,
+      "category_id": 19,
+      "_letter": "l"
+    },
+    {
+      "id": 1993,
+      "our_name": "LearnWorlds",
+      "vendor": "learnworlds",
+      "products": [
+        "learnworlds"
+      ],
+      "cve_details_url": null,
+      "category_id": 42,
+      "_letter": "l"
+    },
+    {
+      "id": 1994,
+      "our_name": "Leaseweb",
+      "vendor": "leaseweb",
+      "products": [
+        "leaseweb"
+      ],
+      "cve_details_url": null,
+      "category_id": 51,
+      "_letter": "l"
+    },
+    {
+      "id": 1995,
+      "our_name": "Lede",
+      "vendor": "lede",
+      "products": [
+        "lede"
+      ],
+      "cve_details_url": null,
+      "category_id": 16,
+      "_letter": "l"
+    },
+    {
+      "id": 1996,
+      "our_name": "Legal Monster",
+      "vendor": "legal_monster",
+      "products": [
+        "legal_monster"
+      ],
+      "cve_details_url": null,
+      "category_id": 32,
+      "_letter": "l"
+    },
+    {
+      "id": 134,
+      "our_name": "LEMP",
+      "vendor": null,
+      "products": [
+        null
+      ],
+      "cve_details_url": null,
+      "category_id": 13,
+      "_letter": "l"
+    },
+    {
+      "id": 1974,
+      "our_name": "LEPTON",
+      "vendor": "lepton-cms",
+      "products": [
+        "lepton"
+      ],
+      "cve_details_url": null,
+      "category_id": 16,
+      "_letter": "l"
+    },
+    {
+      "id": 1997,
+      "our_name": "Less",
+      "vendor": "less",
+      "products": [
+        "less"
+      ],
+      "cve_details_url": null,
+      "category_id": 99,
+      "_letter": "l"
+    },
+    {
+      "id": 212,
+      "our_name": "Let's Encrypt",
+      "vendor": "letsencrypt",
+      "products": [
+        "lets_encrypt"
+      ],
+      "cve_details_url": null,
+      "category_id": 14,
+      "_letter": "l"
+    },
+    {
+      "id": 1998,
+      "our_name": "Letro",
+      "vendor": "letro",
+      "products": [
+        "letro"
+      ],
+      "cve_details_url": null,
+      "category_id": 59,
+      "_letter": "l"
+    },
+    {
+      "id": 1999,
+      "our_name": "Level 5",
+      "vendor": "level_5",
+      "products": [
+        "level_5"
+      ],
+      "cve_details_url": null,
+      "category_id": 61,
+      "_letter": "l"
+    },
+    {
+      "id": 2000,
+      "our_name": "Lever",
+      "vendor": "lever",
+      "products": [
+        "lever"
+      ],
+      "cve_details_url": null,
+      "category_id": 100,
+      "_letter": "l"
+    },
+    {
+      "id": 2071,
+      "our_name": "libphonenumber",
+      "vendor": "libphonenumber",
+      "products": [
+        "libphonenumber"
+      ],
+      "cve_details_url": null,
+      "category_id": 6,
+      "_letter": "l"
+    },
+    {
+      "id": 2001,
+      "our_name": "Libravatar",
+      "vendor": "libravatar",
+      "products": [
+        "libravatar"
+      ],
+      "cve_details_url": null,
+      "category_id": 99,
+      "_letter": "l"
+    },
+    {
+      "id": 2072,
+      "our_name": "libwww-perl-daemon",
+      "vendor": "libwww_perl_daemon",
+      "products": [
+        "libwww_perl_daemon"
+      ],
+      "cve_details_url": null,
+      "category_id": 2,
+      "_letter": "l"
+    },
+    {
+      "id": 384,
+      "our_name": "Libxml",
+      "vendor": "php",
+      "products": [
+        "libxml"
+      ],
+      "cve_details_url": null,
+      "category_id": 15,
+      "_letter": "l"
+    },
+    {
+      "id": 2002,
+      "our_name": "Lieferando",
+      "vendor": "lieferando",
+      "products": [
+        "lieferando"
+      ],
+      "cve_details_url": null,
+      "category_id": 16,
+      "_letter": "l"
+    },
+    {
+      "id": 2003,
+      "our_name": "Liferay",
+      "vendor": "liferay",
+      "products": [
+        "liferay_portal",
+        "liferay"
+      ],
+      "cve_details_url": null,
+      "category_id": 16,
+      "_letter": "l"
+    },
+    {
+      "id": 2004,
+      "our_name": "Lift",
+      "vendor": "liftweb",
+      "products": [
+        "lift"
+      ],
+      "cve_details_url": null,
+      "category_id": 7,
+      "_letter": "l"
+    },
+    {
+      "id": 2006,
+      "our_name": "Lightbox",
+      "vendor": "lightbox_photo_gallery_project",
+      "products": [
+        "lightbox_photo_gallery",
+        "lightbox"
+      ],
+      "cve_details_url": null,
+      "category_id": 6,
+      "_letter": "l"
+    },
+    {
+      "id": 2005,
+      "our_name": "LightMon Engine",
+      "vendor": "lightmon_engine",
+      "products": [
+        "lightmon_engine"
+      ],
+      "cve_details_url": null,
+      "category_id": 16,
+      "_letter": "l"
+    },
+    {
+      "id": 2007,
+      "our_name": "Lightning",
+      "vendor": "lightning",
+      "products": [
+        "lightning"
+      ],
+      "cve_details_url": null,
+      "category_id": 63,
+      "_letter": "l"
+    },
+    {
+      "id": 2008,
+      "our_name": "Lightspeed eCom",
+      "vendor": "lightspeed_ecom",
+      "products": [
+        "lightspeed_ecom"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "l"
+    },
+    {
+      "id": 2073,
+      "our_name": "lighttpd",
+      "vendor": "lighttpd",
+      "products": [
+        "lighttpd"
+      ],
+      "cve_details_url": null,
+      "category_id": 2,
+      "_letter": "l"
+    },
+    {
+      "id": 2009,
+      "our_name": "LimeChat",
+      "vendor": "limechat",
+      "products": [
+        "limechat"
+      ],
+      "cve_details_url": null,
+      "category_id": 20,
+      "_letter": "l"
+    },
+    {
+      "id": 2011,
+      "our_name": "Limepay",
+      "vendor": "limepay",
+      "products": [
+        "limepay"
+      ],
+      "cve_details_url": null,
+      "category_id": 94,
+      "_letter": "l"
+    },
+    {
+      "id": 2010,
+      "our_name": "LimeSpot",
+      "vendor": "limespot",
+      "products": [
+        "limespot"
+      ],
+      "cve_details_url": null,
+      "category_id": 25,
+      "_letter": "l"
+    },
+    {
+      "id": 325,
+      "our_name": "Limit Login Attempts Reloaded",
+      "vendor": "limitloginattemptsreloaded",
+      "products": [
+        "limit_login_attempts_reloaded"
+      ],
+      "cve_details_url": "https://www.cvedetails.com/product/90940/Limitloginattempts-Limit-Login-Attempts-Reloaded.html",
+      "category_id": 11,
+      "_letter": "l"
+    },
+    {
+      "id": 1975,
+      "our_name": "LINE Login",
+      "vendor": "line_login",
+      "products": [
+        "line_login"
+      ],
+      "cve_details_url": null,
+      "category_id": 85,
+      "_letter": "l"
+    },
+    {
+      "id": 2013,
+      "our_name": "Linkedin Insight Tag",
+      "vendor": "linkedin_insight_tag",
+      "products": [
+        "linkedin_insight_tag"
+      ],
+      "cve_details_url": null,
+      "category_id": 18,
+      "_letter": "l"
+    },
+    {
+      "id": 2014,
+      "our_name": "Linkedin Sign-in",
+      "vendor": "linkedin_sign_in",
+      "products": [
+        "linkedin_sign_in"
+      ],
+      "cve_details_url": null,
+      "category_id": 85,
+      "_letter": "l"
+    },
+    {
+      "id": 2012,
+      "our_name": "LinkSmart",
+      "vendor": "linksmart",
+      "products": [
+        "linksmart"
+      ],
+      "cve_details_url": null,
+      "category_id": 22,
+      "_letter": "l"
+    },
+    {
+      "id": 167,
+      "our_name": "Linux",
+      "vendor": "linux",
+      "products": [
+        "linux"
+      ],
+      "cve_details_url": "https://www.cvedetails.com/product/15003/Linux-Linux.html",
+      "category_id": 1,
+      "_letter": "l"
+    },
+    {
+      "id": 2015,
+      "our_name": "Linx Commerce",
+      "vendor": "linx_commerce",
+      "products": [
+        "linx_commerce"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "l"
+    },
+    {
+      "id": 2016,
+      "our_name": "Linx Impulse",
+      "vendor": "linx_impulse",
+      "products": [
+        "linx_impulse"
+      ],
+      "cve_details_url": null,
+      "category_id": 54,
+      "_letter": "l"
+    },
+    {
+      "id": 2017,
+      "our_name": "Liquid Web",
+      "vendor": "liquid_web",
+      "products": [
+        "liquid_web"
+      ],
+      "cve_details_url": null,
+      "category_id": 50,
+      "_letter": "l"
+    },
+    {
+      "id": 2018,
+      "our_name": "List.js",
+      "vendor": "list_js",
+      "products": [
+        "list_js"
+      ],
+      "cve_details_url": null,
+      "category_id": 6,
+      "_letter": "l"
+    },
+    {
+      "id": 2019,
+      "our_name": "Listrak",
+      "vendor": "listrak",
+      "products": [
+        "listrak"
+      ],
+      "cve_details_url": null,
+      "category_id": 19,
+      "_letter": "l"
+    },
+    {
+      "id": 2074,
+      "our_name": "lit-element",
+      "vendor": "lit_element",
+      "products": [
+        "lit_element"
+      ],
+      "cve_details_url": null,
+      "category_id": 6,
+      "_letter": "l"
+    },
+    {
+      "id": 2075,
+      "our_name": "lit-html",
+      "vendor": "lit_html",
+      "products": [
+        "lit_html"
+      ],
+      "cve_details_url": null,
+      "category_id": 6,
+      "_letter": "l"
+    },
+    {
+      "id": 2076,
+      "our_name": "lite-youtube-embed",
+      "vendor": "lite_youtube_embed",
+      "products": [
+        "lite_youtube_embed"
+      ],
+      "cve_details_url": null,
+      "category_id": 6,
+      "_letter": "l"
+    },
+    {
+      "id": 13,
+      "our_name": "LiteSpeed",
+      "vendor": "litespeedtech",
+      "products": [
+        "litespeed_web_server"
+      ],
+      "cve_details_url": "https://www.cvedetails.com/product/19625/Litespeedtech-Litespeed-Web-Server.html",
+      "category_id": 2,
+      "_letter": "l"
+    },
+    {
+      "id": 2020,
+      "our_name": "Litespeed Cache",
+      "vendor": "litespeed_cache",
+      "products": [
+        "litespeed_cache"
+      ],
+      "cve_details_url": null,
+      "category_id": 45,
+      "_letter": "l"
+    },
+    {
+      "id": 2021,
+      "our_name": "Lithium",
+      "vendor": "lithium",
+      "products": [
+        "lithium"
+      ],
+      "cve_details_url": null,
+      "category_id": 16,
+      "_letter": "l"
+    },
+    {
+      "id": 2022,
+      "our_name": "Littledata",
+      "vendor": "littledata",
+      "products": [
+        "littledata"
+      ],
+      "cve_details_url": null,
+      "category_id": 64,
+      "_letter": "l"
+    },
+    {
+      "id": 2023,
+      "our_name": "Live Story",
+      "vendor": "live_story",
+      "products": [
+        "live_story"
+      ],
+      "cve_details_url": null,
+      "category_id": 16,
+      "_letter": "l"
+    },
+    {
+      "id": 2024,
+      "our_name": "LiveAgent",
+      "vendor": "liveagent",
+      "products": [
+        "liveagent"
+      ],
+      "cve_details_url": null,
+      "category_id": 20,
+      "_letter": "l"
+    },
+    {
+      "id": 2025,
+      "our_name": "LiveChat",
+      "vendor": "livechat",
+      "products": [
+        "livechat"
+      ],
+      "cve_details_url": null,
+      "category_id": 20,
+      "_letter": "l"
+    },
+    {
+      "id": 2035,
+      "our_name": "Livefyre",
+      "vendor": "livefyre",
+      "products": [
+        "livefyre"
+      ],
+      "cve_details_url": null,
+      "category_id": 47,
+      "_letter": "l"
+    },
+    {
+      "id": 2026,
+      "our_name": "LiveHelp",
+      "vendor": "livehelp",
+      "products": [
+        "livehelp"
+      ],
+      "cve_details_url": null,
+      "category_id": 20,
+      "_letter": "l"
+    },
+    {
+      "id": 2027,
+      "our_name": "LiveIntent",
+      "vendor": "liveintent",
+      "products": [
+        "liveintent"
+      ],
+      "cve_details_url": null,
+      "category_id": 87,
+      "_letter": "l"
+    },
+    {
+      "id": 2036,
+      "our_name": "Liveinternet",
+      "vendor": "liveinternet",
+      "products": [
+        "liveinternet"
+      ],
+      "cve_details_url": null,
+      "category_id": 18,
+      "_letter": "l"
+    },
+    {
+      "id": 2028,
+      "our_name": "LiveJournal",
+      "vendor": "livejournal",
+      "products": [
+        "livejournal"
+      ],
+      "cve_details_url": null,
+      "category_id": 37,
+      "_letter": "l"
+    },
+    {
+      "id": 2029,
+      "our_name": "LivePerson",
+      "vendor": "liveperson",
+      "products": [
+        "liveperson"
+      ],
+      "cve_details_url": null,
+      "category_id": 20,
+      "_letter": "l"
+    },
+    {
+      "id": 2030,
+      "our_name": "LiveRamp DPM",
+      "vendor": "liveramp_dpm",
+      "products": [
+        "liveramp_dpm"
+      ],
+      "cve_details_url": null,
+      "category_id": 22,
+      "_letter": "l"
+    },
+    {
+      "id": 2031,
+      "our_name": "LiveRamp PCM",
+      "vendor": "liveramp_pcm",
+      "products": [
+        "liveramp_pcm"
+      ],
+      "cve_details_url": null,
+      "category_id": 32,
+      "_letter": "l"
+    },
+    {
+      "id": 2037,
+      "our_name": "Livescale",
+      "vendor": "livescale",
+      "products": [
+        "livescale"
+      ],
+      "cve_details_url": null,
+      "category_id": 64,
+      "_letter": "l"
+    },
+    {
+      "id": 2032,
+      "our_name": "LiveSession",
+      "vendor": "livesession",
+      "products": [
+        "livesession"
+      ],
+      "cve_details_url": null,
+      "category_id": 18,
+      "_letter": "l"
+    },
+    {
+      "id": 2033,
+      "our_name": "LiveStreet CMS",
+      "vendor": "livestreet_cms",
+      "products": [
+        "livestreet_cms"
+      ],
+      "cve_details_url": null,
+      "category_id": 16,
+      "_letter": "l"
+    },
+    {
+      "id": 2038,
+      "our_name": "Livewire",
+      "vendor": "livewire",
+      "products": [
+        "livewire"
+      ],
+      "cve_details_url": null,
+      "category_id": 7,
+      "_letter": "l"
+    },
+    {
+      "id": 2034,
+      "our_name": "LiveZilla",
+      "vendor": "livezilla",
+      "products": [
+        "livezilla"
+      ],
+      "cve_details_url": null,
+      "category_id": 20,
+      "_letter": "l"
+    },
+    {
+      "id": 1976,
+      "our_name": "LKQD",
+      "vendor": "lkqd",
+      "products": [
+        "lkqd"
+      ],
+      "cve_details_url": null,
+      "category_id": 22,
+      "_letter": "l"
+    },
+    {
+      "id": 2039,
+      "our_name": "Loadable-Components",
+      "vendor": "loadable_components",
+      "products": [
+        "loadable_components"
+      ],
+      "cve_details_url": null,
+      "category_id": 6,
+      "_letter": "l"
+    },
+    {
+      "id": 2040,
+      "our_name": "Loadify",
+      "vendor": "loadify",
+      "products": [
+        "loadify"
+      ],
+      "cve_details_url": null,
+      "category_id": 33,
+      "_letter": "l"
+    },
+    {
+      "id": 2041,
+      "our_name": "LocalFocus",
+      "vendor": "localfocus",
+      "products": [
+        "localfocus"
+      ],
+      "cve_details_url": null,
+      "category_id": 6,
+      "_letter": "l"
+    },
+    {
+      "id": 2042,
+      "our_name": "Localised",
+      "vendor": "localised",
+      "products": [
+        "localised"
+      ],
+      "cve_details_url": null,
+      "category_id": 104,
+      "_letter": "l"
+    },
+    {
+      "id": 2043,
+      "our_name": "Locksmith",
+      "vendor": "locksmith",
+      "products": [
+        "locksmith"
+      ],
+      "cve_details_url": null,
+      "category_id": 64,
+      "_letter": "l"
+    },
+    {
+      "id": 323,
+      "our_name": "Loco Translate",
+      "vendor": "loco_translate_project",
+      "products": [
+        "loco_translate"
+      ],
+      "cve_details_url": "https://www.cvedetails.com/product/102830/Loco-Translate-Project-Loco-Translate.html",
+      "category_id": 11,
+      "_letter": "l"
+    },
+    {
+      "id": 2044,
+      "our_name": "LocomotiveCMS",
+      "vendor": "locomotivecms",
+      "products": [
+        "locomotivecms"
+      ],
+      "cve_details_url": null,
+      "category_id": 16,
+      "_letter": "l"
+    },
+    {
+      "id": 93,
+      "our_name": "Lodash",
+      "vendor": "lodash",
+      "products": [
+        "lodash"
+      ],
+      "cve_details_url": "https://www.cvedetails.com/product/57083/Lodash-Lodash.html",
+      "category_id": 6,
+      "_letter": "l"
+    },
+    {
+      "id": 2046,
+      "our_name": "Loggly",
+      "vendor": "loggly",
+      "products": [
+        "loggly"
+      ],
+      "cve_details_url": null,
+      "category_id": 18,
+      "_letter": "l"
+    },
+    {
+      "id": 2047,
+      "our_name": "LogiCommerce",
+      "vendor": "logicommerce",
+      "products": [
+        "logicommerce"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "l"
+    },
+    {
+      "id": 2048,
+      "our_name": "Login with Amazon",
+      "vendor": "login_with_amazon",
+      "products": [
+        "login_with_amazon"
+      ],
+      "cve_details_url": null,
+      "category_id": 85,
+      "_letter": "l"
+    },
+    {
+      "id": 2049,
+      "our_name": "LoginRadius",
+      "vendor": "loginradius",
+      "products": [
+        "loginradius"
+      ],
+      "cve_details_url": null,
+      "category_id": 85,
+      "_letter": "l"
+    },
+    {
+      "id": 2050,
+      "our_name": "LogoiX",
+      "vendor": "logoix",
+      "products": [
+        "logoix"
+      ],
+      "cve_details_url": null,
+      "category_id": 78,
+      "_letter": "l"
+    },
+    {
+      "id": 2045,
+      "our_name": "LogRocket",
+      "vendor": "logrocket",
+      "products": [
+        "logrocket"
+      ],
+      "cve_details_url": null,
+      "category_id": 18,
+      "_letter": "l"
+    },
+    {
+      "id": 2051,
+      "our_name": "Loja Integrada",
+      "vendor": "loja_integrada",
+      "products": [
+        "loja_integrada"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "l"
+    },
+    {
+      "id": 2052,
+      "our_name": "Loja Mestre",
+      "vendor": "loja_mestre",
+      "products": [
+        "loja_mestre"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "l"
+    },
+    {
+      "id": 2053,
+      "our_name": "Loja Virtual",
+      "vendor": "loja_virtual",
+      "products": [
+        "loja_virtual"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "l"
+    },
+    {
+      "id": 2054,
+      "our_name": "Loja2",
+      "vendor": "loja2",
+      "products": [
+        "loja2"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "l"
+    },
+    {
+      "id": 2055,
+      "our_name": "Loop Returns",
+      "vendor": "loop_returns",
+      "products": [
+        "loop_returns"
+      ],
+      "cve_details_url": null,
+      "category_id": 98,
+      "_letter": "l"
+    },
+    {
+      "id": 2056,
+      "our_name": "Loop54",
+      "vendor": "loop54",
+      "products": [
+        "loop54"
+      ],
+      "cve_details_url": null,
+      "category_id": 69,
+      "_letter": "l"
+    },
+    {
+      "id": 2057,
+      "our_name": "Lootly",
+      "vendor": "lootly",
+      "products": [
+        "lootly"
+      ],
+      "cve_details_url": null,
+      "category_id": 75,
+      "_letter": "l"
+    },
+    {
+      "id": 2058,
+      "our_name": "Loox",
+      "vendor": "loox",
+      "products": [
+        "loox"
+      ],
+      "cve_details_url": null,
+      "category_id": 59,
+      "_letter": "l"
+    },
+    {
+      "id": 2059,
+      "our_name": "Loqate",
+      "vendor": "loqate",
+      "products": [
+        "loqate"
+      ],
+      "cve_details_url": null,
+      "category_id": 99,
+      "_letter": "l"
+    },
+    {
+      "id": 2060,
+      "our_name": "LottieFiles",
+      "vendor": "lottiefiles",
+      "products": [
+        "lottiefiles"
+      ],
+      "cve_details_url": null,
+      "category_id": 99,
+      "_letter": "l"
+    },
+    {
+      "id": 2061,
+      "our_name": "Lotus Domino",
+      "vendor": "ibm",
+      "products": [
+        "lotus_domino"
+      ],
+      "cve_details_url": null,
+      "category_id": 2,
+      "_letter": "l"
+    },
+    {
+      "id": 1977,
+      "our_name": "LOU",
+      "vendor": "lou",
+      "products": [
+        "lou"
+      ],
+      "cve_details_url": null,
+      "category_id": 65,
+      "_letter": "l"
+    },
+    {
+      "id": 2062,
+      "our_name": "LoyaltyLion",
+      "vendor": "loyaltylion",
+      "products": [
+        "loyaltylion"
+      ],
+      "cve_details_url": null,
+      "category_id": 75,
+      "_letter": "l"
+    },
+    {
+      "id": 2063,
+      "our_name": "Lozad.js",
+      "vendor": "lozad_js",
+      "products": [
+        "lozad_js"
+      ],
+      "cve_details_url": null,
+      "category_id": 6,
+      "_letter": "l"
+    },
+    {
+      "id": 385,
+      "our_name": "Lua",
+      "vendor": "lua",
+      "products": [
+        "lua"
+      ],
+      "cve_details_url": null,
+      "category_id": 15,
+      "_letter": "l"
+    },
+    {
+      "id": 386,
+      "our_name": "LuaSandbox",
+      "vendor": "php",
+      "products": [
+        "luasandbox"
+      ],
+      "cve_details_url": null,
+      "category_id": 15,
+      "_letter": "l"
+    },
+    {
+      "id": 2064,
+      "our_name": "Lucene",
+      "vendor": "apache",
+      "products": [
+        "lucene"
+      ],
+      "cve_details_url": null,
+      "category_id": 4,
+      "_letter": "l"
+    },
+    {
+      "id": 2065,
+      "our_name": "Lucky Orange",
+      "vendor": "lucky_orange",
+      "products": [
+        "lucky_orange"
+      ],
+      "cve_details_url": null,
+      "category_id": 18,
+      "_letter": "l"
+    },
+    {
+      "id": 2066,
+      "our_name": "Luigi’s Box",
+      "vendor": "luigi’s_box",
+      "products": [
+        "luigi’s_box"
+      ],
+      "cve_details_url": null,
+      "category_id": 18,
+      "_letter": "l"
+    },
+    {
+      "id": 2067,
+      "our_name": "Luna",
+      "vendor": "luna",
+      "products": [
+        "luna"
+      ],
+      "cve_details_url": null,
+      "category_id": 103,
+      "_letter": "l"
+    },
+    {
+      "id": 2068,
+      "our_name": "LyraThemes Kale",
+      "vendor": "lyrathemes_kale",
+      "products": [
+        "lyrathemes_kale"
+      ],
+      "cve_details_url": null,
+      "category_id": 63,
+      "_letter": "l"
+    },
+    {
+      "id": 2069,
+      "our_name": "Lytics",
+      "vendor": "lytics",
+      "products": [
+        "lytics"
+      ],
+      "cve_details_url": null,
+      "category_id": 56,
+      "_letter": "l"
+    },
+    {
+      "id": 387,
+      "our_name": "LZF",
+      "vendor": "php",
+      "products": [
+        "lzf"
+      ],
+      "cve_details_url": null,
+      "category_id": 15,
+      "_letter": "l"
+    }
+  ]
+}

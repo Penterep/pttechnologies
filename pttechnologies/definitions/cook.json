@@ -212,5 +212,25 @@
       "name_regex": "^joomla_",
       "product_id": 72,
       "description": "Joomla session"
+    },
+    {
+      "name_regex": "^pll_language$",
+      "product_id": 2537,
+      "description": "Polylang language selection (WordPress multilingual plugin)"
+    },
+    {
+      "name_regex": "^_gcl_au$",
+      "product_id": 1606,
+      "description": "Google Ads conversion tracking cookie"
+    },
+    {
+      "name_regex": "^twk_idm_key$",
+      "product_id": 3161,
+      "description": "Tawk.to live chat identifier"
+    },
+    {
+      "name_regex": "^twk_uuid_",
+      "product_id": 3161,
+      "description": "Tawk.to unique user identifier"
     }
   ]

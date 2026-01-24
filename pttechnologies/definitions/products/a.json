@@ -1,0 +1,3333 @@
+{
+  "products": [
+    {
+      "id": 798,
+      "our_name": "a-blog cms",
+      "vendor": "a_blog_cms",
+      "products": [
+        "a_blog_cms"
+      ],
+      "cve_details_url": null,
+      "category_id": 16,
+      "_letter": "a"
+    },
+    {
+      "id": 537,
+      "our_name": "A-Frame",
+      "vendor": "a_frame",
+      "products": [
+        "a_frame"
+      ],
+      "cve_details_url": null,
+      "category_id": 6,
+      "_letter": "a"
+    },
+    {
+      "id": 799,
+      "our_name": "a3 Lazy Load",
+      "vendor": "a3_lazy_load",
+      "products": [
+        "a3_lazy_load"
+      ],
+      "cve_details_url": null,
+      "category_id": 62,
+      "_letter": "a"
+    },
+    {
+      "id": 538,
+      "our_name": "A8.net",
+      "vendor": "a8_net",
+      "products": [
+        "a8_net"
+      ],
+      "cve_details_url": null,
+      "category_id": 55,
+      "_letter": "a"
+    },
+    {
+      "id": 539,
+      "our_name": "AB Tasty",
+      "vendor": "ab_tasty",
+      "products": [
+        "ab_tasty"
+      ],
+      "cve_details_url": null,
+      "category_id": 24,
+      "_letter": "a"
+    },
+    {
+      "id": 558,
+      "our_name": "Abicart",
+      "vendor": "abicart",
+      "products": [
+        "abicart"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "a"
+    },
+    {
+      "id": 540,
+      "our_name": "ABOUT YOU Commerce Suite",
+      "vendor": "about_you_commerce_s",
+      "products": [
+        "about_you_commerce_s"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "a"
+    },
+    {
+      "id": 559,
+      "our_name": "Absorb",
+      "vendor": "absorb",
+      "products": [
+        "absorb"
+      ],
+      "cve_details_url": null,
+      "category_id": 42,
+      "_letter": "a"
+    },
+    {
+      "id": 560,
+      "our_name": "Accentuate Custom Fields",
+      "vendor": "accentuate_custom_fi",
+      "products": [
+        "accentuate_custom_fi"
+      ],
+      "cve_details_url": null,
+      "category_id": 64,
+      "_letter": "a"
+    },
+    {
+      "id": 562,
+      "our_name": "AccessiBe",
+      "vendor": "accessibe",
+      "products": [
+        "accessibe"
+      ],
+      "cve_details_url": null,
+      "category_id": 31,
+      "_letter": "a"
+    },
+    {
+      "id": 563,
+      "our_name": "Accessibility Toolbar Plugin",
+      "vendor": "accessibility_toolba",
+      "products": [
+        "accessibility_toolba"
+      ],
+      "cve_details_url": null,
+      "category_id": 31,
+      "_letter": "a"
+    },
+    {
+      "id": 564,
+      "our_name": "Accessible360",
+      "vendor": "accessible360",
+      "products": [
+        "accessible360"
+      ],
+      "cve_details_url": null,
+      "category_id": 31,
+      "_letter": "a"
+    },
+    {
+      "id": 565,
+      "our_name": "Accessibly",
+      "vendor": "accessibly",
+      "products": [
+        "accessibly"
+      ],
+      "cve_details_url": null,
+      "category_id": 31,
+      "_letter": "a"
+    },
+    {
+      "id": 566,
+      "our_name": "Accesso",
+      "vendor": "accesso",
+      "products": [
+        "accesso"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "a"
+    },
+    {
+      "id": 561,
+      "our_name": "AccessTrade",
+      "vendor": "accesstrade",
+      "products": [
+        "accesstrade"
+      ],
+      "cve_details_url": null,
+      "category_id": 55,
+      "_letter": "a"
+    },
+    {
+      "id": 567,
+      "our_name": "AccuWeather",
+      "vendor": "accuweather",
+      "products": [
+        "accuweather"
+      ],
+      "cve_details_url": null,
+      "category_id": 99,
+      "_letter": "a"
+    },
+    {
+      "id": 568,
+      "our_name": "Ace",
+      "vendor": "ace",
+      "products": [
+        "ace"
+      ],
+      "cve_details_url": null,
+      "category_id": 46,
+      "_letter": "a"
+    },
+    {
+      "id": 569,
+      "our_name": "Ackee",
+      "vendor": "ackee",
+      "products": [
+        "ackee"
+      ],
+      "cve_details_url": null,
+      "category_id": 18,
+      "_letter": "a"
+    },
+    {
+      "id": 570,
+      "our_name": "Acoustic Experience Analytics",
+      "vendor": "acoustic_experience_",
+      "products": [
+        "acoustic_experience_"
+      ],
+      "cve_details_url": null,
+      "category_id": 18,
+      "_letter": "a"
+    },
+    {
+      "id": 571,
+      "our_name": "Acquia Campaign Factory",
+      "vendor": "acquia_campaign_fact",
+      "products": [
+        "acquia_campaign_fact"
+      ],
+      "cve_details_url": null,
+      "category_id": 19,
+      "_letter": "a"
+    },
+    {
+      "id": 572,
+      "our_name": "Acquia Cloud Classic",
+      "vendor": "acquia_cloud_classic",
+      "products": [
+        "acquia_cloud_classic"
+      ],
+      "cve_details_url": null,
+      "category_id": 92,
+      "_letter": "a"
+    },
+    {
+      "id": 573,
+      "our_name": "Acquia Cloud IDE",
+      "vendor": "acquia_cloud_ide",
+      "products": [
+        "acquia_cloud_ide"
+      ],
+      "cve_details_url": null,
+      "category_id": 73,
+      "_letter": "a"
+    },
+    {
+      "id": 574,
+      "our_name": "Acquia Cloud Next",
+      "vendor": "acquia_cloud_next",
+      "products": [
+        "acquia_cloud_next"
+      ],
+      "cve_details_url": null,
+      "category_id": 92,
+      "_letter": "a"
+    },
+    {
+      "id": 575,
+      "our_name": "Acquia Cloud Platform",
+      "vendor": "acquia_cloud_platfor",
+      "products": [
+        "acquia_cloud_platfor"
+      ],
+      "cve_details_url": null,
+      "category_id": 50,
+      "_letter": "a"
+    },
+    {
+      "id": 576,
+      "our_name": "Acquia Cloud Platform CDN",
+      "vendor": "acquia_cloud_platfor",
+      "products": [
+        "acquia_cloud_platfor"
+      ],
+      "cve_details_url": null,
+      "category_id": 10,
+      "_letter": "a"
+    },
+    {
+      "id": 577,
+      "our_name": "Acquia Cloud Site Factory",
+      "vendor": "acquia_cloud_site_fa",
+      "products": [
+        "acquia_cloud_site_fa"
+      ],
+      "cve_details_url": null,
+      "category_id": 92,
+      "_letter": "a"
+    },
+    {
+      "id": 578,
+      "our_name": "Acquia Content Hub",
+      "vendor": "acquia_content_hub",
+      "products": [
+        "acquia_content_hub"
+      ],
+      "cve_details_url": null,
+      "category_id": 99,
+      "_letter": "a"
+    },
+    {
+      "id": 579,
+      "our_name": "Acquia Customer Data Platform",
+      "vendor": "acquia_customer_data",
+      "products": [
+        "acquia_customer_data"
+      ],
+      "cve_details_url": null,
+      "category_id": 56,
+      "_letter": "a"
+    },
+    {
+      "id": 580,
+      "our_name": "Acquia Personalization",
+      "vendor": "acquia_personalizati",
+      "products": [
+        "acquia_personalizati"
+      ],
+      "cve_details_url": null,
+      "category_id": 18,
+      "_letter": "a"
+    },
+    {
+      "id": 581,
+      "our_name": "Acquia Site Studio",
+      "vendor": "acquia_site_studio",
+      "products": [
+        "acquia_site_studio"
+      ],
+      "cve_details_url": null,
+      "category_id": 61,
+      "_letter": "a"
+    },
+    {
+      "id": 582,
+      "our_name": "Acquire Cobrowse",
+      "vendor": "acquire_cobrowse",
+      "products": [
+        "acquire_cobrowse"
+      ],
+      "cve_details_url": null,
+      "category_id": 99,
+      "_letter": "a"
+    },
+    {
+      "id": 583,
+      "our_name": "Acquire Live Chat",
+      "vendor": "acquire_live_chat",
+      "products": [
+        "acquire_live_chat"
+      ],
+      "cve_details_url": null,
+      "category_id": 20,
+      "_letter": "a"
+    },
+    {
+      "id": 584,
+      "our_name": "Act-On",
+      "vendor": "act_on",
+      "products": [
+        "act_on"
+      ],
+      "cve_details_url": null,
+      "category_id": 19,
+      "_letter": "a"
+    },
+    {
+      "id": 805,
+      "our_name": "actionhero.js",
+      "vendor": "actionhero_js",
+      "products": [
+        "actionhero_js"
+      ],
+      "cve_details_url": null,
+      "category_id": 7,
+      "_letter": "a"
+    },
+    {
+      "id": 585,
+      "our_name": "Actito",
+      "vendor": "actito",
+      "products": [
+        "actito"
+      ],
+      "cve_details_url": null,
+      "category_id": 19,
+      "_letter": "a"
+    },
+    {
+      "id": 586,
+      "our_name": "ActiveCampaign",
+      "vendor": "activecampaign",
+      "products": [
+        "activecampaign"
+      ],
+      "cve_details_url": null,
+      "category_id": 19,
+      "_letter": "a"
+    },
+    {
+      "id": 587,
+      "our_name": "Acuity Scheduling",
+      "vendor": "acuity_scheduling",
+      "products": [
+        "acuity_scheduling"
+      ],
+      "cve_details_url": null,
+      "category_id": 49,
+      "_letter": "a"
+    },
+    {
+      "id": 588,
+      "our_name": "AcuityAds",
+      "vendor": "acuityads",
+      "products": [
+        "acuityads"
+      ],
+      "cve_details_url": null,
+      "category_id": 22,
+      "_letter": "a"
+    },
+    {
+      "id": 541,
+      "our_name": "AD EBiS",
+      "vendor": "ad_ebis",
+      "products": [
+        "ad_ebis"
+      ],
+      "cve_details_url": null,
+      "category_id": 22,
+      "_letter": "a"
+    },
+    {
+      "id": 589,
+      "our_name": "Ad Lightning",
+      "vendor": "ad_lightning",
+      "products": [
+        "ad_lightning"
+      ],
+      "cve_details_url": null,
+      "category_id": 22,
+      "_letter": "a"
+    },
+    {
+      "id": 599,
+      "our_name": "Ada",
+      "vendor": "ada",
+      "products": [
+        "ada"
+      ],
+      "cve_details_url": null,
+      "category_id": 20,
+      "_letter": "a"
+    },
+    {
+      "id": 601,
+      "our_name": "Adabra",
+      "vendor": "adabra",
+      "products": [
+        "adabra"
+      ],
+      "cve_details_url": null,
+      "category_id": 19,
+      "_letter": "a"
+    },
+    {
+      "id": 602,
+      "our_name": "Adally",
+      "vendor": "adally",
+      "products": [
+        "adally"
+      ],
+      "cve_details_url": null,
+      "category_id": 31,
+      "_letter": "a"
+    },
+    {
+      "id": 603,
+      "our_name": "Adalyser",
+      "vendor": "adalyser",
+      "products": [
+        "adalyser"
+      ],
+      "cve_details_url": null,
+      "category_id": 22,
+      "_letter": "a"
+    },
+    {
+      "id": 600,
+      "our_name": "AdaSiteCompliance",
+      "vendor": "adasitecompliance",
+      "products": [
+        "adasitecompliance"
+      ],
+      "cve_details_url": null,
+      "category_id": 31,
+      "_letter": "a"
+    },
+    {
+      "id": 590,
+      "our_name": "AdBridg",
+      "vendor": "adbridg",
+      "products": [
+        "adbridg"
+      ],
+      "cve_details_url": null,
+      "category_id": 22,
+      "_letter": "a"
+    },
+    {
+      "id": 604,
+      "our_name": "Adcash",
+      "vendor": "adcash",
+      "products": [
+        "adcash"
+      ],
+      "cve_details_url": null,
+      "category_id": 22,
+      "_letter": "a"
+    },
+    {
+      "id": 608,
+      "our_name": "Addi",
+      "vendor": "addi",
+      "products": [
+        "addi"
+      ],
+      "cve_details_url": null,
+      "category_id": 94,
+      "_letter": "a"
+    },
+    {
+      "id": 609,
+      "our_name": "Addsearch",
+      "vendor": "addsearch",
+      "products": [
+        "addsearch"
+      ],
+      "cve_details_url": null,
+      "category_id": 69,
+      "_letter": "a"
+    },
+    {
+      "id": 605,
+      "our_name": "AddShoppers",
+      "vendor": "addshoppers",
+      "products": [
+        "addshoppers"
+      ],
+      "cve_details_url": null,
+      "category_id": 99,
+      "_letter": "a"
+    },
+    {
+      "id": 606,
+      "our_name": "AddThis",
+      "vendor": "addthis",
+      "products": [
+        "addthis"
+      ],
+      "cve_details_url": null,
+      "category_id": 99,
+      "_letter": "a"
+    },
+    {
+      "id": 607,
+      "our_name": "AddToAny",
+      "vendor": "addtoany",
+      "products": [
+        "addtoany"
+      ],
+      "cve_details_url": null,
+      "category_id": 99,
+      "_letter": "a"
+    },
+    {
+      "id": 321,
+      "our_name": "AddToAny Share Buttons",
+      "vendor": "addtoany",
+      "products": [
+        "addtoany_share_buttons"
+      ],
+      "cve_details_url": "https://www.cvedetails.com/product/100013/Addtoany-Addtoany-Share-Buttons.html",
+      "category_id": 11,
+      "_letter": "a"
+    },
+    {
+      "id": 610,
+      "our_name": "Adform",
+      "vendor": "adform",
+      "products": [
+        "adform"
+      ],
+      "cve_details_url": null,
+      "category_id": 22,
+      "_letter": "a"
+    },
+    {
+      "id": 542,
+      "our_name": "ADFOX",
+      "vendor": "adfox",
+      "products": [
+        "adfox"
+      ],
+      "cve_details_url": null,
+      "category_id": 22,
+      "_letter": "a"
+    },
+    {
+      "id": 591,
+      "our_name": "AdInfinity",
+      "vendor": "adinfinity",
+      "products": [
+        "adinfinity"
+      ],
+      "cve_details_url": null,
+      "category_id": 22,
+      "_letter": "a"
+    },
+    {
+      "id": 611,
+      "our_name": "Adloox",
+      "vendor": "adloox",
+      "products": [
+        "adloox"
+      ],
+      "cve_details_url": null,
+      "category_id": 22,
+      "_letter": "a"
+    },
+    {
+      "id": 141,
+      "our_name": "Adminer",
+      "vendor": "adminer",
+      "products": [
+        "adminer"
+      ],
+      "cve_details_url": "https://www.cvedetails.com/product/44183/Adminer-Adminer.html",
+      "category_id": 8,
+      "_letter": "a"
+    },
+    {
+      "id": 612,
+      "our_name": "Admiral",
+      "vendor": "admiral",
+      "products": [
+        "admiral"
+      ],
+      "cve_details_url": null,
+      "category_id": 99,
+      "_letter": "a"
+    },
+    {
+      "id": 613,
+      "our_name": "Admitad",
+      "vendor": "admitad",
+      "products": [
+        "admitad"
+      ],
+      "cve_details_url": null,
+      "category_id": 55,
+      "_letter": "a"
+    },
+    {
+      "id": 614,
+      "our_name": "Admixer",
+      "vendor": "admixer",
+      "products": [
+        "admixer"
+      ],
+      "cve_details_url": null,
+      "category_id": 22,
+      "_letter": "a"
+    },
+    {
+      "id": 615,
+      "our_name": "Admo.tv",
+      "vendor": "admo_tv",
+      "products": [
+        "admo_tv"
+      ],
+      "cve_details_url": null,
+      "category_id": 22,
+      "_letter": "a"
+    },
+    {
+      "id": 616,
+      "our_name": "Adnegah",
+      "vendor": "adnegah",
+      "products": [
+        "adnegah"
+      ],
+      "cve_details_url": null,
+      "category_id": 22,
+      "_letter": "a"
+    },
+    {
+      "id": 617,
+      "our_name": "Adobe Analytics",
+      "vendor": "adobe_analytics",
+      "products": [
+        "adobe_analytics"
+      ],
+      "cve_details_url": null,
+      "category_id": 18,
+      "_letter": "a"
+    },
+    {
+      "id": 618,
+      "our_name": "Adobe Audience Manager",
+      "vendor": "adobe_audience_manag",
+      "products": [
+        "adobe_audience_manag"
+      ],
+      "cve_details_url": null,
+      "category_id": 91,
+      "_letter": "a"
+    },
+    {
+      "id": 619,
+      "our_name": "Adobe Client Data Layer",
+      "vendor": "adobe_client_data_la",
+      "products": [
+        "adobe_client_data_la"
+      ],
+      "cve_details_url": null,
+      "category_id": 6,
+      "_letter": "a"
+    },
+    {
+      "id": 620,
+      "our_name": "Adobe ColdFusion",
+      "vendor": "adobe",
+      "products": [
+        "coldfusion",
+        "adobe_coldfusion"
+      ],
+      "cve_details_url": null,
+      "category_id": 7,
+      "_letter": "a"
+    },
+    {
+      "id": 621,
+      "our_name": "Adobe DTM",
+      "vendor": "adobe_dtm",
+      "products": [
+        "adobe_dtm"
+      ],
+      "cve_details_url": null,
+      "category_id": 23,
+      "_letter": "a"
+    },
+    {
+      "id": 622,
+      "our_name": "Adobe Dynamic Media Classic",
+      "vendor": "adobe_dynamic_media_",
+      "products": [
+        "adobe_dynamic_media_"
+      ],
+      "cve_details_url": null,
+      "category_id": 96,
+      "_letter": "a"
+    },
+    {
+      "id": 623,
+      "our_name": "Adobe Experience Manager",
+      "vendor": "adobe",
+      "products": [
+        "experience_manager",
+        "adobe_experience_man"
+      ],
+      "cve_details_url": null,
+      "category_id": 16,
+      "_letter": "a"
+    },
+    {
+      "id": 624,
+      "our_name": "Adobe Experience Platform Identity Service",
+      "vendor": "adobe_experience_pla",
+      "products": [
+        "adobe_experience_pla"
+      ],
+      "cve_details_url": null,
+      "category_id": 56,
+      "_letter": "a"
+    },
+    {
+      "id": 625,
+      "our_name": "Adobe Experience Platform Launch",
+      "vendor": "adobe_experience_pla",
+      "products": [
+        "adobe_experience_pla"
+      ],
+      "cve_details_url": null,
+      "category_id": 23,
+      "_letter": "a"
+    },
+    {
+      "id": 626,
+      "our_name": "Adobe Flash",
+      "vendor": "adobe",
+      "products": [
+        "flash",
+        "adobe_flash"
+      ],
+      "cve_details_url": null,
+      "category_id": 5,
+      "_letter": "a"
+    },
+    {
+      "id": 627,
+      "our_name": "Adobe GoLive",
+      "vendor": "adobe",
+      "products": [
+        "golive",
+        "adobe_golive"
+      ],
+      "cve_details_url": null,
+      "category_id": 82,
+      "_letter": "a"
+    },
+    {
+      "id": 628,
+      "our_name": "Adobe RoboHelp",
+      "vendor": "adobe",
+      "products": [
+        "robohelp",
+        "adobe_robohelp"
+      ],
+      "cve_details_url": null,
+      "category_id": 36,
+      "_letter": "a"
+    },
+    {
+      "id": 629,
+      "our_name": "Adobe Target",
+      "vendor": "adobe_target",
+      "products": [
+        "adobe_target"
+      ],
+      "cve_details_url": null,
+      "category_id": 24,
+      "_letter": "a"
+    },
+    {
+      "id": 592,
+      "our_name": "AdOcean",
+      "vendor": "adocean",
+      "products": [
+        "adocean"
+      ],
+      "cve_details_url": null,
+      "category_id": 22,
+      "_letter": "a"
+    },
+    {
+      "id": 630,
+      "our_name": "AdonisJS",
+      "vendor": "adonisjs",
+      "products": [
+        "adonisjs"
+      ],
+      "cve_details_url": null,
+      "category_id": 7,
+      "_letter": "a"
+    },
+    {
+      "id": 593,
+      "our_name": "AdOpt",
+      "vendor": "adopt",
+      "products": [
+        "adopt"
+      ],
+      "cve_details_url": null,
+      "category_id": 32,
+      "_letter": "a"
+    },
+    {
+      "id": 594,
+      "our_name": "AdRiver",
+      "vendor": "adriver",
+      "products": [
+        "adriver"
+      ],
+      "cve_details_url": null,
+      "category_id": 22,
+      "_letter": "a"
+    },
+    {
+      "id": 595,
+      "our_name": "AdRoll",
+      "vendor": "adroll",
+      "products": [
+        "adroll"
+      ],
+      "cve_details_url": null,
+      "category_id": 22,
+      "_letter": "a"
+    },
+    {
+      "id": 596,
+      "our_name": "AdRoll CMP System",
+      "vendor": "adroll_cmp_system",
+      "products": [
+        "adroll_cmp_system"
+      ],
+      "cve_details_url": null,
+      "category_id": 32,
+      "_letter": "a"
+    },
+    {
+      "id": 597,
+      "our_name": "AdScale",
+      "vendor": "adscale",
+      "products": [
+        "adscale"
+      ],
+      "cve_details_url": null,
+      "category_id": 22,
+      "_letter": "a"
+    },
+    {
+      "id": 598,
+      "our_name": "AdThrive",
+      "vendor": "adthrive",
+      "products": [
+        "adthrive"
+      ],
+      "cve_details_url": null,
+      "category_id": 22,
+      "_letter": "a"
+    },
+    {
+      "id": 631,
+      "our_name": "Advally",
+      "vendor": "advally",
+      "products": [
+        "advally"
+      ],
+      "cve_details_url": null,
+      "category_id": 22,
+      "_letter": "a"
+    },
+    {
+      "id": 324,
+      "our_name": "Advanced Custom Fields",
+      "vendor": "advancedcustomfields",
+      "products": [
+        "advanced_custom_fields"
+      ],
+      "cve_details_url": "https://www.cvedetails.com/product/58950/Advancedcustomfields-Advanced-Custom-Fields.html",
+      "category_id": 11,
+      "_letter": "a"
+    },
+    {
+      "id": 632,
+      "our_name": "Advert Stream",
+      "vendor": "advert_stream",
+      "products": [
+        "advert_stream"
+      ],
+      "cve_details_url": null,
+      "category_id": 22,
+      "_letter": "a"
+    },
+    {
+      "id": 633,
+      "our_name": "Adverticum",
+      "vendor": "adverticum",
+      "products": [
+        "adverticum"
+      ],
+      "cve_details_url": null,
+      "category_id": 22,
+      "_letter": "a"
+    },
+    {
+      "id": 634,
+      "our_name": "Adyen",
+      "vendor": "adyen",
+      "products": [
+        "adyen"
+      ],
+      "cve_details_url": null,
+      "category_id": 21,
+      "_letter": "a"
+    },
+    {
+      "id": 635,
+      "our_name": "Aegea",
+      "vendor": "aegea",
+      "products": [
+        "aegea"
+      ],
+      "cve_details_url": null,
+      "category_id": 37,
+      "_letter": "a"
+    },
+    {
+      "id": 636,
+      "our_name": "Aero Commerce",
+      "vendor": "aero_commerce",
+      "products": [
+        "aero_commerce"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "a"
+    },
+    {
+      "id": 637,
+      "our_name": "Affilae",
+      "vendor": "affilae",
+      "products": [
+        "affilae"
+      ],
+      "cve_details_url": null,
+      "category_id": 55,
+      "_letter": "a"
+    },
+    {
+      "id": 638,
+      "our_name": "Affiliate B",
+      "vendor": "affiliate_b",
+      "products": [
+        "affiliate_b"
+      ],
+      "cve_details_url": null,
+      "category_id": 55,
+      "_letter": "a"
+    },
+    {
+      "id": 639,
+      "our_name": "Affiliate Future",
+      "vendor": "affiliate_future",
+      "products": [
+        "affiliate_future"
+      ],
+      "cve_details_url": null,
+      "category_id": 55,
+      "_letter": "a"
+    },
+    {
+      "id": 640,
+      "our_name": "Affiliatly",
+      "vendor": "affiliatly",
+      "products": [
+        "affiliatly"
+      ],
+      "cve_details_url": null,
+      "category_id": 55,
+      "_letter": "a"
+    },
+    {
+      "id": 641,
+      "our_name": "Affilo",
+      "vendor": "affilo",
+      "products": [
+        "affilo"
+      ],
+      "cve_details_url": null,
+      "category_id": 55,
+      "_letter": "a"
+    },
+    {
+      "id": 642,
+      "our_name": "Affirm",
+      "vendor": "affirm",
+      "products": [
+        "affirm"
+      ],
+      "cve_details_url": null,
+      "category_id": 21,
+      "_letter": "a"
+    },
+    {
+      "id": 643,
+      "our_name": "Afosto",
+      "vendor": "afosto",
+      "products": [
+        "afosto"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "a"
+    },
+    {
+      "id": 644,
+      "our_name": "AfterBuy",
+      "vendor": "afterbuy",
+      "products": [
+        "afterbuy"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "a"
+    },
+    {
+      "id": 647,
+      "our_name": "Afterpay",
+      "vendor": "afterpay",
+      "products": [
+        "afterpay"
+      ],
+      "cve_details_url": null,
+      "category_id": 21,
+      "_letter": "a"
+    },
+    {
+      "id": 645,
+      "our_name": "AfterShip",
+      "vendor": "aftership",
+      "products": [
+        "aftership"
+      ],
+      "cve_details_url": null,
+      "category_id": 79,
+      "_letter": "a"
+    },
+    {
+      "id": 646,
+      "our_name": "AfterShip Returns Center",
+      "vendor": "aftership_returns_ce",
+      "products": [
+        "aftership_returns_ce"
+      ],
+      "cve_details_url": null,
+      "category_id": 98,
+      "_letter": "a"
+    },
+    {
+      "id": 543,
+      "our_name": "AFThemes CoverNews",
+      "vendor": "afthemes_covernews",
+      "products": [
+        "afthemes_covernews"
+      ],
+      "cve_details_url": null,
+      "category_id": 63,
+      "_letter": "a"
+    },
+    {
+      "id": 648,
+      "our_name": "Ahoy",
+      "vendor": "ahoy",
+      "products": [
+        "ahoy"
+      ],
+      "cve_details_url": null,
+      "category_id": 18,
+      "_letter": "a"
+    },
+    {
+      "id": 650,
+      "our_name": "Aimtell",
+      "vendor": "aimtell",
+      "products": [
+        "aimtell"
+      ],
+      "cve_details_url": null,
+      "category_id": 19,
+      "_letter": "a"
+    },
+    {
+      "id": 651,
+      "our_name": "Air360",
+      "vendor": "air360",
+      "products": [
+        "air360"
+      ],
+      "cve_details_url": null,
+      "category_id": 18,
+      "_letter": "a"
+    },
+    {
+      "id": 653,
+      "our_name": "Aircall",
+      "vendor": "aircall",
+      "products": [
+        "aircall"
+      ],
+      "cve_details_url": null,
+      "category_id": 20,
+      "_letter": "a"
+    },
+    {
+      "id": 654,
+      "our_name": "Airee",
+      "vendor": "airee",
+      "products": [
+        "airee"
+      ],
+      "cve_details_url": null,
+      "category_id": 10,
+      "_letter": "a"
+    },
+    {
+      "id": 655,
+      "our_name": "Airform",
+      "vendor": "airform",
+      "products": [
+        "airform"
+      ],
+      "cve_details_url": null,
+      "category_id": 99,
+      "_letter": "a"
+    },
+    {
+      "id": 652,
+      "our_name": "AirRobe",
+      "vendor": "airrobe",
+      "products": [
+        "airrobe"
+      ],
+      "cve_details_url": null,
+      "category_id": 99,
+      "_letter": "a"
+    },
+    {
+      "id": 656,
+      "our_name": "Airship",
+      "vendor": "airship",
+      "products": [
+        "airship"
+      ],
+      "cve_details_url": null,
+      "category_id": 19,
+      "_letter": "a"
+    },
+    {
+      "id": 649,
+      "our_name": "AiSpeed",
+      "vendor": "aispeed",
+      "products": [
+        "aispeed"
+      ],
+      "cve_details_url": null,
+      "category_id": 33,
+      "_letter": "a"
+    },
+    {
+      "id": 657,
+      "our_name": "Akamai",
+      "vendor": "akamai",
+      "products": [
+        "akamai"
+      ],
+      "cve_details_url": null,
+      "category_id": 10,
+      "_letter": "a"
+    },
+    {
+      "id": 658,
+      "our_name": "Akamai Bot Manager",
+      "vendor": "akamai_bot_manager",
+      "products": [
+        "akamai_bot_manager"
+      ],
+      "cve_details_url": null,
+      "category_id": 14,
+      "_letter": "a"
+    },
+    {
+      "id": 116,
+      "our_name": "Akamai GHost",
+      "vendor": "akamai",
+      "products": [
+        "akamaighost"
+      ],
+      "cve_details_url": "https://www.cvedetails.com/product/147310/Akamai-Akamaighost.html",
+      "category_id": 10,
+      "_letter": "a"
+    },
+    {
+      "id": 660,
+      "our_name": "Akamai mPulse",
+      "vendor": "akamai_mpulse",
+      "products": [
+        "akamai_mpulse"
+      ],
+      "cve_details_url": null,
+      "category_id": 33,
+      "_letter": "a"
+    },
+    {
+      "id": 115,
+      "our_name": "Akamai NetStorage",
+      "vendor": "akamai",
+      "products": [
+        "netstorage"
+      ],
+      "cve_details_url": null,
+      "category_id": 10,
+      "_letter": "a"
+    },
+    {
+      "id": 659,
+      "our_name": "Akamai Web Application Protector",
+      "vendor": "akamai_web_applicati",
+      "products": [
+        "akamai_web_applicati"
+      ],
+      "cve_details_url": null,
+      "category_id": 14,
+      "_letter": "a"
+    },
+    {
+      "id": 661,
+      "our_name": "Akaunting",
+      "vendor": "akaunting",
+      "products": [
+        "akaunting"
+      ],
+      "cve_details_url": null,
+      "category_id": 77,
+      "_letter": "a"
+    },
+    {
+      "id": 662,
+      "our_name": "Akinon",
+      "vendor": "akinon",
+      "products": [
+        "akinon"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "a"
+    },
+    {
+      "id": 663,
+      "our_name": "Akismet",
+      "vendor": "akismet",
+      "products": [
+        "akismet"
+      ],
+      "cve_details_url": null,
+      "category_id": 62,
+      "_letter": "a"
+    },
+    {
+      "id": 302,
+      "our_name": "Akismet Anti-Spam",
+      "vendor": "automattic",
+      "products": [
+        "akismet"
+      ],
+      "cve_details_url": "https://www.cvedetails.com/product/58253/Automattic-Akismet.html",
+      "category_id": 11,
+      "_letter": "a"
+    },
+    {
+      "id": 664,
+      "our_name": "Akka HTTP",
+      "vendor": "lightbend",
+      "products": [
+        "akka_http"
+      ],
+      "cve_details_url": null,
+      "category_id": 7,
+      "_letter": "a"
+    },
+    {
+      "id": 665,
+      "our_name": "Aksara CMS",
+      "vendor": "aksara_cms",
+      "products": [
+        "aksara_cms"
+      ],
+      "cve_details_url": null,
+      "category_id": 16,
+      "_letter": "a"
+    },
+    {
+      "id": 666,
+      "our_name": "Albacross",
+      "vendor": "albacross",
+      "products": [
+        "albacross"
+      ],
+      "cve_details_url": null,
+      "category_id": 18,
+      "_letter": "a"
+    },
+    {
+      "id": 667,
+      "our_name": "AlertifyJS",
+      "vendor": "alertifyjs",
+      "products": [
+        "alertifyjs"
+      ],
+      "cve_details_url": null,
+      "category_id": 6,
+      "_letter": "a"
+    },
+    {
+      "id": 668,
+      "our_name": "Alexa Certified Site Metrics",
+      "vendor": "alexa_certified_site",
+      "products": [
+        "alexa_certified_site"
+      ],
+      "cve_details_url": null,
+      "category_id": 18,
+      "_letter": "a"
+    },
+    {
+      "id": 669,
+      "our_name": "Algolia",
+      "vendor": "algolia",
+      "products": [
+        "algolia"
+      ],
+      "cve_details_url": null,
+      "category_id": 69,
+      "_letter": "a"
+    },
+    {
+      "id": 670,
+      "our_name": "Ali Reviews",
+      "vendor": "ali_reviews",
+      "products": [
+        "ali_reviews"
+      ],
+      "cve_details_url": null,
+      "category_id": 59,
+      "_letter": "a"
+    },
+    {
+      "id": 308,
+      "our_name": "All in One SEO Pack",
+      "vendor": "aioseo",
+      "products": [
+        "all_in_one_seo",
+        "all_in_one_seo_pack"
+      ],
+      "cve_details_url": "https://www.cvedetails.com/product/63866/Semperplugins-All-In-One-Seo-Pack.html",
+      "category_id": 11,
+      "_letter": "a"
+    },
+    {
+      "id": 544,
+      "our_name": "ALL-INKL",
+      "vendor": "all_inkl",
+      "products": [
+        "all_inkl"
+      ],
+      "cve_details_url": null,
+      "category_id": 92,
+      "_letter": "a"
+    },
+    {
+      "id": 671,
+      "our_name": "Alli",
+      "vendor": "alli",
+      "products": [
+        "alli"
+      ],
+      "cve_details_url": null,
+      "category_id": 30,
+      "_letter": "a"
+    },
+    {
+      "id": 672,
+      "our_name": "AlloyUI",
+      "vendor": "alloyui",
+      "products": [
+        "alloyui"
+      ],
+      "cve_details_url": null,
+      "category_id": 6,
+      "_letter": "a"
+    },
+    {
+      "id": 673,
+      "our_name": "Allyable",
+      "vendor": "allyable",
+      "products": [
+        "allyable"
+      ],
+      "cve_details_url": null,
+      "category_id": 31,
+      "_letter": "a"
+    },
+    {
+      "id": 166,
+      "our_name": "AlmaLinux",
+      "vendor": "almalinux",
+      "products": [
+        "almalinux"
+      ],
+      "cve_details_url": "https://www.cvedetails.com/product/147332/Almalinux-Almalinux.html?vendor_id=31319",
+      "category_id": 1,
+      "_letter": "a"
+    },
+    {
+      "id": 9,
+      "our_name": "Alpine Linux",
+      "vendor": "alpinelinux",
+      "products": [
+        "alpine_linux"
+      ],
+      "cve_details_url": "https://www.cvedetails.com/product/38838/Alpinelinux-Alpine-Linux.html",
+      "category_id": 1,
+      "_letter": "a"
+    },
+    {
+      "id": 674,
+      "our_name": "Alpine.js",
+      "vendor": "alpine_js",
+      "products": [
+        "alpine_js"
+      ],
+      "cve_details_url": null,
+      "category_id": 6,
+      "_letter": "a"
+    },
+    {
+      "id": 675,
+      "our_name": "AlternC",
+      "vendor": "alternc",
+      "products": [
+        "alternc"
+      ],
+      "cve_details_url": null,
+      "category_id": 44,
+      "_letter": "a"
+    },
+    {
+      "id": 676,
+      "our_name": "Amaya",
+      "vendor": "amaya",
+      "products": [
+        "amaya"
+      ],
+      "cve_details_url": null,
+      "category_id": 82,
+      "_letter": "a"
+    },
+    {
+      "id": 678,
+      "our_name": "Amazon Advertising",
+      "vendor": "amazon_advertising",
+      "products": [
+        "amazon_advertising"
+      ],
+      "cve_details_url": null,
+      "category_id": 22,
+      "_letter": "a"
+    },
+    {
+      "id": 677,
+      "our_name": "Amazon ALB",
+      "vendor": "amazon_alb",
+      "products": [
+        "amazon_alb"
+      ],
+      "cve_details_url": null,
+      "category_id": 9,
+      "_letter": "a"
+    },
+    {
+      "id": 679,
+      "our_name": "Amazon Associates",
+      "vendor": "amazon_associates",
+      "products": [
+        "amazon_associates"
+      ],
+      "cve_details_url": null,
+      "category_id": 55,
+      "_letter": "a"
+    },
+    {
+      "id": 680,
+      "our_name": "Amazon Aurora",
+      "vendor": "amazon_aurora",
+      "products": [
+        "amazon_aurora"
+      ],
+      "cve_details_url": null,
+      "category_id": 4,
+      "_letter": "a"
+    },
+    {
+      "id": 682,
+      "our_name": "Amazon Cloudfront",
+      "vendor": "amazon_cloudfront",
+      "products": [
+        "amazon_cloudfront"
+      ],
+      "cve_details_url": null,
+      "category_id": 10,
+      "_letter": "a"
+    },
+    {
+      "id": 681,
+      "our_name": "Amazon CloudWatch RUM",
+      "vendor": "amazon_cloudwatch_ru",
+      "products": [
+        "amazon_cloudwatch_ru"
+      ],
+      "cve_details_url": null,
+      "category_id": 33,
+      "_letter": "a"
+    },
+    {
+      "id": 683,
+      "our_name": "Amazon Cognito",
+      "vendor": "amazon_cognito",
+      "products": [
+        "amazon_cognito"
+      ],
+      "cve_details_url": null,
+      "category_id": 85,
+      "_letter": "a"
+    },
+    {
+      "id": 684,
+      "our_name": "Amazon EC2",
+      "vendor": "amazon_ec2",
+      "products": [
+        "amazon_ec2"
+      ],
+      "cve_details_url": null,
+      "category_id": 2,
+      "_letter": "a"
+    },
+    {
+      "id": 685,
+      "our_name": "Amazon ECS",
+      "vendor": "amazon_ecs",
+      "products": [
+        "amazon_ecs"
+      ],
+      "cve_details_url": null,
+      "category_id": 51,
+      "_letter": "a"
+    },
+    {
+      "id": 686,
+      "our_name": "Amazon EFS",
+      "vendor": "amazon_efs",
+      "products": [
+        "amazon_efs"
+      ],
+      "cve_details_url": null,
+      "category_id": 71,
+      "_letter": "a"
+    },
+    {
+      "id": 687,
+      "our_name": "Amazon ELB",
+      "vendor": "amazon_elb",
+      "products": [
+        "amazon_elb"
+      ],
+      "cve_details_url": null,
+      "category_id": 9,
+      "_letter": "a"
+    },
+    {
+      "id": 688,
+      "our_name": "Amazon Pay",
+      "vendor": "amazon_pay",
+      "products": [
+        "amazon_pay"
+      ],
+      "cve_details_url": null,
+      "category_id": 21,
+      "_letter": "a"
+    },
+    {
+      "id": 689,
+      "our_name": "Amazon S3",
+      "vendor": "amazon_s3",
+      "products": [
+        "amazon_s3"
+      ],
+      "cve_details_url": null,
+      "category_id": 10,
+      "_letter": "a"
+    },
+    {
+      "id": 690,
+      "our_name": "Amazon SES",
+      "vendor": "amazon_ses",
+      "products": [
+        "amazon_ses"
+      ],
+      "cve_details_url": null,
+      "category_id": 87,
+      "_letter": "a"
+    },
+    {
+      "id": 691,
+      "our_name": "Amazon Web Services",
+      "vendor": "amazon_web_services",
+      "products": [
+        "amazon_web_services"
+      ],
+      "cve_details_url": null,
+      "category_id": 50,
+      "_letter": "a"
+    },
+    {
+      "id": 692,
+      "our_name": "Amazon Webstore",
+      "vendor": "amazon_webstore",
+      "products": [
+        "amazon_webstore"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "a"
+    },
+    {
+      "id": 693,
+      "our_name": "Ambassador",
+      "vendor": "ambassador",
+      "products": [
+        "ambassador"
+      ],
+      "cve_details_url": null,
+      "category_id": 55,
+      "_letter": "a"
+    },
+    {
+      "id": 694,
+      "our_name": "Amber",
+      "vendor": "amber",
+      "products": [
+        "amber"
+      ],
+      "cve_details_url": null,
+      "category_id": 7,
+      "_letter": "a"
+    },
+    {
+      "id": 806,
+      "our_name": "amCharts",
+      "vendor": "amcharts",
+      "products": [
+        "amcharts"
+      ],
+      "cve_details_url": null,
+      "category_id": 6,
+      "_letter": "a"
+    },
+    {
+      "id": 695,
+      "our_name": "American Express",
+      "vendor": "american_express",
+      "products": [
+        "american_express"
+      ],
+      "cve_details_url": null,
+      "category_id": 21,
+      "_letter": "a"
+    },
+    {
+      "id": 696,
+      "our_name": "Ametys",
+      "vendor": "ametys",
+      "products": [
+        "ametys"
+      ],
+      "cve_details_url": null,
+      "category_id": 16,
+      "_letter": "a"
+    },
+    {
+      "id": 697,
+      "our_name": "Amex Express Checkout",
+      "vendor": "amex_express_checkou",
+      "products": [
+        "amex_express_checkou"
+      ],
+      "cve_details_url": null,
+      "category_id": 21,
+      "_letter": "a"
+    },
+    {
+      "id": 698,
+      "our_name": "Amiro.CMS",
+      "vendor": "amiro_cms",
+      "products": [
+        "amiro_cms"
+      ],
+      "cve_details_url": null,
+      "category_id": 16,
+      "_letter": "a"
+    },
+    {
+      "id": 699,
+      "our_name": "Amobee",
+      "vendor": "amobee",
+      "products": [
+        "amobee"
+      ],
+      "cve_details_url": null,
+      "category_id": 22,
+      "_letter": "a"
+    },
+    {
+      "id": 807,
+      "our_name": "amoCRM",
+      "vendor": "amocrm",
+      "products": [
+        "amocrm"
+      ],
+      "cve_details_url": null,
+      "category_id": 26,
+      "_letter": "a"
+    },
+    {
+      "id": 545,
+      "our_name": "AMP",
+      "vendor": "amp",
+      "products": [
+        "amp"
+      ],
+      "cve_details_url": null,
+      "category_id": 6,
+      "_letter": "a"
+    },
+    {
+      "id": 546,
+      "our_name": "AMP for WordPress",
+      "vendor": "amp_for_wordpress",
+      "products": [
+        "amp_for_wordpress"
+      ],
+      "cve_details_url": null,
+      "category_id": 62,
+      "_letter": "a"
+    },
+    {
+      "id": 700,
+      "our_name": "Amplience",
+      "vendor": "amplience",
+      "products": [
+        "amplience"
+      ],
+      "cve_details_url": null,
+      "category_id": 16,
+      "_letter": "a"
+    },
+    {
+      "id": 701,
+      "our_name": "Amplitude",
+      "vendor": "amplitude",
+      "products": [
+        "amplitude"
+      ],
+      "cve_details_url": null,
+      "category_id": 18,
+      "_letter": "a"
+    },
+    {
+      "id": 517,
+      "our_name": "amqp",
+      "vendor": "php",
+      "products": [
+        "amqp"
+      ],
+      "cve_details_url": null,
+      "category_id": 15,
+      "_letter": "a"
+    },
+    {
+      "id": 702,
+      "our_name": "Analysys Ark",
+      "vendor": "analysys_ark",
+      "products": [
+        "analysys_ark"
+      ],
+      "cve_details_url": null,
+      "category_id": 18,
+      "_letter": "a"
+    },
+    {
+      "id": 703,
+      "our_name": "AndersNoren Baskerville",
+      "vendor": "andersnoren_baskervi",
+      "products": [
+        "andersnoren_baskervi"
+      ],
+      "cve_details_url": null,
+      "category_id": 63,
+      "_letter": "a"
+    },
+    {
+      "id": 704,
+      "our_name": "AndersNoren Fukasawa",
+      "vendor": "andersnoren_fukasawa",
+      "products": [
+        "andersnoren_fukasawa"
+      ],
+      "cve_details_url": null,
+      "category_id": 63,
+      "_letter": "a"
+    },
+    {
+      "id": 705,
+      "our_name": "AndersNoren Hemingway",
+      "vendor": "andersnoren_hemingwa",
+      "products": [
+        "andersnoren_hemingwa"
+      ],
+      "cve_details_url": null,
+      "category_id": 63,
+      "_letter": "a"
+    },
+    {
+      "id": 706,
+      "our_name": "AndersNoren Hitchcock",
+      "vendor": "andersnoren_hitchcoc",
+      "products": [
+        "andersnoren_hitchcoc"
+      ],
+      "cve_details_url": null,
+      "category_id": 63,
+      "_letter": "a"
+    },
+    {
+      "id": 707,
+      "our_name": "AndersNoren Lovecraft",
+      "vendor": "andersnoren_lovecraf",
+      "products": [
+        "andersnoren_lovecraf"
+      ],
+      "cve_details_url": null,
+      "category_id": 63,
+      "_letter": "a"
+    },
+    {
+      "id": 708,
+      "our_name": "Anetwork",
+      "vendor": "anetwork",
+      "products": [
+        "anetwork"
+      ],
+      "cve_details_url": null,
+      "category_id": 22,
+      "_letter": "a"
+    },
+    {
+      "id": 42,
+      "our_name": "Angular",
+      "vendor": "angularjs",
+      "products": [
+        "angular"
+      ],
+      "cve_details_url": "https://www.cvedetails.com/product/115892/Angular-Angular.html",
+      "category_id": 6,
+      "_letter": "a"
+    },
+    {
+      "id": 709,
+      "our_name": "Angular Material",
+      "vendor": "angular_material",
+      "products": [
+        "angular_material"
+      ],
+      "cve_details_url": null,
+      "category_id": 84,
+      "_letter": "a"
+    },
+    {
+      "id": 710,
+      "our_name": "AngularDart",
+      "vendor": "angulardart",
+      "products": [
+        "angulardart"
+      ],
+      "cve_details_url": null,
+      "category_id": 7,
+      "_letter": "a"
+    },
+    {
+      "id": 711,
+      "our_name": "AngularJS",
+      "vendor": "angularjs",
+      "products": [
+        "angular.js",
+        "angularjs"
+      ],
+      "cve_details_url": null,
+      "category_id": 6,
+      "_letter": "a"
+    },
+    {
+      "id": 808,
+      "our_name": "Animate.css",
+      "vendor": "animate_css",
+      "products": [
+        "animate_css"
+      ],
+      "cve_details_url": null,
+      "category_id": 84,
+      "_letter": "a"
+    },
+    {
+      "id": 809,
+      "our_name": "anime.js",
+      "vendor": "anime_js",
+      "products": [
+        "anime_js"
+      ],
+      "cve_details_url": null,
+      "category_id": 6,
+      "_letter": "a"
+    },
+    {
+      "id": 712,
+      "our_name": "AnswerDash",
+      "vendor": "answerdash",
+      "products": [
+        "answerdash"
+      ],
+      "cve_details_url": null,
+      "category_id": 99,
+      "_letter": "a"
+    },
+    {
+      "id": 713,
+      "our_name": "Ant Design",
+      "vendor": "ant_design",
+      "products": [
+        "ant_design"
+      ],
+      "cve_details_url": null,
+      "category_id": 84,
+      "_letter": "a"
+    },
+    {
+      "id": 716,
+      "our_name": "Antsomi CDP 365",
+      "vendor": "antsomi_cdp_365",
+      "products": [
+        "antsomi_cdp_365"
+      ],
+      "cve_details_url": null,
+      "category_id": 56,
+      "_letter": "a"
+    },
+    {
+      "id": 714,
+      "our_name": "AntV G2",
+      "vendor": "antv_g2",
+      "products": [
+        "antv_g2"
+      ],
+      "cve_details_url": null,
+      "category_id": 6,
+      "_letter": "a"
+    },
+    {
+      "id": 715,
+      "our_name": "AntV G6",
+      "vendor": "antv_g6",
+      "products": [
+        "antv_g6"
+      ],
+      "cve_details_url": null,
+      "category_id": 6,
+      "_letter": "a"
+    },
+    {
+      "id": 717,
+      "our_name": "AnyClip",
+      "vendor": "anyclip",
+      "products": [
+        "anyclip"
+      ],
+      "cve_details_url": null,
+      "category_id": 22,
+      "_letter": "a"
+    },
+    {
+      "id": 547,
+      "our_name": "AOLserver",
+      "vendor": "aol",
+      "products": [
+        "aolserver"
+      ],
+      "cve_details_url": null,
+      "category_id": 2,
+      "_letter": "a"
+    },
+    {
+      "id": 548,
+      "our_name": "AOS",
+      "vendor": "aos",
+      "products": [
+        "aos"
+      ],
+      "cve_details_url": null,
+      "category_id": 6,
+      "_letter": "a"
+    },
+    {
+      "id": 10,
+      "our_name": "Apache",
+      "vendor": "apache",
+      "products": [
+        "http_server",
+        "httpd"
+      ],
+      "cve_details_url": "https://www.cvedetails.com/product/66/Apache-Http-Server.html",
+      "category_id": 2,
+      "_letter": "a"
+    },
+    {
+      "id": 718,
+      "our_name": "Apache JSPWiki",
+      "vendor": "apache",
+      "products": [
+        "jspwiki",
+        "apache_jspwiki"
+      ],
+      "cve_details_url": null,
+      "category_id": 38,
+      "_letter": "a"
+    },
+    {
+      "id": 20,
+      "our_name": "Apache Tomcat",
+      "vendor": "apache",
+      "products": [
+        "tomcat"
+      ],
+      "cve_details_url": "https://www.cvedetails.com/product/887/Apache-Tomcat.html",
+      "category_id": 3,
+      "_letter": "a"
+    },
+    {
+      "id": 719,
+      "our_name": "Apache Traffic Server",
+      "vendor": "apache",
+      "products": [
+        "traffic_server",
+        "apache_traffic_serve"
+      ],
+      "cve_details_url": null,
+      "category_id": 2,
+      "_letter": "a"
+    },
+    {
+      "id": 720,
+      "our_name": "Apache Wicket",
+      "vendor": "apache",
+      "products": [
+        "wicket",
+        "apache_wicket"
+      ],
+      "cve_details_url": null,
+      "category_id": 7,
+      "_letter": "a"
+    },
+    {
+      "id": 549,
+      "our_name": "APC",
+      "vendor": "apc",
+      "products": [
+        "apc"
+      ],
+      "cve_details_url": null,
+      "category_id": 78,
+      "_letter": "a"
+    },
+    {
+      "id": 327,
+      "our_name": "Apcu",
+      "vendor": "php",
+      "products": [
+        "apcu"
+      ],
+      "cve_details_url": null,
+      "category_id": 15,
+      "_letter": "a"
+    },
+    {
+      "id": 721,
+      "our_name": "ApexPages",
+      "vendor": "apexpages",
+      "products": [
+        "apexpages"
+      ],
+      "cve_details_url": null,
+      "category_id": 61,
+      "_letter": "a"
+    },
+    {
+      "id": 518,
+      "our_name": "apfd",
+      "vendor": "php",
+      "products": [
+        "apfd"
+      ],
+      "cve_details_url": null,
+      "category_id": 15,
+      "_letter": "a"
+    },
+    {
+      "id": 722,
+      "our_name": "Apigee",
+      "vendor": "apigee",
+      "products": [
+        "apigee"
+      ],
+      "cve_details_url": null,
+      "category_id": 36,
+      "_letter": "a"
+    },
+    {
+      "id": 723,
+      "our_name": "Apisearch",
+      "vendor": "apisearch",
+      "products": [
+        "apisearch"
+      ],
+      "cve_details_url": null,
+      "category_id": 69,
+      "_letter": "a"
+    },
+    {
+      "id": 724,
+      "our_name": "Aplazame",
+      "vendor": "aplazame",
+      "products": [
+        "aplazame"
+      ],
+      "cve_details_url": null,
+      "category_id": 21,
+      "_letter": "a"
+    },
+    {
+      "id": 725,
+      "our_name": "Apollo",
+      "vendor": "apollo",
+      "products": [
+        "apollo"
+      ],
+      "cve_details_url": null,
+      "category_id": 6,
+      "_letter": "a"
+    },
+    {
+      "id": 726,
+      "our_name": "Apollo13Themes Rife",
+      "vendor": "apollo13themes_rife",
+      "products": [
+        "apollo13themes_rife"
+      ],
+      "cve_details_url": null,
+      "category_id": 63,
+      "_letter": "a"
+    },
+    {
+      "id": 727,
+      "our_name": "ApostropheCMS",
+      "vendor": "apostrophecms",
+      "products": [
+        "apostrophecms"
+      ],
+      "cve_details_url": null,
+      "category_id": 16,
+      "_letter": "a"
+    },
+    {
+      "id": 730,
+      "our_name": "Appcues",
+      "vendor": "appcues",
+      "products": [
+        "appcues"
+      ],
+      "cve_details_url": null,
+      "category_id": 65,
+      "_letter": "a"
+    },
+    {
+      "id": 728,
+      "our_name": "AppDynamics",
+      "vendor": "appdynamics",
+      "products": [
+        "appdynamics"
+      ],
+      "cve_details_url": null,
+      "category_id": 18,
+      "_letter": "a"
+    },
+    {
+      "id": 731,
+      "our_name": "Appian",
+      "vendor": "appian",
+      "products": [
+        "appian"
+      ],
+      "cve_details_url": null,
+      "category_id": 50,
+      "_letter": "a"
+    },
+    {
+      "id": 732,
+      "our_name": "Apple Business Chat",
+      "vendor": "apple_business_chat",
+      "products": [
+        "apple_business_chat"
+      ],
+      "cve_details_url": null,
+      "category_id": 20,
+      "_letter": "a"
+    },
+    {
+      "id": 733,
+      "our_name": "Apple Pay",
+      "vendor": "apple_pay",
+      "products": [
+        "apple_pay"
+      ],
+      "cve_details_url": null,
+      "category_id": 21,
+      "_letter": "a"
+    },
+    {
+      "id": 734,
+      "our_name": "Apple Sign-in",
+      "vendor": "apple_sign_in",
+      "products": [
+        "apple_sign_in"
+      ],
+      "cve_details_url": null,
+      "category_id": 85,
+      "_letter": "a"
+    },
+    {
+      "id": 735,
+      "our_name": "ApplicantStack",
+      "vendor": "applicantstack",
+      "products": [
+        "applicantstack"
+      ],
+      "cve_details_url": null,
+      "category_id": 100,
+      "_letter": "a"
+    },
+    {
+      "id": 736,
+      "our_name": "Application Request Routing",
+      "vendor": "application_request_",
+      "products": [
+        "application_request_"
+      ],
+      "cve_details_url": null,
+      "category_id": 9,
+      "_letter": "a"
+    },
+    {
+      "id": 729,
+      "our_name": "AppNexus",
+      "vendor": "appnexus",
+      "products": [
+        "appnexus"
+      ],
+      "cve_details_url": null,
+      "category_id": 22,
+      "_letter": "a"
+    },
+    {
+      "id": 737,
+      "our_name": "Appointy",
+      "vendor": "appointy",
+      "products": [
+        "appointy"
+      ],
+      "cve_details_url": null,
+      "category_id": 49,
+      "_letter": "a"
+    },
+    {
+      "id": 133,
+      "our_name": "AppServ",
+      "vendor": "appserv",
+      "products": [
+        "appserv"
+      ],
+      "cve_details_url": "https://www.cvedetails.com/vendor/",
+      "category_id": 13,
+      "_letter": "a"
+    },
+    {
+      "id": 738,
+      "our_name": "Appsflyer",
+      "vendor": "appsflyer",
+      "products": [
+        "appsflyer"
+      ],
+      "cve_details_url": null,
+      "category_id": 18,
+      "_letter": "a"
+    },
+    {
+      "id": 739,
+      "our_name": "Apptus",
+      "vendor": "apptus",
+      "products": [
+        "apptus"
+      ],
+      "cve_details_url": null,
+      "category_id": 25,
+      "_letter": "a"
+    },
+    {
+      "id": 740,
+      "our_name": "Aprimo",
+      "vendor": "aprimo",
+      "products": [
+        "aprimo"
+      ],
+      "cve_details_url": null,
+      "category_id": 96,
+      "_letter": "a"
+    },
+    {
+      "id": 741,
+      "our_name": "AquilaCMS",
+      "vendor": "aquilacms",
+      "products": [
+        "aquilacms"
+      ],
+      "cve_details_url": null,
+      "category_id": 16,
+      "_letter": "a"
+    },
+    {
+      "id": 742,
+      "our_name": "Arastta",
+      "vendor": "arastta",
+      "products": [
+        "ecommerce",
+        "arastta"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "a"
+    },
+    {
+      "id": 743,
+      "our_name": "Arc",
+      "vendor": "arc",
+      "products": [
+        "arc"
+      ],
+      "cve_details_url": null,
+      "category_id": 10,
+      "_letter": "a"
+    },
+    {
+      "id": 744,
+      "our_name": "Arc XP",
+      "vendor": "arc_xp",
+      "products": [
+        "arc_xp"
+      ],
+      "cve_details_url": null,
+      "category_id": 16,
+      "_letter": "a"
+    },
+    {
+      "id": 745,
+      "our_name": "ArcGIS API for JavaScript",
+      "vendor": "arcgis_api_for_javas",
+      "products": [
+        "arcgis_api_for_javas"
+      ],
+      "cve_details_url": null,
+      "category_id": 28,
+      "_letter": "a"
+    },
+    {
+      "id": 161,
+      "our_name": "Arch Linux",
+      "vendor": "archlinux",
+      "products": [
+        "arch_linux"
+      ],
+      "cve_details_url": "https://www.cvedetails.com/product/92051/Archlinux-Arch-Linux.html",
+      "category_id": 1,
+      "_letter": "a"
+    },
+    {
+      "id": 550,
+      "our_name": "ARI Network Services",
+      "vendor": "ari_network_services",
+      "products": [
+        "ari_network_services"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "a"
+    },
+    {
+      "id": 328,
+      "our_name": "Array",
+      "vendor": "php",
+      "products": [
+        "array"
+      ],
+      "cve_details_url": null,
+      "category_id": 15,
+      "_letter": "a"
+    },
+    {
+      "id": 746,
+      "our_name": "Artifactory",
+      "vendor": "jfrog",
+      "products": [
+        "artifactory"
+      ],
+      "cve_details_url": null,
+      "category_id": 73,
+      "_letter": "a"
+    },
+    {
+      "id": 747,
+      "our_name": "Artifactory Web Server",
+      "vendor": "jfrog",
+      "products": [
+        "artifactory",
+        "artifactory_web_serv"
+      ],
+      "cve_details_url": null,
+      "category_id": 2,
+      "_letter": "a"
+    },
+    {
+      "id": 120,
+      "our_name": "Aruba Proxy",
+      "vendor": "aruba",
+      "products": [
+        "aruba-proxy"
+      ],
+      "cve_details_url": null,
+      "category_id": 10,
+      "_letter": "a"
+    },
+    {
+      "id": 748,
+      "our_name": "Aruba.it",
+      "vendor": "aruba_it",
+      "products": [
+        "aruba_it"
+      ],
+      "cve_details_url": null,
+      "category_id": 92,
+      "_letter": "a"
+    },
+    {
+      "id": 749,
+      "our_name": "ArvanCloud",
+      "vendor": "arvancloud",
+      "products": [
+        "arvancloud"
+      ],
+      "cve_details_url": null,
+      "category_id": 10,
+      "_letter": "a"
+    },
+    {
+      "id": 750,
+      "our_name": "Asana",
+      "vendor": "asana",
+      "products": [
+        "asana"
+      ],
+      "cve_details_url": null,
+      "category_id": 40,
+      "_letter": "a"
+    },
+    {
+      "id": 751,
+      "our_name": "AsciiDoc",
+      "vendor": "asciidoc",
+      "products": [
+        "asciidoc"
+      ],
+      "cve_details_url": null,
+      "category_id": 16,
+      "_letter": "a"
+    },
+    {
+      "id": 752,
+      "our_name": "Asciidoctor",
+      "vendor": "asciidoctor",
+      "products": [
+        "asciidoctor"
+      ],
+      "cve_details_url": null,
+      "category_id": 36,
+      "_letter": "a"
+    },
+    {
+      "id": 753,
+      "our_name": "Asciinema",
+      "vendor": "asciinema",
+      "products": [
+        "asciinema"
+      ],
+      "cve_details_url": null,
+      "category_id": 27,
+      "_letter": "a"
+    },
+    {
+      "id": 754,
+      "our_name": "Asendia",
+      "vendor": "asendia",
+      "products": [
+        "asendia"
+      ],
+      "cve_details_url": null,
+      "category_id": 78,
+      "_letter": "a"
+    },
+    {
+      "id": 58,
+      "our_name": "ASP",
+      "vendor": "microsoft",
+      "products": [
+        "asp"
+      ],
+      "cve_details_url": null,
+      "category_id": 7,
+      "_letter": "a"
+    },
+    {
+      "id": 56,
+      "our_name": "ASP.NET",
+      "vendor": "microsoft",
+      "products": [
+        "asp.net"
+      ],
+      "cve_details_url": "https://www.cvedetails.com/product/3091/Microsoft-Asp.net.html",
+      "category_id": 7,
+      "_letter": "a"
+    },
+    {
+      "id": 755,
+      "our_name": "ASP.NET Boilerplate",
+      "vendor": "asp_net_boilerplate",
+      "products": [
+        "asp_net_boilerplate"
+      ],
+      "cve_details_url": null,
+      "category_id": 7,
+      "_letter": "a"
+    },
+    {
+      "id": 57,
+      "our_name": "ASP.NET Core",
+      "vendor": "microsoft",
+      "products": [
+        "asp.net_core"
+      ],
+      "cve_details_url": "https://www.cvedetails.com/product/42998/Microsoft-Asp.net-Core.html",
+      "category_id": 7,
+      "_letter": "a"
+    },
+    {
+      "id": 519,
+      "our_name": "ast",
+      "vendor": "php",
+      "products": [
+        "ast"
+      ],
+      "cve_details_url": null,
+      "category_id": 15,
+      "_letter": "a"
+    },
+    {
+      "id": 756,
+      "our_name": "Astra",
+      "vendor": "astra",
+      "products": [
+        "astra"
+      ],
+      "cve_details_url": null,
+      "category_id": 63,
+      "_letter": "a"
+    },
+    {
+      "id": 757,
+      "our_name": "Astra Widgets",
+      "vendor": "astra_widgets",
+      "products": [
+        "astra_widgets"
+      ],
+      "cve_details_url": null,
+      "category_id": 62,
+      "_letter": "a"
+    },
+    {
+      "id": 758,
+      "our_name": "Astro",
+      "vendor": "astro",
+      "products": [
+        "astro"
+      ],
+      "cve_details_url": null,
+      "category_id": 35,
+      "_letter": "a"
+    },
+    {
+      "id": 759,
+      "our_name": "Astute Solutions",
+      "vendor": "astute_solutions",
+      "products": [
+        "astute_solutions"
+      ],
+      "cve_details_url": null,
+      "category_id": 26,
+      "_letter": "a"
+    },
+    {
+      "id": 551,
+      "our_name": "AT Internet Analyzer",
+      "vendor": "at_internet_analyzer",
+      "products": [
+        "at_internet_analyzer"
+      ],
+      "cve_details_url": null,
+      "category_id": 18,
+      "_letter": "a"
+    },
+    {
+      "id": 552,
+      "our_name": "AT Internet XiTi",
+      "vendor": "at_internet_xiti",
+      "products": [
+        "at_internet_xiti"
+      ],
+      "cve_details_url": null,
+      "category_id": 18,
+      "_letter": "a"
+    },
+    {
+      "id": 760,
+      "our_name": "Atatus",
+      "vendor": "atatus",
+      "products": [
+        "atatus"
+      ],
+      "cve_details_url": null,
+      "category_id": 33,
+      "_letter": "a"
+    },
+    {
+      "id": 800,
+      "our_name": "aThemes Airi",
+      "vendor": "athemes_airi",
+      "products": [
+        "athemes_airi"
+      ],
+      "cve_details_url": null,
+      "category_id": 63,
+      "_letter": "a"
+    },
+    {
+      "id": 801,
+      "our_name": "aThemes Astrid",
+      "vendor": "athemes_astrid",
+      "products": [
+        "athemes_astrid"
+      ],
+      "cve_details_url": null,
+      "category_id": 63,
+      "_letter": "a"
+    },
+    {
+      "id": 802,
+      "our_name": "aThemes Hiero",
+      "vendor": "athemes_hiero",
+      "products": [
+        "athemes_hiero"
+      ],
+      "cve_details_url": null,
+      "category_id": 63,
+      "_letter": "a"
+    },
+    {
+      "id": 803,
+      "our_name": "aThemes Moesia",
+      "vendor": "athemes_moesia",
+      "products": [
+        "athemes_moesia"
+      ],
+      "cve_details_url": null,
+      "category_id": 63,
+      "_letter": "a"
+    },
+    {
+      "id": 804,
+      "our_name": "aThemes Sydney",
+      "vendor": "athemes_sydney",
+      "products": [
+        "athemes_sydney"
+      ],
+      "cve_details_url": null,
+      "category_id": 63,
+      "_letter": "a"
+    },
+    {
+      "id": 761,
+      "our_name": "Athena Search",
+      "vendor": "athena_search",
+      "products": [
+        "athena_search"
+      ],
+      "cve_details_url": null,
+      "category_id": 69,
+      "_letter": "a"
+    },
+    {
+      "id": 762,
+      "our_name": "Atlassian Bitbucket",
+      "vendor": "atlassian",
+      "products": [
+        "bitbucket",
+        "atlassian_bitbucket"
+      ],
+      "cve_details_url": null,
+      "category_id": 73,
+      "_letter": "a"
+    },
+    {
+      "id": 763,
+      "our_name": "Atlassian Confluence",
+      "vendor": "atlassian",
+      "products": [
+        "confluence",
+        "atlassian_confluence"
+      ],
+      "cve_details_url": null,
+      "category_id": 38,
+      "_letter": "a"
+    },
+    {
+      "id": 764,
+      "our_name": "Atlassian FishEye",
+      "vendor": "atlassian",
+      "products": [
+        "fisheye",
+        "atlassian_fisheye"
+      ],
+      "cve_details_url": null,
+      "category_id": 73,
+      "_letter": "a"
+    },
+    {
+      "id": 765,
+      "our_name": "Atlassian Jira",
+      "vendor": "atlassian",
+      "products": [
+        "jira",
+        "atlassian_jira"
+      ],
+      "cve_details_url": null,
+      "category_id": 40,
+      "_letter": "a"
+    },
+    {
+      "id": 766,
+      "our_name": "Atlassian Jira Issue Collector",
+      "vendor": "atlassian_jira_issue",
+      "products": [
+        "atlassian_jira_issue"
+      ],
+      "cve_details_url": null,
+      "category_id": 40,
+      "_letter": "a"
+    },
+    {
+      "id": 767,
+      "our_name": "Atlassian Statuspage",
+      "vendor": "atlassian_statuspage",
+      "products": [
+        "atlassian_statuspage"
+      ],
+      "cve_details_url": null,
+      "category_id": 40,
+      "_letter": "a"
+    },
+    {
+      "id": 768,
+      "our_name": "Atome",
+      "vendor": "atome",
+      "products": [
+        "atome"
+      ],
+      "cve_details_url": null,
+      "category_id": 94,
+      "_letter": "a"
+    },
+    {
+      "id": 553,
+      "our_name": "ATSHOP",
+      "vendor": "atshop",
+      "products": [
+        "atshop"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "a"
+    },
+    {
+      "id": 769,
+      "our_name": "Attentive",
+      "vendor": "attentive",
+      "products": [
+        "attentive"
+      ],
+      "cve_details_url": null,
+      "category_id": 25,
+      "_letter": "a"
+    },
+    {
+      "id": 770,
+      "our_name": "Attraqt",
+      "vendor": "attraqt",
+      "products": [
+        "attraqt"
+      ],
+      "cve_details_url": null,
+      "category_id": 69,
+      "_letter": "a"
+    },
+    {
+      "id": 771,
+      "our_name": "AudioEye",
+      "vendor": "audioeye",
+      "products": [
+        "audioeye"
+      ],
+      "cve_details_url": null,
+      "category_id": 31,
+      "_letter": "a"
+    },
+    {
+      "id": 772,
+      "our_name": "Audiohook",
+      "vendor": "audiohook",
+      "products": [
+        "audiohook"
+      ],
+      "cve_details_url": null,
+      "category_id": 22,
+      "_letter": "a"
+    },
+    {
+      "id": 810,
+      "our_name": "augmented-ui",
+      "vendor": "augmented_ui",
+      "products": [
+        "augmented_ui"
+      ],
+      "cve_details_url": null,
+      "category_id": 84,
+      "_letter": "a"
+    },
+    {
+      "id": 773,
+      "our_name": "Aurelia",
+      "vendor": "aurelia",
+      "products": [
+        "aurelia"
+      ],
+      "cve_details_url": null,
+      "category_id": 6,
+      "_letter": "a"
+    },
+    {
+      "id": 774,
+      "our_name": "Auryc",
+      "vendor": "auryc",
+      "products": [
+        "auryc"
+      ],
+      "cve_details_url": null,
+      "category_id": 18,
+      "_letter": "a"
+    },
+    {
+      "id": 775,
+      "our_name": "Australia Post",
+      "vendor": "australia_post",
+      "products": [
+        "australia_post"
+      ],
+      "cve_details_url": null,
+      "category_id": 78,
+      "_letter": "a"
+    },
+    {
+      "id": 776,
+      "our_name": "Auth0",
+      "vendor": "auth0",
+      "products": [
+        "auth0.js",
+        "auth0"
+      ],
+      "cve_details_url": null,
+      "category_id": 85,
+      "_letter": "a"
+    },
+    {
+      "id": 777,
+      "our_name": "Auth0 Lock",
+      "vendor": "auth0_lock",
+      "products": [
+        "auth0_lock"
+      ],
+      "cve_details_url": null,
+      "category_id": 85,
+      "_letter": "a"
+    },
+    {
+      "id": 778,
+      "our_name": "Autoketing",
+      "vendor": "autoketing",
+      "products": [
+        "autoketing"
+      ],
+      "cve_details_url": null,
+      "category_id": 19,
+      "_letter": "a"
+    },
+    {
+      "id": 779,
+      "our_name": "Autoketing Product Reviews",
+      "vendor": "autoketing_product_r",
+      "products": [
+        "autoketing_product_r"
+      ],
+      "cve_details_url": null,
+      "category_id": 64,
+      "_letter": "a"
+    },
+    {
+      "id": 780,
+      "our_name": "Automizely",
+      "vendor": "automizely",
+      "products": [
+        "automizely"
+      ],
+      "cve_details_url": null,
+      "category_id": 19,
+      "_letter": "a"
+    },
+    {
+      "id": 781,
+      "our_name": "Autopilot",
+      "vendor": "autopilot",
+      "products": [
+        "autopilot"
+      ],
+      "cve_details_url": null,
+      "category_id": 19,
+      "_letter": "a"
+    },
+    {
+      "id": 782,
+      "our_name": "Autoptimize",
+      "vendor": "autoptimize",
+      "products": [
+        "autoptimize"
+      ],
+      "cve_details_url": null,
+      "category_id": 62,
+      "_letter": "a"
+    },
+    {
+      "id": 783,
+      "our_name": "Avada AVASHIP",
+      "vendor": "avada_avaship",
+      "products": [
+        "avada_avaship"
+      ],
+      "cve_details_url": null,
+      "category_id": 64,
+      "_letter": "a"
+    },
+    {
+      "id": 784,
+      "our_name": "Avada Boost Sales",
+      "vendor": "avada_boost_sales",
+      "products": [
+        "avada_boost_sales"
+      ],
+      "cve_details_url": null,
+      "category_id": 64,
+      "_letter": "a"
+    },
+    {
+      "id": 785,
+      "our_name": "Avada SEO",
+      "vendor": "avada_seo",
+      "products": [
+        "avada_seo"
+      ],
+      "cve_details_url": null,
+      "category_id": 64,
+      "_letter": "a"
+    },
+    {
+      "id": 786,
+      "our_name": "Avada Size Chart",
+      "vendor": "avada_size_chart",
+      "products": [
+        "avada_size_chart"
+      ],
+      "cve_details_url": null,
+      "category_id": 64,
+      "_letter": "a"
+    },
+    {
+      "id": 787,
+      "our_name": "Avangate",
+      "vendor": "avangate",
+      "products": [
+        "avangate"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "a"
+    },
+    {
+      "id": 788,
+      "our_name": "Avasize",
+      "vendor": "avasize",
+      "products": [
+        "avasize"
+      ],
+      "cve_details_url": null,
+      "category_id": 99,
+      "_letter": "a"
+    },
+    {
+      "id": 789,
+      "our_name": "Avis Verifies",
+      "vendor": "avis_verifies",
+      "products": [
+        "avis_verifies"
+      ],
+      "cve_details_url": null,
+      "category_id": 59,
+      "_letter": "a"
+    },
+    {
+      "id": 790,
+      "our_name": "Aweber",
+      "vendor": "aweber",
+      "products": [
+        "aweber"
+      ],
+      "cve_details_url": null,
+      "category_id": 19,
+      "_letter": "a"
+    },
+    {
+      "id": 791,
+      "our_name": "Awesomplete",
+      "vendor": "awesomplete",
+      "products": [
+        "awesomplete"
+      ],
+      "cve_details_url": null,
+      "category_id": 69,
+      "_letter": "a"
+    },
+    {
+      "id": 554,
+      "our_name": "AWIN",
+      "vendor": "awin",
+      "products": [
+        "awin"
+      ],
+      "cve_details_url": null,
+      "category_id": 55,
+      "_letter": "a"
+    },
+    {
+      "id": 555,
+      "our_name": "AWS Certificate Manager",
+      "vendor": "aws_certificate_mana",
+      "products": [
+        "aws_certificate_mana"
+      ],
+      "cve_details_url": null,
+      "category_id": 86,
+      "_letter": "a"
+    },
+    {
+      "id": 119,
+      "our_name": "AWS ELB",
+      "vendor": "amazon",
+      "products": [
+        "elastic_load_balancing"
+      ],
+      "cve_details_url": "https://www.cvedetails.com/product/95169/Amazon-Elastic-Load-Balancing.html",
+      "category_id": 10,
+      "_letter": "a"
+    },
+    {
+      "id": 556,
+      "our_name": "AWS WAF Captcha",
+      "vendor": "aws_waf_captcha",
+      "products": [
+        "aws_waf_captcha"
+      ],
+      "cve_details_url": null,
+      "category_id": 14,
+      "_letter": "a"
+    },
+    {
+      "id": 520,
+      "our_name": "awscrt",
+      "vendor": "php",
+      "products": [
+        "awscrt"
+      ],
+      "cve_details_url": null,
+      "category_id": 15,
+      "_letter": "a"
+    },
+    {
+      "id": 557,
+      "our_name": "AWStats",
+      "vendor": "laurent_destailleur",
+      "products": [
+        "awstats"
+      ],
+      "cve_details_url": null,
+      "category_id": 18,
+      "_letter": "a"
+    },
+    {
+      "id": 792,
+      "our_name": "Axeptio",
+      "vendor": "axeptio",
+      "products": [
+        "axeptio"
+      ],
+      "cve_details_url": null,
+      "category_id": 32,
+      "_letter": "a"
+    },
+    {
+      "id": 96,
+      "our_name": "Axios",
+      "vendor": "axios",
+      "products": [
+        "axios"
+      ],
+      "cve_details_url": "https://www.cvedetails.com/product/54129/Axios-Axios.html",
+      "category_id": 6,
+      "_letter": "a"
+    },
+    {
+      "id": 793,
+      "our_name": "Azion",
+      "vendor": "azion",
+      "products": [
+        "azion"
+      ],
+      "cve_details_url": null,
+      "category_id": 10,
+      "_letter": "a"
+    },
+    {
+      "id": 794,
+      "our_name": "Azure",
+      "vendor": "azure",
+      "products": [
+        "azure"
+      ],
+      "cve_details_url": null,
+      "category_id": 50,
+      "_letter": "a"
+    },
+    {
+      "id": 795,
+      "our_name": "Azure AD B2C",
+      "vendor": "azure_ad_b2c",
+      "products": [
+        "azure_ad_b2c"
+      ],
+      "cve_details_url": null,
+      "category_id": 85,
+      "_letter": "a"
+    },
+    {
+      "id": 117,
+      "our_name": "Azure CDN",
+      "vendor": "microsoft",
+      "products": [
+        "azure"
+      ],
+      "cve_details_url": "https://www.cvedetails.com/product/53054/Microsoft-Azure.html",
+      "category_id": 10,
+      "_letter": "a"
+    },
+    {
+      "id": 796,
+      "our_name": "Azure Front Door",
+      "vendor": "azure_front_door",
+      "products": [
+        "azure_front_door"
+      ],
+      "cve_details_url": null,
+      "category_id": 9,
+      "_letter": "a"
+    },
+    {
+      "id": 797,
+      "our_name": "Azure Monitor",
+      "vendor": "azure_monitor",
+      "products": [
+        "azure_monitor"
+      ],
+      "cve_details_url": null,
+      "category_id": 18,
+      "_letter": "a"
+    }
+  ]
+}

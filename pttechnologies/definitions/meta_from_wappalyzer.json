@@ -1,0 +1,1877 @@
+[
+  {
+    "meta_name": "Author",
+    "patterns": [
+      {
+        "regex": "ZABBIX SIA",
+        "product_id": 3612
+      }
+    ]
+  },
+  {
+    "meta_name": "Copyright",
+    "patterns": [
+      {
+        "regex": "^Copyright &copy; \\d{4} OpenLink Software",
+        "product_id": 3404
+      }
+    ]
+  },
+  {
+    "meta_name": "DC.identifier",
+    "patterns": [
+      {
+        "regex": "/content\\.jsp\\?objectid=",
+        "product_id": 1648
+      }
+    ]
+  },
+  {
+    "meta_name": "DC.title",
+    "patterns": [
+      {
+        "regex": "webEdition",
+        "product_id": 3544
+      }
+    ]
+  },
+  {
+    "meta_name": "GENERATOR",
+    "patterns": [
+      {
+        "regex": "^Essent® SiteBuilder Pro$",
+        "product_id": 1357
+      },
+      {
+        "regex": "^IMPERIA ([0-9.]{2,3})",
+        "product_id": 1846,
+        "version_group": 1
+      }
+    ]
+  },
+  {
+    "meta_name": "Keywords",
+    "patterns": [
+      {
+        "regex": "^OpenLink Virtuoso Sparql",
+        "product_id": 3404
+      }
+    ]
+  },
+  {
+    "meta_name": "Powered-By",
+    "patterns": [
+      {
+        "regex": "Serendipity v\\.([\\d.]+)",
+        "product_id": 2849,
+        "version_group": 1
+      }
+    ]
+  },
+  {
+    "meta_name": "ProgId",
+    "patterns": [
+      {
+        "regex": "^FrontPage\\.",
+        "product_id": 1510
+      },
+      {
+        "regex": "^Excel\\.",
+        "product_id": 2171
+      },
+      {
+        "regex": "^PowerPoint\\.",
+        "product_id": 2173
+      },
+      {
+        "regex": "^Publisher\\.",
+        "product_id": 2174
+      },
+      {
+        "regex": "^Word\\.",
+        "product_id": 2176
+      }
+    ]
+  },
+  {
+    "meta_name": "amp-story-generator-name",
+    "patterns": [
+      {
+        "regex": "^Web Stories for WordPress$",
+        "product_id": 3459
+      }
+    ]
+  },
+  {
+    "meta_name": "amp-story-generator-version",
+    "patterns": [
+      {
+        "regex": "^(.+)$",
+        "product_id": 3459,
+        "version_group": 1
+      }
+    ]
+  },
+  {
+    "meta_name": "apple-itunes-app",
+    "patterns": [
+      {
+        "regex": "app-id=737216887",
+        "product_id": 2132
+      },
+      {
+        "regex": "app-id=543672169",
+        "product_id": 2415
+      }
+    ]
+  },
+  {
+    "meta_name": "apple-mobile-web-app-title",
+    "patterns": [
+      {
+        "regex": "^MyDukaan$",
+        "product_id": 1278
+      }
+    ]
+  },
+  {
+    "meta_name": "application-name",
+    "patterns": [
+      {
+        "regex": "Bitbucket",
+        "product_id": 762
+      },
+      {
+        "regex": "JIRA",
+        "product_id": 765
+      },
+      {
+        "regex": "CakePHP",
+        "product_id": 61
+      },
+      {
+        "regex": "^i-MSCP$",
+        "product_id": 1834
+      },
+      {
+        "regex": "Misskey",
+        "product_id": 2186
+      },
+      {
+        "regex": "^Saly\\sB2B\\sPlatform$",
+        "product_id": 2798
+      },
+      {
+        "regex": "Shopware",
+        "product_id": 2900
+      },
+      {
+        "regex": "^SonarQubes$",
+        "product_id": 2996
+      },
+      {
+        "regex": "Synology DiskStation",
+        "product_id": 3109
+      },
+      {
+        "regex": "TeamCity",
+        "product_id": 3168
+      },
+      {
+        "regex": "^TiddlyWiki$",
+        "product_id": 3228
+      }
+    ]
+  },
+  {
+    "meta_name": "asset_host",
+    "patterns": [
+      {
+        "regex": "\\.teachablecdn\\.com",
+        "product_id": 3163
+      }
+    ]
+  },
+  {
+    "meta_name": "author",
+    "patterns": [
+      {
+        "regex": "^fanavar\\.org$",
+        "product_id": 1035
+      },
+      {
+        "regex": "^CloudCart LLC$",
+        "product_id": 1053
+      },
+      {
+        "regex": "^Convertr Commerce$",
+        "product_id": 1119
+      },
+      {
+        "regex": "^Ebasnet Web Solutions$",
+        "product_id": 1305
+      },
+      {
+        "regex": "^Freshop, Inc\\.$",
+        "product_id": 1504
+      },
+      {
+        "regex": "^Inventrue, LLC.$",
+        "product_id": 1823
+      },
+      {
+        "regex": "^MAAK$",
+        "product_id": 2077
+      },
+      {
+        "regex": "^MaxenceDEV$",
+        "product_id": 2140
+      },
+      {
+        "regex": "Mozard",
+        "product_id": 2229
+      },
+      {
+        "regex": "open-classifieds\\.com",
+        "product_id": 2359
+      },
+      {
+        "regex": "open-eshop\\.com",
+        "product_id": 2362
+      },
+      {
+        "regex": "Redacteur SmartInstant",
+        "product_id": 2962
+      },
+      {
+        "regex": "SoftTr E-Ticaret Sitesi Yazılımı",
+        "product_id": 2988
+      },
+      {
+        "regex": "Kai Oswald Seidler",
+        "product_id": 130
+      },
+      {
+        "regex": "Yepcomm Tecnologia",
+        "product_id": 3589
+      }
+    ]
+  },
+  {
+    "meta_name": "autor",
+    "patterns": [
+      {
+        "regex": "Bsale",
+        "product_id": 932
+      }
+    ]
+  },
+  {
+    "meta_name": "base-theme-name",
+    "patterns": [
+      {
+        "regex": "",
+        "product_id": 831
+      }
+    ]
+  },
+  {
+    "meta_name": "base-theme-version",
+    "patterns": [
+      {
+        "regex": "\\d+",
+        "product_id": 831
+      }
+    ]
+  },
+  {
+    "meta_name": "base_url",
+    "patterns": [
+      {
+        "regex": ".+\\.miestro\\.com",
+        "product_id": 2177
+      }
+    ]
+  },
+  {
+    "meta_name": "cf:app_domain:",
+    "patterns": [
+      {
+        "regex": "app\\.clickfunnels\\.com",
+        "product_id": 1044
+      }
+    ]
+  },
+  {
+    "meta_name": "content",
+    "patterns": [
+      {
+        "regex": "^Touch2Success$",
+        "product_id": 3247
+      }
+    ]
+  },
+  {
+    "meta_name": "copyright",
+    "patterns": [
+      {
+        "regex": "Open Classifieds ?([0-9.]+)?",
+        "product_id": 2359,
+        "version_group": 1
+      },
+      {
+        "regex": "Open eShop ?([0-9.]+)?",
+        "product_id": 2362,
+        "version_group": 1
+      },
+      {
+        "regex": "Pars Elecom Portal",
+        "product_id": 2442
+      },
+      {
+        "regex": "phpBB Group",
+        "product_id": 2603
+      },
+      {
+        "regex": "^.+Tencent\\sCloud\\.$",
+        "product_id": 3172
+      },
+      {
+        "regex": "^TiddlyWiki created by Jeremy Ruston",
+        "product_id": 3228
+      },
+      {
+        "regex": "Yepcomm Tecnologia",
+        "product_id": 3589
+      }
+    ]
+  },
+  {
+    "meta_name": "csrf-param",
+    "patterns": [
+      {
+        "regex": "^authenticity_token$",
+        "product_id": 51
+      }
+    ]
+  },
+  {
+    "meta_name": "data-version",
+    "patterns": [
+      {
+        "regex": "([\\d.]+)",
+        "product_id": 765,
+        "version_group": 1
+      }
+    ]
+  },
+  {
+    "meta_name": "description",
+    "patterns": [
+      {
+        "regex": "^Made with Betty Blocks$",
+        "product_id": 844
+      },
+      {
+        "regex": "GitLab CI/CD is a tool built into GitLab for software development through continuous methodologies.",
+        "product_id": 1564
+      },
+      {
+        "regex": "^Web site created using create-react-app$",
+        "product_id": 40
+      },
+      {
+        "regex": "Redmine",
+        "product_id": 2687
+      },
+      {
+        "regex": "^DiskStation provides a full-featured network attached storage",
+        "product_id": 3109
+      },
+      {
+        "regex": " uPortal ",
+        "product_id": 3367
+      }
+    ]
+  },
+  {
+    "meta_name": "designer",
+    "patterns": [
+      {
+        "regex": "iPresta",
+        "product_id": 1840
+      },
+      {
+        "regex": "Pingoteam",
+        "product_id": 2503
+      },
+      {
+        "regex": "vibecommerce",
+        "product_id": 3429
+      }
+    ]
+  },
+  {
+    "meta_name": "docfx:navrel",
+    "patterns": [
+      {
+        "regex": "toc.html",
+        "product_id": 1240
+      }
+    ]
+  },
+  {
+    "meta_name": "docfx:tocrel",
+    "patterns": [
+      {
+        "regex": "toc.html",
+        "product_id": 1240
+      }
+    ]
+  },
+  {
+    "meta_name": "eomportal-id",
+    "patterns": [
+      {
+        "regex": "\\d+",
+        "product_id": 2160
+      }
+    ]
+  },
+  {
+    "meta_name": "eomportal-instanceid",
+    "patterns": [
+      {
+        "regex": "\\d+",
+        "product_id": 2160
+      }
+    ]
+  },
+  {
+    "meta_name": "eomportal-loid",
+    "patterns": [
+      {
+        "regex": "[\\d.]+",
+        "product_id": 2160
+      }
+    ]
+  },
+  {
+    "meta_name": "eomportal-uuid",
+    "patterns": [
+      {
+        "regex": "[a-f\\d]+",
+        "product_id": 2160
+      }
+    ]
+  },
+  {
+    "meta_name": "framework",
+    "patterns": [
+      {
+        "regex": "^Redux ([\\d\\.]+)",
+        "product_id": 1385,
+        "version_group": 1
+      }
+    ]
+  },
+  {
+    "meta_name": "ftos-app-version",
+    "patterns": [
+      {
+        "regex": "\\sv([\\d\\.]+)\\s",
+        "product_id": 1451,
+        "version_group": 1
+      }
+    ]
+  },
+  {
+    "meta_name": "generation-copyright",
+    "patterns": [
+      {
+        "regex": "by\\sSearchFit\\sShopping\\sCart\\sv([\\d\\.]+)",
+        "product_id": 2821,
+        "version_group": 1
+      }
+    ]
+  },
+  {
+    "meta_name": "generator",
+    "patterns": [
+      {
+        "regex": "^AMP Plugin v(\\d+\\.\\d+.*)$",
+        "product_id": 546,
+        "version_group": 1
+      },
+      {
+        "regex": "AWStats ([\\d.]+(?: \\(build [\\d.]+\\))?)",
+        "product_id": 557,
+        "version_group": 1
+      },
+      {
+        "regex": "Abicart",
+        "product_id": 558
+      },
+      {
+        "regex": "Textalk Webshop",
+        "product_id": 558
+      },
+      {
+        "regex": "Adobe GoLive(?:\\s([\\d.]+))?",
+        "product_id": 627,
+        "version_group": 1
+      },
+      {
+        "regex": "^Adobe RoboHelp(?: ([\\d]+))?",
+        "product_id": 628,
+        "version_group": 1
+      },
+      {
+        "regex": "Amaya(?: V?([\\d.]+[a-z]))?",
+        "product_id": 676,
+        "version_group": 1
+      },
+      {
+        "regex": "(?:Ametys|Anyware Technologies)",
+        "product_id": 696
+      },
+      {
+        "regex": "Amiro",
+        "product_id": 698
+      },
+      {
+        "regex": "^AsciiDoc ([\\d.]+)",
+        "product_id": 751,
+        "version_group": 1
+      },
+      {
+        "regex": "^Asciidoctor\\s([\\d\\.]+)$",
+        "product_id": 752,
+        "version_group": 1
+      },
+      {
+        "regex": "a-blog cms",
+        "product_id": 798
+      },
+      {
+        "regex": "BIGACE ([\\d.]+)",
+        "product_id": 813,
+        "version_group": 1
+      },
+      {
+        "regex": "^boom site builder$",
+        "product_id": 815
+      },
+      {
+        "regex": "^Backdrop CMS(?:\\s([\\d.]+))?",
+        "product_id": 823,
+        "version_group": 1
+      },
+      {
+        "regex": "Banshee PHP",
+        "product_id": 829
+      },
+      {
+        "regex": "^Batflat$",
+        "product_id": 834
+      },
+      {
+        "regex": "Big Cartel",
+        "product_id": 847
+      },
+      {
+        "regex": "^Blogger$",
+        "product_id": 77
+      },
+      {
+        "regex": "Bluefish(?:\\s([\\d.]+))?",
+        "product_id": 872,
+        "version_group": 1
+      },
+      {
+        "regex": "Bolt",
+        "product_id": 890
+      },
+      {
+        "regex": "^Bricksite$",
+        "product_id": 922
+      },
+      {
+        "regex": "BrowserCMS ([\\d.]+)",
+        "product_id": 931,
+        "version_group": 1
+      },
+      {
+        "regex": "Bsale",
+        "product_id": 932
+      },
+      {
+        "regex": "Bugzilla ?([\\d.]+)?",
+        "product_id": 939,
+        "version_group": 1
+      },
+      {
+        "regex": "CMS Made Simple",
+        "product_id": 960
+      },
+      {
+        "regex": "CMSimple( [\\d.]+)?",
+        "product_id": 961,
+        "version_group": 1
+      },
+      {
+        "regex": "CPG Dragonfly",
+        "product_id": 963
+      },
+      {
+        "regex": "^Cecil(?: ([0-9.]+))?$",
+        "product_id": 995,
+        "version_group": 1
+      },
+      {
+        "regex": "Chameleon CMS/Shop System",
+        "product_id": 1004
+      },
+      {
+        "regex": "Chamilo ([\\d.]+)",
+        "product_id": 1005,
+        "version_group": 1
+      },
+      {
+        "regex": "Chevereto\\s(?:[\\d\\.]+)",
+        "product_id": 1020
+      },
+      {
+        "regex": "^ckan ?([0-9.]+)$",
+        "product_id": 1033,
+        "version_group": 1
+      },
+      {
+        "regex": "^Coaster CMS v([\\d.]+)$",
+        "product_id": 1067,
+        "version_group": 1
+      },
+      {
+        "regex": "^concrete5(?: - ([\\d.]+)$)?",
+        "product_id": 1097,
+        "version_group": 1
+      },
+      {
+        "regex": "^Contao Open Source CMS$",
+        "product_id": 1104
+      },
+      {
+        "regex": "Contenido ([\\d.]+)",
+        "product_id": 1105,
+        "version_group": 1
+      },
+      {
+        "regex": "Contensis CMS Version ([\\d.]+)",
+        "product_id": 1106,
+        "version_group": 1
+      },
+      {
+        "regex": "ContentBox powered by ColdBox",
+        "product_id": 1107
+      },
+      {
+        "regex": "Cotonti",
+        "product_id": 1136
+      },
+      {
+        "regex": "cubecart",
+        "product_id": 1164
+      },
+      {
+        "regex": "cState v([\\d\\.]+)",
+        "product_id": 1174,
+        "version_group": 1
+      },
+      {
+        "regex": "^cgit v([\\d.a-z-]+)$",
+        "product_id": 1176,
+        "version_group": 1
+      },
+      {
+        "regex": "DotNetNuke",
+        "product_id": 1189
+      },
+      {
+        "regex": "Danneo CMS ([\\d.]+)",
+        "product_id": 1199,
+        "version_group": 1
+      },
+      {
+        "regex": "DataLife Engine",
+        "product_id": 1203
+      },
+      {
+        "regex": "Discourse(?: ?/?([\\d.]+\\d))?",
+        "product_id": 1230,
+        "version_group": 1
+      },
+      {
+        "regex": "Discuz! X([\\d\\.]+)?",
+        "product_id": 1231,
+        "version_group": 1
+      },
+      {
+        "regex": "Divi",
+        "product_id": 1236
+      },
+      {
+        "regex": "docfx\\s([\\d\\.]+)",
+        "product_id": 1240,
+        "version_group": 1
+      },
+      {
+        "regex": "^Docusaurus(?: v(.+))?$",
+        "product_id": 1242,
+        "version_group": 1
+      },
+      {
+        "regex": "Dokeos",
+        "product_id": 1245
+      },
+      {
+        "regex": "^DokuWiki( Release [\\d-]+)?",
+        "product_id": 1246,
+        "version_group": 1
+      },
+      {
+        "regex": "Doxygen ([\\d.]+)",
+        "product_id": 1259,
+        "version_group": 1
+      },
+      {
+        "regex": "^Drupal(?:\\s([\\d.]+))?",
+        "product_id": 71,
+        "version_group": 1
+      },
+      {
+        "regex": "Dynamicweb ([\\d.]+)",
+        "product_id": 1281,
+        "version_group": 1
+      },
+      {
+        "regex": "EPiServer",
+        "product_id": 1294
+      },
+      {
+        "regex": "EPrints ([\\d.]+)",
+        "product_id": 1295,
+        "version_group": 1
+      },
+      {
+        "regex": "^Easy Digital Downloads v(.*)$",
+        "product_id": 1301,
+        "version_group": 1
+      },
+      {
+        "regex": "Eleanor",
+        "product_id": 1316
+      },
+      {
+        "regex": "^Eleventy\\sv([\\d\\.]+)$",
+        "product_id": 1320,
+        "version_group": 1
+      },
+      {
+        "regex": "Ensi Platform",
+        "product_id": 1341
+      },
+      {
+        "regex": "^eSyndiCat ",
+        "product_id": 1399
+      },
+      {
+        "regex": "eZ Platform",
+        "product_id": 1401
+      },
+      {
+        "regex": "eZ Publish",
+        "product_id": 1402
+      },
+      {
+        "regex": "^experiencedCMS$",
+        "product_id": 1408
+      },
+      {
+        "regex": "^Fastcommerce",
+        "product_id": 1431
+      },
+      {
+        "regex": "^FlexCMP",
+        "product_id": 1462
+      },
+      {
+        "regex": "^Fork CMS$",
+        "product_id": 1482
+      },
+      {
+        "regex": "^Forosh\\s?Gostar.*|Arsina Webshop.*$",
+        "product_id": 1485
+      },
+      {
+        "regex": "Microsoft FrontPage(?:\\s((?:Express )?[\\d.]+))?",
+        "product_id": 1510,
+        "version_group": 1
+      },
+      {
+        "regex": "^Frontity",
+        "product_id": 1513
+      },
+      {
+        "regex": "GX WebManager(?: ([\\d.]+))?",
+        "product_id": 1534,
+        "version_group": 1
+      },
+      {
+        "regex": "^Gatsby(?: ([0-9.]+))?$",
+        "product_id": 44,
+        "version_group": 1
+      },
+      {
+        "regex": "GetSimple",
+        "product_id": 1555
+      },
+      {
+        "regex": "Ghost(?:\\s([\\d.]+))?",
+        "product_id": 74,
+        "version_group": 1
+      },
+      {
+        "regex": "GitBook ([\\d.]+)?",
+        "product_id": 1561,
+        "version_group": 1
+      },
+      {
+        "regex": "Go Daddy Website Builder (.+)",
+        "product_id": 1598,
+        "version_group": 1
+      },
+      {
+        "regex": "Graffiti CMS ([^\"]+)",
+        "product_id": 1640,
+        "version_group": 1
+      },
+      {
+        "regex": "grandnode",
+        "product_id": 1641
+      },
+      {
+        "regex": "GravCMS(?:\\s([\\d.]+))?",
+        "product_id": 1644,
+        "version_group": 1
+      },
+      {
+        "regex": "^Griddo$",
+        "product_id": 1650
+      },
+      {
+        "regex": "^Gridsome v([\\d.]+)$",
+        "product_id": 1651,
+        "version_group": 1
+      },
+      {
+        "regex": "\\bgit/([\\d.]+\\d)",
+        "product_id": 1664,
+        "version_group": 1
+      },
+      {
+        "regex": "gitweb(?:/([\\d.]+\\d))?",
+        "product_id": 1666,
+        "version_group": 1
+      },
+      {
+        "regex": "Drupal ([\\d]+) \\(http:\\/\\/drupal\\.org\\) \\+ govCMS",
+        "product_id": 1667,
+        "version_group": 1
+      },
+      {
+        "regex": "Halo ([\\d.]+)?",
+        "product_id": 1677,
+        "version_group": 1
+      },
+      {
+        "regex": "hamech\\.io/",
+        "product_id": 1678
+      },
+      {
+        "regex": "Hexo(?: v?([\\d.]+))?",
+        "product_id": 1709,
+        "version_group": 1
+      },
+      {
+        "regex": "^HighStore\\.IR$",
+        "product_id": 1713
+      },
+      {
+        "regex": "hinzacms",
+        "product_id": 1718
+      },
+      {
+        "regex": "^Homestead SiteBuilder$",
+        "product_id": 1725
+      },
+      {
+        "regex": "Hotaru CMS",
+        "product_id": 1734
+      },
+      {
+        "regex": "HubSpot",
+        "product_id": 1741
+      },
+      {
+        "regex": "Hugo ([\\d.]+)?",
+        "product_id": 76,
+        "version_group": 1
+      },
+      {
+        "regex": "ImpressCMS",
+        "product_id": 1785
+      },
+      {
+        "regex": "ImpressPages(?: CMS)?( [\\d.]*)?",
+        "product_id": 1786,
+        "version_group": 1
+      },
+      {
+        "regex": "Indexhibit",
+        "product_id": 1794
+      },
+      {
+        "regex": "InstantCMS",
+        "product_id": 1809
+      },
+      {
+        "regex": "iEXExchanger",
+        "product_id": 1838
+      },
+      {
+        "regex": "^iWeb( [\\d.]+)?",
+        "product_id": 1843,
+        "version_group": 1
+      },
+      {
+        "regex": "JAlbum( [\\d.]+)?",
+        "product_id": 1859,
+        "version_group": 1
+      },
+      {
+        "regex": "Jalios",
+        "product_id": 1870
+      },
+      {
+        "regex": "Jekyll (v[\\d.]+)?",
+        "product_id": 75,
+        "version_group": 1
+      },
+      {
+        "regex": "Jibres",
+        "product_id": 1879
+      },
+      {
+        "regex": "Jobberbase",
+        "product_id": 1887
+      },
+      {
+        "regex": "Joomla!(?: ([\\d.]+))?",
+        "product_id": 72,
+        "version_group": 1
+      },
+      {
+        "regex": "[CK]amva",
+        "product_id": 1927
+      },
+      {
+        "regex": "Kentico CMS ([\\d.R]+ \\(build [\\d.]+\\))",
+        "product_id": 1935,
+        "version_group": 1
+      },
+      {
+        "regex": "^Koala Web Framework CMS",
+        "product_id": 1957
+      },
+      {
+        "regex": "^Koha ([\\d.]+)$",
+        "product_id": 1959,
+        "version_group": 1
+      },
+      {
+        "regex": "Koken ([\\d.]+)",
+        "product_id": 1961,
+        "version_group": 1
+      },
+      {
+        "regex": "^Komodo CMS",
+        "product_id": 1962
+      },
+      {
+        "regex": "Koobi",
+        "product_id": 1964
+      },
+      {
+        "regex": "Kooomo(?: v([\\d.]+))?",
+        "product_id": 1966,
+        "version_group": 1
+      },
+      {
+        "regex": "k-eCommerce",
+        "product_id": 1972
+      },
+      {
+        "regex": "MODX[^\\d.]*([\\d.]+)?",
+        "product_id": 2084,
+        "version_group": 1
+      },
+      {
+        "regex": "Mambo",
+        "product_id": 2109
+      },
+      {
+        "regex": "^MasterkinG(?:)",
+        "product_id": 2127
+      },
+      {
+        "regex": "(?:Matomo|Piwik) - Open Source Web Analytics",
+        "product_id": 2132
+      },
+      {
+        "regex": "MaxSite CMS",
+        "product_id": 2138
+      },
+      {
+        "regex": "^MediaWiki ?(.+)$",
+        "product_id": 2145,
+        "version_group": 1
+      },
+      {
+        "regex": "^Melis Platform\\.",
+        "product_id": 2151
+      },
+      {
+        "regex": "Microsoft Excel( [\\d.]+)?",
+        "product_id": 2171,
+        "version_group": 1
+      },
+      {
+        "regex": "Microsoft PowerPoint ( [\\d.]+)?",
+        "product_id": 2173,
+        "version_group": 1
+      },
+      {
+        "regex": "Microsoft Publisher( [\\d.]+)?",
+        "product_id": 2174,
+        "version_group": 1
+      },
+      {
+        "regex": "Microsoft SharePoint",
+        "product_id": 2175
+      },
+      {
+        "regex": "Microsoft Word( [\\d.]+)?",
+        "product_id": 2176,
+        "version_group": 1
+      },
+      {
+        "regex": "^Milestone\\sCMS\\s([\\d\\.]+)$",
+        "product_id": 2178,
+        "version_group": 1
+      },
+      {
+        "regex": "^mkdocs-([\\d.]+)",
+        "product_id": 2192,
+        "version_group": 1
+      },
+      {
+        "regex": "^Mobirise v([\\d.]+)",
+        "product_id": 2197,
+        "version_group": 1
+      },
+      {
+        "regex": "\\(c\\) by modified eCommerce Shopsoftware ------ http://www\\.modified-shop\\.org",
+        "product_id": 2201
+      },
+      {
+        "regex": "Mondo Shop",
+        "product_id": 2211
+      },
+      {
+        "regex": "Movable Type",
+        "product_id": 2228
+      },
+      {
+        "regex": "Mura CMS ([\\d]+)",
+        "product_id": 2231,
+        "version_group": 1
+      },
+      {
+        "regex": "Mijnwebwinkel",
+        "product_id": 2241
+      },
+      {
+        "regex": "IONOS MyWebsite",
+        "product_id": 2242
+      },
+      {
+        "regex": "MyWebsite NOW",
+        "product_id": 2244
+      },
+      {
+        "regex": "Mynetcap",
+        "product_id": 2246
+      },
+      {
+        "regex": "^NagaCommerce$",
+        "product_id": 2268
+      },
+      {
+        "regex": "Nicepage\\s([\\d\\.]+)",
+        "product_id": 2299,
+        "version_group": 1
+      },
+      {
+        "regex": "NitroPack",
+        "product_id": 2302
+      },
+      {
+        "regex": "NukeViet v([\\d.]+)",
+        "product_id": 2311,
+        "version_group": 1
+      },
+      {
+        "regex": "^nopCommerce$",
+        "product_id": 84
+      },
+      {
+        "regex": "OctoberCMS",
+        "product_id": 2329
+      },
+      {
+        "regex": "Octopress",
+        "product_id": 2330
+      },
+      {
+        "regex": "Odoo",
+        "product_id": 2332
+      },
+      {
+        "regex": "^OS-Omurga Sistemi",
+        "product_id": 2344
+      },
+      {
+        "regex": "Onshop Ecommerce",
+        "product_id": 2345
+      },
+      {
+        "regex": "Open Journal Systems(?: ([\\d.]+))?",
+        "product_id": 2360,
+        "version_group": 1
+      },
+      {
+        "regex": "openElement\\s\\(([\\d\\.]+)\\)",
+        "product_id": 2366,
+        "version_group": 1
+      },
+      {
+        "regex": "OpenGrok(?: v?([\\d.]+))?",
+        "product_id": 2369,
+        "version_group": 1
+      },
+      {
+        "regex": "OpenNemas",
+        "product_id": 2371
+      },
+      {
+        "regex": "Orchard",
+        "product_id": 2396
+      },
+      {
+        "regex": "^C1 CMS Foundation - Free Open Source from Orckestra and https://github.com/Orckestra/C1-CMS-Foundation$",
+        "product_id": 2397
+      },
+      {
+        "regex": "^Oxatis\\s\\(www\\.oxatis\\.com\\)$",
+        "product_id": 2409
+      },
+      {
+        "regex": "PHP-Nuke",
+        "product_id": 2418
+      },
+      {
+        "regex": "Pagekit",
+        "product_id": 2433
+      },
+      {
+        "regex": "(?:Percussion|Rhythmyx)",
+        "product_id": 2472
+      },
+      {
+        "regex": "^Performance Lab ?([\\d.]+)?",
+        "product_id": 2475,
+        "version_group": 1
+      },
+      {
+        "regex": "^phoenix",
+        "product_id": 2487
+      },
+      {
+        "regex": "^Pixieset$",
+        "product_id": 2513
+      },
+      {
+        "regex": "^Planet(?:/([\\d.]+))?",
+        "product_id": 2517,
+        "version_group": 1
+      },
+      {
+        "regex": "Pligg",
+        "product_id": 2525
+      },
+      {
+        "regex": "Plone",
+        "product_id": 2526
+      },
+      {
+        "regex": "PrestaShop",
+        "product_id": 83
+      },
+      {
+        "regex": "Proximis Unified Commerce",
+        "product_id": 2581
+      },
+      {
+        "regex": "^phpSQLiteCMS(?: (.+))?$",
+        "product_id": 2607,
+        "version_group": 1
+      },
+      {
+        "regex": "^phpwind(?: v([0-9-]+))?",
+        "product_id": 2608,
+        "version_group": 1
+      },
+      {
+        "regex": "plentymarkets",
+        "product_id": 2612
+      },
+      {
+        "regex": "Quick\\.CMS(?: v([\\d.]+))?",
+        "product_id": 2629,
+        "version_group": 1
+      },
+      {
+        "regex": "Quick\\.Cart(?: v([\\d.]+))?",
+        "product_id": 2630,
+        "version_group": 1
+      },
+      {
+        "regex": "RBS Change",
+        "product_id": 2637
+      },
+      {
+        "regex": "^(?:RCMS|ReallyCMS)",
+        "product_id": 2638
+      },
+      {
+        "regex": "^Rayo",
+        "product_id": 2658
+      },
+      {
+        "regex": "Reactive",
+        "product_id": 2667
+      },
+      {
+        "regex": "^RiteCMS(?: (.+))?",
+        "product_id": 2735,
+        "version_group": 1
+      },
+      {
+        "regex": "^Roadiz ?(?:master|develop)? v?([0-9\\.]+)",
+        "product_id": 2737,
+        "version_group": 1
+      },
+      {
+        "regex": "^Rock v([0-9.]+)",
+        "product_id": 2739,
+        "version_group": 1
+      },
+      {
+        "regex": "^SEOmatic$",
+        "product_id": 2763
+      },
+      {
+        "regex": "(?:^|\\s)SPIP(?:\\s([\\d.]+(?:\\s\\[\\d+\\])?))?",
+        "product_id": 2770,
+        "version_group": 1
+      },
+      {
+        "regex": "^STUDIO$",
+        "product_id": 2774
+      },
+      {
+        "regex": "^Saber v([\\d.]+)$",
+        "product_id": 2781,
+        "version_group": 1
+      },
+      {
+        "regex": "^Saprenco.com Website Builder$",
+        "product_id": 2802
+      },
+      {
+        "regex": "Sarka-SPIP(?:\\s([\\d.]+))?",
+        "product_id": 2803,
+        "version_group": 1
+      },
+      {
+        "regex": "^Sazito",
+        "product_id": 2807
+      },
+      {
+        "regex": "^Seamless\\.?CMS",
+        "product_id": 2819
+      },
+      {
+        "regex": "Serendipity(?: v\\.([\\d.]+))?",
+        "product_id": 2849,
+        "version_group": 1
+      },
+      {
+        "regex": "^ShopFA ([\\d.]+)$",
+        "product_id": 2883,
+        "version_group": 1
+      },
+      {
+        "regex": "Shoporama",
+        "product_id": 2892
+      },
+      {
+        "regex": "^SilverStripe",
+        "product_id": 2909
+      },
+      {
+        "regex": "^Site Kit by Google ?([\\d.]+)?",
+        "product_id": 2924,
+        "version_group": 1
+      },
+      {
+        "regex": "SiteEdit",
+        "product_id": 2928
+      },
+      {
+        "regex": "^SitePad(?:\\s([\\d\\.]+))?$",
+        "product_id": 2937,
+        "version_group": 1
+      },
+      {
+        "regex": "^Sitefinity (.+)$",
+        "product_id": 2942,
+        "version_group": 1
+      },
+      {
+        "regex": "Sivuviidakko",
+        "product_id": 2945
+      },
+      {
+        "regex": "Sky-Shop",
+        "product_id": 2951
+      },
+      {
+        "regex": "^SmartWeb$",
+        "product_id": 2963
+      },
+      {
+        "regex": "^Smart[sS]tore(.NET)? (.+)$",
+        "product_id": 2967,
+        "version_group": 2
+      },
+      {
+        "regex": "^Solusquare$",
+        "product_id": 2992
+      },
+      {
+        "regex": "sotel",
+        "product_id": 3001
+      },
+      {
+        "regex": "spryker",
+        "product_id": 3031
+      },
+      {
+        "regex": "Squiz Matrix",
+        "product_id": 3044
+      },
+      {
+        "regex": "^c-[A-Za-z]{5}$",
+        "product_id": 3061
+      },
+      {
+        "regex": "storyblok",
+        "product_id": 3067
+      },
+      {
+        "regex": "^Subbly$",
+        "product_id": 3078
+      },
+      {
+        "regex": "^Subrion ",
+        "product_id": 3081
+      },
+      {
+        "regex": "^Svbtle\\.com$",
+        "product_id": 3096
+      },
+      {
+        "regex": "^Sympa$",
+        "product_id": 3106
+      },
+      {
+        "regex": "sNews",
+        "product_id": 3113
+      },
+      {
+        "regex": "^T1COMERCIOS$",
+        "product_id": 3124
+      },
+      {
+        "regex": "^T1ENVIOS$",
+        "product_id": 3125
+      },
+      {
+        "regex": "^T1PAGINAS$",
+        "product_id": 3126
+      },
+      {
+        "regex": "^T1PAGOS$",
+        "product_id": 3127
+      },
+      {
+        "regex": "TYPO3\\s+(?:CMS\\s+)?(?:[\\d.]+)?(?:\\s+CMS)?",
+        "product_id": 3135
+      },
+      {
+        "regex": "Textpattern",
+        "product_id": 3181
+      },
+      {
+        "regex": "^Tempest\\s-\\smaven\\.io$",
+        "product_id": 3182
+      },
+      {
+        "regex": "eStore v\\.([\\d\\.]+)",
+        "product_id": 3203,
+        "version_group": 1
+      },
+      {
+        "regex": "^TiddlyWiki$",
+        "product_id": 3228
+      },
+      {
+        "regex": "^Tiki",
+        "product_id": 3232
+      },
+      {
+        "regex": "TomatoCart",
+        "product_id": 3243
+      },
+      {
+        "regex": "typepad",
+        "product_id": 3310
+      },
+      {
+        "regex": "Typecho( [\\d.]+)?",
+        "product_id": 3312,
+        "version_group": 1
+      },
+      {
+        "regex": "umbraco",
+        "product_id": 3334
+      },
+      {
+        "regex": "uKnowva (?: ([\\d.]+))?",
+        "product_id": 3365,
+        "version_group": 1
+      },
+      {
+        "regex": "Powered by Visual Composer Website Builder",
+        "product_id": 3409
+      },
+      {
+        "regex": "^VuFind\\s([\\d\\.]+)$",
+        "product_id": 3421,
+        "version_group": 1
+      },
+      {
+        "regex": "^Vue Storefront ([0-9.]+)?$",
+        "product_id": 3422,
+        "version_group": 1
+      },
+      {
+        "regex": "^VuePress(?: ([0-9.]+)(-[a-z]+.[0-9]+)?)?$",
+        "product_id": 3424,
+        "version_group": 1
+      },
+      {
+        "regex": "vBulletin ?([\\d.]+)?",
+        "product_id": 3427,
+        "version_group": 1
+      },
+      {
+        "regex": "vibecommerce",
+        "product_id": 3429
+      },
+      {
+        "regex": "^WEBDEV$",
+        "product_id": 3431
+      },
+      {
+        "regex": "^Web2py",
+        "product_id": 3460
+      },
+      {
+        "regex": "^WebGUI ([\\d.]+)",
+        "product_id": 3465,
+        "version_group": 1
+      },
+      {
+        "regex": "^Webnode(?:\\s([\\d.]+))?$",
+        "product_id": 3468,
+        "version_group": 1
+      },
+      {
+        "regex": "Incomedia WebSite X5 (\\w+ [\\d.]+)",
+        "product_id": 3470,
+        "version_group": 1
+      },
+      {
+        "regex": "^Webzi\\.ir\\sWebsite\\sBuilder$",
+        "product_id": 3471
+      },
+      {
+        "regex": "Webflow",
+        "product_id": 3472
+      },
+      {
+        "regex": "^Weblication® CMS$",
+        "product_id": 3475
+      },
+      {
+        "regex": "WebsPlanet",
+        "product_id": 3480
+      },
+      {
+        "regex": "Website Creator by hosttech",
+        "product_id": 3482
+      },
+      {
+        "regex": "WebsiteBaker",
+        "product_id": 3483
+      },
+      {
+        "regex": "^Webzie\\.com\\sWebsite\\sBuilder$",
+        "product_id": 3486
+      },
+      {
+        "regex": "WikkaWiki",
+        "product_id": 3501
+      },
+      {
+        "regex": "Wix\\.com Website Builder",
+        "product_id": 3511
+      },
+      {
+        "regex": "WooCommerce ([\\d.]+)",
+        "product_id": 304,
+        "version_group": 1
+      },
+      {
+        "regex": "^WordPress(?: ([\\d.]+))?",
+        "product_id": 70,
+        "version_group": 1
+      },
+      {
+        "regex": "webEdition",
+        "product_id": 3544
+      },
+      {
+        "regex": "^wisy CMS[ v]{0,3}([0-9.,]*)",
+        "product_id": 3546,
+        "version_group": 1
+      },
+      {
+        "regex": "WPBakery",
+        "product_id": 3547
+      },
+      {
+        "regex": "wpCache",
+        "product_id": 3548
+      },
+      {
+        "regex": "X-Cart(?: (\\d+))?",
+        "product_id": 3549,
+        "version_group": 1
+      },
+      {
+        "regex": "XOOPS",
+        "product_id": 3552
+      },
+      {
+        "regex": "xanario shopsoftware",
+        "product_id": 3557
+      },
+      {
+        "regex": "XpressEngine",
+        "product_id": 3562
+      },
+      {
+        "regex": "xt:Commerce",
+        "product_id": 3567
+      },
+      {
+        "regex": "Zen Cart",
+        "product_id": 3620
+      },
+      {
+        "regex": "Zinnia",
+        "product_id": 3632
+      },
+      {
+        "regex": "Zozo Ecommerce",
+        "product_id": 3650
+      },
+      {
+        "regex": "^Zyro\\.com Website Builder$",
+        "product_id": 3652
+      }
+    ]
+  },
+  {
+    "meta_name": "google-play-app",
+    "patterns": [
+      {
+        "regex": "app-id=org\\.piwik\\.mobile2",
+        "product_id": 2132
+      }
+    ]
+  },
+  {
+    "meta_name": "hs:version",
+    "patterns": [
+      {
+        "regex": "^([\\d\\.]+)$",
+        "product_id": 1713,
+        "version_group": 1
+      }
+    ]
+  },
+  {
+    "meta_name": "id",
+    "patterns": [
+      {
+        "regex": "amazon-payments-metadata",
+        "product_id": 688
+      },
+      {
+        "regex": "^flutterweb-theme$",
+        "product_id": 1470
+      },
+      {
+        "regex": "in-context-paypal-metadata",
+        "product_id": 2456
+      }
+    ]
+  },
+  {
+    "meta_name": "keywords",
+    "patterns": [
+      {
+        "regex": "^go,git,self-hosted,gitea$",
+        "product_id": 1565
+      },
+      {
+        "regex": "go, git, self-hosted, gogs",
+        "product_id": 1604
+      },
+      {
+        "regex": "^moodle",
+        "product_id": 2220
+      },
+      {
+        "regex": "Shopatron",
+        "product_id": 2879
+      },
+      {
+        "regex": "wpCache",
+        "product_id": 3548
+      },
+      {
+        "regex": "xonic-solutions",
+        "product_id": 3561
+      }
+    ]
+  },
+  {
+    "meta_name": "name",
+    "patterns": [
+      {
+        "regex": "dailymotion-domain-verification",
+        "product_id": 1197
+      }
+    ]
+  },
+  {
+    "meta_name": "nosto-version",
+    "patterns": [
+      {
+        "regex": "([\\d.]+)",
+        "product_id": 2307,
+        "version_group": 1
+      }
+    ]
+  },
+  {
+    "meta_name": "og:image",
+    "patterns": [
+      {
+        "regex": "https?\\:\\/\\/lede-admin",
+        "product_id": 3234
+      }
+    ]
+  },
+  {
+    "meta_name": "og:platform",
+    "patterns": [
+      {
+        "regex": "^PeerTube$",
+        "product_id": 2466
+      }
+    ]
+  },
+  {
+    "meta_name": "og:site_name",
+    "patterns": [
+      {
+        "regex": "^GitLab$",
+        "product_id": 1563
+      }
+    ]
+  },
+  {
+    "meta_name": "powered-by",
+    "patterns": [
+      {
+        "regex": "AquilaCMS",
+        "product_id": 741
+      },
+      {
+        "regex": "FabricInc",
+        "product_id": 1413
+      },
+      {
+        "regex": "^Melis CMS\\.",
+        "product_id": 2151
+      },
+      {
+        "regex": "^Katana\\sCommerce$",
+        "product_id": 3266
+      }
+    ]
+  },
+  {
+    "meta_name": "rlAppVersion",
+    "patterns": [
+      {
+        "regex": "^([0-9.]+)$",
+        "product_id": 2646,
+        "version_group": 1
+      }
+    ]
+  },
+  {
+    "meta_name": "server",
+    "patterns": [
+      {
+        "regex": "app.spp.co",
+        "product_id": 2851
+      }
+    ]
+  },
+  {
+    "meta_name": "store-config",
+    "patterns": [
+      {
+        "regex": "graphqlMethod",
+        "product_id": 242
+      }
+    ]
+  },
+  {
+    "meta_name": "tiddlywiki-version",
+    "patterns": [
+      {
+        "regex": "^(.+)$",
+        "product_id": 3228,
+        "version_group": 1
+      }
+    ]
+  },
+  {
+    "meta_name": "title",
+    "patterns": [
+      {
+        "regex": "^Gerrit Code Review$",
+        "product_id": 1549
+      }
+    ]
+  },
+  {
+    "meta_name": "version",
+    "patterns": [
+      {
+        "regex": "^(.+)$",
+        "product_id": 1492,
+        "version_group": 1
+      }
+    ]
+  },
+  {
+    "meta_name": "vs_status_checker_version",
+    "patterns": [
+      {
+        "regex": "\\d+",
+        "product_id": 3411
+      }
+    ]
+  },
+  {
+    "meta_name": "web-author",
+    "patterns": [
+      {
+        "regex": "^Magazord$",
+        "product_id": 2091
+      }
+    ]
+  },
+  {
+    "meta_name": "web_author",
+    "patterns": [
+      {
+        "regex": "^Shoptet",
+        "product_id": 2899
+      },
+      {
+        "regex": "^solidpixels",
+        "product_id": 2990
+      }
+    ]
+  },
+  {
+    "meta_name": "wiki",
+    "patterns": [
+      {
+        "regex": "xwiki",
+        "product_id": 3555
+      }
+    ]
+  }
+]

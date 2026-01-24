@@ -9,7 +9,8 @@
     "X-Runtime",
     "X-View-Time",
     "X-Request-Duration",
-    "X-Azure-ref"
+    "X-Azure-ref",
+    "Link"
   ],
   "definitions": [
     {
@@ -31,6 +32,10 @@
     {
       "product_id": 116,
       "content": "AkamaiGHost"
+    },
+    {
+      "product_id": 110,
+      "content": "cloudflare"
     },
     {
       "product_id": 112,
@@ -303,6 +308,15 @@
     {
       "product_id": 210,
       "content": "OpenSSL"
+    },
+    {
+      "product_id": 70,
+      "content": "/wp-json/",
+      "regex": true
+    },
+    {
+      "product_id": 110,
+      "content": "Cloudflare"
     }
   ]
 }

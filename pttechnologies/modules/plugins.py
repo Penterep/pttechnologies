@@ -192,6 +192,11 @@ class PLUGINS:
             if product:
                 display_name = product.get("our_name", plugin_name)
         
+        dependencies = None
+        if readme_content:
+            dependencies = self._parse_readme_dependencies(readme_content)
+            self._parse_and_store_dependencies(readme_content, display_name, version)
+        
         self.detected_plugins[plugin_name] = {
             "name": plugin_name,
             "display_name": display_name,
@@ -199,11 +204,9 @@ class PLUGINS:
             "version": version,
             "url": plugin_url,
             "match_text": match_text,
-            "version_source": version_source
+            "version_source": version_source,
+            "dependencies": dependencies
         }
-        
-        if readme_content:
-            self._parse_and_store_dependencies(readme_content, display_name, version)
 
     def _get_plugin_definition(self, plugin_name):
         """
@@ -447,20 +450,30 @@ class PLUGINS:
             source_desc += f" {plugin_version}"
         
         if dependencies["wordpress_version"]:
+            wp_product = self.product_manager.get_product_by_id(70)
+            wp_technology = "wordpress"
+            if wp_product and wp_product.get('products') and wp_product['products'][0]:
+                wp_technology = wp_product['products'][0]
+            
             storage.add_to_storage(
-                technology="WordPress",
+                technology=wp_technology,
                 technology_type="WebApp",
-                version=dependencies["wordpress_version"],
+                version_min=dependencies["wordpress_version"],
                 probability=80,
                 description=f"Plugin dependency from: {source_desc}",
                 product_id=70
             )
         
         if dependencies["php_version"]:
+            php_product = self.product_manager.get_product_by_id(30)
+            php_technology = "php"
+            if php_product and php_product.get('products') and php_product['products'][0]:
+                php_technology = php_product['products'][0]
+            
             storage.add_to_storage(
-                technology="PHP",
+                technology=php_technology,
                 technology_type="Interpret",
-                version=dependencies["php_version"],
+                version_min=dependencies["php_version"],
                 probability=80,
                 description=f"Plugin dependency from: {source_desc}",
                 product_id=30
@@ -488,7 +501,6 @@ class PLUGINS:
                 technology=technology,
                 technology_type="Plugin",
                 probability=80,
-                description=f"Plugin dependency from: {source_desc}",
                 product_id=product_id
             )
 
@@ -547,6 +559,24 @@ class PLUGINS:
                            not self.args.json, indent=4, end=" ")
                 
                 ptprint(f"({probability}%)", "ADDITIONS", not self.args.json, colortext=True)
+                
+                dependencies = plugin_info.get("dependencies")
+                if dependencies and (dependencies.get("php_version") or dependencies.get("wordpress_version") or dependencies.get("required_plugins")):
+                    ptprint("Required technologies found in readme.txt:", "VULN", 
+                           not self.args.json, indent=8)
+                    
+                    if dependencies.get("php_version"):
+                        ptprint(f"PHP (Interpret) >= {dependencies['php_version']}", "ADDITIONS",
+                               not self.args.json, indent=12)
+                    
+                    if dependencies.get("wordpress_version"):
+                        ptprint(f"WordPress (WebApp) >= {dependencies['wordpress_version']}", "ADDITIONS",
+                               not self.args.json, indent=12)
+                    
+                    if dependencies.get("required_plugins"):
+                        for req_plugin in dependencies["required_plugins"]:
+                            ptprint(f"Plugin: {req_plugin}", "ADDITIONS",
+                                   not self.args.json, indent=12)
         else:
             ptprint("It was not possible to identify any plugins", "INFO", 
                    not self.args.json, indent=4)

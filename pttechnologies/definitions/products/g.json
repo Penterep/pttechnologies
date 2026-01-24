@@ -1,0 +1,1791 @@
+{
+  "products": [
+    {
+      "id": 1535,
+      "our_name": "Gallery",
+      "vendor": "gallery",
+      "products": [
+        "gallery"
+      ],
+      "cve_details_url": null,
+      "category_id": 68,
+      "_letter": "g"
+    },
+    {
+      "id": 1536,
+      "our_name": "Gambio",
+      "vendor": "gambio",
+      "products": [
+        "gambio"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "g"
+    },
+    {
+      "id": 1537,
+      "our_name": "Gameball",
+      "vendor": "gameball",
+      "products": [
+        "gameball"
+      ],
+      "cve_details_url": null,
+      "category_id": 75,
+      "_letter": "g"
+    },
+    {
+      "id": 44,
+      "our_name": "Gatsby",
+      "vendor": "gatsbyjs",
+      "products": [
+        "gatsby"
+      ],
+      "cve_details_url": "https://www.cvedetails.com/product/116402/Gatsbyjs-Gatsby.html",
+      "category_id": 6,
+      "_letter": "g"
+    },
+    {
+      "id": 1538,
+      "our_name": "Gatsby Cloud Image CDN",
+      "vendor": "gatsby_cloud_image_c",
+      "products": [
+        "gatsby_cloud_image_c"
+      ],
+      "cve_details_url": null,
+      "category_id": 10,
+      "_letter": "g"
+    },
+    {
+      "id": 1539,
+      "our_name": "Gauges",
+      "vendor": "gauges",
+      "products": [
+        "gauges"
+      ],
+      "cve_details_url": null,
+      "category_id": 18,
+      "_letter": "g"
+    },
+    {
+      "id": 376,
+      "our_name": "GD",
+      "vendor": "php",
+      "products": [
+        "image"
+      ],
+      "cve_details_url": null,
+      "category_id": 15,
+      "_letter": "g"
+    },
+    {
+      "id": 363,
+      "our_name": "Gearman",
+      "vendor": "php",
+      "products": [
+        "gearman"
+      ],
+      "cve_details_url": null,
+      "category_id": 15,
+      "_letter": "g"
+    },
+    {
+      "id": 1541,
+      "our_name": "Gemius",
+      "vendor": "gemius",
+      "products": [
+        "gemius"
+      ],
+      "cve_details_url": null,
+      "category_id": 18,
+      "_letter": "g"
+    },
+    {
+      "id": 1540,
+      "our_name": "GemPages",
+      "vendor": "gempages",
+      "products": [
+        "gempages"
+      ],
+      "cve_details_url": null,
+      "category_id": 64,
+      "_letter": "g"
+    },
+    {
+      "id": 364,
+      "our_name": "Gender",
+      "vendor": "php",
+      "products": [
+        "gender"
+      ],
+      "cve_details_url": null,
+      "category_id": 15,
+      "_letter": "g"
+    },
+    {
+      "id": 1543,
+      "our_name": "GeneratePress",
+      "vendor": "generatepress",
+      "products": [
+        "generatepress"
+      ],
+      "cve_details_url": null,
+      "category_id": 63,
+      "_letter": "g"
+    },
+    {
+      "id": 1544,
+      "our_name": "Genesis theme",
+      "vendor": "genesis_theme",
+      "products": [
+        "genesis_theme"
+      ],
+      "cve_details_url": null,
+      "category_id": 63,
+      "_letter": "g"
+    },
+    {
+      "id": 1545,
+      "our_name": "Genesys Cloud",
+      "vendor": "genesys_cloud",
+      "products": [
+        "genesys_cloud"
+      ],
+      "cve_details_url": null,
+      "category_id": 19,
+      "_letter": "g"
+    },
+    {
+      "id": 1542,
+      "our_name": "GeneXus",
+      "vendor": "genexus",
+      "products": [
+        "genexus"
+      ],
+      "cve_details_url": null,
+      "category_id": 5,
+      "_letter": "g"
+    },
+    {
+      "id": 1546,
+      "our_name": "Geniee",
+      "vendor": "geniee",
+      "products": [
+        "geniee"
+      ],
+      "cve_details_url": null,
+      "category_id": 22,
+      "_letter": "g"
+    },
+    {
+      "id": 1547,
+      "our_name": "Gentoo",
+      "vendor": "gentoo",
+      "products": [
+        "linux",
+        "gentoo"
+      ],
+      "cve_details_url": null,
+      "category_id": 1,
+      "_letter": "g"
+    },
+    {
+      "id": 164,
+      "our_name": "Gentoo Linux",
+      "vendor": "gentoo",
+      "products": [
+        "gentoo_linux"
+      ],
+      "cve_details_url": "https://www.cvedetails.com/product/17223/Gentoo-Gentoo-Linux.html",
+      "category_id": 1,
+      "_letter": "g"
+    },
+    {
+      "id": 1548,
+      "our_name": "Geo Targetly",
+      "vendor": "geo_targetly",
+      "products": [
+        "geo_targetly"
+      ],
+      "cve_details_url": null,
+      "category_id": 60,
+      "_letter": "g"
+    },
+    {
+      "id": 1524,
+      "our_name": "GEODIS",
+      "vendor": "geodis",
+      "products": [
+        "geodis"
+      ],
+      "cve_details_url": null,
+      "category_id": 78,
+      "_letter": "g"
+    },
+    {
+      "id": 365,
+      "our_name": "GeoIP",
+      "vendor": "php",
+      "products": [
+        "geoip"
+      ],
+      "cve_details_url": null,
+      "category_id": 15,
+      "_letter": "g"
+    },
+    {
+      "id": 531,
+      "our_name": "Geospatial",
+      "vendor": "php",
+      "products": [
+        "geospatial"
+      ],
+      "cve_details_url": null,
+      "category_id": 15,
+      "_letter": "g"
+    },
+    {
+      "id": 1525,
+      "our_name": "GEOvendas",
+      "vendor": "geovendas",
+      "products": [
+        "geovendas"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "g"
+    },
+    {
+      "id": 1549,
+      "our_name": "Gerrit",
+      "vendor": "gerrit",
+      "products": [
+        "gerrit"
+      ],
+      "cve_details_url": null,
+      "category_id": 73,
+      "_letter": "g"
+    },
+    {
+      "id": 1550,
+      "our_name": "Get Satisfaction",
+      "vendor": "get_satisfaction",
+      "products": [
+        "get_satisfaction"
+      ],
+      "cve_details_url": null,
+      "category_id": 40,
+      "_letter": "g"
+    },
+    {
+      "id": 1551,
+      "our_name": "GetButton",
+      "vendor": "getbutton",
+      "products": [
+        "getbutton"
+      ],
+      "cve_details_url": null,
+      "category_id": 99,
+      "_letter": "g"
+    },
+    {
+      "id": 1552,
+      "our_name": "GetFeedback",
+      "vendor": "getfeedback",
+      "products": [
+        "getfeedback"
+      ],
+      "cve_details_url": null,
+      "category_id": 40,
+      "_letter": "g"
+    },
+    {
+      "id": 1558,
+      "our_name": "Getintent",
+      "vendor": "getintent",
+      "products": [
+        "getintent"
+      ],
+      "cve_details_url": null,
+      "category_id": 22,
+      "_letter": "g"
+    },
+    {
+      "id": 1553,
+      "our_name": "GetMeAShop",
+      "vendor": "getmeashop",
+      "products": [
+        "getmeashop"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "g"
+    },
+    {
+      "id": 1554,
+      "our_name": "GetResponse",
+      "vendor": "getresponse",
+      "products": [
+        "getresponse"
+      ],
+      "cve_details_url": null,
+      "category_id": 19,
+      "_letter": "g"
+    },
+    {
+      "id": 1555,
+      "our_name": "GetSimple CMS",
+      "vendor": "get-simple",
+      "products": [
+        "getsimple_cms"
+      ],
+      "cve_details_url": null,
+      "category_id": 16,
+      "_letter": "g"
+    },
+    {
+      "id": 1559,
+      "our_name": "Getsitecontrol",
+      "vendor": "getsitecontrol",
+      "products": [
+        "getsitecontrol"
+      ],
+      "cve_details_url": null,
+      "category_id": 99,
+      "_letter": "g"
+    },
+    {
+      "id": 1556,
+      "our_name": "GetSocial",
+      "vendor": "getsocial",
+      "products": [
+        "getsocial"
+      ],
+      "cve_details_url": null,
+      "category_id": 85,
+      "_letter": "g"
+    },
+    {
+      "id": 366,
+      "our_name": "Gettext",
+      "vendor": "php",
+      "products": [
+        "gettext"
+      ],
+      "cve_details_url": null,
+      "category_id": 15,
+      "_letter": "g"
+    },
+    {
+      "id": 1557,
+      "our_name": "GetYourGuide",
+      "vendor": "getyourguide",
+      "products": [
+        "getyourguide"
+      ],
+      "cve_details_url": null,
+      "category_id": 49,
+      "_letter": "g"
+    },
+    {
+      "id": 74,
+      "our_name": "Ghost",
+      "vendor": "ghost",
+      "products": [
+        "ghost"
+      ],
+      "cve_details_url": "https://www.cvedetails.com/product/59619/Ghost-Ghost.html",
+      "category_id": 8,
+      "_letter": "g"
+    },
+    {
+      "id": 1560,
+      "our_name": "Gist Giftship",
+      "vendor": "gist_giftship",
+      "products": [
+        "gist_giftship"
+      ],
+      "cve_details_url": null,
+      "category_id": 64,
+      "_letter": "g"
+    },
+    {
+      "id": 1664,
+      "our_name": "git",
+      "vendor": "git-scm",
+      "products": [
+        "git"
+      ],
+      "cve_details_url": null,
+      "category_id": 73,
+      "_letter": "g"
+    },
+    {
+      "id": 1561,
+      "our_name": "GitBook",
+      "vendor": "gitbook",
+      "products": [
+        "gitbook"
+      ],
+      "cve_details_url": null,
+      "category_id": 36,
+      "_letter": "g"
+    },
+    {
+      "id": 1565,
+      "our_name": "Gitea",
+      "vendor": "gitea",
+      "products": [
+        "gitea"
+      ],
+      "cve_details_url": null,
+      "category_id": 73,
+      "_letter": "g"
+    },
+    {
+      "id": 1562,
+      "our_name": "GitHub Pages",
+      "vendor": "github_pages",
+      "products": [
+        "github_pages"
+      ],
+      "cve_details_url": null,
+      "category_id": 50,
+      "_letter": "g"
+    },
+    {
+      "id": 1566,
+      "our_name": "Gitiles",
+      "vendor": "gitiles",
+      "products": [
+        "gitiles"
+      ],
+      "cve_details_url": null,
+      "category_id": 73,
+      "_letter": "g"
+    },
+    {
+      "id": 1563,
+      "our_name": "GitLab",
+      "vendor": "gitlab",
+      "products": [
+        "gitlab"
+      ],
+      "cve_details_url": null,
+      "category_id": 40,
+      "_letter": "g"
+    },
+    {
+      "id": 1564,
+      "our_name": "GitLab CI/CD",
+      "vendor": "gitlab_ci/cd",
+      "products": [
+        "gitlab_ci/cd"
+      ],
+      "cve_details_url": null,
+      "category_id": 41,
+      "_letter": "g"
+    },
+    {
+      "id": 1665,
+      "our_name": "gitlist",
+      "vendor": "gitlist",
+      "products": [
+        "gitlist"
+      ],
+      "cve_details_url": null,
+      "category_id": 73,
+      "_letter": "g"
+    },
+    {
+      "id": 1666,
+      "our_name": "gitweb",
+      "vendor": "gitweb",
+      "products": [
+        "gitweb"
+      ],
+      "cve_details_url": null,
+      "category_id": 73,
+      "_letter": "g"
+    },
+    {
+      "id": 1567,
+      "our_name": "GiveWP",
+      "vendor": "givewp",
+      "products": [
+        "givewp"
+      ],
+      "cve_details_url": null,
+      "category_id": 21,
+      "_letter": "g"
+    },
+    {
+      "id": 1568,
+      "our_name": "Gladly",
+      "vendor": "gladly",
+      "products": [
+        "gladly"
+      ],
+      "cve_details_url": null,
+      "category_id": 20,
+      "_letter": "g"
+    },
+    {
+      "id": 1570,
+      "our_name": "Glassbox",
+      "vendor": "glassbox",
+      "products": [
+        "glassbox"
+      ],
+      "cve_details_url": null,
+      "category_id": 18,
+      "_letter": "g"
+    },
+    {
+      "id": 1569,
+      "our_name": "GlassFish",
+      "vendor": "oracle",
+      "products": [
+        "glassfish_server",
+        "glassfish"
+      ],
+      "cve_details_url": null,
+      "category_id": 2,
+      "_letter": "g"
+    },
+    {
+      "id": 1571,
+      "our_name": "Glider.js",
+      "vendor": "glider_js",
+      "products": [
+        "glider_js"
+      ],
+      "cve_details_url": null,
+      "category_id": 6,
+      "_letter": "g"
+    },
+    {
+      "id": 1572,
+      "our_name": "Glitch",
+      "vendor": "glitch",
+      "products": [
+        "glitch"
+      ],
+      "cve_details_url": null,
+      "category_id": 50,
+      "_letter": "g"
+    },
+    {
+      "id": 1573,
+      "our_name": "Global-e",
+      "vendor": "global_e",
+      "products": [
+        "global_e"
+      ],
+      "cve_details_url": null,
+      "category_id": 104,
+      "_letter": "g"
+    },
+    {
+      "id": 1574,
+      "our_name": "GlobalShopex",
+      "vendor": "globalshopex",
+      "products": [
+        "globalshopex"
+      ],
+      "cve_details_url": null,
+      "category_id": 104,
+      "_letter": "g"
+    },
+    {
+      "id": 1575,
+      "our_name": "Globo Also Bought",
+      "vendor": "globo_also_bought",
+      "products": [
+        "globo_also_bought"
+      ],
+      "cve_details_url": null,
+      "category_id": 64,
+      "_letter": "g"
+    },
+    {
+      "id": 1576,
+      "our_name": "Globo Color Swatch",
+      "vendor": "globo_color_swatch",
+      "products": [
+        "globo_color_swatch"
+      ],
+      "cve_details_url": null,
+      "category_id": 64,
+      "_letter": "g"
+    },
+    {
+      "id": 1577,
+      "our_name": "Globo Form Builder",
+      "vendor": "globo_form_builder",
+      "products": [
+        "globo_form_builder"
+      ],
+      "cve_details_url": null,
+      "category_id": 64,
+      "_letter": "g"
+    },
+    {
+      "id": 1578,
+      "our_name": "Globo Pre-Order",
+      "vendor": "globo_pre_order",
+      "products": [
+        "globo_pre_order"
+      ],
+      "cve_details_url": null,
+      "category_id": 64,
+      "_letter": "g"
+    },
+    {
+      "id": 1579,
+      "our_name": "Glopal",
+      "vendor": "glopal",
+      "products": [
+        "glopal"
+      ],
+      "cve_details_url": null,
+      "category_id": 104,
+      "_letter": "g"
+    },
+    {
+      "id": 1580,
+      "our_name": "GloriaFood",
+      "vendor": "gloriafood",
+      "products": [
+        "gloriafood"
+      ],
+      "cve_details_url": null,
+      "category_id": 95,
+      "_letter": "g"
+    },
+    {
+      "id": 1526,
+      "our_name": "GLS",
+      "vendor": "gls",
+      "products": [
+        "gls"
+      ],
+      "cve_details_url": null,
+      "category_id": 78,
+      "_letter": "g"
+    },
+    {
+      "id": 1581,
+      "our_name": "Glyphicons",
+      "vendor": "glyphicons",
+      "products": [
+        "glyphicons"
+      ],
+      "cve_details_url": null,
+      "category_id": 67,
+      "_letter": "g"
+    },
+    {
+      "id": 367,
+      "our_name": "Gmagick",
+      "vendor": "php",
+      "products": [
+        "gmagick"
+      ],
+      "cve_details_url": null,
+      "category_id": 15,
+      "_letter": "g"
+    },
+    {
+      "id": 368,
+      "our_name": "GMP",
+      "vendor": "php",
+      "products": [
+        "gmp"
+      ],
+      "cve_details_url": null,
+      "category_id": 15,
+      "_letter": "g"
+    },
+    {
+      "id": 1582,
+      "our_name": "Gnuboard",
+      "vendor": "gnuboard",
+      "products": [
+        "gnuboard"
+      ],
+      "cve_details_url": null,
+      "category_id": 16,
+      "_letter": "g"
+    },
+    {
+      "id": 369,
+      "our_name": "GnuPG",
+      "vendor": "php",
+      "products": [
+        "gnupg"
+      ],
+      "cve_details_url": null,
+      "category_id": 15,
+      "_letter": "g"
+    },
+    {
+      "id": 1583,
+      "our_name": "Go",
+      "vendor": "golang",
+      "products": [
+        "go"
+      ],
+      "cve_details_url": null,
+      "category_id": 5,
+      "_letter": "g"
+    },
+    {
+      "id": 1584,
+      "our_name": "Go Instore",
+      "vendor": "go_instore",
+      "products": [
+        "go_instore"
+      ],
+      "cve_details_url": null,
+      "category_id": 101,
+      "_letter": "g"
+    },
+    {
+      "id": 1585,
+      "our_name": "GoAffPro",
+      "vendor": "goaffpro",
+      "products": [
+        "goaffpro"
+      ],
+      "cve_details_url": null,
+      "category_id": 55,
+      "_letter": "g"
+    },
+    {
+      "id": 1586,
+      "our_name": "GoAhead",
+      "vendor": "embedthis",
+      "products": [
+        "goahead"
+      ],
+      "cve_details_url": null,
+      "category_id": 2,
+      "_letter": "g"
+    },
+    {
+      "id": 1587,
+      "our_name": "GoAnywhere",
+      "vendor": "goanywhere",
+      "products": [
+        "goanywhere"
+      ],
+      "cve_details_url": null,
+      "category_id": 99,
+      "_letter": "g"
+    },
+    {
+      "id": 1602,
+      "our_name": "GoatCounter",
+      "vendor": "goatcounter",
+      "products": [
+        "goatcounter"
+      ],
+      "cve_details_url": null,
+      "category_id": 18,
+      "_letter": "g"
+    },
+    {
+      "id": 1588,
+      "our_name": "GoCache",
+      "vendor": "gocache",
+      "products": [
+        "gocache"
+      ],
+      "cve_details_url": null,
+      "category_id": 10,
+      "_letter": "g"
+    },
+    {
+      "id": 1589,
+      "our_name": "GoCertify",
+      "vendor": "gocertify",
+      "products": [
+        "gocertify"
+      ],
+      "cve_details_url": null,
+      "category_id": 99,
+      "_letter": "g"
+    },
+    {
+      "id": 1590,
+      "our_name": "GoDaddy",
+      "vendor": "godaddy",
+      "products": [
+        "godaddy"
+      ],
+      "cve_details_url": null,
+      "category_id": 92,
+      "_letter": "g"
+    },
+    {
+      "id": 1591,
+      "our_name": "GoDaddy CoBlocks",
+      "vendor": "godaddy_coblocks",
+      "products": [
+        "godaddy_coblocks"
+      ],
+      "cve_details_url": null,
+      "category_id": 62,
+      "_letter": "g"
+    },
+    {
+      "id": 1592,
+      "our_name": "GoDaddy Escapade",
+      "vendor": "godaddy_escapade",
+      "products": [
+        "godaddy_escapade"
+      ],
+      "cve_details_url": null,
+      "category_id": 63,
+      "_letter": "g"
+    },
+    {
+      "id": 1593,
+      "our_name": "GoDaddy Go",
+      "vendor": "godaddy_go",
+      "products": [
+        "godaddy_go"
+      ],
+      "cve_details_url": null,
+      "category_id": 63,
+      "_letter": "g"
+    },
+    {
+      "id": 1594,
+      "our_name": "GoDaddy Lyrical",
+      "vendor": "godaddy_lyrical",
+      "products": [
+        "godaddy_lyrical"
+      ],
+      "cve_details_url": null,
+      "category_id": 63,
+      "_letter": "g"
+    },
+    {
+      "id": 1595,
+      "our_name": "GoDaddy Online Store",
+      "vendor": "godaddy_online_store",
+      "products": [
+        "godaddy_online_store"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "g"
+    },
+    {
+      "id": 1596,
+      "our_name": "GoDaddy Primer",
+      "vendor": "godaddy_primer",
+      "products": [
+        "godaddy_primer"
+      ],
+      "cve_details_url": null,
+      "category_id": 63,
+      "_letter": "g"
+    },
+    {
+      "id": 1597,
+      "our_name": "GoDaddy Uptown Style",
+      "vendor": "godaddy_uptown_style",
+      "products": [
+        "godaddy_uptown_style"
+      ],
+      "cve_details_url": null,
+      "category_id": 63,
+      "_letter": "g"
+    },
+    {
+      "id": 1598,
+      "our_name": "GoDaddy Website Builder",
+      "vendor": "godaddy_website_buil",
+      "products": [
+        "godaddy_website_buil"
+      ],
+      "cve_details_url": null,
+      "category_id": 16,
+      "_letter": "g"
+    },
+    {
+      "id": 1603,
+      "our_name": "Goftino",
+      "vendor": "goftino",
+      "products": [
+        "goftino"
+      ],
+      "cve_details_url": null,
+      "category_id": 20,
+      "_letter": "g"
+    },
+    {
+      "id": 1604,
+      "our_name": "Gogs",
+      "vendor": "gogs",
+      "products": [
+        "gogs"
+      ],
+      "cve_details_url": null,
+      "category_id": 73,
+      "_letter": "g"
+    },
+    {
+      "id": 1599,
+      "our_name": "GoJS",
+      "vendor": "gojs",
+      "products": [
+        "gojs"
+      ],
+      "cve_details_url": null,
+      "category_id": 6,
+      "_letter": "g"
+    },
+    {
+      "id": 1600,
+      "our_name": "GoKwik",
+      "vendor": "gokwik",
+      "products": [
+        "gokwik"
+      ],
+      "cve_details_url": null,
+      "category_id": 99,
+      "_letter": "g"
+    },
+    {
+      "id": 1606,
+      "our_name": "Google Ads",
+      "vendor": "google_ads",
+      "products": [
+        "google_ads"
+      ],
+      "cve_details_url": null,
+      "category_id": 22,
+      "_letter": "g"
+    },
+    {
+      "id": 1607,
+      "our_name": "Google Ads Conversion Tracking",
+      "vendor": "google_ads_conversio",
+      "products": [
+        "google_ads_conversio"
+      ],
+      "cve_details_url": null,
+      "category_id": 18,
+      "_letter": "g"
+    },
+    {
+      "id": 1605,
+      "our_name": "Google AdSense",
+      "vendor": "google_adsense",
+      "products": [
+        "google_adsense"
+      ],
+      "cve_details_url": null,
+      "category_id": 22,
+      "_letter": "g"
+    },
+    {
+      "id": 1608,
+      "our_name": "Google Analytics",
+      "vendor": "google_analytics",
+      "products": [
+        "google_analytics"
+      ],
+      "cve_details_url": null,
+      "category_id": 18,
+      "_letter": "g"
+    },
+    {
+      "id": 1609,
+      "our_name": "Google Analytics Enhanced eCommerce",
+      "vendor": "google_analytics_enh",
+      "products": [
+        "google_analytics_enh"
+      ],
+      "cve_details_url": null,
+      "category_id": 18,
+      "_letter": "g"
+    },
+    {
+      "id": 1610,
+      "our_name": "Google App Engine",
+      "vendor": "google_app_engine",
+      "products": [
+        "google_app_engine"
+      ],
+      "cve_details_url": null,
+      "category_id": 2,
+      "_letter": "g"
+    },
+    {
+      "id": 1611,
+      "our_name": "Google Call Conversion Tracking",
+      "vendor": "google_call_conversi",
+      "products": [
+        "google_call_conversi"
+      ],
+      "cve_details_url": null,
+      "category_id": 18,
+      "_letter": "g"
+    },
+    {
+      "id": 1612,
+      "our_name": "Google Charts",
+      "vendor": "google_charts",
+      "products": [
+        "google_charts"
+      ],
+      "cve_details_url": null,
+      "category_id": 6,
+      "_letter": "g"
+    },
+    {
+      "id": 1613,
+      "our_name": "Google Cloud",
+      "vendor": "google",
+      "products": [
+        "cloud_platform",
+        "google_cloud"
+      ],
+      "cve_details_url": null,
+      "category_id": 51,
+      "_letter": "g"
+    },
+    {
+      "id": 1614,
+      "our_name": "Google Cloud CDN",
+      "vendor": "google_cloud_cdn",
+      "products": [
+        "google_cloud_cdn"
+      ],
+      "cve_details_url": null,
+      "category_id": 10,
+      "_letter": "g"
+    },
+    {
+      "id": 1615,
+      "our_name": "Google Cloud Storage",
+      "vendor": "google_cloud_storage",
+      "products": [
+        "google_cloud_storage"
+      ],
+      "cve_details_url": null,
+      "category_id": 99,
+      "_letter": "g"
+    },
+    {
+      "id": 1616,
+      "our_name": "Google Cloud Trace",
+      "vendor": "google_cloud_trace",
+      "products": [
+        "google_cloud_trace"
+      ],
+      "cve_details_url": null,
+      "category_id": 33,
+      "_letter": "g"
+    },
+    {
+      "id": 1617,
+      "our_name": "Google Code Prettify",
+      "vendor": "google_code_prettify",
+      "products": [
+        "google_code_prettify"
+      ],
+      "cve_details_url": null,
+      "category_id": 99,
+      "_letter": "g"
+    },
+    {
+      "id": 1618,
+      "our_name": "Google Customer Reviews",
+      "vendor": "google_customer_revi",
+      "products": [
+        "google_customer_revi"
+      ],
+      "cve_details_url": null,
+      "category_id": 59,
+      "_letter": "g"
+    },
+    {
+      "id": 1619,
+      "our_name": "Google Font API",
+      "vendor": "google_font_api",
+      "products": [
+        "google_font_api"
+      ],
+      "cve_details_url": null,
+      "category_id": 67,
+      "_letter": "g"
+    },
+    {
+      "id": 16,
+      "our_name": "Google Frontend",
+      "vendor": "google",
+      "products": [
+        "x"
+      ],
+      "cve_details_url": "x",
+      "category_id": 2,
+      "_letter": "g"
+    },
+    {
+      "id": 1620,
+      "our_name": "Google Hosted Libraries",
+      "vendor": "google_hosted_librar",
+      "products": [
+        "google_hosted_librar"
+      ],
+      "cve_details_url": null,
+      "category_id": 10,
+      "_letter": "g"
+    },
+    {
+      "id": 1621,
+      "our_name": "Google Maps",
+      "vendor": "google_maps",
+      "products": [
+        "google_maps"
+      ],
+      "cve_details_url": null,
+      "category_id": 28,
+      "_letter": "g"
+    },
+    {
+      "id": 1622,
+      "our_name": "Google My Business",
+      "vendor": "google_my_business",
+      "products": [
+        "google_my_business"
+      ],
+      "cve_details_url": null,
+      "category_id": 16,
+      "_letter": "g"
+    },
+    {
+      "id": 1623,
+      "our_name": "Google Optimize",
+      "vendor": "google_optimize",
+      "products": [
+        "google_optimize"
+      ],
+      "cve_details_url": null,
+      "category_id": 24,
+      "_letter": "g"
+    },
+    {
+      "id": 1624,
+      "our_name": "Google PageSpeed",
+      "vendor": "google_pagespeed",
+      "products": [
+        "google_pagespeed"
+      ],
+      "cve_details_url": null,
+      "category_id": 45,
+      "_letter": "g"
+    },
+    {
+      "id": 1625,
+      "our_name": "Google Pay",
+      "vendor": "google_pay",
+      "products": [
+        "google_pay"
+      ],
+      "cve_details_url": null,
+      "category_id": 21,
+      "_letter": "g"
+    },
+    {
+      "id": 1626,
+      "our_name": "Google Publisher Tag",
+      "vendor": "google_publisher_tag",
+      "products": [
+        "google_publisher_tag"
+      ],
+      "cve_details_url": null,
+      "category_id": 22,
+      "_letter": "g"
+    },
+    {
+      "id": 18,
+      "our_name": "Google SFFE",
+      "vendor": "google",
+      "products": [
+        "x"
+      ],
+      "cve_details_url": "x",
+      "category_id": 2,
+      "_letter": "g"
+    },
+    {
+      "id": 1627,
+      "our_name": "Google Sign-in",
+      "vendor": "google_sign_in",
+      "products": [
+        "google_sign_in"
+      ],
+      "cve_details_url": null,
+      "category_id": 85,
+      "_letter": "g"
+    },
+    {
+      "id": 1628,
+      "our_name": "Google Sites",
+      "vendor": "google_sites",
+      "products": [
+        "google_sites"
+      ],
+      "cve_details_url": null,
+      "category_id": 16,
+      "_letter": "g"
+    },
+    {
+      "id": 1629,
+      "our_name": "Google Tag Manager",
+      "vendor": "google_tag_manager",
+      "products": [
+        "google_tag_manager"
+      ],
+      "cve_details_url": null,
+      "category_id": 23,
+      "_letter": "g"
+    },
+    {
+      "id": 1630,
+      "our_name": "Google Tag Manager for WordPress",
+      "vendor": "google_tag_manager_f",
+      "products": [
+        "google_tag_manager_f"
+      ],
+      "cve_details_url": null,
+      "category_id": 62,
+      "_letter": "g"
+    },
+    {
+      "id": 1631,
+      "our_name": "Google Wallet",
+      "vendor": "google_wallet",
+      "products": [
+        "google_wallet"
+      ],
+      "cve_details_url": null,
+      "category_id": 21,
+      "_letter": "g"
+    },
+    {
+      "id": 1632,
+      "our_name": "Google Web Server",
+      "vendor": "google",
+      "products": [
+        "web_server",
+        "google_web_server"
+      ],
+      "cve_details_url": null,
+      "category_id": 2,
+      "_letter": "g"
+    },
+    {
+      "id": 1633,
+      "our_name": "Google Web Toolkit",
+      "vendor": "google",
+      "products": [
+        "web_toolkit",
+        "google_web_toolkit"
+      ],
+      "cve_details_url": null,
+      "category_id": 7,
+      "_letter": "g"
+    },
+    {
+      "id": 1634,
+      "our_name": "Google Workspace",
+      "vendor": "google_workspace",
+      "products": [
+        "google_workspace"
+      ],
+      "cve_details_url": null,
+      "category_id": 43,
+      "_letter": "g"
+    },
+    {
+      "id": 1635,
+      "our_name": "Gorgias",
+      "vendor": "gorgias",
+      "products": [
+        "gorgias"
+      ],
+      "cve_details_url": null,
+      "category_id": 20,
+      "_letter": "g"
+    },
+    {
+      "id": 1601,
+      "our_name": "GoStats",
+      "vendor": "gostats",
+      "products": [
+        "gostats"
+      ],
+      "cve_details_url": null,
+      "category_id": 18,
+      "_letter": "g"
+    },
+    {
+      "id": 1636,
+      "our_name": "GotiPath",
+      "vendor": "gotipath",
+      "products": [
+        "gotipath"
+      ],
+      "cve_details_url": null,
+      "category_id": 10,
+      "_letter": "g"
+    },
+    {
+      "id": 1527,
+      "our_name": "GOV.UK Elements",
+      "vendor": "gov_uk_elements",
+      "products": [
+        "gov_uk_elements"
+      ],
+      "cve_details_url": null,
+      "category_id": 84,
+      "_letter": "g"
+    },
+    {
+      "id": 1528,
+      "our_name": "GOV.UK Frontend",
+      "vendor": "gov_uk_frontend",
+      "products": [
+        "gov_uk_frontend"
+      ],
+      "cve_details_url": null,
+      "category_id": 84,
+      "_letter": "g"
+    },
+    {
+      "id": 1529,
+      "our_name": "GOV.UK Template",
+      "vendor": "gov_uk_template",
+      "products": [
+        "gov_uk_template"
+      ],
+      "cve_details_url": null,
+      "category_id": 84,
+      "_letter": "g"
+    },
+    {
+      "id": 1530,
+      "our_name": "GOV.UK Toolkit",
+      "vendor": "gov_uk_toolkit",
+      "products": [
+        "gov_uk_toolkit"
+      ],
+      "cve_details_url": null,
+      "category_id": 84,
+      "_letter": "g"
+    },
+    {
+      "id": 1637,
+      "our_name": "Govalo",
+      "vendor": "govalo",
+      "products": [
+        "govalo"
+      ],
+      "cve_details_url": null,
+      "category_id": 64,
+      "_letter": "g"
+    },
+    {
+      "id": 1667,
+      "our_name": "govCMS",
+      "vendor": "govcms",
+      "products": [
+        "govcms"
+      ],
+      "cve_details_url": null,
+      "category_id": 16,
+      "_letter": "g"
+    },
+    {
+      "id": 1638,
+      "our_name": "Grab Pay Later",
+      "vendor": "grab_pay_later",
+      "products": [
+        "grab_pay_later"
+      ],
+      "cve_details_url": null,
+      "category_id": 21,
+      "_letter": "g"
+    },
+    {
+      "id": 1639,
+      "our_name": "Grafana",
+      "vendor": "grafana",
+      "products": [
+        "grafana"
+      ],
+      "cve_details_url": null,
+      "category_id": 18,
+      "_letter": "g"
+    },
+    {
+      "id": 1640,
+      "our_name": "Graffiti CMS",
+      "vendor": "graffiti_cms",
+      "products": [
+        "graffiti_cms"
+      ],
+      "cve_details_url": null,
+      "category_id": 16,
+      "_letter": "g"
+    },
+    {
+      "id": 1641,
+      "our_name": "GrandNode",
+      "vendor": "grandnode",
+      "products": [
+        "grandnode"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "g"
+    },
+    {
+      "id": 1642,
+      "our_name": "GraphCMS",
+      "vendor": "graphcms",
+      "products": [
+        "graphcms"
+      ],
+      "cve_details_url": null,
+      "category_id": 16,
+      "_letter": "g"
+    },
+    {
+      "id": 1643,
+      "our_name": "Graphene",
+      "vendor": "graphene",
+      "products": [
+        "graphene"
+      ],
+      "cve_details_url": null,
+      "category_id": 63,
+      "_letter": "g"
+    },
+    {
+      "id": 242,
+      "our_name": "GraphQL",
+      "vendor": "graphql",
+      "products": [
+        "graphql"
+      ],
+      "cve_details_url": null,
+      "category_id": 99,
+      "_letter": "g"
+    },
+    {
+      "id": 1644,
+      "our_name": "Grav",
+      "vendor": "grav",
+      "products": [
+        "grav"
+      ],
+      "cve_details_url": null,
+      "category_id": 16,
+      "_letter": "g"
+    },
+    {
+      "id": 1645,
+      "our_name": "Gravatar",
+      "vendor": "gravatar",
+      "products": [
+        "gravatar"
+      ],
+      "cve_details_url": null,
+      "category_id": 99,
+      "_letter": "g"
+    },
+    {
+      "id": 1646,
+      "our_name": "Gravitec",
+      "vendor": "gravitec",
+      "products": [
+        "gravitec"
+      ],
+      "cve_details_url": null,
+      "category_id": 99,
+      "_letter": "g"
+    },
+    {
+      "id": 1647,
+      "our_name": "Gravity Forms",
+      "vendor": "gravity_forms",
+      "products": [
+        "gravity_forms"
+      ],
+      "cve_details_url": null,
+      "category_id": 99,
+      "_letter": "g"
+    },
+    {
+      "id": 1648,
+      "our_name": "Green Valley CMS",
+      "vendor": "green_valley_cms",
+      "products": [
+        "green_valley_cms"
+      ],
+      "cve_details_url": null,
+      "category_id": 16,
+      "_letter": "g"
+    },
+    {
+      "id": 1649,
+      "our_name": "Greenhouse",
+      "vendor": "greenhouse",
+      "products": [
+        "greenhouse"
+      ],
+      "cve_details_url": null,
+      "category_id": 100,
+      "_letter": "g"
+    },
+    {
+      "id": 1650,
+      "our_name": "Griddo",
+      "vendor": "griddo",
+      "products": [
+        "griddo"
+      ],
+      "cve_details_url": null,
+      "category_id": 16,
+      "_letter": "g"
+    },
+    {
+      "id": 1651,
+      "our_name": "Gridsome",
+      "vendor": "gridsome",
+      "products": [
+        "gridsome"
+      ],
+      "cve_details_url": null,
+      "category_id": 35,
+      "_letter": "g"
+    },
+    {
+      "id": 1652,
+      "our_name": "Grin",
+      "vendor": "grin",
+      "products": [
+        "grin"
+      ],
+      "cve_details_url": null,
+      "category_id": 19,
+      "_letter": "g"
+    },
+    {
+      "id": 1653,
+      "our_name": "GrocerKey",
+      "vendor": "grocerkey",
+      "products": [
+        "grocerkey"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "g"
+    },
+    {
+      "id": 1654,
+      "our_name": "GroupBy",
+      "vendor": "groupby",
+      "products": [
+        "groupby"
+      ],
+      "cve_details_url": null,
+      "category_id": 69,
+      "_letter": "g"
+    },
+    {
+      "id": 1655,
+      "our_name": "Growave",
+      "vendor": "growave",
+      "products": [
+        "growave"
+      ],
+      "cve_details_url": null,
+      "category_id": 19,
+      "_letter": "g"
+    },
+    {
+      "id": 1656,
+      "our_name": "GrowingIO",
+      "vendor": "growingio",
+      "products": [
+        "growingio"
+      ],
+      "cve_details_url": null,
+      "category_id": 18,
+      "_letter": "g"
+    },
+    {
+      "id": 532,
+      "our_name": "gRPC",
+      "vendor": "php",
+      "products": [
+        "grpc"
+      ],
+      "cve_details_url": null,
+      "category_id": 15,
+      "_letter": "g"
+    },
+    {
+      "id": 1531,
+      "our_name": "GSAP",
+      "vendor": "gsap",
+      "products": [
+        "gsap"
+      ],
+      "cve_details_url": null,
+      "category_id": 6,
+      "_letter": "g"
+    },
+    {
+      "id": 1532,
+      "our_name": "GTranslate",
+      "vendor": "gtranslate",
+      "products": [
+        "gtranslate"
+      ],
+      "cve_details_url": null,
+      "category_id": 62,
+      "_letter": "g"
+    },
+    {
+      "id": 1533,
+      "our_name": "GTranslate app",
+      "vendor": "gtranslate_app",
+      "products": [
+        "gtranslate_app"
+      ],
+      "cve_details_url": null,
+      "category_id": 64,
+      "_letter": "g"
+    },
+    {
+      "id": 1657,
+      "our_name": "Guestonline",
+      "vendor": "guestonline",
+      "products": [
+        "guestonline"
+      ],
+      "cve_details_url": null,
+      "category_id": 95,
+      "_letter": "g"
+    },
+    {
+      "id": 1658,
+      "our_name": "GumGum",
+      "vendor": "gumgum",
+      "products": [
+        "gumgum"
+      ],
+      "cve_details_url": null,
+      "category_id": 22,
+      "_letter": "g"
+    },
+    {
+      "id": 1659,
+      "our_name": "Gumlet",
+      "vendor": "gumlet",
+      "products": [
+        "gumlet"
+      ],
+      "cve_details_url": null,
+      "category_id": 33,
+      "_letter": "g"
+    },
+    {
+      "id": 1660,
+      "our_name": "Gumroad",
+      "vendor": "gumroad",
+      "products": [
+        "gumroad"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "g"
+    },
+    {
+      "id": 1661,
+      "our_name": "Gumstack",
+      "vendor": "gumstack",
+      "products": [
+        "gumstack"
+      ],
+      "cve_details_url": null,
+      "category_id": 99,
+      "_letter": "g"
+    },
+    {
+      "id": 1668,
+      "our_name": "gunicorn",
+      "vendor": "gunicorn",
+      "products": [
+        "gunicorn"
+      ],
+      "cve_details_url": null,
+      "category_id": 2,
+      "_letter": "g"
+    },
+    {
+      "id": 1662,
+      "our_name": "Gutenberg",
+      "vendor": "gutenberg",
+      "products": [
+        "gutenberg"
+      ],
+      "cve_details_url": null,
+      "category_id": 62,
+      "_letter": "g"
+    },
+    {
+      "id": 1663,
+      "our_name": "Gutenberg Blocks",
+      "vendor": "gutenberg_blocks",
+      "products": [
+        "gutenberg_blocks"
+      ],
+      "cve_details_url": null,
+      "category_id": 62,
+      "_letter": "g"
+    },
+    {
+      "id": 17,
+      "our_name": "GWS",
+      "vendor": "google",
+      "products": [
+        "x"
+      ],
+      "cve_details_url": "x",
+      "category_id": 2,
+      "_letter": "g"
+    },
+    {
+      "id": 1534,
+      "our_name": "GX WebManager",
+      "vendor": "gx_webmanager",
+      "products": [
+        "gx_webmanager"
+      ],
+      "cve_details_url": null,
+      "category_id": 16,
+      "_letter": "g"
+    }
+  ]
+}

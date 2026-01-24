@@ -6,11 +6,11 @@
         "predict":[
             {
                 "product_id": 6,
-                "description": "Kestrel (Webserver)"
+                "description": "Kestrel (Web Server)"
             },
             {
                 "product_id": 56,
-                "description": "Kestrel (Webserver)"
+                "description": "Kestrel (Web Server)"
             }
         ]
     },
@@ -21,7 +21,7 @@
         "predict":[
             {
                 "product_id": 6,
-                "description": "Microsoft-IIS (Webserver)"
+                "description": "Microsoft-IIS (Web Server)"
             }
         ]
     },
@@ -32,11 +32,11 @@
         "predict":[
             {
                 "product_id": 6,
-                "description": "ASP (Interpret)"
+                "description": "ASP (Programming Language)"
             },
             {
                 "product_id": 12,
-                "description": "ASP (Interpret)"
+                "description": "ASP (Programming Language)"
             }
         ]
     },
@@ -47,11 +47,11 @@
         "predict":[
             {
                 "product_id": 6,
-                "description": "ASP.NET (Framework)"
+                "description": "ASP.NET (Backend Framework)"
             },
             {
                 "product_id": 12,
-                "description": "ASP.NET (Framework)"
+                "description": "ASP.NET (Backend Framework)"
             }
         ]
     },
@@ -62,11 +62,11 @@
         "predict":[
             {
                 "product_id": 6,
-                "description": "ASP.NET (Framework)"
+                "description": "ASP.NET (Backend Framework)"
             },
             {
                 "product_id": 56,
-                "description": "ASP.NET (Framework)"
+                "description": "ASP.NET (Backend Framework)"
             }
         ]
     },
@@ -78,7 +78,7 @@
             {
                 "product_id": 7,
                 "version": "2016, 2019, 2022",
-                "description": "Microsoft-IIS 10.0 (Webserver)"
+                "description": "Microsoft-IIS 10.0 (Web Server)"
             }
         ]
     },
@@ -90,7 +90,7 @@
             {
                 "product_id": 7,
                 "version": "2012 R2",
-                "description": "Microsoft-IIS 8.5 (Webserver)"
+                "description": "Microsoft-IIS 8.5 (Web Server)"
             }
         ]
     },
@@ -102,7 +102,7 @@
             {
                 "product_id": 7,
                 "version": "2012",
-                "description": "Microsoft-IIS 8.0 (Webserver)"
+                "description": "Microsoft-IIS 8.0 (Web Server)"
             }
         ]
     },
@@ -114,7 +114,7 @@
             {
                 "product_id": 7,
                 "version": "2008 R2",
-                "description": "Microsoft-IIS 7.5 (Webserver)"
+                "description": "Microsoft-IIS 7.5 (Web Server)"
             }
         ]
     },
@@ -126,7 +126,7 @@
             {
                 "product_id": 7,
                 "version": "2008",
-                "description": "Microsoft-IIS 7.0 (Webserver)"
+                "description": "Microsoft-IIS 7.0 (Web Server)"
             }
         ]
     },
@@ -138,7 +138,7 @@
             {
                 "product_id": 7,
                 "version": "2003",
-                "description": "Microsoft-IIS 6.0 (Webserver)"
+                "description": "Microsoft-IIS 6.0 (Web Server)"
             }
         ]
     },
@@ -150,7 +150,7 @@
             {
                 "product_id": 6,
                 "version": "XP Professional",
-                "description": "Microsoft-IIS 5.1 (Webserver)"
+                "description": "Microsoft-IIS 5.1 (Web Server)"
             }
         ]
     },
@@ -162,7 +162,7 @@
             {
                 "product_id": 6,
                 "version": "200",
-                "description": "Microsoft-IIS 5.0 (Webserver)"
+                "description": "Microsoft-IIS 5.0 (Web Server)"
             }
         ]
     },
@@ -174,7 +174,7 @@
             {
                 "product_id": 3,
                 "version": "8",
-                "description": "PHP (Interpret)"
+                "description": "PHP (Programming Language)"
             }
         ]
     },
@@ -186,7 +186,7 @@
             {
                 "product_id": 3,
                 "version": "9",
-                "description": "PHP (Interpret)"
+                "description": "PHP (Programming Language)"
             }
         ]
     },
@@ -198,7 +198,7 @@
             {
                 "product_id": 3,
                 "version": "10",
-                "description": "PHP (Interpret)"
+                "description": "PHP (Programming Language)"
             }
         ]
     },
@@ -210,7 +210,7 @@
             {
                 "product_id": 2,
                 "version": "20.04",
-                "description": "PHP (Interpret)"
+                "description": "PHP (Programming Language)"
             }
         ]
     },
@@ -222,7 +222,7 @@
             {
                 "product_id": 2,
                 "version": "22.04",
-                "description": "PHP (Interpret)"
+                "description": "PHP (Programming Language)"
             }
         ]
     },
@@ -234,7 +234,7 @@
             {
                 "product_id": 2,
                 "version": "18.04",
-                "description": "PHP (Interpret)"
+                "description": "PHP (Programming Language)"
             }
         ]
     },
@@ -245,7 +245,7 @@
         "predict": [
             {
                 "product_id": 9,
-                "description": "PHP (Interpret)"
+                "description": "PHP (Programming Language)"
             }
         ]
     },
@@ -257,22 +257,22 @@
             {
                 "product_id": 30,
                 "probability": 100,
-                "description": "Joomla (WebApp)"
+                "description": "Joomla (Web Application)"
             },
             {
                 "product_id": 200,
                 "probability": 50,
-                "description": "Joomla (WebApp)"
+                "description": "Joomla (Web Application)"
             },
             {
                 "product_id": 201,
                 "probability": 50,
-                "description": "Joomla (WebApp)"
+                "description": "Joomla (Web Application)"
             },
             {
                 "product_id": 202,
                 "probability": 50,
-                "description": "Joomla (WebApp)"
+                "description": "Joomla (Web Application)"
             }
         ]
     },
@@ -284,17 +284,17 @@
             {
                 "product_id": 30,
                 "probability": 100,
-                "description": "WordPress (WebApp)"
+                "description": "WordPress (Web Application)"
             },
             {
                 "product_id": 200,
                 "probability": 80,
-                "description": "WordPress (WebApp)"
+                "description": "WordPress (Web Application)"
             },
             {
                 "product_id": 201,
                 "probability": 80,
-                "description": "WordPress (WebApp)"
+                "description": "WordPress (Web Application)"
             }
         ]
     },
@@ -306,22 +306,22 @@
             {
                 "product_id": 30,
                 "probability": 100,
-                "description": "Drupal (WebApp)"
+                "description": "Drupal (Web Application)"
             },
             {
                 "product_id": 200,
                 "probability": 33,
-                "description": "Drupal (WebApp)"
+                "description": "Drupal (Web Application)"
             },
             {
                 "product_id": 202,
                 "probability": 33,
-                "description": "Drupal (WebApp)"
+                "description": "Drupal (Web Application)"
             },
             {
                 "product_id": 203,
                 "probability": 33,
-                "description": "Drupal (WebApp)"
+                "description": "Drupal (Web Application)"
             }
         ]
     },
@@ -333,22 +333,22 @@
             {
                 "product_id": 35,
                 "probability": 100,
-                "description": "Kentico (WebApp)"
+                "description": "Kentico (Web Application)"
             },
             {
                 "product_id": 56,
                 "probability": 100,
-                "description": "Kentico (WebApp)"
+                "description": "Kentico (Web Application)"
             },
             {
                 "product_id": 6,
                 "probability": 100,
-                "description": "Kentico (WebApp)"
+                "description": "Kentico (Web Application)"
             },
             {
                 "product_id": 200,
                 "probability": 100,
-                "description": "Kentico (WebApp)"
+                "description": "Kentico (Web Application)"
             }
         ]
     },
@@ -360,12 +360,12 @@
             {
                 "product_id": 30,
                 "probability": 100,
-                "description": "phpMyAdmin (DatabaseManagement)"
+                "description": "phpMyAdmin (Web Application)"
             },
             {
                 "product_id": 200,
                 "probability": 100,
-                "description": "phpMyAdmin (DatabaseManagement)"
+                "description": "phpMyAdmin (Web Application)"
             }
         ]
     },
@@ -377,12 +377,12 @@
             {
                 "product_id": 30,
                 "probability": 100,
-                "description": "Adminer (DatabaseManagement)"
+                "description": "Adminer (Web Application)"
             },
             {
                 "product_id": 200,
                 "probability": 100,
-                "description": "Adminer (DatabaseManagement)"
+                "description": "Adminer (Web Application)"
             }
         ]
     },

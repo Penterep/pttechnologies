@@ -165,14 +165,15 @@ class PLLNG:
                 ptprint(f"It was not possible to identify the programming language", "INFO", not self.args.json, indent=4)
                 return
             
-            products = product.get('products', [])
-            language = products[0] if products else product.get("our_name", "Unknown")  # For storage
-            display_name = product.get("our_name", "Unknown")  # For printing
+            display_name = product.get("our_name", "Unknown")
             category_name = self.product_manager.get_category_name(product.get("category_id"))
+            
+            products = product.get('products', [])
+            technology = products[0] if (products and products[0] is not None) else product.get("our_name", "Unknown")
             
             probability = result.get("probability", 100)
             ext = result["extension"].capitalize()
-            storage.add_to_storage(technology=language, technology_type=category_name, vulnerability="PTV-WEB-INFO-LNGEX", probability=probability, product_id=product_id)
+            storage.add_to_storage(technology=technology, technology_type=category_name, vulnerability="PTV-WEB-INFO-LNGEX", probability=probability, product_id=product_id)
             ptprint(f"Identified language: {display_name}", "VULN", not self.args.json, indent=4, end=" ")
             ptprint(f"({probability}%)", "ADDITIONS", not self.args.json, colortext=True)
         else:

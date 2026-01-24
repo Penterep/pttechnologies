@@ -1,0 +1,1363 @@
+{
+  "products": [
+    {
+      "id": 1184,
+      "our_name": "D3",
+      "vendor": "d3.js_project",
+      "products": [
+        "d3.js",
+        "d3"
+      ],
+      "cve_details_url": null,
+      "category_id": 6,
+      "_letter": "d"
+    },
+    {
+      "id": 94,
+      "our_name": "D3.js",
+      "vendor": "d3.js_project",
+      "products": [
+        "d3.js"
+      ],
+      "cve_details_url": "https://www.cvedetails.com/product/46420/D3.js-Project-D3.js.html",
+      "category_id": 6,
+      "_letter": "d"
+    },
+    {
+      "id": 1194,
+      "our_name": "Dachser",
+      "vendor": "dachser",
+      "products": [
+        "dachser"
+      ],
+      "cve_details_url": null,
+      "category_id": 78,
+      "_letter": "d"
+    },
+    {
+      "id": 1195,
+      "our_name": "Daily Deals",
+      "vendor": "daily_deals",
+      "products": [
+        "daily_deals"
+      ],
+      "cve_details_url": null,
+      "category_id": 99,
+      "_letter": "d"
+    },
+    {
+      "id": 1196,
+      "our_name": "DailyKarma",
+      "vendor": "dailykarma",
+      "products": [
+        "dailykarma"
+      ],
+      "cve_details_url": null,
+      "category_id": 99,
+      "_letter": "d"
+    },
+    {
+      "id": 1197,
+      "our_name": "Dailymotion",
+      "vendor": "dailymotion",
+      "products": [
+        "dailymotion"
+      ],
+      "cve_details_url": null,
+      "category_id": 27,
+      "_letter": "d"
+    },
+    {
+      "id": 1198,
+      "our_name": "Dancer",
+      "vendor": "dancer",
+      "products": [
+        "dancer"
+      ],
+      "cve_details_url": null,
+      "category_id": 7,
+      "_letter": "d"
+    },
+    {
+      "id": 1199,
+      "our_name": "Danneo CMS",
+      "vendor": "danneo_cms",
+      "products": [
+        "danneo_cms"
+      ],
+      "cve_details_url": null,
+      "category_id": 16,
+      "_letter": "d"
+    },
+    {
+      "id": 1200,
+      "our_name": "Daphne",
+      "vendor": "daphne",
+      "products": [
+        "daphne"
+      ],
+      "cve_details_url": null,
+      "category_id": 2,
+      "_letter": "d"
+    },
+    {
+      "id": 1201,
+      "our_name": "Dart",
+      "vendor": "dart",
+      "products": [
+        "dart"
+      ],
+      "cve_details_url": null,
+      "category_id": 5,
+      "_letter": "d"
+    },
+    {
+      "id": 1202,
+      "our_name": "Darwin",
+      "vendor": "darwin",
+      "products": [
+        "darwin"
+      ],
+      "cve_details_url": null,
+      "category_id": 1,
+      "_letter": "d"
+    },
+    {
+      "id": 345,
+      "our_name": "Data Structures",
+      "vendor": "php",
+      "products": [
+        "ds"
+      ],
+      "cve_details_url": null,
+      "category_id": 15,
+      "_letter": "d"
+    },
+    {
+      "id": 1206,
+      "our_name": "Datadog",
+      "vendor": "datadog",
+      "products": [
+        "datadog"
+      ],
+      "cve_details_url": null,
+      "category_id": 33,
+      "_letter": "d"
+    },
+    {
+      "id": 1207,
+      "our_name": "Datadome",
+      "vendor": "datadome",
+      "products": [
+        "datadome"
+      ],
+      "cve_details_url": null,
+      "category_id": 14,
+      "_letter": "d"
+    },
+    {
+      "id": 1203,
+      "our_name": "DataLife Engine",
+      "vendor": "dleviet",
+      "products": [
+        "datalife_engine"
+      ],
+      "cve_details_url": null,
+      "category_id": 16,
+      "_letter": "d"
+    },
+    {
+      "id": 1204,
+      "our_name": "DataMilk",
+      "vendor": "datamilk",
+      "products": [
+        "datamilk"
+      ],
+      "cve_details_url": null,
+      "category_id": 18,
+      "_letter": "d"
+    },
+    {
+      "id": 1205,
+      "our_name": "DataTables",
+      "vendor": "datatables",
+      "products": [
+        "datatables.net",
+        "datatables"
+      ],
+      "cve_details_url": null,
+      "category_id": 6,
+      "_letter": "d"
+    },
+    {
+      "id": 339,
+      "our_name": "Date/Time",
+      "vendor": "php",
+      "products": [
+        "datetime"
+      ],
+      "cve_details_url": null,
+      "category_id": 15,
+      "_letter": "d"
+    },
+    {
+      "id": 1208,
+      "our_name": "DatoCMS",
+      "vendor": "datocms",
+      "products": [
+        "datocms"
+      ],
+      "cve_details_url": null,
+      "category_id": 16,
+      "_letter": "d"
+    },
+    {
+      "id": 1209,
+      "our_name": "Day.js",
+      "vendor": "day_js",
+      "products": [
+        "day_js"
+      ],
+      "cve_details_url": null,
+      "category_id": 6,
+      "_letter": "d"
+    },
+    {
+      "id": 1285,
+      "our_name": "db-ip",
+      "vendor": "db_ip",
+      "products": [
+        "db_ip"
+      ],
+      "cve_details_url": null,
+      "category_id": 60,
+      "_letter": "d"
+    },
+    {
+      "id": 340,
+      "our_name": "DBA",
+      "vendor": "php",
+      "products": [
+        "dba"
+      ],
+      "cve_details_url": null,
+      "category_id": 15,
+      "_letter": "d"
+    },
+    {
+      "id": 341,
+      "our_name": "dBase",
+      "vendor": "php",
+      "products": [
+        "dbase"
+      ],
+      "cve_details_url": null,
+      "category_id": 15,
+      "_letter": "d"
+    },
+    {
+      "id": 507,
+      "our_name": "DBX",
+      "vendor": "php",
+      "products": [
+        "dbx"
+      ],
+      "cve_details_url": null,
+      "category_id": 15,
+      "_letter": "d"
+    },
+    {
+      "id": 1286,
+      "our_name": "DDoS-Guard",
+      "vendor": "ddos_guard",
+      "products": [
+        "ddos_guard"
+      ],
+      "cve_details_url": null,
+      "category_id": 14,
+      "_letter": "d"
+    },
+    {
+      "id": 528,
+      "our_name": "ddtrace",
+      "vendor": "php",
+      "products": [
+        "ddtrace"
+      ],
+      "cve_details_url": null,
+      "category_id": 15,
+      "_letter": "d"
+    },
+    {
+      "id": 1210,
+      "our_name": "Dealer Spike",
+      "vendor": "dealer_spike",
+      "products": [
+        "dealer_spike"
+      ],
+      "cve_details_url": null,
+      "category_id": 22,
+      "_letter": "d"
+    },
+    {
+      "id": 3,
+      "our_name": "Debian",
+      "vendor": "debian",
+      "products": [
+        "debian_linux"
+      ],
+      "cve_details_url": "https://www.cvedetails.com/product/36/Debian-Debian-Linux.html",
+      "category_id": 1,
+      "_letter": "d"
+    },
+    {
+      "id": 1211,
+      "our_name": "Decibel",
+      "vendor": "decibel",
+      "products": [
+        "decibel"
+      ],
+      "cve_details_url": null,
+      "category_id": 18,
+      "_letter": "d"
+    },
+    {
+      "id": 529,
+      "our_name": "Decimal",
+      "vendor": "php",
+      "products": [
+        "decimal"
+      ],
+      "cve_details_url": null,
+      "category_id": 15,
+      "_letter": "d"
+    },
+    {
+      "id": 1287,
+      "our_name": "decimal.js",
+      "vendor": "decimal_js",
+      "products": [
+        "decimal_js"
+      ],
+      "cve_details_url": null,
+      "category_id": 6,
+      "_letter": "d"
+    },
+    {
+      "id": 1212,
+      "our_name": "DedeCMS",
+      "vendor": "dedecms",
+      "products": [
+        "dedecms"
+      ],
+      "cve_details_url": null,
+      "category_id": 16,
+      "_letter": "d"
+    },
+    {
+      "id": 1288,
+      "our_name": "deepMiner",
+      "vendor": "deepminer",
+      "products": [
+        "deepminer"
+      ],
+      "cve_details_url": null,
+      "category_id": 66,
+      "_letter": "d"
+    },
+    {
+      "id": 1213,
+      "our_name": "Delivengo",
+      "vendor": "delivengo",
+      "products": [
+        "delivengo"
+      ],
+      "cve_details_url": null,
+      "category_id": 78,
+      "_letter": "d"
+    },
+    {
+      "id": 1214,
+      "our_name": "Deliverr",
+      "vendor": "deliverr",
+      "products": [
+        "deliverr"
+      ],
+      "cve_details_url": null,
+      "category_id": 79,
+      "_letter": "d"
+    },
+    {
+      "id": 1215,
+      "our_name": "Demandbase",
+      "vendor": "demandbase",
+      "products": [
+        "demandbase"
+      ],
+      "cve_details_url": null,
+      "category_id": 18,
+      "_letter": "d"
+    },
+    {
+      "id": 1216,
+      "our_name": "Deno",
+      "vendor": "deno",
+      "products": [
+        "deno"
+      ],
+      "cve_details_url": null,
+      "category_id": 2,
+      "_letter": "d"
+    },
+    {
+      "id": 1217,
+      "our_name": "Deno Deploy",
+      "vendor": "deno_deploy",
+      "products": [
+        "deno_deploy"
+      ],
+      "cve_details_url": null,
+      "category_id": 50,
+      "_letter": "d"
+    },
+    {
+      "id": 1185,
+      "our_name": "DERAK.CLOUD",
+      "vendor": "derak_cloud",
+      "products": [
+        "derak_cloud"
+      ],
+      "cve_details_url": null,
+      "category_id": 10,
+      "_letter": "d"
+    },
+    {
+      "id": 1218,
+      "our_name": "Deta",
+      "vendor": "deta",
+      "products": [
+        "deta"
+      ],
+      "cve_details_url": null,
+      "category_id": 50,
+      "_letter": "d"
+    },
+    {
+      "id": 1219,
+      "our_name": "Detectify",
+      "vendor": "detectify",
+      "products": [
+        "detectify"
+      ],
+      "cve_details_url": null,
+      "category_id": 14,
+      "_letter": "d"
+    },
+    {
+      "id": 1220,
+      "our_name": "Deutsche Post",
+      "vendor": "deutsche_post",
+      "products": [
+        "deutsche_post"
+      ],
+      "cve_details_url": null,
+      "category_id": 78,
+      "_letter": "d"
+    },
+    {
+      "id": 1186,
+      "our_name": "DHL",
+      "vendor": "dhl",
+      "products": [
+        "dhl"
+      ],
+      "cve_details_url": null,
+      "category_id": 78,
+      "_letter": "d"
+    },
+    {
+      "id": 1187,
+      "our_name": "DHTMLX",
+      "vendor": "dhtmlx",
+      "products": [
+        "dhtmlx"
+      ],
+      "cve_details_url": null,
+      "category_id": 6,
+      "_letter": "d"
+    },
+    {
+      "id": 1221,
+      "our_name": "Dianomi",
+      "vendor": "dianomi",
+      "products": [
+        "dianomi"
+      ],
+      "cve_details_url": null,
+      "category_id": 22,
+      "_letter": "d"
+    },
+    {
+      "id": 1222,
+      "our_name": "Didomi",
+      "vendor": "didomi",
+      "products": [
+        "didomi"
+      ],
+      "cve_details_url": null,
+      "category_id": 32,
+      "_letter": "d"
+    },
+    {
+      "id": 1223,
+      "our_name": "Digest",
+      "vendor": "digest",
+      "products": [
+        "digest"
+      ],
+      "cve_details_url": null,
+      "category_id": 14,
+      "_letter": "d"
+    },
+    {
+      "id": 1224,
+      "our_name": "DigiCert",
+      "vendor": "digicert",
+      "products": [
+        "digicert"
+      ],
+      "cve_details_url": null,
+      "category_id": 86,
+      "_letter": "d"
+    },
+    {
+      "id": 1225,
+      "our_name": "Digistore24",
+      "vendor": "digistore24",
+      "products": [
+        "digistore24"
+      ],
+      "cve_details_url": null,
+      "category_id": 55,
+      "_letter": "d"
+    },
+    {
+      "id": 1226,
+      "our_name": "Digital Showroom",
+      "vendor": "digital_showroom",
+      "products": [
+        "digital_showroom"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "d"
+    },
+    {
+      "id": 247,
+      "our_name": "DigitalOcean",
+      "vendor": "digitalocean",
+      "products": [
+        "digitalocean"
+      ],
+      "cve_details_url": null,
+      "category_id": 99,
+      "_letter": "d"
+    },
+    {
+      "id": 1227,
+      "our_name": "DigitalRiver",
+      "vendor": "digitalriver",
+      "products": [
+        "digitalriver"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "d"
+    },
+    {
+      "id": 342,
+      "our_name": "Direct IO",
+      "vendor": "php",
+      "products": [
+        "dio"
+      ],
+      "cve_details_url": null,
+      "category_id": 15,
+      "_letter": "d"
+    },
+    {
+      "id": 1228,
+      "our_name": "DirectAdmin",
+      "vendor": "directadmin",
+      "products": [
+        "directadmin"
+      ],
+      "cve_details_url": null,
+      "category_id": 44,
+      "_letter": "d"
+    },
+    {
+      "id": 343,
+      "our_name": "Directories",
+      "vendor": "php",
+      "products": [
+        "dir"
+      ],
+      "cve_details_url": null,
+      "category_id": 15,
+      "_letter": "d"
+    },
+    {
+      "id": 1229,
+      "our_name": "Directus",
+      "vendor": "directus",
+      "products": [
+        "directus"
+      ],
+      "cve_details_url": null,
+      "category_id": 16,
+      "_letter": "d"
+    },
+    {
+      "id": 1230,
+      "our_name": "Discourse",
+      "vendor": "discourse",
+      "products": [
+        "discourse"
+      ],
+      "cve_details_url": null,
+      "category_id": 39,
+      "_letter": "d"
+    },
+    {
+      "id": 1231,
+      "our_name": "Discuz! X",
+      "vendor": "discuz!_x",
+      "products": [
+        "discuz!_x"
+      ],
+      "cve_details_url": null,
+      "category_id": 39,
+      "_letter": "d"
+    },
+    {
+      "id": 1232,
+      "our_name": "Disqus",
+      "vendor": "disqus",
+      "products": [
+        "disqus_comment_system",
+        "disqus"
+      ],
+      "cve_details_url": null,
+      "category_id": 47,
+      "_letter": "d"
+    },
+    {
+      "id": 1233,
+      "our_name": "Distributor",
+      "vendor": "distributor",
+      "products": [
+        "distributor"
+      ],
+      "cve_details_url": null,
+      "category_id": 62,
+      "_letter": "d"
+    },
+    {
+      "id": 1234,
+      "our_name": "District M",
+      "vendor": "district_m",
+      "products": [
+        "district_m"
+      ],
+      "cve_details_url": null,
+      "category_id": 22,
+      "_letter": "d"
+    },
+    {
+      "id": 1235,
+      "our_name": "Dito",
+      "vendor": "dito",
+      "products": [
+        "dito"
+      ],
+      "cve_details_url": null,
+      "category_id": 26,
+      "_letter": "d"
+    },
+    {
+      "id": 1236,
+      "our_name": "Divi",
+      "vendor": "divi",
+      "products": [
+        "divi"
+      ],
+      "cve_details_url": null,
+      "category_id": 61,
+      "_letter": "d"
+    },
+    {
+      "id": 1237,
+      "our_name": "DivideBuy",
+      "vendor": "dividebuy",
+      "products": [
+        "dividebuy"
+      ],
+      "cve_details_url": null,
+      "category_id": 21,
+      "_letter": "d"
+    },
+    {
+      "id": 1238,
+      "our_name": "Divido",
+      "vendor": "divido",
+      "products": [
+        "divido"
+      ],
+      "cve_details_url": null,
+      "category_id": 21,
+      "_letter": "d"
+    },
+    {
+      "id": 50,
+      "our_name": "Django",
+      "vendor": "djangoproject",
+      "products": [
+        "django"
+      ],
+      "cve_details_url": "https://www.cvedetails.com/product/18211/Djangoproject-Django.html",
+      "category_id": 7,
+      "_letter": "d"
+    },
+    {
+      "id": 1239,
+      "our_name": "Django CMS",
+      "vendor": "django_cms",
+      "products": [
+        "django_cms"
+      ],
+      "cve_details_url": null,
+      "category_id": 16,
+      "_letter": "d"
+    },
+    {
+      "id": 530,
+      "our_name": "dl_test",
+      "vendor": "php",
+      "products": [
+        "dl_test"
+      ],
+      "cve_details_url": null,
+      "category_id": 15,
+      "_letter": "d"
+    },
+    {
+      "id": 1188,
+      "our_name": "DM Polopoly",
+      "vendor": "dm_polopoly",
+      "products": [
+        "dm_polopoly"
+      ],
+      "cve_details_url": null,
+      "category_id": 16,
+      "_letter": "d"
+    },
+    {
+      "id": 1189,
+      "our_name": "DNN",
+      "vendor": "dnnsoftware",
+      "products": [
+        "dotnetnuke",
+        "dnn"
+      ],
+      "cve_details_url": null,
+      "category_id": 16,
+      "_letter": "d"
+    },
+    {
+      "id": 1240,
+      "our_name": "DocFX",
+      "vendor": "docfx",
+      "products": [
+        "docfx"
+      ],
+      "cve_details_url": null,
+      "category_id": 36,
+      "_letter": "d"
+    },
+    {
+      "id": 239,
+      "our_name": "Docker",
+      "vendor": "docker",
+      "products": [
+        "engine",
+        "docker"
+      ],
+      "cve_details_url": "https://www.cvedetails.com/product/28134/Docker-Docker.html",
+      "category_id": 99,
+      "_letter": "d"
+    },
+    {
+      "id": 1242,
+      "our_name": "Docusaurus",
+      "vendor": "docusaurus",
+      "products": [
+        "docusaurus"
+      ],
+      "cve_details_url": null,
+      "category_id": 36,
+      "_letter": "d"
+    },
+    {
+      "id": 1241,
+      "our_name": "DocuSign",
+      "vendor": "docusign",
+      "products": [
+        "docusign"
+      ],
+      "cve_details_url": null,
+      "category_id": 99,
+      "_letter": "d"
+    },
+    {
+      "id": 1243,
+      "our_name": "Dojo",
+      "vendor": "dojotoolkit",
+      "products": [
+        "dojo"
+      ],
+      "cve_details_url": null,
+      "category_id": 6,
+      "_letter": "d"
+    },
+    {
+      "id": 1244,
+      "our_name": "Dokan",
+      "vendor": "dokan",
+      "products": [
+        "dokan"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "d"
+    },
+    {
+      "id": 1245,
+      "our_name": "Dokeos",
+      "vendor": "dokeos",
+      "products": [
+        "dokeos"
+      ],
+      "cve_details_url": null,
+      "category_id": 42,
+      "_letter": "d"
+    },
+    {
+      "id": 1246,
+      "our_name": "DokuWiki",
+      "vendor": "dokuwiki",
+      "products": [
+        "dokuwiki"
+      ],
+      "cve_details_url": null,
+      "category_id": 38,
+      "_letter": "d"
+    },
+    {
+      "id": 344,
+      "our_name": "DOM",
+      "vendor": "php",
+      "products": [
+        "dom"
+      ],
+      "cve_details_url": null,
+      "category_id": 15,
+      "_letter": "d"
+    },
+    {
+      "id": 1247,
+      "our_name": "DomainFactory",
+      "vendor": "domainfactory",
+      "products": [
+        "domainfactory"
+      ],
+      "cve_details_url": null,
+      "category_id": 92,
+      "_letter": "d"
+    },
+    {
+      "id": 1248,
+      "our_name": "Dominate WooCommerce",
+      "vendor": "dominate_woocommerce",
+      "products": [
+        "dominate_woocommerce"
+      ],
+      "cve_details_url": null,
+      "category_id": 62,
+      "_letter": "d"
+    },
+    {
+      "id": 1249,
+      "our_name": "Doofinder",
+      "vendor": "doofinder",
+      "products": [
+        "doofinder"
+      ],
+      "cve_details_url": null,
+      "category_id": 69,
+      "_letter": "d"
+    },
+    {
+      "id": 1250,
+      "our_name": "Dotclear",
+      "vendor": "dotclear",
+      "products": [
+        "dotclear"
+      ],
+      "cve_details_url": null,
+      "category_id": 16,
+      "_letter": "d"
+    },
+    {
+      "id": 1251,
+      "our_name": "Dotdigital",
+      "vendor": "dotdigital",
+      "products": [
+        "dotdigital"
+      ],
+      "cve_details_url": null,
+      "category_id": 19,
+      "_letter": "d"
+    },
+    {
+      "id": 1252,
+      "our_name": "Dotdigital Chat",
+      "vendor": "dotdigital_chat",
+      "products": [
+        "dotdigital_chat"
+      ],
+      "cve_details_url": null,
+      "category_id": 20,
+      "_letter": "d"
+    },
+    {
+      "id": 1253,
+      "our_name": "DoubleClick Ad Exchange (AdX)",
+      "vendor": "doubleclick_ad_excha",
+      "products": [
+        "doubleclick_ad_excha"
+      ],
+      "cve_details_url": null,
+      "category_id": 22,
+      "_letter": "d"
+    },
+    {
+      "id": 1254,
+      "our_name": "DoubleClick Campaign Manager (DCM)",
+      "vendor": "doubleclick_campaign",
+      "products": [
+        "doubleclick_campaign"
+      ],
+      "cve_details_url": null,
+      "category_id": 22,
+      "_letter": "d"
+    },
+    {
+      "id": 1255,
+      "our_name": "DoubleClick Floodlight",
+      "vendor": "doubleclick_floodlig",
+      "products": [
+        "doubleclick_floodlig"
+      ],
+      "cve_details_url": null,
+      "category_id": 22,
+      "_letter": "d"
+    },
+    {
+      "id": 1256,
+      "our_name": "DoubleClick for Publishers (DFP)",
+      "vendor": "doubleclick_for_publ",
+      "products": [
+        "doubleclick_for_publ"
+      ],
+      "cve_details_url": null,
+      "category_id": 22,
+      "_letter": "d"
+    },
+    {
+      "id": 1257,
+      "our_name": "DoubleVerify",
+      "vendor": "doubleverify",
+      "products": [
+        "doubleverify"
+      ],
+      "cve_details_url": null,
+      "category_id": 22,
+      "_letter": "d"
+    },
+    {
+      "id": 1258,
+      "our_name": "Dovetale",
+      "vendor": "dovetale",
+      "products": [
+        "dovetale"
+      ],
+      "cve_details_url": null,
+      "category_id": 55,
+      "_letter": "d"
+    },
+    {
+      "id": 1259,
+      "our_name": "Doxygen",
+      "vendor": "doxygen",
+      "products": [
+        "doxygen"
+      ],
+      "cve_details_url": null,
+      "category_id": 36,
+      "_letter": "d"
+    },
+    {
+      "id": 1190,
+      "our_name": "DPD",
+      "vendor": "dpd",
+      "products": [
+        "dpd"
+      ],
+      "cve_details_url": null,
+      "category_id": 78,
+      "_letter": "d"
+    },
+    {
+      "id": 1191,
+      "our_name": "DPlayer",
+      "vendor": "dplayer",
+      "products": [
+        "dplayer"
+      ],
+      "cve_details_url": null,
+      "category_id": 27,
+      "_letter": "d"
+    },
+    {
+      "id": 1260,
+      "our_name": "Draft.js",
+      "vendor": "draft_js",
+      "products": [
+        "draft_js"
+      ],
+      "cve_details_url": null,
+      "category_id": 82,
+      "_letter": "d"
+    },
+    {
+      "id": 1261,
+      "our_name": "Draftpress HFCM",
+      "vendor": "draftpress_hfcm",
+      "products": [
+        "draftpress_hfcm"
+      ],
+      "cve_details_url": null,
+      "category_id": 62,
+      "_letter": "d"
+    },
+    {
+      "id": 1262,
+      "our_name": "Drapr",
+      "vendor": "drapr",
+      "products": [
+        "drapr"
+      ],
+      "cve_details_url": null,
+      "category_id": 25,
+      "_letter": "d"
+    },
+    {
+      "id": 1265,
+      "our_name": "Dreamdata",
+      "vendor": "dreamdata",
+      "products": [
+        "dreamdata"
+      ],
+      "cve_details_url": null,
+      "category_id": 19,
+      "_letter": "d"
+    },
+    {
+      "id": 1263,
+      "our_name": "DreamHost",
+      "vendor": "dreamhost",
+      "products": [
+        "dreamhost"
+      ],
+      "cve_details_url": null,
+      "category_id": 92,
+      "_letter": "d"
+    },
+    {
+      "id": 1264,
+      "our_name": "DreamWeaver",
+      "vendor": "adobe",
+      "products": [
+        "dreamweaver"
+      ],
+      "cve_details_url": null,
+      "category_id": 82,
+      "_letter": "d"
+    },
+    {
+      "id": 1266,
+      "our_name": "Drift",
+      "vendor": "drift",
+      "products": [
+        "drift"
+      ],
+      "cve_details_url": null,
+      "category_id": 20,
+      "_letter": "d"
+    },
+    {
+      "id": 1267,
+      "our_name": "Drip",
+      "vendor": "drip",
+      "products": [
+        "drip"
+      ],
+      "cve_details_url": null,
+      "category_id": 19,
+      "_letter": "d"
+    },
+    {
+      "id": 1268,
+      "our_name": "Drop A Hint",
+      "vendor": "drop_a_hint",
+      "products": [
+        "drop_a_hint"
+      ],
+      "cve_details_url": null,
+      "category_id": 64,
+      "_letter": "d"
+    },
+    {
+      "id": 1270,
+      "our_name": "Dropbox",
+      "vendor": "dropbox",
+      "products": [
+        "dropbox"
+      ],
+      "cve_details_url": null,
+      "category_id": 96,
+      "_letter": "d"
+    },
+    {
+      "id": 1269,
+      "our_name": "DropInBlog",
+      "vendor": "dropinblog",
+      "products": [
+        "dropinblog"
+      ],
+      "cve_details_url": null,
+      "category_id": 37,
+      "_letter": "d"
+    },
+    {
+      "id": 1271,
+      "our_name": "Dropzone",
+      "vendor": "dropzone",
+      "products": [
+        "dropzone"
+      ],
+      "cve_details_url": null,
+      "category_id": 6,
+      "_letter": "d"
+    },
+    {
+      "id": 1272,
+      "our_name": "Droxit",
+      "vendor": "droxit",
+      "products": [
+        "droxit"
+      ],
+      "cve_details_url": null,
+      "category_id": 31,
+      "_letter": "d"
+    },
+    {
+      "id": 1273,
+      "our_name": "Droz Bot",
+      "vendor": "droz_bot",
+      "products": [
+        "droz_bot"
+      ],
+      "cve_details_url": null,
+      "category_id": 20,
+      "_letter": "d"
+    },
+    {
+      "id": 71,
+      "our_name": "Drupal",
+      "vendor": "drupal",
+      "products": [
+        "drupal"
+      ],
+      "cve_details_url": "https://www.cvedetails.com/product/2387/Drupal-Drupal.html",
+      "category_id": 8,
+      "_letter": "d"
+    },
+    {
+      "id": 1274,
+      "our_name": "Drupal Commerce",
+      "vendor": "commerceguys",
+      "products": [
+        "commerce",
+        "drupal_commerce"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "d"
+    },
+    {
+      "id": 1275,
+      "our_name": "Drupal Multisite",
+      "vendor": "drupal_multisite",
+      "products": [
+        "drupal_multisite"
+      ],
+      "cve_details_url": null,
+      "category_id": 92,
+      "_letter": "d"
+    },
+    {
+      "id": 1192,
+      "our_name": "DTScout",
+      "vendor": "dtscout",
+      "products": [
+        "dtscout"
+      ],
+      "cve_details_url": null,
+      "category_id": 22,
+      "_letter": "d"
+    },
+    {
+      "id": 1276,
+      "our_name": "Duda",
+      "vendor": "duda",
+      "products": [
+        "duda"
+      ],
+      "cve_details_url": null,
+      "category_id": 16,
+      "_letter": "d"
+    },
+    {
+      "id": 1277,
+      "our_name": "Duel",
+      "vendor": "duel",
+      "products": [
+        "duel"
+      ],
+      "cve_details_url": null,
+      "category_id": 55,
+      "_letter": "d"
+    },
+    {
+      "id": 1278,
+      "our_name": "Dukaan",
+      "vendor": "dukaan",
+      "products": [
+        "dukaan"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "d"
+    },
+    {
+      "id": 1279,
+      "our_name": "Duopana",
+      "vendor": "duopana",
+      "products": [
+        "duopana"
+      ],
+      "cve_details_url": null,
+      "category_id": 16,
+      "_letter": "d"
+    },
+    {
+      "id": 310,
+      "our_name": "Duplicate Post",
+      "vendor": "duplicate_post_project",
+      "products": [
+        "duplicate_post"
+      ],
+      "cve_details_url": "https://www.cvedetails.com/product/58136/Duplicate-Post-Project-Duplicate-Post.html",
+      "category_id": 11,
+      "_letter": "d"
+    },
+    {
+      "id": 1193,
+      "our_name": "DX",
+      "vendor": "dx",
+      "products": [
+        "dx"
+      ],
+      "cve_details_url": null,
+      "category_id": 78,
+      "_letter": "d"
+    },
+    {
+      "id": 1280,
+      "our_name": "Dynamic Yield",
+      "vendor": "dynamic_yield",
+      "products": [
+        "dynamic_yield"
+      ],
+      "cve_details_url": null,
+      "category_id": 24,
+      "_letter": "d"
+    },
+    {
+      "id": 1281,
+      "our_name": "Dynamicweb",
+      "vendor": "dynamicweb",
+      "products": [
+        "dynamicweb"
+      ],
+      "cve_details_url": null,
+      "category_id": 16,
+      "_letter": "d"
+    },
+    {
+      "id": 1282,
+      "our_name": "Dynatrace",
+      "vendor": "dynatrace",
+      "products": [
+        "dynatrace"
+      ],
+      "cve_details_url": null,
+      "category_id": 18,
+      "_letter": "d"
+    },
+    {
+      "id": 1283,
+      "our_name": "Dynatrace RUM",
+      "vendor": "dynatrace_rum",
+      "products": [
+        "dynatrace_rum"
+      ],
+      "cve_details_url": null,
+      "category_id": 33,
+      "_letter": "d"
+    },
+    {
+      "id": 1284,
+      "our_name": "Dyte",
+      "vendor": "dyte",
+      "products": [
+        "dyte"
+      ],
+      "cve_details_url": null,
+      "category_id": 101,
+      "_letter": "d"
+    }
+  ]
+}

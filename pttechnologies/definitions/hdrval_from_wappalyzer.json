@@ -1,0 +1,3725 @@
+[
+  {
+    "header_name": "Access-Control-Allow-Headers",
+    "patterns": [
+      {
+        "regex": "X-CKAN-API-KEY",
+        "product_id": 1033
+      }
+    ]
+  },
+  {
+    "header_name": "Alt-Svc",
+    "patterns": [
+      {
+        "regex": "h2",
+        "product_id": 1674
+      },
+      {
+        "regex": "h3",
+        "product_id": 1675
+      }
+    ]
+  },
+  {
+    "header_name": "Arastta",
+    "patterns": [
+      {
+        "regex": "^(.+)$",
+        "product_id": 742,
+        "version_group": 1
+      }
+    ]
+  },
+  {
+    "header_name": "CMS-Version",
+    "patterns": [
+      {
+        "regex": "^(.+)$",
+        "product_id": 909,
+        "version_group": 1
+      }
+    ]
+  },
+  {
+    "header_name": "COMMERCE-SERVER-SOFTWARE",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 1093
+      }
+    ]
+  },
+  {
+    "header_name": "Cache-Control",
+    "patterns": [
+      {
+        "regex": "Starhost",
+        "product_id": 3052
+      }
+    ]
+  },
+  {
+    "header_name": "Chec-Version",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 1094
+      }
+    ]
+  },
+  {
+    "header_name": "Composed-By",
+    "patterns": [
+      {
+        "regex": "SPIP ([\\d.]+) @",
+        "product_id": 2770,
+        "version_group": 1
+      }
+    ]
+  },
+  {
+    "header_name": "Content-Security-Policy",
+    "patterns": [
+      {
+        "regex": "\\.acuityplatform\\.com",
+        "product_id": 588
+      },
+      {
+        "regex": "\\.scene7\\.com",
+        "product_id": 622
+      },
+      {
+        "regex": "\\.algolia",
+        "product_id": 669
+      },
+      {
+        "regex": "s3[^ ]*amazonaws\\.com\\s",
+        "product_id": 689
+      },
+      {
+        "regex": "js\\.monitor\\.azure\\.com",
+        "product_id": 797
+      },
+      {
+        "regex": "\\.bamboohr\\.com",
+        "product_id": 826
+      },
+      {
+        "regex": "\\.cashewpayments\\.com",
+        "product_id": 990
+      },
+      {
+        "regex": "player\\.cloudinary\\.com",
+        "product_id": 1060
+      },
+      {
+        "regex": "\\.inmoment\\.com",
+        "product_id": 1789
+      },
+      {
+        "regex": "\\.lever\\.co",
+        "product_id": 1041
+      },
+      {
+        "regex": "\\.narvar\\.com",
+        "product_id": 2273
+      },
+      {
+        "regex": "\\.rapidsec\\.net",
+        "product_id": 2653
+      },
+      {
+        "regex": "\\.reelevant\\.com",
+        "product_id": 2691
+      },
+      {
+        "regex": "\\.rokt\\.com",
+        "product_id": 2742
+      },
+      {
+        "regex": "\\.smarterhq\\.io",
+        "product_id": 3540
+      },
+      {
+        "regex": "\\.yoomoney\\.ru",
+        "product_id": 3599
+      }
+    ]
+  },
+  {
+    "header_name": "Content-Security-Policy-Report-Only",
+    "patterns": [
+      {
+        "regex": "s3[^ ]*\\.amazonaws\\.com\\s",
+        "product_id": 689
+      },
+      {
+        "regex": "\\.inmoment\\.com",
+        "product_id": 1789
+      },
+      {
+        "regex": "\\.rapidsec\\.net",
+        "product_id": 2653
+      }
+    ]
+  },
+  {
+    "header_name": "Content-Type",
+    "patterns": [
+      {
+        "regex": "application/wasm",
+        "product_id": 3461
+      }
+    ]
+  },
+  {
+    "header_name": "Cookie",
+    "patterns": [
+      {
+        "regex": "CFTOKEN=",
+        "product_id": 620
+      },
+      {
+        "regex": "dnn_IsMobile=",
+        "product_id": 1189
+      }
+    ]
+  },
+  {
+    "header_name": "DNNOutputCache",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 1189
+      }
+    ]
+  },
+  {
+    "header_name": "Derak-Umbrage",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 1185
+      }
+    ]
+  },
+  {
+    "header_name": "Expires",
+    "patterns": [
+      {
+        "regex": "19 Nov 1978",
+        "product_id": 71
+      }
+    ]
+  },
+  {
+    "header_name": "Fastly-Debug-Digest",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 1433
+      }
+    ]
+  },
+  {
+    "header_name": "IBM-Web2-Location",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 1670
+      }
+    ]
+  },
+  {
+    "header_name": "Itx-Generated-Timestamp",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 1670
+      }
+    ]
+  },
+  {
+    "header_name": "Liferay-Portal",
+    "patterns": [
+      {
+        "regex": "[a-z\\s]+([\\d.]+)",
+        "product_id": 1444,
+        "version_group": 1
+      }
+    ]
+  },
+  {
+    "header_name": "Link",
+    "patterns": [
+      {
+        "regex": "<http://ckan\\.org/>; rel=shortlink",
+        "product_id": 1033
+      }
+    ]
+  },
+  {
+    "header_name": "MicrosoftSharePointTeamServices",
+    "patterns": [
+      {
+        "regex": "^(.+)$",
+        "product_id": 2175,
+        "version_group": 1
+      }
+    ]
+  },
+  {
+    "header_name": "OracleCommerceCloud-Version",
+    "patterns": [
+      {
+        "regex": "^(.+)$",
+        "product_id": 2388,
+        "version_group": 1
+      }
+    ]
+  },
+  {
+    "header_name": "Powered-By",
+    "patterns": [
+      {
+        "regex": "^Prestashop$",
+        "product_id": 83
+      }
+    ]
+  },
+  {
+    "header_name": "SPRequestGuid",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 2175
+      }
+    ]
+  },
+  {
+    "header_name": "Server",
+    "patterns": [
+      {
+        "regex": "AOLserver/?([\\d.]+)?",
+        "product_id": 547,
+        "version_group": 1
+      },
+      {
+        "regex": "^Airee",
+        "product_id": 654
+      },
+      {
+        "regex": "akka-http(?:/([\\d.]+))?",
+        "product_id": 664,
+        "version_group": 1
+      },
+      {
+        "regex": "\\(Amazon\\)",
+        "product_id": 684
+      },
+      {
+        "regex": "^ECS",
+        "product_id": 685
+      },
+      {
+        "regex": "(?:Apache(?:$|/([\\d.]+)|[^/-])|(?:^|\\b)HTTPD)",
+        "product_id": 10,
+        "version_group": 1
+      },
+      {
+        "regex": "^Apache-Coyote",
+        "product_id": 20
+      },
+      {
+        "regex": "ATS/?([\\d.]+)?",
+        "product_id": 719,
+        "version_group": 1
+      },
+      {
+        "regex": "Artifactory(?:/([\\d.]+))?",
+        "product_id": 747,
+        "version_group": 1
+      },
+      {
+        "regex": "^Azion ",
+        "product_id": 793
+      },
+      {
+        "regex": "^BunnyCDN",
+        "product_id": 944
+      },
+      {
+        "regex": "^CDN77-Turbo$",
+        "product_id": 955
+      },
+      {
+        "regex": "^CFS ",
+        "product_id": 968
+      },
+      {
+        "regex": "^Caddy$",
+        "product_id": 14
+      },
+      {
+        "regex": "^Cherokee(?:/([\\d.]+))?",
+        "product_id": 1018,
+        "version_group": 1
+      },
+      {
+        "regex": "CherryPy(?:/([\\d.]+))?",
+        "product_id": 1019,
+        "version_group": 1
+      },
+      {
+        "regex": "cloudera",
+        "product_id": 1055
+      },
+      {
+        "regex": "^cloudflare$",
+        "product_id": 110
+      },
+      {
+        "regex": "CouchDB/([\\d.]+)",
+        "product_id": 1137,
+        "version_group": 1
+      },
+      {
+        "regex": "^Cowboy$",
+        "product_id": 1143
+      },
+      {
+        "regex": "cpsrvd/([\\d.]+)",
+        "product_id": 248,
+        "version_group": 1
+      },
+      {
+        "regex": "^DERAK\\.CLOUD$",
+        "product_id": 1185
+      },
+      {
+        "regex": "Perl Dancer ([\\d.]+)",
+        "product_id": 1198,
+        "version_group": 1
+      },
+      {
+        "regex": "Daphne",
+        "product_id": 1200
+      },
+      {
+        "regex": "Darwin",
+        "product_id": 1202
+      },
+      {
+        "regex": "^DataDome$",
+        "product_id": 1207
+      },
+      {
+        "regex": "^Deta$",
+        "product_id": 1218
+      },
+      {
+        "regex": "DirectAdmin Daemon v([\\d.]+)",
+        "product_id": 1228,
+        "version_group": 1
+      },
+      {
+        "regex": "ELOG HTTP ?([\\d.-]+)?",
+        "product_id": 1293,
+        "version_group": 1
+      },
+      {
+        "regex": "^ECD\\s\\(\\S+\\)",
+        "product_id": 1308
+      },
+      {
+        "regex": "Mbedthis-Appweb(?:/([\\d.]+))?",
+        "product_id": 1329,
+        "version_group": 1
+      },
+      {
+        "regex": "^envoy$",
+        "product_id": 114
+      },
+      {
+        "regex": "Erlang( OTP/(?:[\\d.ABR-]+))?",
+        "product_id": 1355,
+        "version_group": 1
+      },
+      {
+        "regex": "^Etherpad",
+        "product_id": 1362
+      },
+      {
+        "regex": "fbs",
+        "product_id": 1453
+      },
+      {
+        "regex": "Werkzeug/?([\\d\\.]+)?",
+        "product_id": 54,
+        "version_group": 1
+      },
+      {
+        "regex": "FreeBSD(?: ([\\d.]+))?",
+        "product_id": 162,
+        "version_group": 1
+      },
+      {
+        "regex": "^GitHub\\.com$",
+        "product_id": 1562
+      },
+      {
+        "regex": "GlassFish(?: Server)?(?: Open Source Edition)?(?: ?/?([\\d.]+))?",
+        "product_id": 1569,
+        "version_group": 1
+      },
+      {
+        "regex": "GoAhead",
+        "product_id": 1586
+      },
+      {
+        "regex": "goanywhere",
+        "product_id": 1587
+      },
+      {
+        "regex": "^gocache$",
+        "product_id": 1588
+      },
+      {
+        "regex": "gws",
+        "product_id": 1632
+      },
+      {
+        "regex": "gunicorn(?:/([\\d.]+))?",
+        "product_id": 1668,
+        "version_group": 1
+      },
+      {
+        "regex": "HP_Compact_Server(?:/([\\d.]+))?",
+        "product_id": 1672,
+        "version_group": 1
+      },
+      {
+        "regex": "HP-iLO-Server(?:/([\\d.]+))?",
+        "product_id": 1673,
+        "version_group": 1
+      },
+      {
+        "regex": "Hiawatha v([\\d.]+)",
+        "product_id": 1712,
+        "version_group": 1
+      },
+      {
+        "regex": "hypercorn",
+        "product_id": 1754
+      },
+      {
+        "regex": "IBM_HTTP_Server(?:/([\\d.]+))?",
+        "product_id": 171,
+        "version_group": 1
+      },
+      {
+        "regex": "^(?:Microsoft-)?IIS(?:/([\\d.]+))?",
+        "product_id": 12,
+        "version_group": 1
+      },
+      {
+        "regex": "Indy(?:/([\\d.]+))?",
+        "product_id": 1797,
+        "version_group": 1
+      },
+      {
+        "regex": "Intel\\(R\\) Active Management Technology(?: ([\\d.]+))?",
+        "product_id": 1815,
+        "version_group": 1
+      },
+      {
+        "regex": "Jetty(?:\\(([\\d\\.]*\\d+))?",
+        "product_id": 1878,
+        "version_group": 1
+      },
+      {
+        "regex": "^Kestrel",
+        "product_id": 15
+      },
+      {
+        "regex": "^keycdn-engine$",
+        "product_id": 1939
+      },
+      {
+        "regex": "libwww-perl-daemon(?:/([\\d\\.]+))?",
+        "product_id": 36,
+        "version_group": 1
+      },
+      {
+        "regex": "(?:L|l)ight(?:y)?(?:tpd)?(?:/([\\d\\.]+))?",
+        "product_id": 10,
+        "version_group": 1
+      },
+      {
+        "regex": "^Mastodon$",
+        "product_id": 2128
+      },
+      {
+        "regex": "^NetDNA",
+        "product_id": 2136
+      },
+      {
+        "regex": "MiniServ/([\\d\\.]+)",
+        "product_id": 2184,
+        "version_group": 1
+      },
+      {
+        "regex": "MochiWeb(?:/([\\d.]+))?",
+        "product_id": 2199,
+        "version_group": 1
+      },
+      {
+        "regex": "Mongrel",
+        "product_id": 2214
+      },
+      {
+        "regex": "Monkey/?([\\d.]+)?",
+        "product_id": 2215,
+        "version_group": 1
+      },
+      {
+        "regex": "mini_httpd(?:/([\\d.]+))?",
+        "product_id": 2255,
+        "version_group": 1
+      },
+      {
+        "regex": "mod_auth_pam(?:/([\\d\\.]+))?",
+        "product_id": 2258,
+        "version_group": 1
+      },
+      {
+        "regex": "\\b(?:mod_)?DAV\\b(?:/([\\d.]+))?",
+        "product_id": 250,
+        "version_group": 1
+      },
+      {
+        "regex": "mod_fastcgi(?:/([\\d.]+))?",
+        "product_id": 2259,
+        "version_group": 1
+      },
+      {
+        "regex": "mod_jk(?:/([\\d\\.]+))?",
+        "product_id": 226,
+        "version_group": 1
+      },
+      {
+        "regex": "mod_perl(?:/([\\d\\.]+))?",
+        "product_id": 223,
+        "version_group": 1
+      },
+      {
+        "regex": "mod_python(?:/([\\d.]+))?",
+        "product_id": 225,
+        "version_group": 1
+      },
+      {
+        "regex": "mod_rack(?:/([\\d.]+))?",
+        "product_id": 2260,
+        "version_group": 1
+      },
+      {
+        "regex": "mod_rails(?:/([\\d.]+))?",
+        "product_id": 2261,
+        "version_group": 1
+      },
+      {
+        "regex": "mod_ssl(?:/([\\d.]+))?",
+        "product_id": 220,
+        "version_group": 1
+      },
+      {
+        "regex": "mod_wsgi(?:/([\\d.]+))?",
+        "product_id": 224,
+        "version_group": 1
+      },
+      {
+        "regex": "^Netlify",
+        "product_id": 2286
+      },
+      {
+        "regex": "nginx(?:/([\\d.]+))?",
+        "product_id": 11,
+        "version_group": 1
+      },
+      {
+        "regex": "nghttpx nghttp2/?([\\d.]+)?",
+        "product_id": 2314,
+        "version_group": 1
+      },
+      {
+        "regex": "^OpenBSD httpd",
+        "product_id": 2363
+      },
+      {
+        "regex": "OpenCms",
+        "product_id": 2365
+      },
+      {
+        "regex": "GSE",
+        "product_id": 2368
+      },
+      {
+        "regex": "openresty(?:/([\\d.]+))?",
+        "product_id": 170,
+        "version_group": 1
+      },
+      {
+        "regex": "OpenSSL(?:/([\\d.]+[a-z]?))?",
+        "product_id": 210,
+        "version_group": 1
+      },
+      {
+        "regex": "Oracle[- ]Application[- ]Server(?: Containers for J2EE)?(?:[- ](\\d[\\da-z./]+))?",
+        "product_id": 173,
+        "version_group": 1
+      },
+      {
+        "regex": "Oracle-HTTP-Server(?:/([\\d.]+))?",
+        "product_id": 172,
+        "version_group": 1
+      },
+      {
+        "regex": "Oracle(?:AS)?[- ]Web[- ]Cache(?:[- /]([\\da-z./]+))?",
+        "product_id": 2393,
+        "version_group": 1
+      },
+      {
+        "regex": "php/?([\\d.]+)?",
+        "product_id": 30,
+        "version_group": 1
+      },
+      {
+        "regex": "^Pagely",
+        "product_id": 2434
+      },
+      {
+        "regex": "^Pantheon",
+        "product_id": 2438
+      },
+      {
+        "regex": "\\bPerl\\b(?: ?/?v?([\\d.]+))?",
+        "product_id": 36,
+        "version_group": 1
+      },
+      {
+        "regex": "Phusion Passenger ([\\d.]+)",
+        "product_id": 2494,
+        "version_group": 1
+      },
+      {
+        "regex": "(?:^|\\s)Python(?:/([\\d.]+))?",
+        "product_id": 32,
+        "version_group": 1
+      },
+      {
+        "regex": "^RainLoop",
+        "product_id": 2646
+      },
+      {
+        "regex": "Red Hat",
+        "product_id": 2680
+      },
+      {
+        "regex": "^Resin(?:/(\\S*))?",
+        "product_id": 2707,
+        "version_group": 1
+      },
+      {
+        "regex": "(?:Mongrel|WEBrick|Ruby)",
+        "product_id": 33
+      },
+      {
+        "regex": "mod_(?:rails|rack)",
+        "product_id": 51
+      },
+      {
+        "regex": "SAP NetWeaver Application Server",
+        "product_id": 2757
+      },
+      {
+        "regex": "SUSE(?:/?\\s?-?([\\d.]+))?",
+        "product_id": 2775,
+        "version_group": 1
+      },
+      {
+        "regex": "Demandware eCommerce Server",
+        "product_id": 2792
+      },
+      {
+        "regex": "Scientific Linux",
+        "product_id": 2812
+      },
+      {
+        "regex": "dart:io with Shelf",
+        "product_id": 2865
+      },
+      {
+        "regex": "SimpleHTTP(?:/([\\d.]+))?",
+        "product_id": 2914,
+        "version_group": 1
+      },
+      {
+        "regex": "Snap/([.\\d]+)",
+        "product_id": 2974,
+        "version_group": 1
+      },
+      {
+        "regex": "Splunkd",
+        "product_id": 3021
+      },
+      {
+        "regex": "^Plack::Handler::Starlet",
+        "product_id": 3053
+      },
+      {
+        "regex": "^statically$",
+        "product_id": 3056
+      },
+      {
+        "regex": "SunOS( [\\d\\.]+)?",
+        "product_id": 3088,
+        "version_group": 1
+      },
+      {
+        "regex": "Tengine",
+        "product_id": 3175
+      },
+      {
+        "regex": "TornadoServer(?:/([\\d.]+))?",
+        "product_id": 3244,
+        "version_group": 1
+      },
+      {
+        "regex": "TwistedWeb(?:/([\\d.]+))?",
+        "product_id": 3300,
+        "version_group": 1
+      },
+      {
+        "regex": "\\bthttpd(?:/([\\d.]+))?",
+        "product_id": 3317,
+        "version_group": 1
+      },
+      {
+        "regex": "uvicorn",
+        "product_id": 3364
+      },
+      {
+        "regex": "^VTEX IO$",
+        "product_id": 3376
+      },
+      {
+        "regex": "Virtuoso/?([0-9.]+)?",
+        "product_id": 3404,
+        "version_group": 1
+      },
+      {
+        "regex": "^Warp/(\\d+(?:\\.\\d+)+)?$",
+        "product_id": 3455,
+        "version_group": 1
+      },
+      {
+        "regex": "^WebLogic\\sServer\\s([\\d\\.]+)?",
+        "product_id": 3477,
+        "version_group": 1
+      },
+      {
+        "regex": "\\bWinCE\\b",
+        "product_id": 3503
+      },
+      {
+        "regex": "Win32|Win64",
+        "product_id": 7
+      },
+      {
+        "regex": "Winstone Servlet (?:Container|Engine) v?([\\d.]+)?",
+        "product_id": 3505,
+        "version_group": 1
+      },
+      {
+        "regex": "^WiziServer$",
+        "product_id": 3514
+      },
+      {
+        "regex": "XeoraEngine",
+        "product_id": 3559
+      },
+      {
+        "regex": "Xitami(?:/([\\d.]+))?",
+        "product_id": 3560,
+        "version_group": 1
+      },
+      {
+        "regex": "Yaws(?: ([\\d.]+))?",
+        "product_id": 3585,
+        "version_group": 1
+      },
+      {
+        "regex": "^Zope/",
+        "product_id": 3649
+      }
+    ]
+  },
+  {
+    "header_name": "Servlet-engine",
+    "patterns": [
+      {
+        "regex": "SunOS( [\\d\\.]+)?",
+        "product_id": 3088,
+        "version_group": 1
+      }
+    ]
+  },
+  {
+    "header_name": "Set-Cookie",
+    "patterns": [
+      {
+        "regex": "BITRIX_",
+        "product_id": 3653
+      }
+    ]
+  },
+  {
+    "header_name": "SharePointHealthScore",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 2175
+      }
+    ]
+  },
+  {
+    "header_name": "Smug-CDN",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 2973
+      }
+    ]
+  },
+  {
+    "header_name": "Strict-Transport-Security",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 1763
+      }
+    ]
+  },
+  {
+    "header_name": "Vary",
+    "patterns": [
+      {
+        "regex": "Fastly-SSL",
+        "product_id": 1433
+      }
+    ]
+  },
+  {
+    "header_name": "Via",
+    "patterns": [
+      {
+        "regex": "\\(CloudFront\\)$",
+        "product_id": 682
+      },
+      {
+        "regex": "^1\\.1 google$",
+        "product_id": 1614
+      },
+      {
+        "regex": "[\\d.-]+ vegur$",
+        "product_id": 1705
+      },
+      {
+        "regex": "varnish(?: \\(Varnish/([\\d.]+)\\))?",
+        "product_id": 112,
+        "version_group": 1
+      }
+    ]
+  },
+  {
+    "header_name": "WP-Super-Cache",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 3528
+      }
+    ]
+  },
+  {
+    "header_name": "WWW-Authenticate",
+    "patterns": [
+      {
+        "regex": "^Basic",
+        "product_id": 832
+      },
+      {
+        "regex": "^Digest",
+        "product_id": 1223
+      },
+      {
+        "regex": "^Kerberos",
+        "product_id": 1937
+      },
+      {
+        "regex": "^NTLM",
+        "product_id": 2265
+      },
+      {
+        "regex": "^Negotiate",
+        "product_id": 2771
+      }
+    ]
+  },
+  {
+    "header_name": "WebDevSrc",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 3431
+      }
+    ]
+  },
+  {
+    "header_name": "Weglot-Translated",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 3488
+      }
+    ]
+  },
+  {
+    "header_name": "X-AH-Environment",
+    "patterns": [
+      {
+        "regex": "prod",
+        "product_id": 572
+      },
+      {
+        "regex": "next",
+        "product_id": 574
+      },
+      {
+        "regex": "^\\w+$",
+        "product_id": 575
+      }
+    ]
+  },
+  {
+    "header_name": "X-ATG-Version",
+    "patterns": [
+      {
+        "regex": "(?:ATGPlatform/([\\d.]+))?",
+        "product_id": 2387,
+        "version_group": 1
+      }
+    ]
+  },
+  {
+    "header_name": "X-Advertising-By",
+    "patterns": [
+      {
+        "regex": "adnegah\\.net",
+        "product_id": 616
+      }
+    ]
+  },
+  {
+    "header_name": "X-Akamai-Transformed",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 657
+      }
+    ]
+  },
+  {
+    "header_name": "X-Akaunting",
+    "patterns": [
+      {
+        "regex": "^Free Accounting Software$",
+        "product_id": 661
+      }
+    ]
+  },
+  {
+    "header_name": "X-Amz-Cf-Id",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 682
+      }
+    ]
+  },
+  {
+    "header_name": "X-Application-Context",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 3029
+      }
+    ]
+  },
+  {
+    "header_name": "X-Arastta",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 742
+      }
+    ]
+  },
+  {
+    "header_name": "X-AspNet-Version",
+    "patterns": [
+      {
+        "regex": "(.+)",
+        "product_id": 2165,
+        "version_group": 1
+      }
+    ]
+  },
+  {
+    "header_name": "X-Azure-Ref",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 796
+      }
+    ]
+  },
+  {
+    "header_name": "X-B3-Flags",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 3636
+      }
+    ]
+  },
+  {
+    "header_name": "X-B3-ParentSpanId",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 3636
+      }
+    ]
+  },
+  {
+    "header_name": "X-B3-Sampled",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 3636
+      }
+    ]
+  },
+  {
+    "header_name": "X-B3-SpanId",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 3636
+      }
+    ]
+  },
+  {
+    "header_name": "X-B3-TraceId",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 3636
+      }
+    ]
+  },
+  {
+    "header_name": "X-Backdrop-Cache",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 823
+      }
+    ]
+  },
+  {
+    "header_name": "X-Backside-Transport",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 1765
+      }
+    ]
+  },
+  {
+    "header_name": "X-Built-With",
+    "patterns": [
+      {
+        "regex": "^Hyva Themes$",
+        "product_id": 1762
+      }
+    ]
+  },
+  {
+    "header_name": "X-CDN",
+    "patterns": [
+      {
+        "regex": "Incapsula",
+        "product_id": 1791
+      }
+    ]
+  },
+  {
+    "header_name": "X-CDN-Forward",
+    "patterns": [
+      {
+        "regex": "^maxcdn$",
+        "product_id": 2136
+      }
+    ]
+  },
+  {
+    "header_name": "X-CF1",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 968
+      }
+    ]
+  },
+  {
+    "header_name": "X-CF2",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 968
+      }
+    ]
+  },
+  {
+    "header_name": "X-Cache",
+    "patterns": [
+      {
+        "regex": "\\.swiftserve\\.com",
+        "product_id": 1636
+      }
+    ]
+  },
+  {
+    "header_name": "X-Compressed-By",
+    "patterns": [
+      {
+        "regex": "DotNetNuke",
+        "product_id": 1189
+      }
+    ]
+  },
+  {
+    "header_name": "X-Confluence-Request-Time",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 763
+      }
+    ]
+  },
+  {
+    "header_name": "X-Content-Encoded-By",
+    "patterns": [
+      {
+        "regex": "Joomla! ([\\d.]+)",
+        "product_id": 72,
+        "version_group": 1
+      },
+      {
+        "regex": "uKnowva ([\\d.]+)",
+        "product_id": 3365,
+        "version_group": 1
+      }
+    ]
+  },
+  {
+    "header_name": "X-DataDome",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 1207
+      }
+    ]
+  },
+  {
+    "header_name": "X-DataDome-CID",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 1207
+      }
+    ]
+  },
+  {
+    "header_name": "X-Dotclear-Static-Cache",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 1250
+      }
+    ]
+  },
+  {
+    "header_name": "X-Drectory-Script",
+    "patterns": [
+      {
+        "regex": "^eSyndiCat",
+        "product_id": 1399
+      }
+    ]
+  },
+  {
+    "header_name": "X-Drupal-Cache",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 71
+      }
+    ]
+  },
+  {
+    "header_name": "X-EC-Debug",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 117
+      }
+    ]
+  },
+  {
+    "header_name": "X-EdgeConnect-MidMile-RTT",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 657
+      }
+    ]
+  },
+  {
+    "header_name": "X-EdgeConnect-Origin-MEX-Latency",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 657
+      }
+    ]
+  },
+  {
+    "header_name": "X-Elcodi",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 1315
+      }
+    ]
+  },
+  {
+    "header_name": "X-Ensi-Platform",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 1341
+      }
+    ]
+  },
+  {
+    "header_name": "X-Fastcgi-Cache",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 11
+      }
+    ]
+  },
+  {
+    "header_name": "X-Fastly-Request-ID",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 1433
+      }
+    ]
+  },
+  {
+    "header_name": "X-Firefox-Http3",
+    "patterns": [
+      {
+        "regex": "h3",
+        "product_id": 1675
+      }
+    ]
+  },
+  {
+    "header_name": "X-Firefox-Spdy",
+    "patterns": [
+      {
+        "regex": "h2",
+        "product_id": 1674
+      },
+      {
+        "regex": "\\d\\.\\d",
+        "product_id": 2769
+      }
+    ]
+  },
+  {
+    "header_name": "X-Flex-Lang",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 1462
+      }
+    ]
+  },
+  {
+    "header_name": "X-Flow-Powered",
+    "patterns": [
+      {
+        "regex": "Neos/?(.+)?$",
+        "product_id": 2281,
+        "version_group": 1
+      },
+      {
+        "regex": "Flow/?(.+)?$",
+        "product_id": 2282,
+        "version_group": 1
+      }
+    ]
+  },
+  {
+    "header_name": "X-Foswikiaction",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 1489
+      }
+    ]
+  },
+  {
+    "header_name": "X-Foswikiuri",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 1489
+      }
+    ]
+  },
+  {
+    "header_name": "X-Generated-By",
+    "patterns": [
+      {
+        "regex": "UMI\\.CMS",
+        "product_id": 3324
+      }
+    ]
+  },
+  {
+    "header_name": "X-Generator",
+    "patterns": [
+      {
+        "regex": "^Backdrop CMS(?:\\s([\\d.]+))?",
+        "product_id": 823,
+        "version_group": 1
+      },
+      {
+        "regex": "^Drupal(?:\\s([\\d.]+))?",
+        "product_id": 71,
+        "version_group": 1
+      },
+      {
+        "regex": "Sulu/?(.+)?$",
+        "product_id": 3085,
+        "version_group": 1
+      }
+    ]
+  },
+  {
+    "header_name": "X-Ghost-Cache-Status",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 74
+      }
+    ]
+  },
+  {
+    "header_name": "X-GitHub-Request-Id",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 1562
+      }
+    ]
+  },
+  {
+    "header_name": "X-Global-Transaction-ID",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 1765
+      }
+    ]
+  },
+  {
+    "header_name": "X-GoCache-CacheStatus",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 1588
+      }
+    ]
+  },
+  {
+    "header_name": "X-Hosting-Provider",
+    "patterns": [
+      {
+        "regex": "Tangled Network",
+        "product_id": 3156
+      }
+    ]
+  },
+  {
+    "header_name": "X-Iinfo",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 1784
+      }
+    ]
+  },
+  {
+    "header_name": "X-Includable-Version",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 1792
+      }
+    ]
+  },
+  {
+    "header_name": "X-Inertia",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 1798
+      }
+    ]
+  },
+  {
+    "header_name": "X-JIVE-USER-ID",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 1883
+      }
+    ]
+  },
+  {
+    "header_name": "X-JSL",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 1883
+      }
+    ]
+  },
+  {
+    "header_name": "X-Jenkins",
+    "patterns": [
+      {
+        "regex": "([\\d.]+)",
+        "product_id": 1876,
+        "version_group": 1
+      }
+    ]
+  },
+  {
+    "header_name": "X-Jimdo-Instance",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 1880
+      }
+    ]
+  },
+  {
+    "header_name": "X-Jimdo-Wid",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 1880
+      }
+    ]
+  },
+  {
+    "header_name": "X-Jive-Flow-Id",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 1883
+      }
+    ]
+  },
+  {
+    "header_name": "X-Jive-Request-Id",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 1883
+      }
+    ]
+  },
+  {
+    "header_name": "X-KoobooCMS-Version",
+    "patterns": [
+      {
+        "regex": "^(.+)$",
+        "product_id": 1965,
+        "version_group": 1
+      }
+    ]
+  },
+  {
+    "header_name": "X-LAGOON",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 1978
+      }
+    ]
+  },
+  {
+    "header_name": "X-Lift-Version",
+    "patterns": [
+      {
+        "regex": "(.+)",
+        "product_id": 2716,
+        "version_group": 1
+      }
+    ]
+  },
+  {
+    "header_name": "X-MCF-ID",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 2238
+      }
+    ]
+  },
+  {
+    "header_name": "X-Mod-Pagespeed",
+    "patterns": [
+      {
+        "regex": "([\\d.]+)",
+        "product_id": 1624,
+        "version_group": 1
+      }
+    ]
+  },
+  {
+    "header_name": "X-NF-Request-ID",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 2286
+      }
+    ]
+  },
+  {
+    "header_name": "X-OWA-Version",
+    "patterns": [
+      {
+        "regex": "([\\d\\.]+)?",
+        "product_id": 2408,
+        "version_group": 1
+      }
+    ]
+  },
+  {
+    "header_name": "X-PHPFusion",
+    "patterns": [
+      {
+        "regex": "(.+)$",
+        "product_id": 2420,
+        "version_group": 1
+      }
+    ]
+  },
+  {
+    "header_name": "X-Page-Speed",
+    "patterns": [
+      {
+        "regex": "(.+)",
+        "product_id": 1624,
+        "version_group": 1
+      }
+    ]
+  },
+  {
+    "header_name": "X-Pardot-LB",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 2440
+      }
+    ]
+  },
+  {
+    "header_name": "X-Pardot-Route",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 2440
+      }
+    ]
+  },
+  {
+    "header_name": "X-Pardot-Rsp",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 2440
+      }
+    ]
+  },
+  {
+    "header_name": "X-Pass-Why",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 3436
+      }
+    ]
+  },
+  {
+    "header_name": "X-Pingback",
+    "patterns": [
+      {
+        "regex": "/xmlrpc\\.php$",
+        "product_id": 70
+      }
+    ]
+  },
+  {
+    "header_name": "X-Plenty-Shop",
+    "patterns": [
+      {
+        "regex": "Ceres",
+        "product_id": 2611
+      },
+      {
+        "regex": ".*",
+        "product_id": 2612
+      }
+    ]
+  },
+  {
+    "header_name": "X-Powered-By",
+    "patterns": [
+      {
+        "regex": "3DCART",
+        "product_id": 3658
+      },
+      {
+        "regex": "^E2 Aegea v(\\d+)$",
+        "product_id": 635,
+        "version_group": 1
+      },
+      {
+        "regex": "Afosto SaaS BV",
+        "product_id": 643
+      },
+      {
+        "regex": "^Amber$",
+        "product_id": 694
+      },
+      {
+        "regex": "\\bTomcat\\b(?:-([\\d.]+))?",
+        "product_id": 20,
+        "version_group": 1
+      },
+      {
+        "regex": "Salesforce\\.com ApexPages",
+        "product_id": 721
+      },
+      {
+        "regex": "^ARR/([\\d\\.]+)$",
+        "product_id": 736,
+        "version_group": 1
+      },
+      {
+        "regex": "actionhero API",
+        "product_id": 805
+      },
+      {
+        "regex": "Banshee PHP framework v([\\d\\.]+)",
+        "product_id": 829,
+        "version_group": 1
+      },
+      {
+        "regex": "blade-([\\w.]+)?",
+        "product_id": 859,
+        "version_group": 1
+      },
+      {
+        "regex": "^Blitz$",
+        "product_id": 863
+      },
+      {
+        "regex": "^Brightspot$",
+        "product_id": 926
+      },
+      {
+        "regex": "Brownie",
+        "product_id": 929
+      },
+      {
+        "regex": "^Dragonfly CMS",
+        "product_id": 963
+      },
+      {
+        "regex": "Catberry",
+        "product_id": 991
+      },
+      {
+        "regex": "centminmod",
+        "product_id": 1000
+      },
+      {
+        "regex": "Chamilo ([\\d.]+)",
+        "product_id": 1005,
+        "version_group": 1
+      },
+      {
+        "regex": "Commerce.js",
+        "product_id": 1094
+      },
+      {
+        "regex": "^CppCMS/([\\d.]+)$",
+        "product_id": 1145,
+        "version_group": 1
+      },
+      {
+        "regex": "\\bCraft CMS\\b",
+        "product_id": 1146
+      },
+      {
+        "regex": "\\bCraft Commerce\\b",
+        "product_id": 1147
+      },
+      {
+        "regex": "Perl Dancer ([\\d.]+)",
+        "product_id": 1198,
+        "version_group": 1
+      },
+      {
+        "regex": "CMS Danneo ([\\d.]+)",
+        "product_id": 1199,
+        "version_group": 1
+      },
+      {
+        "regex": "Darwin",
+        "product_id": 1202
+      },
+      {
+        "regex": "(?:Debian|dotdeb|(potato|woody|sarge|etch|lenny|squeeze|wheezy|jessie|stretch|buster|sid))",
+        "product_id": 3,
+        "version_group": 1
+      },
+      {
+        "regex": "Dokeos",
+        "product_id": 1245
+      },
+      {
+        "regex": "^Express(?:$|,)",
+        "product_id": 1377
+      },
+      {
+        "regex": "e107",
+        "product_id": 1390
+      },
+      {
+        "regex": "^eZ Publish",
+        "product_id": 1402
+      },
+      {
+        "regex": "^enduro\\.js",
+        "product_id": 1405
+      },
+      {
+        "regex": "^Fat-Free Framework$",
+        "product_id": 1436
+      },
+      {
+        "regex": "FlexCMP.+\\[v\\. ([\\d.]+)",
+        "product_id": 1462,
+        "version_group": 1
+      },
+      {
+        "regex": "gentoo",
+        "product_id": 1547
+      },
+      {
+        "regex": "HHVM/?([\\d.]+)?",
+        "product_id": 1671,
+        "version_group": 1
+      },
+      {
+        "regex": "Adrikikicp Development",
+        "product_id": 1696
+      },
+      {
+        "regex": "Hetzner",
+        "product_id": 1708
+      },
+      {
+        "regex": "JBoss(?:-([\\d.]+))?",
+        "product_id": 1860,
+        "version_group": 1
+      },
+      {
+        "regex": "JBossWeb(?:-([\\d.]+))?",
+        "product_id": 1861,
+        "version_group": 1
+      },
+      {
+        "regex": "Servlet(?:\\/([\\d.]+))?",
+        "product_id": 1871,
+        "version_group": 1
+      },
+      {
+        "regex": "JSF(?:/([\\d.]+))?",
+        "product_id": 1873,
+        "version_group": 1
+      },
+      {
+        "regex": "JSP(?:/([\\d.]+))?",
+        "product_id": 1874,
+        "version_group": 1
+      },
+      {
+        "regex": "Jibres",
+        "product_id": 1879
+      },
+      {
+        "regex": "Kemal",
+        "product_id": 1933
+      },
+      {
+        "regex": "^koa$",
+        "product_id": 1956
+      },
+      {
+        "regex": "Kohana Framework ([\\d.]+)",
+        "product_id": 1960,
+        "version_group": 1
+      },
+      {
+        "regex": "MATORI.NET",
+        "product_id": 2079
+      },
+      {
+        "regex": "^MODX",
+        "product_id": 2084
+      },
+      {
+        "regex": "^Medium$",
+        "product_id": 2147
+      },
+      {
+        "regex": "^ASP\\.NET",
+        "product_id": 2165
+      },
+      {
+        "regex": "Mobify",
+        "product_id": 2196
+      },
+      {
+        "regex": "Mono",
+        "product_id": 2216
+      },
+      {
+        "regex": "mod_rack(?:/([\\d.]+))?",
+        "product_id": 2260,
+        "version_group": 1
+      },
+      {
+        "regex": "mod_rails(?:/([\\d.]+))?",
+        "product_id": 2261,
+        "version_group": 1
+      },
+      {
+        "regex": "mod_wsgi(?:/([\\d.]+))?",
+        "product_id": 224,
+        "version_group": 1
+      },
+      {
+        "regex": "^Nette Framework",
+        "product_id": 59
+      },
+      {
+        "regex": "^NodeBB$",
+        "product_id": 2305
+      },
+      {
+        "regex": "OpenNemas",
+        "product_id": 2371
+      },
+      {
+        "regex": "OTRS ([\\d.]+)",
+        "product_id": 2414,
+        "version_group": 1
+      },
+      {
+        "regex": "^php/?([\\d.]+)?",
+        "product_id": 30,
+        "version_group": 1
+      },
+      {
+        "regex": "PHPFusion (.+)$",
+        "product_id": 2420,
+        "version_group": 1
+      },
+      {
+        "regex": "PageFly",
+        "product_id": 2432
+      },
+      {
+        "regex": "Pars Elecom Portal",
+        "product_id": 2442
+      },
+      {
+        "regex": "PencilBlue",
+        "product_id": 2468
+      },
+      {
+        "regex": "Phusion Passenger(?:\\(R\\))? ?([\\d.]+)?",
+        "product_id": 2494,
+        "version_group": 1
+      },
+      {
+        "regex": "^pimcore$",
+        "product_id": 2500
+      },
+      {
+        "regex": "^Plesk(?:L|W)in",
+        "product_id": 2524
+      },
+      {
+        "regex": "ProcessWire CMS",
+        "product_id": 2569
+      },
+      {
+        "regex": "RX-WEB",
+        "product_id": 2644
+      },
+      {
+        "regex": "Red Hat",
+        "product_id": 2680
+      },
+      {
+        "regex": "Roadiz CMS",
+        "product_id": 2737
+      },
+      {
+        "regex": "mod_(?:rails|rack)",
+        "product_id": 51
+      },
+      {
+        "regex": "SUSE(?:/?\\s?-?([\\d.]+))?",
+        "product_id": 2775,
+        "version_group": 1
+      },
+      {
+        "regex": "^Sails(?:$|[^a-z0-9])",
+        "product_id": 2782
+      },
+      {
+        "regex": "Scientific Linux",
+        "product_id": 2812
+      },
+      {
+        "regex": "^ShopFA ([\\d.]+)$",
+        "product_id": 2883,
+        "version_group": 1
+      },
+      {
+        "regex": "Sirclo",
+        "product_id": 2922
+      },
+      {
+        "regex": "Squiz Matrix",
+        "product_id": 3044
+      },
+      {
+        "regex": "Storeden",
+        "product_id": 3063
+      },
+      {
+        "regex": "^Strapi",
+        "product_id": 3069
+      },
+      {
+        "regex": "ThinkPHP",
+        "product_id": 3221
+      },
+      {
+        "regex": "^TotalCode$",
+        "product_id": 3245
+      },
+      {
+        "regex": "TwistPHP",
+        "product_id": 3299
+      },
+      {
+        "regex": "^total\\.js",
+        "product_id": 3319
+      },
+      {
+        "regex": "Vanilla",
+        "product_id": 3381
+      },
+      {
+        "regex": "^Virgool$",
+        "product_id": 3401
+      },
+      {
+        "regex": "W3 Total Cache(?:/([\\d.]+))?",
+        "product_id": 318,
+        "version_group": 1
+      },
+      {
+        "regex": "WP Engine",
+        "product_id": 3436
+      },
+      {
+        "regex": "WP Rocket(?:/([\\d.]+))?",
+        "product_id": 3442,
+        "version_group": 1
+      },
+      {
+        "regex": "web2py",
+        "product_id": 3460
+      },
+      {
+        "regex": "Winstone(?:\\/([\\d.]+))?",
+        "product_id": 3505,
+        "version_group": 1
+      },
+      {
+        "regex": "wpCache(?:/([\\d.]+))?",
+        "product_id": 3548,
+        "version_group": 1
+      },
+      {
+        "regex": "XeoraCube",
+        "product_id": 3559
+      },
+      {
+        "regex": "Zend(?:Server)?(?:[\\s/]?([0-9.]+))?",
+        "product_id": 3621,
+        "version_group": 1
+      }
+    ]
+  },
+  {
+    "header_name": "X-Powered-By-Plesk",
+    "patterns": [
+      {
+        "regex": "^Plesk",
+        "product_id": 2524
+      }
+    ]
+  },
+  {
+    "header_name": "X-Powered-CMS",
+    "patterns": [
+      {
+        "regex": "Bitrix Site Manager",
+        "product_id": 3653
+      },
+      {
+        "regex": "Nepso",
+        "product_id": 2283
+      },
+      {
+        "regex": "Subrion CMS",
+        "product_id": 3081
+      },
+      {
+        "regex": "Twilight CMS",
+        "product_id": 3298
+      }
+    ]
+  },
+  {
+    "header_name": "X-Powered-Framework",
+    "patterns": [
+      {
+        "regex": "MasterkinG(?:)",
+        "product_id": 2127
+      }
+    ]
+  },
+  {
+    "header_name": "X-Powered-PublicCMS",
+    "patterns": [
+      {
+        "regex": "^(.+)$",
+        "product_id": 2586,
+        "version_group": 1
+      }
+    ]
+  },
+  {
+    "header_name": "X-Protected-By",
+    "patterns": [
+      {
+        "regex": "^Sqreen$",
+        "product_id": 3037
+      }
+    ]
+  },
+  {
+    "header_name": "X-Rack-Cache",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 2645
+      }
+    ]
+  },
+  {
+    "header_name": "X-Rocket-Nginx-Bypass",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 3442
+      }
+    ]
+  },
+  {
+    "header_name": "X-ServedBy",
+    "patterns": [
+      {
+        "regex": "pagevamp",
+        "product_id": 2435
+      },
+      {
+        "regex": "simplebo",
+        "product_id": 2920
+      }
+    ]
+  },
+  {
+    "header_name": "X-Server-Powered-By",
+    "patterns": [
+      {
+        "regex": "^Engintron$",
+        "product_id": 1337
+      }
+    ]
+  },
+  {
+    "header_name": "X-SharePointHealthScore",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 2175
+      }
+    ]
+  },
+  {
+    "header_name": "X-Shopery",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 2882
+      }
+    ]
+  },
+  {
+    "header_name": "X-Spip-Cache",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 2770
+      }
+    ]
+  },
+  {
+    "header_name": "X-Starhost",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 3052
+      }
+    ]
+  },
+  {
+    "header_name": "X-StatusPage-Skip-Logging",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 767
+      }
+    ]
+  },
+  {
+    "header_name": "X-StatusPage-Version",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 767
+      }
+    ]
+  },
+  {
+    "header_name": "X-Streams-Distribution",
+    "patterns": [
+      {
+        "regex": "PyroCMS",
+        "product_id": 2598
+      }
+    ]
+  },
+  {
+    "header_name": "X-Supplied-By",
+    "patterns": [
+      {
+        "regex": "MANA",
+        "product_id": 815
+      }
+    ]
+  },
+  {
+    "header_name": "X-Tumblr-User",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 3281
+      }
+    ]
+  },
+  {
+    "header_name": "X-Umbraco-Version",
+    "patterns": [
+      {
+        "regex": "^(.+)$",
+        "product_id": 3334,
+        "version_group": 1
+      }
+    ]
+  },
+  {
+    "header_name": "X-Unbounce-PageId",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 3337
+      }
+    ]
+  },
+  {
+    "header_name": "X-Varnish",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 112
+      }
+    ]
+  },
+  {
+    "header_name": "X-Varnish-Action",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 112
+      }
+    ]
+  },
+  {
+    "header_name": "X-Varnish-Age",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 112
+      }
+    ]
+  },
+  {
+    "header_name": "X-Varnish-Cache",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 112
+      }
+    ]
+  },
+  {
+    "header_name": "X-Varnish-Hostname",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 112
+      }
+    ]
+  },
+  {
+    "header_name": "X-WPE-Loopback-Upstream-Addr",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 3436
+      }
+    ]
+  },
+  {
+    "header_name": "X-Wix-Renderer-Server",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 3511
+      }
+    ]
+  },
+  {
+    "header_name": "X-Wix-Request-Id",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 3511
+      }
+    ]
+  },
+  {
+    "header_name": "X-Wix-Server-Artifact-Id",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 3511
+      }
+    ]
+  },
+  {
+    "header_name": "X-XRDS-Location",
+    "patterns": [
+      {
+        "regex": "/ystore/",
+        "product_id": 3574
+      }
+    ]
+  },
+  {
+    "header_name": "X-epages-RequestId",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 1396
+      }
+    ]
+  },
+  {
+    "header_name": "azure-regionname",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 794
+      }
+    ]
+  },
+  {
+    "header_name": "azure-sitename",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 794
+      }
+    ]
+  },
+  {
+    "header_name": "azure-slotname",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 794
+      }
+    ]
+  },
+  {
+    "header_name": "azure-version",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 794
+      }
+    ]
+  },
+  {
+    "header_name": "cache-provider",
+    "patterns": [
+      {
+        "regex": "CLOUDWAYS-CACHE-DE",
+        "product_id": 1061
+      }
+    ]
+  },
+  {
+    "header_name": "cf-cache-status",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 110
+      }
+    ]
+  },
+  {
+    "header_name": "cf-ray",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 110
+      }
+    ]
+  },
+  {
+    "header_name": "ch-powered-by",
+    "patterns": [
+      {
+        "regex": "Chabokan\\s\\(chabokan\\.net\\)",
+        "product_id": 1001
+      }
+    ]
+  },
+  {
+    "header_name": "content-disposition",
+    "patterns": [
+      {
+        "regex": "filename=(?:mvga\\.js|MivaEvents\\.js)",
+        "product_id": 2188
+      }
+    ]
+  },
+  {
+    "header_name": "content-security-policy",
+    "patterns": [
+      {
+        "regex": "content-hub\\.acquia\\.com",
+        "product_id": 578
+      },
+      {
+        "regex": "\\.datocms-assets\\.com",
+        "product_id": 1208
+      },
+      {
+        "regex": "\\.eggplant\\.cloud",
+        "product_id": 1311
+      },
+      {
+        "regex": "\\.goinstore\\.com",
+        "product_id": 1584
+      },
+      {
+        "regex": "\\.hetrixtools\\.com",
+        "product_id": 1707
+      },
+      {
+        "regex": "(?:\\.|//)hcaptcha\\.com",
+        "product_id": 1759
+      },
+      {
+        "regex": "\\.klarna(?:cdn|services)\\.(?:net|com)",
+        "product_id": 1948
+      },
+      {
+        "regex": "\\.modiface\\.com",
+        "product_id": 2200
+      },
+      {
+        "regex": "\\.moneris\\.com",
+        "product_id": 2212
+      },
+      {
+        "regex": "\\.myfonts\\.net",
+        "product_id": 2239
+      },
+      {
+        "regex": "(?:api|sync)\\.onfido\\.com",
+        "product_id": 2356
+      },
+      {
+        "regex": "\\.speedtestcustom\\.com",
+        "product_id": 2357
+      },
+      {
+        "regex": "\\.paypal\\.com",
+        "product_id": 2456
+      },
+      {
+        "regex": "cdn\\.sanity\\.io",
+        "product_id": 2800
+      },
+      {
+        "regex": "\\.sheerid\\.com",
+        "product_id": 2864
+      },
+      {
+        "regex": "api\\.survicate\\.com",
+        "product_id": 3095
+      },
+      {
+        "regex": "\\.thehotelsnetwork\\.com",
+        "product_id": 3184
+      },
+      {
+        "regex": "\\.uptimerobot\\.com",
+        "product_id": 3348
+      }
+    ]
+  },
+  {
+    "header_name": "content-security-policy-report-only",
+    "patterns": [
+      {
+        "regex": "\\.sheerid\\.com",
+        "product_id": 2864
+      },
+      {
+        "regex": "\\.thehotelsnetwork\\.com",
+        "product_id": 3184
+      }
+    ]
+  },
+  {
+    "header_name": "fly-request-id",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 1472
+      }
+    ]
+  },
+  {
+    "header_name": "frontastic-request-id",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 1511
+      }
+    ]
+  },
+  {
+    "header_name": "host-header",
+    "patterns": [
+      {
+        "regex": "c2hhcmVkLmJsdWVob3N0LmNvbQ==",
+        "product_id": 873
+      },
+      {
+        "regex": "Newspack",
+        "product_id": 2291
+      },
+      {
+        "regex": "^Pressable",
+        "product_id": 2560
+      },
+      {
+        "regex": "192fc2e7e50945beb8231a492d6a8024|b7440e60b07ee7b8044761568fab26e8|624d5be7be38418a3e2a818cc8b7029b|6b7412fb82ca5edfd0917e3957f05d89",
+        "product_id": 2929
+      },
+      {
+        "regex": "WordPress\\.com",
+        "product_id": 78
+      }
+    ]
+  },
+  {
+    "header_name": "kbn-name",
+    "patterns": [
+      {
+        "regex": "kibana",
+        "product_id": 1940
+      }
+    ]
+  },
+  {
+    "header_name": "kbn-version",
+    "patterns": [
+      {
+        "regex": "^([\\d.]+)$",
+        "product_id": 1940,
+        "version_group": 1
+      }
+    ]
+  },
+  {
+    "header_name": "link",
+    "patterns": [
+      {
+        "regex": "rel=\"https://api\\.w\\.org/\"",
+        "product_id": 70
+      }
+    ]
+  },
+  {
+    "header_name": "nel",
+    "patterns": [
+      {
+        "regex": "cf-nel",
+        "product_id": 1058
+      }
+    ]
+  },
+  {
+    "header_name": "powered",
+    "patterns": [
+      {
+        "regex": "jet-enterprise",
+        "product_id": 1862
+      },
+      {
+        "regex": "jet-neo",
+        "product_id": 2263
+      },
+      {
+        "regex": "simbel",
+        "product_id": 2910
+      },
+      {
+        "regex": "vtex",
+        "product_id": 3376
+      }
+    ]
+  },
+  {
+    "header_name": "report-to",
+    "patterns": [
+      {
+        "regex": "a\\.nel\\.cloudflare\\.com",
+        "product_id": 1058
+      },
+      {
+        "regex": "\\.rapidsec\\.net",
+        "product_id": 2653
+      }
+    ]
+  },
+  {
+    "header_name": "section-io-id",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 2825
+      }
+    ]
+  },
+  {
+    "header_name": "section-io-origin-status",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 2825
+      }
+    ]
+  },
+  {
+    "header_name": "section-io-origin-time-seconds",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 2825
+      }
+    ]
+  },
+  {
+    "header_name": "server",
+    "patterns": [
+      {
+        "regex": "AlmaLinux",
+        "product_id": 166
+      },
+      {
+        "regex": "^AmazonS3$",
+        "product_id": 689
+      },
+      {
+        "regex": "ArvanCloud",
+        "product_id": 749
+      },
+      {
+        "regex": "^Windows-Azure",
+        "product_id": 794
+      },
+      {
+        "regex": "^(?:ECAcc|ECS|ECD)",
+        "product_id": 117
+      },
+      {
+        "regex": "CBX-WS",
+        "product_id": 1157
+      },
+      {
+        "regex": "^deno/*",
+        "product_id": 1217
+      },
+      {
+        "regex": "^ddos-guard$",
+        "product_id": 1286
+      },
+      {
+        "regex": "Fastly",
+        "product_id": 1433
+      },
+      {
+        "regex": "^Fing",
+        "product_id": 1449
+      },
+      {
+        "regex": "^Fly/[\\w]+\\s\\(.*\\)$",
+        "product_id": 1472
+      },
+      {
+        "regex": "^MizbanCloud$",
+        "product_id": 2191
+      },
+      {
+        "regex": "^mojolicious",
+        "product_id": 2205
+      },
+      {
+        "regex": "Riskified Server",
+        "product_id": 2734
+      },
+      {
+        "regex": "^Sotoon$",
+        "product_id": 3002
+      },
+      {
+        "regex": "Squarespace",
+        "product_id": 3041
+      },
+      {
+        "regex": "Squarespace",
+        "product_id": 3042
+      },
+      {
+        "regex": "^TwicPics/\\d+\\.\\d+\\.\\d+$",
+        "product_id": 3296
+      },
+      {
+        "regex": "^now|Vercel$",
+        "product_id": 3386
+      }
+    ]
+  },
+  {
+    "header_name": "set-cookie",
+    "patterns": [
+      {
+        "regex": "\\.AspNetCore",
+        "product_id": 2165
+      }
+    ]
+  },
+  {
+    "header_name": "solodev_session",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 2991
+      }
+    ]
+  },
+  {
+    "header_name": "sw-context-token",
+    "patterns": [
+      {
+        "regex": "^[\\w]{32}$",
+        "product_id": 2900
+      }
+    ]
+  },
+  {
+    "header_name": "sw-invalidation-states",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 2900
+      }
+    ]
+  },
+  {
+    "header_name": "sw-language-id",
+    "patterns": [
+      {
+        "regex": "^[a-fA-F0-9]{32}$",
+        "product_id": 2900
+      }
+    ]
+  },
+  {
+    "header_name": "sw-version-id",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 2900
+      }
+    ]
+  },
+  {
+    "header_name": "vary",
+    "patterns": [
+      {
+        "regex": "x-fh-requested-host",
+        "product_id": 1452
+      }
+    ]
+  },
+  {
+    "header_name": "via",
+    "patterns": [
+      {
+        "regex": "Acquia Platform CDN (.+)",
+        "product_id": 576,
+        "version_group": 1
+      },
+      {
+        "regex": "^.*\\sfly\\.io$",
+        "product_id": 1472
+      },
+      {
+        "regex": "^1\\.1 mysimplestore\\.com$",
+        "product_id": 1595
+      }
+    ]
+  },
+  {
+    "header_name": "wpe-backend",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 3436
+      }
+    ]
+  },
+  {
+    "header_name": "x-0-status",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 1309
+      }
+    ]
+  },
+  {
+    "header_name": "x-0-t",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 1309
+      }
+    ]
+  },
+  {
+    "header_name": "x-0-version",
+    "patterns": [
+      {
+        "regex": "^\\d+ ([\\d.]+) ",
+        "product_id": 1309,
+        "version_group": 1
+      }
+    ]
+  },
+  {
+    "header_name": "x-amz-delete-marker",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 691
+      }
+    ]
+  },
+  {
+    "header_name": "x-amz-err-code",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 691
+      }
+    ]
+  },
+  {
+    "header_name": "x-amz-err-message",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 691
+      }
+    ]
+  },
+  {
+    "header_name": "x-amz-id-2",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 691
+      }
+    ]
+  },
+  {
+    "header_name": "x-amz-req-time-micros",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 691
+      }
+    ]
+  },
+  {
+    "header_name": "x-amz-request-id",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 691
+      }
+    ]
+  },
+  {
+    "header_name": "x-amz-rid",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 691
+      }
+    ]
+  },
+  {
+    "header_name": "x-amz-version-id",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 691
+      }
+    ]
+  },
+  {
+    "header_name": "x-amzn-waf-action",
+    "patterns": [
+      {
+        "regex": "^captcha$",
+        "product_id": 556
+      }
+    ]
+  },
+  {
+    "header_name": "x-arastta",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 742
+      }
+    ]
+  },
+  {
+    "header_name": "x-auth0-requestid",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 776
+      }
+    ]
+  },
+  {
+    "header_name": "x-backend-server",
+    "patterns": [
+      {
+        "regex": "hosting\\.stackcp\\.net$",
+        "product_id": 3047
+      }
+    ]
+  },
+  {
+    "header_name": "x-bubble-capacity-limit",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 933
+      }
+    ]
+  },
+  {
+    "header_name": "x-bubble-capacity-used",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 933
+      }
+    ]
+  },
+  {
+    "header_name": "x-bubble-perf",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 933
+      }
+    ]
+  },
+  {
+    "header_name": "x-cf-ipfs-cache-status",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 1770
+      }
+    ]
+  },
+  {
+    "header_name": "x-clockwork-version",
+    "patterns": [
+      {
+        "regex": "^([\\d\\.]+)$",
+        "product_id": 1052,
+        "version_group": 1
+      }
+    ]
+  },
+  {
+    "header_name": "x-cloud-trace-context",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 1616
+      }
+    ]
+  },
+  {
+    "header_name": "x-cluster",
+    "patterns": [
+      {
+        "regex": "substack",
+        "product_id": 3082
+      }
+    ]
+  },
+  {
+    "header_name": "x-contentful-request-id",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 1109
+      }
+    ]
+  },
+  {
+    "header_name": "x-distributor",
+    "patterns": [
+      {
+        "regex": "yes",
+        "product_id": 1233
+      }
+    ]
+  },
+  {
+    "header_name": "x-elasticpress-query",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 1313
+      }
+    ]
+  },
+  {
+    "header_name": "x-endurance-cache-level",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 1335
+      }
+    ]
+  },
+  {
+    "header_name": "x-envoy-upstream-service-time",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 114
+      }
+    ]
+  },
+  {
+    "header_name": "x-fastly-origin",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 1433
+      }
+    ]
+  },
+  {
+    "header_name": "x-fastly-request-id",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 1433
+      }
+    ]
+  },
+  {
+    "header_name": "x-fw-hash",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 1474
+      }
+    ]
+  },
+  {
+    "header_name": "x-fw-serve",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 1474
+      }
+    ]
+  },
+  {
+    "header_name": "x-fw-server",
+    "patterns": [
+      {
+        "regex": "^Flywheel(?:/([\\d.]+))?",
+        "product_id": 1474,
+        "version_group": 1
+      }
+    ]
+  },
+  {
+    "header_name": "x-fw-static",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 1474
+      }
+    ]
+  },
+  {
+    "header_name": "x-fw-type",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 1474
+      }
+    ]
+  },
+  {
+    "header_name": "x-goog-storage-class",
+    "patterns": [
+      {
+        "regex": "^\\w+$",
+        "product_id": 1615
+      }
+    ]
+  },
+  {
+    "header_name": "x-hostname",
+    "patterns": [
+      {
+        "regex": "nxcli\\.net$",
+        "product_id": 2292
+      }
+    ]
+  },
+  {
+    "header_name": "x-hs-hub-id",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 1741
+      }
+    ]
+  },
+  {
+    "header_name": "x-ipfs-datasize",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 1770
+      }
+    ]
+  },
+  {
+    "header_name": "x-ipfs-gateway-host",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 1770
+      }
+    ]
+  },
+  {
+    "header_name": "x-ipfs-lb-pop",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 1770
+      }
+    ]
+  },
+  {
+    "header_name": "x-ipfs-path",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 1770
+      }
+    ]
+  },
+  {
+    "header_name": "x-ipfs-pop",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 1770
+      }
+    ]
+  },
+  {
+    "header_name": "x-ipfs-root",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 1770
+      }
+    ]
+  },
+  {
+    "header_name": "x-ipfs-root-cid",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 1770
+      }
+    ]
+  },
+  {
+    "header_name": "x-ipfs-roots",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 1770
+      }
+    ]
+  },
+  {
+    "header_name": "x-jive-chrome-wrapped",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 1883
+      }
+    ]
+  },
+  {
+    "header_name": "x-kinsta-cache",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 1944
+      }
+    ]
+  },
+  {
+    "header_name": "x-lagoon",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 1978
+      }
+    ]
+  },
+  {
+    "header_name": "x-ms-client-request-id",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 794
+      }
+    ]
+  },
+  {
+    "header_name": "x-ms-correlation-request-id",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 794
+      }
+    ]
+  },
+  {
+    "header_name": "x-ms-gateway-requestid",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 794
+      }
+    ]
+  },
+  {
+    "header_name": "x-nestify-cache",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 2284
+      }
+    ]
+  },
+  {
+    "header_name": "x-now-trace",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 3386
+      }
+    ]
+  },
+  {
+    "header_name": "x-oracle-dms-ecid",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 2389
+      }
+    ]
+  },
+  {
+    "header_name": "x-orckestra-commerce",
+    "patterns": [
+      {
+        "regex": ".NET Client",
+        "product_id": 2397
+      }
+    ]
+  },
+  {
+    "header_name": "x-pantheon-styx-hostname",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 2438
+      }
+    ]
+  },
+  {
+    "header_name": "x-platform-cluster",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 2518
+      }
+    ]
+  },
+  {
+    "header_name": "x-platform-processor",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 2518
+      }
+    ]
+  },
+  {
+    "header_name": "x-platform-router",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 2518
+      }
+    ]
+  },
+  {
+    "header_name": "x-platform-server",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 2518
+      }
+    ]
+  },
+  {
+    "header_name": "x-powered-by",
+    "patterns": [
+      {
+        "regex": "^NextGuest CMS",
+        "product_id": 998
+      },
+      {
+        "regex": "^Directus$",
+        "product_id": 1229
+      },
+      {
+        "regex": "^EasyEngine (.*)$",
+        "product_id": 1302,
+        "version_group": 1
+      },
+      {
+        "regex": "Helhost",
+        "product_id": 1695
+      },
+      {
+        "regex": "HubSpot",
+        "product_id": 1741
+      },
+      {
+        "regex": "mojolicious",
+        "product_id": 2205
+      },
+      {
+        "regex": "^Next\\.js ?([0-9.]+)?",
+        "product_id": 45,
+        "version_group": 1
+      },
+      {
+        "regex": "Niagahoster",
+        "product_id": 2298
+      },
+      {
+        "regex": "Orckestra",
+        "product_id": 2397
+      },
+      {
+        "regex": "^platformOS$",
+        "product_id": 2519
+      },
+      {
+        "regex": "^Salla$",
+        "product_id": 2795
+      },
+      {
+        "regex": "^Seravo",
+        "product_id": 2848
+      },
+      {
+        "regex": "Dart with package:shelf",
+        "product_id": 2865
+      },
+      {
+        "regex": "SlickStack",
+        "product_id": 2955
+      },
+      {
+        "regex": "^Statamic$",
+        "product_id": 3054
+      },
+      {
+        "regex": "Strattic",
+        "product_id": 3072
+      },
+      {
+        "regex": "^Optimized by WPCacheOn",
+        "product_id": 3447
+      },
+      {
+        "regex": "^WordPress VIP|wpvip\\.com",
+        "product_id": 3529
+      },
+      {
+        "regex": "Youcan\\.Private\\.DC/",
+        "product_id": 3605
+      }
+    ]
+  },
+  {
+    "header_name": "x-provided-by",
+    "patterns": [
+      {
+        "regex": "^StackCDN(?: ([\\d.]+))?",
+        "product_id": 3047,
+        "version_group": 1
+      }
+    ]
+  },
+  {
+    "header_name": "x-rebelmouse-cache-control",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 2669
+      }
+    ]
+  },
+  {
+    "header_name": "x-rebelmouse-surrogate-control",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 2669
+      }
+    ]
+  },
+  {
+    "header_name": "x-sanity-shard",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 2800
+      }
+    ]
+  },
+  {
+    "header_name": "x-served-by",
+    "patterns": [
+      {
+        "regex": "Substack",
+        "product_id": 3082
+      }
+    ]
+  },
+  {
+    "header_name": "x-servername",
+    "patterns": [
+      {
+        "regex": "\\.aruba\\.it",
+        "product_id": 748
+      }
+    ]
+  },
+  {
+    "header_name": "x-shopid",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 82
+      }
+    ]
+  },
+  {
+    "header_name": "x-shopify-stage",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 82
+      }
+    ]
+  },
+  {
+    "header_name": "x-styx-req-id",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 2438
+      }
+    ]
+  },
+  {
+    "header_name": "x-sucuri-cache:",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 3083
+      }
+    ]
+  },
+  {
+    "header_name": "x-sucuri-id",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 3083
+      }
+    ]
+  },
+  {
+    "header_name": "x-tncms",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 3248
+      }
+    ]
+  },
+  {
+    "header_name": "x-trove-app-name",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 3268
+      }
+    ]
+  },
+  {
+    "header_name": "x-trove-country-code",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 3268
+      }
+    ]
+  },
+  {
+    "header_name": "x-trove-order-uuid",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 3268
+      }
+    ]
+  },
+  {
+    "header_name": "x-vercel-cache",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 3386
+      }
+    ]
+  },
+  {
+    "header_name": "x-vercel-id",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 3386
+      }
+    ]
+  },
+  {
+    "header_name": "x-via-fastly:",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 1433
+      }
+    ]
+  },
+  {
+    "header_name": "x-yerdle-app-name",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 3268
+      }
+    ]
+  },
+  {
+    "header_name": "x-zendesk-user-id",
+    "patterns": [
+      {
+        "regex": ".*",
+        "product_id": 3622
+      }
+    ]
+  }
+]

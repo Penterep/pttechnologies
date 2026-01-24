@@ -44,7 +44,9 @@ class COOK:
         self.raw_response_400 = responses.raw_resp_400
         
         self.definitions = self.helpers.load_definitions("cook.json")
-        self.detected_technologies = set()
+        
+        # Load Wappalyzer cookie definitions (new format)
+        self.wapp_definitions = self.helpers.load_definitions("cook_from_wappalyzer.json")
     
     def run(self):
         """
@@ -202,29 +204,30 @@ class COOK:
             int: Number of technologies found.
         """
         technologies_found = 0
+        stored_products = set()  # Track products stored (not displayed)
         
-        sorted_patterns = sorted(
-            self.definitions,
-            key=lambda p: (
-                0 if p.get('value_regex') else 1,
-                -p.get('probability', 100)
-            )
-        )
+        # Merge patterns from both definition files
+        all_patterns = list(self.definitions) if self.definitions else []
+        if self.wapp_definitions:
+            # New format: wapp_definitions is already a list
+            if isinstance(self.wapp_definitions, list):
+                all_patterns.extend(self.wapp_definitions)
+            # Old format fallback: {"cookies": [...]}
+            elif isinstance(self.wapp_definitions, dict) and 'cookies' in self.wapp_definitions:
+                all_patterns.extend(self.wapp_definitions['cookies'])
         
         for cookie_name, cookie_info in cookies.items():
             cookie_value = cookie_info.get('value', '')
-            matched_products = set()
             
-            for pattern in sorted_patterns:
-                product_id = pattern.get('product_id')
-                
-                if product_id in matched_products:
-                    continue
-                
+            # Check all patterns
+            for pattern in all_patterns:
                 if self._match_cookie_pattern(cookie_name, cookie_value, pattern):
-                    self._process_match(cookie_name, cookie_value, pattern, cookie_info)
-                    matched_products.add(product_id)
+                    product_id = pattern.get('product_id')
+                    
+                    # Display match (can be multiple times for same product from different cookies)
+                    self._process_match(cookie_name, cookie_value, pattern, cookie_info, stored_products)
                     technologies_found += 1
+                    break  # First match wins for this cookie
         
         return technologies_found
     
@@ -252,7 +255,7 @@ class COOK:
         
         return True
     
-    def _process_match(self, cookie_name, cookie_value, pattern, cookie_info):
+    def _process_match(self, cookie_name, cookie_value, pattern, cookie_info, stored_products):
         """
         Process a successful pattern match and store results.
         
@@ -261,6 +264,7 @@ class COOK:
             cookie_value: Value of the cookie.
             pattern: Pattern definition that matched.
             cookie_info: Full cookie information.
+            stored_products: Set of product_ids already stored (for deduplication).
         """
         # Get product info from product_id
         product_id = pattern.get("product_id")
@@ -271,38 +275,32 @@ class COOK:
         if not product:
             return
         
-        products = product.get('products', [])
-        # If products[0] is null, use our_name for storage
-        if products and products[0] is not None:
-            technology = products[0]
-        else:
-            technology = product.get("our_name", "Unknown")  # For storage (CVE compatible)
-        display_name = product.get("our_name", "Unknown")  # For printing
+        # Use our_name instead of products[0] to avoid lowercase issue
+        technology = product.get("our_name", "Unknown")
         technology_type = self.product_manager.get_category_name(product.get("category_id"))
         
         description = pattern.get("description", "")
         probability = pattern.get("probability", 100)
         
-        tech_key = f"{product_id}:{technology_type}"
+        # ALWAYS display (can show same tech from multiple cookies)
+        self._display_result(technology, technology_type, cookie_name, cookie_value, probability)
         
-        if tech_key in self.detected_technologies:
-            return
-        
-        self.detected_technologies.add(tech_key)
-        
-        storage_description = f"Cookie '{cookie_name}'"
-        if description:
-            storage_description += f": {description}"
-        
-        storage.add_to_storage(
-            technology=technology,
-            technology_type=technology_type,
-            description=storage_description,
-            probability=probability,
-            product_id=product_id
-        )
-        
-        self._display_result(display_name, technology_type, cookie_name, cookie_value, probability)
+        # STORAGE: Only store once per product_id (deduplication)
+        if product_id not in stored_products:
+            stored_products.add(product_id)
+            
+            storage_description = f"Cookie '{cookie_name}'"
+            if description:
+                storage_description += f": {description}"
+            
+            
+            storage.add_to_storage(
+                technology=technology,
+                technology_type=technology_type,
+                description=storage_description,
+                probability=probability,
+                product_id=product_id
+            )
     
     def _display_result(self, display_name, technology_type, cookie_name, cookie_value, probability):
         """

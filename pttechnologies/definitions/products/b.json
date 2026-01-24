@@ -1,0 +1,1657 @@
+{
+  "products": [
+    {
+      "id": 811,
+      "our_name": "B2C Europe",
+      "vendor": "b2c_europe",
+      "products": [
+        "b2c_europe"
+      ],
+      "cve_details_url": null,
+      "category_id": 78,
+      "_letter": "b"
+    },
+    {
+      "id": 818,
+      "our_name": "Babel",
+      "vendor": "babel",
+      "products": [
+        "babel"
+      ],
+      "cve_details_url": null,
+      "category_id": 99,
+      "_letter": "b"
+    },
+    {
+      "id": 819,
+      "our_name": "Bablic",
+      "vendor": "bablic",
+      "products": [
+        "bablic"
+      ],
+      "cve_details_url": null,
+      "category_id": 93,
+      "_letter": "b"
+    },
+    {
+      "id": 820,
+      "our_name": "Babylist",
+      "vendor": "babylist",
+      "products": [
+        "babylist"
+      ],
+      "cve_details_url": null,
+      "category_id": 99,
+      "_letter": "b"
+    },
+    {
+      "id": 821,
+      "our_name": "Back In Stock",
+      "vendor": "back_in_stock",
+      "products": [
+        "back_in_stock"
+      ],
+      "cve_details_url": null,
+      "category_id": 64,
+      "_letter": "b"
+    },
+    {
+      "id": 822,
+      "our_name": "Backbone.js",
+      "vendor": "backbone_project",
+      "products": [
+        "backbone",
+        "backbone_js"
+      ],
+      "cve_details_url": null,
+      "category_id": 6,
+      "_letter": "b"
+    },
+    {
+      "id": 823,
+      "our_name": "Backdrop",
+      "vendor": "backdrop",
+      "products": [
+        "backdrop"
+      ],
+      "cve_details_url": null,
+      "category_id": 16,
+      "_letter": "b"
+    },
+    {
+      "id": 824,
+      "our_name": "Baidu Analytics (百度统计)",
+      "vendor": "baidu_analytics_(百度统",
+      "products": [
+        "baidu_analytics_(百度统"
+      ],
+      "cve_details_url": null,
+      "category_id": 18,
+      "_letter": "b"
+    },
+    {
+      "id": 825,
+      "our_name": "Baidu Maps",
+      "vendor": "baidu_maps",
+      "products": [
+        "baidu_maps"
+      ],
+      "cve_details_url": null,
+      "category_id": 28,
+      "_letter": "b"
+    },
+    {
+      "id": 826,
+      "our_name": "BambooHR",
+      "vendor": "bamboohr",
+      "products": [
+        "bamboohr"
+      ],
+      "cve_details_url": null,
+      "category_id": 100,
+      "_letter": "b"
+    },
+    {
+      "id": 827,
+      "our_name": "Bambuser",
+      "vendor": "bambuser",
+      "products": [
+        "bambuser"
+      ],
+      "cve_details_url": null,
+      "category_id": 101,
+      "_letter": "b"
+    },
+    {
+      "id": 828,
+      "our_name": "BandsInTown Events Widget",
+      "vendor": "bandsintown_events_w",
+      "products": [
+        "bandsintown_events_w"
+      ],
+      "cve_details_url": null,
+      "category_id": 99,
+      "_letter": "b"
+    },
+    {
+      "id": 829,
+      "our_name": "Banshee",
+      "vendor": "banshee",
+      "products": [
+        "banshee"
+      ],
+      "cve_details_url": null,
+      "category_id": 16,
+      "_letter": "b"
+    },
+    {
+      "id": 830,
+      "our_name": "Barba.js",
+      "vendor": "barba_js",
+      "products": [
+        "barba_js"
+      ],
+      "cve_details_url": null,
+      "category_id": 6,
+      "_letter": "b"
+    },
+    {
+      "id": 831,
+      "our_name": "Base",
+      "vendor": "base",
+      "products": [
+        "base"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "b"
+    },
+    {
+      "id": 521,
+      "our_name": "base58",
+      "vendor": "php",
+      "products": [
+        "base58"
+      ],
+      "cve_details_url": null,
+      "category_id": 15,
+      "_letter": "b"
+    },
+    {
+      "id": 832,
+      "our_name": "Basic",
+      "vendor": "basic",
+      "products": [
+        "basic"
+      ],
+      "cve_details_url": null,
+      "category_id": 14,
+      "_letter": "b"
+    },
+    {
+      "id": 833,
+      "our_name": "Basis Technologies",
+      "vendor": "basis_technologies",
+      "products": [
+        "basis_technologies"
+      ],
+      "cve_details_url": null,
+      "category_id": 22,
+      "_letter": "b"
+    },
+    {
+      "id": 952,
+      "our_name": "basket.js",
+      "vendor": "basket_js",
+      "products": [
+        "basket_js"
+      ],
+      "cve_details_url": null,
+      "category_id": 6,
+      "_letter": "b"
+    },
+    {
+      "id": 834,
+      "our_name": "Batflat",
+      "vendor": "batflat",
+      "products": [
+        "batflat"
+      ],
+      "cve_details_url": null,
+      "category_id": 16,
+      "_letter": "b"
+    },
+    {
+      "id": 835,
+      "our_name": "Bazaarvoice Curation",
+      "vendor": "bazaarvoice_curation",
+      "products": [
+        "bazaarvoice_curation"
+      ],
+      "cve_details_url": null,
+      "category_id": 80,
+      "_letter": "b"
+    },
+    {
+      "id": 836,
+      "our_name": "Bazaarvoice Reviews",
+      "vendor": "bazaarvoice_reviews",
+      "products": [
+        "bazaarvoice_reviews"
+      ],
+      "cve_details_url": null,
+      "category_id": 59,
+      "_letter": "b"
+    },
+    {
+      "id": 329,
+      "our_name": "Bc Math",
+      "vendor": "php",
+      "products": [
+        "bc"
+      ],
+      "cve_details_url": null,
+      "category_id": 15,
+      "_letter": "b"
+    },
+    {
+      "id": 837,
+      "our_name": "Beam AfterSell",
+      "vendor": "beam_aftersell",
+      "products": [
+        "beam_aftersell"
+      ],
+      "cve_details_url": null,
+      "category_id": 64,
+      "_letter": "b"
+    },
+    {
+      "id": 838,
+      "our_name": "Beam OutSell",
+      "vendor": "beam_outsell",
+      "products": [
+        "beam_outsell"
+      ],
+      "cve_details_url": null,
+      "category_id": 64,
+      "_letter": "b"
+    },
+    {
+      "id": 839,
+      "our_name": "Beans",
+      "vendor": "beans",
+      "products": [
+        "beans"
+      ],
+      "cve_details_url": null,
+      "category_id": 75,
+      "_letter": "b"
+    },
+    {
+      "id": 840,
+      "our_name": "Beeketing",
+      "vendor": "beeketing",
+      "products": [
+        "beeketing"
+      ],
+      "cve_details_url": null,
+      "category_id": 19,
+      "_letter": "b"
+    },
+    {
+      "id": 841,
+      "our_name": "Beeswax",
+      "vendor": "beeswax",
+      "products": [
+        "beeswax"
+      ],
+      "cve_details_url": null,
+      "category_id": 22,
+      "_letter": "b"
+    },
+    {
+      "id": 812,
+      "our_name": "BEM",
+      "vendor": "bem",
+      "products": [
+        "bem"
+      ],
+      "cve_details_url": null,
+      "category_id": 6,
+      "_letter": "b"
+    },
+    {
+      "id": 842,
+      "our_name": "Bentobox",
+      "vendor": "bentobox",
+      "products": [
+        "bentobox"
+      ],
+      "cve_details_url": null,
+      "category_id": 16,
+      "_letter": "b"
+    },
+    {
+      "id": 843,
+      "our_name": "Better Price",
+      "vendor": "better_price",
+      "products": [
+        "better_price"
+      ],
+      "cve_details_url": null,
+      "category_id": 64,
+      "_letter": "b"
+    },
+    {
+      "id": 844,
+      "our_name": "Betty Blocks",
+      "vendor": "betty_blocks",
+      "products": [
+        "betty_blocks"
+      ],
+      "cve_details_url": null,
+      "category_id": 73,
+      "_letter": "b"
+    },
+    {
+      "id": 845,
+      "our_name": "Beyable",
+      "vendor": "beyable",
+      "products": [
+        "beyable"
+      ],
+      "cve_details_url": null,
+      "category_id": 25,
+      "_letter": "b"
+    },
+    {
+      "id": 846,
+      "our_name": "BeyondMenu",
+      "vendor": "beyondmenu",
+      "products": [
+        "beyondmenu"
+      ],
+      "cve_details_url": null,
+      "category_id": 61,
+      "_letter": "b"
+    },
+    {
+      "id": 847,
+      "our_name": "Big Cartel",
+      "vendor": "big_cartel",
+      "products": [
+        "big_cartel"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "b"
+    },
+    {
+      "id": 813,
+      "our_name": "BIGACE",
+      "vendor": "bigace",
+      "products": [
+        "bigace"
+      ],
+      "cve_details_url": null,
+      "category_id": 16,
+      "_letter": "b"
+    },
+    {
+      "id": 848,
+      "our_name": "BigCommerce",
+      "vendor": "bigcommerce",
+      "products": [
+        "bigcommerce"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "b"
+    },
+    {
+      "id": 849,
+      "our_name": "Bigware",
+      "vendor": "bigware",
+      "products": [
+        "bigware_shop",
+        "bigware"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "b"
+    },
+    {
+      "id": 850,
+      "our_name": "Bikayi",
+      "vendor": "bikayi",
+      "products": [
+        "bikayi"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "b"
+    },
+    {
+      "id": 851,
+      "our_name": "Billbee",
+      "vendor": "billbee",
+      "products": [
+        "billbee"
+      ],
+      "cve_details_url": null,
+      "category_id": 78,
+      "_letter": "b"
+    },
+    {
+      "id": 852,
+      "our_name": "Birdeye",
+      "vendor": "birdeye",
+      "products": [
+        "birdeye"
+      ],
+      "cve_details_url": null,
+      "category_id": 19,
+      "_letter": "b"
+    },
+    {
+      "id": 853,
+      "our_name": "Bitcoin",
+      "vendor": "bitcoin",
+      "products": [
+        "bitcoin"
+      ],
+      "cve_details_url": null,
+      "category_id": 21,
+      "_letter": "b"
+    },
+    {
+      "id": 854,
+      "our_name": "BiteSpeed",
+      "vendor": "bitespeed",
+      "products": [
+        "bitespeed"
+      ],
+      "cve_details_url": null,
+      "category_id": 64,
+      "_letter": "b"
+    },
+    {
+      "id": 855,
+      "our_name": "Bitrix24",
+      "vendor": "bitrix24",
+      "products": [
+        "bitrix24"
+      ],
+      "cve_details_url": null,
+      "category_id": 26,
+      "_letter": "b"
+    },
+    {
+      "id": 522,
+      "our_name": "bitset",
+      "vendor": "php",
+      "products": [
+        "bitset"
+      ],
+      "cve_details_url": null,
+      "category_id": 15,
+      "_letter": "b"
+    },
+    {
+      "id": 856,
+      "our_name": "BittAds",
+      "vendor": "bittads",
+      "products": [
+        "bittads"
+      ],
+      "cve_details_url": null,
+      "category_id": 22,
+      "_letter": "b"
+    },
+    {
+      "id": 857,
+      "our_name": "Bizweb",
+      "vendor": "bizweb",
+      "products": [
+        "bizweb"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "b"
+    },
+    {
+      "id": 858,
+      "our_name": "Blackbaud Luminate Online",
+      "vendor": "blackbaud_luminate_o",
+      "products": [
+        "blackbaud_luminate_o"
+      ],
+      "cve_details_url": null,
+      "category_id": 19,
+      "_letter": "b"
+    },
+    {
+      "id": 523,
+      "our_name": "blackfire",
+      "vendor": "php",
+      "products": [
+        "blackfire"
+      ],
+      "cve_details_url": null,
+      "category_id": 15,
+      "_letter": "b"
+    },
+    {
+      "id": 859,
+      "our_name": "Blade",
+      "vendor": "blade",
+      "products": [
+        "blade"
+      ],
+      "cve_details_url": null,
+      "category_id": 7,
+      "_letter": "b"
+    },
+    {
+      "id": 860,
+      "our_name": "Blazor",
+      "vendor": "blazor",
+      "products": [
+        "blazor"
+      ],
+      "cve_details_url": null,
+      "category_id": 7,
+      "_letter": "b"
+    },
+    {
+      "id": 861,
+      "our_name": "Blessing Skin",
+      "vendor": "blessing_skin",
+      "products": [
+        "blessing_skin"
+      ],
+      "cve_details_url": null,
+      "category_id": 68,
+      "_letter": "b"
+    },
+    {
+      "id": 862,
+      "our_name": "Blesta",
+      "vendor": "blesta",
+      "products": [
+        "blesta"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "b"
+    },
+    {
+      "id": 863,
+      "our_name": "Blitz",
+      "vendor": "blitz",
+      "products": [
+        "blitz"
+      ],
+      "cve_details_url": null,
+      "category_id": 33,
+      "_letter": "b"
+    },
+    {
+      "id": 864,
+      "our_name": "Blocksy",
+      "vendor": "blocksy",
+      "products": [
+        "blocksy"
+      ],
+      "cve_details_url": null,
+      "category_id": 63,
+      "_letter": "b"
+    },
+    {
+      "id": 77,
+      "our_name": "Blogger",
+      "vendor": "wordpress",
+      "products": [
+        "blogger_importer"
+      ],
+      "cve_details_url": "https://www.cvedetails.com/product/142745/Wordpress-Blogger-Importer.html",
+      "category_id": 8,
+      "_letter": "b"
+    },
+    {
+      "id": 865,
+      "our_name": "Bloomreach",
+      "vendor": "bloomreach",
+      "products": [
+        "bloomreach"
+      ],
+      "cve_details_url": null,
+      "category_id": 16,
+      "_letter": "b"
+    },
+    {
+      "id": 866,
+      "our_name": "Bloomreach Discovery",
+      "vendor": "bloomreach_discovery",
+      "products": [
+        "bloomreach_discovery"
+      ],
+      "cve_details_url": null,
+      "category_id": 69,
+      "_letter": "b"
+    },
+    {
+      "id": 867,
+      "our_name": "Blossom Travel",
+      "vendor": "blossom_travel",
+      "products": [
+        "blossom_travel"
+      ],
+      "cve_details_url": null,
+      "category_id": 63,
+      "_letter": "b"
+    },
+    {
+      "id": 868,
+      "our_name": "Blue",
+      "vendor": "blue",
+      "products": [
+        "blue"
+      ],
+      "cve_details_url": null,
+      "category_id": 54,
+      "_letter": "b"
+    },
+    {
+      "id": 869,
+      "our_name": "Blue Triangle",
+      "vendor": "blue_triangle",
+      "products": [
+        "blue_triangle"
+      ],
+      "cve_details_url": null,
+      "category_id": 14,
+      "_letter": "b"
+    },
+    {
+      "id": 870,
+      "our_name": "BlueConic",
+      "vendor": "blueconic",
+      "products": [
+        "blueconic"
+      ],
+      "cve_details_url": null,
+      "category_id": 56,
+      "_letter": "b"
+    },
+    {
+      "id": 871,
+      "our_name": "Bluecore",
+      "vendor": "bluecore",
+      "products": [
+        "bluecore"
+      ],
+      "cve_details_url": null,
+      "category_id": 19,
+      "_letter": "b"
+    },
+    {
+      "id": 872,
+      "our_name": "Bluefish",
+      "vendor": "bluefish",
+      "products": [
+        "bluefish"
+      ],
+      "cve_details_url": null,
+      "category_id": 82,
+      "_letter": "b"
+    },
+    {
+      "id": 873,
+      "our_name": "Bluehost",
+      "vendor": "bluehost",
+      "products": [
+        "bluehost"
+      ],
+      "cve_details_url": null,
+      "category_id": 92,
+      "_letter": "b"
+    },
+    {
+      "id": 874,
+      "our_name": "Blueknow",
+      "vendor": "blueknow",
+      "products": [
+        "blueknow"
+      ],
+      "cve_details_url": null,
+      "category_id": 25,
+      "_letter": "b"
+    },
+    {
+      "id": 875,
+      "our_name": "Blueshift",
+      "vendor": "blueshift",
+      "products": [
+        "blueshift"
+      ],
+      "cve_details_url": null,
+      "category_id": 18,
+      "_letter": "b"
+    },
+    {
+      "id": 876,
+      "our_name": "Boats Group",
+      "vendor": "boats_group",
+      "products": [
+        "boats_group"
+      ],
+      "cve_details_url": null,
+      "category_id": 61,
+      "_letter": "b"
+    },
+    {
+      "id": 877,
+      "our_name": "Boba.js",
+      "vendor": "boba_js",
+      "products": [
+        "boba_js"
+      ],
+      "cve_details_url": null,
+      "category_id": 6,
+      "_letter": "b"
+    },
+    {
+      "id": 878,
+      "our_name": "Bokeh",
+      "vendor": "bokeh",
+      "products": [
+        "bokeh"
+      ],
+      "cve_details_url": null,
+      "category_id": 6,
+      "_letter": "b"
+    },
+    {
+      "id": 879,
+      "our_name": "Bokun",
+      "vendor": "bokun",
+      "products": [
+        "bokun"
+      ],
+      "cve_details_url": null,
+      "category_id": 99,
+      "_letter": "b"
+    },
+    {
+      "id": 880,
+      "our_name": "Bold Brain",
+      "vendor": "bold_brain",
+      "products": [
+        "bold_brain"
+      ],
+      "cve_details_url": null,
+      "category_id": 64,
+      "_letter": "b"
+    },
+    {
+      "id": 881,
+      "our_name": "Bold Bundles",
+      "vendor": "bold_bundles",
+      "products": [
+        "bold_bundles"
+      ],
+      "cve_details_url": null,
+      "category_id": 64,
+      "_letter": "b"
+    },
+    {
+      "id": 882,
+      "our_name": "Bold Chat",
+      "vendor": "bold_chat",
+      "products": [
+        "bold_chat"
+      ],
+      "cve_details_url": null,
+      "category_id": 20,
+      "_letter": "b"
+    },
+    {
+      "id": 883,
+      "our_name": "Bold Commerce",
+      "vendor": "bold_commerce",
+      "products": [
+        "bold_commerce"
+      ],
+      "cve_details_url": null,
+      "category_id": 25,
+      "_letter": "b"
+    },
+    {
+      "id": 884,
+      "our_name": "Bold Custom Pricing",
+      "vendor": "bold_custom_pricing",
+      "products": [
+        "bold_custom_pricing"
+      ],
+      "cve_details_url": null,
+      "category_id": 64,
+      "_letter": "b"
+    },
+    {
+      "id": 885,
+      "our_name": "Bold Motivator",
+      "vendor": "bold_motivator",
+      "products": [
+        "bold_motivator"
+      ],
+      "cve_details_url": null,
+      "category_id": 64,
+      "_letter": "b"
+    },
+    {
+      "id": 886,
+      "our_name": "Bold Product Options",
+      "vendor": "bold_product_options",
+      "products": [
+        "bold_product_options"
+      ],
+      "cve_details_url": null,
+      "category_id": 64,
+      "_letter": "b"
+    },
+    {
+      "id": 887,
+      "our_name": "Bold Subscriptions",
+      "vendor": "bold_subscriptions",
+      "products": [
+        "bold_subscriptions"
+      ],
+      "cve_details_url": null,
+      "category_id": 64,
+      "_letter": "b"
+    },
+    {
+      "id": 888,
+      "our_name": "Bold Upsell",
+      "vendor": "bold_upsell",
+      "products": [
+        "bold_upsell"
+      ],
+      "cve_details_url": null,
+      "category_id": 64,
+      "_letter": "b"
+    },
+    {
+      "id": 889,
+      "our_name": "BoldGrid",
+      "vendor": "boldgrid",
+      "products": [
+        "boldgrid"
+      ],
+      "cve_details_url": null,
+      "category_id": 16,
+      "_letter": "b"
+    },
+    {
+      "id": 890,
+      "our_name": "Bolt CMS",
+      "vendor": "bolt",
+      "products": [
+        "bolt",
+        "bolt_cms"
+      ],
+      "cve_details_url": null,
+      "category_id": 16,
+      "_letter": "b"
+    },
+    {
+      "id": 891,
+      "our_name": "Bolt Payments",
+      "vendor": "bolt_payments",
+      "products": [
+        "bolt_payments"
+      ],
+      "cve_details_url": null,
+      "category_id": 21,
+      "_letter": "b"
+    },
+    {
+      "id": 814,
+      "our_name": "BON Loyalty",
+      "vendor": "bon_loyalty",
+      "products": [
+        "bon_loyalty"
+      ],
+      "cve_details_url": null,
+      "category_id": 75,
+      "_letter": "b"
+    },
+    {
+      "id": 892,
+      "our_name": "Bonfire",
+      "vendor": "bonfire",
+      "products": [
+        "bonfire"
+      ],
+      "cve_details_url": null,
+      "category_id": 7,
+      "_letter": "b"
+    },
+    {
+      "id": 895,
+      "our_name": "Bookatable",
+      "vendor": "bookatable",
+      "products": [
+        "bookatable"
+      ],
+      "cve_details_url": null,
+      "category_id": 95,
+      "_letter": "b"
+    },
+    {
+      "id": 893,
+      "our_name": "BookDinners",
+      "vendor": "bookdinners",
+      "products": [
+        "bookdinners"
+      ],
+      "cve_details_url": null,
+      "category_id": 95,
+      "_letter": "b"
+    },
+    {
+      "id": 896,
+      "our_name": "Bookero",
+      "vendor": "bookero",
+      "products": [
+        "bookero"
+      ],
+      "cve_details_url": null,
+      "category_id": 49,
+      "_letter": "b"
+    },
+    {
+      "id": 897,
+      "our_name": "Booking.com",
+      "vendor": "booking_com",
+      "products": [
+        "booking_com"
+      ],
+      "cve_details_url": null,
+      "category_id": 55,
+      "_letter": "b"
+    },
+    {
+      "id": 898,
+      "our_name": "Booking.com widget",
+      "vendor": "booking_com_widget",
+      "products": [
+        "booking_com_widget"
+      ],
+      "cve_details_url": null,
+      "category_id": 99,
+      "_letter": "b"
+    },
+    {
+      "id": 899,
+      "our_name": "Bookingkit",
+      "vendor": "bookingkit",
+      "products": [
+        "bookingkit"
+      ],
+      "cve_details_url": null,
+      "category_id": 99,
+      "_letter": "b"
+    },
+    {
+      "id": 900,
+      "our_name": "Booksy",
+      "vendor": "booksy",
+      "products": [
+        "booksy"
+      ],
+      "cve_details_url": null,
+      "category_id": 99,
+      "_letter": "b"
+    },
+    {
+      "id": 894,
+      "our_name": "BookThatApp",
+      "vendor": "bookthatapp",
+      "products": [
+        "bookthatapp"
+      ],
+      "cve_details_url": null,
+      "category_id": 64,
+      "_letter": "b"
+    },
+    {
+      "id": 815,
+      "our_name": "BOOM",
+      "vendor": "boom",
+      "products": [
+        "boom"
+      ],
+      "cve_details_url": null,
+      "category_id": 16,
+      "_letter": "b"
+    },
+    {
+      "id": 901,
+      "our_name": "Boomerang",
+      "vendor": "boomerang",
+      "products": [
+        "boomerang"
+      ],
+      "cve_details_url": null,
+      "category_id": 6,
+      "_letter": "b"
+    },
+    {
+      "id": 902,
+      "our_name": "Boost Commerce",
+      "vendor": "boost_commerce",
+      "products": [
+        "boost_commerce"
+      ],
+      "cve_details_url": null,
+      "category_id": 69,
+      "_letter": "b"
+    },
+    {
+      "id": 903,
+      "our_name": "Booster Page Speed Optimizer",
+      "vendor": "booster_page_speed_o",
+      "products": [
+        "booster_page_speed_o"
+      ],
+      "cve_details_url": null,
+      "category_id": 64,
+      "_letter": "b"
+    },
+    {
+      "id": 101,
+      "our_name": "Bootstrap",
+      "vendor": "getbootstrap",
+      "products": [
+        "bootstrap"
+      ],
+      "cve_details_url": "https://www.cvedetails.com/product/51406/Getbootstrap-Bootstrap.html",
+      "category_id": 6,
+      "_letter": "b"
+    },
+    {
+      "id": 904,
+      "our_name": "Bootstrap Icons",
+      "vendor": "bootstrap_icons",
+      "products": [
+        "bootstrap_icons"
+      ],
+      "cve_details_url": null,
+      "category_id": 67,
+      "_letter": "b"
+    },
+    {
+      "id": 905,
+      "our_name": "Bootstrap Table",
+      "vendor": "bootstrap_table",
+      "products": [
+        "bootstrap_table"
+      ],
+      "cve_details_url": null,
+      "category_id": 6,
+      "_letter": "b"
+    },
+    {
+      "id": 906,
+      "our_name": "Booxi",
+      "vendor": "booxi",
+      "products": [
+        "booxi"
+      ],
+      "cve_details_url": null,
+      "category_id": 49,
+      "_letter": "b"
+    },
+    {
+      "id": 907,
+      "our_name": "Borderfree",
+      "vendor": "borderfree",
+      "products": [
+        "borderfree"
+      ],
+      "cve_details_url": null,
+      "category_id": 104,
+      "_letter": "b"
+    },
+    {
+      "id": 908,
+      "our_name": "Borlabs Cookie",
+      "vendor": "borlabs_cookie",
+      "products": [
+        "borlabs_cookie"
+      ],
+      "cve_details_url": null,
+      "category_id": 32,
+      "_letter": "b"
+    },
+    {
+      "id": 909,
+      "our_name": "Botble CMS",
+      "vendor": "botble_cms",
+      "products": [
+        "botble_cms"
+      ],
+      "cve_details_url": null,
+      "category_id": 16,
+      "_letter": "b"
+    },
+    {
+      "id": 910,
+      "our_name": "Boutiq",
+      "vendor": "boutiq",
+      "products": [
+        "boutiq"
+      ],
+      "cve_details_url": null,
+      "category_id": 64,
+      "_letter": "b"
+    },
+    {
+      "id": 911,
+      "our_name": "BowNow",
+      "vendor": "bownow",
+      "products": [
+        "bownow"
+      ],
+      "cve_details_url": null,
+      "category_id": 19,
+      "_letter": "b"
+    },
+    {
+      "id": 912,
+      "our_name": "Boxtal",
+      "vendor": "boxtal",
+      "products": [
+        "boxtal"
+      ],
+      "cve_details_url": null,
+      "category_id": 78,
+      "_letter": "b"
+    },
+    {
+      "id": 913,
+      "our_name": "Bpost",
+      "vendor": "bpost",
+      "products": [
+        "bpost"
+      ],
+      "cve_details_url": null,
+      "category_id": 78,
+      "_letter": "b"
+    },
+    {
+      "id": 914,
+      "our_name": "BrainSINS",
+      "vendor": "brainsins",
+      "products": [
+        "brainsins"
+      ],
+      "cve_details_url": null,
+      "category_id": 25,
+      "_letter": "b"
+    },
+    {
+      "id": 915,
+      "our_name": "Braintree",
+      "vendor": "braintree",
+      "products": [
+        "braintree"
+      ],
+      "cve_details_url": null,
+      "category_id": 21,
+      "_letter": "b"
+    },
+    {
+      "id": 916,
+      "our_name": "Branch",
+      "vendor": "branch",
+      "products": [
+        "branch"
+      ],
+      "cve_details_url": null,
+      "category_id": 19,
+      "_letter": "b"
+    },
+    {
+      "id": 917,
+      "our_name": "Brandfolder",
+      "vendor": "brandfolder",
+      "products": [
+        "brandfolder"
+      ],
+      "cve_details_url": null,
+      "category_id": 96,
+      "_letter": "b"
+    },
+    {
+      "id": 918,
+      "our_name": "Braze",
+      "vendor": "braze",
+      "products": [
+        "braze"
+      ],
+      "cve_details_url": null,
+      "category_id": 19,
+      "_letter": "b"
+    },
+    {
+      "id": 919,
+      "our_name": "Bread",
+      "vendor": "bread",
+      "products": [
+        "bread"
+      ],
+      "cve_details_url": null,
+      "category_id": 21,
+      "_letter": "b"
+    },
+    {
+      "id": 920,
+      "our_name": "Breadcrumb NavXT",
+      "vendor": "breadcrumb_navxt",
+      "products": [
+        "breadcrumb_navxt"
+      ],
+      "cve_details_url": null,
+      "category_id": 62,
+      "_letter": "b"
+    },
+    {
+      "id": 921,
+      "our_name": "Breinify",
+      "vendor": "breinify",
+      "products": [
+        "breinify"
+      ],
+      "cve_details_url": null,
+      "category_id": 25,
+      "_letter": "b"
+    },
+    {
+      "id": 922,
+      "our_name": "Bricksite",
+      "vendor": "bricksite",
+      "products": [
+        "bricksite"
+      ],
+      "cve_details_url": null,
+      "category_id": 61,
+      "_letter": "b"
+    },
+    {
+      "id": 925,
+      "our_name": "Brightcove",
+      "vendor": "brightcove",
+      "products": [
+        "brightcove"
+      ],
+      "cve_details_url": null,
+      "category_id": 27,
+      "_letter": "b"
+    },
+    {
+      "id": 923,
+      "our_name": "BrightEdge",
+      "vendor": "brightedge",
+      "products": [
+        "brightedge"
+      ],
+      "cve_details_url": null,
+      "category_id": 30,
+      "_letter": "b"
+    },
+    {
+      "id": 924,
+      "our_name": "BrightInfo",
+      "vendor": "brightinfo",
+      "products": [
+        "brightinfo"
+      ],
+      "cve_details_url": null,
+      "category_id": 19,
+      "_letter": "b"
+    },
+    {
+      "id": 926,
+      "our_name": "Brightspot",
+      "vendor": "brightspot",
+      "products": [
+        "brightspot"
+      ],
+      "cve_details_url": null,
+      "category_id": 16,
+      "_letter": "b"
+    },
+    {
+      "id": 927,
+      "our_name": "Broadstreet",
+      "vendor": "broadstreet",
+      "products": [
+        "broadstreet"
+      ],
+      "cve_details_url": null,
+      "category_id": 22,
+      "_letter": "b"
+    },
+    {
+      "id": 928,
+      "our_name": "Bronto",
+      "vendor": "bronto",
+      "products": [
+        "bronto"
+      ],
+      "cve_details_url": null,
+      "category_id": 19,
+      "_letter": "b"
+    },
+    {
+      "id": 524,
+      "our_name": "brotli",
+      "vendor": "php",
+      "products": [
+        "brotli"
+      ],
+      "cve_details_url": null,
+      "category_id": 15,
+      "_letter": "b"
+    },
+    {
+      "id": 929,
+      "our_name": "Brownie",
+      "vendor": "brownie",
+      "products": [
+        "brownie"
+      ],
+      "cve_details_url": null,
+      "category_id": 16,
+      "_letter": "b"
+    },
+    {
+      "id": 930,
+      "our_name": "Browser-Update.org",
+      "vendor": "browser_update_org",
+      "products": [
+        "browser_update_org"
+      ],
+      "cve_details_url": null,
+      "category_id": 99,
+      "_letter": "b"
+    },
+    {
+      "id": 931,
+      "our_name": "BrowserCMS",
+      "vendor": "browsercms",
+      "products": [
+        "browsercms"
+      ],
+      "cve_details_url": null,
+      "category_id": 16,
+      "_letter": "b"
+    },
+    {
+      "id": 816,
+      "our_name": "BRT",
+      "vendor": "brt",
+      "products": [
+        "brt"
+      ],
+      "cve_details_url": null,
+      "category_id": 78,
+      "_letter": "b"
+    },
+    {
+      "id": 932,
+      "our_name": "Bsale",
+      "vendor": "bsale",
+      "products": [
+        "bsale"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "b"
+    },
+    {
+      "id": 951,
+      "our_name": "bSecure",
+      "vendor": "bsecure",
+      "products": [
+        "bsecure"
+      ],
+      "cve_details_url": null,
+      "category_id": 21,
+      "_letter": "b"
+    },
+    {
+      "id": 817,
+      "our_name": "BSmart",
+      "vendor": "bsmart",
+      "products": [
+        "bsmart"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "b"
+    },
+    {
+      "id": 933,
+      "our_name": "Bubble",
+      "vendor": "bubble",
+      "products": [
+        "bubble"
+      ],
+      "cve_details_url": null,
+      "category_id": 61,
+      "_letter": "b"
+    },
+    {
+      "id": 934,
+      "our_name": "Budbee",
+      "vendor": "budbee",
+      "products": [
+        "budbee"
+      ],
+      "cve_details_url": null,
+      "category_id": 78,
+      "_letter": "b"
+    },
+    {
+      "id": 935,
+      "our_name": "BuddyPress",
+      "vendor": "buddypress",
+      "products": [
+        "buddypress"
+      ],
+      "cve_details_url": null,
+      "category_id": 62,
+      "_letter": "b"
+    },
+    {
+      "id": 938,
+      "our_name": "Bugcrowd",
+      "vendor": "bugcrowd",
+      "products": [
+        "bugcrowd"
+      ],
+      "cve_details_url": null,
+      "category_id": 14,
+      "_letter": "b"
+    },
+    {
+      "id": 936,
+      "our_name": "BugHerd",
+      "vendor": "bugherd",
+      "products": [
+        "bugherd"
+      ],
+      "cve_details_url": null,
+      "category_id": 40,
+      "_letter": "b"
+    },
+    {
+      "id": 937,
+      "our_name": "BugSnag",
+      "vendor": "bugsnag",
+      "products": [
+        "bugsnag"
+      ],
+      "cve_details_url": null,
+      "category_id": 18,
+      "_letter": "b"
+    },
+    {
+      "id": 939,
+      "our_name": "Bugzilla",
+      "vendor": "mozilla",
+      "products": [
+        "bugzilla"
+      ],
+      "cve_details_url": null,
+      "category_id": 40,
+      "_letter": "b"
+    },
+    {
+      "id": 940,
+      "our_name": "Builder.io",
+      "vendor": "builder_io",
+      "products": [
+        "builder_io"
+      ],
+      "cve_details_url": null,
+      "category_id": 16,
+      "_letter": "b"
+    },
+    {
+      "id": 941,
+      "our_name": "Buildertrend",
+      "vendor": "buildertrend",
+      "products": [
+        "buildertrend"
+      ],
+      "cve_details_url": null,
+      "category_id": 99,
+      "_letter": "b"
+    },
+    {
+      "id": 942,
+      "our_name": "Bulma",
+      "vendor": "bulma",
+      "products": [
+        "bulma"
+      ],
+      "cve_details_url": null,
+      "category_id": 84,
+      "_letter": "b"
+    },
+    {
+      "id": 943,
+      "our_name": "Bump",
+      "vendor": "bump",
+      "products": [
+        "bump"
+      ],
+      "cve_details_url": null,
+      "category_id": 36,
+      "_letter": "b"
+    },
+    {
+      "id": 944,
+      "our_name": "Bunny",
+      "vendor": "bunny",
+      "products": [
+        "bunny"
+      ],
+      "cve_details_url": null,
+      "category_id": 10,
+      "_letter": "b"
+    },
+    {
+      "id": 945,
+      "our_name": "Business Catalyst",
+      "vendor": "business_catalyst",
+      "products": [
+        "business_catalyst"
+      ],
+      "cve_details_url": null,
+      "category_id": 16,
+      "_letter": "b"
+    },
+    {
+      "id": 946,
+      "our_name": "Buy me a coffee",
+      "vendor": "buy_me_a_coffee",
+      "products": [
+        "buy_me_a_coffee"
+      ],
+      "cve_details_url": null,
+      "category_id": 99,
+      "_letter": "b"
+    },
+    {
+      "id": 948,
+      "our_name": "Buyapowa",
+      "vendor": "buyapowa",
+      "products": [
+        "buyapowa"
+      ],
+      "cve_details_url": null,
+      "category_id": 55,
+      "_letter": "b"
+    },
+    {
+      "id": 947,
+      "our_name": "BuySellAds",
+      "vendor": "buysellads",
+      "products": [
+        "buysellads"
+      ],
+      "cve_details_url": null,
+      "category_id": 22,
+      "_letter": "b"
+    },
+    {
+      "id": 950,
+      "our_name": "Bynder",
+      "vendor": "bynder",
+      "products": [
+        "bynder"
+      ],
+      "cve_details_url": null,
+      "category_id": 96,
+      "_letter": "b"
+    },
+    {
+      "id": 949,
+      "our_name": "BySide",
+      "vendor": "byside",
+      "products": [
+        "byside"
+      ],
+      "cve_details_url": null,
+      "category_id": 19,
+      "_letter": "b"
+    },
+    {
+      "id": 330,
+      "our_name": "Bzip2",
+      "vendor": "php",
+      "products": [
+        "bzip2"
+      ],
+      "cve_details_url": null,
+      "category_id": 15,
+      "_letter": "b"
+    }
+  ]
+}

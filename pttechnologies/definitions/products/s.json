@@ -1,0 +1,4462 @@
+{
+  "products": [
+    {
+      "id": 2778,
+      "our_name": "SaaSquatch",
+      "vendor": "saasquatch",
+      "products": [
+        "saasquatch"
+      ],
+      "cve_details_url": null,
+      "category_id": 55,
+      "_letter": "s"
+    },
+    {
+      "id": 2779,
+      "our_name": "Saba.Host",
+      "vendor": "saba_host",
+      "products": [
+        "saba_host"
+      ],
+      "cve_details_url": null,
+      "category_id": 92,
+      "_letter": "s"
+    },
+    {
+      "id": 2780,
+      "our_name": "SabaVision",
+      "vendor": "sabavision",
+      "products": [
+        "sabavision"
+      ],
+      "cve_details_url": null,
+      "category_id": 22,
+      "_letter": "s"
+    },
+    {
+      "id": 2781,
+      "our_name": "Saber",
+      "vendor": "saber",
+      "products": [
+        "saber"
+      ],
+      "cve_details_url": null,
+      "category_id": 35,
+      "_letter": "s"
+    },
+    {
+      "id": 2782,
+      "our_name": "Sails.js",
+      "vendor": "sails_js",
+      "products": [
+        "sails_js"
+      ],
+      "cve_details_url": null,
+      "category_id": 7,
+      "_letter": "s"
+    },
+    {
+      "id": 2783,
+      "our_name": "Sailthru",
+      "vendor": "sailthru",
+      "products": [
+        "sailthru"
+      ],
+      "cve_details_url": null,
+      "category_id": 19,
+      "_letter": "s"
+    },
+    {
+      "id": 2784,
+      "our_name": "Sakura Internet",
+      "vendor": "sakura_internet",
+      "products": [
+        "sakura_internet"
+      ],
+      "cve_details_url": null,
+      "category_id": 92,
+      "_letter": "s"
+    },
+    {
+      "id": 2785,
+      "our_name": "SaleCycle",
+      "vendor": "salecycle",
+      "products": [
+        "salecycle"
+      ],
+      "cve_details_url": null,
+      "category_id": 25,
+      "_letter": "s"
+    },
+    {
+      "id": 2786,
+      "our_name": "Saleor",
+      "vendor": "saleor",
+      "products": [
+        "saleor"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "s"
+    },
+    {
+      "id": 2787,
+      "our_name": "SalesFire",
+      "vendor": "salesfire",
+      "products": [
+        "salesfire"
+      ],
+      "cve_details_url": null,
+      "category_id": 25,
+      "_letter": "s"
+    },
+    {
+      "id": 2789,
+      "our_name": "Salesfloor",
+      "vendor": "salesfloor",
+      "products": [
+        "salesfloor"
+      ],
+      "cve_details_url": null,
+      "category_id": 99,
+      "_letter": "s"
+    },
+    {
+      "id": 2790,
+      "our_name": "Salesforce",
+      "vendor": "salesforce",
+      "products": [
+        "salesforce"
+      ],
+      "cve_details_url": null,
+      "category_id": 26,
+      "_letter": "s"
+    },
+    {
+      "id": 2791,
+      "our_name": "Salesforce Audience Studio",
+      "vendor": "salesforce_audience_",
+      "products": [
+        "salesforce_audience_"
+      ],
+      "cve_details_url": null,
+      "category_id": 91,
+      "_letter": "s"
+    },
+    {
+      "id": 2792,
+      "our_name": "Salesforce Commerce Cloud",
+      "vendor": "salesforce_commerce_",
+      "products": [
+        "salesforce_commerce_"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "s"
+    },
+    {
+      "id": 2793,
+      "our_name": "Salesforce Interaction Studio",
+      "vendor": "salesforce_interacti",
+      "products": [
+        "salesforce_interacti"
+      ],
+      "cve_details_url": null,
+      "category_id": 25,
+      "_letter": "s"
+    },
+    {
+      "id": 2794,
+      "our_name": "Salesforce Service Cloud",
+      "vendor": "salesforce_service_c",
+      "products": [
+        "salesforce_service_c"
+      ],
+      "cve_details_url": null,
+      "category_id": 20,
+      "_letter": "s"
+    },
+    {
+      "id": 2756,
+      "our_name": "SALESmanago",
+      "vendor": "salesmanago",
+      "products": [
+        "salesmanago"
+      ],
+      "cve_details_url": null,
+      "category_id": 56,
+      "_letter": "s"
+    },
+    {
+      "id": 2788,
+      "our_name": "SalesReps.io",
+      "vendor": "salesreps_io",
+      "products": [
+        "salesreps_io"
+      ],
+      "cve_details_url": null,
+      "category_id": 18,
+      "_letter": "s"
+    },
+    {
+      "id": 2795,
+      "our_name": "Salla",
+      "vendor": "salla",
+      "products": [
+        "salla"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "s"
+    },
+    {
+      "id": 2796,
+      "our_name": "Salonist",
+      "vendor": "salonist",
+      "products": [
+        "salonist"
+      ],
+      "cve_details_url": null,
+      "category_id": 49,
+      "_letter": "s"
+    },
+    {
+      "id": 2797,
+      "our_name": "Salsify",
+      "vendor": "salsify",
+      "products": [
+        "salsify"
+      ],
+      "cve_details_url": null,
+      "category_id": 96,
+      "_letter": "s"
+    },
+    {
+      "id": 2798,
+      "our_name": "Saly",
+      "vendor": "saly",
+      "products": [
+        "saly"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "s"
+    },
+    {
+      "id": 2799,
+      "our_name": "Sana Commerce",
+      "vendor": "sana_commerce",
+      "products": [
+        "sana_commerce"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "s"
+    },
+    {
+      "id": 2800,
+      "our_name": "Sanity",
+      "vendor": "sanity",
+      "products": [
+        "sanity"
+      ],
+      "cve_details_url": null,
+      "category_id": 16,
+      "_letter": "s"
+    },
+    {
+      "id": 2757,
+      "our_name": "SAP",
+      "vendor": "sap",
+      "products": [
+        "netweaver_application_server",
+        "sap"
+      ],
+      "cve_details_url": null,
+      "category_id": 26,
+      "_letter": "s"
+    },
+    {
+      "id": 2758,
+      "our_name": "SAP Commerce Cloud",
+      "vendor": "sap",
+      "products": [
+        "commerce_cloud",
+        "sap_commerce_cloud"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "s"
+    },
+    {
+      "id": 2759,
+      "our_name": "SAP Customer Data Cloud Sign-in",
+      "vendor": "sap_customer_data_cl",
+      "products": [
+        "sap_customer_data_cl"
+      ],
+      "cve_details_url": null,
+      "category_id": 85,
+      "_letter": "s"
+    },
+    {
+      "id": 2760,
+      "our_name": "SAP Upscale Commerce",
+      "vendor": "sap_upscale_commerce",
+      "products": [
+        "sap_upscale_commerce"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "s"
+    },
+    {
+      "id": 2801,
+      "our_name": "Sapper",
+      "vendor": "sapper",
+      "products": [
+        "sapper"
+      ],
+      "cve_details_url": null,
+      "category_id": 7,
+      "_letter": "s"
+    },
+    {
+      "id": 2802,
+      "our_name": "Sapren",
+      "vendor": "sapren",
+      "products": [
+        "sapren"
+      ],
+      "cve_details_url": null,
+      "category_id": 16,
+      "_letter": "s"
+    },
+    {
+      "id": 2803,
+      "our_name": "Sarka-SPIP",
+      "vendor": "sarka_spip",
+      "products": [
+        "sarka_spip"
+      ],
+      "cve_details_url": null,
+      "category_id": 16,
+      "_letter": "s"
+    },
+    {
+      "id": 2804,
+      "our_name": "Sass",
+      "vendor": "sass",
+      "products": [
+        "sass"
+      ],
+      "cve_details_url": null,
+      "category_id": 5,
+      "_letter": "s"
+    },
+    {
+      "id": 2805,
+      "our_name": "Satori",
+      "vendor": "satori",
+      "products": [
+        "satori"
+      ],
+      "cve_details_url": null,
+      "category_id": 19,
+      "_letter": "s"
+    },
+    {
+      "id": 2806,
+      "our_name": "Satori Studio Bento",
+      "vendor": "satori_studio_bento",
+      "products": [
+        "satori_studio_bento"
+      ],
+      "cve_details_url": null,
+      "category_id": 63,
+      "_letter": "s"
+    },
+    {
+      "id": 2807,
+      "our_name": "Sazito",
+      "vendor": "sazito",
+      "products": [
+        "sazito"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "s"
+    },
+    {
+      "id": 2808,
+      "our_name": "Scala",
+      "vendor": "scala",
+      "products": [
+        "scala"
+      ],
+      "cve_details_url": null,
+      "category_id": 5,
+      "_letter": "s"
+    },
+    {
+      "id": 2809,
+      "our_name": "Scalapay",
+      "vendor": "scalapay",
+      "products": [
+        "scalapay"
+      ],
+      "cve_details_url": null,
+      "category_id": 21,
+      "_letter": "s"
+    },
+    {
+      "id": 2810,
+      "our_name": "Scalefast",
+      "vendor": "scalefast",
+      "products": [
+        "scalefast"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "s"
+    },
+    {
+      "id": 2811,
+      "our_name": "Schedule Engine",
+      "vendor": "schedule_engine",
+      "products": [
+        "schedule_engine"
+      ],
+      "cve_details_url": null,
+      "category_id": 20,
+      "_letter": "s"
+    },
+    {
+      "id": 2812,
+      "our_name": "Scientific Linux",
+      "vendor": "scientific_linux",
+      "products": [
+        "scientific_linux"
+      ],
+      "cve_details_url": null,
+      "category_id": 1,
+      "_letter": "s"
+    },
+    {
+      "id": 2813,
+      "our_name": "Scissor Themes Writee",
+      "vendor": "scissor_themes_write",
+      "products": [
+        "scissor_themes_write"
+      ],
+      "cve_details_url": null,
+      "category_id": 63,
+      "_letter": "s"
+    },
+    {
+      "id": 2814,
+      "our_name": "Scoop.it",
+      "vendor": "scoop_it",
+      "products": [
+        "scoop_it"
+      ],
+      "cve_details_url": null,
+      "category_id": 80,
+      "_letter": "s"
+    },
+    {
+      "id": 2815,
+      "our_name": "Scorpion",
+      "vendor": "scorpion",
+      "products": [
+        "scorpion"
+      ],
+      "cve_details_url": null,
+      "category_id": 16,
+      "_letter": "s"
+    },
+    {
+      "id": 434,
+      "our_name": "ScoutAPM",
+      "vendor": "php",
+      "products": [
+        "scoutapm"
+      ],
+      "cve_details_url": null,
+      "category_id": 15,
+      "_letter": "s"
+    },
+    {
+      "id": 3114,
+      "our_name": "script.aculo.us",
+      "vendor": "script_aculo_us",
+      "products": [
+        "script_aculo_us"
+      ],
+      "cve_details_url": null,
+      "category_id": 6,
+      "_letter": "s"
+    },
+    {
+      "id": 2816,
+      "our_name": "ScrollMagic",
+      "vendor": "scrollmagic",
+      "products": [
+        "scrollmagic"
+      ],
+      "cve_details_url": null,
+      "category_id": 6,
+      "_letter": "s"
+    },
+    {
+      "id": 3115,
+      "our_name": "scrollreveal",
+      "vendor": "scrollreveal",
+      "products": [
+        "scrollreveal"
+      ],
+      "cve_details_url": null,
+      "category_id": 6,
+      "_letter": "s"
+    },
+    {
+      "id": 2761,
+      "our_name": "SDL Tridion",
+      "vendor": "sdl_tridion",
+      "products": [
+        "sdl_tridion"
+      ],
+      "cve_details_url": null,
+      "category_id": 16,
+      "_letter": "s"
+    },
+    {
+      "id": 2818,
+      "our_name": "Seal Subscriptions",
+      "vendor": "seal_subscriptions",
+      "products": [
+        "seal_subscriptions"
+      ],
+      "cve_details_url": null,
+      "category_id": 64,
+      "_letter": "s"
+    },
+    {
+      "id": 2819,
+      "our_name": "SeamlessCMS",
+      "vendor": "seamlesscms",
+      "products": [
+        "seamlesscms"
+      ],
+      "cve_details_url": null,
+      "category_id": 16,
+      "_letter": "s"
+    },
+    {
+      "id": 2820,
+      "our_name": "Searchanise",
+      "vendor": "searchanise",
+      "products": [
+        "searchanise"
+      ],
+      "cve_details_url": null,
+      "category_id": 69,
+      "_letter": "s"
+    },
+    {
+      "id": 2821,
+      "our_name": "SearchFit",
+      "vendor": "searchfit",
+      "products": [
+        "searchfit"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "s"
+    },
+    {
+      "id": 2822,
+      "our_name": "Searchspring",
+      "vendor": "searchspring",
+      "products": [
+        "searchspring"
+      ],
+      "cve_details_url": null,
+      "category_id": 69,
+      "_letter": "s"
+    },
+    {
+      "id": 435,
+      "our_name": "Seaslog",
+      "vendor": "php",
+      "products": [
+        "seaslog"
+      ],
+      "cve_details_url": null,
+      "category_id": 15,
+      "_letter": "s"
+    },
+    {
+      "id": 2823,
+      "our_name": "Secomapp",
+      "vendor": "secomapp",
+      "products": [
+        "secomapp"
+      ],
+      "cve_details_url": null,
+      "category_id": 64,
+      "_letter": "s"
+    },
+    {
+      "id": 2824,
+      "our_name": "Sectigo",
+      "vendor": "sectigo",
+      "products": [
+        "sectigo"
+      ],
+      "cve_details_url": null,
+      "category_id": 86,
+      "_letter": "s"
+    },
+    {
+      "id": 2825,
+      "our_name": "Section.io",
+      "vendor": "section_io",
+      "products": [
+        "section_io"
+      ],
+      "cve_details_url": null,
+      "category_id": 10,
+      "_letter": "s"
+    },
+    {
+      "id": 2826,
+      "our_name": "Sections.design Shopify App Optimization",
+      "vendor": "sections_design_shop",
+      "products": [
+        "sections_design_shop"
+      ],
+      "cve_details_url": null,
+      "category_id": 33,
+      "_letter": "s"
+    },
+    {
+      "id": 2827,
+      "our_name": "SeedProd Coming Soon",
+      "vendor": "seedprod_coming_soon",
+      "products": [
+        "seedprod_coming_soon"
+      ],
+      "cve_details_url": null,
+      "category_id": 62,
+      "_letter": "s"
+    },
+    {
+      "id": 2828,
+      "our_name": "Seers",
+      "vendor": "seers",
+      "products": [
+        "seers"
+      ],
+      "cve_details_url": null,
+      "category_id": 32,
+      "_letter": "s"
+    },
+    {
+      "id": 2829,
+      "our_name": "Segmanta",
+      "vendor": "segmanta",
+      "products": [
+        "segmanta"
+      ],
+      "cve_details_url": null,
+      "category_id": 48,
+      "_letter": "s"
+    },
+    {
+      "id": 2830,
+      "our_name": "Segment",
+      "vendor": "segment",
+      "products": [
+        "segment"
+      ],
+      "cve_details_url": null,
+      "category_id": 56,
+      "_letter": "s"
+    },
+    {
+      "id": 2831,
+      "our_name": "Segment Consent Manager ",
+      "vendor": "segment_consent_mana",
+      "products": [
+        "segment_consent_mana"
+      ],
+      "cve_details_url": null,
+      "category_id": 32,
+      "_letter": "s"
+    },
+    {
+      "id": 2832,
+      "our_name": "SegmentStream",
+      "vendor": "segmentstream",
+      "products": [
+        "segmentstream"
+      ],
+      "cve_details_url": null,
+      "category_id": 18,
+      "_letter": "s"
+    },
+    {
+      "id": 2833,
+      "our_name": "Select2",
+      "vendor": "select2",
+      "products": [
+        "select2"
+      ],
+      "cve_details_url": null,
+      "category_id": 6,
+      "_letter": "s"
+    },
+    {
+      "id": 2834,
+      "our_name": "Sellacious",
+      "vendor": "sellacious",
+      "products": [
+        "sellacious"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "s"
+    },
+    {
+      "id": 2835,
+      "our_name": "Sellfy",
+      "vendor": "sellfy",
+      "products": [
+        "sellfy"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "s"
+    },
+    {
+      "id": 2836,
+      "our_name": "Sellingo",
+      "vendor": "sellingo",
+      "products": [
+        "sellingo"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "s"
+    },
+    {
+      "id": 2837,
+      "our_name": "Sellix",
+      "vendor": "sellix",
+      "products": [
+        "sellix"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "s"
+    },
+    {
+      "id": 2838,
+      "our_name": "Sellsy",
+      "vendor": "sellsy",
+      "products": [
+        "sellsy"
+      ],
+      "cve_details_url": null,
+      "category_id": 26,
+      "_letter": "s"
+    },
+    {
+      "id": 2839,
+      "our_name": "Selly",
+      "vendor": "selly",
+      "products": [
+        "selly"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "s"
+    },
+    {
+      "id": 2840,
+      "our_name": "Semantic UI",
+      "vendor": "semantic_ui",
+      "products": [
+        "semantic_ui"
+      ],
+      "cve_details_url": null,
+      "category_id": 84,
+      "_letter": "s"
+    },
+    {
+      "id": 436,
+      "our_name": "Semaphore",
+      "vendor": "php",
+      "products": [
+        "sem"
+      ],
+      "cve_details_url": null,
+      "category_id": 15,
+      "_letter": "s"
+    },
+    {
+      "id": 2841,
+      "our_name": "Sematext Experience",
+      "vendor": "sematext_experience",
+      "products": [
+        "sematext_experience"
+      ],
+      "cve_details_url": null,
+      "category_id": 33,
+      "_letter": "s"
+    },
+    {
+      "id": 2842,
+      "our_name": "Semplice",
+      "vendor": "semplice",
+      "products": [
+        "semplice"
+      ],
+      "cve_details_url": null,
+      "category_id": 63,
+      "_letter": "s"
+    },
+    {
+      "id": 2762,
+      "our_name": "SEMrush",
+      "vendor": "semrush",
+      "products": [
+        "semrush"
+      ],
+      "cve_details_url": null,
+      "category_id": 19,
+      "_letter": "s"
+    },
+    {
+      "id": 2843,
+      "our_name": "Sencha Touch",
+      "vendor": "sencha_touch",
+      "products": [
+        "sencha_touch"
+      ],
+      "cve_details_url": null,
+      "category_id": 6,
+      "_letter": "s"
+    },
+    {
+      "id": 2844,
+      "our_name": "Sendgrid",
+      "vendor": "sendgrid",
+      "products": [
+        "sendgrid"
+      ],
+      "cve_details_url": null,
+      "category_id": 87,
+      "_letter": "s"
+    },
+    {
+      "id": 2845,
+      "our_name": "Sendinblue",
+      "vendor": "sendinblue",
+      "products": [
+        "sendinblue"
+      ],
+      "cve_details_url": null,
+      "category_id": 19,
+      "_letter": "s"
+    },
+    {
+      "id": 2846,
+      "our_name": "Sensors Data",
+      "vendor": "sensors_data",
+      "products": [
+        "sensors_data"
+      ],
+      "cve_details_url": null,
+      "category_id": 18,
+      "_letter": "s"
+    },
+    {
+      "id": 2847,
+      "our_name": "Sentry",
+      "vendor": "sentry",
+      "products": [
+        "sentry"
+      ],
+      "cve_details_url": null,
+      "category_id": 40,
+      "_letter": "s"
+    },
+    {
+      "id": 2763,
+      "our_name": "SEOmatic",
+      "vendor": "seomatic",
+      "products": [
+        "seomatic"
+      ],
+      "cve_details_url": null,
+      "category_id": 30,
+      "_letter": "s"
+    },
+    {
+      "id": 2817,
+      "our_name": "SeQura",
+      "vendor": "sequra",
+      "products": [
+        "sequra"
+      ],
+      "cve_details_url": null,
+      "category_id": 94,
+      "_letter": "s"
+    },
+    {
+      "id": 2848,
+      "our_name": "Seravo",
+      "vendor": "seravo",
+      "products": [
+        "seravo"
+      ],
+      "cve_details_url": null,
+      "category_id": 50,
+      "_letter": "s"
+    },
+    {
+      "id": 2849,
+      "our_name": "Serendipity",
+      "vendor": "serendipity",
+      "products": [
+        "serendipity"
+      ],
+      "cve_details_url": null,
+      "category_id": 16,
+      "_letter": "s"
+    },
+    {
+      "id": 2850,
+      "our_name": "Service Management Group",
+      "vendor": "service_management_g",
+      "products": [
+        "service_management_g"
+      ],
+      "cve_details_url": null,
+      "category_id": 48,
+      "_letter": "s"
+    },
+    {
+      "id": 2851,
+      "our_name": "Service Provider Pro",
+      "vendor": "service_provider_pro",
+      "products": [
+        "service_provider_pro"
+      ],
+      "cve_details_url": null,
+      "category_id": 21,
+      "_letter": "s"
+    },
+    {
+      "id": 2852,
+      "our_name": "ServiceNow",
+      "vendor": "servicenow",
+      "products": [
+        "servicenow"
+      ],
+      "cve_details_url": null,
+      "category_id": 99,
+      "_letter": "s"
+    },
+    {
+      "id": 437,
+      "our_name": "Sessions",
+      "vendor": "php",
+      "products": [
+        "session"
+      ],
+      "cve_details_url": null,
+      "category_id": 15,
+      "_letter": "s"
+    },
+    {
+      "id": 2853,
+      "our_name": "Setmore",
+      "vendor": "setmore",
+      "products": [
+        "setmore"
+      ],
+      "cve_details_url": null,
+      "category_id": 99,
+      "_letter": "s"
+    },
+    {
+      "id": 2764,
+      "our_name": "SEUR",
+      "vendor": "seur",
+      "products": [
+        "seur"
+      ],
+      "cve_details_url": null,
+      "category_id": 78,
+      "_letter": "s"
+    },
+    {
+      "id": 2854,
+      "our_name": "SevenRooms",
+      "vendor": "sevenrooms",
+      "products": [
+        "sevenrooms"
+      ],
+      "cve_details_url": null,
+      "category_id": 99,
+      "_letter": "s"
+    },
+    {
+      "id": 2855,
+      "our_name": "Sezzle",
+      "vendor": "sezzle",
+      "products": [
+        "sezzle"
+      ],
+      "cve_details_url": null,
+      "category_id": 21,
+      "_letter": "s"
+    },
+    {
+      "id": 2856,
+      "our_name": "Shaka Player",
+      "vendor": "shaka_player",
+      "products": [
+        "shaka_player"
+      ],
+      "cve_details_url": null,
+      "category_id": 27,
+      "_letter": "s"
+    },
+    {
+      "id": 2857,
+      "our_name": "Shanon",
+      "vendor": "shanon",
+      "products": [
+        "shanon"
+      ],
+      "cve_details_url": null,
+      "category_id": 19,
+      "_letter": "s"
+    },
+    {
+      "id": 2858,
+      "our_name": "Shapecss",
+      "vendor": "shapecss",
+      "products": [
+        "shapecss"
+      ],
+      "cve_details_url": null,
+      "category_id": 84,
+      "_letter": "s"
+    },
+    {
+      "id": 438,
+      "our_name": "Shared Memory",
+      "vendor": "php",
+      "products": [
+        "shmop"
+      ],
+      "cve_details_url": null,
+      "category_id": 15,
+      "_letter": "s"
+    },
+    {
+      "id": 2859,
+      "our_name": "ShareThis",
+      "vendor": "sharethis",
+      "products": [
+        "sharethis"
+      ],
+      "cve_details_url": null,
+      "category_id": 99,
+      "_letter": "s"
+    },
+    {
+      "id": 2860,
+      "our_name": "Sharethrough",
+      "vendor": "sharethrough",
+      "products": [
+        "sharethrough"
+      ],
+      "cve_details_url": null,
+      "category_id": 22,
+      "_letter": "s"
+    },
+    {
+      "id": 2861,
+      "our_name": "Sharetribe",
+      "vendor": "sharetribe",
+      "products": [
+        "sharetribe"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "s"
+    },
+    {
+      "id": 2862,
+      "our_name": "SharpSpring",
+      "vendor": "sharpspring",
+      "products": [
+        "sharpspring"
+      ],
+      "cve_details_url": null,
+      "category_id": 19,
+      "_letter": "s"
+    },
+    {
+      "id": 2863,
+      "our_name": "SharpSpring Ads",
+      "vendor": "sharpspring_ads",
+      "products": [
+        "sharpspring_ads"
+      ],
+      "cve_details_url": null,
+      "category_id": 54,
+      "_letter": "s"
+    },
+    {
+      "id": 2765,
+      "our_name": "SHE Media",
+      "vendor": "she_media",
+      "products": [
+        "she_media"
+      ],
+      "cve_details_url": null,
+      "category_id": 22,
+      "_letter": "s"
+    },
+    {
+      "id": 2864,
+      "our_name": "SheerID",
+      "vendor": "sheerid",
+      "products": [
+        "sheerid"
+      ],
+      "cve_details_url": null,
+      "category_id": 99,
+      "_letter": "s"
+    },
+    {
+      "id": 2865,
+      "our_name": "Shelf",
+      "vendor": "shelf",
+      "products": [
+        "shelf"
+      ],
+      "cve_details_url": null,
+      "category_id": 99,
+      "_letter": "s"
+    },
+    {
+      "id": 2866,
+      "our_name": "ShellInABox",
+      "vendor": "shellinabox",
+      "products": [
+        "shellinabox"
+      ],
+      "cve_details_url": null,
+      "category_id": 72,
+      "_letter": "s"
+    },
+    {
+      "id": 3116,
+      "our_name": "shine.js",
+      "vendor": "shine_js",
+      "products": [
+        "shine_js"
+      ],
+      "cve_details_url": null,
+      "category_id": 6,
+      "_letter": "s"
+    },
+    {
+      "id": 2867,
+      "our_name": "Shiny",
+      "vendor": "shiny",
+      "products": [
+        "shiny"
+      ],
+      "cve_details_url": null,
+      "category_id": 7,
+      "_letter": "s"
+    },
+    {
+      "id": 2868,
+      "our_name": "ShinyStat",
+      "vendor": "shinystat",
+      "products": [
+        "shinystat"
+      ],
+      "cve_details_url": null,
+      "category_id": 18,
+      "_letter": "s"
+    },
+    {
+      "id": 2870,
+      "our_name": "ShippyPro",
+      "vendor": "shippypro",
+      "products": [
+        "shippypro"
+      ],
+      "cve_details_url": null,
+      "category_id": 98,
+      "_letter": "s"
+    },
+    {
+      "id": 2869,
+      "our_name": "ShipTection",
+      "vendor": "shiptection",
+      "products": [
+        "shiptection"
+      ],
+      "cve_details_url": null,
+      "category_id": 64,
+      "_letter": "s"
+    },
+    {
+      "id": 2871,
+      "our_name": "Shogun",
+      "vendor": "shogun",
+      "products": [
+        "shogun"
+      ],
+      "cve_details_url": null,
+      "category_id": 61,
+      "_letter": "s"
+    },
+    {
+      "id": 2872,
+      "our_name": "Shop Pay",
+      "vendor": "shop_pay",
+      "products": [
+        "shop_pay"
+      ],
+      "cve_details_url": null,
+      "category_id": 21,
+      "_letter": "s"
+    },
+    {
+      "id": 2873,
+      "our_name": "Shop Pay Installments",
+      "vendor": "shop_pay_installment",
+      "products": [
+        "shop_pay_installment"
+      ],
+      "cve_details_url": null,
+      "category_id": 94,
+      "_letter": "s"
+    },
+    {
+      "id": 2877,
+      "our_name": "Shopaholic",
+      "vendor": "shopaholic",
+      "products": [
+        "shopaholic"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "s"
+    },
+    {
+      "id": 2878,
+      "our_name": "Shopapps",
+      "vendor": "shopapps",
+      "products": [
+        "shopapps"
+      ],
+      "cve_details_url": null,
+      "category_id": 64,
+      "_letter": "s"
+    },
+    {
+      "id": 2879,
+      "our_name": "Shopatron",
+      "vendor": "shopatron",
+      "products": [
+        "shopatron"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "s"
+    },
+    {
+      "id": 2880,
+      "our_name": "Shopcada",
+      "vendor": "shopcada",
+      "products": [
+        "shopcada"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "s"
+    },
+    {
+      "id": 2881,
+      "our_name": "Shoper",
+      "vendor": "shoper",
+      "products": [
+        "shoper"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "s"
+    },
+    {
+      "id": 2882,
+      "our_name": "Shopery",
+      "vendor": "shopery",
+      "products": [
+        "shopery"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "s"
+    },
+    {
+      "id": 2883,
+      "our_name": "Shopfa",
+      "vendor": "shopfa",
+      "products": [
+        "shopfa"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "s"
+    },
+    {
+      "id": 2874,
+      "our_name": "ShopGold",
+      "vendor": "shopgold",
+      "products": [
+        "shopgold"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "s"
+    },
+    {
+      "id": 82,
+      "our_name": "Shopify",
+      "vendor": "shopify",
+      "products": [
+        "shopify"
+      ],
+      "cve_details_url": "https://www.cvedetails.com/product/31613/Magento-Magento.html",
+      "category_id": 8,
+      "_letter": "s"
+    },
+    {
+      "id": 2884,
+      "our_name": "Shopify Buy Button",
+      "vendor": "shopify_buy_button",
+      "products": [
+        "shopify_buy_button"
+      ],
+      "cve_details_url": null,
+      "category_id": 64,
+      "_letter": "s"
+    },
+    {
+      "id": 2885,
+      "our_name": "Shopify Chat",
+      "vendor": "shopify_chat",
+      "products": [
+        "shopify_chat"
+      ],
+      "cve_details_url": null,
+      "category_id": 20,
+      "_letter": "s"
+    },
+    {
+      "id": 2886,
+      "our_name": "Shopify Consent Management",
+      "vendor": "shopify_consent_mana",
+      "products": [
+        "shopify_consent_mana"
+      ],
+      "cve_details_url": null,
+      "category_id": 32,
+      "_letter": "s"
+    },
+    {
+      "id": 2887,
+      "our_name": "Shopify Geolocation App",
+      "vendor": "shopify_geolocation_",
+      "products": [
+        "shopify_geolocation_"
+      ],
+      "cve_details_url": null,
+      "category_id": 64,
+      "_letter": "s"
+    },
+    {
+      "id": 2888,
+      "our_name": "Shopify Product Reviews",
+      "vendor": "shopify_product_revi",
+      "products": [
+        "shopify_product_revi"
+      ],
+      "cve_details_url": null,
+      "category_id": 59,
+      "_letter": "s"
+    },
+    {
+      "id": 2889,
+      "our_name": "Shopistry",
+      "vendor": "shopistry",
+      "products": [
+        "shopistry"
+      ],
+      "cve_details_url": null,
+      "category_id": 16,
+      "_letter": "s"
+    },
+    {
+      "id": 2890,
+      "our_name": "Shopline",
+      "vendor": "shopline",
+      "products": [
+        "shopline"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "s"
+    },
+    {
+      "id": 2891,
+      "our_name": "Shoplo",
+      "vendor": "shoplo",
+      "products": [
+        "shoplo"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "s"
+    },
+    {
+      "id": 2892,
+      "our_name": "Shoporama",
+      "vendor": "shoporama",
+      "products": [
+        "shoporama"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "s"
+    },
+    {
+      "id": 2875,
+      "our_name": "ShopPad Infinite Options",
+      "vendor": "shoppad_infinite_opt",
+      "products": [
+        "shoppad_infinite_opt"
+      ],
+      "cve_details_url": null,
+      "category_id": 64,
+      "_letter": "s"
+    },
+    {
+      "id": 2893,
+      "our_name": "Shoppiko",
+      "vendor": "shoppiko",
+      "products": [
+        "shoppiko"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "s"
+    },
+    {
+      "id": 2894,
+      "our_name": "ShoppingFeeder",
+      "vendor": "shoppingfeeder",
+      "products": [
+        "shoppingfeeder"
+      ],
+      "cve_details_url": null,
+      "category_id": 99,
+      "_letter": "s"
+    },
+    {
+      "id": 2895,
+      "our_name": "ShoppingGives",
+      "vendor": "shoppinggives",
+      "products": [
+        "shoppinggives"
+      ],
+      "cve_details_url": null,
+      "category_id": 99,
+      "_letter": "s"
+    },
+    {
+      "id": 2896,
+      "our_name": "Shoppy",
+      "vendor": "shoppy",
+      "products": [
+        "shoppy"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "s"
+    },
+    {
+      "id": 2897,
+      "our_name": "Shoprenter",
+      "vendor": "shoprenter",
+      "products": [
+        "shoprenter"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "s"
+    },
+    {
+      "id": 2898,
+      "our_name": "Shoprunner",
+      "vendor": "shoprunner",
+      "products": [
+        "shoprunner"
+      ],
+      "cve_details_url": null,
+      "category_id": 79,
+      "_letter": "s"
+    },
+    {
+      "id": 2899,
+      "our_name": "Shoptet",
+      "vendor": "shoptet",
+      "products": [
+        "shoptet"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "s"
+    },
+    {
+      "id": 2900,
+      "our_name": "Shopware",
+      "vendor": "shopware",
+      "products": [
+        "shopware"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "s"
+    },
+    {
+      "id": 2876,
+      "our_name": "ShopWired",
+      "vendor": "shopwired",
+      "products": [
+        "shopwired"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "s"
+    },
+    {
+      "id": 2902,
+      "our_name": "Shortcodes Ultimate",
+      "vendor": "shortcodes_ultimate",
+      "products": [
+        "shortcodes_ultimate"
+      ],
+      "cve_details_url": null,
+      "category_id": 62,
+      "_letter": "s"
+    },
+    {
+      "id": 2903,
+      "our_name": "Shortly",
+      "vendor": "shortly",
+      "products": [
+        "shortly"
+      ],
+      "cve_details_url": null,
+      "category_id": 64,
+      "_letter": "s"
+    },
+    {
+      "id": 2901,
+      "our_name": "ShortPixel Image Optimizer",
+      "vendor": "shortpixel_image_opt",
+      "products": [
+        "shortpixel_image_opt"
+      ],
+      "cve_details_url": null,
+      "category_id": 62,
+      "_letter": "s"
+    },
+    {
+      "id": 2904,
+      "our_name": "ShoutOut",
+      "vendor": "shoutout",
+      "products": [
+        "shoutout"
+      ],
+      "cve_details_url": null,
+      "category_id": 55,
+      "_letter": "s"
+    },
+    {
+      "id": 2905,
+      "our_name": "Shuttle",
+      "vendor": "shuttle",
+      "products": [
+        "shuttle"
+      ],
+      "cve_details_url": null,
+      "category_id": 16,
+      "_letter": "s"
+    },
+    {
+      "id": 3112,
+      "our_name": "sIFR",
+      "vendor": "sifr",
+      "products": [
+        "sifr"
+      ],
+      "cve_details_url": null,
+      "category_id": 67,
+      "_letter": "s"
+    },
+    {
+      "id": 2906,
+      "our_name": "Sift",
+      "vendor": "sift",
+      "products": [
+        "sift"
+      ],
+      "cve_details_url": null,
+      "category_id": 18,
+      "_letter": "s"
+    },
+    {
+      "id": 2907,
+      "our_name": "Signal",
+      "vendor": "signal",
+      "products": [
+        "signal"
+      ],
+      "cve_details_url": null,
+      "category_id": 19,
+      "_letter": "s"
+    },
+    {
+      "id": 2908,
+      "our_name": "Signifyd",
+      "vendor": "signifyd",
+      "products": [
+        "signifyd"
+      ],
+      "cve_details_url": null,
+      "category_id": 18,
+      "_letter": "s"
+    },
+    {
+      "id": 3117,
+      "our_name": "siimple",
+      "vendor": "siimple",
+      "products": [
+        "siimple"
+      ],
+      "cve_details_url": null,
+      "category_id": 84,
+      "_letter": "s"
+    },
+    {
+      "id": 2909,
+      "our_name": "SilverStripe",
+      "vendor": "silverstripe",
+      "products": [
+        "silverstripe"
+      ],
+      "cve_details_url": null,
+      "category_id": 16,
+      "_letter": "s"
+    },
+    {
+      "id": 2910,
+      "our_name": "Simbel",
+      "vendor": "simbel",
+      "products": [
+        "simbel"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "s"
+    },
+    {
+      "id": 439,
+      "our_name": "Simdjson",
+      "vendor": "php",
+      "products": [
+        "simdjson"
+      ],
+      "cve_details_url": null,
+      "category_id": 15,
+      "_letter": "s"
+    },
+    {
+      "id": 2911,
+      "our_name": "Simon",
+      "vendor": "simon",
+      "products": [
+        "simon"
+      ],
+      "cve_details_url": null,
+      "category_id": 56,
+      "_letter": "s"
+    },
+    {
+      "id": 2912,
+      "our_name": "Simpl",
+      "vendor": "simpl",
+      "products": [
+        "simpl"
+      ],
+      "cve_details_url": null,
+      "category_id": 21,
+      "_letter": "s"
+    },
+    {
+      "id": 2913,
+      "our_name": "Simple Analytics",
+      "vendor": "simple_analytics",
+      "products": [
+        "simple_analytics"
+      ],
+      "cve_details_url": null,
+      "category_id": 18,
+      "_letter": "s"
+    },
+    {
+      "id": 2914,
+      "our_name": "SimpleHTTP",
+      "vendor": "simplehttp",
+      "products": [
+        "simplehttp"
+      ],
+      "cve_details_url": null,
+      "category_id": 2,
+      "_letter": "s"
+    },
+    {
+      "id": 2915,
+      "our_name": "Simplero",
+      "vendor": "simplero",
+      "products": [
+        "simplero"
+      ],
+      "cve_details_url": null,
+      "category_id": 19,
+      "_letter": "s"
+    },
+    {
+      "id": 2916,
+      "our_name": "Simplero Websites",
+      "vendor": "simplero_websites",
+      "products": [
+        "simplero_websites"
+      ],
+      "cve_details_url": null,
+      "category_id": 42,
+      "_letter": "s"
+    },
+    {
+      "id": 440,
+      "our_name": "SimpleXML",
+      "vendor": "php",
+      "products": [
+        "simplexml"
+      ],
+      "cve_details_url": null,
+      "category_id": 15,
+      "_letter": "s"
+    },
+    {
+      "id": 2917,
+      "our_name": "Simpli.fi",
+      "vendor": "simpli_fi",
+      "products": [
+        "simpli_fi"
+      ],
+      "cve_details_url": null,
+      "category_id": 22,
+      "_letter": "s"
+    },
+    {
+      "id": 2918,
+      "our_name": "Simplio Upsells",
+      "vendor": "simplio_upsells",
+      "products": [
+        "simplio_upsells"
+      ],
+      "cve_details_url": null,
+      "category_id": 64,
+      "_letter": "s"
+    },
+    {
+      "id": 2919,
+      "our_name": "Simplo7",
+      "vendor": "simplo7",
+      "products": [
+        "simplo7"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "s"
+    },
+    {
+      "id": 2920,
+      "our_name": "Simplébo",
+      "vendor": "simplébo",
+      "products": [
+        "simplébo"
+      ],
+      "cve_details_url": null,
+      "category_id": 16,
+      "_letter": "s"
+    },
+    {
+      "id": 2766,
+      "our_name": "SIMsite",
+      "vendor": "simsite",
+      "products": [
+        "simsite"
+      ],
+      "cve_details_url": null,
+      "category_id": 16,
+      "_letter": "s"
+    },
+    {
+      "id": 2921,
+      "our_name": "Sinatra",
+      "vendor": "sinatra",
+      "products": [
+        "sinatra"
+      ],
+      "cve_details_url": null,
+      "category_id": 63,
+      "_letter": "s"
+    },
+    {
+      "id": 2922,
+      "our_name": "Sirclo",
+      "vendor": "sirclo",
+      "products": [
+        "sirclo"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "s"
+    },
+    {
+      "id": 2923,
+      "our_name": "Sirdata",
+      "vendor": "sirdata",
+      "products": [
+        "sirdata"
+      ],
+      "cve_details_url": null,
+      "category_id": 56,
+      "_letter": "s"
+    },
+    {
+      "id": 2924,
+      "our_name": "Site Kit",
+      "vendor": "site_kit",
+      "products": [
+        "site_kit"
+      ],
+      "cve_details_url": null,
+      "category_id": 18,
+      "_letter": "s"
+    },
+    {
+      "id": 2925,
+      "our_name": "Site Meter",
+      "vendor": "site_meter",
+      "products": [
+        "site_meter"
+      ],
+      "cve_details_url": null,
+      "category_id": 18,
+      "_letter": "s"
+    },
+    {
+      "id": 2926,
+      "our_name": "Site Search 360",
+      "vendor": "site_search_360",
+      "products": [
+        "site_search_360"
+      ],
+      "cve_details_url": null,
+      "category_id": 69,
+      "_letter": "s"
+    },
+    {
+      "id": 2927,
+      "our_name": "Site24x7",
+      "vendor": "site24x7",
+      "products": [
+        "site24x7"
+      ],
+      "cve_details_url": null,
+      "category_id": 33,
+      "_letter": "s"
+    },
+    {
+      "id": 2941,
+      "our_name": "Sitecore",
+      "vendor": "sitecore",
+      "products": [
+        "sitecore"
+      ],
+      "cve_details_url": null,
+      "category_id": 16,
+      "_letter": "s"
+    },
+    {
+      "id": 2928,
+      "our_name": "SiteEdit",
+      "vendor": "siteedit",
+      "products": [
+        "siteedit"
+      ],
+      "cve_details_url": null,
+      "category_id": 16,
+      "_letter": "s"
+    },
+    {
+      "id": 2942,
+      "our_name": "Sitefinity",
+      "vendor": "sitefinity",
+      "products": [
+        "sitefinity"
+      ],
+      "cve_details_url": null,
+      "category_id": 16,
+      "_letter": "s"
+    },
+    {
+      "id": 2943,
+      "our_name": "Siteglide",
+      "vendor": "siteglide",
+      "products": [
+        "siteglide"
+      ],
+      "cve_details_url": null,
+      "category_id": 16,
+      "_letter": "s"
+    },
+    {
+      "id": 2929,
+      "our_name": "SiteGround",
+      "vendor": "siteground",
+      "products": [
+        "siteground"
+      ],
+      "cve_details_url": null,
+      "category_id": 50,
+      "_letter": "s"
+    },
+    {
+      "id": 2930,
+      "our_name": "SiteGuard WP Plugin",
+      "vendor": "siteguard_wp_plugin",
+      "products": [
+        "siteguard_wp_plugin"
+      ],
+      "cve_details_url": null,
+      "category_id": 62,
+      "_letter": "s"
+    },
+    {
+      "id": 2931,
+      "our_name": "SiteJabber",
+      "vendor": "sitejabber",
+      "products": [
+        "sitejabber"
+      ],
+      "cve_details_url": null,
+      "category_id": 59,
+      "_letter": "s"
+    },
+    {
+      "id": 2932,
+      "our_name": "SiteManager",
+      "vendor": "sitemanager",
+      "products": [
+        "sitemanager"
+      ],
+      "cve_details_url": null,
+      "category_id": 16,
+      "_letter": "s"
+    },
+    {
+      "id": 2933,
+      "our_name": "SiteMinder",
+      "vendor": "siteminder",
+      "products": [
+        "siteminder"
+      ],
+      "cve_details_url": null,
+      "category_id": 99,
+      "_letter": "s"
+    },
+    {
+      "id": 2934,
+      "our_name": "SiteOrigin Page Builder",
+      "vendor": "siteorigin_page_buil",
+      "products": [
+        "siteorigin_page_buil"
+      ],
+      "cve_details_url": null,
+      "category_id": 62,
+      "_letter": "s"
+    },
+    {
+      "id": 2935,
+      "our_name": "SiteOrigin Vantage",
+      "vendor": "siteorigin_vantage",
+      "products": [
+        "siteorigin_vantage"
+      ],
+      "cve_details_url": null,
+      "category_id": 63,
+      "_letter": "s"
+    },
+    {
+      "id": 2936,
+      "our_name": "SiteOrigin Widgets Bundle",
+      "vendor": "siteorigin_widgets_b",
+      "products": [
+        "siteorigin_widgets_b"
+      ],
+      "cve_details_url": null,
+      "category_id": 62,
+      "_letter": "s"
+    },
+    {
+      "id": 2937,
+      "our_name": "SitePad",
+      "vendor": "sitepad",
+      "products": [
+        "sitepad"
+      ],
+      "cve_details_url": null,
+      "category_id": 35,
+      "_letter": "s"
+    },
+    {
+      "id": 2938,
+      "our_name": "SiteSpect",
+      "vendor": "sitespect",
+      "products": [
+        "sitespect"
+      ],
+      "cve_details_url": null,
+      "category_id": 24,
+      "_letter": "s"
+    },
+    {
+      "id": 2939,
+      "our_name": "SiteVibes",
+      "vendor": "sitevibes",
+      "products": [
+        "sitevibes"
+      ],
+      "cve_details_url": null,
+      "category_id": 18,
+      "_letter": "s"
+    },
+    {
+      "id": 2944,
+      "our_name": "Sitevision CMS",
+      "vendor": "sitevision_cms",
+      "products": [
+        "sitevision_cms"
+      ],
+      "cve_details_url": null,
+      "category_id": 16,
+      "_letter": "s"
+    },
+    {
+      "id": 2940,
+      "our_name": "SiteW",
+      "vendor": "sitew",
+      "products": [
+        "sitew"
+      ],
+      "cve_details_url": null,
+      "category_id": 61,
+      "_letter": "s"
+    },
+    {
+      "id": 2945,
+      "our_name": "Sivuviidakko",
+      "vendor": "sivuviidakko",
+      "products": [
+        "sivuviidakko"
+      ],
+      "cve_details_url": null,
+      "category_id": 16,
+      "_letter": "s"
+    },
+    {
+      "id": 2946,
+      "our_name": "Sizmek",
+      "vendor": "sizmek",
+      "products": [
+        "sizmek"
+      ],
+      "cve_details_url": null,
+      "category_id": 22,
+      "_letter": "s"
+    },
+    {
+      "id": 2947,
+      "our_name": "Skai",
+      "vendor": "skai",
+      "products": [
+        "skai"
+      ],
+      "cve_details_url": null,
+      "category_id": 18,
+      "_letter": "s"
+    },
+    {
+      "id": 2948,
+      "our_name": "Skedify",
+      "vendor": "skedify",
+      "products": [
+        "skedify"
+      ],
+      "cve_details_url": null,
+      "category_id": 49,
+      "_letter": "s"
+    },
+    {
+      "id": 2949,
+      "our_name": "Skimlinks",
+      "vendor": "skimlinks",
+      "products": [
+        "skimlinks"
+      ],
+      "cve_details_url": null,
+      "category_id": 55,
+      "_letter": "s"
+    },
+    {
+      "id": 2950,
+      "our_name": "Skio",
+      "vendor": "skio",
+      "products": [
+        "skio"
+      ],
+      "cve_details_url": null,
+      "category_id": 64,
+      "_letter": "s"
+    },
+    {
+      "id": 2951,
+      "our_name": "Sky-Shop",
+      "vendor": "sky_shop",
+      "products": [
+        "sky_shop"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "s"
+    },
+    {
+      "id": 2952,
+      "our_name": "SkyVerge",
+      "vendor": "skyverge",
+      "products": [
+        "skyverge"
+      ],
+      "cve_details_url": null,
+      "category_id": 21,
+      "_letter": "s"
+    },
+    {
+      "id": 2953,
+      "our_name": "Slice",
+      "vendor": "slice",
+      "products": [
+        "slice"
+      ],
+      "cve_details_url": null,
+      "category_id": 95,
+      "_letter": "s"
+    },
+    {
+      "id": 2954,
+      "our_name": "Slick",
+      "vendor": "slick",
+      "products": [
+        "slick"
+      ],
+      "cve_details_url": null,
+      "category_id": 6,
+      "_letter": "s"
+    },
+    {
+      "id": 2955,
+      "our_name": "SlickStack",
+      "vendor": "slickstack",
+      "products": [
+        "slickstack"
+      ],
+      "cve_details_url": null,
+      "category_id": 73,
+      "_letter": "s"
+    },
+    {
+      "id": 2956,
+      "our_name": "Slider Revolution",
+      "vendor": "slider_revolution",
+      "products": [
+        "slider_revolution"
+      ],
+      "cve_details_url": null,
+      "category_id": 62,
+      "_letter": "s"
+    },
+    {
+      "id": 2957,
+      "our_name": "Slimbox",
+      "vendor": "slimbox",
+      "products": [
+        "slimbox"
+      ],
+      "cve_details_url": null,
+      "category_id": 6,
+      "_letter": "s"
+    },
+    {
+      "id": 2958,
+      "our_name": "Slimbox 2",
+      "vendor": "slimbox_2",
+      "products": [
+        "slimbox_2"
+      ],
+      "cve_details_url": null,
+      "category_id": 6,
+      "_letter": "s"
+    },
+    {
+      "id": 2959,
+      "our_name": "Smart Ad Server",
+      "vendor": "smart_ad_server",
+      "products": [
+        "smart_ad_server"
+      ],
+      "cve_details_url": null,
+      "category_id": 22,
+      "_letter": "s"
+    },
+    {
+      "id": 2960,
+      "our_name": "Smart Slider 3",
+      "vendor": "smart_slider_3",
+      "products": [
+        "smart_slider_3"
+      ],
+      "cve_details_url": null,
+      "category_id": 62,
+      "_letter": "s"
+    },
+    {
+      "id": 2964,
+      "our_name": "Smarter Click",
+      "vendor": "smarter_click",
+      "products": [
+        "smarter_click"
+      ],
+      "cve_details_url": null,
+      "category_id": 54,
+      "_letter": "s"
+    },
+    {
+      "id": 2965,
+      "our_name": "Smartling",
+      "vendor": "smartling",
+      "products": [
+        "smartling"
+      ],
+      "cve_details_url": null,
+      "category_id": 93,
+      "_letter": "s"
+    },
+    {
+      "id": 2966,
+      "our_name": "Smartlook",
+      "vendor": "smartlook",
+      "products": [
+        "smartlook"
+      ],
+      "cve_details_url": null,
+      "category_id": 18,
+      "_letter": "s"
+    },
+    {
+      "id": 2961,
+      "our_name": "SmartRecruiters",
+      "vendor": "smartrecruiters",
+      "products": [
+        "smartrecruiters"
+      ],
+      "cve_details_url": null,
+      "category_id": 100,
+      "_letter": "s"
+    },
+    {
+      "id": 2962,
+      "our_name": "SmartSite",
+      "vendor": "smartsite",
+      "products": [
+        "smartsite"
+      ],
+      "cve_details_url": null,
+      "category_id": 16,
+      "_letter": "s"
+    },
+    {
+      "id": 2967,
+      "our_name": "Smartstore",
+      "vendor": "smartstore",
+      "products": [
+        "smartstore"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "s"
+    },
+    {
+      "id": 2969,
+      "our_name": "Smartstore biz",
+      "vendor": "smartstore_biz",
+      "products": [
+        "smartstore_biz"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "s"
+    },
+    {
+      "id": 2968,
+      "our_name": "Smartstore Page Builder",
+      "vendor": "smartstore_page_buil",
+      "products": [
+        "smartstore_page_buil"
+      ],
+      "cve_details_url": null,
+      "category_id": 16,
+      "_letter": "s"
+    },
+    {
+      "id": 2970,
+      "our_name": "Smartsupp",
+      "vendor": "smartsupp",
+      "products": [
+        "smartsupp"
+      ],
+      "cve_details_url": null,
+      "category_id": 20,
+      "_letter": "s"
+    },
+    {
+      "id": 2963,
+      "our_name": "SmartWeb",
+      "vendor": "smartweb",
+      "products": [
+        "smartweb"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "s"
+    },
+    {
+      "id": 2971,
+      "our_name": "Smash Balloon Instagram Feed",
+      "vendor": "smash_balloon_instag",
+      "products": [
+        "smash_balloon_instag"
+      ],
+      "cve_details_url": null,
+      "category_id": 62,
+      "_letter": "s"
+    },
+    {
+      "id": 2767,
+      "our_name": "SMF",
+      "vendor": "smf",
+      "products": [
+        "smf"
+      ],
+      "cve_details_url": null,
+      "category_id": 39,
+      "_letter": "s"
+    },
+    {
+      "id": 2972,
+      "our_name": "Smile",
+      "vendor": "smile",
+      "products": [
+        "smile"
+      ],
+      "cve_details_url": null,
+      "category_id": 75,
+      "_letter": "s"
+    },
+    {
+      "id": 2973,
+      "our_name": "SmugMug",
+      "vendor": "smugmug",
+      "products": [
+        "smugmug"
+      ],
+      "cve_details_url": null,
+      "category_id": 68,
+      "_letter": "s"
+    },
+    {
+      "id": 2974,
+      "our_name": "Snap",
+      "vendor": "snap",
+      "products": [
+        "snap"
+      ],
+      "cve_details_url": null,
+      "category_id": 7,
+      "_letter": "s"
+    },
+    {
+      "id": 2975,
+      "our_name": "Snap Pixel",
+      "vendor": "snap_pixel",
+      "products": [
+        "snap_pixel"
+      ],
+      "cve_details_url": null,
+      "category_id": 22,
+      "_letter": "s"
+    },
+    {
+      "id": 2976,
+      "our_name": "Snap.svg",
+      "vendor": "snap_svg",
+      "products": [
+        "snap_svg"
+      ],
+      "cve_details_url": null,
+      "category_id": 6,
+      "_letter": "s"
+    },
+    {
+      "id": 2977,
+      "our_name": "SnapEngage",
+      "vendor": "snapengage",
+      "products": [
+        "snapengage"
+      ],
+      "cve_details_url": null,
+      "category_id": 20,
+      "_letter": "s"
+    },
+    {
+      "id": 2978,
+      "our_name": "SnapWidget",
+      "vendor": "snapwidget",
+      "products": [
+        "snapwidget"
+      ],
+      "cve_details_url": null,
+      "category_id": 99,
+      "_letter": "s"
+    },
+    {
+      "id": 3113,
+      "our_name": "sNews",
+      "vendor": "snews",
+      "products": [
+        "snews"
+      ],
+      "cve_details_url": null,
+      "category_id": 16,
+      "_letter": "s"
+    },
+    {
+      "id": 3118,
+      "our_name": "snigel AdConsent",
+      "vendor": "snigel_adconsent",
+      "products": [
+        "snigel_adconsent"
+      ],
+      "cve_details_url": null,
+      "category_id": 32,
+      "_letter": "s"
+    },
+    {
+      "id": 3119,
+      "our_name": "snigel AdEngine",
+      "vendor": "snigel_adengine",
+      "products": [
+        "snigel_adengine"
+      ],
+      "cve_details_url": null,
+      "category_id": 22,
+      "_letter": "s"
+    },
+    {
+      "id": 2979,
+      "our_name": "Snipcart",
+      "vendor": "snipcart",
+      "products": [
+        "snipcart"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "s"
+    },
+    {
+      "id": 2980,
+      "our_name": "SniperFast",
+      "vendor": "sniperfast",
+      "products": [
+        "sniperfast"
+      ],
+      "cve_details_url": null,
+      "category_id": 69,
+      "_letter": "s"
+    },
+    {
+      "id": 2981,
+      "our_name": "Sniply",
+      "vendor": "sniply",
+      "products": [
+        "sniply"
+      ],
+      "cve_details_url": null,
+      "category_id": 80,
+      "_letter": "s"
+    },
+    {
+      "id": 441,
+      "our_name": "SNMP",
+      "vendor": "php",
+      "products": [
+        "snmp"
+      ],
+      "cve_details_url": null,
+      "category_id": 15,
+      "_letter": "s"
+    },
+    {
+      "id": 2982,
+      "our_name": "Snoobi",
+      "vendor": "snoobi",
+      "products": [
+        "snoobi"
+      ],
+      "cve_details_url": null,
+      "category_id": 18,
+      "_letter": "s"
+    },
+    {
+      "id": 2983,
+      "our_name": "Snowplow Analytics",
+      "vendor": "snowplow_analytics",
+      "products": [
+        "snowplow_analytics"
+      ],
+      "cve_details_url": null,
+      "category_id": 18,
+      "_letter": "s"
+    },
+    {
+      "id": 442,
+      "our_name": "SOAP",
+      "vendor": "php",
+      "products": [
+        "soap"
+      ],
+      "cve_details_url": null,
+      "category_id": 15,
+      "_letter": "s"
+    },
+    {
+      "id": 2768,
+      "our_name": "SOBI 2",
+      "vendor": "sobi_2",
+      "products": [
+        "sobi_2"
+      ],
+      "cve_details_url": null,
+      "category_id": 99,
+      "_letter": "s"
+    },
+    {
+      "id": 2984,
+      "our_name": "SobiPro",
+      "vendor": "sobipro",
+      "products": [
+        "sobipro"
+      ],
+      "cve_details_url": null,
+      "category_id": 99,
+      "_letter": "s"
+    },
+    {
+      "id": 2985,
+      "our_name": "Social9",
+      "vendor": "social9",
+      "products": [
+        "social9"
+      ],
+      "cve_details_url": null,
+      "category_id": 99,
+      "_letter": "s"
+    },
+    {
+      "id": 2986,
+      "our_name": "SocialLadder",
+      "vendor": "socialladder",
+      "products": [
+        "socialladder"
+      ],
+      "cve_details_url": null,
+      "category_id": 19,
+      "_letter": "s"
+    },
+    {
+      "id": 2987,
+      "our_name": "Socket.io",
+      "vendor": "socket_io",
+      "products": [
+        "socket_io"
+      ],
+      "cve_details_url": null,
+      "category_id": 6,
+      "_letter": "s"
+    },
+    {
+      "id": 443,
+      "our_name": "Sockets",
+      "vendor": "php",
+      "products": [
+        "sockets"
+      ],
+      "cve_details_url": null,
+      "category_id": 15,
+      "_letter": "s"
+    },
+    {
+      "id": 444,
+      "our_name": "Sodium",
+      "vendor": "php",
+      "products": [
+        "sodium"
+      ],
+      "cve_details_url": null,
+      "category_id": 15,
+      "_letter": "s"
+    },
+    {
+      "id": 2988,
+      "our_name": "SoftTr",
+      "vendor": "softtr",
+      "products": [
+        "softtr"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "s"
+    },
+    {
+      "id": 2989,
+      "our_name": "Soisy",
+      "vendor": "soisy",
+      "products": [
+        "soisy"
+      ],
+      "cve_details_url": null,
+      "category_id": 94,
+      "_letter": "s"
+    },
+    {
+      "id": 2990,
+      "our_name": "SolidPixels",
+      "vendor": "solidpixels",
+      "products": [
+        "solidpixels"
+      ],
+      "cve_details_url": null,
+      "category_id": 16,
+      "_letter": "s"
+    },
+    {
+      "id": 2991,
+      "our_name": "Solodev",
+      "vendor": "solodev",
+      "products": [
+        "solodev"
+      ],
+      "cve_details_url": null,
+      "category_id": 16,
+      "_letter": "s"
+    },
+    {
+      "id": 445,
+      "our_name": "Solr",
+      "vendor": "apache",
+      "products": [
+        "solr"
+      ],
+      "cve_details_url": null,
+      "category_id": 15,
+      "_letter": "s"
+    },
+    {
+      "id": 2992,
+      "our_name": "Solusquare OmniCommerce Cloud",
+      "vendor": "solusquare_omnicomme",
+      "products": [
+        "solusquare_omnicomme"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "s"
+    },
+    {
+      "id": 2993,
+      "our_name": "Solve Media",
+      "vendor": "solve_media",
+      "products": [
+        "solve_media"
+      ],
+      "cve_details_url": null,
+      "category_id": 14,
+      "_letter": "s"
+    },
+    {
+      "id": 2994,
+      "our_name": "Solvemate",
+      "vendor": "solvemate",
+      "products": [
+        "solvemate"
+      ],
+      "cve_details_url": null,
+      "category_id": 20,
+      "_letter": "s"
+    },
+    {
+      "id": 2995,
+      "our_name": "Solvvy",
+      "vendor": "solvvy",
+      "products": [
+        "solvvy"
+      ],
+      "cve_details_url": null,
+      "category_id": 20,
+      "_letter": "s"
+    },
+    {
+      "id": 2996,
+      "our_name": "SonarQubes",
+      "vendor": "sonarqubes",
+      "products": [
+        "sonarqubes"
+      ],
+      "cve_details_url": null,
+      "category_id": 73,
+      "_letter": "s"
+    },
+    {
+      "id": 2997,
+      "our_name": "Sonobi",
+      "vendor": "sonobi",
+      "products": [
+        "sonobi"
+      ],
+      "cve_details_url": null,
+      "category_id": 22,
+      "_letter": "s"
+    },
+    {
+      "id": 2998,
+      "our_name": "Sortable",
+      "vendor": "sortable",
+      "products": [
+        "sortable"
+      ],
+      "cve_details_url": null,
+      "category_id": 22,
+      "_letter": "s"
+    },
+    {
+      "id": 2999,
+      "our_name": "Sorted Return",
+      "vendor": "sorted_return",
+      "products": [
+        "sorted_return"
+      ],
+      "cve_details_url": null,
+      "category_id": 98,
+      "_letter": "s"
+    },
+    {
+      "id": 3001,
+      "our_name": "Sotel",
+      "vendor": "sotel",
+      "products": [
+        "sotel"
+      ],
+      "cve_details_url": null,
+      "category_id": 16,
+      "_letter": "s"
+    },
+    {
+      "id": 3000,
+      "our_name": "SoteShop",
+      "vendor": "soteshop",
+      "products": [
+        "soteshop"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "s"
+    },
+    {
+      "id": 3002,
+      "our_name": "Sotoon",
+      "vendor": "sotoon",
+      "products": [
+        "sotoon"
+      ],
+      "cve_details_url": null,
+      "category_id": 10,
+      "_letter": "s"
+    },
+    {
+      "id": 3003,
+      "our_name": "SoundCloud",
+      "vendor": "soundcloud",
+      "products": [
+        "soundcloud"
+      ],
+      "cve_details_url": null,
+      "category_id": 99,
+      "_letter": "s"
+    },
+    {
+      "id": 3004,
+      "our_name": "SoundManager",
+      "vendor": "soundmanager",
+      "products": [
+        "soundmanager"
+      ],
+      "cve_details_url": null,
+      "category_id": 6,
+      "_letter": "s"
+    },
+    {
+      "id": 3005,
+      "our_name": "Sovrn",
+      "vendor": "sovrn",
+      "products": [
+        "sovrn"
+      ],
+      "cve_details_url": null,
+      "category_id": 22,
+      "_letter": "s"
+    },
+    {
+      "id": 3006,
+      "our_name": "Sovrn//Commerce",
+      "vendor": "sovrn//commerce",
+      "products": [
+        "sovrn//commerce"
+      ],
+      "cve_details_url": null,
+      "category_id": 55,
+      "_letter": "s"
+    },
+    {
+      "id": 3007,
+      "our_name": "SparkPost",
+      "vendor": "sparkpost",
+      "products": [
+        "sparkpost"
+      ],
+      "cve_details_url": null,
+      "category_id": 87,
+      "_letter": "s"
+    },
+    {
+      "id": 2769,
+      "our_name": "SPDY",
+      "vendor": "spdy",
+      "products": [
+        "spdy"
+      ],
+      "cve_details_url": null,
+      "category_id": 99,
+      "_letter": "s"
+    },
+    {
+      "id": 3008,
+      "our_name": "Speed Kit",
+      "vendor": "speed_kit",
+      "products": [
+        "speed_kit"
+      ],
+      "cve_details_url": null,
+      "category_id": 33,
+      "_letter": "s"
+    },
+    {
+      "id": 3009,
+      "our_name": "SpeedCurve",
+      "vendor": "speedcurve",
+      "products": [
+        "speedcurve"
+      ],
+      "cve_details_url": null,
+      "category_id": 33,
+      "_letter": "s"
+    },
+    {
+      "id": 3011,
+      "our_name": "Speedimize",
+      "vendor": "speedimize",
+      "products": [
+        "speedimize"
+      ],
+      "cve_details_url": null,
+      "category_id": 33,
+      "_letter": "s"
+    },
+    {
+      "id": 3010,
+      "our_name": "SpeedSize",
+      "vendor": "speedsize",
+      "products": [
+        "speedsize"
+      ],
+      "cve_details_url": null,
+      "category_id": 33,
+      "_letter": "s"
+    },
+    {
+      "id": 3012,
+      "our_name": "Sphinx",
+      "vendor": "sphinx",
+      "products": [
+        "sphinx"
+      ],
+      "cve_details_url": null,
+      "category_id": 36,
+      "_letter": "s"
+    },
+    {
+      "id": 3013,
+      "our_name": "SpiceThemes SpicePress",
+      "vendor": "spicethemes_spicepre",
+      "products": [
+        "spicethemes_spicepre"
+      ],
+      "cve_details_url": null,
+      "category_id": 63,
+      "_letter": "s"
+    },
+    {
+      "id": 3014,
+      "our_name": "Spin-a-Sale",
+      "vendor": "spin_a_sale",
+      "products": [
+        "spin_a_sale"
+      ],
+      "cve_details_url": null,
+      "category_id": 64,
+      "_letter": "s"
+    },
+    {
+      "id": 3015,
+      "our_name": "Spinnakr",
+      "vendor": "spinnakr",
+      "products": [
+        "spinnakr"
+      ],
+      "cve_details_url": null,
+      "category_id": 18,
+      "_letter": "s"
+    },
+    {
+      "id": 2770,
+      "our_name": "SPIP",
+      "vendor": "spip",
+      "products": [
+        "spip"
+      ],
+      "cve_details_url": null,
+      "category_id": 16,
+      "_letter": "s"
+    },
+    {
+      "id": 446,
+      "our_name": "SPL",
+      "vendor": "php",
+      "products": [
+        "spl"
+      ],
+      "cve_details_url": null,
+      "category_id": 15,
+      "_letter": "s"
+    },
+    {
+      "id": 3016,
+      "our_name": "Split",
+      "vendor": "split",
+      "products": [
+        "split"
+      ],
+      "cve_details_url": null,
+      "category_id": 90,
+      "_letter": "s"
+    },
+    {
+      "id": 3018,
+      "our_name": "Splitbee",
+      "vendor": "splitbee",
+      "products": [
+        "splitbee"
+      ],
+      "cve_details_url": null,
+      "category_id": 18,
+      "_letter": "s"
+    },
+    {
+      "id": 3017,
+      "our_name": "SplitIt",
+      "vendor": "splitit",
+      "products": [
+        "splitit"
+      ],
+      "cve_details_url": null,
+      "category_id": 21,
+      "_letter": "s"
+    },
+    {
+      "id": 3019,
+      "our_name": "SplittyPay",
+      "vendor": "splittypay",
+      "products": [
+        "splittypay"
+      ],
+      "cve_details_url": null,
+      "category_id": 94,
+      "_letter": "s"
+    },
+    {
+      "id": 3020,
+      "our_name": "Splunk RUM",
+      "vendor": "splunk_rum",
+      "products": [
+        "splunk_rum"
+      ],
+      "cve_details_url": null,
+      "category_id": 33,
+      "_letter": "s"
+    },
+    {
+      "id": 3021,
+      "our_name": "Splunkd",
+      "vendor": "splunkd",
+      "products": [
+        "splunkd"
+      ],
+      "cve_details_url": null,
+      "category_id": 99,
+      "_letter": "s"
+    },
+    {
+      "id": 2771,
+      "our_name": "SPNEGO",
+      "vendor": "spnego",
+      "products": [
+        "spnego"
+      ],
+      "cve_details_url": null,
+      "category_id": 14,
+      "_letter": "s"
+    },
+    {
+      "id": 3022,
+      "our_name": "SpotHopper",
+      "vendor": "spothopper",
+      "products": [
+        "spothopper"
+      ],
+      "cve_details_url": null,
+      "category_id": 61,
+      "_letter": "s"
+    },
+    {
+      "id": 3024,
+      "our_name": "Spotify Web API",
+      "vendor": "spotify_web_api",
+      "products": [
+        "spotify_web_api"
+      ],
+      "cve_details_url": null,
+      "category_id": 99,
+      "_letter": "s"
+    },
+    {
+      "id": 3025,
+      "our_name": "Spotify Widgets",
+      "vendor": "spotify_widgets",
+      "products": [
+        "spotify_widgets"
+      ],
+      "cve_details_url": null,
+      "category_id": 99,
+      "_letter": "s"
+    },
+    {
+      "id": 3026,
+      "our_name": "Spotii",
+      "vendor": "spotii",
+      "products": [
+        "spotii"
+      ],
+      "cve_details_url": null,
+      "category_id": 21,
+      "_letter": "s"
+    },
+    {
+      "id": 3023,
+      "our_name": "SpotX",
+      "vendor": "spotx",
+      "products": [
+        "spotx"
+      ],
+      "cve_details_url": null,
+      "category_id": 22,
+      "_letter": "s"
+    },
+    {
+      "id": 3027,
+      "our_name": "Spree",
+      "vendor": "spree",
+      "products": [
+        "spree"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "s"
+    },
+    {
+      "id": 3028,
+      "our_name": "Sprig",
+      "vendor": "sprig",
+      "products": [
+        "sprig"
+      ],
+      "cve_details_url": null,
+      "category_id": 48,
+      "_letter": "s"
+    },
+    {
+      "id": 3029,
+      "our_name": "Spring",
+      "vendor": "spring",
+      "products": [
+        "spring"
+      ],
+      "cve_details_url": null,
+      "category_id": 7,
+      "_letter": "s"
+    },
+    {
+      "id": 3030,
+      "our_name": "Spring for creators",
+      "vendor": "spring_for_creators",
+      "products": [
+        "spring_for_creators"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "s"
+    },
+    {
+      "id": 60,
+      "our_name": "Spring Framework",
+      "vendor": "vmware",
+      "products": [
+        "spring_framework"
+      ],
+      "cve_details_url": "https://www.cvedetails.com/product/96553/Vmware-Spring-Framework.html",
+      "category_id": 7,
+      "_letter": "s"
+    },
+    {
+      "id": 3031,
+      "our_name": "Spryker",
+      "vendor": "spryker",
+      "products": [
+        "spryker"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "s"
+    },
+    {
+      "id": 3032,
+      "our_name": "SpurIT",
+      "vendor": "spurit",
+      "products": [
+        "spurit"
+      ],
+      "cve_details_url": null,
+      "category_id": 99,
+      "_letter": "s"
+    },
+    {
+      "id": 3033,
+      "our_name": "SpurIT Abandoned Cart Reminder",
+      "vendor": "spurit_abandoned_car",
+      "products": [
+        "spurit_abandoned_car"
+      ],
+      "cve_details_url": null,
+      "category_id": 97,
+      "_letter": "s"
+    },
+    {
+      "id": 3034,
+      "our_name": "SpurIT Loyalty App",
+      "vendor": "spurit_loyalty_app",
+      "products": [
+        "spurit_loyalty_app"
+      ],
+      "cve_details_url": null,
+      "category_id": 75,
+      "_letter": "s"
+    },
+    {
+      "id": 3035,
+      "our_name": "SpurIT Partial Payments App",
+      "vendor": "spurit_partial_payme",
+      "products": [
+        "spurit_partial_payme"
+      ],
+      "cve_details_url": null,
+      "category_id": 21,
+      "_letter": "s"
+    },
+    {
+      "id": 3036,
+      "our_name": "SpurIT Recurring Payments App",
+      "vendor": "spurit_recurring_pay",
+      "products": [
+        "spurit_recurring_pay"
+      ],
+      "cve_details_url": null,
+      "category_id": 21,
+      "_letter": "s"
+    },
+    {
+      "id": 2772,
+      "our_name": "SQL Buddy",
+      "vendor": "sql_buddy",
+      "products": [
+        "sql_buddy"
+      ],
+      "cve_details_url": null,
+      "category_id": 4,
+      "_letter": "s"
+    },
+    {
+      "id": 208,
+      "our_name": "SQL Server Compact",
+      "vendor": "microsoft",
+      "products": [
+        "sql_server"
+      ],
+      "cve_details_url": "https://www.cvedetails.com/vulnerability-list/vendor_id-26/product_id-251/Microsoft-Sql-Server.html",
+      "category_id": 4,
+      "_letter": "s"
+    },
+    {
+      "id": 203,
+      "our_name": "SQLite",
+      "vendor": "sqlite",
+      "products": [
+        "sqlite"
+      ],
+      "cve_details_url": "https://www.cvedetails.com/product/16355/Sqlite-Sqlite.html",
+      "category_id": 4,
+      "_letter": "s"
+    },
+    {
+      "id": 506,
+      "our_name": "SQLite PDO Driver",
+      "vendor": "php",
+      "products": [
+        "pdo_sqlite"
+      ],
+      "cve_details_url": null,
+      "category_id": 15,
+      "_letter": "s"
+    },
+    {
+      "id": 447,
+      "our_name": "SQLite3",
+      "vendor": "php",
+      "products": [
+        "sqlite3"
+      ],
+      "cve_details_url": null,
+      "category_id": 15,
+      "_letter": "s"
+    },
+    {
+      "id": 448,
+      "our_name": "SQLSRV",
+      "vendor": "php",
+      "products": [
+        "sqlsrv"
+      ],
+      "cve_details_url": null,
+      "category_id": 15,
+      "_letter": "s"
+    },
+    {
+      "id": 3037,
+      "our_name": "Sqreen",
+      "vendor": "sqreen",
+      "products": [
+        "sqreen"
+      ],
+      "cve_details_url": null,
+      "category_id": 14,
+      "_letter": "s"
+    },
+    {
+      "id": 3038,
+      "our_name": "Squadded",
+      "vendor": "squadded",
+      "products": [
+        "squadded"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "s"
+    },
+    {
+      "id": 3039,
+      "our_name": "Square",
+      "vendor": "square",
+      "products": [
+        "square"
+      ],
+      "cve_details_url": null,
+      "category_id": 21,
+      "_letter": "s"
+    },
+    {
+      "id": 3040,
+      "our_name": "Square Online",
+      "vendor": "square_online",
+      "products": [
+        "square_online"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "s"
+    },
+    {
+      "id": 3041,
+      "our_name": "Squarespace",
+      "vendor": "squarespace",
+      "products": [
+        "squarespace"
+      ],
+      "cve_details_url": null,
+      "category_id": 16,
+      "_letter": "s"
+    },
+    {
+      "id": 3042,
+      "our_name": "Squarespace Commerce",
+      "vendor": "squarespace_commerce",
+      "products": [
+        "squarespace_commerce"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "s"
+    },
+    {
+      "id": 3043,
+      "our_name": "SquirrelMail",
+      "vendor": "squirrelmail",
+      "products": [
+        "squirrelmail"
+      ],
+      "cve_details_url": null,
+      "category_id": 43,
+      "_letter": "s"
+    },
+    {
+      "id": 3044,
+      "our_name": "Squiz Matrix",
+      "vendor": "squiz_matrix",
+      "products": [
+        "squiz_matrix"
+      ],
+      "cve_details_url": null,
+      "category_id": 16,
+      "_letter": "s"
+    },
+    {
+      "id": 449,
+      "our_name": "ssdeep",
+      "vendor": "php",
+      "products": [
+        "ssdeep"
+      ],
+      "cve_details_url": null,
+      "category_id": 15,
+      "_letter": "s"
+    },
+    {
+      "id": 450,
+      "our_name": "SSH2",
+      "vendor": "php",
+      "products": [
+        "ssh2"
+      ],
+      "cve_details_url": null,
+      "category_id": 15,
+      "_letter": "s"
+    },
+    {
+      "id": 3045,
+      "our_name": "Stack Analytix",
+      "vendor": "stack_analytix",
+      "products": [
+        "stack_analytix"
+      ],
+      "cve_details_url": null,
+      "category_id": 18,
+      "_letter": "s"
+    },
+    {
+      "id": 3046,
+      "our_name": "StackCommerce",
+      "vendor": "stackcommerce",
+      "products": [
+        "stackcommerce"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "s"
+    },
+    {
+      "id": 3048,
+      "our_name": "StackerHQ",
+      "vendor": "stackerhq",
+      "products": [
+        "stackerhq"
+      ],
+      "cve_details_url": null,
+      "category_id": 61,
+      "_letter": "s"
+    },
+    {
+      "id": 3049,
+      "our_name": "Stackify",
+      "vendor": "stackify",
+      "products": [
+        "stackify"
+      ],
+      "cve_details_url": null,
+      "category_id": 40,
+      "_letter": "s"
+    },
+    {
+      "id": 3047,
+      "our_name": "StackPath",
+      "vendor": "stackpath",
+      "products": [
+        "stackpath"
+      ],
+      "cve_details_url": null,
+      "category_id": 10,
+      "_letter": "s"
+    },
+    {
+      "id": 3050,
+      "our_name": "Stage Try",
+      "vendor": "stage_try",
+      "products": [
+        "stage_try"
+      ],
+      "cve_details_url": null,
+      "category_id": 94,
+      "_letter": "s"
+    },
+    {
+      "id": 3051,
+      "our_name": "Stamped",
+      "vendor": "stamped",
+      "products": [
+        "stamped"
+      ],
+      "cve_details_url": null,
+      "category_id": 59,
+      "_letter": "s"
+    },
+    {
+      "id": 3052,
+      "our_name": "Starhost",
+      "vendor": "starhost",
+      "products": [
+        "starhost"
+      ],
+      "cve_details_url": null,
+      "category_id": 61,
+      "_letter": "s"
+    },
+    {
+      "id": 3053,
+      "our_name": "Starlet",
+      "vendor": "starlet",
+      "products": [
+        "starlet"
+      ],
+      "cve_details_url": null,
+      "category_id": 2,
+      "_letter": "s"
+    },
+    {
+      "id": 3054,
+      "our_name": "Statamic",
+      "vendor": "statamic",
+      "products": [
+        "statamic"
+      ],
+      "cve_details_url": null,
+      "category_id": 16,
+      "_letter": "s"
+    },
+    {
+      "id": 3055,
+      "our_name": "Statcounter",
+      "vendor": "statcounter",
+      "products": [
+        "statcounter"
+      ],
+      "cve_details_url": null,
+      "category_id": 18,
+      "_letter": "s"
+    },
+    {
+      "id": 3056,
+      "our_name": "Statically",
+      "vendor": "statically",
+      "products": [
+        "statically"
+      ],
+      "cve_details_url": null,
+      "category_id": 10,
+      "_letter": "s"
+    },
+    {
+      "id": 451,
+      "our_name": "Statistics",
+      "vendor": "php",
+      "products": [
+        "stats"
+      ],
+      "cve_details_url": null,
+      "category_id": 15,
+      "_letter": "s"
+    },
+    {
+      "id": 3057,
+      "our_name": "SteelHouse",
+      "vendor": "steelhouse",
+      "products": [
+        "steelhouse"
+      ],
+      "cve_details_url": null,
+      "category_id": 54,
+      "_letter": "s"
+    },
+    {
+      "id": 3058,
+      "our_name": "Stencil",
+      "vendor": "stencil",
+      "products": [
+        "stencil"
+      ],
+      "cve_details_url": null,
+      "category_id": 7,
+      "_letter": "s"
+    },
+    {
+      "id": 3059,
+      "our_name": "Stimulus",
+      "vendor": "stimulus",
+      "products": [
+        "stimulus"
+      ],
+      "cve_details_url": null,
+      "category_id": 6,
+      "_letter": "s"
+    },
+    {
+      "id": 3060,
+      "our_name": "StimulusReflex",
+      "vendor": "stimulusreflex",
+      "products": [
+        "stimulusreflex"
+      ],
+      "cve_details_url": null,
+      "category_id": 7,
+      "_letter": "s"
+    },
+    {
+      "id": 3061,
+      "our_name": "Stitches",
+      "vendor": "stitches",
+      "products": [
+        "stitches"
+      ],
+      "cve_details_url": null,
+      "category_id": 6,
+      "_letter": "s"
+    },
+    {
+      "id": 2773,
+      "our_name": "STN Video",
+      "vendor": "stn_video",
+      "products": [
+        "stn_video"
+      ],
+      "cve_details_url": null,
+      "category_id": 22,
+      "_letter": "s"
+    },
+    {
+      "id": 452,
+      "our_name": "Stomp",
+      "vendor": "php",
+      "products": [
+        "stomp"
+      ],
+      "cve_details_url": null,
+      "category_id": 15,
+      "_letter": "s"
+    },
+    {
+      "id": 3063,
+      "our_name": "Storeden",
+      "vendor": "storeden",
+      "products": [
+        "storeden"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "s"
+    },
+    {
+      "id": 3064,
+      "our_name": "Storefront UI",
+      "vendor": "storefront_ui",
+      "products": [
+        "storefront_ui"
+      ],
+      "cve_details_url": null,
+      "category_id": 84,
+      "_letter": "s"
+    },
+    {
+      "id": 3062,
+      "our_name": "StoreHippo",
+      "vendor": "storehippo",
+      "products": [
+        "storehippo"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "s"
+    },
+    {
+      "id": 3120,
+      "our_name": "stores.jp",
+      "vendor": "stores_jp",
+      "products": [
+        "stores_jp"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "s"
+    },
+    {
+      "id": 3065,
+      "our_name": "StorifyMe",
+      "vendor": "storifyme",
+      "products": [
+        "storifyme"
+      ],
+      "cve_details_url": null,
+      "category_id": 99,
+      "_letter": "s"
+    },
+    {
+      "id": 3067,
+      "our_name": "Storyblok",
+      "vendor": "storyblok",
+      "products": [
+        "storyblok"
+      ],
+      "cve_details_url": null,
+      "category_id": 16,
+      "_letter": "s"
+    },
+    {
+      "id": 3066,
+      "our_name": "StoryStream",
+      "vendor": "storystream",
+      "products": [
+        "storystream"
+      ],
+      "cve_details_url": null,
+      "category_id": 80,
+      "_letter": "s"
+    },
+    {
+      "id": 3068,
+      "our_name": "Strapdown.js",
+      "vendor": "strapdown_js",
+      "products": [
+        "strapdown_js"
+      ],
+      "cve_details_url": null,
+      "category_id": 6,
+      "_letter": "s"
+    },
+    {
+      "id": 3069,
+      "our_name": "Strapi",
+      "vendor": "strapi",
+      "products": [
+        "strapi"
+      ],
+      "cve_details_url": null,
+      "category_id": 16,
+      "_letter": "s"
+    },
+    {
+      "id": 3070,
+      "our_name": "Strato",
+      "vendor": "strato",
+      "products": [
+        "strato"
+      ],
+      "cve_details_url": null,
+      "category_id": 92,
+      "_letter": "s"
+    },
+    {
+      "id": 3071,
+      "our_name": "Strato Website",
+      "vendor": "strato_website",
+      "products": [
+        "strato_website"
+      ],
+      "cve_details_url": null,
+      "category_id": 16,
+      "_letter": "s"
+    },
+    {
+      "id": 3072,
+      "our_name": "Strattic",
+      "vendor": "strattic",
+      "products": [
+        "strattic"
+      ],
+      "cve_details_url": null,
+      "category_id": 92,
+      "_letter": "s"
+    },
+    {
+      "id": 453,
+      "our_name": "Stream",
+      "vendor": "php",
+      "products": [
+        "stream"
+      ],
+      "cve_details_url": null,
+      "category_id": 15,
+      "_letter": "s"
+    },
+    {
+      "id": 3073,
+      "our_name": "Strikingly",
+      "vendor": "strikingly",
+      "products": [
+        "strikingly"
+      ],
+      "cve_details_url": null,
+      "category_id": 16,
+      "_letter": "s"
+    },
+    {
+      "id": 454,
+      "our_name": "Strings",
+      "vendor": "php",
+      "products": [
+        "strings"
+      ],
+      "cve_details_url": null,
+      "category_id": 15,
+      "_letter": "s"
+    },
+    {
+      "id": 3074,
+      "our_name": "Stripe",
+      "vendor": "stripe",
+      "products": [
+        "stripe"
+      ],
+      "cve_details_url": null,
+      "category_id": 21,
+      "_letter": "s"
+    },
+    {
+      "id": 3075,
+      "our_name": "StrutFit",
+      "vendor": "strutfit",
+      "products": [
+        "strutfit"
+      ],
+      "cve_details_url": null,
+      "category_id": 25,
+      "_letter": "s"
+    },
+    {
+      "id": 2774,
+      "our_name": "STUDIO",
+      "vendor": "studio",
+      "products": [
+        "studio"
+      ],
+      "cve_details_url": null,
+      "category_id": 61,
+      "_letter": "s"
+    },
+    {
+      "id": 3121,
+      "our_name": "styled-components",
+      "vendor": "styled_components",
+      "products": [
+        "styled_components"
+      ],
+      "cve_details_url": null,
+      "category_id": 6,
+      "_letter": "s"
+    },
+    {
+      "id": 3076,
+      "our_name": "Stylitics",
+      "vendor": "stylitics",
+      "products": [
+        "stylitics"
+      ],
+      "cve_details_url": null,
+      "category_id": 19,
+      "_letter": "s"
+    },
+    {
+      "id": 3077,
+      "our_name": "Sub2Tech",
+      "vendor": "sub2tech",
+      "products": [
+        "sub2tech"
+      ],
+      "cve_details_url": null,
+      "category_id": 56,
+      "_letter": "s"
+    },
+    {
+      "id": 3078,
+      "our_name": "Subbly",
+      "vendor": "subbly",
+      "products": [
+        "subbly"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "s"
+    },
+    {
+      "id": 3079,
+      "our_name": "Sublime",
+      "vendor": "sublime",
+      "products": [
+        "sublime"
+      ],
+      "cve_details_url": null,
+      "category_id": 22,
+      "_letter": "s"
+    },
+    {
+      "id": 3080,
+      "our_name": "SublimeVideo",
+      "vendor": "sublimevideo",
+      "products": [
+        "sublimevideo"
+      ],
+      "cve_details_url": null,
+      "category_id": 27,
+      "_letter": "s"
+    },
+    {
+      "id": 3081,
+      "our_name": "Subrion",
+      "vendor": "subrion",
+      "products": [
+        "subrion"
+      ],
+      "cve_details_url": null,
+      "category_id": 16,
+      "_letter": "s"
+    },
+    {
+      "id": 3082,
+      "our_name": "Substack",
+      "vendor": "substack",
+      "products": [
+        "substack"
+      ],
+      "cve_details_url": null,
+      "category_id": 37,
+      "_letter": "s"
+    },
+    {
+      "id": 235,
+      "our_name": "Subversion",
+      "vendor": "apache",
+      "products": [
+        "subversion"
+      ],
+      "cve_details_url": "https://www.cvedetails.com/product/3430/Apache-Subversion.html",
+      "category_id": 99,
+      "_letter": "s"
+    },
+    {
+      "id": 3083,
+      "our_name": "Sucuri",
+      "vendor": "sucuri",
+      "products": [
+        "sucuri"
+      ],
+      "cve_details_url": null,
+      "category_id": 10,
+      "_letter": "s"
+    },
+    {
+      "id": 3084,
+      "our_name": "Suiteshare",
+      "vendor": "suiteshare",
+      "products": [
+        "suiteshare"
+      ],
+      "cve_details_url": null,
+      "category_id": 20,
+      "_letter": "s"
+    },
+    {
+      "id": 3085,
+      "our_name": "Sulu",
+      "vendor": "sulu",
+      "products": [
+        "sulu"
+      ],
+      "cve_details_url": null,
+      "category_id": 16,
+      "_letter": "s"
+    },
+    {
+      "id": 3086,
+      "our_name": "SummerCart",
+      "vendor": "summercart",
+      "products": [
+        "summercart"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "s"
+    },
+    {
+      "id": 3087,
+      "our_name": "Sumo",
+      "vendor": "sumo",
+      "products": [
+        "sumo"
+      ],
+      "cve_details_url": null,
+      "category_id": 99,
+      "_letter": "s"
+    },
+    {
+      "id": 3088,
+      "our_name": "SunOS",
+      "vendor": "oracle",
+      "products": [
+        "sunos"
+      ],
+      "cve_details_url": null,
+      "category_id": 1,
+      "_letter": "s"
+    },
+    {
+      "id": 3089,
+      "our_name": "Super Builder",
+      "vendor": "super_builder",
+      "products": [
+        "super_builder"
+      ],
+      "cve_details_url": null,
+      "category_id": 61,
+      "_letter": "s"
+    },
+    {
+      "id": 3090,
+      "our_name": "Super Socializer",
+      "vendor": "super_socializer",
+      "products": [
+        "super_socializer"
+      ],
+      "cve_details_url": null,
+      "category_id": 85,
+      "_letter": "s"
+    },
+    {
+      "id": 3091,
+      "our_name": "SuperLemon app",
+      "vendor": "superlemon_app",
+      "products": [
+        "superlemon_app"
+      ],
+      "cve_details_url": null,
+      "category_id": 64,
+      "_letter": "s"
+    },
+    {
+      "id": 3092,
+      "our_name": "Supersized",
+      "vendor": "supersized",
+      "products": [
+        "supersized"
+      ],
+      "cve_details_url": null,
+      "category_id": 6,
+      "_letter": "s"
+    },
+    {
+      "id": 3093,
+      "our_name": "Superspeed",
+      "vendor": "superspeed",
+      "products": [
+        "superspeed"
+      ],
+      "cve_details_url": null,
+      "category_id": 33,
+      "_letter": "s"
+    },
+    {
+      "id": 3094,
+      "our_name": "Support Hero",
+      "vendor": "support_hero",
+      "products": [
+        "support_hero"
+      ],
+      "cve_details_url": null,
+      "category_id": 36,
+      "_letter": "s"
+    },
+    {
+      "id": 3095,
+      "our_name": "Survicate",
+      "vendor": "survicate",
+      "products": [
+        "survicate"
+      ],
+      "cve_details_url": null,
+      "category_id": 48,
+      "_letter": "s"
+    },
+    {
+      "id": 2775,
+      "our_name": "SUSE",
+      "vendor": "suse",
+      "products": [
+        "suse"
+      ],
+      "cve_details_url": null,
+      "category_id": 1,
+      "_letter": "s"
+    },
+    {
+      "id": 163,
+      "our_name": "SUSE Linux",
+      "vendor": "suse",
+      "products": [
+        "suse_linux",
+        "linux_enterprise_server"
+      ],
+      "cve_details_url": "https://www.cvedetails.com/product/92/Suse-Suse-Linux.html",
+      "category_id": 1,
+      "_letter": "s"
+    },
+    {
+      "id": 3096,
+      "our_name": "Svbtle",
+      "vendor": "svbtle",
+      "products": [
+        "svbtle"
+      ],
+      "cve_details_url": null,
+      "category_id": 37,
+      "_letter": "s"
+    },
+    {
+      "id": 43,
+      "our_name": "Svelte",
+      "vendor": "svelte",
+      "products": [
+        "svelte"
+      ],
+      "cve_details_url": "https://www.cvedetails.com/product/82269/Svelte-Svelte.html",
+      "category_id": 6,
+      "_letter": "s"
+    },
+    {
+      "id": 3097,
+      "our_name": "SvelteKit",
+      "vendor": "sveltekit",
+      "products": [
+        "sveltekit"
+      ],
+      "cve_details_url": null,
+      "category_id": 84,
+      "_letter": "s"
+    },
+    {
+      "id": 2776,
+      "our_name": "SVG Support",
+      "vendor": "svg_support",
+      "products": [
+        "svg_support"
+      ],
+      "cve_details_url": null,
+      "category_id": 62,
+      "_letter": "s"
+    },
+    {
+      "id": 100,
+      "our_name": "svg4everybody",
+      "vendor": "jonathantneal",
+      "products": [
+        "svg4everybody"
+      ],
+      "cve_details_url": null,
+      "category_id": 6,
+      "_letter": "s"
+    },
+    {
+      "id": 455,
+      "our_name": "SVM",
+      "vendor": "php",
+      "products": [
+        "svm"
+      ],
+      "cve_details_url": null,
+      "category_id": 15,
+      "_letter": "s"
+    },
+    {
+      "id": 456,
+      "our_name": "SVN",
+      "vendor": "php",
+      "products": [
+        "svn"
+      ],
+      "cve_details_url": null,
+      "category_id": 15,
+      "_letter": "s"
+    },
+    {
+      "id": 3098,
+      "our_name": "Swagger UI",
+      "vendor": "swagger_ui",
+      "products": [
+        "swagger_ui"
+      ],
+      "cve_details_url": null,
+      "category_id": 36,
+      "_letter": "s"
+    },
+    {
+      "id": 3099,
+      "our_name": "Swagify",
+      "vendor": "swagify",
+      "products": [
+        "swagify"
+      ],
+      "cve_details_url": null,
+      "category_id": 18,
+      "_letter": "s"
+    },
+    {
+      "id": 3100,
+      "our_name": "SweetAlert",
+      "vendor": "sweetalert",
+      "products": [
+        "sweetalert"
+      ],
+      "cve_details_url": null,
+      "category_id": 6,
+      "_letter": "s"
+    },
+    {
+      "id": 3101,
+      "our_name": "SweetAlert2",
+      "vendor": "sweetalert2",
+      "products": [
+        "sweetalert2"
+      ],
+      "cve_details_url": null,
+      "category_id": 6,
+      "_letter": "s"
+    },
+    {
+      "id": 3102,
+      "our_name": "Swell",
+      "vendor": "swell",
+      "products": [
+        "swell"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "s"
+    },
+    {
+      "id": 2777,
+      "our_name": "SWFObject",
+      "vendor": "swfobject",
+      "products": [
+        "swfobject"
+      ],
+      "cve_details_url": null,
+      "category_id": 99,
+      "_letter": "s"
+    },
+    {
+      "id": 3103,
+      "our_name": "Swiftype",
+      "vendor": "swiftype",
+      "products": [
+        "swiftype"
+      ],
+      "cve_details_url": null,
+      "category_id": 69,
+      "_letter": "s"
+    },
+    {
+      "id": 99,
+      "our_name": "Swiper",
+      "vendor": "swiperjs",
+      "products": [
+        "swiper"
+      ],
+      "cve_details_url": "https://www.cvedetails.com/product/81603/Swiperjs-Swiper.html",
+      "category_id": 6,
+      "_letter": "s"
+    },
+    {
+      "id": 457,
+      "our_name": "Swoole",
+      "vendor": "php",
+      "products": [
+        "swoole"
+      ],
+      "cve_details_url": null,
+      "category_id": 15,
+      "_letter": "s"
+    },
+    {
+      "id": 3104,
+      "our_name": "Swym Wishlist Plus",
+      "vendor": "swym_wishlist_plus",
+      "products": [
+        "swym_wishlist_plus"
+      ],
+      "cve_details_url": null,
+      "category_id": 64,
+      "_letter": "s"
+    },
+    {
+      "id": 3105,
+      "our_name": "Sylius",
+      "vendor": "sylius",
+      "products": [
+        "sylius"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "s"
+    },
+    {
+      "id": 53,
+      "our_name": "Symfony",
+      "vendor": "sensiolabs",
+      "products": [
+        "symfony"
+      ],
+      "cve_details_url": "https://www.cvedetails.com/product/22402/Sensiolabs-Symfony.html",
+      "category_id": 7,
+      "_letter": "s"
+    },
+    {
+      "id": 3106,
+      "our_name": "Sympa",
+      "vendor": "sympa",
+      "products": [
+        "sympa"
+      ],
+      "cve_details_url": null,
+      "category_id": 43,
+      "_letter": "s"
+    },
+    {
+      "id": 458,
+      "our_name": "Sync",
+      "vendor": "php",
+      "products": [
+        "sync"
+      ],
+      "cve_details_url": null,
+      "category_id": 15,
+      "_letter": "s"
+    },
+    {
+      "id": 3107,
+      "our_name": "Syndeca",
+      "vendor": "syndeca",
+      "products": [
+        "syndeca"
+      ],
+      "cve_details_url": null,
+      "category_id": 18,
+      "_letter": "s"
+    },
+    {
+      "id": 3108,
+      "our_name": "Synerise",
+      "vendor": "synerise",
+      "products": [
+        "synerise"
+      ],
+      "cve_details_url": null,
+      "category_id": 18,
+      "_letter": "s"
+    },
+    {
+      "id": 3109,
+      "our_name": "Synology DiskStation",
+      "vendor": "synology_diskstation",
+      "products": [
+        "synology_diskstation"
+      ],
+      "cve_details_url": null,
+      "category_id": 71,
+      "_letter": "s"
+    },
+    {
+      "id": 3110,
+      "our_name": "SyntaxHighlighter",
+      "vendor": "syntaxhighlighter",
+      "products": [
+        "syntaxhighlighter"
+      ],
+      "cve_details_url": null,
+      "category_id": 99,
+      "_letter": "s"
+    },
+    {
+      "id": 511,
+      "our_name": "sysvmsg",
+      "vendor": "php",
+      "products": [
+        "sysvmsg"
+      ],
+      "cve_details_url": null,
+      "category_id": 15,
+      "_letter": "s"
+    },
+    {
+      "id": 514,
+      "our_name": "sysvsem",
+      "vendor": "php",
+      "products": [
+        "sysvsem"
+      ],
+      "cve_details_url": null,
+      "category_id": 15,
+      "_letter": "s"
+    },
+    {
+      "id": 515,
+      "our_name": "sysvshm",
+      "vendor": "php",
+      "products": [
+        "sysvshm"
+      ],
+      "cve_details_url": null,
+      "category_id": 15,
+      "_letter": "s"
+    },
+    {
+      "id": 3111,
+      "our_name": "Syte",
+      "vendor": "syte",
+      "products": [
+        "syte"
+      ],
+      "cve_details_url": null,
+      "category_id": 25,
+      "_letter": "s"
+    }
+  ]
+}

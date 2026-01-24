@@ -50,6 +50,9 @@ class Meta:
         self.product_manager = get_product_manager()
         self.response_hp = responses.resp_hp
         self.definitions = self.helpers.load_definitions("meta.json")
+        
+        # Load Wappalyzer meta definitions (separate file)
+        self.wapp_definitions = self.helpers.load_definitions("meta_from_wappalyzer.json")
     
     def run(self):
         """
@@ -108,6 +111,7 @@ class Meta:
         """
         technologies_found = 0
         successfully_matched_tags = set()
+        detected_products = set()
         
         if self.definitions:
             for meta_definition in self.definitions:
@@ -116,10 +120,27 @@ class Meta:
                 
                 if meta_name in meta_tags:
                     content = meta_tags[meta_name]
-                    matches = self._check_patterns(meta_name, content, patterns)
+                    matches = self._check_patterns(meta_name, content, patterns, detected_products)
                     if matches > 0:
                         technologies_found += matches
                         successfully_matched_tags.add(meta_name)
+        
+        if self.wapp_definitions:
+            wapp_meta_list = self.wapp_definitions
+            if isinstance(self.wapp_definitions, dict) and 'meta_tags' in self.wapp_definitions:
+                wapp_meta_list = self.wapp_definitions['meta_tags']
+            
+            if isinstance(wapp_meta_list, list):
+                for meta_definition in wapp_meta_list:
+                    meta_name = meta_definition.get("meta_name")
+                    patterns = meta_definition.get("patterns", [])
+                    
+                    if meta_name in meta_tags:
+                        content = meta_tags[meta_name]
+                        matches = self._check_patterns(meta_name, content, patterns, detected_products)
+                        if matches > 0:
+                            technologies_found += matches
+                            successfully_matched_tags.add(meta_name)
         
         if 'author' in meta_tags and 'author' not in successfully_matched_tags:
             self._handle_unmatched_author(meta_tags['author'])
@@ -134,7 +155,7 @@ class Meta:
         
         return technologies_found
     
-    def _check_patterns(self, meta_name, content, patterns):
+    def _check_patterns(self, meta_name, content, patterns, detected_products):
         """
         Check meta tag content against defined patterns.
         
@@ -142,12 +163,12 @@ class Meta:
             meta_name: Name of the meta tag being analyzed.
             content: Content value of the meta tag.
             patterns: List of pattern definitions to check against.
+            detected_products: Set of already detected product IDs (shared across all sources).
             
         Returns:
             int: Number of matches found (max 1 per technology).
         """
         matches_found = 0
-        detected_products = set()
         
         for pattern in patterns:
             product_id = pattern.get("product_id")

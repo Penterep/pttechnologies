@@ -1,0 +1,698 @@
+{
+  "products": [
+    {
+      "id": 1972,
+      "our_name": "k-eCommerce",
+      "vendor": "k_ecommerce",
+      "products": [
+        "k_ecommerce"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "k"
+    },
+    {
+      "id": 1915,
+      "our_name": "K2",
+      "vendor": "k2",
+      "products": [
+        "k2"
+      ],
+      "cve_details_url": null,
+      "category_id": 99,
+      "_letter": "k"
+    },
+    {
+      "id": 1920,
+      "our_name": "Kadence WP Kadence",
+      "vendor": "kadence_wp_kadence",
+      "products": [
+        "kadence_wp_kadence"
+      ],
+      "cve_details_url": null,
+      "category_id": 63,
+      "_letter": "k"
+    },
+    {
+      "id": 1921,
+      "our_name": "Kadence WP Virtue",
+      "vendor": "kadence_wp_virtue",
+      "products": [
+        "kadence_wp_virtue"
+      ],
+      "cve_details_url": null,
+      "category_id": 63,
+      "_letter": "k"
+    },
+    {
+      "id": 1922,
+      "our_name": "Kaira Vogue",
+      "vendor": "kaira_vogue",
+      "products": [
+        "kaira_vogue"
+      ],
+      "cve_details_url": null,
+      "category_id": 63,
+      "_letter": "k"
+    },
+    {
+      "id": 1923,
+      "our_name": "Kajabi",
+      "vendor": "kajabi",
+      "products": [
+        "kajabi"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "k"
+    },
+    {
+      "id": 1924,
+      "our_name": "Kakao",
+      "vendor": "kakao",
+      "products": [
+        "kakao"
+      ],
+      "cve_details_url": null,
+      "category_id": 99,
+      "_letter": "k"
+    },
+    {
+      "id": 1925,
+      "our_name": "Kaltura",
+      "vendor": "kaltura",
+      "products": [
+        "kaltura"
+      ],
+      "cve_details_url": null,
+      "category_id": 27,
+      "_letter": "k"
+    },
+    {
+      "id": 1926,
+      "our_name": "Kameleoon",
+      "vendor": "kameleoon",
+      "products": [
+        "kameleoon"
+      ],
+      "cve_details_url": null,
+      "category_id": 24,
+      "_letter": "k"
+    },
+    {
+      "id": 1927,
+      "our_name": "Kamva",
+      "vendor": "kamva",
+      "products": [
+        "kamva"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "k"
+    },
+    {
+      "id": 1928,
+      "our_name": "Kapture CRM",
+      "vendor": "kapture_crm",
+      "products": [
+        "kapture_crm"
+      ],
+      "cve_details_url": null,
+      "category_id": 20,
+      "_letter": "k"
+    },
+    {
+      "id": 1929,
+      "our_name": "Karma",
+      "vendor": "karma",
+      "products": [
+        "karma"
+      ],
+      "cve_details_url": null,
+      "category_id": 6,
+      "_letter": "k"
+    },
+    {
+      "id": 1930,
+      "our_name": "Kartra",
+      "vendor": "kartra",
+      "products": [
+        "kartra"
+      ],
+      "cve_details_url": null,
+      "category_id": 19,
+      "_letter": "k"
+    },
+    {
+      "id": 1919,
+      "our_name": "KaTeX",
+      "vendor": "katex",
+      "products": [
+        "katex"
+      ],
+      "cve_details_url": null,
+      "category_id": 6,
+      "_letter": "k"
+    },
+    {
+      "id": 1931,
+      "our_name": "Keap",
+      "vendor": "keap",
+      "products": [
+        "keap"
+      ],
+      "cve_details_url": null,
+      "category_id": 26,
+      "_letter": "k"
+    },
+    {
+      "id": 1932,
+      "our_name": "Keen Delivery",
+      "vendor": "keen_delivery",
+      "products": [
+        "keen_delivery"
+      ],
+      "cve_details_url": null,
+      "category_id": 78,
+      "_letter": "k"
+    },
+    {
+      "id": 1973,
+      "our_name": "keep. archeevo",
+      "vendor": "keep__archeevo",
+      "products": [
+        "keep__archeevo"
+      ],
+      "cve_details_url": null,
+      "category_id": 96,
+      "_letter": "k"
+    },
+    {
+      "id": 1933,
+      "our_name": "Kemal",
+      "vendor": "kemal",
+      "products": [
+        "kemal"
+      ],
+      "cve_details_url": null,
+      "category_id": 7,
+      "_letter": "k"
+    },
+    {
+      "id": 1934,
+      "our_name": "Kendo UI",
+      "vendor": "kendo_ui",
+      "products": [
+        "kendo_ui"
+      ],
+      "cve_details_url": null,
+      "category_id": 84,
+      "_letter": "k"
+    },
+    {
+      "id": 79,
+      "our_name": "Kentico",
+      "vendor": "kentico",
+      "products": [
+        "kentico_cms"
+      ],
+      "cve_details_url": "https://www.cvedetails.com/product/32548/Kentico-Kentico-Cms.html",
+      "category_id": 8,
+      "_letter": "k"
+    },
+    {
+      "id": 1935,
+      "our_name": "Kentico CMS",
+      "vendor": "kentico",
+      "products": [
+        "kentico_cms"
+      ],
+      "cve_details_url": null,
+      "category_id": 16,
+      "_letter": "k"
+    },
+    {
+      "id": 1936,
+      "our_name": "Keptify",
+      "vendor": "keptify",
+      "products": [
+        "keptify"
+      ],
+      "cve_details_url": null,
+      "category_id": 97,
+      "_letter": "k"
+    },
+    {
+      "id": 1937,
+      "our_name": "Kerberos",
+      "vendor": "kerberos",
+      "products": [
+        "kerberos"
+      ],
+      "cve_details_url": null,
+      "category_id": 14,
+      "_letter": "k"
+    },
+    {
+      "id": 15,
+      "our_name": "Kestrel",
+      "vendor": "microsoft",
+      "products": [
+        "x"
+      ],
+      "cve_details_url": "x",
+      "category_id": 2,
+      "_letter": "k"
+    },
+    {
+      "id": 1938,
+      "our_name": "Kevel",
+      "vendor": "kevel",
+      "products": [
+        "kevel"
+      ],
+      "cve_details_url": null,
+      "category_id": 22,
+      "_letter": "k"
+    },
+    {
+      "id": 1939,
+      "our_name": "KeyCDN",
+      "vendor": "keycdn",
+      "products": [
+        "keycdn"
+      ],
+      "cve_details_url": null,
+      "category_id": 10,
+      "_letter": "k"
+    },
+    {
+      "id": 150,
+      "our_name": "Keycloak",
+      "vendor": "redhat",
+      "products": [
+        "keycloak"
+      ],
+      "cve_details_url": "https://www.cvedetails.com/product/37999/Keycloak-Keycloak.html",
+      "category_id": 99,
+      "_letter": "k"
+    },
+    {
+      "id": 1940,
+      "our_name": "Kibana",
+      "vendor": "elasticsearch",
+      "products": [
+        "kibana"
+      ],
+      "cve_details_url": null,
+      "category_id": 69,
+      "_letter": "k"
+    },
+    {
+      "id": 1941,
+      "our_name": "Kibo Commerce",
+      "vendor": "kibo_commerce",
+      "products": [
+        "kibo_commerce"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "k"
+    },
+    {
+      "id": 1942,
+      "our_name": "Kibo Personalization",
+      "vendor": "kibo_personalization",
+      "products": [
+        "kibo_personalization"
+      ],
+      "cve_details_url": null,
+      "category_id": 25,
+      "_letter": "k"
+    },
+    {
+      "id": 1943,
+      "our_name": "KineticJS",
+      "vendor": "kineticjs",
+      "products": [
+        "kineticjs"
+      ],
+      "cve_details_url": null,
+      "category_id": 6,
+      "_letter": "k"
+    },
+    {
+      "id": 1944,
+      "our_name": "Kinsta",
+      "vendor": "kinsta",
+      "products": [
+        "kinsta"
+      ],
+      "cve_details_url": null,
+      "category_id": 50,
+      "_letter": "k"
+    },
+    {
+      "id": 1945,
+      "our_name": "Kirki Customizer Framework",
+      "vendor": "kirki_customizer_fra",
+      "products": [
+        "kirki_customizer_fra"
+      ],
+      "cve_details_url": null,
+      "category_id": 62,
+      "_letter": "k"
+    },
+    {
+      "id": 1916,
+      "our_name": "KISSmetrics",
+      "vendor": "kissmetrics",
+      "products": [
+        "kissmetrics"
+      ],
+      "cve_details_url": null,
+      "category_id": 18,
+      "_letter": "k"
+    },
+    {
+      "id": 1946,
+      "our_name": "Kitcart",
+      "vendor": "kitcart",
+      "products": [
+        "kitcart"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "k"
+    },
+    {
+      "id": 1947,
+      "our_name": "Kiwi Sizing",
+      "vendor": "kiwi_sizing",
+      "products": [
+        "kiwi_sizing"
+      ],
+      "cve_details_url": null,
+      "category_id": 25,
+      "_letter": "k"
+    },
+    {
+      "id": 1948,
+      "our_name": "Klarna Checkout",
+      "vendor": "klarna_checkout",
+      "products": [
+        "klarna_checkout"
+      ],
+      "cve_details_url": null,
+      "category_id": 21,
+      "_letter": "k"
+    },
+    {
+      "id": 1949,
+      "our_name": "Klaro",
+      "vendor": "klaro",
+      "products": [
+        "klaro"
+      ],
+      "cve_details_url": null,
+      "category_id": 32,
+      "_letter": "k"
+    },
+    {
+      "id": 1950,
+      "our_name": "Klasha",
+      "vendor": "klasha",
+      "products": [
+        "klasha"
+      ],
+      "cve_details_url": null,
+      "category_id": 21,
+      "_letter": "k"
+    },
+    {
+      "id": 1951,
+      "our_name": "Klaviyo",
+      "vendor": "klaviyo",
+      "products": [
+        "klaviyo"
+      ],
+      "cve_details_url": null,
+      "category_id": 19,
+      "_letter": "k"
+    },
+    {
+      "id": 1952,
+      "our_name": "Klevu",
+      "vendor": "klevu",
+      "products": [
+        "klevu"
+      ],
+      "cve_details_url": null,
+      "category_id": 69,
+      "_letter": "k"
+    },
+    {
+      "id": 1953,
+      "our_name": "Klickly",
+      "vendor": "klickly",
+      "products": [
+        "klickly"
+      ],
+      "cve_details_url": null,
+      "category_id": 22,
+      "_letter": "k"
+    },
+    {
+      "id": 1917,
+      "our_name": "KMK",
+      "vendor": "kmk",
+      "products": [
+        "kmk"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "k"
+    },
+    {
+      "id": 1954,
+      "our_name": "Knockout.js",
+      "vendor": "knockout_js",
+      "products": [
+        "knockout_js"
+      ],
+      "cve_details_url": null,
+      "category_id": 6,
+      "_letter": "k"
+    },
+    {
+      "id": 1955,
+      "our_name": "Ko-fi",
+      "vendor": "ko_fi",
+      "products": [
+        "ko_fi"
+      ],
+      "cve_details_url": null,
+      "category_id": 99,
+      "_letter": "k"
+    },
+    {
+      "id": 1956,
+      "our_name": "Koa",
+      "vendor": "koa",
+      "products": [
+        "koa"
+      ],
+      "cve_details_url": null,
+      "category_id": 7,
+      "_letter": "k"
+    },
+    {
+      "id": 1957,
+      "our_name": "Koala Framework",
+      "vendor": "koala_framework",
+      "products": [
+        "koala_framework"
+      ],
+      "cve_details_url": null,
+      "category_id": 16,
+      "_letter": "k"
+    },
+    {
+      "id": 1958,
+      "our_name": "KobiMaster",
+      "vendor": "kobimaster",
+      "products": [
+        "kobimaster"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "k"
+    },
+    {
+      "id": 1959,
+      "our_name": "Koha",
+      "vendor": "koha",
+      "products": [
+        "koha"
+      ],
+      "cve_details_url": null,
+      "category_id": 83,
+      "_letter": "k"
+    },
+    {
+      "id": 1960,
+      "our_name": "Kohana",
+      "vendor": "kohanaframework",
+      "products": [
+        "kohana"
+      ],
+      "cve_details_url": null,
+      "category_id": 7,
+      "_letter": "k"
+    },
+    {
+      "id": 1961,
+      "our_name": "Koken",
+      "vendor": "koken",
+      "products": [
+        "koken"
+      ],
+      "cve_details_url": null,
+      "category_id": 16,
+      "_letter": "k"
+    },
+    {
+      "id": 1962,
+      "our_name": "Komodo CMS",
+      "vendor": "komodo_cms",
+      "products": [
+        "komodo_cms"
+      ],
+      "cve_details_url": null,
+      "category_id": 16,
+      "_letter": "k"
+    },
+    {
+      "id": 1963,
+      "our_name": "Konduto",
+      "vendor": "konduto",
+      "products": [
+        "konduto"
+      ],
+      "cve_details_url": null,
+      "category_id": 14,
+      "_letter": "k"
+    },
+    {
+      "id": 1964,
+      "our_name": "Koobi",
+      "vendor": "koobi",
+      "products": [
+        "koobi"
+      ],
+      "cve_details_url": null,
+      "category_id": 16,
+      "_letter": "k"
+    },
+    {
+      "id": 1965,
+      "our_name": "Kooboo CMS",
+      "vendor": "kooboo_cms",
+      "products": [
+        "kooboo_cms"
+      ],
+      "cve_details_url": null,
+      "category_id": 16,
+      "_letter": "k"
+    },
+    {
+      "id": 1966,
+      "our_name": "Kooomo",
+      "vendor": "kooomo",
+      "products": [
+        "kooomo"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "k"
+    },
+    {
+      "id": 1967,
+      "our_name": "Kotisivukone",
+      "vendor": "kotisivukone",
+      "products": [
+        "kotisivukone"
+      ],
+      "cve_details_url": null,
+      "category_id": 16,
+      "_letter": "k"
+    },
+    {
+      "id": 1968,
+      "our_name": "Kount",
+      "vendor": "kount",
+      "products": [
+        "kount"
+      ],
+      "cve_details_url": null,
+      "category_id": 18,
+      "_letter": "k"
+    },
+    {
+      "id": 1918,
+      "our_name": "KQS.store",
+      "vendor": "kqs_store",
+      "products": [
+        "kqs_store"
+      ],
+      "cve_details_url": null,
+      "category_id": 17,
+      "_letter": "k"
+    },
+    {
+      "id": 240,
+      "our_name": "Kubernetes",
+      "vendor": "kubernetes",
+      "products": [
+        "kubernetes"
+      ],
+      "cve_details_url": "https://www.cvedetails.com/product/34016/Kubernetes-Kubernetes.html",
+      "category_id": 99,
+      "_letter": "k"
+    },
+    {
+      "id": 1969,
+      "our_name": "Kubernetes Dashboard",
+      "vendor": "kubernetes",
+      "products": [
+        "kubernetes",
+        "kubernetes_dashboard"
+      ],
+      "cve_details_url": null,
+      "category_id": 73,
+      "_letter": "k"
+    },
+    {
+      "id": 1970,
+      "our_name": "KueskiPay",
+      "vendor": "kueskipay",
+      "products": [
+        "kueskipay"
+      ],
+      "cve_details_url": null,
+      "category_id": 21,
+      "_letter": "k"
+    },
+    {
+      "id": 1971,
+      "our_name": "Kustomer",
+      "vendor": "kustomer",
+      "products": [
+        "kustomer"
+      ],
+      "cve_details_url": null,
+      "category_id": 20,
+      "_letter": "k"
+    }
+  ]
+}

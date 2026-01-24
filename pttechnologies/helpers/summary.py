@@ -55,22 +55,19 @@ class Summary:
         self.categories = self._load_categories()
     
     def _load_categories(self):
-        """
-        Load categories from product_categories.json or use legacy mapping.
-        
-        Returns:
-            dict: Category mapping (category name -> list of technology types)
-        """
         try:
             categories_data = self.product_manager.get_categories()
-            # Build a dict: category_name -> category_id
             category_map = {}
+            self.core_category_ids = set()
             for cat in categories_data:
                 cat_name = cat.get('name', 'Other')
-                # Store category for later mapping
+                cat_id = cat.get('id')
                 category_map[cat_name] = []
+                if cat_id and cat_id <= 16:
+                    self.core_category_ids.add(cat_name)
             return category_map if category_map else self.legacy_categories
         except Exception:
+            self.core_category_ids = set()
             return self.legacy_categories
     
     def run(self):
@@ -78,17 +75,16 @@ class Summary:
         Main entry point for summary generation.
         
         Generates either console output or JSON output based on configuration.
-        Returns early if no scan results are available.
+        For JSON output, always generates the base structure even if no results.
         
         Returns:
             None
         """
-        if not storage.get_all_records():
-            return
-        
         if self.args.json:
             self._generate_json_output()
         else:
+            if not storage.get_all_records():
+                return
             self._generate_console_output()
     
     def _generate_console_output(self):
@@ -112,12 +108,14 @@ class Summary:
         
         for category_name in self.categories.keys():
             techs_in_category = categorized_techs.get(category_name, [])
-            if techs_in_category or category_name != "Other":
+            is_core_category = category_name in self.core_category_ids
+            if techs_in_category or is_core_category:
                 self._display_category(category_name, techs_in_category)
     
     def _categorize_technologies(self, technologies):
         """
         Categorize technologies based on their type and calculate probabilities.
+        Merges records with same technology/product_id but different versions into ranges.
         
         Args:
             technologies: List of technology information dictionaries.
@@ -127,43 +125,94 @@ class Summary:
         """
         categorized = {}
         
-        for tech_info in technologies:
-            technology = tech_info["technology"]
-            version = tech_info.get("version")
-            version_min = tech_info.get("version_min")
-            version_max = tech_info.get("version_max")
-            
-            data = storage.get_data_for_technology(technology)
-            
-            if not data:
+        # Get all records directly from storage to handle multiple product_ids for same technology
+        all_records = storage.get_all_records()
+        
+        # Group records by (technology, product_id, technology_type) to merge version ranges
+        grouped_records = {}
+        
+        for record in all_records:
+            technology = record.get("technology")
+            if not technology:
                 continue
             
-            technology_type = data.get("technology_type")
+            product_id = record.get("product_id")
+            technology_type = record.get("technology_type")
+            
+            if not technology_type:
+                continue
+            
+            # Group key: same technology, product_id, and type
+            group_key = (technology, product_id, technology_type)
+            
+            if group_key not in grouped_records:
+                grouped_records[group_key] = []
+            
+            grouped_records[group_key].append(record)
+        
+        # Process grouped records and create tech entries
+        for (technology, product_id, technology_type), records in grouped_records.items():
             category = self._find_category(technology_type)
             
-            probability = self._calculate_probability(data, category)
-            
             display_name = technology
-            product_id = data.get("product_id")
             if product_id:
                 product = self.product_manager.get_product_by_id(product_id)
                 if product:
                     display_name = product.get("our_name", technology)
             
+            # Check if we have version ranges
             if category not in categorized:
                 categorized[category] = []
             
-            tech_entry = {
-                "name": display_name,
-                "version": version,
-                "version_min": version_min,
-                "version_max": version_max,
-                "probability": probability,
-                "type": technology_type,
-                "product_id": product_id
-            }
+            # Separate records into ranges and specific versions (including None)
+            range_records = [r for r in records if r.get("version_min") or r.get("version_max")]
+            version_records = [r for r in records if not (r.get("version_min") or r.get("version_max"))]
             
-            categorized[category].append(tech_entry)
+            # 1. Add version range entry if exists
+            if range_records:
+                max_probability = max(r.get("probability", 0) for r in range_records)
+                version_min = None
+                version_max = None
+                
+                for r in range_records:
+                    if r.get("version_min"):
+                        version_min = r.get("version_min")
+                    if r.get("version_max"):
+                        version_max = r.get("version_max")
+                
+                tech_entry = {
+                    "name": display_name,
+                    "version": None,
+                    "version_min": version_min,
+                    "version_max": version_max,
+                    "probability": max_probability,
+                    "type": technology_type,
+                    "product_id": product_id
+                }
+                categorized[category].append(tech_entry)
+            
+            # 2. Add specific version entries
+            if version_records:
+                version_groups = {}
+                for record in version_records:
+                    ver = record.get("version")
+                    if ver not in version_groups:
+                        version_groups[ver] = []
+                    version_groups[ver].append(record)
+                
+                for ver, ver_records in version_groups.items():
+                    max_prob = max(r.get("probability", 0) for r in ver_records)
+                    
+                    tech_entry = {
+                        "name": display_name,
+                        "version": ver,
+                        "version_min": None,
+                        "version_max": None,
+                        "probability": max_prob,
+                        "type": technology_type,
+                        "product_id": product_id
+                    }
+                    categorized[category].append(tech_entry)
         
         for category in categorized:
             categorized[category].sort(key=lambda x: x["probability"], reverse=True)
@@ -183,13 +232,23 @@ class Summary:
         if not technology_type:
             return "Other"
         
-        # If technology_type is already a category name, return it
         if technology_type in self.categories:
             return technology_type
         
-        # Otherwise, check legacy mapping
+        legacy_to_new = {
+            "Web App": "Web Application",
+            "Operating System": "OS",
+            "Web Server": "Web Server",
+            "Programming Language": "Programming Language"
+        }
+        
         for category, types in self.legacy_categories.items():
             if technology_type in types:
+                new_category = legacy_to_new.get(category, category)
+                if new_category in self.categories:
+                    return new_category
+                if category in self.categories:
+                    return category
                 return category
         
         return "Other"
@@ -257,7 +316,11 @@ class Summary:
                 
                 product_id = tech.get("product_id")
                 if product_id:
-                    version_for_cpe = tech.get("version")
+                    # For version ranges, use wildcard in CPE
+                    if tech.get("version_min") or tech.get("version_max"):
+                        version_for_cpe = None  # Will use * in CPE
+                    else:
+                        version_for_cpe = tech.get("version")
                     cpe_string = self.product_manager.generate_cpe_string(product_id, version_for_cpe)
                     if cpe_string:
                         # Get CVE details URL from product
