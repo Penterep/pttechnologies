@@ -128,6 +128,24 @@ class PLUGINS:
         
         return plugin_urls
 
+    def _is_valid_plugin_name(self, plugin_name):
+        """
+        Checks if plugin name is valid (not just special characters).
+        
+        Args:
+            plugin_name (str): Plugin name to validate.
+            
+        Returns:
+            bool: True if plugin name is valid, False if it's only special characters.
+        """
+        if not plugin_name:
+            return False
+        
+        if re.search(r'[a-zA-Z0-9]', plugin_name):
+            return True
+        
+        return False
+
     def _analyze_plugin(self, plugin_url, base_url, html):
         """
         Analyzes a plugin URL to extract plugin name and detect version.
@@ -148,6 +166,9 @@ class PLUGINS:
             return
         
         plugin_name = plugin_match.group(1)
+        
+        if not self._is_valid_plugin_name(plugin_name):
+            return
         
         if plugin_name in self.detected_plugins:
             return
