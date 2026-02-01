@@ -1,0 +1,3837 @@
+[
+  {
+    "product_id": 40,
+    "patterns": [
+      {
+        "regex": "<[^>]+data-react",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 41,
+    "patterns": [
+      {
+        "regex": "<[^>]+\\sdata-v(?:ue)?-",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 46,
+    "patterns": [
+      {
+        "regex": "<div [^>]*id=\"__nuxt\"",
+        "version_group": null,
+        "probability": 100
+      },
+      {
+        "regex": "<script [^>]*>window\\.__NUXT__",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 50,
+    "patterns": [
+      {
+        "regex": "(?:powered by <a[^>]+>Django ?([\\d.]+)?<\\/a>|<input[^>]*name=[\"']csrfmiddlewaretoken[\"'][^>]*>)",
+        "version_group": 1,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 59,
+    "patterns": [
+      {
+        "regex": "<input[^>]+data-nette-rules",
+        "version_group": null,
+        "probability": 100
+      },
+      {
+        "regex": "<div[^>]+id=\"snippet-",
+        "version_group": null,
+        "probability": 100
+      },
+      {
+        "regex": "<input[^>]+id=\"frm-",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 62,
+    "patterns": [
+      {
+        "regex": "<input[^>]+name=\"ci_csrf_token\"\\;version:2+",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 64,
+    "patterns": [
+      {
+        "regex": "Powered by <a href=\"http://www\\.yiiframework\\.com/\" rel=\"external\">Yii Framework</a>",
+        "version_group": null,
+        "probability": 100
+      },
+      {
+        "regex": "<input type=\"hidden\" value=\"[a-zA-Z0-9]{40}\" name=\"YII_CSRF_TOKEN\" \\/>",
+        "version_group": null,
+        "probability": 100
+      },
+      {
+        "regex": "<!\\[CDATA\\[YII-BLOCK-(?:HEAD|BODY-BEGIN|BODY-END)\\]",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 70,
+    "patterns": [
+      {
+        "regex": "<link rel=[\"']stylesheet[\"'] [^>]+/wp-(?:content|includes)/",
+        "version_group": null,
+        "probability": 100
+      },
+      {
+        "regex": "<link[^>]+s\\d+\\.wp\\.com",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 71,
+    "patterns": [
+      {
+        "regex": "<(?:link|style)[^>]+\"/sites/(?:default|all)/(?:themes|modules)/",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 72,
+    "patterns": [
+      {
+        "regex": "(?:<div[^>]+id=\"wrapper_r\"|<(?:link|script)[^>]+(?:feed|components)/com_|<table[^>]+class=\"pill)\\;confidence:50",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 75,
+    "patterns": [
+      {
+        "regex": "Powered by <a href=\"https?://jekyllrb\\.com\"[^>]*>Jekyll</",
+        "version_group": null,
+        "probability": 100
+      },
+      {
+        "regex": "<!-- Created with Jekyll Now -",
+        "version_group": null,
+        "probability": 100
+      },
+      {
+        "regex": "<!-- Begin Jekyll SEO tag",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 83,
+    "patterns": [
+      {
+        "regex": "Powered by <a\\s+[^>]+>PrestaShop",
+        "version_group": null,
+        "probability": 100
+      },
+      {
+        "regex": "<!-- /Block [a-z ]+ module (?:HEADER|TOP)?\\s?-->",
+        "version_group": null,
+        "probability": 100
+      },
+      {
+        "regex": "<!-- /Module Block [a-z ]+ -->",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 84,
+    "patterns": [
+      {
+        "regex": "(?:<!--Powered by nopCommerce|Powered by: <a[^>]+nopcommerce)",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 101,
+    "patterns": [
+      {
+        "regex": "<style>\\s+/\\*!\\s+\\* Bootstrap v(\\d\\.\\d\\.\\d)",
+        "version_group": 1,
+        "probability": 100
+      },
+      {
+        "regex": "<link[^>]* href=[^>]*?bootstrap(?:[^>]*?([0-9a-fA-F]{7,40}|[\\d]+(?:.[\\d]+(?:.[\\d]+)?)?)|)[^>-]*?(?:\\.min)?\\.css",
+        "version_group": 1,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 130,
+    "patterns": [
+      {
+        "regex": "<title>XAMPP(?: Version ([\\d\\.]+))?</title>",
+        "version_group": 1,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 140,
+    "patterns": [
+      {
+        "regex": "!\\[CDATA\\[[^<]*PMA_VERSION:\\\"([\\d.]+)",
+        "version_group": 1,
+        "probability": 100
+      },
+      {
+        "regex": "(?: \\| phpMyAdmin ([\\d.]+)<\\/title>|PMA_sendHeaderLocation\\(|<link [^>]*href=\"[^\"]*phpmyadmin\\.css\\.php)",
+        "version_group": 1,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 141,
+    "patterns": [
+      {
+        "regex": "Adminer</a> <span class=\"version\">([\\d.]+)</span>",
+        "version_group": 1,
+        "probability": 100
+      },
+      {
+        "regex": "onclick=\"bodyClick\\(event\\);\" onload=\"verifyVersion\\('([\\d.]+)'\\);\">",
+        "version_group": 1,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 239,
+    "patterns": [
+      {
+        "regex": "<!-- This comment is expected by the docker HEALTHCHECK  -->",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 248,
+    "patterns": [
+      {
+        "regex": "<!-- cPanel",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 301,
+    "patterns": [
+      {
+        "regex": "<!-- This site is optimized with the Yoast (?:WordPress )?SEO plugin v([^\\s]+) -",
+        "version_group": 1,
+        "probability": 100
+      },
+      {
+        "regex": "<!-- This site is optimized with the Yoast SEO Premium plugin v(?:[^\\s]+) \\(Yoast SEO v([^\\s]+)\\) -",
+        "version_group": 1,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 305,
+    "patterns": [
+      {
+        "regex": "<div class=(?:\"|')[^\"']*elementor",
+        "version_group": null,
+        "probability": 100
+      },
+      {
+        "regex": "<section class=(?:\"|')[^\"']*elementor",
+        "version_group": null,
+        "probability": 100
+      },
+      {
+        "regex": "<link [^>]*href=(?:\"|')[^\"']*elementor/assets",
+        "version_group": null,
+        "probability": 100
+      },
+      {
+        "regex": "<link [^>]*href=(?:\"|')[^\"']*uploads/elementor/css",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 308,
+    "patterns": [
+      {
+        "regex": "<!-- All in One SEO Pack ([\\d.]+) ",
+        "version_group": 1,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 313,
+    "patterns": [
+      {
+        "regex": "<!--[^>]+Cached by WP-Optimize",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 318,
+    "patterns": [
+      {
+        "regex": "<!--[^>]+W3 Total Cache",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 537,
+    "patterns": [
+      {
+        "regex": "<a-scene[^<>]*>",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 545,
+    "patterns": [
+      {
+        "regex": "<html[^>]* (?:amp|⚡)[^-]",
+        "version_group": null,
+        "probability": 100
+      },
+      {
+        "regex": "<link rel=\"amphtml\"",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 620,
+    "patterns": [
+      {
+        "regex": "<!-- START headerTags\\.cfm",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 623,
+    "patterns": [
+      {
+        "regex": "<div class=\"[^\"]*parbase",
+        "version_group": null,
+        "probability": 100
+      },
+      {
+        "regex": "<div[^>]+data-component-path=\"[^\"+]jcr:",
+        "version_group": null,
+        "probability": 100
+      },
+      {
+        "regex": "<div class=\"[^\"]*aem-Grid",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 660,
+    "patterns": [
+      {
+        "regex": "<script>[\\s\\S]*?go-mpulse\\.net\\/boomerang[\\s\\S]*?</script>",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 661,
+    "patterns": [
+      {
+        "regex": "<link[^>]+akaunting-green\\.css",
+        "version_group": null,
+        "probability": 100
+      },
+      {
+        "regex": "Powered By Akaunting: <a [^>]*href=\"https?://(?:www\\.)?akaunting\\.com[^>]+>",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 674,
+    "patterns": [
+      {
+        "regex": "<[^>]+[^\\w-]x-data[^\\w-][^<]+\\;confidence:75",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 711,
+    "patterns": [
+      {
+        "regex": "<(?:div|html)[^>]+ng-app=",
+        "version_group": null,
+        "probability": 100
+      },
+      {
+        "regex": "<ng-app",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 713,
+    "patterns": [
+      {
+        "regex": "<[^>]*class=\"ant-(?:btn|col|row|layout|breadcrumb|menu|pagination|steps|select|cascader|checkbox|calendar|form|input-number|input|mention|rate|radio|slider|switch|tree-select|time-picker|transfer|upload|avatar|badge|card|carousel|collapse|list|popover|tooltip|table|tabs|tag|timeline|tree|alert|modal|message|notification|progress|popconfirm|spin|anchor|back-top|divider|drawer)",
+        "version_group": null,
+        "probability": 100
+      },
+      {
+        "regex": "<i class=\"anticon anticon-",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 718,
+    "patterns": [
+      {
+        "regex": "<html[^>]* xmlns:jspwiki=",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 722,
+    "patterns": [
+      {
+        "regex": "<script>[^>]{0,50}script src=[^>]/profiles/apigee",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 746,
+    "patterns": [
+      {
+        "regex": "<span class=\"version\">Artifactory(?: Pro)?(?: Power Pack)?(?: ([\\d.]+))?",
+        "version_group": 1,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 753,
+    "patterns": [
+      {
+        "regex": "<asciinema-player",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 762,
+    "patterns": [
+      {
+        "regex": "<li>Atlassian Bitbucket <span title=\"[a-z0-9]+\" id=\"product-version\" data-commitid=\"[a-z0-9]+\" data-system-build-number=\"[a-z0-9]+\"> v([\\d.]+)<",
+        "version_group": 1,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 764,
+    "patterns": [
+      {
+        "regex": "<title>(?:Log in to )?FishEye (?:and Crucible )?([\\d.]+)?</title>",
+        "version_group": 1,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 767,
+    "patterns": [
+      {
+        "regex": "<a[^>]*href=\"https?://(?:www\\.)?statuspage\\.io/powered-by[^>]+>",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 791,
+    "patterns": [
+      {
+        "regex": "<link[^>]+href=\"[^>]*awesomplete(?:\\.min)?\\.css",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 806,
+    "patterns": [
+      {
+        "regex": "<svg[^>]*><desc>JavaScript chart by amCharts ([\\d.]*)",
+        "version_group": 1,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 812,
+    "patterns": [
+      {
+        "regex": "<[^>]+data-bem",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 849,
+    "patterns": [
+      {
+        "regex": "(?:Diese <a href=[^>]+bigware\\.de|<a href=[^>]+/main_bigware_\\d+\\.php)",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 863,
+    "patterns": [
+      {
+        "regex": "<!-- Cached by Blitz on",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 865,
+    "patterns": [
+      {
+        "regex": "<[^>]+/binaries/(?:[^/]+/)*content/gallery/",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 889,
+    "patterns": [
+      {
+        "regex": "<link rel=[\"']stylesheet[\"'] [^>]+boldgrid",
+        "version_group": null,
+        "probability": 100
+      },
+      {
+        "regex": "<link rel=[\"']stylesheet[\"'] [^>]+post-and-page-builder",
+        "version_group": null,
+        "probability": 100
+      },
+      {
+        "regex": "<link[^>]+s\\d+\\.boldgrid\\.com",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 892,
+    "patterns": [
+      {
+        "regex": "Powered by <a[^>]+href=\"https?://(?:www\\.)?cibonfire\\.com[^>]*>Bonfire v([^<]+)",
+        "version_group": 1,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 905,
+    "patterns": [
+      {
+        "regex": "<link[^>]+href=\"[^>]*bootstrap-table(?:\\.min)?\\.css",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 920,
+    "patterns": [
+      {
+        "regex": "<!-- Breadcrumb NavXT ([\\d\\.]+)",
+        "version_group": 1,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 939,
+    "patterns": [
+      {
+        "regex": "href=\"enter_bug\\.cgi\">",
+        "version_group": null,
+        "probability": 100
+      },
+      {
+        "regex": "<main id=\"bugzilla-body\"",
+        "version_group": null,
+        "probability": 100
+      },
+      {
+        "regex": "<a href=\"https?://www\\.bugzilla\\.org/docs/([0-9.]+)/[^>]+>Help<",
+        "version_group": 1,
+        "probability": 100
+      },
+      {
+        "regex": "<span id=\"information\" class=\"header_addl_info\">version ([\\d.]+)<",
+        "version_group": 1,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 945,
+    "patterns": [
+      {
+        "regex": "<!-- BC_OBNW -->",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 1109,
+    "patterns": [
+      {
+        "regex": "<[^>]+(?:https?:)?//(?:assets|downloads|images|videos)\\.(?:ct?fassets\\.net|contentful\\.com)",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 1130,
+    "patterns": [
+      {
+        "regex": "<!--Coppermine Photo Gallery ([\\d.]+)",
+        "version_group": 1,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 1189,
+    "patterns": [
+      {
+        "regex": "<!-- by DotNetNuke Corporation",
+        "version_group": null,
+        "probability": 100
+      },
+      {
+        "regex": "<!-- DNN Platform",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 1228,
+    "patterns": [
+      {
+        "regex": "<a[^>]+>DirectAdmin</a> Web Control Panel",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 1245,
+    "patterns": [
+      {
+        "regex": "(?:Portal <a[^>]+>Dokeos|@import \"[^\"]+dokeos_blue)",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 1259,
+    "patterns": [
+      {
+        "regex": "(?:<!-- Generated by Doxygen ([\\d.]+)|<link[^>]+doxygen\\.css)",
+        "version_group": 1,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 1261,
+    "patterns": [
+      {
+        "regex": "<!--[^>]*HFCM\\sby\\s99\\sRobots",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 1264,
+    "patterns": [
+      {
+        "regex": "<!--[^>]*(?:InstanceBeginEditable|Dreamweaver([^>]+)target|DWLayoutDefaultTable)",
+        "version_group": 1,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 1274,
+    "patterns": [
+      {
+        "regex": "<[^>]+(?:id=\"block[_-]commerce[_-]cart[_-]cart|class=\"commerce[_-]product[_-]field)",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 1292,
+    "patterns": [
+      {
+        "regex": "<title>ELOG Logbook Selection</title>",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 1317,
+    "patterns": [
+      {
+        "regex": "<(?:div|button) class=\"el-(?:table-column|table-filter|popper|pagination|pager|select-group|form|form-item|color-predefine|color-hue-slider|color-svpanel|color-alpha-slider|color-dropdown|color-picker|badge|tree|tree-node|select|message|dialog|checkbox|checkbox-button|checkbox-group|container|steps|carousel|menu|menu-item|submenu|menu-item-group|button|button-group|card|table|select-dropdown|row|tabs|notification|radio|progress|progress-bar|tag|popover|tooltip|cascader|cascader-menus|cascader-menu|time-spinner|spinner|spinner-inner|transfer|transfer-panel|rate|slider|dropdown|dropdown-menu|textarea|input|input-group|popup-parent|radio-group|main|breadcrumb|time-range-picker|date-range-picker|year-table|date-editor|range-editor|time-spinner|date-picker|time-panel|date-table|month-table|picker-panel|collapse|collapse-item|alert|select-dropdown|select-dropdown__empty|select-dropdown__wrap|select-dropdown__list|scrollbar|switch|carousel|upload|upload-dragger|upload-list|upload-cover|aside|input-number|header|message-box|footer|radio-button|step|autocomplete|autocomplete-suggestion|loading-parent|loading-mask|loading-spinner|)",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 1323,
+    "patterns": [
+      {
+        "regex": "<style>[\\s\\S]*\\.explain > \\.s[\\s\\S]*\\.explain > \\.ctr > \\.s",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 1349,
+    "patterns": [
+      {
+        "regex": "<link[^>]+?href=\"[^\"]+epoch(?:\\.min)?\\.css",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 1359,
+    "patterns": [
+      {
+        "regex": "<[^>]+ class ?= ?\"(?:e-control|[^\"]+ e-control)(?: )[^\"]* e-lib\\b",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 1368,
+    "patterns": [
+      {
+        "regex": "<iframe[^>]*[\\w]+\\.eveve\\.com",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 1400,
+    "patterns": [
+      {
+        "regex": "<img [^>]*src=\"[^/]*//[^/]*eway\\.com",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 1411,
+    "patterns": [
+      {
+        "regex": "<form[^>]+id=\"fastsearch\"",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 1412,
+    "patterns": [
+      {
+        "regex": "<input[^>]+ name=\"ParametricSearch",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 1420,
+    "patterns": [
+      {
+        "regex": "<!-- Factfinder",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 1426,
+    "patterns": [
+      {
+        "regex": "<!-- Powered by FaraPy.",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 1427,
+    "patterns": [
+      {
+        "regex": "<iframe[^>]+fareharbor",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 1434,
+    "patterns": [
+      {
+        "regex": "<a [^>]*href=\"https?://sites\\.fastspring\\.com",
+        "version_group": null,
+        "probability": 100
+      },
+      {
+        "regex": "<form [^>]*action=\"https?://sites\\.fastspring\\.com",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 1435,
+    "patterns": [
+      {
+        "regex": "<(?:iframe|img|form)[^>]+paynow\\.pmnts\\.io",
+        "version_group": null,
+        "probability": 100
+      },
+      {
+        "regex": "<(?:iframe)[^>]+FatZebraFrame",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 1459,
+    "patterns": [
+      {
+        "regex": "<div id=\"flarum-loading\"",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 1460,
+    "patterns": [
+      {
+        "regex": "<link[^>]* href=[^>]+flat-ui(?:\\.min)?\\.css",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 1462,
+    "patterns": [
+      {
+        "regex": "<!--[^>]+FlexCMP[^>v]+v\\. ([\\d.]+)",
+        "version_group": 1,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 1471,
+    "patterns": [
+      {
+        "regex": "<p id=\"poweredby\">[^<]+<a href=\"https?://fluxbb\\.org/\">",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 1473,
+    "patterns": [
+      {
+        "regex": "(?:<a[^>]+>Powered by Flyspray|<map id=\"projectsearchform)",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 1476,
+    "patterns": [
+      {
+        "regex": "<link[^>]* href=[^>]+(?:([\\d.]+)/)?(?:css/)?font-awesome(?:\\.min)?\\.css",
+        "version_group": 1,
+        "probability": 100
+      },
+      {
+        "regex": "<link[^>]* href=[^>]*kit\\-pro\\.fontawesome\\.com/releases/v([0-9.]+)/",
+        "version_group": 1,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 1488,
+    "patterns": [
+      {
+        "regex": "(?:<link [^>]*href=\"[^\\/]*\\/\\/www\\.fortune3\\.com\\/[^\"]*siterate\\/rate\\.css|Powered by <a [^>]*href=\"[^\"]+fortune3\\.com)",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 1489,
+    "patterns": [
+      {
+        "regex": "<div class=\"foswiki(?:Copyright|Page|Main)\">",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 1497,
+    "patterns": [
+      {
+        "regex": "<!-- \\* FreeTextBox v\\d \\((\\d+\\.\\d+\\.\\d+)",
+        "version_group": 1,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 1527,
+    "patterns": [
+      {
+        "regex": "<link[^>]+elements-page[^>\"]+css\\;confidence:25",
+        "version_group": null,
+        "probability": 100
+      },
+      {
+        "regex": "<div[^>]+phase-banner-alpha\\;confidence:25",
+        "version_group": null,
+        "probability": 100
+      },
+      {
+        "regex": "<div[^>]+phase-banner-beta\\;confidence:25",
+        "version_group": null,
+        "probability": 100
+      },
+      {
+        "regex": "<div[^>]+govuk-box-highlight\\;confidence:25",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 1528,
+    "patterns": [
+      {
+        "regex": "<link[^>]* href=[^>]*?govuk-frontend(?:[^>]*?([0-9a-fA-F]{7,40}|[\\d]+(?:.[\\d]+(?:.[\\d]+)?)?)|)[^>]*?(?:\\.min)?\\.css",
+        "version_group": 1,
+        "probability": 100
+      },
+      {
+        "regex": "<body[^>]+govuk-template__body\\;confidence:80",
+        "version_group": null,
+        "probability": 100
+      },
+      {
+        "regex": "<a[^>]+govuk-link\\;confidence:10",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 1529,
+    "patterns": [
+      {
+        "regex": "<link[^>]+govuk-template[^>\"]+css",
+        "version_group": null,
+        "probability": 100
+      },
+      {
+        "regex": "<link[^>]+govuk-template-print[^>\"]+css",
+        "version_group": null,
+        "probability": 100
+      },
+      {
+        "regex": "<link[^>]+govuk-template-ie6[^>\"]+css",
+        "version_group": null,
+        "probability": 100
+      },
+      {
+        "regex": "<link[^>]+govuk-template-ie7[^>\"]+css",
+        "version_group": null,
+        "probability": 100
+      },
+      {
+        "regex": "<link[^>]+govuk-template-ie8[^>\"]+css",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 1534,
+    "patterns": [
+      {
+        "regex": "<!--\\s+Powered by GX",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 1535,
+    "patterns": [
+      {
+        "regex": "<div id=\"gsNavBar\" class=\"gcBorder1\">",
+        "version_group": null,
+        "probability": 100
+      },
+      {
+        "regex": "<a href=\"http://gallery\\.sourceforge\\.net\"><img[^>]+Powered by Gallery\\s*(?:(?:v|Version)\\s*([0-9.]+))?",
+        "version_group": 1,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 1536,
+    "patterns": [
+      {
+        "regex": "(?:<link[^>]* href=\"templates/gambio/|<a[^>]content\\.php\\?coID=\\d|<!-- gambio eof -->|<!--[\\s=]+Shopsoftware by Gambio GmbH \\(c\\))",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 1541,
+    "patterns": [
+      {
+        "regex": "<a [^>]*onclick=\"gemius_hit",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 1542,
+    "patterns": [
+      {
+        "regex": "<link[^>]+?id=\"gxtheme_css_reference\"",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 1549,
+    "patterns": [
+      {
+        "regex": ">Gerrit Code Review</a>\\s*\"\\s*\\(([0-9.]+)\\)",
+        "version_group": 1,
+        "probability": 100
+      },
+      {
+        "regex": "<(?:div|style) id=\"gerrit_",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 1563,
+    "patterns": [
+      {
+        "regex": "<meta content=\"https?://[^/]+/assets/gitlab_logo-",
+        "version_group": null,
+        "probability": 100
+      },
+      {
+        "regex": "<header class=\"navbar navbar-fixed-top navbar-gitlab with-horizontal-nav\">",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 1565,
+    "patterns": [
+      {
+        "regex": "<div class=\"ui left\">\\n\\s+© Gitea Version: ([\\d.]+)",
+        "version_group": 1,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 1566,
+    "patterns": [
+      {
+        "regex": "Powered by <a href=\"https://gerrit\\.googlesource\\.com/gitiles/\">Gitiles<",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 1581,
+    "patterns": [
+      {
+        "regex": "(?:<link[^>]* href=[^>]+glyphicons(?:\\.min)?\\.css|<img[^>]* src=[^>]+glyphicons)",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 1604,
+    "patterns": [
+      {
+        "regex": "<div class=\"ui left\">\\n\\s+© \\d{4} Gogs Version: ([\\d.]+) Page:",
+        "version_group": 1,
+        "probability": 100
+      },
+      {
+        "regex": "<button class=\"ui basic clone button\" id=\"repo-clone-ssh\" data-link=\"gogs@",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 1608,
+    "patterns": [
+      {
+        "regex": "<amp-analytics [^>]*type=[\"']googleanalytics[\"']",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 1619,
+    "patterns": [
+      {
+        "regex": "<link[^>]* href=[^>]+fonts\\.(?:googleapis|google)\\.com",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 1629,
+    "patterns": [
+      {
+        "regex": "googletagmanager\\.com/ns\\.html[^>]+></iframe>",
+        "version_group": null,
+        "probability": 100
+      },
+      {
+        "regex": "<!-- (?:End )?Google Tag Manager -->",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 1641,
+    "patterns": [
+      {
+        "regex": "(?:<!--GrandNode |<a[^>]+grandnode - Powered by |Powered by: <a[^>]+nopcommerce)",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 1645,
+    "patterns": [
+      {
+        "regex": "<[^>]+gravatar\\.com/avatar/",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 1647,
+    "patterns": [
+      {
+        "regex": "<div class=(?:\"|')[^>]*gform_wrapper",
+        "version_group": null,
+        "probability": 100
+      },
+      {
+        "regex": "<div class=(?:\"|')[^>]*gform_body",
+        "version_group": null,
+        "probability": 100
+      },
+      {
+        "regex": "<ul [^>]*class=(?:\"|')[^>]*gform_fields",
+        "version_group": null,
+        "probability": 100
+      },
+      {
+        "regex": "<link [^>]*href=(?:\"|')[^>]*wp-content/plugins/gravityforms/css/",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 1648,
+    "patterns": [
+      {
+        "regex": "<img[^>]+/dsresource\\?objectid=",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 1665,
+    "patterns": [
+      {
+        "regex": "<p>Powered by <a[^>]+>GitList ([\\d.]+)",
+        "version_group": 1,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 1666,
+    "patterns": [
+      {
+        "regex": "<!-- git web interface version ([\\d.]+)?",
+        "version_group": 1,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 1676,
+    "patterns": [
+      {
+        "regex": "<p>Produced by <a href=\"http://www\\.haskell\\.org/haddock/\">Haddock</a> version ([0-9.]+)</p>",
+        "version_group": 1,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 1680,
+    "patterns": [
+      {
+        "regex": "<[^>]*type=[^>]text\\/x-handlebars-template",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 1691,
+    "patterns": [
+      {
+        "regex": "<[^>]*data-headjs-load",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 1709,
+    "patterns": [
+      {
+        "regex": "Powered by <a href=\"https?://hexo\\.io/?\"[^>]*>Hexo</",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 1714,
+    "patterns": [
+      {
+        "regex": "<svg[^>]*><desc>Created with Highcharts ([\\d.]*)",
+        "version_group": 1,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 1716,
+    "patterns": [
+      {
+        "regex": "<svg[^>]*><desc>Created with Highstock ([\\d.]*)",
+        "version_group": 1,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 1739,
+    "patterns": [
+      {
+        "regex": "<!-- Start of Async HubSpot",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 1769,
+    "patterns": [
+      {
+        "regex": "<link[^>]+ipb_[^>]+\\.css",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 1794,
+    "patterns": [
+      {
+        "regex": "<(?:link|a href) [^>]+ndxz-studio",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 1796,
+    "patterns": [
+      {
+        "regex": "Powered by\\s+(?:CERN )?<a href=\"http://(?:cdsware\\.cern\\.ch/indico/|indico-software\\.org|cern\\.ch/indico)\">(?:CDS )?Indico( [\\d\\.]+)?",
+        "version_group": 1,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 1804,
+    "patterns": [
+      {
+        "regex": "<!-- (?:Begin|End) Inspectlet Embed Code -->",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 1819,
+    "patterns": [
+      {
+        "regex": "<a href=\"https://www.intercom.com/intercom-link[^\"]+solution=customer-support[^>]+>We run on Intercom",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 1821,
+    "patterns": [
+      {
+        "regex": "<ish-root",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 1822,
+    "patterns": [
+      {
+        "regex": "(?:Powered by|System)\\s+(?:CERN )?<a (?:class=\"footer\" )?href=\"http://(?:cdsware\\.cern\\.ch(?:/invenio)?|invenio-software\\.org|cern\\.ch/invenio)(?:/)?\">(?:CDS )?Invenio</a>\\s*v?([\\d\\.]+)?",
+        "version_group": 1,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 1827,
+    "patterns": [
+      {
+        "regex": "<link[^>]* href=[^>]+ionicons(?:\\.min)?\\.css",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 1829,
+    "patterns": [
+      {
+        "regex": "<a[^>]*href=\"https://www\\.irroba\\.com\\.br",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 1845,
+    "patterns": [
+      {
+        "regex": "<link rel=\"alternate\" type=\"application/x-wiki\" title=\"Edit this page\" href=\"[^\"]*/ikiwiki\\.cgi",
+        "version_group": null,
+        "probability": 100
+      },
+      {
+        "regex": "<a href=\"/(?:cgi-bin/)?ikiwiki\\.cgi\\?do=",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 1846,
+    "patterns": [
+      {
+        "regex": "<imp:live-info sysid=\"[0-9a-f-]+\"(?: node_id=\"[0-9/]*\")? *\\/>",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 1867,
+    "patterns": [
+      {
+        "regex": "(?:<input[^>]+name=\"JTLSHOP|<a href=\"jtl\\.php)",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 1869,
+    "patterns": [
+      {
+        "regex": "<script id=\"staticAssetAggregatedJavascrip",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 1875,
+    "patterns": [
+      {
+        "regex": "<!-- Generated by javadoc -->",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 1876,
+    "patterns": [
+      {
+        "regex": "<span class=\"jenkins_ver\"><a href=\"https://jenkins\\.io/\">Jenkins ver\\. ([\\d.]+)",
+        "version_group": 1,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 1877,
+    "patterns": [
+      {
+        "regex": "<(?:div|aside) id=\"jetshop-branding\">",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 1912,
+    "patterns": [
+      {
+        "regex": "<div[^>]+data-pjax-container",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 1915,
+    "patterns": [
+      {
+        "regex": "<!--(?: JoomlaWorks \"K2\"| Start K2)",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 1934,
+    "patterns": [
+      {
+        "regex": "<link[^>]*\\s+href=[^>]*styles/kendo\\.common(?:\\.min)?\\.css[^>]*/>",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 1940,
+    "patterns": [
+      {
+        "regex": "<title>Kibana</title>",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 1957,
+    "patterns": [
+      {
+        "regex": "<!--[^>]+This website is powered by Koala Web Framework CMS",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 1959,
+    "patterns": [
+      {
+        "regex": "<input name=\"koha_login_context\" value=\"intranet\" type=\"hidden\">",
+        "version_group": null,
+        "probability": 100
+      },
+      {
+        "regex": "<a href=\"/cgi-bin/koha/",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 1961,
+    "patterns": [
+      {
+        "regex": "<html lang=\"en\" class=\"k-source-essays k-lens-essays\">",
+        "version_group": null,
+        "probability": 100
+      },
+      {
+        "regex": "<!--\\s+KOKEN DEBUGGING",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 1964,
+    "patterns": [
+      {
+        "regex": "<!--[^K>-]+Koobi ([a-z\\d.]+)",
+        "version_group": 1,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 1995,
+    "patterns": [
+      {
+        "regex": "<a [^>]*href=\"[^\"]+joinlede.com",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 1997,
+    "patterns": [
+      {
+        "regex": "<link[^>]+ rel=\"stylesheet/less\"",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2005,
+    "patterns": [
+      {
+        "regex": "<!-- Lightmon Engine Copyright Lightmon",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2006,
+    "patterns": [
+      {
+        "regex": "<link [^>]*href=\"[^\"]+lightbox(?:\\.min)?\\.css",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2008,
+    "patterns": [
+      {
+        "regex": "<!-- \\[START\\] 'blocks/head\\.rain' -->",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2021,
+    "patterns": [
+      {
+        "regex": " <a [^>]+Powered by Lithium",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2035,
+    "patterns": [
+      {
+        "regex": "<[^>]+(?:id|class)=\"livefyre",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2036,
+    "patterns": [
+      {
+        "regex": "<script [^>]*>[\\s\\S]*//counter\\.yadro\\.ru/hit",
+        "version_group": null,
+        "probability": 100
+      },
+      {
+        "regex": "<!--LiveInternet counter-->",
+        "version_group": null,
+        "probability": 100
+      },
+      {
+        "regex": "<!--/LiveInternet-->",
+        "version_group": null,
+        "probability": 100
+      },
+      {
+        "regex": "<a href=\"http://www\\.liveinternet\\.ru/click\"",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2038,
+    "patterns": [
+      {
+        "regex": "<[^>]{1,512}\\bwire:",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2041,
+    "patterns": [
+      {
+        "regex": "<iframe[^>]+\\blocalfocus\\b",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2044,
+    "patterns": [
+      {
+        "regex": "<link[^>]*/sites/[a-z\\d]{24}/theme/stylesheets",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2084,
+    "patterns": [
+      {
+        "regex": "<a[^>]+>Powered by MODX</a>",
+        "version_group": null,
+        "probability": 100
+      },
+      {
+        "regex": "<(?:link|script)[^>]+assets/snippets/\\;confidence:20",
+        "version_group": null,
+        "probability": 100
+      },
+      {
+        "regex": "<form[^>]+id=\"ajaxSearch_form\\;confidence:20",
+        "version_group": null,
+        "probability": 100
+      },
+      {
+        "regex": "<input[^>]+id=\"ajaxSearch_input\\;confidence:20",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2094,
+    "patterns": [
+      {
+        "regex": "<form [^>]*data-mailchimp-url",
+        "version_group": null,
+        "probability": 100
+      },
+      {
+        "regex": "<form [^>]*id=\"mc-embedded-subscribe-form\"",
+        "version_group": null,
+        "probability": 100
+      },
+      {
+        "regex": "<form [^>]*name=\"mc-embedded-subscribe-form\"",
+        "version_group": null,
+        "probability": 100
+      },
+      {
+        "regex": "<input [^>]*id=\"mc-email\"\\;confidence:20",
+        "version_group": null,
+        "probability": 100
+      },
+      {
+        "regex": "<!-- Begin MailChimp Signup Form -->",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2111,
+    "patterns": [
+      {
+        "regex": "<img[^>]+ alt=\"Powered by Mantis Bugtracker",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2129,
+    "patterns": [
+      {
+        "regex": "<link[^>]* href=\"[^\"]*material(?:\\.[\\w]+-[\\w]+)?(?:\\.min)?\\.css",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2130,
+    "patterns": [
+      {
+        "regex": "<link[^>]* href=\"[^\"]*materialize(?:\\.min)?\\.css",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2134,
+    "patterns": [
+      {
+        "regex": "<noscript> To use Mattermost, please enable JavaScript\\. </noscript>",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2145,
+    "patterns": [
+      {
+        "regex": "<body[^>]+class=\"mediawiki\"",
+        "version_group": null,
+        "probability": 100
+      },
+      {
+        "regex": "<(?:a|img)[^>]+>Powered by MediaWiki</a>",
+        "version_group": null,
+        "probability": 100
+      },
+      {
+        "regex": "<a[^>]+/Special:WhatLinksHere/",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2148,
+    "patterns": [
+      {
+        "regex": "(?:<iframe id=\"meebo-iframe\"|Meebo\\('domReady'\\))",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2151,
+    "patterns": [
+      {
+        "regex": "<!-- Rendered with Melis CMS V2",
+        "version_group": null,
+        "probability": 100
+      },
+      {
+        "regex": "<!-- Rendered with Melis Platform",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2157,
+    "patterns": [
+      {
+        "regex": "<div [^>]*class=[\"']mermaid[\"']>\\;confidence:90",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2159,
+    "patterns": [
+      {
+        "regex": "<link[^>]+__meteor-css__",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2160,
+    "patterns": [
+      {
+        "regex": "<!-- Methode uuid: \"[a-f\\d]+\" ?-->",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2165,
+    "patterns": [
+      {
+        "regex": "<input[^>]+name=\"__VIEWSTATE",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2171,
+    "patterns": [
+      {
+        "regex": "(?:<html [^>]*xmlns:w=\"urn:schemas-microsoft-com:office:excel\"|<!--\\s*(?:START|END) OF OUTPUT FROM EXCEL PUBLISH AS WEB PAGE WIZARD\\s*-->|<div [^>]*x:publishsource=\"?Excel\"?)",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2173,
+    "patterns": [
+      {
+        "regex": "(?:<html [^>]*xmlns:w=\"urn:schemas-microsoft-com:office:powerpoint\"|<link rel=\"?Presentation-XML\"? href=\"?[^\"]+\\.xml\"?>|<o:PresentationFormat>[^<]+</o:PresentationFormat>[^!]+<o:Slides>\\d+</o:Slides>(?:[^!]+<o:Version>([\\d.]+)</o:Version>)?)",
+        "version_group": 1,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2174,
+    "patterns": [
+      {
+        "regex": "(?:<html [^>]*xmlns:w=\"urn:schemas-microsoft-com:office:publisher\"|<!--[if pub]><xml>)",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2176,
+    "patterns": [
+      {
+        "regex": "(?:<html [^>]*xmlns:w=\"urn:schemas-microsoft-com:office:word\"|<w:WordDocument>|<div [^>]*class=\"?WordSection1[\" >]|<style[^>]*>[^>]*@page WordSection1)",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2179,
+    "patterns": [
+      {
+        "regex": "<link[^>]+?href=\"[^\"]+milligram(?:\\.min)?\\.css",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2186,
+    "patterns": [
+      {
+        "regex": "<!-- Thank you for using Misskey! @syuilo -->",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2197,
+    "patterns": [
+      {
+        "regex": "<!-- Site made with Mobirise Website Builder v([\\d.]+)",
+        "version_group": 1,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2203,
+    "patterns": [
+      {
+        "regex": "<link[^>]+href=[\"'][^\"]+mg-(?:core|plugins|templates)/",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2207,
+    "patterns": [
+      {
+        "regex": "<img[^>]+\\.mollom\\.com",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2220,
+    "patterns": [
+      {
+        "regex": "<img[^>]+moodlelogo",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2225,
+    "patterns": [
+      {
+        "regex": "<link [^>]*href=\"[^>]*\\/mt-content\\/[^>]*\\.css",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2266,
+    "patterns": [
+      {
+        "regex": "<link[^>]* href=[^>]+nv\\.d3(?:\\.min)?\\.css",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2295,
+    "patterns": [
+      {
+        "regex": "<!-- <meta name=\"NextGEN\" version=\"([\\d.]+)\" /> -->",
+        "version_group": 1,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2318,
+    "patterns": [
+      {
+        "regex": "<link [^>]*href=\"[^\"]+owl\\.carousel(?:\\.min)?\\.css",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2320,
+    "patterns": [
+      {
+        "regex": "<!--[^-]*OXID eShop Community Edition, Version (\\d+)",
+        "version_group": 1,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2321,
+    "patterns": [
+      {
+        "regex": "<!--[^-]*OXID eShop Enterprise Edition, Version (\\d+)",
+        "version_group": 1,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2330,
+    "patterns": [
+      {
+        "regex": "Powered by <a href=\"http://octopress\\.org\">",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2332,
+    "patterns": [
+      {
+        "regex": "<link[^>]* href=[^>]+/web/css/(?:web\\.assets_common/|website\\.assets_frontend/)\\;confidence:25",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2361,
+    "patterns": [
+      {
+        "regex": "<!-- (?:Start|End) Open Web Analytics Tracker -->",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2365,
+    "patterns": [
+      {
+        "regex": "<link href=\"/opencms/",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2375,
+    "patterns": [
+      {
+        "regex": "<!--[^>]+published by Open Text Web Solutions",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2402,
+    "patterns": [
+      {
+        "regex": "<script [^>]+data-requiremodule=\"oro/",
+        "version_group": null,
+        "probability": 100
+      },
+      {
+        "regex": "<script [^>]+data-requiremodule=\"oroui/",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2408,
+    "patterns": [
+      {
+        "regex": "<link[^>]+/owa/auth/([\\d\\.]+)/themes/resources",
+        "version_group": 1,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2411,
+    "patterns": [
+      {
+        "regex": "<body class=(?:\"|')[^\"']*oxygen-body",
+        "version_group": null,
+        "probability": 100
+      },
+      {
+        "regex": "<link [^>]*href=(?:\"|')[^>]*wp-content/plugins/oxygen/",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2412,
+    "patterns": [
+      {
+        "regex": "<br />Powered by <a href=\"https?://www\\.oscommerce\\.com",
+        "version_group": null,
+        "probability": 100
+      },
+      {
+        "regex": "<(?:input|a)[^>]+name=\"osCsid\"",
+        "version_group": null,
+        "probability": 100
+      },
+      {
+        "regex": "<(?:tr|td|table)class=\"[^\"]*infoBoxHeading",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2414,
+    "patterns": [
+      {
+        "regex": "<!--\\s+OTRS: Copyright",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2415,
+    "patterns": [
+      {
+        "regex": "<a href=\"https://owncloud\\.com\" target=\"_blank\">ownCloud Inc\\.</a><br/>Your Cloud, Your Data, Your Way!",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2417,
+    "patterns": [
+      {
+        "regex": "<\\/div>\\s*<!-- outerContainer -->\\s*<div\\s*id=\"printContainer\"><\\/div>",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2418,
+    "patterns": [
+      {
+        "regex": "<[^>]+Powered by PHP-Nuke",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2420,
+    "patterns": [
+      {
+        "regex": "Powered by <a href=\"[^>]+phpfusion",
+        "version_group": null,
+        "probability": 100
+      },
+      {
+        "regex": "Powered by <a href=\"[^>]+php-fusion",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2467,
+    "patterns": [
+      {
+        "regex": "powered by <a href=\"[^>]+getpelican\\.com",
+        "version_group": null,
+        "probability": 100
+      },
+      {
+        "regex": "powered by <a href=\"https?://pelican\\.notmyidea\\.org",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2472,
+    "patterns": [
+      {
+        "regex": "<[^>]+class=\"perc-region\"",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2483,
+    "patterns": [
+      {
+        "regex": "<[^>]+(?:class|id)=\"phabricator-",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2485,
+    "patterns": [
+      {
+        "regex": "<[^>]+id=\"phenomic(?:root)?\"",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2525,
+    "patterns": [
+      {
+        "regex": "<span[^>]+id=\"xvotes-0",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2538,
+    "patterns": [
+      {
+        "regex": "(?:<polymer-[^>]+|<link[^>]+rel=\"import\"[^>]+/polymer\\.html\")",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2546,
+    "patterns": [
+      {
+        "regex": "<div class=\"posterous",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2551,
+    "patterns": [
+      {
+        "regex": "<a[^>]+title=\"POWERGAP",
+        "version_group": null,
+        "probability": 100
+      },
+      {
+        "regex": "<input type=\"hidden\" name=\"shopid\"",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2573,
+    "patterns": [
+      {
+        "regex": "<div[^>]+id=\"pw_adbox_",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2575,
+    "patterns": [
+      {
+        "regex": "<!-- made with https://promobuilding\\.ru",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2581,
+    "patterns": [
+      {
+        "regex": "<html[^>]+data-ng-app=\"RbsChangeApp\"",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2588,
+    "patterns": [
+      {
+        "regex": "<link[^>]+(?:([\\d.])+/)?pure(?:-min)?\\.css",
+        "version_group": 1,
+        "probability": 100
+      },
+      {
+        "regex": "<div[^>]+class=\"[^\"]*pure-u-(?:sm-|md-|lg-|xl-)?\\d-\\d",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2597,
+    "patterns": [
+      {
+        "regex": "<link[^>]+pygments\\.css[\"']",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2599,
+    "patterns": [
+      {
+        "regex": "<link[^>]*/papaya-themes/",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2601,
+    "patterns": [
+      {
+        "regex": "<div id=\"particles-js\">",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2602,
+    "patterns": [
+      {
+        "regex": "<!--phpalbum ([.\\d\\s]+)-->",
+        "version_group": 1,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2603,
+    "patterns": [
+      {
+        "regex": "Powered by <a[^>]+phpBB",
+        "version_group": null,
+        "probability": 100
+      },
+      {
+        "regex": "<div class=phpbb_copyright>",
+        "version_group": null,
+        "probability": 100
+      },
+      {
+        "regex": "<[^>]+styles/(?:sub|pro)silver/theme",
+        "version_group": null,
+        "probability": 100
+      },
+      {
+        "regex": "<img[^>]+i_icon_mini",
+        "version_group": null,
+        "probability": 100
+      },
+      {
+        "regex": "<table class=\"[^\"]*forumline",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2605,
+    "patterns": [
+      {
+        "regex": "<!-- Generated by phpDocumentor",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2606,
+    "patterns": [
+      {
+        "regex": "(?:<title>phpPgAdmin</title>|<span class=\"appname\">phpPgAdmin)",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2608,
+    "patterns": [
+      {
+        "regex": "(?:Powered|Code) by <a href=\"[^\"]+phpwind\\.net",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2610,
+    "patterns": [
+      {
+        "regex": "<(?:script|link)[^>]/site/[a-z0-9/._-]+/resourceCached/[a-z0-9/._-]+",
+        "version_group": null,
+        "probability": 100
+      },
+      {
+        "regex": "<input[^>]+cbi:///cms/",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2613,
+    "patterns": [
+      {
+        "regex": "(?:<link [^>]*href=\"[^\"]*prettyPhoto(?:\\.min)?\\.css|<a [^>]*rel=\"prettyPhoto)",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2614,
+    "patterns": [
+      {
+        "regex": "Powered by <a href=\"[^>]+punbb",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2627,
+    "patterns": [
+      {
+        "regex": "<!-- Powered by Question2Answer",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2629,
+    "patterns": [
+      {
+        "regex": "<a href=\"[^>]+opensolution\\.org/\">CMS by",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2630,
+    "patterns": [
+      {
+        "regex": "<a href=\"[^>]+opensolution\\.org/\">(?:Shopping cart by|Sklep internetowy)",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2637,
+    "patterns": [
+      {
+        "regex": "<html[^>]+xmlns:change=",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2640,
+    "patterns": [
+      {
+        "regex": "<link[^>]+href=\"[^\"]*rdoc-style\\.css",
+        "version_group": null,
+        "probability": 100
+      },
+      {
+        "regex": "Generated by <a[^>]+href=\"https?://rdoc\\.rubyforge\\.org[^>]+>RDoc</a> ([\\d.]*\\d)",
+        "version_group": 1,
+        "probability": 100
+      },
+      {
+        "regex": "Generated by <a href=\"https:\\/\\/ruby\\.github\\.io\\/rdoc\\/\">RDoc<\\/a> ([\\d.]*\\d)",
+        "version_group": 1,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2646,
+    "patterns": [
+      {
+        "regex": "<link[^>]href=\"rainloop/v/([0-9.]+)/static/apple-touch-icon\\.png/>",
+        "version_group": 1,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2663,
+    "patterns": [
+      {
+        "regex": "<redoc ",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2669,
+    "patterns": [
+      {
+        "regex": "<!-- Powered by RebelMouse\\.",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2679,
+    "patterns": [
+      {
+        "regex": "<input[^>]+data-recurly",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2684,
+    "patterns": [
+      {
+        "regex": "(?:<a[^>]+Powered by Reddit|powered by <a[^>]+>reddit<)",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2686,
+    "patterns": [
+      {
+        "regex": "<!--\\s+Performance optimized by Redis Object Cache",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2687,
+    "patterns": [
+      {
+        "regex": "Powered by <a href=\"[^>]+Redmine",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2734,
+    "patterns": [
+      {
+        "regex": "<[^>]*beacon\\.riskified\\.com",
+        "version_group": null,
+        "probability": 100
+      },
+      {
+        "regex": "<[^>]*c\\.riskified\\.com",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2745,
+    "patterns": [
+      {
+        "regex": "<title>RoundCube",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2758,
+    "patterns": [
+      {
+        "regex": "<[^>]+/(?:sys_master|hybr|_ui/(?:.*responsive/)?(?:desktop|common(?:/images|/img|/css|ico)?))/",
+        "version_group": null,
+        "probability": 100
+      },
+      {
+        "regex": "<script[^>].*hybris.*.js",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2761,
+    "patterns": [
+      {
+        "regex": "<img[^>]+_tcm\\d{2,3}-\\d{6}\\.",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2767,
+    "patterns": [
+      {
+        "regex": "credits/?\" title=\"Simple Machines Forum\" target=\"_blank\" class=\"new_win\">SMF ([0-9.]+)</a>",
+        "version_group": 1,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2768,
+    "patterns": [
+      {
+        "regex": "(?:<!-- start of Sigsiu Online Business Index|<div[^>]* class=\"sobi2)",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2772,
+    "patterns": [
+      {
+        "regex": "(?:<title>SQL Buddy</title>|<[^>]+onclick=\"sideMainClick\\(\"home\\.php)",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2781,
+    "patterns": [
+      {
+        "regex": "<div [^>]*id=\"_saber\"",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2790,
+    "patterns": [
+      {
+        "regex": "<[^>]+=\"brandQuaternaryFgrs\"",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2801,
+    "patterns": [
+      {
+        "regex": "<script[^>]*>__SAPPER__",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2815,
+    "patterns": [
+      {
+        "regex": "<[^>]+id=\"HSScorpion",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2840,
+    "patterns": [
+      {
+        "regex": "<link[^>]+semantic(?:\\.min)\\.css\"",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2847,
+    "patterns": [
+      {
+        "regex": "<script[^>]*>\\s*Raven\\.config\\('[^']*', \\{\\s+release: '([0-9\\.]+)'",
+        "version_group": 1,
+        "probability": 100
+      },
+      {
+        "regex": "<script[^>]*src=\"[^\"]*browser\\.sentry\\-cdn\\.com/([0-9.]+)/bundle(?:\\.tracing)?(?:\\.min)?\\.js",
+        "version_group": 1,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2858,
+    "patterns": [
+      {
+        "regex": "<link[^>]* href=\"[^\"]*shapecss(?:\\.min)?\\.css",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2866,
+    "patterns": [
+      {
+        "regex": "<title>Shell In A Box</title>",
+        "version_group": null,
+        "probability": 100
+      },
+      {
+        "regex": "must be enabled for ShellInABox</noscript>",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2868,
+    "patterns": [
+      {
+        "regex": "<img[^>]*\\s+src=['\"]?https?://www\\.shinystat\\.com/cgi-bin/shinystat\\.cgi\\?[^'\"\\s>]*['\"\\s/>]",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2879,
+    "patterns": [
+      {
+        "regex": "<body class=\"shopatron",
+        "version_group": null,
+        "probability": 100
+      },
+      {
+        "regex": "<img[^>]+mediacdn\\.shopatron\\.com\\;confidence:50",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2899,
+    "patterns": [
+      {
+        "regex": "<link [^>]*href=\"https?://cdn\\.myshoptet\\.com/",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2900,
+    "patterns": [
+      {
+        "regex": "<title>Shopware ([\\d\\.]+) [^<]+",
+        "version_group": 1,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2909,
+    "patterns": [
+      {
+        "regex": "Powered by <a href=\"[^>]+SilverStripe",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2941,
+    "patterns": [
+      {
+        "regex": "<img[^>]+src=\"[^>]*/~/media/[^>]+\\.ashx",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2946,
+    "patterns": [
+      {
+        "regex": "(?:<a [^>]*href=\"[^/]*//[^/]*serving-sys\\.com/|<img [^>]*src=\"[^/]*//[^/]*serving-sys\\.com/)",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2954,
+    "patterns": [
+      {
+        "regex": "<link [^>]+(?:/([\\d.]+)/)?slick-theme\\.css",
+        "version_group": 1,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2957,
+    "patterns": [
+      {
+        "regex": "<link [^>]*href=\"[^/]*slimbox(?:-rtl)?\\.css",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2958,
+    "patterns": [
+      {
+        "regex": "<link [^>]*href=\"[^/]*slimbox2(?:-rtl)?\\.css",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2962,
+    "patterns": [
+      {
+        "regex": "<[^>]+/smartsite\\.(?:dws|shtml)\\?id=",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2967,
+    "patterns": [
+      {
+        "regex": "<!--Powered by Smart[sS]tore",
+        "version_group": null,
+        "probability": 100
+      },
+      {
+        "regex": "<meta property=\"sm:pagedata\"",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2968,
+    "patterns": [
+      {
+        "regex": "<section[^>]+class=\"g-stage",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2977,
+    "patterns": [
+      {
+        "regex": "<!-- begin SnapEngage",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2991,
+    "patterns": [
+      {
+        "regex": "<div class=[\"']dynamicDiv[\"'] id=[\"']dd\\.\\d\\.\\d(?:\\.\\d)?[\"']>",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 2996,
+    "patterns": [
+      {
+        "regex": "<link href=\"/css/sonar\\.css\\?v=([\\d.]+)",
+        "version_group": 1,
+        "probability": 100
+      },
+      {
+        "regex": "<title>SonarQube</title>",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 3012,
+    "patterns": [
+      {
+        "regex": "Created using <a href=\"https?://(?:www\\.)?sphinx-doc\\.org/\">Sphinx</a> ([0-9.]+)\\.",
+        "version_group": 1,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 3027,
+    "patterns": [
+      {
+        "regex": "(?:<link[^>]*/assets/store/all-[a-z\\d]{32}\\.css[^>]+>|<script>\\s*Spree\\.(?:routes|translations|api_key))",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 3043,
+    "patterns": [
+      {
+        "regex": "<small>SquirrelMail version ([.\\d]+)[^<]*<br ",
+        "version_group": 1,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 3044,
+    "patterns": [
+      {
+        "regex": "<!--\\s+Running (?:MySource|Squiz) Matrix",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 3056,
+    "patterns": [
+      {
+        "regex": "<link [^>]*?href=\"?[a-z]*?:?//cdn\\.statically\\.io/",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 3059,
+    "patterns": [
+      {
+        "regex": "<[^>]+data-controller",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 3073,
+    "patterns": [
+      {
+        "regex": "<!-- Powered by Strikingly\\.com",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 3074,
+    "patterns": [
+      {
+        "regex": "<input[^>]+data-stripe",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 3100,
+    "patterns": [
+      {
+        "regex": "<link[^>]+?href=\"[^\"]+sweet-alert(?:\\.min)?\\.css",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 3101,
+    "patterns": [
+      {
+        "regex": "<link[^>]+?href=\"[^\"]+sweetalert2(?:\\.min)?\\.css",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 3102,
+    "patterns": [
+      {
+        "regex": "<[^>]*swell\\.is",
+        "version_group": null,
+        "probability": 100
+      },
+      {
+        "regex": "<[^>]*swell\\.store",
+        "version_group": null,
+        "probability": 100
+      },
+      {
+        "regex": "<[^>]*schema\\.io",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 3106,
+    "patterns": [
+      {
+        "regex": "<a href=\"https?://www\\.sympa\\.org\">\\s*Powered by Sympa\\s*</a>",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 3109,
+    "patterns": [
+      {
+        "regex": "<noscript><div class='syno-no-script'",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 3110,
+    "patterns": [
+      {
+        "regex": "<(?:script|link)[^>]*sh(?:Core|Brush|ThemeDefault)",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 3115,
+    "patterns": [
+      {
+        "regex": "<[^>]+data-sr(?:-id)",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 3123,
+    "patterns": [
+      {
+        "regex": "<a href=\"http://www\\.tsoft\\.com\\.tr\" target=\"_blank\" title=\"T-Soft E-ticaret Sistemleri\">",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 3134,
+    "patterns": [
+      {
+        "regex": "<img [^>]*(?:title|alt)=\"This site is powered by the TWiki collaboration platform",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 3135,
+    "patterns": [
+      {
+        "regex": "<link[^>]+ href=\"/?typo3(?:conf|temp)/",
+        "version_group": null,
+        "probability": 100
+      },
+      {
+        "regex": "<img[^>]+ src=\"/?typo3(?:conf|temp)/",
+        "version_group": null,
+        "probability": 100
+      },
+      {
+        "regex": "<!--\n\tThis website is powered by TYPO3",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 3154,
+    "patterns": [
+      {
+        "regex": "<link [^>]*href=\"http://tamago\\.temonalab\\.com",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 3168,
+    "patterns": [
+      {
+        "regex": "<span class=\"versionTag\"><span class=\"vWord\">Version</span> ([\\d\\.]+)",
+        "version_group": 1,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 3178,
+    "patterns": [
+      {
+        "regex": "<!--[^>]+Tessitura Version: (\\d*\\.\\d*\\.\\d*)?",
+        "version_group": 1,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 3185,
+    "patterns": [
+      {
+        "regex": "<!--[^>]+The SEO Framework by Sybre Waaijer",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 3189,
+    "patterns": [
+      {
+        "regex": "<(?:link|style|script)[^>]+/assets/frontOffice/",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 3227,
+    "patterns": [
+      {
+        "regex": "<link[^>]*tictail\\.com",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 3228,
+    "patterns": [
+      {
+        "regex": "<[^>]*type=[^>]text\\/vnd\\.tiddlywiki",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 3233,
+    "patterns": [
+      {
+        "regex": "<link[^>]* href=[^>]+tilda(?:cdn|\\.ws|-blocks)",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 3249,
+    "patterns": [
+      {
+        "regex": "<a id=\"tracpowered",
+        "version_group": null,
+        "probability": 100
+      },
+      {
+        "regex": "Powered by <a href=\"[^\"]*\"><strong>Trac(?:[ /]([\\d.]+))?",
+        "version_group": 1,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 3281,
+    "patterns": [
+      {
+        "regex": "<iframe src=\"[^>]+tumblr\\.com",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 3313,
+    "patterns": [
+      {
+        "regex": "<link [^>]*href=\"[^\"]+use\\.typekit\\.(?:net|com)",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 3321,
+    "patterns": [
+      {
+        "regex": "<[^>]+class=\"[^\"]*(?:uk-container|uk-section)",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 3332,
+    "patterns": [
+      {
+        "regex": "<form [^>]*action=\"[^\"]*\\/cgi-bin\\/UCEditor\\?(?:[^\"]*&)?merchantId=[^\"]",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 3365,
+    "patterns": [
+      {
+        "regex": "<a[^>]+>Powered by uKnowva</a>",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 3369,
+    "patterns": [
+      {
+        "regex": "<div[^>]+/id=\"ue_widget\"",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 3375,
+    "patterns": [
+      {
+        "regex": "<a[^>]+>Powered By VP-ASP Shopping Cart</a>",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 3381,
+    "patterns": [
+      {
+        "regex": "<body id=\"(?:DiscussionsPage|vanilla)",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 3385,
+    "patterns": [
+      {
+        "regex": "<img [^>]*src=\"[^\"]+tracking\\.veoxa\\.com",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 3395,
+    "patterns": [
+      {
+        "regex": "<link[^>]* href=[^>]+(?:\\.vigbo\\.com|\\.gophotoweb\\.com)",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 3397,
+    "patterns": [
+      {
+        "regex": "<[^>]+=\"vgn-?ext",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 3403,
+    "patterns": [
+      {
+        "regex": "<div id=\"vmMainPage",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 3417,
+    "patterns": [
+      {
+        "regex": "<link [^>]*href=\"[^\"]*/vspfiles/\\;version:1",
+        "version_group": null,
+        "probability": 100
+      },
+      {
+        "regex": "<body [^>]*data-vn-page-name\\;version:2",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 3419,
+    "patterns": [
+      {
+        "regex": "<script [^>]*src=\"[^\"]*voog\\.com/tracker\\.js",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 3427,
+    "patterns": [
+      {
+        "regex": "<div id=\"copyright\">Powered by vBulletin",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 3431,
+    "patterns": [
+      {
+        "regex": "<!-- [a-zA-Z0-9_]+ [\\d/]+ [\\d:]+ WebDev \\d\\d ([\\d.]+) -->",
+        "version_group": 1,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 3432,
+    "patterns": [
+      {
+        "regex": "Powered by <a href=\"https://www\\.webxpay\\.com\">WEBXPAY<",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 3442,
+    "patterns": [
+      {
+        "regex": "<!--[^>]+WP Rocket",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 3472,
+    "patterns": [
+      {
+        "regex": "<html[^>]+data-wf-site",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 3484,
+    "patterns": [
+      {
+        "regex": "<link[^>]+rel=[\"']web-socket[\"']",
+        "version_group": null,
+        "probability": 100
+      },
+      {
+        "regex": "<(?:link|a)[^>]+href=[\"']wss?://",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 3485,
+    "patterns": [
+      {
+        "regex": "<img[^>]+id=\"DCSIMG\"[^>]+webtrends",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 3489,
+    "patterns": [
+      {
+        "regex": "<link[^>]+?href=\"[^\"]+usces_default(?:\\.min)?\\.css",
+        "version_group": null,
+        "probability": 100
+      },
+      {
+        "regex": "<!-- Welcart version : v([\\d.]+)",
+        "version_group": 1,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 3494,
+    "patterns": [
+      {
+        "regex": "<iframe src=\"[^>]+whooshkaa\\.com",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 3500,
+    "patterns": [
+      {
+        "regex": "<!-- WIKINGGRUPPEN",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 3501,
+    "patterns": [
+      {
+        "regex": "Powered by <a href=\"[^>]+WikkaWiki",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 3516,
+    "patterns": [
+      {
+        "regex": "(?:<a href=\"[^>]+wolfcms\\.org[^>]+>Wolf CMS(?:</a>)? inside|Thank you for using <a[^>]+>Wolf CMS)",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 3528,
+    "patterns": [
+      {
+        "regex": "<!--[^>]+WP-Super-Cache",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 3548,
+    "patterns": [
+      {
+        "regex": "<!--[^>]+wpCache",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 3551,
+    "patterns": [
+      {
+        "regex": "<!-- Powered by XMB",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 3554,
+    "patterns": [
+      {
+        "regex": "<xsl[^>]* version=\"(.+)\"",
+        "version_group": 1,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 3555,
+    "patterns": [
+      {
+        "regex": "<html[^>]data-xwiki-[^>]>",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 3558,
+    "patterns": [
+      {
+        "regex": "(?:jQuery\\.extend\\(true, XenForo|<a[^>]+>Forum software by XenForo™|<!--XF:branding|<html[^>]+id=\"XenForo\")",
+        "version_group": null,
+        "probability": 100
+      },
+      {
+        "regex": "<html id=\"XF\" ",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 3559,
+    "patterns": [
+      {
+        "regex": "<input type=\"hidden\" name=\"_sys_bind_\\d+\" id=\"_sys_bind_\\d+\" />",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 3561,
+    "patterns": [
+      {
+        "regex": "Powered by <a href=\"http://www\\.xonic-solutions\\.de/index\\.php\" target=\"_blank\">xonic-solutions Shopsoftware</a>",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 3566,
+    "patterns": [
+      {
+        "regex": "<link[^>]* href=\"[^\"]*xcharts(?:\\.min)?\\.css",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 3567,
+    "patterns": [
+      {
+        "regex": "<div class=\"copyright\">[^<]+<a[^>]+>xt:Commerce",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 3571,
+    "patterns": [
+      {
+        "regex": "(?:<html[^>]* yuilibrary\\.com/rdf/[\\d.]+/yui\\.rdf|<body[^>]+class=\"yui3-skin-sam)",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 3572,
+    "patterns": [
+      {
+        "regex": "Powered by <a href=\"[^>]+yabbforum",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 3574,
+    "patterns": [
+      {
+        "regex": "<link[^>]+store\\.yahoo\\.net",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 3575,
+    "patterns": [
+      {
+        "regex": "<!-- (?:End )?Yahoo! Tag Manager -->",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 3582,
+    "patterns": [
+      {
+        "regex": "<yatag class=\"ya-partner__ads\">",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 3595,
+    "patterns": [
+      {
+        "regex": "<!-- This site is optimized with the Yoast SEO Premium plugin v([^\\s]+) ",
+        "version_group": 1,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 3596,
+    "patterns": [
+      {
+        "regex": "<!-- This site is optimized with Yoast SEO for Shopify -->",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 3607,
+    "patterns": [
+      {
+        "regex": "no-title=\"YouTrack\">",
+        "version_group": null,
+        "probability": 100
+      },
+      {
+        "regex": "data-reactid=\"[^\"]+\">youTrack ([0-9.]+)<",
+        "version_group": 1,
+        "probability": 100
+      },
+      {
+        "regex": "type=\"application/opensearchdescription\\+xml\" title=\"YouTrack\"/>",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 3608,
+    "patterns": [
+      {
+        "regex": "<(?:param|embed|iframe)[^>]+youtube(?:-nocookie)?\\.com/(?:v|embed)",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 3610,
+    "patterns": [
+      {
+        "regex": "<!-- ZK [.\\d\\s]+-->",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 3611,
+    "patterns": [
+      {
+        "regex": "<link[^>]+foundation[^>\"]+css",
+        "version_group": null,
+        "probability": 100
+      },
+      {
+        "regex": "<div [^>]*class=\"[^\"]*(?:small|medium|large)-\\d{1,2} columns",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 3612,
+    "patterns": [
+      {
+        "regex": "<body[^>]+zbxCallPostScripts",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  },
+  {
+    "product_id": 3617,
+    "patterns": [
+      {
+        "regex": "<img [^>]*src=\"[^\"]+ad\\.zanox\\.com",
+        "version_group": null,
+        "probability": 100
+      }
+    ]
+  }
+]
