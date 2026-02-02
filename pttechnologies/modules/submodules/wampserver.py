@@ -134,7 +134,7 @@ def _match_pattern(content: str, pattern_def: Dict[str, Any], args: object) -> O
         return None
     
     products = product.get('products', [])
-    technology_name = products[0] if products else product.get('our_name', 'Unknown')
+    technology_name = product.get('our_name', 'Unknown')
     category_name = product_manager.get_category_name(product.get('category_id'))
     
     result = {
