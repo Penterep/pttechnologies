@@ -115,7 +115,8 @@ class Summary:
     def _categorize_technologies(self, technologies):
         """
         Categorize technologies based on their type and calculate probabilities.
-        Merges records with same technology/product_id but different versions into ranges.
+        Shows only the most specific version per technology (same display_name, product_id, technology_type).
+        Duplicates are only shown in verbose mode (-vv).
         
         Args:
             technologies: List of technology information dictionaries.
@@ -168,6 +169,8 @@ class Summary:
             range_records = [r for r in records if r.get("version_min") or r.get("version_max")]
             version_records = [r for r in records if not (r.get("version_min") or r.get("version_max"))]
             
+            all_entries = []
+            
             # 1. Add version range entry if exists
             if range_records:
                 max_probability = max(r.get("probability", 0) for r in range_records)
@@ -187,9 +190,10 @@ class Summary:
                     "version_max": version_max,
                     "probability": max_probability,
                     "type": technology_type,
-                    "product_id": product_id
+                    "product_id": product_id,
+                    "specificity": 1
                 }
-                categorized[category].append(tech_entry)
+                all_entries.append(tech_entry)
             
             # 2. Add specific version entries
             if version_records:
@@ -210,9 +214,26 @@ class Summary:
                         "version_max": None,
                         "probability": max_prob,
                         "type": technology_type,
-                        "product_id": product_id
+                        "product_id": product_id,
+                        "specificity": 2 if ver else 0
                     }
-                    categorized[category].append(tech_entry)
+                    all_entries.append(tech_entry)
+            
+            # Select only the most specific version(s) for display
+            if all_entries:
+                all_entries.sort(key=lambda x: (x["specificity"], x["probability"]), reverse=True)
+                
+                if self.args.verbose:
+                    # In verbose mode, mark duplicates (all except first) for ADDITIONS display
+                    for idx, entry in enumerate(all_entries):
+                        entry["is_duplicate"] = (idx > 0)  # First entry is primary, rest are duplicates
+                        entry.pop("specificity", None)
+                        categorized[category].append(entry)
+                else:
+                    # Normal mode: only show the best entry
+                    best_entry = all_entries[0]
+                    best_entry.pop("specificity", None)
+                    categorized[category].append(best_entry)
         
         for category in categorized:
             categorized[category].sort(key=lambda x: x["probability"], reverse=True)
@@ -312,7 +333,12 @@ class Summary:
 
                 tech_display += f" ({tech['probability']}%)"
                 
-                ptprint(f"{tech_display}", "TEXT", not self.args.json, indent=8, end=" ")
+                # In verbose mode, show duplicates (less specific versions) as ADDITIONS
+                is_duplicate = tech.get("is_duplicate", False)
+                if is_duplicate and self.args.verbose:
+                    ptprint(f"{tech_display}", "ADDITIONS", not self.args.json, indent=8, colortext=True, end=" ")
+                else:
+                    ptprint(f"{tech_display}", "TEXT", not self.args.json, indent=8, end=" ")
                 
                 product_id = tech.get("product_id")
                 if product_id:
@@ -411,9 +437,7 @@ class Summary:
             Dictionary representing a single technology node.
         """
         node_key = str(uuid.uuid4())
-        
-        parent_type = self._get_parent_type(data.get("node_target_type"))
-        
+                
         description = self._create_node_description(data)
         
         # Get product_id from data if available
@@ -430,7 +454,7 @@ class Summary:
             "type": "software",
             "key": node_key,
             "parent": None,
-            "parentType": parent_type,
+            "parentType": None,
             "properties": {
                 "software_type": self._map_software_type(data.get("technology_type"), product_id),
                 "name": technology,
@@ -443,22 +467,6 @@ class Summary:
         
         return node
     
-    def _get_parent_type(self, node_target_type):
-        """
-        Map node target type to parent type.
-        
-        Args:
-            node_target_type: Target type from technology mapping.
-            
-        Returns:
-            String representing the parent type.
-        """
-        mapping = {
-            "device": "group_software_device",
-            "service": "group_software_service", 
-            "web_app": "group_software_web_app"
-        }
-        return mapping.get(node_target_type, "group_software_device")
     
     def _map_software_type(self, technology_type, product_id=None):
         """
