@@ -276,14 +276,16 @@ class COOK:
             return
         
         # Use our_name instead of products[0] to avoid lowercase issue
-        technology = product.get("our_name", "Unknown")
+        products = product.get('products', [])
+        technology = products[0] if products else product.get('our_name', 'Unknown')
+        display_name = product.get("our_name", "Unknown")
         technology_type = self.product_manager.get_category_name(product.get("category_id"))
         
         description = pattern.get("description", "")
         probability = pattern.get("probability", 100)
         
         # ALWAYS display (can show same tech from multiple cookies)
-        self._display_result(technology, technology_type, cookie_name, cookie_value, probability)
+        self._display_result(display_name, technology_type, cookie_name, cookie_value, probability)
         
         # STORAGE: Only store once per product_id (deduplication)
         if product_id not in stored_products:
