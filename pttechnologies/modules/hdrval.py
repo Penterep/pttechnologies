@@ -743,7 +743,7 @@ class HDRVAL:
             technology=tech_name,
             version=version,
             technology_type=tech_type,
-            vulnerability="PTV-WEB-INFO-SRVHDR",
+            vulnerability="PTV-WEB-INFO-TEHDR",
             description=description,
             probability=probability,
             product_id=product_id
