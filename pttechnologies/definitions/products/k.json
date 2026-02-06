@@ -221,17 +221,6 @@
       "_letter": "k"
     },
     {
-      "id": 1935,
-      "our_name": "Kentico CMS",
-      "vendor": "kentico",
-      "products": [
-        "kentico_cms"
-      ],
-      "cve_details_url": null,
-      "category_id": 16,
-      "_letter": "k"
-    },
-    {
       "id": 1936,
       "our_name": "Keptify",
       "vendor": "keptify",

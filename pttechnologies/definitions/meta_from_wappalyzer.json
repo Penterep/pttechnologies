@@ -986,7 +986,7 @@
       },
       {
         "regex": "Kentico CMS ([\\d.R]+ \\(build [\\d.]+\\))",
-        "product_id": 1935,
+        "product_id": 79,
         "version_group": 1
       },
       {

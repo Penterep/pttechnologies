@@ -686,7 +686,7 @@
   },
   {
     "name_regex": "^CMSPreferredCulture$",
-    "product_id": 1935,
+    "product_id": 79,
     "description": "Kentico CMS cookie"
   },
   {
