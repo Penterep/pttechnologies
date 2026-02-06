@@ -62,7 +62,7 @@ def analyze(tech_info: Dict[str, Any], args: object, helpers: object) -> Dict[st
             is_php_extension = component.get('category_id') == 15
             indent_prefix = "    " if is_php_extension else ""
             
-            info_lines = [f"{indent_prefix}{component['technology']}{version_str}{category_str}{probability_str}"]
+            info_lines = [f"{indent_prefix}{component['display_name']}{version_str}{category_str}{probability_str}"]
             
             if component.get('matched_text'):
                 info_lines.append(f"    Match: '{component['matched_text']}'")
@@ -76,7 +76,7 @@ def analyze(tech_info: Dict[str, Any], args: object, helpers: object) -> Dict[st
                 version=component.get('version'),
                 technology_type=component['category'],
                 probability=component.get('probability', 100),
-                description=f"PHPInfo: {component['technology']}",
+                description=f"PHPInfo: {component['display_name']}",
                 product_id=product_id
             )
 
@@ -174,7 +174,9 @@ def _match_pattern(content: str, pattern_def: Dict[str, Any], args: object) -> O
     if not product:
         return None
     
-    technology_name = product.get('our_name', 'Unknown')
+    products = product.get('products', [])
+    technology_name = products[0]
+    display_name = product.get('our_name', 'Unknown')
     category_id = product.get('category_id')
     category_name = product_manager.get_category_name(category_id)
     vendor = product.get('vendor', '')
@@ -183,6 +185,7 @@ def _match_pattern(content: str, pattern_def: Dict[str, Any], args: object) -> O
         'name': pattern_def.get('name', 'Unknown'),
         'product_id': product_id,
         'technology': technology_name,
+        'display_name': display_name,
         'category': category_name,
         'category_id': category_id,
         'vendor': vendor,
@@ -230,7 +233,7 @@ def _deduplicate_components(components: List[Dict[str, Any]]) -> List[Dict[str, 
     }
     
     for component in components:
-        tech_key = component['technology'].lower()
+        tech_key = component['display_name'].lower()
         
         if tech_key not in unique:
             unique[tech_key] = component
