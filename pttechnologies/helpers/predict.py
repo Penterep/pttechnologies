@@ -434,7 +434,7 @@ class Predict:
                 sorted_sources = sorted(sources, key=lambda x: (-x[1], x[0] or ''))
                 for source_name, source_prob in sorted_sources:
                     source_name = source_name.split('(')[0].strip() if '(' in source_name else source_name
-                    ptprint(f"        ({source_prob}%) {source_name}", "ADDITIONS", not self.args.json, colortext=True)
+                    ptprint(f"{source_name} ({source_prob}%)", "ADDITIONS", not self.args.json, indent=8, colortext=True)
 
     def match_condition(self, rec, cond):
         """
