@@ -2,10 +2,13 @@
 Test web server identification via cookie length behavior.
 
 This module implements a test that probes how a web server responds to
-HTTP requests with varying cookie header lengths. By analyzing the pattern of
+HTTP requests with varying Cookie header lengths. By analyzing the pattern of
 HTTP status codes returned for different cookie sizes, it attempts to
 identify the underlying web server technology based on predefined
 response signatures loaded from a JSON definitions file.
+
+Note: This module tests ONLY the Cookie header length, without any other
+headers, to isolate the server's cookie-specific size limits.
 
 Includes:
 - COOKLEN class to perform the cookie length behavior test.
@@ -27,8 +30,11 @@ __TESTLABEL__ = "Test cookie length behavior to identify web server"
 
 class COOKLEN:
     """
-    Class to test how a web server reacts to various cookie header lengths and
+    Class to test how a web server reacts to various Cookie header lengths and
     identify the web server technology based on response patterns.
+    
+    Tests are performed with ONLY the Cookie header present (no other headers)
+    to isolate server-specific cookie size limits.
     """
 
     def __init__(self, args: object, ptjsonlib: object, helpers: object, http_client: object, responses: StoredResponses) -> None:
@@ -47,9 +53,9 @@ class COOKLEN:
         # 8183:  Nginx/LiteSpeed boundary    (Nginx: 200 → LiteSpeed: 400)
         # 8183:  Apache/Nginx boundary    (Apache: 200 → Nginx: 400)
         # 8183:  LiteSpeed/Nginx boundary (LiteSpeed: 200 → Nginx: 400) 
-        # 16220: Apache/LiteSpeed boundary (Apache: 400 → LiteSpeed: 200)
+        # 16215: Apache/LiteSpeed boundary (Apache: 400 → LiteSpeed: 200)
         # 16230: LiteSpeed/Microsoft-HTTPAPI boundary (LiteSpeed: 400 → HTTPAPI: 200)
-        self.lengths = [8180, 8182, 8183, 16220 , 16230, 32000, 48000, 64000, 140000]
+        self.lengths = [8180, 8182, 8183, 16215 , 16230, 32000, 48000, 64000, 140000]
         self.definitions = self.helpers.load_definitions("cooklen.json")
 
     def run(self) -> None:
@@ -57,8 +63,9 @@ class COOKLEN:
         Executes the cookie length test for the current context.
 
         This method performs the cookie length analysis by sending requests with
-        increasingly large cookie headers. It evaluates the server responses
-        and attempts to identify the web server technology based on response patterns.
+        increasingly large Cookie headers (without any other headers). It evaluates 
+        the server responses and attempts to identify the web server technology 
+        based on response patterns to different cookie sizes.
         """
 
         ptprint(__TESTLABEL__, "TITLE", not self.args.json, colortext=True)
@@ -70,7 +77,8 @@ class COOKLEN:
         for length in self.lengths:
             cookie_value = "a" * max(1, length - 11)
             
-            headers = dict(getattr(self.args, "headers", {}) or {})
+            # Use ONLY Cookie header - no other headers to test pure cookie length limits
+            headers = {}
             headers['Cookie'] = f'testcookie={cookie_value}'
             
             # Construct URL: base_url + base_path + "/"
