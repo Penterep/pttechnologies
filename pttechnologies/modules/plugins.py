@@ -74,7 +74,9 @@ class PLUGINS:
         plugin_urls = self._extract_plugin_urls(html, full_base_url)
         
         if self.args.verbose:
-            ptprint(f"Found {len(plugin_urls)} plugin references", "ADDITIONS", not self.args.json, indent=4, colortext=True)
+            ptprint(f"Found plugin references:", "ADDITIONS", not self.args.json, indent=4, colortext=True)
+            for plugin_url in plugin_urls:
+                ptprint(plugin_url, "ADDITIONS", not self.args.json, indent=8, colortext=True)
 
         for plugin_url in plugin_urls:
             self._analyze_plugin(plugin_url, full_base_url, html)

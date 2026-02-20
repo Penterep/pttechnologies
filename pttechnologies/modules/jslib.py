@@ -55,7 +55,9 @@ class JSLIB:
         js_urls = self._extract_js_urls(html, full_base_url)
         
         if self.args.verbose:
-            ptprint(f"Found {len(js_urls)} JavaScript files", "ADDITIONS", not self.args.json, indent=4, colortext=True)
+            ptprint(f"Found JavaScript files:", "ADDITIONS", not self.args.json, indent=4, colortext=True)
+            for js_url in js_urls:
+                ptprint(js_url, "ADDITIONS", not self.args.json, indent=8, colortext=True)
 
         for js_url in js_urls:
             self._analyze_js_file(js_url)
