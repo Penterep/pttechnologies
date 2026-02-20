@@ -143,6 +143,16 @@ class Summary:
             if not technology_type:
                 continue
             
+            # Normalize technology_type using product database if product_id is available
+            if product_id:
+                product = self.product_manager.get_product_by_id(product_id)
+                if product:
+                    category_id = product.get("category_id")
+                    if category_id:
+                        normalized_type = self.product_manager.get_category_name(category_id)
+                        if normalized_type:
+                            technology_type = normalized_type
+            
             # Group key: same technology, product_id, and type
             group_key = (technology, product_id, technology_type)
             
@@ -167,7 +177,7 @@ class Summary:
             
             # Separate records into ranges and specific versions (including None)
             range_records = [r for r in records if r.get("version_min") or r.get("version_max")]
-            version_records = [r for r in records if not (r.get("version_min") or r.get("version_max"))]
+            version_records = [r for r in records if (r.get("version")) or not (r.get("version_min") or (r.get("version_max")))]
             
             all_entries = []
             
