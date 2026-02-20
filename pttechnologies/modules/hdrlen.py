@@ -1,21 +1,22 @@
 """
-Test web server identification via cookie length behavior.
+Test web server identification via total header length behavior.
 
 This module implements a test that probes how a web server responds to
-HTTP requests with varying Cookie header lengths. By analyzing the pattern of
-HTTP status codes returned for different cookie sizes, it attempts to
+HTTP requests with varying total header lengths. By analyzing the pattern of
+HTTP status codes returned for different total header sizes, it attempts to
 identify the underlying web server technology based on predefined
 response signatures loaded from a JSON definitions file.
 
-Note: This module tests ONLY the Cookie header length, without any other
-headers, to isolate the server's cookie-specific size limits.
+Note: This module tests the total length of all headers combined, as servers
+behave differently based on the sum of all headers rather than individual
+header lengths.
 
 Includes:
-- COOKLEN class to perform the cookie length behavior test.
+- HDRLEN class to perform the header length behavior test.
 - run() function as an entry point to execute the test.
 
 Usage:
-    COOKLEN(args, ptjsonlib, helpers, http_client, responses).run()
+    HDRLEN(args, ptjsonlib, helpers, http_client, responses).run()
 """
 
 from urllib.parse import urlparse
@@ -25,16 +26,17 @@ from helpers.stored_responses import StoredResponses
 from helpers.products import get_product_manager
 from helpers.result_storage import storage
 
-__TESTLABEL__ = "Test cookie length behavior to identify web server"
+__TESTLABEL__ = "Test total header length behavior to identify web server"
 
 
-class COOKLEN:
+class HDRLEN:
     """
-    Class to test how a web server reacts to various Cookie header lengths and
+    Class to test how a web server reacts to various total header lengths and
     identify the web server technology based on response patterns.
     
-    Tests are performed with ONLY the Cookie header present (no other headers)
-    to isolate server-specific cookie size limits.
+    Tests are performed by sending requests with varying total header lengths.
+    Servers behave differently based on the sum of all headers, which allows
+    for web server identification.
     """
 
     def __init__(self, args: object, ptjsonlib: object, helpers: object, http_client: object, responses: StoredResponses) -> None:
@@ -48,7 +50,7 @@ class COOKLEN:
         self.response_hp = responses.resp_hp
         self.response_404 = responses.resp_404
 
-        # Cookie Length Thresholds for Web Server Fingerprinting
+        # Header Length Thresholds for Web Server Fingerprinting
         # =====================================================
         # 8183:  Nginx/LiteSpeed boundary    (Nginx: 200 → LiteSpeed: 400)
         # 8183:  Apache/Nginx boundary    (Apache: 200 → Nginx: 400)
@@ -56,16 +58,16 @@ class COOKLEN:
         # 16215: Apache/LiteSpeed boundary (Apache: 400 → LiteSpeed: 200)
         # 16230: LiteSpeed/Microsoft-HTTPAPI boundary (LiteSpeed: 400 → HTTPAPI: 200)
         self.lengths = [8180, 8182, 8183, 16215 , 16230, 32000, 48000, 64000, 140000]
-        self.definitions = self.helpers.load_definitions("cooklen.json")
+        self.definitions = self.helpers.load_definitions("hdrlen.json")
 
     def run(self) -> None:
         """
-        Executes the cookie length test for the current context.
+        Executes the header length test for the current context.
 
-        This method performs the cookie length analysis by sending requests with
-        increasingly large Cookie headers (without any other headers). It evaluates 
+        This method performs the header length analysis by sending requests with
+        increasingly large total header lengths. It evaluates 
         the server responses and attempts to identify the web server technology 
-        based on response patterns to different cookie sizes.
+        based on response patterns to different total header sizes.
         """
 
         ptprint(__TESTLABEL__, "TITLE", not self.args.json, colortext=True)
@@ -77,7 +79,7 @@ class COOKLEN:
         for length in self.lengths:
             cookie_value = "a" * max(1, length - 11)
             
-            # Use ONLY Cookie header - no other headers to test pure cookie length limits
+            # Use Cookie header to achieve desired total header length
             headers = {}
             headers['Cookie'] = f'testcookie={cookie_value}'
             
@@ -123,7 +125,7 @@ class COOKLEN:
                     product_id=product_id
                 )
         else:
-            ptprint("No matching web server identified from cookie length behavior", "INFO", not self.args.json, indent=4)
+            ptprint("No matching web server identified from header length behavior", "INFO", not self.args.json, indent=4)
 
     def _identify_server_exact(self, observed_statuses: list):
         """
@@ -131,7 +133,7 @@ class COOKLEN:
         Only returns match if there's 100% exact pattern match for high confidence.
 
         Args:
-            observed_statuses: List of HTTP status codes for each tested cookie length.
+            observed_statuses: List of HTTP status codes for each tested header length.
 
         Returns:
             Tuple of (technology_name, probability, product_id) if exact match found, otherwise (None, None, None).
@@ -163,5 +165,5 @@ class COOKLEN:
 
 
 def run(args: object, ptjsonlib: object, helpers: object, http_client: object, responses: StoredResponses):
-    """Entry point to run the COOKLEN test."""
-    COOKLEN(args, ptjsonlib, helpers, http_client, responses).run()
+    """Entry point to run the HDRLEN test."""
+    HDRLEN(args, ptjsonlib, helpers, http_client, responses).run()
