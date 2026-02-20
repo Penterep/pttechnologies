@@ -62,8 +62,9 @@ class SOURCES:
                 return
 
         base_url = self.args.url.rstrip("/")
+        base_path = getattr(self.args, 'base_path', '') or ''
         
-        detected_technologies = self._dictionary_attack(base_url)
+        detected_technologies = self._dictionary_attack(base_url, base_path)
         
         if detected_technologies:
             for tech in detected_technologies:
@@ -71,12 +72,13 @@ class SOURCES:
         else:
             ptprint("No specific technology files were found", "INFO", not self.args.json, indent=4)
 
-    def _dictionary_attack(self, base_url):
+    def _dictionary_attack(self, base_url, base_path):
         """
         Attempts to detect technologies by checking for specific files.
 
         Args:
             base_url (str): Base URL to test.
+            base_path (str): Base path to append test strings after.
 
         Returns:
             list: List of detected technology dictionaries with metadata.
@@ -92,7 +94,9 @@ class SOURCES:
                 if not file_path:
                     continue
                     
-                test_url = f"{base_url}/{file_path}"
+                # Construct path: base_path/file_path
+                test_path = f"{base_path}/{file_path}" if base_path else f"/{file_path}"
+                test_url = urljoin(base_url, test_path)
                 resp = self._check_file_presence(test_url)
                 
                 if resp:
@@ -257,19 +261,11 @@ class SOURCES:
             status_msg = f"Found: {test_url} [{status_code}]"
             ptprint(status_msg, "ADDITIONS", not self.args.json, indent=4, colortext=True)
         
-        # Get vendor from product if product_id is available
-        vendor = None
-        if product_id:
-            product = self.product_manager.get_product_by_id(product_id)
-            if product:
-                vendor = product.get('vendor')
-        
         storage.add_to_storage(
             technology=technology, 
             technology_type=category, 
             probability=probability,
-            product_id=product_id,
-            vendor=vendor
+            product_id=product_id
         )
                 
         ptprint(f"{display_name} ({category})", "VULN", not self.args.json, indent=4, end=" ")
@@ -314,7 +310,7 @@ class SOURCES:
                     if self.args.verbose and len(lines) > 1:
                         for detail_line in lines[1:]:
                             if detail_line.strip():
-                                ptprint(f"{detail_line.strip()}", "ADDITIONS", not self.args.json, indent=4, colortext=True)
+                                ptprint(f"{detail_line.strip()}", "ADDITIONS", not self.args.json, indent=indent_level, colortext=True)
                     
                     last_space_idx = display_line.rfind(' ')
                     if last_space_idx != -1:
