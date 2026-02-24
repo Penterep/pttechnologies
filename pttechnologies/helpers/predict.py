@@ -102,10 +102,29 @@ class Predict:
         
         for rule in self.definitions:
             if self._rule_conditions_met(rule, records):
-                predictions = self._create_predictions_from_rule(rule)
+                matching_records = self._get_matching_records(rule, records)
+                predictions = self._create_predictions_from_rule(rule, matching_records)
                 all_predictions.extend(predictions)
                 
         return all_predictions
+
+    def _get_matching_records(self, rule, records):
+        """
+        Return all records that satisfy at least one when-condition of a rule.
+        
+        Args:
+            rule: Prediction rule dictionary with 'when' conditions.
+            records: List of scan result records to check against.
+            
+        Returns:
+            List of records that matched any condition in the rule.
+        """
+        matching = []
+        for condition in rule.get("when", []):
+            for rec in records:
+                if self.match_condition(rec, condition) and rec not in matching:
+                    matching.append(rec)
+        return matching
 
     def _collect_plugin_dependencies(self, records):
         """
@@ -203,12 +222,13 @@ class Predict:
                 return False
         return True
 
-    def _create_predictions_from_rule(self, rule):
+    def _create_predictions_from_rule(self, rule, matching_records=None):
         """
         Create prediction objects from a rule's predict items.
         
         Args:
             rule: Rule dictionary containing 'predict' items to process.
+            matching_records: Records that satisfied the rule's when-conditions.
             
         Returns:
             List of prediction dictionaries with technology metadata.
@@ -231,18 +251,63 @@ class Predict:
             storage_name = products[0] if (products and products[0] is not None) else technology_name
             category_name = self.product_manager.get_category_name(product.get("category_id"))
             
+            item_description = item.get('description')
+            enriched_description = self._enrich_description_with_version(
+                item_description, matching_records
+            )
+            
             prediction = {
                 'technology': technology_name,
                 'storage_name': storage_name,
                 'technology_type': category_name,
                 'version': item.get("version"),
                 'probability': item.get("probability", 100),
-                'description': item.get('description'),
+                'description': enriched_description,
                 'product_id': product_id
             }
             predictions.append(prediction)
             
         return predictions
+
+    def _enrich_description_with_version(self, description, matching_records):
+        """
+        Enrich a rule description with the version found in matching records.
+        
+        For descriptions like "PHP (Programming Language)", looks for a matching
+        record whose technology name matches the description's tech name and which
+        carries a version, then inserts that version into the description.
+        E.g. "PHP (Programming Language)" → "PHP 5.6.40-0+deb8u9 (Programming Language)"
+        
+        Args:
+            description: Static description string from the predict rule, e.g.
+                         "PHP (Programming Language)".
+            matching_records: Records that satisfied the rule's when-conditions.
+            
+        Returns:
+            Enriched description string (or the original if no version is found).
+        """
+        if not description or not matching_records:
+            return description
+        
+        if '(' in description:
+            tech_name_in_desc = description.split('(')[0].strip()
+            type_part = description[description.index('('):]
+        else:
+            tech_name_in_desc = description.strip()
+            type_part = None
+        
+        if not tech_name_in_desc:
+            return description
+        
+        for rec in matching_records:
+            rec_tech = rec.get('technology', '')
+            rec_version = rec.get('version')
+            if rec_tech.lower() == tech_name_in_desc.lower() and rec_version:
+                if type_part:
+                    return f"{tech_name_in_desc} {rec_version} {type_part}"
+                return f"{tech_name_in_desc} {rec_version}"
+        
+        return description
 
     def _remove_duplicates(self, all_predictions):
         """
