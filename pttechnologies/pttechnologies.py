@@ -300,7 +300,7 @@ def _get_all_available_modules() -> list:
     - TEMPORARILY DISABLED: proto module (uses invalid requests that slow down the script)
     """
     modules_folder = os.path.join(os.path.dirname(__file__), "modules")
-    disabled_modules = ['proto']  # Temporarily disabled modules
+    disabled_modules = ['proto', 'htmlall']  # 'htmlall' is a private bundle; invoke explicitly with -ts HTMLALL
     available_modules = [
         f.rsplit(".py", 1)[0]
         for f in sorted(os.listdir(modules_folder))
