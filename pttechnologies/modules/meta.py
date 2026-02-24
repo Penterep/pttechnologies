@@ -1,8 +1,8 @@
 """
 Module for identifying technologies from HTML meta tags.
 
-Analyzes HTML meta tags such as generator, application-name, author,
-framework, cms, and publisher to detect web technologies and their versions.
+Analyzes HTML meta tags such as generator, application-name, framework,
+cms, and publisher to detect web technologies and their versions.
 Uses pre-fetched homepage response for efficiency.
 """
 
@@ -23,6 +23,9 @@ class Meta:
     Processes HTML meta tags to identify web technologies, frameworks,
     and content management systems based on predefined patterns.
     Uses already fetched homepage response for analysis.
+
+    Note: Author identification (meta 'author' / 'reply-to') is handled
+    by the dedicated Author module (author.py).
     
     Attributes:
         args: Command line arguments and configuration.
@@ -142,11 +145,6 @@ class Meta:
                             technologies_found += matches
                             successfully_matched_tags.add(meta_name)
         
-        if 'author' in meta_tags and 'author' not in successfully_matched_tags:
-            self._handle_unmatched_author(meta_tags['author'])
-            technologies_found += 1
-            successfully_matched_tags.add('author')
-        
         interesting_meta_names = {'generator', 'application-name', 'framework', 'cms', 'publisher', 'X-Powered-By', 'platform'}
         for meta_name, content in meta_tags.items():
             if meta_name not in successfully_matched_tags and meta_name in interesting_meta_names:
@@ -252,38 +250,6 @@ class Meta:
         
         self._display_result(display_name, version, technology_type, meta_name, content, probability)
     
-    def _handle_unmatched_author(self, content):
-        """
-        Handle author meta tag that didn't match any specific pattern.
-        
-        Args:
-            content: Content of the author meta tag.
-            
-        Returns:
-            None
-        """
-        display_content = content[:80] + "..." if len(content) > 80 else content
-        description = self._create_description('author', content)
-        
-        storage.add_to_storage(
-            technology=display_content,
-            version=None,
-            technology_type="Author",
-            probability=100,
-            description=description
-        )
-        
-        probability = 100
-        main_message = f"{display_content} (Author)"
-        detail_message = f"<- Meta tag 'author': {content[:50]}{'...' if len(content) > 50 else ''}"
-        
-        ptprint(main_message, "VULN", not self.args.json, end=" ", indent=4)
-        ptprint(f"({probability}%)", "ADDITIONS", not self.args.json, colortext=True, end="")
-        if self.args.verbose:
-            ptprint(f" {detail_message}", "ADDITIONS", not self.args.json, colortext=True)
-        else:
-            ptprint(" ")
-    
     def _create_description(self, meta_name, content):
         """
         Create a description for the identified technology.
@@ -347,6 +313,7 @@ class Meta:
         storage.add_to_storage(
             technology=display_content,
             version=None,
+            vulnerability="PTV-WEB-INFO-TEMETA",
             technology_type="Unknown",
             probability=100,
             description=description
@@ -375,8 +342,7 @@ class Meta:
             "BackendFramework": "Backend Framework",
             "Os": "OS",
             "WebServer": "Webserver",
-            "Interpret": "Interpreter",
-            "Author": "Author"
+            "Interpret": "Interpreter"
         }
         return display_mapping.get(technology_type, technology_type)
 

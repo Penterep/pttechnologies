@@ -286,7 +286,8 @@ class JSLIB:
                 
                 storage.add_to_storage(
                     technology=technology,
-                    technology_type=category,
+                    technology_type=category,\
+                    vulnerability="PTV-WEB-INFO-TECNT",
                     probability=probability,
                     version=version if version else None,
                     product_id=product_id

@@ -365,6 +365,7 @@ class ERRPAGE:
             version=version,
             technology_type=tech_type,
             probability=probability,
+            vulnerability="PTV-WEB-INFO-TEDEP",
             description=description,
             product_id=product_id
         )

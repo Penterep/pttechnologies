@@ -73,10 +73,13 @@ class PLLNG:
         full_base_url = urljoin(base_url, base_path) if base_path else base_url
         result = self._find_language_by_link(html, full_base_url)
 
-        if not result:
+        if result:
+            vuln_code = "PTV-WEB-INFO-LNGEX"
+        else:
             result = self._dictionary_attack(base_url, base_path)
+            vuln_code = "PTV-WEB-INFO-LNGHP"
 
-        self._report(result)
+        self._report(result, vuln_code)
 
     def _find_language_by_link(self, html, base_url):
         """
@@ -146,12 +149,15 @@ class PLLNG:
                         return ext_entry
         return None
 
-    def _report(self, result):
+    def _report(self, result, vuln_code):
         """
         Reports the detected programming language via ptjsonlib and prints output.
 
         Args:
             result (dict or None): Detected extension metadata or None if detection failed.
+            vuln_code (str): Vuln code reflecting how the language was detected:
+                PTV-WEB-INFO-LNGEX  – extension found in a linked URL
+                PTV-WEB-INFO-LNGHP  – confirmed by direct access to index.<ext>
         """
         if result:
             # Get product info from product_id
@@ -172,8 +178,7 @@ class PLLNG:
             technology = products[0] if (products and products[0] is not None) else product.get("our_name", "Unknown")
             
             probability = result.get("probability", 100)
-            ext = result["extension"].capitalize()
-            storage.add_to_storage(technology=technology, technology_type=category_name, vulnerability="PTV-WEB-INFO-LNGEX", probability=probability, product_id=product_id)
+            storage.add_to_storage(technology=technology, technology_type=category_name, vulnerability=vuln_code, probability=probability, product_id=product_id)
             ptprint(f"Identified language: {display_name}", "VULN", not self.args.json, indent=4, end=" ")
             ptprint(f"({probability}%)", "ADDITIONS", not self.args.json, colortext=True)
         else:

@@ -228,6 +228,7 @@ class ADMIN:
             technology=tech_name,
             version=version,
             technology_type=tech_type,
+            vulnerability="PTV-WEB-INFO-TEADMIN",
             probability=100,
             description=description,
             product_id=product_id

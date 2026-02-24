@@ -194,41 +194,86 @@ class COOK:
     def _analyze_cookies(self, cookies):
         """
         Analyze cookies against defined patterns.
-        Priority: More specific patterns (with value_regex) before generic ones.
+        Priority: Value-based patterns (with value_regex) are checked before name-only patterns.
         Allows multiple matches per cookie for layered detection (e.g., Tomcat + Java).
-        
+
+        Vuln codes:
+            PTV-WEB-INFO-TEDEFSIDFRM  – detection based on cookie value format
+            PTV-WEB-INFO-TEDEFNAME    – detection based on cookie name only
+
+        If the same product is identified by both methods across different cookies,
+        it is stored once with both vuln codes merged.
+
         Args:
             cookies: Dictionary of cookie names to their information.
-            
+
         Returns:
             int: Number of technologies found.
         """
         technologies_found = 0
-        stored_products = set()  # Track products stored (not displayed)
-        
+
         # Merge patterns from both definition files
         all_patterns = list(self.definitions) if self.definitions else []
         if self.wapp_definitions:
-            # New format: wapp_definitions is already a list
             if isinstance(self.wapp_definitions, list):
                 all_patterns.extend(self.wapp_definitions)
-            # Old format fallback: {"cookies": [...]}
             elif isinstance(self.wapp_definitions, dict) and 'cookies' in self.wapp_definitions:
                 all_patterns.extend(self.wapp_definitions['cookies'])
-        
+
+        # ── Categorize patterns into two lists ────────────────────────────────
+        # Value-based: more specific – matched by both name AND value regex
+        value_patterns = [p for p in all_patterns if p.get("value_regex")]
+        # Name-based: matched by cookie name only (no value_regex)
+        name_patterns  = [p for p in all_patterns if not p.get("value_regex")]
+
+        # Deferred storage: product_id -> {vuln_codes, display data}
+        # Allows merging vuln codes when the same product is found via both methods.
+        storage_tracker = {}  # {product_id: {"vuln_codes": set(), "data": {...}}}
+
         for cookie_name, cookie_info in cookies.items():
             cookie_value = cookie_info.get('value', '')
-            
-            # Check all patterns
-            for pattern in all_patterns:
+
+            matched_pattern  = None
+            matched_vuln_code = None
+
+            # 1) Check value-based patterns first (more specific)
+            for pattern in value_patterns:
                 if self._match_cookie_pattern(cookie_name, cookie_value, pattern):
-                    product_id = pattern.get('product_id')
-                    
-                    # Display match (can be multiple times for same product from different cookies)
-                    self._process_match(cookie_name, cookie_value, pattern, cookie_info, stored_products)
-                    technologies_found += 1
-                    break  # First match wins for this cookie
-        
+                    matched_pattern   = pattern
+                    matched_vuln_code = "PTV-WEB-INFO-TEDEFSIDFRM"
+                    break
+
+            # 2) Fall back to name-based patterns
+            if not matched_pattern:
+                for pattern in name_patterns:
+                    if self._match_cookie_pattern(cookie_name, cookie_value, pattern):
+                        matched_pattern   = pattern
+                        matched_vuln_code = "PTV-WEB-INFO-TEDEFNAME"
+                        break
+
+            if matched_pattern:
+                product_id = matched_pattern.get('product_id')
+
+                # Display the match (can appear multiple times for the same product
+                # when detected from different cookies)
+                self._display_match(cookie_name, cookie_value, matched_pattern, cookie_info)
+                technologies_found += 1
+
+                # Track for deferred, deduplicated storage
+                if product_id:
+                    if product_id not in storage_tracker:
+                        storage_tracker[product_id] = {
+                            "vuln_codes": set(),
+                            "pattern":    matched_pattern,
+                            "cookie_name":  cookie_name,
+                            "cookie_value": cookie_value,
+                        }
+                    storage_tracker[product_id]["vuln_codes"].add(matched_vuln_code)
+
+        # ── Store once per product_id, with all discovered vuln codes ─────────
+        for product_id, track in storage_tracker.items():
+            self._store_match(product_id, track)
+
         return technologies_found
     
     def _match_cookie_pattern(self, cookie_name, cookie_value, pattern):
@@ -255,54 +300,71 @@ class COOK:
         
         return True
     
-    def _process_match(self, cookie_name, cookie_value, pattern, cookie_info, stored_products):
+    def _display_match(self, cookie_name, cookie_value, pattern, cookie_info):
         """
-        Process a successful pattern match and store results.
-        
+        Display a successful pattern match.
+
+        Called for every match – the same technology can be shown multiple times
+        when it is detected from different cookies.
+
         Args:
             cookie_name: Name of the cookie that matched.
             cookie_value: Value of the cookie.
             pattern: Pattern definition that matched.
             cookie_info: Full cookie information.
-            stored_products: Set of product_ids already stored (for deduplication).
         """
-        # Get product info from product_id
         product_id = pattern.get("product_id")
         if not product_id:
-            return  # Skip if no product_id defined
-        
+            return
+
         product = self.product_manager.get_product_by_id(product_id)
         if not product:
             return
-        
-        # Use our_name instead of products[0] to avoid lowercase issue
-        products = product.get('products', [])
-        technology = products[0] if products else product.get('our_name', 'Unknown')
-        display_name = product.get("our_name", "Unknown")
+
+        display_name    = product.get("our_name", "Unknown")
         technology_type = self.product_manager.get_category_name(product.get("category_id"))
-        
+        probability     = pattern.get("probability", 100)
+
+        self._display_result(display_name, technology_type, cookie_name, cookie_value, probability)
+
+    def _store_match(self, product_id, track):
+        """
+        Persist a single deduplicated detection to result storage.
+
+        Args:
+            product_id: Product ID of the detected technology.
+            track: Dict with keys ``vuln_codes`` (set), ``pattern``,
+                   ``cookie_name``, and ``cookie_value``.
+        """
+        product = self.product_manager.get_product_by_id(product_id)
+        if not product:
+            return
+
+        products      = product.get('products', [])
+        technology    = products[0] if products else product.get('our_name', 'Unknown')
+        technology_type = self.product_manager.get_category_name(product.get("category_id"))
+
+        pattern     = track["pattern"]
+        cookie_name = track["cookie_name"]
         description = pattern.get("description", "")
         probability = pattern.get("probability", 100)
-        
-        # ALWAYS display (can show same tech from multiple cookies)
-        self._display_result(display_name, technology_type, cookie_name, cookie_value, probability)
-        
-        # STORAGE: Only store once per product_id (deduplication)
-        if product_id not in stored_products:
-            stored_products.add(product_id)
-            
-            storage_description = f"Cookie '{cookie_name}'"
-            if description:
-                storage_description += f": {description}"
-            
-            
-            storage.add_to_storage(
-                technology=technology,
-                technology_type=technology_type,
-                description=storage_description,
-                probability=probability,
-                product_id=product_id
-            )
+
+        storage_description = f"Cookie '{cookie_name}'"
+        if description:
+            storage_description += f": {description}"
+
+        # Merge vuln codes when detected by both name AND value
+        # e.g. "PTV-WEB-INFO-TEDEFNAME, PTV-WEB-INFO-TEDEFSIDFRM"
+        vuln_code = ", ".join(sorted(track["vuln_codes"]))
+
+        storage.add_to_storage(
+            technology=technology,
+            technology_type=technology_type,
+            description=storage_description,
+            vulnerability=vuln_code,
+            probability=probability,
+            product_id=product_id
+        )
     
     def _display_result(self, display_name, technology_type, cookie_name, cookie_value, probability):
         """

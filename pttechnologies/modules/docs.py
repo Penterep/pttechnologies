@@ -301,6 +301,7 @@ class DOCS:
                         technology=technology,
                         technology_type=technology_type,
                         product_id=product_id,
+                        vulnerability="PTV-WEB-INFO-TEXTXT",
                         version=version,
                         probability=probability
                     )

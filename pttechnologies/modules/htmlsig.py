@@ -210,6 +210,7 @@ class HTML:
             version=version,
             technology_type=technology_type,
             probability=probability,
+            vulnerability="PTV-WEB-INFO-TECNT",
             description=description,
             product_id=product_id
         )

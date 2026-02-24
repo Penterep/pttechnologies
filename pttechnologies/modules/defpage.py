@@ -818,6 +818,7 @@ class DEFPAGE:
             version=version if version else None,
             version_min=version_min,
             version_max=version_max,
+            vulnerability="PTV-WEB-INFO-DEFPGWS",
             technology_type=tech_type,
             probability=probability,
             description=description,
