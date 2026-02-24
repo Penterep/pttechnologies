@@ -481,6 +481,7 @@ class PLUGINS:
             storage.add_to_storage(
                 technology=wp_technology,
                 technology_type="WebApp",
+                vulnerability="PTV-WEB-INFO-TECNT",
                 version_min=dependencies["wordpress_version"],
                 probability=80,
                 description=f"Plugin dependency from: {source_desc}",
@@ -496,6 +497,7 @@ class PLUGINS:
             storage.add_to_storage(
                 technology=php_technology,
                 technology_type="Interpret",
+                vulnerability="PTV-WEB-INFO-TECNT",
                 version_min=dependencies["php_version"],
                 probability=80,
                 description=f"Plugin dependency from: {source_desc}",
@@ -522,6 +524,7 @@ class PLUGINS:
             
             storage.add_to_storage(
                 technology=technology,
+                vulnerability="PTV-WEB-INFO-TECNT",
                 technology_type="Plugin",
                 probability=80,
                 product_id=product_id
@@ -560,7 +563,7 @@ class PLUGINS:
                 storage.add_to_storage(
                     technology=technology_for_storage,
                     technology_type=category_name,
-                    vulnerability="PTV-WEB-INFO-PLUGIN",
+                    vulnerability="PTV-WEB-INFO-TECNT",
                     probability=probability,
                     version=version if version else None,
                     product_id=product_id

@@ -120,7 +120,8 @@ class HDRLEN:
                 
                 storage.add_to_storage(
                     technology=server, 
-                    technology_type="Web Server", 
+                    technology_type="Web Server",
+                    vulnerability="PTV-WEB-INFO-WSRHL", 
                     probability=probability,
                     product_id=product_id
                 )

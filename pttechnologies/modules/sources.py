@@ -262,7 +262,8 @@ class SOURCES:
             ptprint(status_msg, "ADDITIONS", not self.args.json, indent=4, colortext=True)
         
         storage.add_to_storage(
-            technology=technology, 
+            technology=technology,
+            vulnerability="PTV-WEB-INFO-TECNT",
             technology_type=category, 
             probability=probability,
             product_id=product_id
