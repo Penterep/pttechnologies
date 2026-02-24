@@ -1,0 +1,118 @@
+[
+  {
+    "meta_name": "author",
+    "patterns": [
+      {
+        "regex": "Joomla!?\\s+Project",
+        "product_id": 72
+      },
+      {
+        "regex": "Drupal\\s+Association",
+        "product_id": 71
+      },
+      {
+        "regex": "WordPress\\.org",
+        "product_id": 70
+      },
+      {
+        "regex": "ZABBIX SIA",
+        "product_id": 3612
+      },
+      {
+        "regex": "^fanavar\\.org$",
+        "product_id": 1035
+      },
+      {
+        "regex": "^CloudCart LLC$",
+        "product_id": 1053
+      },
+      {
+        "regex": "^Convertr Commerce$",
+        "product_id": 1119
+      },
+      {
+        "regex": "^Ebasnet Web Solutions$",
+        "product_id": 1305
+      },
+      {
+        "regex": "^Freshop, Inc\\.$",
+        "product_id": 1504
+      },
+      {
+        "regex": "^Inventrue, LLC.$",
+        "product_id": 1823
+      },
+      {
+        "regex": "^MAAK$",
+        "product_id": 2077
+      },
+      {
+        "regex": "^MaxenceDEV$",
+        "product_id": 2140
+      },
+      {
+        "regex": "Mozard",
+        "product_id": 2229
+      },
+      {
+        "regex": "open-classifieds\\.com",
+        "product_id": 2359
+      },
+      {
+        "regex": "open-eshop\\.com",
+        "product_id": 2362
+      },
+      {
+        "regex": "Redacteur SmartInstant",
+        "product_id": 2962
+      },
+      {
+        "regex": "SoftTr E-Ticaret Sitesi Yazılımı",
+        "product_id": 2988
+      },
+      {
+        "regex": "Kai Oswald Seidler",
+        "product_id": 130
+      },
+      {
+        "regex": "Yepcomm Tecnologia",
+        "product_id": 3589
+      }
+    ]
+  },
+  {
+    "meta_name": "autor",
+    "patterns": [
+      {
+        "regex": "Bsale",
+        "product_id": 932
+      }
+    ]
+  },
+  {
+    "meta_name": "web-author",
+    "patterns": [
+      {
+        "regex": "^Magazord$",
+        "product_id": 2091
+      }
+    ]
+  },
+  {
+    "meta_name": "web_author",
+    "patterns": [
+      {
+        "regex": "^Shoptet",
+        "product_id": 2899
+      },
+      {
+        "regex": "^solidpixels",
+        "product_id": 2990
+      }
+    ]
+  },
+  {
+    "meta_name": "reply-to",
+    "patterns": []
+  }
+]

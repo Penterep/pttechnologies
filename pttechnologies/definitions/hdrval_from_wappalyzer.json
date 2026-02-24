@@ -690,7 +690,7 @@
         "version_group": 1
       },
       {
-        "regex": "php/?([\\d.]+)?",
+        "regex": "php/?([\\d][\\d.+\\-a-zA-Z]*)?",
         "product_id": 30,
         "version_group": 1
       },
@@ -1984,7 +1984,7 @@
         "version_group": 1
       },
       {
-        "regex": "^php/?([\\d.]+)?",
+        "regex": "^php/?([\\d][\\d.+\\-a-zA-Z]*)?",
         "product_id": 30,
         "version_group": 1
       },
