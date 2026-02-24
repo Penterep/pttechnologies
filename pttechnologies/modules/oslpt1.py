@@ -113,7 +113,6 @@ class OSLPT1:
             return
 
         result = self._responses_differ(response1, response2)
-        probability = 100
         product_manager = get_product_manager()
 
         if result:
@@ -126,7 +125,7 @@ class OSLPT1:
                 category_name = product_manager.get_category_name(product.get('category_id'))
                 storage.add_to_storage(technology=technology_name, technology_type=category_name, vulnerability="PTV-WEB-INFO-OSLNK", product_id=6)
                 ptprint(f"Identified OS: {display_name}", "VULN", not self.args.json, indent=4, end=" ")
-                ptprint(f"({probability}%)", "ADDITIONS", not self.args.json, colortext=True)
+                ptprint("(100%)", "ADDITIONS", not self.args.json, colortext=True)
         else:
             # Linux (product_id: 167)
             product = product_manager.get_product_by_id(167)
@@ -137,7 +136,7 @@ class OSLPT1:
                 category_name = product_manager.get_category_name(product.get('category_id'))
                 storage.add_to_storage(technology=technology_name, technology_type=category_name, vulnerability="PTV-WEB-INFO-OSLNK", product_id=167)
                 ptprint(f"Identified OS: {display_name}", "VULN", not self.args.json, indent=4, end=" ")
-                ptprint(f"({probability}%)", "ADDITIONS", not self.args.json, colortext=True)
+                ptprint("(75%)", "ADDITIONS", not self.args.json, colortext=True)
 
 def run(args: object, ptjsonlib: object, helpers: object, http_client: object, responses: StoredResponses):
     """Entry point for running the OSLPT1 OS detection."""
