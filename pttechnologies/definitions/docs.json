@@ -30,6 +30,12 @@
       "README.HTM"
     ],
     [
+      "readme.html",
+      "Readme.html",
+      "README.html",
+      "README.HTML"
+    ],
+    [
       "readme.doc",
       "Readme.doc",
       "README.doc",
@@ -51,6 +57,12 @@
       "Version.htm",
       "VERSION.htm",
       "VERSION.HTM"
+    ],
+    [
+      "version.html",
+      "Version.html",
+      "VERSION.html",
+      "VERSION.HTML"
     ],
     [
       "version.doc",
@@ -76,6 +88,12 @@
       "CHANGELOG.HTM"
     ],
     [
+      "changelog.html",
+      "Changelog.html",
+      "CHANGELOG.html",
+      "CHANGELOG.HTML"
+    ],
+    [
       "changelog.doc",
       "Changelog.doc",
       "CHANGELOG.doc",
@@ -99,6 +117,12 @@
       "UPDATE.HTM"
     ],
     [
+      "update.html",
+      "Update.html",
+      "UPDATE.html",
+      "UPDATE.HTML"
+    ],
+    [
       "update.doc",
       "Update.doc",
       "UPDATE.doc",
@@ -115,6 +139,12 @@
       "Upgrade.htm",
       "UPGRADE.htm",
       "UPGRADE.HTM"
+    ],
+    [
+      "upgrade.html",
+      "Upgrade.html",
+      "UPGRADE.html",
+      "UPGRADE.HTML"
     ],
     [
       "upgrade.doc",
@@ -346,7 +376,7 @@
     },
     {
       "product_id": 70,
-      "pattern": "WordPress[/\\s]+(\\d+\\.\\d+(?:\\.\\d+)?)|WordPress\\s+Version\\s+(\\d+\\.\\d+(?:\\.\\d+)?)|\\bWordPress\\s+Installation\\b|\\bWordPress\\s+Site\\b|built\\s+with\\s+WordPress|powered\\s+by\\s+WordPress|WordPress\\s+Theme|WordPress\\s+Plugin",
+      "pattern": "WordPress[/\\s]+(\\d+\\.\\d+(?:\\.\\d+)?)|WordPress\\s+Version\\s+(\\d+\\.\\d+(?:\\.\\d+)?)|\\bWordPress\\s+Installation\\b|\\bWordPress\\s+Site\\b|built\\s+with\\s+WordPress|powered\\s+by\\s+WordPress|WordPress\\s+Theme|WordPress\\s+Plugin|wordpress\\.org|wp-admin[\\/]|Semantic\\s+Personal\\s+Publishing\\s+Platform",
       "version_pattern": "WordPress[/\\s]+(\\d+\\.\\d+(?:\\.\\d+)?)|WordPress\\s+Version\\s+(\\d+\\.\\d+(?:\\.\\d+)?)",
       "flags": "i",
       "probability": 80
