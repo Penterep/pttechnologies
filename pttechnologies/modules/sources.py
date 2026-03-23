@@ -263,7 +263,7 @@ class SOURCES:
         
         storage.add_to_storage(
             technology=technology,
-            vulnerability="PTV-WEB-INFO-TECNT",
+            vulnerability="PTV-WEB-INFO-TETDF",
             technology_type=category, 
             probability=probability,
             product_id=product_id
