@@ -10,7 +10,8 @@
     },
     {
       "product_id": 10,
-      "file": "icons/apache_pb2.gif"
+      "file": "icons/apache_pb2.gif",
+      "submodule": "apache_icons"
     },
     {
       "product_id": 30,
@@ -38,5 +39,13 @@
     {
       "product_id": 71,
       "files": ["sites/default/", "CHANGELOG.txt"]
+    },
+    {
+      "product_id": 133,
+      "files": ["appserv/"]
+    },
+    {
+      "product_id": 20,
+      "files": ["manager/status", "RELEASE-NOTES.txt", "tomcat.gif", "tomcat-power.gif"]
     }
   ]
