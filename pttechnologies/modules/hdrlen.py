@@ -57,8 +57,44 @@ class HDRLEN:
         # 8183:  LiteSpeed/Nginx boundary (LiteSpeed: 200 → Nginx: 400) 
         # 16215: Apache/LiteSpeed boundary (Apache: 400 → LiteSpeed: 200)
         # 16230: LiteSpeed/Microsoft-HTTPAPI boundary (LiteSpeed: 400 → HTTPAPI: 200)
-        self.lengths = [8180, 8182, 8183, 16215 , 16230, 32000, 48000, 64000, 140000]
+        self.lengths = [8180, 8182, 8312, 16215 , 16230, 32000, 48000, 64000, 140000]
         self.definitions = self.helpers.load_definitions("hdrlen.json")
+
+    def _measure_base_header_length(self, test_url: str) -> int:
+        """
+        Measure the exact total header length of a real PreparedRequest.
+        
+        Builds a request with the same headers that will actually be sent
+        (args.headers merged with a minimal cookie), then measures each header
+        using "Header-Name: value\\r\\n" format, and adds the Host header
+        which requests appends at the TCP level.
+        
+        Returns:
+            Exact total header length in characters with minimal cookie "testcookie=a".
+        """
+        import requests as req_lib
+
+        # Build merged headers exactly as run() will build them for each request
+        base_headers = dict(getattr(self.args, 'headers', {}) or {})
+        base_headers.pop('cookie', None)
+        base_headers.pop('Cookie', None)
+        base_headers['Cookie'] = 'testcookie=a'  # minimal 1-char cookie for measurement
+
+        # Use PreparedRequest to let requests resolve ALL auto-headers
+        # (User-Agent, Accept-Encoding, Accept, Connection) for this exact environment
+        prepared = req_lib.Session().prepare_request(
+            req_lib.Request('GET', test_url, headers=base_headers)
+        )
+
+        # Sum all headers in "Name: value\r\n" format
+        total = sum(len(k) + 2 + len(v) + 2 for k, v in prepared.headers.items())
+
+        # Host is added by requests at the TCP level, not in prepared.headers
+        host_value = urlparse(test_url).netloc or urlparse(test_url).hostname or ''
+        if host_value:
+            total += len("Host: ") + len(host_value) + 2  # "Host: value\r\n"
+
+        return total
 
     def run(self) -> None:
         """
@@ -76,26 +112,39 @@ class HDRLEN:
         base_path = getattr(self.args, 'base_path', '') or ''
         statuses = []
 
+        # Construct test URL first
+        from urllib.parse import urljoin
+        if base_path:
+            test_path = f"{base_path}/"
+        else:
+            test_path = "/"
+        test_url = urljoin(base_url, test_path)
+        
+        # Measure exact base header length using a real PreparedRequest.
+        # base includes all headers (args.headers + requests auto-headers + Host)
+        # with a minimal 1-char cookie value "testcookie=a".
+        base_header_length = self._measure_base_header_length(test_url)
+
+        # For target total L:
+        #   base_header_length already contains 1 'a' in cookie
+        #   → len(value) = L - base_header_length + 1
         for length in self.lengths:
-            cookie_value = "a" * max(1, length - 11)
-            
-            # Use Cookie header to achieve desired total header length
-            headers = {}
-            headers['Cookie'] = f'testcookie={cookie_value}'
-            
-            # Construct URL: base_url + base_path + "/"
-            from urllib.parse import urljoin
-            if base_path:
-                test_path = f"{base_path}/"
-            else:
-                test_path = "/"
-            test_url = urljoin(base_url, test_path)
-            
+            # Number of 'a's needed so that total header length == length exactly
+            cookie_value_length = max(1, length - base_header_length + 1)
+            cookie_value = "a" * cookie_value_length
+
+            # Merge args.headers with Cookie so requests sends the exact same
+            # headers that were measured in _measure_base_header_length
+            base_hdrs = dict(getattr(self.args, 'headers', {}) or {})
+            base_hdrs.pop('cookie', None)
+            base_hdrs.pop('Cookie', None)
+            base_hdrs['Cookie'] = f'testcookie={cookie_value}'
+
             try:
                 response = self.http_client.send_request(
                     url=test_url,
                     method="GET",
-                    headers=headers,
+                    headers=base_hdrs,
                     allow_redirects=False,
                     timeout=self.args.timeout
                 )
