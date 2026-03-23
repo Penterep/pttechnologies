@@ -738,12 +738,11 @@ class HDRVAL:
         else:
             description = f"{header_name}: {tech_name}"
         
-        
         storage.add_to_storage(
             technology=tech_name,
             version=version,
             technology_type=tech_type,
-            vulnerability="PTV-WEB-INFO-TEHDR",
+            vulnerability="PTV-WEB-INFO-TEHDR" if version else None,
             description=description,
             probability=probability,
             product_id=product_id
