@@ -91,7 +91,7 @@
       "name_regex": "^JSESSIONID$",
       "product_id": 31,
       "description": "Java servlet session identifier (generic)",
-      "probability": 60
+      "probability": 100
     },
     {
       "name_regex": "^laravel_session$",

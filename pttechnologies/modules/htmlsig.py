@@ -166,6 +166,8 @@ class HTML:
             if len(matched_text) > 100:
                 matched_text = matched_text[:100] + "..."
             
+            is_comment = self._is_in_html_comment(html_content, match.start())
+            
             return {
                 'product_id': product_id,
                 'technology': technology,
@@ -173,7 +175,8 @@ class HTML:
                 'technology_type': technology_type,
                 'version': version,
                 'probability': probability,
-                'matched_text': matched_text
+                'matched_text': matched_text,
+                'is_comment': is_comment
             }
             
         except re.error as e:
@@ -202,6 +205,9 @@ class HTML:
         probability = match_result['probability']
         product_id = match_result['product_id']
         matched_text = match_result.get('matched_text', '')
+        is_comment = match_result.get('is_comment', False)
+        
+        vulnerability = "PTV-WEB-INFO-TECOM" if is_comment else "PTV-WEB-INFO-TECNT"
         
         description = self._create_description(matched_text)
         
@@ -210,12 +216,30 @@ class HTML:
             version=version,
             technology_type=technology_type,
             probability=probability,
-            vulnerability="PTV-WEB-INFO-TECNT",
+            vulnerability=vulnerability,
             description=description,
             product_id=product_id
         )
         
         self._display_result(display_name, version, technology_type, matched_text, probability)
+    
+    def _is_in_html_comment(self, html_content: str, position: int) -> bool:
+        """
+        Check whether a given position in HTML is inside an HTML comment.
+        
+        Args:
+            html_content: Full HTML content string.
+            position: Character offset of the match start.
+            
+        Returns:
+            bool: True if position is inside a <!-- ... --> block.
+        """
+        before = html_content[:position]
+        last_open = before.rfind('<!--')
+        if last_open == -1:
+            return False
+        # Still inside the comment if no closing --> appears after the opening
+        return '-->' not in before[last_open:]
     
     def _create_description(self, matched_text):
         """
