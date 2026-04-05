@@ -23,6 +23,7 @@ setuptools.setup(
     ],
     python_requires='>=3.12',
     install_requires=["ptlibs>=1.0.37,<2", "bs4"],
+    extras_require={"browser": ["playwright"]},
     entry_points = {'console_scripts': ['pttechnologies = pttechnologies.pttechnologies:main']},
     include_package_data= True,
     long_description=long_description,

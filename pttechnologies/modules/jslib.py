@@ -7,8 +7,7 @@ with confidence scoring to reduce false positives.
 """
 
 import re
-from urllib.parse import urlparse, urljoin
-from collections import defaultdict
+from urllib.parse import urljoin
 
 from helpers.result_storage import storage
 from helpers.stored_responses import StoredResponses
@@ -17,6 +16,12 @@ from ptlibs import ptjsonlib, ptmisclib, ptnethelper
 from ptlibs.ptprinthelper import ptprint
 
 from bs4 import BeautifulSoup
+
+try:
+    from playwright.sync_api import sync_playwright
+    HAS_PLAYWRIGHT = True
+except ImportError:
+    HAS_PLAYWRIGHT = False
 
 __TESTLABEL__ = "Test JavaScript library detection"
 
@@ -35,9 +40,91 @@ class JSLIB:
 
         self.response_hp = responses.resp_hp
         self.js_definitions = self.helpers.load_definitions("jslib.json")
+        wapp_js_definitions = self.helpers.load_definitions("jslib_from_wappalyzer.json")
+        if isinstance(wapp_js_definitions, list):
+            self.js_definitions.extend(wapp_js_definitions)
+        self.browser_js_definitions = self.helpers.load_definitions("jsbrowser_from_wappalyzer.json")
 
         self.detected_libraries = []
         self.analyzed_content = {}
+
+    def _resolve_wappalyzer_version(self, version_template, value_regex, value):
+        """
+        Resolve Wappalyzer-style version templates using regex capture groups.
+        """
+        if not version_template:
+            return None
+
+        try:
+            regex = re.compile(value_regex, re.IGNORECASE) if value_regex else None
+        except re.error:
+            return None
+
+        match = regex.search(value) if regex else None
+        resolved = version_template
+
+        if match:
+            groups = [match.group(0)] + list(match.groups())
+            for index, group in enumerate(groups):
+                group_val = group or ""
+                resolved = resolved.replace(f"\\{index}", group_val)
+        else:
+            # If no regex exists or no match, template cannot be resolved meaningfully.
+            return None
+
+        resolved = resolved.strip()
+        return resolved[:64] if resolved else None
+
+    def _version_quality(self, version):
+        """
+        Higher quality means more specific semantic-like version.
+        Example: 2.1.5 > 2
+        """
+        if not version:
+            return 0
+        return max(1, version.count(".") + 1)
+
+    def _source_priority(self, result):
+        """
+        Prefer runtime/browser matches over static ones when quality is similar.
+        """
+        method = result.get("match_method")
+        if method == "browser_js":
+            return 3
+        if method in {"url_pattern", "inline_pattern"}:
+            return 2
+        return 1
+
+    def _result_score(self, result):
+        return (
+            int(result.get("probability", 0)),
+            self._version_quality(result.get("version")),
+            self._source_priority(result),
+        )
+
+    def _is_version_context_valid(self, product_id, pattern, content, match_start, match_end):
+        """
+        Guard against cross-library generic version captures in bundled files.
+        """
+        if "@version" not in pattern.lower():
+            return True
+
+        context_start = max(0, match_start - 180)
+        context_end = min(len(content), match_end + 180)
+        context = content[context_start:context_end].lower()
+
+        required_keywords = {
+            101: ["bootstrap"],      # Bootstrap
+            102: ["popper"],         # Popper.js
+            92: ["underscore"],      # Underscore.js
+            93: ["lodash"],          # Lodash
+        }
+
+        keywords = required_keywords.get(product_id)
+        if not keywords:
+            return True
+
+        return any(keyword in context for keyword in keywords)
 
     def run(self):
         """
@@ -53,16 +140,14 @@ class JSLIB:
         html = resp.text
 
         js_urls = self._extract_js_urls(html, full_base_url)
-        
-        if self.args.verbose:
-            ptprint(f"Found JavaScript files:", "ADDITIONS", not self.args.json, indent=4, colortext=True)
-            for js_url in js_urls:
-                ptprint(js_url, "ADDITIONS", not self.args.json, indent=8, colortext=True)
+
 
         for js_url in js_urls:
             self._analyze_js_file(js_url)
 
         self._analyze_inline_scripts(html)
+        if HAS_PLAYWRIGHT:
+            self._analyze_with_browser(full_base_url)
         self._report()
 
     def _extract_js_urls(self, html, base_url):
@@ -127,28 +212,56 @@ class JSLIB:
         Checks if JavaScript content matches a library signature.
         """
         matched = False
+        match_method = None
+        match_detail = None
         
         url_pattern = lib_def.get("url_pattern")
         if url_pattern and not is_inline:
-            if re.search(url_pattern, js_url, re.IGNORECASE):
-                matched = True
+            try:
+                url_match = re.search(url_pattern, js_url, re.IGNORECASE)
+                if url_match:
+                    matched = True
+                    match_method = "url_pattern"
+                    match_detail = url_match.group(0)[:120]
+            except re.error:
+                return None
         
         signatures = lib_def.get("signatures", [])
         if not matched and signatures:
             for signature in signatures:
                 if signature.lower() in js_content.lower():
                     matched = True
+                    match_method = "signature"
+                    match_detail = signature
                     break
+
+        inline_patterns = lib_def.get("inline_patterns", [])
+        if is_inline and not matched and inline_patterns:
+            for inline_pattern in inline_patterns:
+                try:
+                    inline_match = re.search(inline_pattern, js_content, re.IGNORECASE | re.MULTILINE)
+                    if inline_match:
+                        matched = True
+                        match_method = "inline_pattern"
+                        match_detail = inline_match.group(0)[:120]
+                        break
+                except re.error:
+                    continue
         
         if not matched:
+            return None
+
+        version = self._detect_version(js_content, lib_def, js_url)
+
+        # Large bundled assets are noisy for plain substring signatures.
+        # Keep signature-only bundle matches only when a concrete version is found.
+        if is_bundle and match_method == "signature" and not version:
             return None
 
         probability = lib_def.get("probability", 100)
         
         if is_bundle:
             probability = int(probability * 0.9)
-
-        version = self._detect_version(js_content, lib_def, js_url)
         
         # Get product info from product_id
         product_id = lib_def.get("product_id")
@@ -170,13 +283,138 @@ class JSLIB:
             "display_name": display_name,   # For printing
             "category": category,
             "url": js_url,
-            "probability": probability
+            "probability": probability,
+            "match_method": match_method,
+            "match_detail": match_detail
         }
 
         if version:
             result["version"] = version
 
         return result
+
+    def _analyze_with_browser(self, target_url):
+        """
+        Use Playwright to detect runtime JavaScript globals from Wappalyzer's js chains.
+        """
+        if not isinstance(self.browser_js_definitions, list) or not self.browser_js_definitions:
+            return
+
+        # Browser detection can fail in restricted environments; keep static detection unaffected.
+        try:
+            with sync_playwright() as playwright:
+                browser = playwright.chromium.launch(headless=True)
+                page = browser.new_page()
+                page.goto(target_url, wait_until="domcontentloaded", timeout=15000)
+                page.wait_for_timeout(1000)
+
+                runtime_hits = page.evaluate(
+                    """
+                    (definitions) => {
+                      const results = []
+                      const normalizePath = (chain) => chain.replace(/\\[([^\\]]+)\\]/g, '.$1')
+
+                      definitions.forEach((definition) => {
+                        const productId = definition.product_id
+                        const chains = definition.chains || []
+
+                        chains.forEach((chainDef) => {
+                          const chain = chainDef.chain
+                          const methods = normalizePath(chain).split('.').filter(Boolean)
+                          let value = window
+                          let exists = true
+
+                          for (const method of methods) {
+                            if (
+                              value &&
+                              value instanceof Object &&
+                              Object.prototype.hasOwnProperty.call(value, method)
+                            ) {
+                              const descriptor = Object.getOwnPropertyDescriptor(value, method) || {}
+                              if (descriptor.get) {
+                                exists = false
+                                break
+                              }
+                              value = value[method]
+                            } else {
+                              exists = false
+                              break
+                            }
+                          }
+
+                          if (exists) {
+                            let scalarValue = value
+                            if (typeof scalarValue !== 'string' && typeof scalarValue !== 'number') {
+                              scalarValue = String(!!scalarValue)
+                            } else {
+                              scalarValue = String(scalarValue)
+                            }
+                            results.push({
+                              product_id: productId,
+                              chain: chain,
+                              value: scalarValue,
+                              value_regex: chainDef.value_regex || '',
+                              version_template: chainDef.version_template || '',
+                              confidence: chainDef.confidence || 100
+                            })
+                          }
+                        })
+                      })
+
+                      return results
+                    }
+                    """,
+                    self.browser_js_definitions,
+                )
+
+                browser.close()
+        except Exception:
+            return
+
+        for hit in runtime_hits:
+            product_id = hit.get("product_id")
+            if not product_id:
+                continue
+
+            product = self.product_manager.get_product_by_id(product_id)
+            if not product:
+                continue
+
+            products = product.get("products", [])
+            technology_name = products[0] if products else product.get("our_name", "Unknown")
+            display_name = product.get("our_name", "Unknown")
+            category = self.product_manager.get_category_name(product.get("category_id"))
+
+            version = None
+            value = str(hit.get("value", ""))
+            value_regex = hit.get("value_regex") or ""
+            version_template = hit.get("version_template") or ""
+            confidence = hit.get("confidence", 100)
+
+            # Match value exactly as Wappalyzer js patterns intend.
+            if value_regex:
+                try:
+                    if not re.search(value_regex, value, re.IGNORECASE | re.MULTILINE):
+                        continue
+                except re.error:
+                    continue
+
+            version = self._resolve_wappalyzer_version(version_template, value_regex, value)
+
+            result = {
+                "product_id": product_id,
+                "technology": technology_name,
+                "display_name": display_name,
+                "category": category,
+                "url": f"browser:{hit.get('chain', '')}",
+                "probability": confidence if isinstance(confidence, int) else 100,
+                "match_method": "browser_js",
+                "match_detail": f"chain={hit.get('chain', '')}, value={value[:80]}",
+            }
+            if version:
+                result["version"] = version
+
+            self._add_unique_detection(result)
 
     def _detect_version(self, js_content, lib_def, js_url=None):
         """
@@ -219,6 +457,15 @@ class JSLIB:
                 
                 match = re.search(pattern, search_content, re.IGNORECASE | re.MULTILINE)
                 if match:
+                    if not self._is_version_context_valid(
+                        product_id=product_id,
+                        pattern=pattern,
+                        content=search_content,
+                        match_start=match.start(),
+                        match_end=match.end(),
+                    ):
+                        continue
+
                     version = match.group(1) if match.groups() else match.group(0)
                     
                     if re.match(r'^\d+(\.\d+)*$', version):
@@ -234,11 +481,11 @@ class JSLIB:
         """
         technology = result["technology"]
         version = result.get("version")
-        url = result.get("url", "")
+        product_id = result.get("product_id")
         
         # Check for existing detection of same technology
         for i, existing in enumerate(self.detected_libraries):
-            if existing["technology"] == technology:
+            if existing.get("product_id") == product_id:
                 # If new result has version and existing doesn't, ALWAYS prefer the one with version
                 if version and not existing.get("version"):
                     self.detected_libraries[i] = result
@@ -250,17 +497,21 @@ class JSLIB:
                 elif version and existing.get("version"):
                     if existing.get("version") == version:
                         # Same version, keep higher probability
-                        if result["probability"] > existing["probability"]:
+                        if self._result_score(result) > self._result_score(existing):
                             self.detected_libraries[i] = result
                         return
                     else:
-                        # Different versions, keep both
-                        result["note"] = "Multiple versions detected"
-                        self.detected_libraries.append(result)
+                        # Different versions for same product: prefer better scored result
+                        # (probability, version specificity, source priority).
+                        if self._result_score(result) > self._result_score(existing):
+                            result["note"] = f"Alternative version seen: {existing.get('version')}"
+                            self.detected_libraries[i] = result
+                        else:
+                            existing["note"] = f"Alternative version seen: {version}"
                         return
                 # Neither has version, keep higher probability
                 else:
-                    if result["probability"] > existing["probability"]:
+                    if self._result_score(result) > self._result_score(existing):
                         self.detected_libraries[i] = result
                     return
         
@@ -283,6 +534,8 @@ class JSLIB:
                 url = lib.get("url", "")
                 category = lib.get("category", "JavaScript Library")
                 note = lib.get("note", "")
+                match_method = lib.get("match_method")
+                match_detail = lib.get("match_detail")
                 
                 storage.add_to_storage(
                     technology=technology,
@@ -295,7 +548,12 @@ class JSLIB:
 
 
                 if self.args.verbose:
-                    ptprint(f"Match: {url}", "ADDITIONS", not self.args.json, indent=4, colortext=True)
+                    ptprint(f"Source: {url}", "ADDITIONS", not self.args.json, indent=4, colortext=True)
+                    if match_method:
+                        detail = f" ({match_detail})" if match_detail else ""
+                        ptprint(f"Match: {match_method}{detail}", "ADDITIONS", not self.args.json, indent=8, colortext=True)
+                    if note:
+                        ptprint(f"Note: {note}", "ADDITIONS", not self.args.json, indent=8, colortext=True)
                 
                 if version:
                     ptprint(f"{display_name} {version} ({category}) ", "VULN", 
