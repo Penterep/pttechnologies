@@ -18,6 +18,9 @@ Usage:
 import json
 import os
 import re
+import sys
+import threading
+import time
 from urllib.parse import urlparse, urljoin
 
 from helpers.result_storage import storage
@@ -84,8 +87,26 @@ class SOURCES:
             list: List of detected technology dictionaries with metadata.
         """
         detected = []
-        
-        for tech_entry in self.tech_definitions:
+        total = len(self.tech_definitions)
+        counter = [0]  # mutable so the animation thread can read current progress
+        stop_event = threading.Event()
+
+        def _animate():
+            frames = [".  ", ".. ", "..."]
+            frame = 0
+            while not stop_event.is_set():
+                dots = frames[frame % 3]
+                sys.stderr.write(f"\r    Scanning{dots} {counter[0]}/{total}")
+                sys.stderr.flush()
+                time.sleep(0.3)
+                frame += 1
+
+        if not self.args.json:
+            anim_thread = threading.Thread(target=_animate, daemon=True)
+            anim_thread.start()
+
+        for i, tech_entry in enumerate(self.tech_definitions, 1):
+            counter[0] = i
             file_variants = tech_entry.get("files", [tech_entry.get("file", "")])
             if isinstance(file_variants, str):
                 file_variants = [file_variants]
@@ -139,7 +160,13 @@ class SOURCES:
                     
                     detected.append(tech_info)
                     break
-        
+
+        if not self.args.json:
+            stop_event.set()
+            anim_thread.join()
+            sys.stderr.write("\r" + " " * 40 + "\r")
+            sys.stderr.flush()
+
         return detected
 
     def _check_file_presence(self, test_url):

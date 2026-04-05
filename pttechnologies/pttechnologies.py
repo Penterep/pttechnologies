@@ -65,7 +65,19 @@ class PtTechnologies:
     def run(self) -> None:
         """Main method"""
         tests = self.args.tests or _get_all_available_modules()
-        self.ptthreads.threads(tests, self.run_single_module, self.args.threads)
+
+        # 'sources' runs last, outside threads, so its title and progress bar display in real time
+        threaded_tests = [t for t in tests if t != "sources"]
+        run_sources = "sources" in tests
+
+        if threaded_tests:
+            self.ptthreads.threads(threaded_tests, self.run_single_module, self.args.threads)
+
+        if run_sources:
+            self._run_module_direct("sources")
+            if not self.args.json:
+                sys.stdout.write("\n")
+                sys.stdout.flush()
 
         Predict(args=self.args, ptjsonlib=self.ptjsonlib, helpers=self.helpers).run()
         Summary(args=self.args, ptjsonlib=self.ptjsonlib).run()
@@ -113,6 +125,32 @@ class PtTechnologies:
                 ptprint(f"Module '{module_name}' does not have 'run' function", "WARNING", not self.args.json)
 
         except FileNotFoundError as e:
+            ptprint(f"Module '{module_name}' not found", "ERROR", not self.args.json)
+        except Exception as e:
+            ptprint(f"Error running module '{module_name}': {e}", "ERROR", not self.args.json)
+
+    def _run_module_direct(self, module_name: str) -> None:
+        """
+        Loads and executes a module directly in the main thread, without stdout buffering.
+
+        Used for modules that need real-time output (e.g. title + progress bar visible immediately).
+
+        Args:
+            module_name (str): The name of the module (without `.py` extension) to execute.
+        """
+        try:
+            module = _import_module_from_path(module_name)
+            if hasattr(module, "run") and callable(module.run):
+                module.run(
+                    args=self.args,
+                    ptjsonlib=self.ptjsonlib,
+                    helpers=self.helpers,
+                    http_client=self.http_client,
+                    responses=self.stored_responses
+                )
+            else:
+                ptprint(f"Module '{module_name}' does not have 'run' function", "WARNING", not self.args.json)
+        except FileNotFoundError:
             ptprint(f"Module '{module_name}' not found", "ERROR", not self.args.json)
         except Exception as e:
             ptprint(f"Error running module '{module_name}': {e}", "ERROR", not self.args.json)
@@ -300,7 +338,7 @@ def _get_all_available_modules() -> list:
     - TEMPORARILY DISABLED: proto module (uses invalid requests that slow down the script)
     """
     modules_folder = os.path.join(os.path.dirname(__file__), "modules")
-    disabled_modules = ['proto', 'htmlall']  # 'htmlall' is a private bundle; invoke explicitly with -ts HTMLALL
+    disabled_modules = ['proto', 'htmlall']
     available_modules = [
         f.rsplit(".py", 1)[0]
         for f in sorted(os.listdir(modules_folder))
@@ -323,12 +361,18 @@ def get_help():
               available command-line flags and dynamically discovered test modules.
     """
 
-    # Build dynamic help from available modules
+    # Build dynamic help from modules shown in help output.
+    # Include htmlall in help even when it is temporarily disabled for execution.
     def _get_available_modules_help() -> list:
         rows = []
-        available_modules = _get_all_available_modules()
         modules_folder = os.path.join(os.path.dirname(__file__), "modules")
-        for module in available_modules:
+        hidden_in_help = {"proto"}
+        modules_for_help = [
+            f.rsplit(".py", 1)[0]
+            for f in sorted(os.listdir(modules_folder))
+            if f.endswith(".py") and not f.startswith("_") and f.rsplit(".py", 1)[0] not in hidden_in_help
+        ]
+        for module in modules_for_help:
             mod = _import_module_from_path(module)
             label = getattr(mod, "__TESTLABEL__", f"Test for {module.upper()}")
             row = ["", "", f" {module.upper()}", label]
@@ -345,7 +389,6 @@ def get_help():
             ["-u",  "--url",                    "<url>",            "Connect to URL"],
             ["-ts", "--tests",                  "<test>",     "Specify one or more tests to perform:"],
             *_get_available_modules_help(),
-            ["", "", "", ""],
             ["-p",  "--proxy",                  "<proxy>",          "Set proxy (e.g. http://127.0.0.1:8080)"],
             ["-T",  "--timeout",                "<miliseconds>",    "Set timeout (default 10)"],
             ["-t",  "--threads",                "<threads>",        "Set thread count (default 10)"],
