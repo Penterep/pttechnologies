@@ -26,17 +26,29 @@ from ptlibs.ptprinthelper import ptprint
 
 __TESTLABEL__ = "Test admin interface for technology identification"
 
+_CMS_SPECIFIC_PATHS = {
+    "WordPress": ["/wp-admin/", "/wp-login.php"],
+    "Joomla":    ["/administrator/"],
+    "Drupal":    ["/user/login"],
+    "Kentico":   ["/CMSDesk", "/CMSModules/"],
+}
+
+_EXISTS_CODES = {200, 301, 302, 307, 308, 401, 403}
+
 
 class ADMIN:
     """
     ADMIN performs technology detection from admin interfaces and login pages.
-    
-    This class analyzes the /admin response to identify CMS systems and
-    their versions based on characteristic patterns in login pages.
+
+    Two detection strategies:
+      1. CMS-specific path probing: probe well-known paths; any non-404
+         response reveals the CMS (even a 403).
+      2. Content matching: analyze the /admin login page body against
+         patterns in admin.json.
     """
-    
-    def __init__(self, args: object, ptjsonlib: object, helpers: object, http_client: object, responses: StoredResponses) -> None:
-        """Initialize the ADMIN test with provided components."""
+
+    def __init__(self, args: object, ptjsonlib: object, helpers: object,
+                 http_client: object, responses: StoredResponses) -> None:
         self.args = args
         self.ptjsonlib = ptjsonlib
         self.helpers = helpers
@@ -46,126 +58,140 @@ class ADMIN:
         self.detected_technologies = []
         self.admin_definitions = self.helpers.load_definitions("admin.json")
         self.detection_patterns = self.admin_definitions.get('technologies', []) if self.admin_definitions else []
-        
+
     def run(self) -> None:
-        """
-        Execute the ADMIN test logic.
-        
-        Analyzes the /admin response to detect technologies from login pages
-        and admin interfaces.
-        """
+        """Run CMS path probing and /admin content checks."""
         ptprint(__TESTLABEL__, "TITLE", not self.args.json, colortext=True)
-        
-        if not self.response_admin:
-            ptprint("No admin response available", "INFO", not self.args.json, indent=4)
-            return
-            
-        content = getattr(self.response_admin, 'text', '')
-        if not content:
-            ptprint("Admin response has no content", "INFO", not self.args.json, indent=4)
-            return
-        
-        # Check if this looks like a login page
-        if not self._is_login_page(content):
-            if self.args.verbose:
-                ptprint("Admin page does not appear to be a login page", "ADDITIONS", not self.args.json, indent=4, colortext=True)
-            return
-        
+
         if not self.detection_patterns:
             ptprint("No admin technology definitions loaded from admin.json", "INFO", not self.args.json, indent=4)
             return
-        
-        # Analyze content for technologies
+
+        self._check_cms_paths()
+        self._check_admin_content()
+
+        self._report_findings()
+
+    def _check_cms_paths(self) -> None:
+        """Probe CMS-specific paths; non-404 status implies presence."""
+        base_url = self.args.url.rstrip("/")
+        base_path = getattr(self.args, 'base_path', '') or ''
+
+        already_detected = set()
+
+        for tech_name, paths in _CMS_SPECIFIC_PATHS.items():
+            for path in paths:
+                if tech_name in already_detected:
+                    break
+
+                full_url = urljoin(base_url, f"{base_path}{path}" if base_path else path)
+                try:
+                    resp = self.http_client.send_request(
+                        full_url, method="GET",
+                        headers=self.args.headers,
+                        allow_redirects=False,
+                    )
+                except Exception:
+                    continue
+
+                if resp is None:
+                    continue
+
+                status_code = getattr(resp, 'status_code', 0)
+                if status_code not in _EXISTS_CODES:
+                    continue
+
+                tech_def = next((t for t in self.detection_patterns if t.get('name') == tech_name), None)
+                if not tech_def:
+                    continue
+
+                matched_text = f"HTTP {status_code} on {tech_name}-specific path ({path})"
+                tech_info = self._build_tech_info(tech_def, full_url, status_code, matched_text)
+                if tech_info and not self._already_detected(tech_def.get('product_id')):
+                    self.detected_technologies.append(tech_info)
+                    already_detected.add(tech_name)
+
+    def _check_admin_content(self) -> None:
+        """Analyze pre-fetched /admin response for login patterns."""
+        if not self.response_admin:
+            return
+
+        content = getattr(self.response_admin, 'text', '') or ''
+        if not content or not self._is_login_page(content):
+            return
+
+        status_code = getattr(self.response_admin, 'status_code', 0)
+        url = getattr(self.response_admin, 'url', '') or urljoin(
+            self.args.url,
+            (getattr(self.args, 'base_path', '') or '') + '/admin'
+        )
+
         for tech_def in self.detection_patterns:
-            tech_info = self._detect_technology(content, tech_def)
+            if self._already_detected(tech_def.get('product_id')):
+                continue
+
+            matched_text = self._match_patterns(tech_def, content)
+            if not matched_text:
+                continue
+
+            tech_info = self._build_tech_info(tech_def, url, status_code, matched_text, content=content)
             if tech_info:
                 self.detected_technologies.append(tech_info)
-        
-        self._report_findings()
-    
+
+    def _already_detected(self, product_id) -> bool:
+        """Return True if a technology with given product_id is already stored."""
+        return any(t.get('product_id') == product_id for t in self.detected_technologies)
+
     def _is_login_page(self, content: str) -> bool:
-        """
-        Check if the content appears to be a login page.
-        
-        Args:
-            content: HTML content to check
-            
-        Returns:
-            True if content appears to be a login page, False otherwise
-        """
-        login_indicators = [
+        """Heuristic check whether HTML looks like a login page."""
+        indicators = [
             r'<input[^>]*type=["\']password["\']',
-            r'<form[^>]*login',
-            r'login[^<]*form',
-            r'username',
-            r'password',
-            r'sign\s+in',
-            r'log\s+in',
+            r'<form[^>]*login', r'login[^<]*form',
+            r'username', r'password', r'sign\s+in', r'log\s+in',
         ]
-        
-        content_lower = content.lower()
-        for indicator in login_indicators:
-            if re.search(indicator, content_lower, re.IGNORECASE):
+        for indicator in indicators:
+            if re.search(indicator, content, re.IGNORECASE):
                 return True
-        
         return False
-    
-    def _detect_technology(self, content: str, tech_def: Dict[str, Any]) -> Optional[Dict[str, Any]]:
-        """
-        Detect a specific technology from content.
-        
-        Args:
-            content: HTML content to analyze
-            tech_def: Technology definition with patterns
-            
-        Returns:
-            Technology information dict if detected, None otherwise
-        """
-        patterns = tech_def.get('patterns', [])
-        flags = tech_def.get('flags', 'is')  # Default: case-insensitive, dotall
-        
-        # Parse flags
+
+    def _match_patterns(self, tech_def: Dict[str, Any], content: str) -> Optional[str]:
+        """Return matched snippet from content if any pattern matches."""
+        flags = tech_def.get('flags', 'is')
         re_flags = 0
-        if 'i' in flags.lower():
-            re_flags |= re.IGNORECASE
-        if 'm' in flags.lower():
-            re_flags |= re.MULTILINE
-        if 's' in flags.lower():
-            re_flags |= re.DOTALL
-        
-        # Check if any pattern matches and capture the match
-        matched_text = None
-        matched = False
-        for pattern in patterns:
-            match = re.search(pattern, content, re_flags)
-            if match:
-                matched = True
-                matched_text = match.group(0)[:100] + ('...' if len(match.group(0)) > 100 else '')
-                break
-        
-        if not matched:
-            return None
-        
-        # Get product info
+        if 'i' in flags: re_flags |= re.IGNORECASE
+        if 'm' in flags: re_flags |= re.MULTILINE
+        if 's' in flags: re_flags |= re.DOTALL
+
+        for pattern in tech_def.get('patterns', []):
+            m = re.search(pattern, content, re_flags)
+            if m:
+                txt = m.group(0)
+                return txt[:100] + ('...' if len(txt) > 100 else '')
+        return None
+
+    def _build_tech_info(self, tech_def: Dict[str, Any], url: str,
+                         status_code: int, matched_text: str,
+                         content: str = '') -> Optional[Dict[str, Any]]:
+        """Assemble a normalized technology record for reporting/storage."""
         product_id = tech_def.get('product_id')
         product = self.product_manager.get_product_by_id(product_id)
         if not product:
             return None
-        
+
         products = product.get('products', [])
         technology_name = products[0] if products else product.get('our_name', 'Unknown')
         display_name = product.get('our_name', 'Unknown')
         category_name = self.product_manager.get_category_name(product.get('category_id'))
-        
-        # Try to detect version
+
         version = None
-        version_patterns = tech_def.get('version_patterns', [])
-        for version_pattern in version_patterns:
-            match = re.search(version_pattern, content, re_flags)
-            if match:
-                version = match.group(1) if match.groups() else match.group(0)
+        flags = tech_def.get('flags', 'is')
+        re_flags = (re.IGNORECASE if 'i' in flags else 0) | (re.DOTALL if 's' in flags else 0)
+        for vp in tech_def.get('version_patterns', []):
+            m = re.search(vp, content, re_flags)
+            if m:
+                version = m.group(1) if m.groups() else m.group(0)
                 break
-        
+
         return {
             'name': tech_def.get('name', 'Unknown'),
             'category': category_name,
@@ -174,68 +200,55 @@ class ADMIN:
             'product_id': product_id,
             'vendor': product.get('vendor'),
             'version': version,
-            'url': getattr(self.response_admin, 'url', urljoin(self.args.url, (getattr(self.args, 'base_path', '') + '/admin') if getattr(self.args, 'base_path', '') else '/admin')),
-            'status_code': getattr(self.response_admin, 'status_code', 0),
-            'matched_text': matched_text
+            'url': url,
+            'status_code': status_code,
+            'matched_text': matched_text,
         }
-    
+
     def _report_findings(self) -> None:
-        """
-        Report detected technologies and store them.
-        """
+        """Print and persist detected technologies."""
         if not self.detected_technologies:
             ptprint("No technologies identified from admin interface", "INFO", not self.args.json, indent=4)
             return
-        
+
         for tech in self.detected_technologies:
             version_text = f" {tech['version']}" if tech.get('version') else ""
             category_text = f" ({tech['category']})" if tech.get('category') else ""
-            
+
             if self.args.verbose:
-                ptprint(f"Detected from: {tech.get('url', 'unknown')}", 
-                       "ADDITIONS", not self.args.json, indent=4, colortext=True)
+                ptprint(f"Detected from: {tech.get('url', 'unknown')}",
+                        "ADDITIONS", not self.args.json, indent=4, colortext=True)
                 if tech.get('matched_text'):
-                    ptprint(f"Match: '{tech.get('matched_text')}'", 
-                           "ADDITIONS", not self.args.json, indent=4, colortext=True)
-            
+                    ptprint(f"Match: '{tech.get('matched_text')}'",
+                            "ADDITIONS", not self.args.json, indent=4, colortext=True)
+
             display_name = tech.get('display_name', tech.get('technology', 'Unknown'))
-            ptprint(f"{display_name}{version_text}{category_text}", 
-                   "VULN", not self.args.json, indent=4)
-            
+            ptprint(f"{display_name}{version_text}{category_text}", "VULN", not self.args.json, indent=4)
+
             self._store_technology(tech)
-    
+
     def _store_technology(self, tech: Dict[str, Any]) -> None:
-        """
-        Store detected technology in the storage system.
-        
-        Args:
-            tech: Detected technology information
-        """
+        """Store a single detected technology in the shared storage."""
         tech_name = tech.get('technology', tech.get('name', 'Unknown'))
         version = tech.get('version')
-        tech_type = tech.get('category')
-        product_id = tech.get('product_id')
-        url = tech.get('url', 'unknown')
         status_code = tech.get('status_code')
-        
-        description = f"Admin interface ({url}): {tech_name}"
+
+        description = f"Admin interface ({tech.get('url', 'unknown')}): {tech_name}"
         if version:
             description += f" {version}"
         if status_code:
             description += f" [HTTP {status_code}]"
-        
+
         storage.add_to_storage(
             technology=tech_name,
             version=version,
-            technology_type=tech_type,
+            technology_type=tech.get('category'),
             vulnerability="PTV-WEB-INFO-TEADMIN",
             probability=100,
             description=description,
-            product_id=product_id
+            product_id=tech.get('product_id'),
         )
 
 
 def run(args: object, ptjsonlib: object, helpers: object, http_client: object, responses: StoredResponses):
-    """Entry point to run the ADMIN test."""
     ADMIN(args, ptjsonlib, helpers, http_client, responses).run()
-
