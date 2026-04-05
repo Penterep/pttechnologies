@@ -130,11 +130,7 @@ class OSLPT1:
             # Linux (product_id: 167)
             product = product_manager.get_product_by_id(167)
             if product:
-                products = product.get('products', [])
-                technology_name = products[0] if products else product.get('our_name', 'Linux')
                 display_name = product.get('our_name', 'Linux')
-                category_name = product_manager.get_category_name(product.get('category_id'))
-                storage.add_to_storage(technology=technology_name, technology_type=category_name, vulnerability="PTV-WEB-INFO-OSLNK", product_id=167, probability=75)
                 ptprint(f"Identified OS: {display_name}", "VULN", not self.args.json, indent=4, end=" ")
                 ptprint("(75%)", "ADDITIONS", not self.args.json, colortext=True)
 
