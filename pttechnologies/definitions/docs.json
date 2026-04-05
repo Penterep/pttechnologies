@@ -186,6 +186,41 @@
       "Install.doc",
       "INSTALL.doc",
       "INSTALL.DOC"
+    ],
+    [
+      "license",
+      "License",
+      "LICENSE"
+    ],
+    [
+      "license.txt",
+      "License.txt",
+      "LICENSE.txt",
+      "LICENSE.TXT"
+    ],
+    [
+      "license.md",
+      "License.md",
+      "LICENSE.md",
+      "LICENSE.MD"
+    ],
+    [
+      "license.htm",
+      "License.htm",
+      "LICENSE.htm",
+      "LICENSE.HTM"
+    ],
+    [
+      "license.html",
+      "License.html",
+      "LICENSE.html",
+      "LICENSE.HTML"
+    ],
+    [
+      "license.doc",
+      "License.doc",
+      "LICENSE.doc",
+      "LICENSE.DOC"
     ]
   ],
   "patterns": [
