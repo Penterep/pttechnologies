@@ -68,9 +68,10 @@ def analyze(tech_info: Dict[str, Any], args: object, helpers: object) -> Dict[st
             storage.add_to_storage(
                 technology=component['technology'],
                 version=component.get('version'),
-                technology_type=component['category'],
+                technology_type=component.get('category'),
                 probability=component.get('probability', 100),
-                description=f"Apache Status Page: {component['display_name']}"
+                description=f"Apache Status Page: {component['display_name']}",
+                product_id=component.get('product_id')
             )
 
     return tech_info
