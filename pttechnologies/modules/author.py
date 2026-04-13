@@ -76,6 +76,7 @@ class AUTHOR:
             ptprint("No author information identified", "INFO", not self.args.json, indent=4)
 
     _AUTHOR_TAG_NAMES = {'author', 'autor', 'web-author', 'web_author', 'reply-to'}
+    _EMAIL_REGEX = re.compile(r"[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}", re.IGNORECASE)
 
     def _extract_author_meta_tags(self, html_content):
         """
@@ -94,8 +95,8 @@ class AUTHOR:
         soup = BeautifulSoup(html_content, 'html.parser')
         meta_tags = {}
 
-        for meta in soup.find_all('meta', attrs={'name': True, 'content': True}):
-            name = meta.get('name', '').lower()
+        for meta in soup.find_all('meta', attrs={'content': True}):
+            name = (meta.get('name') or meta.get('http-equiv') or '').lower()
             content = meta.get('content', '').strip()
             if name in self._AUTHOR_TAG_NAMES and content:
                 meta_tags[name] = content
@@ -232,7 +233,13 @@ class AUTHOR:
         Returns:
             None
         """
-        display_content = content[:80] + "..." if len(content) > 80 else content
+        if meta_name == "reply-to":
+            email_match = self._EMAIL_REGEX.search(content)
+            normalized_content = email_match.group(0) if email_match else content
+        else:
+            normalized_content = content
+
+        display_content = normalized_content[:80] + "..." if len(normalized_content) > 80 else normalized_content
         label_map = {
             "reply-to": "Reply-To",
             "web-author": "Web Author",
@@ -241,7 +248,7 @@ class AUTHOR:
             "author": "Author",
         }
         label = label_map.get(meta_name, "Author")
-        description = self._create_description(meta_name, content)
+        description = self._create_description(meta_name, normalized_content)
 
         storage.add_to_storage(
             technology=display_content,
