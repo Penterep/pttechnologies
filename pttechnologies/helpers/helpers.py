@@ -50,7 +50,7 @@ class Helpers:
             ptprint(f"Error loading definitions: {e}", "ERROR", not self.args.json)
             return []
 
-    def fetch(self, url, allow_redirects=False):
+    def fetch(self, url, allow_redirects=False, timeout=None):
         """
         Sends an HTTP GET request to the specified URL.
 
@@ -73,7 +73,7 @@ class Helpers:
                 method="GET",
                 headers=self.args.headers,
                 allow_redirects=redirects,
-                timeout=self.args.timeout
+                timeout=timeout
             )
             return response
 
