@@ -393,6 +393,23 @@ class Summary:
         Returns:
             None
         """
+        tests = getattr(self.args, "tests", None) or []
+        if tests and set(tests) == {"author"}:
+            author_props = self._collect_author_properties()
+            json_output = {
+                "satid": "",
+                "guid": "",
+                "status": "finished",
+                "message": "",
+                "results": {
+                    "nodes": [],
+                    "properties": author_props,
+                    "vulnerabilities": self._get_vulnerabilities()
+                }
+            }
+            print(json.dumps(json_output, indent=2))
+            return
+        
         json_output = {
             "satid": "",
             "guid": "",
@@ -406,6 +423,86 @@ class Summary:
         }
         
         print(json.dumps(json_output, indent=2))
+    
+    def _collect_author_properties(self) -> dict:
+        """
+        Collect author-related properties from storage for AUTHOR test JSON output.
+        
+        Returns:
+            dict with keys:
+              - 'author' (str): aggregated author-related value composed from found meta tags
+              - 'description' (str): concise description indicating which meta tags were used and their values
+            Returns empty dict if nothing was found.
+        """
+        records = storage.get_all_records()
+        author_records = [
+            r for r in records
+            if isinstance(r.get("module"), str) and "author" in r.get("module").lower()
+        ]
+        if not author_records:
+            return {}
+        
+        tag_to_values: dict[str, list[str]] = {}
+        for r in author_records:
+            desc = r.get("description") or ""
+            tech = r.get("technology") or ""
+            meta_name = None
+            marker = "Meta tag '"
+            if marker in desc:
+                try:
+                    part = desc.split(marker, 1)[1]
+                    meta_name = part.split("':", 1)[0]
+                except Exception:
+                    meta_name = None
+            if not meta_name:
+                tech_type = (r.get("technology_type") or "").lower()
+                if "reply-to" in tech_type:
+                    meta_name = "reply-to"
+                elif "web author" in tech_type:
+                    meta_name = "web-author"
+                else:
+                    meta_name = "author"
+            tag_to_values.setdefault(meta_name, []).append(tech)
+        
+        name_tag_order = ["author", "autor", "web-author", "web_author"]
+        reply_tag_name = "reply-to"
+        
+        name_values: list[str] = []
+        for tag in name_tag_order:
+            if tag in tag_to_values:
+                name_values.extend(tag_to_values[tag])
+        
+        reply_values: list[str] = tag_to_values.get(reply_tag_name, [])
+        
+        author_agg = ""
+        if name_values:
+            author_agg = "; ".join(name_values)
+        if reply_values:
+            if author_agg:
+                author_agg = f"{author_agg}, {', '.join(reply_values)}"
+            else:
+                author_agg = ", ".join(reply_values)
+        
+        names_part_list: list[str] = []
+        names_group = [t for t in name_tag_order if t in tag_to_values]
+        if names_group:
+            names_part_list.append("/".join(names_group))
+        if reply_values:
+            names_part_list.append(reply_tag_name)
+        names_part = ", ".join(names_part_list) if names_part_list else "author"
+        
+        all_values: list[str] = []
+        for t in names_group:
+            all_values.extend(tag_to_values[t])
+        all_values.extend(reply_values)
+        values_part = ", ".join(all_values)
+        
+        description = f"Meta tag '{names_part}': [{values_part}]"
+        
+        return {
+            "author": author_agg,
+            "description": description
+        }
     
     def _create_nodes(self):
         """
