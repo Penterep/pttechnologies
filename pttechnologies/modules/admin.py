@@ -34,6 +34,7 @@ _CMS_SPECIFIC_PATHS = {
 }
 
 _EXISTS_CODES = {200, 301, 302, 307, 308, 401, 403}
+_REDIRECT_CODES = {301, 302, 307, 308}
 
 
 class ADMIN:
@@ -101,15 +102,40 @@ class ADMIN:
                 if status_code not in _EXISTS_CODES:
                     continue
 
+                effective_status = status_code
+                if status_code in _REDIRECT_CODES:
+                    effective_status = self._get_redirect_target_status(full_url) or status_code
+                    if effective_status == 404:
+                        continue
+
                 tech_def = next((t for t in self.detection_patterns if t.get('name') == tech_name), None)
                 if not tech_def:
                     continue
 
-                matched_text = f"HTTP {status_code} on {tech_name}-specific path ({path})"
+                if status_code in _REDIRECT_CODES and effective_status != status_code:
+                    matched_text = f"HTTP {status_code} -> {effective_status} on {tech_name}-specific path ({path})"
+                else:
+                    matched_text = f"HTTP {status_code} on {tech_name}-specific path ({path})"
                 tech_info = self._build_tech_info(tech_def, full_url, status_code, matched_text)
                 if tech_info and not self._already_detected(tech_def.get('product_id')):
                     self.detected_technologies.append(tech_info)
                     already_detected.add(tech_name)
+
+    def _get_redirect_target_status(self, url: str) -> Optional[int]:
+        """Return final status code for a URL when redirects are followed."""
+        try:
+            redirect_resp = self.http_client.send_request(
+                url, method="GET",
+                headers=self.args.headers,
+                allow_redirects=True,
+            )
+        except Exception:
+            return None
+
+        if redirect_resp is None:
+            return None
+
+        return getattr(redirect_resp, 'status_code', None)
 
     def _check_admin_content(self) -> None:
         """Analyze pre-fetched /admin response for login patterns."""
