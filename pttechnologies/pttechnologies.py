@@ -269,10 +269,10 @@ class PtTechnologies:
 
             #Get IP responses from HTTP and HTTPS
             http_url = f"http://{self.target_ip}/"
-            http_resp = self.helpers.fetch(http_url)
+            http_resp = self.helpers.fetch(http_url, timeout=3)
 
             https_url = f"https://{self.target_ip}/"
-            https_resp = self.helpers.fetch(https_url)
+            https_resp = self.helpers.fetch(https_url, timeout=3)
 
             # TEMPORARILY DISABLED: Send request with invalid request line (slows down the script)
             # http_invalid_method = self.helpers._raw_request( self.args.url.rstrip('/'), '/', custom_request_line="FOO / HTTP/9.8")
