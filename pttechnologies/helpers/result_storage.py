@@ -156,33 +156,54 @@ class ResultStorage:
 
     def get_technologies_with_version(self) -> list[dict]:
         """
-        Return a list of unique combinations of technology and version.
+        Return a list of unique combinations of technology, version and product_id.
+
+        Two records with the same technology name but different product_ids (e.g. MySQL
+        as a Database vs MySQL as a PHP Extension) are treated as distinct entries so
+        that both appear in the JSON output.
 
         Returns:
             List of dictionaries, each containing:
                 - 'technology': technology name (str)
                 - 'version': version string or None
+                - 'version_min': minimum version or None
+                - 'version_max': maximum version or None
+                - 'product_id': product identifier or None
         """
         with self._lock:
             unique_pairs = {
                 (
-                    record.get("technology"), 
+                    record.get("technology"),
                     record.get("version"),
                     record.get("version_min"),
-                    record.get("version_max")
+                    record.get("version_max"),
+                    record.get("product_id"),
                 )
                 for record in self._storage
-                if record.get("technology") # skip empty technologies
+                if record.get("technology")
             }
-        return [{"technology": tech, "version": ver, "version_min": ver_min, "version_max": ver_max} for tech, ver, ver_min, ver_max in unique_pairs]
+        return [
+            {
+                "technology": tech,
+                "version": ver,
+                "version_min": ver_min,
+                "version_max": ver_max,
+                "product_id": pid,
+            }
+            for tech, ver, ver_min, ver_max, pid in unique_pairs
+        ]
 
-    def get_data_for_technology(self, technology: str, version: Optional[str] = None) -> dict:
+    def get_data_for_technology(self, technology: str, version: Optional[str] = None, product_id: Optional[int] = None) -> dict:
         """
         Return aggregated info for given technology and optionally version.
 
         Args:
             technology: Technology name to filter by (case-sensitive).
             version: Version to filter by; if None, aggregate over all versions.
+            product_id: When provided, restrict aggregation to records with this
+                        product_id. This is necessary to distinguish entries that
+                        share a technology name but belong to different categories
+                        (e.g. MySQL as Database vs MySQL as PHP Extension).
 
         Returns:
             Dict with keys:
@@ -205,6 +226,11 @@ class ResultStorage:
             ]
             if not filtered:
                 return {}
+
+            if product_id is not None:
+                pid_filtered = [r for r in filtered if r.get("product_id") == product_id]
+                if pid_filtered:
+                    filtered = pid_filtered
 
             if version is not None:
                 version_filtered = [r for r in filtered if r.get("version") == version]
