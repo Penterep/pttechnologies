@@ -520,8 +520,9 @@ class Summary:
         for tech_info in technologies:
             technology = tech_info["technology"]
             version = tech_info["version"]
+            product_id = tech_info.get("product_id")
             
-            data = storage.get_data_for_technology(technology, version)
+            data = storage.get_data_for_technology(technology, version, product_id)
             
             if not data:
                 continue
@@ -704,8 +705,9 @@ class Summary:
         for tech_info in technologies:
             technology = tech_info["technology"]
             version = tech_info["version"]
+            product_id = tech_info.get("product_id")
             
-            data = storage.get_data_for_technology(technology, version)
+            data = storage.get_data_for_technology(technology, version, product_id)
             
             if not data:
                 continue

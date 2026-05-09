@@ -213,19 +213,6 @@
     {
         "when": [
             {
-                "product_id": 70
-            }
-        ],
-        "predict": [
-            {
-                "product_id": 399,
-                "description": "WordPress (Web Application)"
-            }
-        ]
-    },
-    {
-        "when": [
-            {
                 "product_id": 74
             }
         ],
