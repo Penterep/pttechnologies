@@ -7301,7 +7301,7 @@
     "probability": 100
   },
   {
-    "product_id": 2540,
+    "product_id": 102,
     "signatures": [],
     "url_pattern": "/popper(?:\\.min)?\\.js(?:/([0-9.]+))?|popperjs(?:/|-)core(?:@|-)([\\d\\.]+)",
     "version_patterns": [],
