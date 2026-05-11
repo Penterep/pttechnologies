@@ -237,7 +237,7 @@ class SOURCES:
         if status_code == 200:
             return 100
         elif status_code == 403:
-            return 80
+            return 100
         else:
             return 50
 

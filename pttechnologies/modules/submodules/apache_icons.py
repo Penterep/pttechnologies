@@ -234,13 +234,13 @@ def _report_result(
         version_min = None
         version_max = None
         version_str = version
-        probability = 90
+        probability = 100
     else:
         version = None
         version_min = identifies[0]
         version_max = identifies[-1]
         version_str = f"{version_min} - {version_max}" if version_min != version_max else version_min
-        probability = 70
+        probability = 100
 
     tech_info["version"]       = version_str
     tech_info["version_range"] = identifies

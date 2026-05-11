@@ -180,7 +180,8 @@ class HDRLEN:
     def _identify_server_exact(self, observed_statuses: list):
         """
         Match observed response pattern against known server definitions.
-        Only returns match if there's 100% exact pattern match for high confidence.
+        Returns a match when the observed status pattern exactly matches a
+        definition entry; match confidence is expressed via probability (default 75).
 
         Args:
             observed_statuses: List of HTTP status codes for each tested header length.
@@ -207,7 +208,7 @@ class HDRLEN:
                     technology_name = products[0]
                 else:
                     technology_name = product.get("our_name")
-                probability = entry.get("probability", 100)
+                probability = entry.get("probability", 75)
                 
                 return technology_name, probability, product_id
         
