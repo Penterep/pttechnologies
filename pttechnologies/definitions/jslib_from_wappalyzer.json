@@ -2095,7 +2095,7 @@
   {
     "product_id": 1051,
     "signatures": [],
-    "url_pattern": "clipboard(?:-([\\d.]+))?(?:\\.min)?\\.js",
+    "url_pattern": "clipboard(?:-([\\d.]+))?(?:\\.min)?\\.js(?:\\?ver=([\\d.]+))?",
     "version_patterns": [],
     "probability": 100
   },
@@ -11912,13 +11912,6 @@
     "product_id": 90,
     "signatures": [],
     "url_pattern": "jquery|/jquery(?:-(\\d+\\.\\d+\\.\\d+))[/.-]|/(\\d+\\.\\d+\\.\\d+)/jquery[/.-][^u]",
-    "version_patterns": [],
-    "probability": 100
-  },
-  {
-    "product_id": 1905,
-    "signatures": [],
-    "url_pattern": "code\\.jquery\\.com/",
     "version_patterns": [],
     "probability": 100
   },

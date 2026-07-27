@@ -4926,19 +4926,6 @@
     {
         "when": [
             {
-                "product_id": 1905
-            }
-        ],
-        "predict": [
-            {
-                "product_id": 90,
-                "description": "jQuery CDN (CDN / WAF)"
-            }
-        ]
-    },
-    {
-        "when": [
-            {
                 "product_id": 1906
             }
         ],
