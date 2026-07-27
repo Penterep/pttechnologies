@@ -17,6 +17,7 @@ Usage:
 """
 
 import re
+import time
 from typing import List, Dict, Any, Optional
 from urllib.parse import urljoin
 from helpers.result_storage import storage
@@ -35,6 +36,27 @@ _CMS_SPECIFIC_PATHS = {
 
 _EXISTS_CODES = {200, 301, 302, 307, 308, 401, 403}
 _REDIRECT_CODES = {301, 302, 307, 308}
+
+_INTER_REQUEST_DELAY_SECONDS = 0.5
+
+_WAF_CHALLENGE_HEADERS = (
+    "x-protected-by", "x-waf", "x-firewall", "x-sucuri-id", "x-sucuri-cache",
+    "cf-mitigated", "cf-chl-bypass", "x-denied-reason",
+)
+
+_WAF_CHALLENGE_BODY_PATTERN = re.compile(
+    r"(security verification|checking your browser|attention required|"
+    r"access denied|blocked by|bot protection|please verify you are human|"
+    r"captcha|automated (?:requests|traffic)|unusual traffic)",
+    re.IGNORECASE,
+)
+
+_BASELINE_SIMILARITY_THRESHOLD = 0.9
+_TOKEN_PATTERN = re.compile(r"[A-Za-z0-9]{3,}")
+
+
+def _tokenize(text: str) -> set:
+    return set(_TOKEN_PATTERN.findall(text.lower())[:200])
 
 
 class ADMIN:
@@ -56,6 +78,9 @@ class ADMIN:
         self.http_client = http_client
         self.product_manager = get_product_manager()
         self.response_admin = responses.resp_admin
+        self.response_404 = responses.resp_404
+        self._baseline_response = None
+        self._baseline_resolved = False
         self.detected_technologies = []
         self.admin_definitions = self.helpers.load_definitions("admin.json")
         self.detection_patterns = self.admin_definitions.get('technologies', []) if self.admin_definitions else []
@@ -99,15 +124,18 @@ class ADMIN:
                     resp = self.http_client.send_request(
                         full_url, method="GET",
                         headers=self.args.headers,
-                        allow_redirects=False,
+                        allow_redirects=True,
                     )
                 except Exception:
                     continue
+                finally:
+                    time.sleep(_INTER_REQUEST_DELAY_SECONDS)
 
                 if resp is None:
                     continue
 
-                status_code = getattr(resp, 'status_code', 0)
+                history = list(getattr(resp, 'history', None) or [])
+                status_code = history[0].status_code if history else getattr(resp, 'status_code', 0)
                 if status_code not in _EXISTS_CODES:
                     continue
 
@@ -116,10 +144,7 @@ class ADMIN:
                     continue
 
                 if status_code in _REDIRECT_CODES:
-                    followed = self._follow_redirect(full_url)
-                    if followed is None:
-                        continue
-
+                    followed = resp
                     effective_status = getattr(followed, 'status_code', 0)
 
                     if effective_status == 404:
@@ -132,6 +157,8 @@ class ADMIN:
                         pattern_match = self._match_patterns(tech_def, content)
                         if not pattern_match or self._is_self_referential_match(pattern_match, path):
                             continue
+                        if self._is_similar_to_baseline(followed):
+                            continue
                         matched_text = (
                             f"HTTP {status_code} -> {effective_status} on "
                             f"{tech_name}-specific path ({path}), "
@@ -139,6 +166,8 @@ class ADMIN:
                         )
                     else:
                         # 302 -> 4xx (403, 401, …): path is real, access denied.
+                        if self._is_waf_block_page(followed):
+                            continue
                         matched_text = (
                             f"HTTP {status_code} -> {effective_status} on "
                             f"{tech_name}-specific path ({path})"
@@ -150,6 +179,8 @@ class ADMIN:
                     pattern_match = self._match_patterns(tech_def, content)
                     if not pattern_match or self._is_self_referential_match(pattern_match, path):
                         continue
+                    if self._is_similar_to_baseline(resp):
+                        continue
                     matched_text = (
                         f"HTTP {status_code} on {tech_name}-specific path ({path}), "
                         f"content match: '{pattern_match}'"
@@ -157,6 +188,8 @@ class ADMIN:
 
                 else:
                     # Direct 401/403/…: path confirmed to exist.
+                    if self._is_waf_block_page(resp):
+                        continue
                     matched_text = f"HTTP {status_code} on {tech_name}-specific path ({path})"
 
                 tech_info = self._build_tech_info(tech_def, full_url, status_code, matched_text)
@@ -176,6 +209,56 @@ class ADMIN:
             return None
 
         return redirect_resp
+
+    def _is_waf_block_page(self, resp) -> bool:
+        """Return True if *resp* looks like a WAF/CDN block or bot-challenge
+        page rather than a genuine application response.
+
+        A 401/403 from an intermediary security layer is not evidence that
+        the probed CMS path exists on the origin server, so it must not be
+        treated as a "reliable signal" the way a real application 401/403 is.
+        """
+        headers = {k.lower() for k in dict(getattr(resp, 'headers', {}) or {}).keys()}
+        if headers.intersection(_WAF_CHALLENGE_HEADERS):
+            return True
+
+        content = getattr(resp, 'text', '') or ''
+        return bool(_WAF_CHALLENGE_BODY_PATTERN.search(content))
+
+    def _get_baseline_response(self):
+        """Return the final response for a known-nonexistent path (resolving
+        its own redirect chain if any), memoized for the life of this run."""
+        if not self._baseline_resolved:
+            baseline = self.response_404
+            if baseline is not None and getattr(baseline, 'status_code', 0) in _REDIRECT_CODES:
+                baseline_url = getattr(baseline, 'url', None)
+                if baseline_url:
+                    baseline = self._follow_redirect(baseline_url) or baseline
+            self._baseline_response = baseline
+            self._baseline_resolved = True
+
+        return self._baseline_response
+
+    def _is_similar_to_baseline(self, resp) -> bool:
+        """Return True when *resp* is essentially the same page a known-
+        nonexistent path already produces (a soft-404/catch-all), so a
+        content-pattern match on it carries no CMS-specific evidence.
+        """
+        baseline = self._get_baseline_response()
+        if baseline is None or resp is None:
+            return False
+
+        if getattr(baseline, 'status_code', None) != getattr(resp, 'status_code', None):
+            return False
+
+        baseline_tokens = _tokenize(getattr(baseline, 'text', '') or '')
+        resp_tokens = _tokenize(getattr(resp, 'text', '') or '')
+        if not baseline_tokens or not resp_tokens:
+            return False
+
+        union = baseline_tokens | resp_tokens
+        similarity = len(baseline_tokens & resp_tokens) / len(union)
+        return similarity >= _BASELINE_SIMILARITY_THRESHOLD
 
     def _check_admin_content(self) -> None:
         """Analyze pre-fetched /admin response for login patterns."""
