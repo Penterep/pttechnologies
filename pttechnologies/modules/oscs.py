@@ -93,24 +93,24 @@ class OSCS:
         else:
             favicon_path = "/favicon.ico"
         favicon = urljoin(base, favicon_path)
-        resp, ct = self._fetch(favicon)
+        favicon_url, resp, ct = self._fetch_resolved(favicon, parsed_base)
 
         if resp is not None:
-            if resp.status_code in (301, 302):
+            if resp.status_code in (301, 302, 303, 307, 308):
                 ptprint(f"Redirect detected to {resp.headers.get('Location')}", "INFO", not self.args.json, indent=4)
                 return None
             elif resp.status_code == 200:
-                return favicon, resp, ct
+                return favicon_url, resp, ct
 
         # Construct homepage URL with base_path
         if base_path:
             home_path = f"{base_path}/"
         else:
             home_path = "/"
-        resp_home, _ = self._fetch(urljoin(base, home_path))
+        home_url, resp_home, _ = self._fetch_resolved(urljoin(base, home_path), parsed_base)
 
         if resp_home is not None:
-            if resp_home.status_code in (301, 302):
+            if resp_home.status_code in (301, 302, 303, 307, 308):
                 ptprint(f"Redirect to {resp_home.headers.get('Location')}","INFO", not self.args.json, indent=4)
                 return None
             elif resp_home.status_code != 200:
@@ -122,22 +122,62 @@ class OSCS:
 
 
         html = resp_home.text or ''
-        # Use base_path for resolving relative URLs from HTML
-        base_for_join = urljoin(base, base_path) if base_path else base
+        # Use the (possibly redirected) homepage URL for resolving relative URLs from HTML
+        base_for_join = home_url
         for match in re.finditer(
             r'(?:href|src)=["\']([^"\']+\.(?:js|css|png|jpg|jpeg|gif|ico))["\']',
             html,
             re.IGNORECASE,
         ):
-            candidate_url = urljoin(base_for_join + '/', match.group(1))
+            candidate_url = urljoin(base_for_join, match.group(1))
             if urlparse(candidate_url).netloc != parsed_base.netloc:
                 continue
 
-            r, ct = self._fetch(candidate_url)
+            final_candidate_url, r, ct = self._fetch_resolved(candidate_url, parsed_base)
             if r is not None:
                 if r.status_code == 200:
-                    return candidate_url, r, ct
+                    return final_candidate_url, r, ct
         return None
+
+    def _fetch_resolved(self, url: str, parsed_base, max_redirects: int = 5) -> tuple:
+        """
+        Fetch a URL, manually following redirects as long as each redirect
+        target stays on the same domain as the scanned target. Redirects to
+        a different domain are not followed, matching the original response.
+
+        Args:
+            url (str): The URL to request.
+            parsed_base (ParseResult): Parsed URL of the scanned target, used
+                to check whether a redirect stays within the same domain.
+            max_redirects (int): Maximum number of redirects to follow.
+
+        Returns:
+            tuple: (final URL (str), response, content type (str)).
+        """
+        current_url = url
+        resp, ct = self._fetch(current_url)
+
+        hops = 0
+        while (
+            resp is not None
+            and resp.status_code in (301, 302, 303, 307, 308)
+            and hops < max_redirects
+        ):
+            location = resp.headers.get('Location')
+            if not location:
+                break
+
+            next_url = urljoin(current_url, location)
+            if urlparse(next_url).netloc != parsed_base.netloc:
+                break
+
+            if self.args.verbose:
+                ptprint(f"Following redirect to {next_url}", "INFO", not self.args.json, indent=4)
+            current_url = next_url
+            resp, ct = self._fetch(current_url)
+            hops += 1
+
+        return current_url, resp, ct
 
     def _fetch(self, url: str) -> tuple:
         """
