@@ -401,17 +401,6 @@
       "_letter": "j"
     },
     {
-      "id": 1905,
-      "our_name": "jQuery CDN",
-      "vendor": "jquery_cdn",
-      "products": [
-        "jquery_cdn"
-      ],
-      "cve_details_url": null,
-      "category_id": 10,
-      "_letter": "j"
-    },
-    {
       "id": 1906,
       "our_name": "jQuery DevBridge Autocomplete",
       "vendor": "jquery_devbridge_aut",
