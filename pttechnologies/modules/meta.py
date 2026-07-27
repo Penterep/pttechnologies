@@ -89,17 +89,18 @@ class Meta:
             html_content: Raw HTML content string.
             
         Returns:
-            dict: Dictionary of meta tag names and their content values.
+            dict: Dictionary of meta tag names to a list of their content values
+                (a page can contain multiple meta tags with the same name).
         """
         soup = BeautifulSoup(html_content, 'html.parser')
         meta_tags = {}
-        
+
         for meta in soup.find_all('meta', attrs={'name': True, 'content': True}):
             name = meta.get('name').lower()
             content = meta.get('content')
             if content:
-                meta_tags[name] = content
-        
+                meta_tags.setdefault(name, []).append(content)
+
         return meta_tags
     
     def _analyze_meta_tags(self, meta_tags):
@@ -107,50 +108,51 @@ class Meta:
         Analyze extracted meta tags against known patterns.
         
         Args:
-            meta_tags: Dictionary of meta tag names and content.
-            
+            meta_tags: Dictionary of meta tag names to a list of content values.
+
         Returns:
             int: Number of technologies found.
         """
         technologies_found = 0
-        successfully_matched_tags = set()
+        matched_contents = {}
         detected_products = set()
-        
+
         if self.definitions:
             for meta_definition in self.definitions:
                 meta_name = meta_definition.get("meta_name")
                 patterns = meta_definition.get("patterns", [])
-                
-                if meta_name in meta_tags:
-                    content = meta_tags[meta_name]
+
+                for content in meta_tags.get(meta_name, []):
                     matches = self._check_patterns(meta_name, content, patterns, detected_products)
                     if matches > 0:
                         technologies_found += matches
-                        successfully_matched_tags.add(meta_name)
-        
+                        matched_contents.setdefault(meta_name, set()).add(content)
+
         if self.wapp_definitions:
             wapp_meta_list = self.wapp_definitions
             if isinstance(self.wapp_definitions, dict) and 'meta_tags' in self.wapp_definitions:
                 wapp_meta_list = self.wapp_definitions['meta_tags']
-            
+
             if isinstance(wapp_meta_list, list):
                 for meta_definition in wapp_meta_list:
                     meta_name = meta_definition.get("meta_name")
                     patterns = meta_definition.get("patterns", [])
-                    
-                    if meta_name in meta_tags:
-                        content = meta_tags[meta_name]
+
+                    for content in meta_tags.get(meta_name, []):
                         matches = self._check_patterns(meta_name, content, patterns, detected_products)
                         if matches > 0:
                             technologies_found += matches
-                            successfully_matched_tags.add(meta_name)
-        
+                            matched_contents.setdefault(meta_name, set()).add(content)
+
         interesting_meta_names = {'generator', 'application-name', 'framework', 'cms', 'publisher', 'X-Powered-By', 'platform'}
-        for meta_name, content in meta_tags.items():
-            if meta_name not in successfully_matched_tags and meta_name in interesting_meta_names:
-                self._display_unknown_meta(meta_name, content)
-                technologies_found += 1
-        
+        for meta_name, contents in meta_tags.items():
+            if meta_name not in interesting_meta_names:
+                continue
+            for content in contents:
+                if content not in matched_contents.get(meta_name, set()):
+                    self._display_unknown_meta(meta_name, content)
+                    technologies_found += 1
+
         return technologies_found
     
     def _check_patterns(self, meta_name, content, patterns, detected_products):
